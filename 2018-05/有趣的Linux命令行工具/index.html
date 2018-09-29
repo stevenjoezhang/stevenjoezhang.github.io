@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+  <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link href="https://cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+  <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css" />
+  <meta name="description" content="这篇文章翻译自：20 Funny Commands of Linux or Linux is Fun in TerminalLinux is fun! Huhhh. OK so you don’t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="有趣的Linux命令行工具">
+<meta property="og:url" content="https://zhangshuqiao.org/2018-05/有趣的Linux命令行工具/index.html">
+<meta property="og:site_name" content="米米的博客">
+<meta property="og:description" content="这篇文章翻译自：20 Funny Commands of Linux or Linux is Fun in TerminalLinux is fun! Huhhh. OK so you don’t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-19T07:42:28.831Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="有趣的Linux命令行工具">
+<meta name="twitter:description" content="这篇文章翻译自：20 Funny Commands of Linux or Linux is Fun in TerminalLinux is fun! Huhhh. OK so you don’t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun">
+  <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml" />
+  <link rel="canonical" href="https://zhangshuqiao.org/2018-05/有趣的Linux命令行工具/"/>
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>有趣的Linux命令行工具 | 米米的博客</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-108155018-2');
+</script>
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">米米的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">做了一点微小的工作</p>
+  </div>
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />关于</a>
+  </li>
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+          <li class="menu-item menu-item-friends">
+    <a href="/friends/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />友情链接</a>
+  </li>
+        <li class="menu-item menu-item-search">
+            <a href="javascript:;" class="popup-trigger">
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+    </ul>
+    <div class="site-search">
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+    </div>
+</nav>
+</div>
+    </header>
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+  <div id="posts" class="posts-expand">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/有趣的Linux命令行工具/">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">有趣的Linux命令行工具
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <span title="创建时间：2018-05-13 12:57:19" itemprop="dateCreated datePublished" datetime="2018-05-13T12:57:19+08:00">2018-05-13</span>
+          </span>
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-05/有趣的Linux命令行工具/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-05/有趣的Linux命令行工具/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-file-o"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">12k</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">11 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+        <p>这篇文章翻译自：<a href="https://www.tecmint.com/20-funny-commands-of-linux-or-linux-is-fun-in-terminal" target="_blank" rel="noopener">20 Funny Commands of Linux or Linux is Fun in Terminal</a><br>Linux is fun! Huhhh. OK so you don’t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.<br>Linux是非常有趣的，别不相信–看完这篇文章，你一定会发现Linux系统神奇的用法。</p>
+<h2 id="sl-Steam-Locomotive"><a href="#sl-Steam-Locomotive" class="headerlink" title="sl (Steam Locomotive)"></a>sl (Steam Locomotive)</h2><p>命令：sl（蒸汽机车的缩写）<br>You might be aware of command ‘ls’ the list command and use it frequently to view the contents of a folder but because of miss-typing sometimes you would result in ‘sl’, how about getting a little fun in terminal and not “command not found”.<br>你一定知道ls是用来显示文件夹内容的常见命令，但如果不小心打成sl呢？通过包管理工具安装它，你就能看见一辆跑过屏幕的火车，而不是“找不到命令”：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ apt-get install sl  (In Debian like OS)</span><br><span class="line">root@mimi:~ yum -y install sl  (In Red Hat like OS)</span><br><span class="line">root@mimi:~ sl</span><br></pre></td></tr></table></figure></p>
+<p>This command works even when you type ‘LS’ and not ‘ls’.</p>
+<h2 id="telnet"><a href="#telnet" class="headerlink" title="telnet"></a>telnet</h2><p>命令：telnet<br>No! No!! it is not as much complex as it seems. You would be familiar with telnet. Telnet is a text-oriented bidirectional network protocol over network. Here is nothing to be installed. What you should have is a Linux box and a working Internet.<br>它并不像看上去那样复杂。你会熟悉它的。Telnet是一个基于文本的双向网络协议。你无需安装它，只需要一台能够联网的linux机器就行。输入以下内容即可观看ASCII版星球大战：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ telnet towel.blinkenlights.nl</span><br></pre></td></tr></table></figure></p>
+<h2 id="fortune"><a href="#fortune" class="headerlink" title="fortune"></a>fortune</h2><p>命令：fortune What about getting your random fortune, sometimes funny in<br>terminal.<br>在终端获取随机的人生经验，听上去不错吧？<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ apt-get install fortune  (<span class="keyword">for</span> aptitude based system)</span><br><span class="line">root@mimi:~ yum install fortune  (<span class="keyword">for</span> yum based system)</span><br><span class="line">root@mimi:~ fortune</span><br><span class="line">You<span class="string">'re not my type.  For that matter, you'</span>re not even my species!!!</span><br><span class="line">Future looks spotty.  You will spill soup <span class="keyword">in</span> late evening.</span><br><span class="line">You worry too much about your job.  Stop it.  You are not paid enough to worry.</span><br><span class="line">Your love life will be... interesting.</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h2 id="rev-Reverse"><a href="#rev-Reverse" class="headerlink" title="rev (Reverse)"></a>rev (Reverse)</h2><p>命令：rev（反转的缩写）<br>It reverse every string given to it, is not it funny.<br>它会反转任何输入的字符串，然后输出。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ rev</span><br><span class="line">123abc </span><br><span class="line">cba321 </span><br><span class="line">xuniL eb ot nrob</span><br><span class="line">born to be Linux</span><br></pre></td></tr></table></figure></p>
+<h2 id="factor"><a href="#factor" class="headerlink" title="factor"></a>factor</h2><p>命令：factor Time for some Mathematics, this command output all the possible factors of a given number.<br>数学时间到：这个命令会输出一个数字的所有质因数。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ factor 5</span><br><span class="line">5 </span><br><span class="line">5: 5 </span><br><span class="line">12 </span><br><span class="line">12: 2 2 3 </span><br><span class="line">1001 </span><br><span class="line">1001: 7 11 13 </span><br><span class="line">5442134 </span><br><span class="line">5442134: 2 2721067</span><br></pre></td></tr></table></figure></p>
+<h2 id="script"><a href="#script" class="headerlink" title="script"></a>script</h2><p>shell脚本<br>OK fine this is not a command and a script but it is nice.<br>它会输出乘法口诀表。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ <span class="keyword">for</span> i <span class="keyword">in</span> &#123;1..9&#125;; <span class="keyword">do</span> <span class="keyword">for</span> j <span class="keyword">in</span> $(seq 1 <span class="variable">$i</span>); <span class="keyword">do</span> <span class="built_in">echo</span> -ne <span class="variable">$i</span>*<span class="variable">$j</span>=$((i*j))\\t;<span class="keyword">done</span>; <span class="built_in">echo</span>;<span class="keyword">done</span></span><br><span class="line">1*1=1   </span><br><span class="line">2*1=2   2*2=4   </span><br><span class="line">3*1=3   3*2=6   3*3=9   </span><br><span class="line">4*1=4   4*2=8   4*3=12  4*4=16  </span><br><span class="line">5*1=5   5*2=10  5*3=15  5*4=20  5*5=25  </span><br><span class="line">6*1=6   6*2=12  6*3=18  6*4=24  6*5=30  6*6=36  </span><br><span class="line">7*1=7   7*2=14  7*3=21  7*4=28  7*5=35  7*6=42  7*7=49  </span><br><span class="line">8*1=8   8*2=16  8*3=24  8*4=32  8*5=40  8*6=48  8*7=56  8*8=64  </span><br><span class="line">9*1=9   9*2=18  9*3=27  9*4=36  9*5=45  9*6=54  9*7=63  9*8=72  9*9=81</span><br></pre></td></tr></table></figure></p>
+<h2 id="Cowsay"><a href="#Cowsay" class="headerlink" title="Cowsay"></a>Cowsay</h2><p>命令：cowsay<br>An ASCII cow in terminal that will say what ever you want.<br>一个终端里由ASCII码组成的牛，你想让它说什么，它就会说什么。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ apt-get install cowsay  (<span class="keyword">for</span> Debian based OS)</span><br><span class="line">root@mimi:~ yum install cowsay  (<span class="keyword">for</span> Red Hat based OS)</span><br><span class="line">root@mimi:~ cowsay I Love *nix </span><br><span class="line"> _____________ </span><br><span class="line">&lt; I Love *nix &gt;</span><br><span class="line"> ------------- </span><br><span class="line">        \   ^__^</span><br><span class="line">         \  (oo)\_______</span><br><span class="line">            (__)\       )\/\</span><br><span class="line">                ||----w |</span><br><span class="line">                ||     ||</span><br></pre></td></tr></table></figure></p>
+<p>How about pipelineing ‘fortune command’, described above with cowsay?<br>通过管道将fortune命令的输出作为cowsay的输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ fortune | cowsay </span><br><span class="line">_________________________________________</span><br><span class="line">/ Q: How many Oregonians does it take to  \</span><br><span class="line">| screw <span class="keyword">in</span> a light bulb? A: Three. One to |</span><br><span class="line">| screw <span class="keyword">in</span> the light bulb and two to fend |</span><br><span class="line">| off all those                           |</span><br><span class="line">|                                         |</span><br><span class="line">| Californians trying to share the        |</span><br><span class="line">\ experience.                             /</span><br><span class="line">-----------------------------------------</span><br><span class="line">        \   ^__^</span><br><span class="line">         \  (oo)\_______</span><br><span class="line">            (__)\       )\/\</span><br><span class="line">                ||----w |</span><br><span class="line">                ||     ||</span><br></pre></td></tr></table></figure></p>
+<p>Note: ‘|‘ is called pipeline instruction and it is used where the output of one command needs to be the input of another command. In the above example the output of ‘fortune’ command acts as an input of ‘cowsay’ command. This pipeline instruction is frequently used in scripting and programming.<br>注意：’|‘被称为管道指令，用于将一个命令的输出作为另一个命令的输入。在上面的例子中，fortune命令的输出作为cowsay命令的输入。管道指令经常用于脚本和编程。<br>xcowsay is a graphical program which response similar to cowsay but in a graphical manner, hence it is X of cowsay.<br>xcowsay是一个图形程序，其效果类似于cowsay，但是是以图形方式显示说话的牛。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ apt-get install xcowsay</span><br><span class="line">root@mimi:~ yum install xcowsay</span><br><span class="line">root@mimi:~ xcowsay I Love nix</span><br></pre></td></tr></table></figure></p>
+<p>cowthink is another command, just run “cowthink Linux is sooo funny” and see the difference in output of cowsay and cowthink. cowthink是另一个命令，你可以执行”cowthink Linux is sooo funny”看看它和cowthink的输出差异。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ apt-get install cowthink</span><br><span class="line">root@mimi:~ yum install cowthink</span><br><span class="line">root@mimi:~ cowthink ....Linux is sooo funny</span><br><span class="line"> _________________________ </span><br><span class="line">( ....Linux is sooo funny )</span><br><span class="line"> ------------------------- </span><br><span class="line">        o   ^__^</span><br><span class="line">         o  (oo)\_______</span><br><span class="line">            (__)\       )\/\</span><br><span class="line">                ||----w |</span><br><span class="line">                ||     ||</span><br></pre></td></tr></table></figure></p>
+<p>注：你可以查看以上命令的帮助菜单，可以把牛换成其他会说话的动物。</p>
+<h2 id="yes"><a href="#yes" class="headerlink" title="yes"></a>yes</h2><p>命令：yes<br>It is funny but useful as well, specially in scripts and for System Administrators where an automated predefined response can be passed to terminal or generated.<br>它很有趣，也很实用。使用yes，终端将会不断输出你所输入的字符串。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ yes I Love Linux</span><br><span class="line">I Love Linux</span><br><span class="line">I Love Linux</span><br><span class="line">I Love Linux</span><br><span class="line">I Love Linux</span><br><span class="line">I Love Linux</span><br><span class="line">I Love Linux</span><br></pre></td></tr></table></figure></p>
+<p>Note: (Till you interrupt i.e ctrl+c).<br>直到你使用ctrl+c结束它，否则会一直输出。</p>
+<h2 id="toilet"><a href="#toilet" class="headerlink" title="toilet"></a>toilet</h2><p>命令：toilet<br>What? Are u kidding, huhh no! Definitely not, but for sure this command name itself is too funny, and I don’t know from where this command gets it’s name.<br>什么？你在开玩笑吗，不！绝对不是，但肯定这个命令名称本身太有趣了，我不知道这个命令从哪里得到它的名字。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ apt-get install toilet</span><br><span class="line">root@mimi:~ yum install toilet</span><br><span class="line">root@mimi:~ toilet mimi</span><br><span class="line">          <span class="string">"             "</span>   </span><br><span class="line"> mmmmm  mmm    mmmmm  mmm   </span><br><span class="line"> <span class="comment"># # #    #    # # #    #   </span></span><br><span class="line"> <span class="comment"># # #    #    # # #    #   </span></span><br><span class="line"> <span class="comment"># # #  mm#mm  # # #  mm#mm</span></span><br></pre></td></tr></table></figure></p>
+<p>It even offers some kind of color and fonts style.<br>它甚至提供了颜色和字体样式。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ toilet -f mono12 -F metal mimi.com</span><br></pre></td></tr></table></figure></p>
+<p>Note: Figlet is another command that more or less provide such kind of effect in terminal.<br>注意：Figlet是另一个或多或少在终端提供这种效果的命令。</p>
+<h2 id="cmatrix"><a href="#cmatrix" class="headerlink" title="cmatrix"></a>cmatrix</h2><p>命令：cmatrix<br>You might have seen Hollywood movie ‘matrix’ and would be fascinated with power, Neo was provided with, to see anything and everything in matrix or you might think of an animation that looks alike Hacker’s desktop.<br>你可能已经看过好莱坞电影《黑客帝国》，并且会被Neo获取的力量所吸引——在矩阵中看到一切；或许你也会想到一个看起来和Hacker的桌面一样的动画。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ apt-get install cmatrix</span><br><span class="line">root@mimi:~ yum install cmatrix</span><br><span class="line">root@mimi:~ cmatrix</span><br></pre></td></tr></table></figure></p>
+<h2 id="oneko"><a href="#oneko" class="headerlink" title="oneko"></a>oneko</h2><p>命令：oneko<br>OK so you believe that mouse pointer of Linux is the same silly black/white pointer where no animation lies then I fear you could be wrong. “oneko” is a package that will attach a “Jerry” with you mouse pointer and moves along with you pointer.<br>如果你觉得Linux的鼠标就是一个愚蠢的黑色/白色指针，而没有动画，我担心你可能是错的。使用”oneko”命令，就可以创造一只与你的鼠标指针玩耍的猫。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ apt-get install oneko</span><br><span class="line">root@mimi:~ yum install oneko</span><br><span class="line">root@mimi:~ oneko</span><br></pre></td></tr></table></figure></p>
+<p>Note: Once you close the terminal from which oneko was run, jerry will disappear, nor will start at start-up. You can add the application to start up and continue enjoying.<br>注意：一旦你关闭了运行oneko的终端，小猫就会消失。您可以把它添加到开机启动中，继续享受撸猫的乐趣。</p>
+<h2 id="Fork-Bomb"><a href="#Fork-Bomb" class="headerlink" title="Fork Bomb"></a>Fork Bomb</h2><p>Fork炸弹<br>This is a very nasty piece of code. Run this at your own risk. This actually is a fork bomb which exponentially multiplies itself till all the system resource is utilized and the system hangs. (To check the power of above code you should try it once, but all at your own risk, close and save all other programs and file before running fork bomb).<br>这是一段非常讨厌的代码。运行这个需要您自担风险。这实际上是一个Fork炸弹，它以指数方式自我增殖，直到所有系统资源被利用并且系统挂起。（要检查上述代码的威力，您应该尝试一次，但所有风险自负：在运行叉形炸弹之前关闭并保存所有其他程序和文件）。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ :()&#123; :|:&amp; &#125;:</span><br></pre></td></tr></table></figure></p>
+<h2 id="while"><a href="#while" class="headerlink" title="while"></a>while</h2><p>命令：while<br>The below “while” command is a script which provides you with colored date and file till you interrupt (ctrl + c). Just copy and paste the below code in terminal.<br>下面的”while”命令是一个脚本，它会为您提供彩色日期和文件，直到您中断（ctrl + c）。只需在终端中复制并粘贴以下代码即可。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ <span class="keyword">while</span> <span class="literal">true</span>; <span class="keyword">do</span> <span class="built_in">echo</span> <span class="string">"<span class="variable">$(date '+%D %T' | toilet -f term -F border --gay)</span>"</span>; sleep 1; <span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
+<p>Note: The above script when modified with following command, will gives similar output but with a little difference, check it in your terminal.<br>注意：上面的脚本在使用以下命令修改后，会给出类似的输出，但有一点区别，请在终端中检查它。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ <span class="keyword">while</span> <span class="literal">true</span>; <span class="keyword">do</span> clear; <span class="built_in">echo</span> <span class="string">"<span class="variable">$(date '+%D %T' | toilet -f term -F border --gay)</span>"</span>; sleep 1; <span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="espeak"><a href="#espeak" class="headerlink" title="espeak"></a>espeak</h2><p>命令：espeak<br>Just Turn the Knob of your multimedia speaker to full before pasting this command in your terminal and let us know how you felt listening the god’s voice.<br>在将此命令粘贴到终端之前，请将您的音箱音量开到最大，让我们知道您是如何聆听上帝的声音的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ apt-get install espeak</span><br><span class="line">root@mimi:~ yum install espeak</span><br><span class="line">root@mimi:~ espeak <span class="string">"mimi is a very good website dedicated to Foss Community"</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="aafire"><a href="#aafire" class="headerlink" title="aafire"></a>aafire</h2><p>命令：aafire<br>How about fire in your terminal. Just type “aafire” in the terminal, without quotes and see the magic. Press any key to interrupt the program.<br>在您的终端放火，听上去如何？只需在终端输入aafire，就可以看到神奇的现象。按任意键中断程序。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ apt-get install libaa-bin</span><br><span class="line">root@mimi:~ aafire</span><br></pre></td></tr></table></figure></p>
+<h2 id="bb"><a href="#bb" class="headerlink" title="bb"></a>bb</h2><p>命令：bb<br>First install “apt-get insatll bb” and then, type “bb” in terminal and see what happens.<br>首先用apt-get安装bb命令，然后在终端输入bb，看看会发生什么。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ apt-get install bb</span><br><span class="line">root@mimi:~ bb</span><br></pre></td></tr></table></figure></p>
+<h2 id="url"><a href="#url" class="headerlink" title="url"></a>url</h2><p>命令：url<br>Won’t it be an awesome feeling for you if you can update you twitter status from command line in front of your friend and they seems impressed. OK just replace username, password and your status message with your’s username, password and “your status message”.<br>如果你可以在你的朋友面前通过命令行更新你的Twitter状态，这绝对是超棒的感觉——而且他们也会印象深刻。好的，只需把下面的YourUsername，YourPassword和Your status message替换为您自己的用户名，密码和状态信息即可。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ url -u YourUsername:YourPassword -d status=<span class="string">"Your status message"</span> http://twitter.com/statuses/update.xml</span><br></pre></td></tr></table></figure></p>
+<h2 id="ASCIIquarium"><a href="#ASCIIquarium" class="headerlink" title="ASCIIquarium"></a>ASCIIquarium</h2><p>命令：ASCIIquarium<br>How it will be to get an aquarium in terminal.<br>怎样才能在终端获得一个水族馆？<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ apt-get install libcurses-perl</span><br><span class="line">root@mimi:~ <span class="built_in">cd</span> /tmp </span><br><span class="line">root@mimi:~ wget http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/Term-Animation-2.4.tar.gz</span><br><span class="line">root@mimi:~ tar -zxvf Term-Animation-2.4.tar.gz</span><br><span class="line">root@mimi:~ <span class="built_in">cd</span> Term-Animation-2.4/</span><br><span class="line">root@mimi:~ perl Makefile.PL &amp;&amp;  make &amp;&amp;   make <span class="built_in">test</span></span><br><span class="line">root@mimi:~ make install</span><br></pre></td></tr></table></figure></p>
+<p>Now Download and Install ASCIIquarium. 现在下载并安装ASCIIquarium。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ <span class="built_in">cd</span> /tmp</span><br><span class="line">root@mimi:~ wget http://www.robobunny.com/projects/asciiquarium/asciiquarium.tar.gz</span><br><span class="line">root@mimi:~ tar -zxvf asciiquarium.tar.gz</span><br><span class="line">root@mimi:~ <span class="built_in">cd</span> asciiquarium_1.1/</span><br><span class="line">root@mimi:~ cp asciiquarium /usr/<span class="built_in">local</span>/bin</span><br><span class="line">root@mimi:~ chmod 0755 /usr/<span class="built_in">local</span>/bin/asciiquarium</span><br></pre></td></tr></table></figure></p>
+<p>And finally run “asciiquarium” or “/usr/local/bin/asciiquarium” in terminal without quotes and be a part of magic that will be taking place in front of your eyes.<br>最后在终端中运行asciiquarium，水族馆便展现在你面前。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ asciiquarium</span><br></pre></td></tr></table></figure></p>
+<h2 id="funny-manpages"><a href="#funny-manpages" class="headerlink" title="funny manpages"></a>funny manpages</h2><p>命令：funny<br>manpages First install “apt-get install funny-manpages” and then run man pages for the commands below. Some of them may be 18+, run at your own risk, they all are too funny.<br>首先安装”apt-get install funny-manpages”，然后为以下命令运行手册页。其中一些可能是18+，风险自负，他们都很滑稽。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">baby</span><br><span class="line">celibacy</span><br><span class="line">condom</span><br><span class="line">date</span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line">flame</span><br><span class="line">flog</span><br><span class="line">gong</span><br><span class="line">grope, egrope, fgrope </span><br><span class="line">party </span><br><span class="line">rescrog </span><br><span class="line">rm</span><br><span class="line">rtfm</span><br><span class="line">tm</span><br><span class="line">uubp</span><br><span class="line">woman (undocumented)</span><br><span class="line">xkill </span><br><span class="line">xlart </span><br><span class="line">sex </span><br><span class="line">strfry</span><br><span class="line">root@mimi:~ man baby</span><br></pre></td></tr></table></figure></p>
+<h2 id="Linux-Tweaks"><a href="#Linux-Tweaks" class="headerlink" title="Linux Tweaks"></a>Linux Tweaks</h2><p>恶搞Linux<br>It is time for you to have some one liner tweaks.<br>现在是时候来玩玩Linux的报错机制了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ world</span><br><span class="line">bash: world: not found</span><br><span class="line">root@mimi:~ touch girls\ boo** </span><br><span class="line">touch: cannot touch `girls boo**<span class="string">': Permission denied</span></span><br><span class="line"><span class="string">root@mimi:~ nice man woman</span></span><br><span class="line"><span class="string">No manual entry for woman</span></span><br><span class="line"><span class="string">root@mimi:~ ^How did the sex change operation go?^ </span></span><br><span class="line"><span class="string">bash: :s^How did the sex change operation go?^ : substitution failed</span></span><br><span class="line"><span class="string">root@mimi:~ %blow </span></span><br><span class="line"><span class="string">bash: fg: %blow: no such job</span></span><br><span class="line"><span class="string">root@mimi:~ make love </span></span><br><span class="line"><span class="string">make: *** No rule to make target `love'</span>.  Stop.</span><br><span class="line">$ [ whereis my brain?                    </span><br><span class="line">sh: 2: [: missing ]</span><br><span class="line">% man: why did you get a divorce? </span><br><span class="line">man:: Too many arguments.</span><br><span class="line">% !:say, what is saccharine? </span><br><span class="line">Bad substitute.</span><br><span class="line">server@localhost:/srv$ \(- </span><br><span class="line">bash: (-: <span class="built_in">command</span> not found</span><br></pre></td></tr></table></figure></p>
+<h2 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h2><p>命令：curl<br>curl用于互联网传输数据，支持多种协议。通过以下命令可以查看天气：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ curl -4 http://wttr\.<span class="keyword">in</span></span><br></pre></td></tr></table></figure></p>
+<p>Linux is sexy: who | grep -i blonde | date; cd ~; unzip; touch;<br>strip; finger; mount; gasp; yes; uptime; umount; sleep (If you know what<br>i mean) There are certain other but these don’t work on all the system<br>and hence not included in this article. Some of them are man dog ,<br>filter, banner, etc.<br>注：这篇文章使用的apt-get适用于deb包管理式的操作系统，如果你使用了其他Linux发行版、macOS，或使用了其他包管理工具（例如yum或者brew），可能无法找到所有这些命令。</p>
+    </div>
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>🍭支持一根棒棒糖！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="张书樵 微信支付"/>
+        <p>微信支付</p>
+      </div>
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝"/>
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+      </div>
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>张书樵</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://zhangshuqiao.org/2018-05/有趣的Linux命令行工具/" title="有趣的Linux命令行工具">https://zhangshuqiao.org/2018-05/有趣的Linux命令行工具/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+      </div>
+    <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+        </div>
+        <div class="post-widgets">
+              <div>
+                <span class="btn" style="font-size: 18px;">
+                  <i class="fa fa-star-o" aria-hidden="true"></i> 收藏
+                </span>
+              </div>
+                <span class="post-meta-divider">|</span>
+              <div id="needsharebutton-postbottom">
+                <span class="btn" style="font-size: 18px;">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i> 分享
+                </span>
+              </div>
+                <span class="post-meta-divider">|</span>
+              <div>
+                <span class="btn" style="font-size: 18px;">
+                  <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 点赞
+                </span>
+              </div>
+        </div>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/2018-05/Linux命令行常用快捷键/" rel="next" title="Linux命令行常用快捷键">
+                <i class="fa fa-chevron-left"></i> Linux命令行常用快捷键
+              </a>
+          </div>
+          <span class="post-nav-divider"></span>
+          <div class="post-nav-prev post-nav-item">
+              <a href="/2018-05/Nginx配置SSL/" rel="prev" title="Nginx配置SSL">
+                Nginx配置SSL <i class="fa fa-chevron-right"></i>
+              </a>
+          </div>
+        </div>
+    </footer>
+  </div>
+  </article>
+  </div>
+          </div>
+    <div class="comments" id="comments">
+    </div>
+        </div>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <img class="site-author-image" itemprop="image"
+                src="/images/icon.gif"
+                alt="张书樵" />
+              <p class="site-author-name" itemprop="name">张书樵</p>
+              <p class="site-description motion-element" itemprop="description">钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯</p>
+          </div>
+            <nav class="site-state motion-element">
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives/">
+                    <span class="site-state-item-count">76</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+            </nav>
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-institution"></i>
+                主站
+              </div>
+              <ul class="links-of-blogroll-list">
+                  <li class="links-of-blogroll-item">
+                    <a href="https://galaxymimi.com" title="Galaxy Mimi" target="_blank">Galaxy Mimi</a>
+                  </li>
+              </ul>
+            </div>
+        </div>
+      </section>
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sl-Steam-Locomotive"><span class="nav-number">1.</span> <span class="nav-text">sl (Steam Locomotive)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#telnet"><span class="nav-number">2.</span> <span class="nav-text">telnet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fortune"><span class="nav-number">3.</span> <span class="nav-text">fortune</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rev-Reverse"><span class="nav-number">4.</span> <span class="nav-text">rev (Reverse)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#factor"><span class="nav-number">5.</span> <span class="nav-text">factor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#script"><span class="nav-number">6.</span> <span class="nav-text">script</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cowsay"><span class="nav-number">7.</span> <span class="nav-text">Cowsay</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yes"><span class="nav-number">8.</span> <span class="nav-text">yes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toilet"><span class="nav-number">9.</span> <span class="nav-text">toilet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cmatrix"><span class="nav-number">10.</span> <span class="nav-text">cmatrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oneko"><span class="nav-number">11.</span> <span class="nav-text">oneko</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fork-Bomb"><span class="nav-number">12.</span> <span class="nav-text">Fork Bomb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while"><span class="nav-number">13.</span> <span class="nav-text">while</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#espeak"><span class="nav-number">14.</span> <span class="nav-text">espeak</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aafire"><span class="nav-number">15.</span> <span class="nav-text">aafire</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bb"><span class="nav-number">16.</span> <span class="nav-text">bb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#url"><span class="nav-number">17.</span> <span class="nav-text">url</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ASCIIquarium"><span class="nav-number">18.</span> <span class="nav-text">ASCIIquarium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#funny-manpages"><span class="nav-number">19.</span> <span class="nav-text">funny manpages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-Tweaks"><span class="nav-number">20.</span> <span class="nav-text">Linux Tweaks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#curl"><span class="nav-number">21.</span> <span class="nav-text">curl</span></a></li></ol></div>
+          </div>
+        </section>
+      <!--/noindex-->
+    </div>
+  </aside>
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张书樵</span>
+</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a></div>
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+</div>
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+          <span id="scrollpercent"><span>0</span>%</span>
+      </div>
+  </div>
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+    <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
+    <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
+    <script type="text/javascript" src="/lib/custom.js"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="/lib/Valine.min.js"></script>
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: false,
+        appId: '2L2N30Kyi18K1DjU0qxMGALD-gzGzoHsz',
+        appKey: 'Bwrec8XDJon2rocQ5ScFcFWl',
+        placeholder: '您可以在这里输入评论哟～',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'12' || 10,
+        visitor: false
+    });
+  </script>
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                content = unescapeHtml(content);
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+                // show search results
+                if (isMatch) {
+                  // sort index by position of keyword
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+                  // merge hits into slices
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+                      // move to next position of hit
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+                  // sort slices in content by search text's count and hits' count
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+                  // select top N slices in content
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+                  // highlight title and content
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+                  var resultItem = '';
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+          proceedsearch();
+        }
+      });
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+  <script>
+      pbOptions = {};
+          pbOptions.iconStyle = "box";
+          pbOptions.boxForm = "horizontal";
+          pbOptions.position = "middleCenter";
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+  <script src="https://cdn.bootcss.com/pangu/3.3.0/pangu.min.js"></script>
+  <script type="text/javascript">pangu.spacingPage();</script>
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+</body>
+</html>

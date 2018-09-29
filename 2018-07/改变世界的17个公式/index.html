@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+  <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link href="https://cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+  <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css" />
+  <meta name="description" content="这篇文章翻译自：17 Equations That Changed the World In 2012, Mathematician Ian Stewart came out with an excellent and deeply researched book titled “In Pursuit of the Unknown: 17 Equations That Changed the Wo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="改变世界的17个公式">
+<meta property="og:url" content="https://zhangshuqiao.org/2018-07/改变世界的17个公式/index.html">
+<meta property="og:site_name" content="米米的博客">
+<meta property="og:description" content="这篇文章翻译自：17 Equations That Changed the World In 2012, Mathematician Ian Stewart came out with an excellent and deeply researched book titled “In Pursuit of the Unknown: 17 Equations That Changed the Wo">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-19T07:42:28.850Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="改变世界的17个公式">
+<meta name="twitter:description" content="这篇文章翻译自：17 Equations That Changed the World In 2012, Mathematician Ian Stewart came out with an excellent and deeply researched book titled “In Pursuit of the Unknown: 17 Equations That Changed the Wo">
+  <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml" />
+  <link rel="canonical" href="https://zhangshuqiao.org/2018-07/改变世界的17个公式/"/>
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>改变世界的17个公式 | 米米的博客</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-108155018-2');
+</script>
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">米米的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">做了一点微小的工作</p>
+  </div>
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />关于</a>
+  </li>
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+          <li class="menu-item menu-item-friends">
+    <a href="/friends/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />友情链接</a>
+  </li>
+        <li class="menu-item menu-item-search">
+            <a href="javascript:;" class="popup-trigger">
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+    </ul>
+    <div class="site-search">
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+    </div>
+</nav>
+</div>
+    </header>
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+  <div id="posts" class="posts-expand">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/改变世界的17个公式/">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">改变世界的17个公式
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <span title="创建时间：2018-07-18 11:53:28" itemprop="dateCreated datePublished" datetime="2018-07-18T11:53:28+08:00">2018-07-18</span>
+          </span>
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-07/改变世界的17个公式/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-07/改变世界的17个公式/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-file-o"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">23k</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">21 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+        <p>这篇文章翻译自：<a href="http://www.businessinsider.com/equations-that-changed-the-world-2016-3" target="_blank" rel="noopener">17 Equations That Changed the World</a></p>
+<p>In 2012, Mathematician Ian Stewart came out with an excellent and deeply researched book titled “In Pursuit of the Unknown: 17 Equations That Changed the World.”<br>在2012年，数学家斯图尔特（Ian Stewart）出版了一本精彩而深入研究的著作，名为《追寻未知：改变世界的17个公式》<br>His book takes a look at the most pivotal equations of all time, and puts them in a human, rather than technical context.<br>他的书着眼于有史以来最关键的方程式，并将它们置于普通人而非专业的背景中。<br>“Equations definitely can be dull, and they can seem complicated, but that’s because they are often presented in a dull and complicated way,” Stewart told Business Insider. “I have an advantage over school math teachers: I’m not trying to show you how to do the sums yourself.”<br>“方程式肯定会显得沉闷，而且它们看起来很复杂，但那是因为它们经常以这样的方式呈现，”斯图尔特告诉Business Insider。 “我比学校的数学老师更有优势：我不会试图告诉你如何自己算出它们。”<br>He explained that anyone can “appreciate the beauty and importance of equations without knowing how to solve them … The intention is to locate them in their cultural and human context, and pull back the veil on their hidden effects on history.”<br>他解释说，任何人都可以“欣赏方程式的美丽和重要性，而不去知道如何解它们……目的是将它们置于文化和人文环境中，并揭开它们对历史隐藏效应的面纱。”<br>Stewart continued that “equations are a vital part of our culture. The stories behind them — the people who discovered or invented them and the periods in which they lived — are fascinating.”<br>斯图尔特继续说道，“方程式是我们文化的重要组成部分。他们背后的故事——发现或发明它们的人以及他们生活的时期——都很吸引人。”<br>Here are 17 equations that have changed the world:<br>以下是改变世界的17个方程式：<br>Max Nisen contributed to an earlier version of this post.<br>Max Nisen为本文的早期版本做出了贡献。</p>
+<h2 id="The-Pythagorean-Theorem"><a href="#The-Pythagorean-Theorem" class="headerlink" title="The Pythagorean Theorem"></a>The Pythagorean Theorem</h2><p>$$a^{2}+b^{2}=c^{2}$$<br>Pythagoras, 530 BC<br>What does it mean? The square of the hypotenuse of a right triangle is equal to the sum of the squares of its legs.<br>作用：直角三角形的斜边的平方等于其直角边的平方和。<br>History: Though attributed to Pythagoras, it is not certain that he was the first person to prove it. The first clear proof came from Euclid, and it is possible the concept was known 1,000 years before Pythagoras by the Babylonians.<br>历史：虽然认为毕达哥拉斯（Pythagoras）发现了这个公式，但不确定他是否是第一个证明它的人。第一个明确的证明来自欧几里得，而这个概念可能是在毕达哥拉斯之前1000年就被巴比伦人知道了。<br>Importance: The equation is at the core of much of geometry, links it with algebra, and is the foundation of trigonometry. Without it, accurate surveying, mapmaking, and navigation would be impossible.<br>重要性：勾股定理是几何的核心，它与代数联系起来，是三角学的基础。没有它，准确的测量、地图制作和导航将是不可能的。<br>In terms of pure math, the Pythagorean Theorem defines normal, Euclidean plane geometry. For example, a right triangle drawn on the surface of a sphere like the Earth doesn’t necessarily satisfy the theorem.<br>在纯数学方面，毕达哥拉斯定理定义了正常的欧几里德平面几何。例如，在像地球一样的球体表面上绘制的直角三角形不一定满足该定理。<br>Modern use: Triangulation is used to this day to pinpoint relative location for GPS navigation.<br>现代用途：今天使用三角测量来确定GPS导航的相对位置。</p>
+<a id="more"></a>
+<h2 id="The-logarithm-and-its-identities"><a href="#The-logarithm-and-its-identities" class="headerlink" title="The logarithm and its identities"></a>The logarithm and its identities</h2><p>$$logxy=logx+logy$$<br>John Napier, 1610<br>What does it mean? You can multiply numbers by adding related numbers.<br>作用：您可以将两个数字的对数相加来计算乘积。<br>History: The initial concept was discovered by the Scottish Laird John Napier of Merchiston in an effort to make the multiplication of large numbers, then incredibly tedious and time consuming, easier and faster. It was later refined by Henry Briggs to make reference tables easier to calculate and more useful.<br>历史：最初的概念是由苏格兰爱丁堡附近的小镇梅奇斯顿的地主约翰·纳皮尔（John Napier）发现的，旨在使大数乘法——当时令人难以置信的繁琐和耗时，变得更容易和更快。后来Henry Briggs对其进行了改进，使参考表更容易计算，更有用。<br>Importance: Logarithms were revolutionary, making calculation faster and more accurate for engineers and astronomers. That’s less important with the advent of computers, but they’re still an essential to scientists.<br>重要性：对数是革命性的，使工程师和天文学家的计算更快，更准确。随着计算机的出现，这一点就不那么重要了，但它们对科学家来说仍然是必不可少的。<br>Modern use: Logarithms, and the related exponential functions, are used to model everything from compound interest to biological growth to radioactive decay.<br>现代用途：对数和指数函数用于为从复利到生物生长到放射性衰变的所有事物建模。</p>
+<h2 id="Calculus"><a href="#Calculus" class="headerlink" title="Calculus"></a>Calculus</h2><p>$$\frac{df}{dt}=\lim_{h \to 0}=\frac{f(t+h)-f(t)}{h}$$<br>Isaac Newton, 1668<br>What does it mean? Allows the calculation of an instantaneous rate of change.<br>作用：允许对瞬时变化率的计算。<br>History: Calculus as we currently know it was described around the same time in the late 17th century by Isaac Newton and Gottfried Leibniz. There was a lengthy debate over plagiarism and priority which may never be resolved. We use the leaps of logic and parts of the notation of both men today.<br>历史：我们现在所知道的微积分是在17世纪晚期由艾萨克·牛顿（Isaac Newton）和戈特弗里德·莱布尼兹（Gottfried Leibniz）几乎同时描述的。关于剽窃和谁先提出微积分的争论持续了很久，可能永远无法解决。我们今天使用的正是两人的逻辑推导和部分符号系统。<br>Importance: According to Stewart, “More than any other mathematical technique, it has created the modern world.” Calculus is essential in our understanding of how to measure solids, curves, and areas. It is the foundation of many natural laws, and the source of differential equations.<br>重要性：根据斯图尔特的说法，“它比任何其他数学技术都更能创造现代世界。”在我们理解如何测量固体，曲线和面积时，微积分是必不可少的。它是许多自然法则的基础，也是微分方程的来源。<br>Modern use: Any mathematical problem where an optimal solution is required. Essential to medicine, economics, physics, engineering, and computer science.<br>现代用途：需要最佳解决方案的任何数学问题。对医学，经济学，物理学，工程学和计算机科学至关重要。</p>
+<h2 id="Newton’s-universal-law-of-gravitation"><a href="#Newton’s-universal-law-of-gravitation" class="headerlink" title="Newton’s universal law of gravitation"></a>Newton’s universal law of gravitation</h2><p>$$F=G\frac{m_1 m_2}{r^2}$$<br>Isaac Newton, 1687<br>What does it mean? Calculates the force of gravity between two objects.<br>作用：计算两个物体之间的引力大小。<br>History: Isaac Newton derived his laws based on earlier astronomical and mathematical work by Johannes Kepler. He also used, and possibly plagiarized the work of Robert Hooke.<br>历史：牛顿根据开普勒先前的天文学和数学工作得出了他的定律。他也使用了（也可能是抄袭）罗伯特·胡克的工作。<br>Importance: Used techniques of calculus to describe how the world works. Even though it was later supplanted by Einstein’s theory of relativity, it is still essential for a practical description of how objects in space, like stars, planets, and human-made spacecraft, interact with each other. We use it to this day to design orbits for satellites and probes.<br>重要性：使用微积分技术来描述世界是如何运作的。尽管它后来被爱因斯坦的相对论所取代，但对于空间中的物体如恒星，行星和人造宇宙飞船如何相互作用仍然是必不可少的。我们今天用它来设计卫星和探测器的轨道。<br>Philosophically, Newton’s law is important because it describes how gravity works everywhere, from a ball falling to the ground on Earth to the evolution of galaxies and the universe as a whole. While we take the idea of universal laws for granted today, in earlier eras the idea that the terrestrial and celestial worlds shared the same properties was revolutionary.<br>从哲学上讲，牛顿定律很重要，因为它描述了引力如何在任何地方起作用——从地球上的物体掉在地上，到星系和整个宇宙的演化。虽然我们今天认为普适的物理定律是理所当然的，但在早期的时代，地球和天体拥有相同属性的想法是革命性的。<br>Modern use: Although, as mentioned above, for practical uses Newton’s law has been augmented by Einstein’s theories, the basic idea of Newtonian gravity is still a useful approximation for how things behave in space.<br>现代用途：尽管如上所述，对于实际应用，牛顿定律已经被爱因斯坦的理论所增强，但牛顿引力的基本思想仍然是对事物在空间中表现的有用近似。</p>
+<h2 id="Complex-numbers"><a href="#Complex-numbers" class="headerlink" title="Complex numbers"></a>Complex numbers</h2><p>$$i^2=-1$$<br>Euler, 1750<br>What does it mean? Mathematicians can expand our idea of what numbers are by introducing the square roots of negative numbers.<br>作用：数学家可以通过引入负数的平方根来扩展我们对数字的概念。<br>History: Imaginary numbers were originally posited by famed gambler/mathematician Girolamo Cardano, then expanded by Rafael Bombelli and John Wallis. They still existed as a peculiar, but essential problem in math until William Hamilton described this definition.<br>历史：虚数最初由著名的赌徒/数学家Girolamo Cardano提出，然后由Rafael Bombelli和John Wallis扩展。在威廉·汉密尔顿描述这个定义之前，它们仍然是数学中一个特殊的但必不可少的问题。<br>The imaginary and complex numbers are mathematically very elegant. Algebra works perfectly the way we want it to — any equation has a complex number solution, a situation that is not true for the real numbers: \(x^2 + 4 = 0\) has no real number solution, but it does have a complex solution: the square root of -4, or 2i. Calculus can be extended to the complex numbers, and by doing so, we find some amazing symmetries and properties of these numbers.<br>虚数和复数在数学上非常优雅。代数以我们想要的方式完美地工作——任何方程都有一个复数解，而却不一定有实数解：\(x^2 + 4 = 0\)没有实数解，但它确实有一个复杂的解决方案：-4的平方根或2i。微积分可以扩展到复数，通过这样做，我们发现了这些数字的一些惊人的对称性和属性。<br>Importance: According to Stewart “…. most modern technology, from electric lighting to digital cameras could not have been invented without them.” The extension of calculus to the complex numbers, a branch of math called “complex analysis,” is essential to understanding electrical systems and a variety of modern data processing algorithms.<br>重要性：根据斯图尔特的说法“……最现代的技术，从电子照明到数码相机，如果没有它们，就无法发明。”微积分扩展到复数，这是一个称为“复分析”的数学分支，对于理解电气系统和各种现代数据处理算法至关重要。<br>Modern use: Used broadly in electrical engineering and mathematical theory.<br>现代用途：广泛用于电气工程和数学理论。</p>
+<h2 id="Euler’s-formula-for-polyhedra"><a href="#Euler’s-formula-for-polyhedra" class="headerlink" title="Euler’s formula for polyhedra"></a>Euler’s formula for polyhedra</h2><p>$$V-E+F=2$$<br>Euler, 1751<br>What does it mean? Describes a numerical relationship that is true of all solid shapes of a particular type.<br>作用：描述了对特定类型的所有简单多面体都适用的数字关系。<br>History: This was developed by the great 18th century mathematician Leonhard Euler.Polyhedra are the three-dimensional versions of polygons, like the cube to the right. The corners of a polyhedron are called its vertices, the lines connecting the vertices are its edges, and the polygons covering it are its faces.<br>历史：这是由伟大的18世纪数学家莱昂哈德·欧拉（Leonhard Euler）开发的。Polyhedra，即多面体，是多边形的三维版本，它的角被称为顶点，连接顶点的线是它的边，覆盖它的多边形是它的面。<br>A cube has 8 vertices, 12 edges, and 6 faces. If I add the vertices and faces together, and subtract the edges, I get 8 + 6 - 12 = 2.<br>立方体有8个顶点，12个边和6个面。如果我将顶点和面加在一起，并减去边，我得到8 + 6 - 12 = 2。<br>Euler’s formula states that, as long as your polyhedron is somewhat well behaved, if you add the vertices and faces together, and subtract the edges, you will always get 2. This will be true whether your polyhedron has 4, 8, 12, 20, or any number of faces.<br>Euler的公式表明，只要你的多面体是常规的，如果你将顶点和面加在一起，并减去边，你将总是得到2。无论你的多面体是4、8、12、20还是任何数量的面数，都是如此。<br>Importance: Fundamental to the development of topology, which extends geometry to any continuous surface.<br>重要性：拓扑开发的基础，将几何扩展到任何连续的表面。<br>Modern use: Topology is used to understand the behavior and function of DNA, and it is an underlying part of the mathematical tool kit used to understand networks like social media and the internet.<br>现代用途：拓扑用于理解DNA的行为和功能，它是用于理解社交媒体和互联网等网络的数学工具包的基础部分。</p>
+<h2 id="The-normal-distribution"><a href="#The-normal-distribution" class="headerlink" title="The normal distribution"></a>The normal distribution</h2><p>$$\Phi(x)=\frac{1}{\sqrt{2\pi\rho}}e^{\frac{(x-\mu)^2}{2\rho^{2}}}$$<br>C.F.Gauss, 1810<br>What does it mean? Defines the standard normal distribution, a bell shaped curve in which the probability of observing a point is greatest near the average, and declines rapidly as one moves away.<br>作用：定义了标准正态分布，一种钟形曲线，其中概率在平均值附近最大，并在离开平均值处迅速下降。<br>History: The initial work was by Blaise Pascal, but the distribution came into its own with Bernoulli. The bell curve as we currently comes from Belgian mathematician Adolphe Quetelet.<br>历史：最初的工作是由帕斯卡（Blaise Pascal）完成的，但是伯努利发扬了它。我们目前使用的来自比利时数学家Adolphe Quetelet。<br>Importance: The equation is the foundation of modern statistics. Science and social science would not exist in their current form without it. Statistical experiment design relies on the properties of the normal curve, and how those properties relate to errors that can occur when taking a random sample.<br>重要性：这个式子是现代统计学的基础。没有它，科学和社会科学就不会以现在的形式存在。统计实验设计依赖于正态曲线的属性，以及这些属性如何与采用随机样本时可能发生的错误相关。<br>Modern use: Used to determine whether drugs are sufficiently effective in clinical trials.<br>现代用途：用于确定药物在临床试验中是否足够有效。</p>
+<h2 id="The-wave-equation"><a href="#The-wave-equation" class="headerlink" title="The wave equation"></a>The wave equation</h2><p>$$\frac{\partial^2 u}{\partial t^2}=c^2\frac{\partial^2 u}{\partial x^2}$$<br>J.d’Almbert, 1746<br>What does it mean? A differential equation that describes the behavior of waves, like the behavior of a vibrating violin string.<br>作用：描述波动行为的微分方程，如振动的小提琴弦的行为。<br>History: The mathematicians Daniel Bournoulli and Jean D’Alembert were the first to describe this relationship in the 18th century, albeit in slightly different ways.<br>历史：数学家伯努利（Daniel Bournoulli）和达朗贝尔（Jean D’Alembert）是最初在18世纪描述这种关系的人，尽管方式略有不同。<br>Importance: The behavior of waves generalizes to the way sound works, how earthquakes happen, and the behavior of the ocean.<br>重要性：波动的行为概括了声音的产生，地震的发生方式以及海洋的行为。<br>The techniques developed to solve the wave equation have been very useful in solving similar types of equations as well.<br>为解决波动方程而开发的技术在解决相似类型的方程方面也非常有用。<br>Modern use: Oil companies set off explosives, then read data from the ensuing sound waves to predict geological formations.<br>现代用途：石油公司引爆炸药，然后从随后的声波中读取数据以预测地质构造。</p>
+<h2 id="The-Fourier-transform"><a href="#The-Fourier-transform" class="headerlink" title="The Fourier transform"></a>The Fourier transform</h2><p>$$f(\omega)=\int_{-\infty}^{+\infty}f(x)e^{-2\pi ix\omega}dx$$<br>J. Fourier, 1822<br>What does it mean? Describes patterns in time as a function of frequency.<br>作用：描述作为频率函数的时间模式。<br>History: Joseph Fourier discovered the equation, which extended from his famous solution to a differential equation describing how heat flows, and the previously described wave equation.<br>历史：约瑟夫·傅立叶（Joseph Fourier）发现了这个等式，这是从他著名的热传导方程，以及前面的波动方程的解决方案所扩展得到的。<br>Importance: The equation allows for complex wave patterns, like music, speech, or images, to be broken up, cleaned up, and analyzed. This is essential in many types of signal analysis.<br>重要性：该等式允许分解、清理和分析复杂的波形图案，如音乐，语音或图像。这在许多类型的信号分析中都是必不可少的。<br>Modern use: Used to compress information for the JPEG image format and discover the structure of molecules.<br>现代用途：用于压缩JPEG图像格式的信息并发现分子的结构。</p>
+<h2 id="The-Navier-Stokes-equations"><a href="#The-Navier-Stokes-equations" class="headerlink" title="The Navier-Stokes equations"></a>The Navier-Stokes equations</h2><p>$$\rho(\frac{\partial \vec{v}}{\partial t}+\vec{v}\cdot \nabla \vec{v})=-\nabla p+\nabla \cdot \stackrel{\rightarrow \rightarrow}{\mathbb{T}}+\rho\vec{f}$$<br>C.Navier, G.Stokes, 1845<br>What does it mean? The Navier-Stokes equations are the fundamental physical equation that describes how fluids work. The left side is the acceleration of a small amount of fluid, the right indicates the forces that act upon it.<br>作用：纳维尔-斯托克斯（Navier-Stokes）方程是描述流体如何运动的基本物理方程。左侧是少量液体的加速度，右侧表示作用在其上的力。<br>History: Leonhard Euler made the first attempt at modeling fluid movement. French engineer Claude-Louis Navier and Irish mathematician George Stokes made the leap to the model still used today.<br>历史：莱昂哈德·欧拉首次尝试对流体运动进行建模。法国工程师纳维尔（Claude-Louis Navier）和爱尔兰数学家斯托克斯（George Stokes）创建了今天仍在使用的模型，实现了质的飞跃。<br>Importance: Once computers became powerful enough to approximately solve this equation, it opened up a complex and very useful field of physics. It is particularly useful in making vehicles more aerodynamic.<br>重要性：一旦计算机变得强大到足以大致解决这个等式，它就开辟了一个复杂且非常有用的物理领域。它特别适用于使车辆设计得更具空气动力学性能。<br>While we can use modern computers to make practical approximate simulations of fluid dynamics that are useful in engineering, finding a mathematically exact solution (or even knowing whether or not an exact solution exists in all cases) is still an open question, one whose answer is attached to a million-dollar prize.<br>虽然我们可以使用现代计算机对工程中有用的流体动力学进行实际的近似模拟，但找到一个数学上精确的解决方案（或者甚至知道在所有情况下是否存在精确解决方案）仍然是一个悬而未决的问题，它被悬赏了一百万美元的奖金。<br>Modern use: Among other things, allowed for the development of modern passenger jets.<br>现代用途：现代客机的发展离不开它。</p>
+<h2 id="Maxwell’s-equations"><a href="#Maxwell’s-equations" class="headerlink" title="Maxwell’s equations"></a>Maxwell’s equations</h2><p>$$\nabla\cdot\vec{E} = \frac{\rho}{\epsilon_0}$$<br>$$\nabla\cdot\vec{B} = 0 $$<br>$$\nabla\times\vec{E} = -\frac{\partial B}{\partial t} $$<br>$$\nabla\times\vec{B} = \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)$$<br>J.C.Maxwell, 1865<br>What does it mean? Maps out the relationship between electric and magnetic fields.<br>作用：描述了电场和磁场之间的关系。<br>History: Michael Faraday did pioneering work on the connection between electricity and magnetism, and James Clerk Maxwell translated it into these equations. Maxwell’s equations were for classical electromagnetism what Newton’s laws of motion were for classical mechanics.<br>历史：迈克尔·法拉第（Michael Faraday）在电力和磁力之间的联系方面做了开创性的工作，而詹姆斯·克拉克斯·麦克斯韦（James Clerk Maxwell）将它们写入了方程组。麦克斯韦方程组用于经典电磁学，而牛顿的运动定律是经典力学的。<br>Importance: Helped understand electromagnetic waves, helping to create most modern electrical and electronic technology.<br>重要性：帮助了解电磁波，帮助创造了最现代化的电气和电子技术。<br>Modern use: Radar, television, and modern communications.<br>现代用途：雷达，电视和现代通讯。</p>
+<h2 id="Second-law-of-thermodynamics"><a href="#Second-law-of-thermodynamics" class="headerlink" title="Second law of thermodynamics"></a>Second law of thermodynamics</h2><p>$$dS\ge0$$<br>L.Boltzmann, 1874<br>What does it mean? Energy and heat dissipate over time.<br>作用：孤立系统的熵随着时间的推移而增加。<br>History: Sadi Carnot first posited that nature does not have reversible processes. Mathematician Ludwig Boltzmann extended the law, and William Thomson formally stated it.<br>历史：萨迪·卡诺（Sadi Carnot）首先假定大自然没有可逆的过程。数学家玻尔兹曼（Ludwig Boltzmann）扩展了这一定律，威廉·汤姆森（William Thomson）正式声明了这一点。<br>Importance: Essential to our understanding of energy and the universe via the concept of entropy. Thermodynamic entropy is, roughly speaking, a measure of how disordered a system is. A system that starts out in an ordered, uneven state — say, a hot region next to a cold region — will always tend to even out, with heat flowing from the hot area to the cold area until evenly distributed.<br>重要性：通过熵的概念对能量和宇宙的理解是必不可少的。粗略地说，热力学熵是衡量系统混乱程度的一种方法。一个以有序，不均匀状态开始的系统——比如一个寒冷地区旁边的炎热区域——将始终趋于均匀，热量从热区流向冷区直到均匀分布。<br>Modern use: Thermodynamics underlies much of our understanding of chemistry and is essential in building any kind of power plant or engine.<br>现代用途：热力学是我们对化学的理解的基础，对于建造任何类型的发电厂或发动机至关重要。</p>
+<h2 id="Einstein’s-theory-of-relativity"><a href="#Einstein’s-theory-of-relativity" class="headerlink" title="Einstein’s theory of relativity"></a>Einstein’s theory of relativity</h2><p>$$E=mc^2$$<br>Einstein, 1905<br>What does it mean? Energy and matter are two sides of the same coin.<br>作用：能量和物质是同一枚硬币的两面。<br>History: The genesis of Einstein’s equation was an experiment by Albert Michelson and Edward Morley that proved light did not move in a Newtonian manner in comparison to changing frames of reference. Einstein followed up on this insight with his famous papers on special relativity (1905) and general relativity (1915).<br>历史：爱因斯坦质能方程的起源是艾伯特·迈克尔逊和爱德华·莫雷的实验，他们证明光相对变化的参考系没有以牛顿预言的方式运动。爱因斯坦用他关于狭义相对论（1905）和广义相对论（1915）的着名论文跟进了这一见解。<br>Special relativity brought in ideas like the speed of light being a universal speed limit and the passage of time being different for people moving at different speeds.<br>狭义相对论带来了诸如光速是宇宙中速度上限的想法，以及时间的流逝对于以不同速度运动的人来说是不同的。<br>General relativity describes gravity as a curving and folding of space and time themselves, and was the first major change to our understanding of gravity since Newton’s law. General relativity is essential to our understanding of the origins, structure, and ultimate fate of the universe.<br>广义相对论将重力描述为空间和时间本身的弯曲和折叠，并且是自牛顿定律以来我们对引力理解的第一次重大改变。广义相对论对于我们理解宇宙的起源，结构和最终命运至关重要。<br>Importance: Probably the most famous equation in history. Completely changed our view of matter and reality.<br>重要性：可能是历史上最着名的等式。完全改变了我们对物质和现实的看法。<br>Modern use: Helped lead to nuclear weapons, and if GPS didn’t account for it, your directions would be off thousands of yards.<br>现代用途：质能方程是核武器制造的理论基础；而如果GPS没有考虑相对论，你的方向将偏离数千码。</p>
+<h2 id="The-Schrodinger-equation"><a href="#The-Schrodinger-equation" class="headerlink" title="The Schrödinger equation"></a>The Schrödinger equation</h2><p>$$i\hbar\frac{\partial}{\partial t}\Psi=H\Psi$$<br>E.Schrodinger, 1927<br>What does it mean? This is the main equation in quantum physics. Models matter as a wave, rather than a particle.<br>作用：这是量子物理学的主要方程。模型的特性像波而非粒子。<br>History: Louis-Victor de Broglie pinpointed the dual nature of matter in 1924. The equation you see was derived by Erwin Schrödinger in 1927, building off of the work of physicists like Werner Heisenberg. It describes the way subatomic particles and atoms evolve over time.<br>历史：德布罗意（Louis-Victor de Broglie）在1924年确定了物质波粒二象性。你看到的等式是由薛定谔（Erwin Schrödinger）在1927年得出的，它建立了像海森堡（Werner Heisenberg）这样的物理学家的工作。它描述了亚原子粒子和原子随时间演变的方式。<br>Importance: Revolutionized the view of physics at small scales. The insight that particles at that level exist at a range of probable states was revolutionary.<br>重要性：在微观范围内彻底改变了物理学的观点。对于“微观状态下的粒子存在于一系列可能状态”的洞察是革命性的。<br>Modern quantum mechanics and general relativity are the two most successful scientific theories in history — all of the experimental observations we have made to date are entirely consistent with their predictions.<br>现代量子力学和广义相对论是历史上最成功的两个科学理论——我们迄今为止所做的所有实验观察都完全符合他们的预测。<br>Modern use: Quantum mechanics is necessary for most modern technology — nuclear power, semiconductor-based computers, and lasers are all built around quantum phenomena.<br>现代用途：量子力学是大多数现代技术所必需的——核能，半导体计算机和激光都是围绕量子现象建立的。</p>
+<h2 id="Shannon’s-information-theory"><a href="#Shannon’s-information-theory" class="headerlink" title="Shannon’s information theory"></a>Shannon’s information theory</h2><p>$$H=-\sum p(x)logp(x)$$<br>C.Shannon, 1949<br>What does it mean? Estimates the amount of data in a piece of code by the probabilities of its component symbols.<br>作用：通过其组件符号的确定性来估计一段代码中的数据量。<br>History: Developed by Bell Labs engineer Claude Shannon in the years after World War 2.<br>历史：由贝尔实验室工程师香农（Claude Shannon）在第二次世界大战后的几年中开发。<br>Importance: The equation given here is for Shannon information entropy. As with the thermodynamic entropy given above, this is a measure of disorder. In this case, it measures the information content of a message — a book, a JPEG picture sent on the internet, or anything that can be represented symbolically. The Shannon entropy of a message represents a lower bound on how much that message can be compressed without losing some of its content.<br>重要性：这里给出的等式是香农信息熵。与上面给出的热力学熵一样，这是一种无序的量度。在这种情况下，它测量消息的信息内容——书籍，在互联网上发送的JPEG图片，或者可以象征性地表示的任何内容。消息的香农熵表示该消息可被压缩多少而不会丢失其某些内容的下限。<br>Modern use: Shannon’s entropy measure launched the mathematical study of information, and his results are central to how we communicate over networks today.<br>现代用途：信息熵的测量推出了信息的数学研究，他的结果对于我们今天如何通过网络进行通信至关重要。</p>
+<h2 id="The-logistic-model-for-population-growth"><a href="#The-logistic-model-for-population-growth" class="headerlink" title="The logistic model for population growth"></a>The logistic model for population growth</h2><p>$$x_{t+1}=kx_t (1-x_t)$$<br>Robert May, 1975<br>What does it mean? Estimates the change in a population of creatures across generations with limited resources. Importantly, this equation can lead to chaotic behavior.<br>作用：估计资源有限的几代人生物群体的变化。重要的是，这个等式可能导致混沌的行为。<br>History: Robert May was the first to point out that this model of population growth could produce chaos in 1975. Important work by mathematicians Vladimir Arnold and Stephen Smale helped with the realization that chaos is a consequence of differential equations.</p>
+<p>历史：罗伯特·梅（Robert May）是第一个指出这种人口增长模式可能在1975年产生混沌的人。数学家弗拉基米尔·阿诺德和斯蒂芬·萨马​​尔的重要工作有助于认识到混沌是微分方程的结果。<br>For certain values of k, the map shows chaotic behavior: if we start at some particular initial value of x, the process will evolve one way, but if we start at another initial value, even one very very close to the first value, the process will evolve a completely different way.<br>对于k的某些值，地图显示混沌行为：如果我们从x的某个特定初始值开始，则该过程将以单向进化，但如果我们从另一个初始值开始，即使非常接近第一个值，过程将以完全不同的方式发展。<br>Importance: Helped in the development of chaos theory, which has completely changed our understanding of the way that natural systems work.<br>重要性：帮助混沌理论的发展，这完全改变了我们对自然系统工作方式的理解。<br>We see chaotic behavior — behavior sensitive to initial conditions — like this in many areas. Weather is a classic example — a small change in atmospheric conditions on one day can lead to completely different weather systems a few days later, most commonly captured in the idea of a butterfly flapping its wings on one continent causing a hurricane on another continent.<br>我们看到混乱行为——对初始条件敏感的行为——在许多领域都是如此。天气是一个典型的例子——一天大气条件的微小变化可能导致几天后完全不同的天气系统，最常见的是蝴蝶在一个大陆上扇动翅膀，就可能导致另一个大陆上的飓风。<br>Modern use: Used to model earthquakes and forecast the weather.<br>现代用途：用于模拟地震和预报天气。</p>
+<h2 id="The-Black–Scholes-model"><a href="#The-Black–Scholes-model" class="headerlink" title="The Black–Scholes model"></a>The Black–Scholes model</h2><p>$$\frac{1}{2}\sigma^2S^2\frac{\partial^2V}{\partial S^2}+rS\frac{\partial V}{\partial S}+\frac{\partial V}{\partial t}-rV=0$$<br>F.Black, M.Scholes, 1990<br>What does it mean? Prices a derivative based on the assumption that it is riskless and that there is no arbitrage opportunity when it is priced correctly.<br>作用：基于假设它是无风险的并且在正确定价时没有套利机会来定价衍生品。<br>History: Developed by Fischer Black and Myron Scholes, then expanded by Robert Merton. The latter two won the 1997 Nobel Prize in Economics for the discovery.<br>历史：由Fischer Black和Myron Scholes开发，然后由Robert Merton扩展。后两者因此获得了1997年诺贝尔经济学奖。<br>Importance: Helped create the now multi-trillion dollar derivatives market. It is argued that improper use of the formula (and its descendants) contributed to the financial crisis. In particular, the equation maintains several assumptions that do not hold true in real financial markets.<br>重要性：帮助创造了现在数万亿美元的衍生品市场。有人认为，不恰当地使用公式（及其推论）会导致金融危机。特别是，该等式保留了几个在实际金融市场中不成立的假设。<br>Modern use: Variants are still used to price most derivatives, even after the financial crisis.<br>现代用途：即使在金融危机之后，它的变体仍然被用来为大多数衍生品定价。</p>
+<p>购书链接：<a href="https://www.amazon.com/gp/product/0465029736" target="_blank" rel="noopener">17 Equations That Changed the World</a></p>
+    </div>
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>🍭支持一根棒棒糖！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="张书樵 微信支付"/>
+        <p>微信支付</p>
+      </div>
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝"/>
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+      </div>
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>张书樵</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://zhangshuqiao.org/2018-07/改变世界的17个公式/" title="改变世界的17个公式">https://zhangshuqiao.org/2018-07/改变世界的17个公式/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+      </div>
+    <footer class="post-footer">
+        <div class="post-widgets">
+              <div>
+                <span class="btn" style="font-size: 18px;">
+                  <i class="fa fa-star-o" aria-hidden="true"></i> 收藏
+                </span>
+              </div>
+                <span class="post-meta-divider">|</span>
+              <div id="needsharebutton-postbottom">
+                <span class="btn" style="font-size: 18px;">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i> 分享
+                </span>
+              </div>
+                <span class="post-meta-divider">|</span>
+              <div>
+                <span class="btn" style="font-size: 18px;">
+                  <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 点赞
+                </span>
+              </div>
+        </div>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/2018-07/手机淘宝的flexible方案/" rel="next" title="手机淘宝的flexible方案">
+                <i class="fa fa-chevron-left"></i> 手机淘宝的flexible方案
+              </a>
+          </div>
+          <span class="post-nav-divider"></span>
+          <div class="post-nav-prev post-nav-item">
+              <a href="/2018-07/在网页中添加Live2D看板娘/" rel="prev" title="在网页中添加Live2D看板娘">
+                在网页中添加Live2D看板娘 <i class="fa fa-chevron-right"></i>
+              </a>
+          </div>
+        </div>
+    </footer>
+  </div>
+  </article>
+  </div>
+          </div>
+    <div class="comments" id="comments">
+    </div>
+        </div>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <img class="site-author-image" itemprop="image"
+                src="/images/icon.gif"
+                alt="张书樵" />
+              <p class="site-author-name" itemprop="name">张书樵</p>
+              <p class="site-description motion-element" itemprop="description">钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯</p>
+          </div>
+            <nav class="site-state motion-element">
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives/">
+                    <span class="site-state-item-count">76</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+            </nav>
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-institution"></i>
+                主站
+              </div>
+              <ul class="links-of-blogroll-list">
+                  <li class="links-of-blogroll-item">
+                    <a href="https://galaxymimi.com" title="Galaxy Mimi" target="_blank">Galaxy Mimi</a>
+                  </li>
+              </ul>
+            </div>
+        </div>
+      </section>
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Pythagorean-Theorem"><span class="nav-number">1.</span> <span class="nav-text">The Pythagorean Theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-logarithm-and-its-identities"><span class="nav-number">2.</span> <span class="nav-text">The logarithm and its identities</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Calculus"><span class="nav-number">3.</span> <span class="nav-text">Calculus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Newton’s-universal-law-of-gravitation"><span class="nav-number">4.</span> <span class="nav-text">Newton’s universal law of gravitation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Complex-numbers"><span class="nav-number">5.</span> <span class="nav-text">Complex numbers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Euler’s-formula-for-polyhedra"><span class="nav-number">6.</span> <span class="nav-text">Euler’s formula for polyhedra</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-normal-distribution"><span class="nav-number">7.</span> <span class="nav-text">The normal distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-wave-equation"><span class="nav-number">8.</span> <span class="nav-text">The wave equation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Fourier-transform"><span class="nav-number">9.</span> <span class="nav-text">The Fourier transform</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Navier-Stokes-equations"><span class="nav-number">10.</span> <span class="nav-text">The Navier-Stokes equations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maxwell’s-equations"><span class="nav-number">11.</span> <span class="nav-text">Maxwell’s equations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Second-law-of-thermodynamics"><span class="nav-number">12.</span> <span class="nav-text">Second law of thermodynamics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Einstein’s-theory-of-relativity"><span class="nav-number">13.</span> <span class="nav-text">Einstein’s theory of relativity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Schrodinger-equation"><span class="nav-number">14.</span> <span class="nav-text">The Schrödinger equation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shannon’s-information-theory"><span class="nav-number">15.</span> <span class="nav-text">Shannon’s information theory</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-logistic-model-for-population-growth"><span class="nav-number">16.</span> <span class="nav-text">The logistic model for population growth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Black–Scholes-model"><span class="nav-number">17.</span> <span class="nav-text">The Black–Scholes model</span></a></li></ol></div>
+          </div>
+        </section>
+      <!--/noindex-->
+    </div>
+  </aside>
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张书樵</span>
+</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a></div>
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+</div>
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+          <span id="scrollpercent"><span>0</span>%</span>
+      </div>
+  </div>
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+    <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
+    <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
+    <script type="text/javascript" src="/lib/custom.js"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="/lib/Valine.min.js"></script>
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: false,
+        appId: '2L2N30Kyi18K1DjU0qxMGALD-gzGzoHsz',
+        appKey: 'Bwrec8XDJon2rocQ5ScFcFWl',
+        placeholder: '您可以在这里输入评论哟～',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'12' || 10,
+        visitor: false
+    });
+  </script>
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                content = unescapeHtml(content);
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+                // show search results
+                if (isMatch) {
+                  // sort index by position of keyword
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+                  // merge hits into slices
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+                      // move to next position of hit
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+                  // sort slices in content by search text's count and hits' count
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+                  // select top N slices in content
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+                  // highlight title and content
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+                  var resultItem = '';
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+          proceedsearch();
+        }
+      });
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+  <script>
+      pbOptions = {};
+          pbOptions.iconStyle = "box";
+          pbOptions.boxForm = "horizontal";
+          pbOptions.position = "middleCenter";
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+  <script src="https://cdn.bootcss.com/pangu/3.3.0/pangu.min.js"></script>
+  <script type="text/javascript">pangu.spacingPage();</script>
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+</body>
+</html>

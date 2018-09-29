@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+  <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link href="https://cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+  <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css" />
+  <meta name="description" content="最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。 使某个函数直接被运行在&amp;lt;script&amp;gt;标签中的代码会被浏览器顺序执行，而函数大括号{}内的代码，在函数被调用时才会执行。如果要直接运行一个匿名函数，可以使用!function(){}();，这样可以有效地避免全局变量名污染。如果需要调用getElementById之类的函数，务必把&amp;lt;script&amp;">
+<meta name="keywords" content="JavaScript,HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一些HTML与JS的小技巧">
+<meta property="og:url" content="https://zhangshuqiao.org/2017-10/一些HTML与JS的小技巧/index.html">
+<meta property="og:site_name" content="米米的博客">
+<meta property="og:description" content="最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。 使某个函数直接被运行在&amp;lt;script&amp;gt;标签中的代码会被浏览器顺序执行，而函数大括号{}内的代码，在函数被调用时才会执行。如果要直接运行一个匿名函数，可以使用!function(){}();，这样可以有效地避免全局变量名污染。如果需要调用getElementById之类的函数，务必把&amp;lt;script&amp;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/2018-07-17.png">
+<meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/3386824149-594a3500b37f4.png">
+<meta property="og:updated_time" content="2018-08-05T18:21:19.281Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一些HTML与JS的小技巧">
+<meta name="twitter:description" content="最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。 使某个函数直接被运行在&amp;lt;script&amp;gt;标签中的代码会被浏览器顺序执行，而函数大括号{}内的代码，在函数被调用时才会执行。如果要直接运行一个匿名函数，可以使用!function(){}();，这样可以有效地避免全局变量名污染。如果需要调用getElementById之类的函数，务必把&amp;lt;script&amp;">
+<meta name="twitter:image" content="https://zhangshuqiao.org/images/2017-10/2018-07-17.png">
+  <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml" />
+  <link rel="canonical" href="https://zhangshuqiao.org/2017-10/一些HTML与JS的小技巧/"/>
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>一些HTML与JS的小技巧 | 米米的博客</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-108155018-2');
+</script>
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">米米的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">做了一点微小的工作</p>
+  </div>
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />关于</a>
+  </li>
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+          <li class="menu-item menu-item-friends">
+    <a href="/friends/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />友情链接</a>
+  </li>
+        <li class="menu-item menu-item-search">
+            <a href="javascript:;" class="popup-trigger">
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+    </ul>
+    <div class="site-search">
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+    </div>
+</nav>
+</div>
+    </header>
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+  <div id="posts" class="posts-expand">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-10/一些HTML与JS的小技巧/">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">一些HTML与JS的小技巧
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <span title="创建时间：2017-10-28 19:53:13" itemprop="dateCreated datePublished" datetime="2017-10-28T19:53:13+08:00">2017-10-28</span>
+          </span>
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017-10/一些HTML与JS的小技巧/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017-10/一些HTML与JS的小技巧/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-file-o"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">8k</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">7 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+        <p>最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。</p>
+<h2 id="使某个函数直接被运行"><a href="#使某个函数直接被运行" class="headerlink" title="使某个函数直接被运行"></a>使某个函数直接被运行</h2><p>在<code>&lt;script&gt;</code>标签中的代码会被浏览器顺序执行，而函数大括号<code>{}</code>内的代码，在函数被调用时才会执行。如果要直接运行一个匿名函数，可以使用<code>!function(){}();</code>，这样可以有效地避免全局变量名污染。<br>如果需要调用<code>getElementById</code>之类的函数，务必把<code>&lt;script&gt;</code>标签放到对应的元素后面，否则会找不到对象。<br>将body标签写为<code>&lt;body onload=&quot;main()&quot;&gt;</code>，那么main函数会在页面加载完成后直接运行，通过<code>window.addEventListener(&quot;load&quot;, main)</code>也能达到类似的效果。</p>
+<h2 id="document-write"><a href="#document-write" class="headerlink" title="document.write"></a>document.write</h2><p>这个函数可以直接向HTML文档写入任何内容。比如，你需要根据屏幕宽度来加载不同js时，如果希望写入的内容是<code>&lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;</code>，那么只要这样就可以了：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="handlebars"><span class="xml"> if (screen.width &gt;= 1200) document.write('<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"main.js"</span>&gt;</span><span class="handlebars"><span class="xml"><span class="tag">&lt;<span class="name">\</span>/<span class="attr">script</span>&gt;</span>'); </span></span></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>由于script标签里有双引号，使用document.write时应该用单引号括起来，否则会造成错误。如果有多层引号，应将最内层的引号改为转义字符<code>&amp;quot;</code>。而对于所有的<code>/</code>，应改为<code>\/</code>，否则浏览器会认为这是<code>&lt;/script&gt;</code>闭合标签，造成解析错误。<br>这样就实现了根据不同的条件向HTML写入不同的内容。</p>
+<a id="more"></a>
+<h2 id="noscript标签"><a href="#noscript标签" class="headerlink" title="noscript标签"></a>noscript标签</h2><p>对于某些不支持js的上古浏览器，以及对于停用了js的用户，noscript标签可能非常有用。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">noscript</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #5C5C5C; position: fixed; bottom: 50px; left: 80px; opacity: 0.95; border-radius: 15px; color: #FFFFFF;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"margin: 15px; max-width: 400px;"</span>&gt;</span>系统检测到您的浏览器禁用了或不支持JavaScript。为了保障您的浏览体验，请启用JavaScript或<span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">href</span>=<span class="string">"http://browsehappy.com"</span> <span class="attr">class</span>=<span class="string">"a"</span> <span class="attr">style</span>=<span class="string">"color: rgba(239,178,75,1)"</span>&gt;</span>升级浏览器<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="JavaScript传递参数"><a href="#JavaScript传递参数" class="headerlink" title="JavaScript传递参数"></a>JavaScript传递参数</h2><p>在HTML中写入<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">tag1</span>=<span class="string">"1"</span> <span class="attr">src</span>=<span class="string">"main.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>在js中写入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scripts = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"script"</span>),</span><br><span class="line">   script_len = scripts.length,</span><br><span class="line">   script = scripts[script_len - <span class="number">1</span>],</span><br><span class="line">   tag1 = script.getAttribute(<span class="string">"tag1"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>即可获取tag1的值，可以说是非常的巧妙了。</p>
+<h2 id="IE条件注释"><a href="#IE条件注释" class="headerlink" title="IE条件注释"></a>IE条件注释</h2><p>以下类型的注释会被IE9及更早的版本读取，而被其他浏览器忽略：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Since Conditional Comments have been deprecated since Internet Explorer 10, the following script will be ignored, so only Internet Explorer 9 (and below) users will be redirected to a page asking to upgrade their browsers. --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE]&gt;</span></span><br><span class="line"><span class="comment">    &lt;script type="text/javascript" src="./js/upgrade_your_fucking_browser.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">    &lt;div class="notice chromeframe"&gt;您的浏览器版本&lt;strong&gt;很旧很旧&lt;/strong&gt;，为了正常地访问网站，请升级您的浏览器&lt;a target="_blank” href="http://browsehappy.com"&gt;立即升级&lt;/a&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这种条件注释现在已经完全被用于提醒IE用户升级浏览器。不过，IE10及更新的IE不会读取这些条件注释。如果想要所有IE都看到提醒，可能还要靠别的办法，比如js判断User Agent。</p>
+<h2 id="响应式页面的设计"><a href="#响应式页面的设计" class="headerlink" title="响应式页面的设计"></a>响应式页面的设计</h2><p>这个问题较为复杂。就说“屏幕宽度”，设备的物理分辨率、逻辑分辨率、出现滚动条时参数都各不相同。我在css中使用<code>@media screen and (max-width: 1200px)</code>这样的代码，识别的似乎是逻辑分辨率。而在HTML中使用以下代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>在Retina屏幕的iPhone上缩放可能会出现问题，目前博主还在寻找通用的解决方案。</p>
+<h2 id="a标签的download属性"><a href="#a标签的download属性" class="headerlink" title="a标签的download属性"></a>a标签的download属性</h2><p>设置<code>&lt;a&gt;</code>标签的download属性，可以在点击该链接时下载目标，即href属性指向的超链接。<br>该属性也可以设置一个值来规定下载文件的名称。所允许的值没有限制，浏览器将自动检测正确的文件扩展名并添加到文件。例如：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.example.com/images/example.jpg"</span> <span class="attr">download</span>=<span class="string">"logo"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>正常情况下，浏览器会将其保存为logo.jpg。</p>
+<h2 id="为console-log添加样式"><a href="#为console-log添加样式" class="headerlink" title="为console.log添加样式"></a>为console.log添加样式</h2><p>在常见的JavaScript代码中，一般只会向console控制台输出简单的文字信息。但为了把信息输出得更优雅更便于阅读，除了<code>cosole.log()</code>方法外，还可以调用<code>cosole.warn()</code>来输出警告信息，在输出信息前面会有一个带感叹号的黄色三角警告符号。<br>另外经常用到的是输出错误信息，可以通过调用<code>console.erro()</code>来实现，信息前面会出现一个带叉的红色圆形图标。<br>在某些浏览器下，还可以按以下格式，为输出到console控制台的文字进行CSS控制，添加样式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%c需要输出的信息"</span>, <span class="string">"css代码"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>这样可以显示缤纷的颜色，甚至图片，简直爽翻了。<br>下面是Chrome中<code>console.log()</code>的官方文档摘要，也适用于大部分主流浏览器：</p>
+<table>
+<thead>
+<tr>
+<th>Format Specifier</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%s</td>
+<td>Formats the value as a string.</td>
+</tr>
+<tr>
+<td>%d or %i</td>
+<td>Formats the value as an integer.</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>Formats the value as a floating point value.</td>
+</tr>
+<tr>
+<td>%o</td>
+<td>Formats the value as an expandable DOM element (as in the Elements panel).</td>
+</tr>
+<tr>
+<td>%O</td>
+<td>Formats the value as an expandable JavaScript object.</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>Formats the output string according to CSS styles you provide.</td>
+</tr>
+</tbody>
+</table>
+<p>下面是一些例子：<br><img src="/images/2017-10/2018-07-17.png" alt=""></p>
+<h3 id="3D-Text"><a href="#3D-Text" class="headerlink" title="3D Text"></a>3D Text</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%c3D Text"</span>, <span class="string">"text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);\</span></span><br><span class="line"><span class="string">font-size: 5em;"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="Colorful-CSS"><a href="#Colorful-CSS" class="headerlink" title="Colorful CSS"></a>Colorful CSS</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%cColorful CSS"</span>, <span class="string">"background: rgba(252, 234, 187, 1);\</span></span><br><span class="line"><span class="string">background: -moz-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: -webkit-gradient(left top, right top, color-stop(0%, rgba(252, 234, 187, 1)), color-stop(12%, rgba(175, 250, 77, 1)), color-stop(28%, rgba(0, 247, 49, 1)), color-stop(39%, rgba(0, 210, 247, 1)), color-stop(51%, rgba(0, 189, 247, 1)), color-stop(64%, rgba(133, 108, 217, 1)), color-stop(78%, rgba(177, 0, 247, 1)), color-stop(87%, rgba(247, 0, 189, 1)), color-stop(100%, rgba(245, 22, 52, 1)));\</span></span><br><span class="line"><span class="string">background: -webkit-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: -o-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: -ms-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: linear-gradient(to right, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#f51634', GradientType=1);\</span></span><br><span class="line"><span class="string">font-size: 5em;"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="Rainbow-Text"><a href="#Rainbow-Text" class="headerlink" title="Rainbow Text"></a>Rainbow Text</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%cRainbow Text"</span>, <span class="string">"background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));\</span></span><br><span class="line"><span class="string">color: transparent;\</span></span><br><span class="line"><span class="string">-webkit-background-clip: text;\</span></span><br><span class="line"><span class="string">font-size: 5em;"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%c"</span>, <span class="string">"padding: 50px 300px; line-height: 120px; background: url('/images/icon.gif') no-repeat;"</span>);</span><br></pre></td></tr></table></figure>
+<p>更多内容可以参考<a href="https://www.cnblogs.com/Wayou/p/chrome_dev_tool_style_console.html" target="_blank" rel="noopener">Chrome控制台新玩法-console显示图片以及为文字加样式</a>。</p>
+<h2 id="Range对象的使用"><a href="#Range对象的使用" class="headerlink" title="Range对象的使用"></a>Range对象的使用</h2><h3 id="什么是Range对象"><a href="#什么是Range对象" class="headerlink" title="什么是Range对象"></a>什么是Range对象</h3><p>Range是指html文档中的区域，如用户用鼠标拖动选中的区域，如下图：<br><img src="/images/2017-10/3386824149-594a3500b37f4.png" alt=""></p>
+<p>通过Range对象，可以获取用户选中的区域，或者指定选中区域，得到Range的起点和终点、修改或者复制里边的文本，甚至是html。在富文本编辑器开发中，经常会使用到这些功能。</p>
+<h3 id="获取当前的选区"><a href="#获取当前的选区" class="headerlink" title="获取当前的选区"></a>获取当前的选区</h3><p>由于兼容性的问题,需要区分ie浏览器，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> selection, range;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.getSelection) &#123; </span><br><span class="line">    <span class="comment">//现代浏览器</span></span><br><span class="line">    selection = <span class="built_in">window</span>.getSelection();</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">document</span>.selection) &#123; </span><br><span class="line">    <span class="comment">//IE</span></span><br><span class="line">    selection = <span class="built_in">document</span>.selection.createRange();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Range对象</span></span><br><span class="line">range = selection.getRangeAt(<span class="number">0</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="range属性"><a href="#range属性" class="headerlink" title="range属性"></a>range属性</h3><ul>
+<li>collapsed  如果范围的开始点和结束点在文档的同一位置，则为true，即范围是空的，或折叠的。</li>
+<li>commonAncestorContainer  范围的开始点和结束点的（即它们的祖先节点）、嵌套最深的Document节点。</li>
+<li>endContainer  包含范围的结束点的Document节点。</li>
+<li>endOffset  endContainer中的结束点位置。</li>
+<li>startContainer  包含范围的开始点的Document节点。</li>
+<li>startOffset  startContainer中的开始点位置。</li>
+</ul>
+<h3 id="range操作"><a href="#range操作" class="headerlink" title="range操作"></a>range操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//选中区域的文字</span></span><br><span class="line"><span class="keyword">var</span> text = range.toString();</span><br><span class="line"></span><br><span class="line"><span class="comment">//选中区域的Element元素</span></span><br><span class="line"><span class="keyword">var</span> elem = range.commonAncestorContainer;</span><br><span class="line"><span class="keyword">if</span> (elem.nodeType != <span class="number">1</span>) &#123;</span><br><span class="line">    elem = elem.parentNode;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//选中区域的html</span></span><br><span class="line"><span class="keyword">var</span> span = <span class="built_in">document</span>.createElement(<span class="string">'SPAN'</span>);</span><br><span class="line">span.appendChild(range.cloneContents());</span><br><span class="line"></span><br><span class="line"><span class="comment">//选区是否为空</span></span><br><span class="line"><span class="keyword">var</span> isSelectionEmpty = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">if</span> (range.startContainer === range.endContainer) &#123;</span><br><span class="line">    <span class="keyword">if</span> (range.startOffset === range.endOffset) &#123;</span><br><span class="line">        isSelectionEmpty = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="关于Safari-4-0的一些回忆"><a href="#关于Safari-4-0的一些回忆" class="headerlink" title="关于Safari 4.0的一些回忆"></a>关于Safari 4.0的一些回忆</h2><p>为了测试网站对不同浏览器的友好程度，我下载了Oracle和Firefox，看到首次打开Firefox的欢迎动画时，突然想到多年之前，我在Windows上首次运行Safari时看到的极为惊艳的动画。经过推断，那是2010年左右，版本是Safari 4.0，欢迎动画展示了HTML5的诸多新特性。查找各大论坛后，找到了这个Safari欢迎动画的网址：<code>http://www.apple.com/safari/welcome/</code>可惜年代久远，它（可能）已经永远地从苹果的服务器上消失了。非常遗憾，那个时候的我还too young，沉迷于制作逐帧flash动画，丝毫没有了解html的奇妙世界。当今天我的回忆再一次被唤起时，Safari for Windows已经凉了，<a href="https://www.apple.com/hotnews/thoughts-on-flash" target="_blank" rel="noopener">Flash已经凉了</a>，Safari for macOS已经是11.0版本。互联网时代的高速发展实在是令人感慨万千。</p>
+<p>参考文章：<a href="https://segmentfault.com/a/1190000009875696" target="_blank" rel="noopener">JS Range 对象的使用</a></p>
+<p>本文更新于2018年6月21日</p>
+    </div>
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>🍭支持一根棒棒糖！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="张书樵 微信支付"/>
+        <p>微信支付</p>
+      </div>
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝"/>
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+      </div>
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>张书樵</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://zhangshuqiao.org/2017-10/一些HTML与JS的小技巧/" title="一些HTML与JS的小技巧">https://zhangshuqiao.org/2017-10/一些HTML与JS的小技巧/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+      </div>
+    <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
+        </div>
+        <div class="post-widgets">
+              <div>
+                <span class="btn" style="font-size: 18px;">
+                  <i class="fa fa-star-o" aria-hidden="true"></i> 收藏
+                </span>
+              </div>
+                <span class="post-meta-divider">|</span>
+              <div id="needsharebutton-postbottom">
+                <span class="btn" style="font-size: 18px;">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i> 分享
+                </span>
+              </div>
+                <span class="post-meta-divider">|</span>
+              <div>
+                <span class="btn" style="font-size: 18px;">
+                  <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 点赞
+                </span>
+              </div>
+        </div>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/2017-10/伟安生，不玩蛇/" rel="next" title="伟安生，不玩蛇">
+                <i class="fa fa-chevron-left"></i> 伟安生，不玩蛇
+              </a>
+          </div>
+          <span class="post-nav-divider"></span>
+          <div class="post-nav-prev post-nav-item">
+              <a href="/2017-11/在Mac上通过Sublime、Skim编辑LaTeX/" rel="prev" title="在Mac上通过Sublime、Skim编辑LaTeX">
+                在Mac上通过Sublime、Skim编辑LaTeX <i class="fa fa-chevron-right"></i>
+              </a>
+          </div>
+        </div>
+    </footer>
+  </div>
+  </article>
+  </div>
+          </div>
+    <div class="comments" id="comments">
+    </div>
+        </div>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <img class="site-author-image" itemprop="image"
+                src="/images/icon.gif"
+                alt="张书樵" />
+              <p class="site-author-name" itemprop="name">张书樵</p>
+              <p class="site-description motion-element" itemprop="description">钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯</p>
+          </div>
+            <nav class="site-state motion-element">
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives/">
+                    <span class="site-state-item-count">76</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+            </nav>
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-institution"></i>
+                主站
+              </div>
+              <ul class="links-of-blogroll-list">
+                  <li class="links-of-blogroll-item">
+                    <a href="https://galaxymimi.com" title="Galaxy Mimi" target="_blank">Galaxy Mimi</a>
+                  </li>
+              </ul>
+            </div>
+        </div>
+      </section>
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使某个函数直接被运行"><span class="nav-number">1.</span> <span class="nav-text">使某个函数直接被运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#document-write"><span class="nav-number">2.</span> <span class="nav-text">document.write</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#noscript标签"><span class="nav-number">3.</span> <span class="nav-text">noscript标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript传递参数"><span class="nav-number">4.</span> <span class="nav-text">JavaScript传递参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE条件注释"><span class="nav-number">5.</span> <span class="nav-text">IE条件注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式页面的设计"><span class="nav-number">6.</span> <span class="nav-text">响应式页面的设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#a标签的download属性"><span class="nav-number">7.</span> <span class="nav-text">a标签的download属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为console-log添加样式"><span class="nav-number">8.</span> <span class="nav-text">为console.log添加样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3D-Text"><span class="nav-number">8.1.</span> <span class="nav-text">3D Text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Colorful-CSS"><span class="nav-number">8.2.</span> <span class="nav-text">Colorful CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rainbow-Text"><span class="nav-number">8.3.</span> <span class="nav-text">Rainbow Text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Image"><span class="nav-number">8.4.</span> <span class="nav-text">Image</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Range对象的使用"><span class="nav-number">9.</span> <span class="nav-text">Range对象的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Range对象"><span class="nav-number">9.1.</span> <span class="nav-text">什么是Range对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取当前的选区"><span class="nav-number">9.2.</span> <span class="nav-text">获取当前的选区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#range属性"><span class="nav-number">9.3.</span> <span class="nav-text">range属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#range操作"><span class="nav-number">9.4.</span> <span class="nav-text">range操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于Safari-4-0的一些回忆"><span class="nav-number">10.</span> <span class="nav-text">关于Safari 4.0的一些回忆</span></a></li></ol></div>
+          </div>
+        </section>
+      <!--/noindex-->
+    </div>
+  </aside>
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张书樵</span>
+</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a></div>
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+</div>
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+          <span id="scrollpercent"><span>0</span>%</span>
+      </div>
+  </div>
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+    <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
+    <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
+    <script type="text/javascript" src="/lib/custom.js"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="/lib/Valine.min.js"></script>
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: false,
+        appId: '2L2N30Kyi18K1DjU0qxMGALD-gzGzoHsz',
+        appKey: 'Bwrec8XDJon2rocQ5ScFcFWl',
+        placeholder: '您可以在这里输入评论哟～',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'12' || 10,
+        visitor: false
+    });
+  </script>
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                content = unescapeHtml(content);
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+                // show search results
+                if (isMatch) {
+                  // sort index by position of keyword
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+                  // merge hits into slices
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+                      // move to next position of hit
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+                  // sort slices in content by search text's count and hits' count
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+                  // select top N slices in content
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+                  // highlight title and content
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+                  var resultItem = '';
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+          proceedsearch();
+        }
+      });
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+  <script>
+      pbOptions = {};
+          pbOptions.iconStyle = "box";
+          pbOptions.boxForm = "horizontal";
+          pbOptions.position = "middleCenter";
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+  <script src="https://cdn.bootcss.com/pangu/3.3.0/pangu.min.js"></script>
+  <script type="text/javascript">pangu.spacingPage();</script>
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+</body>
+</html>

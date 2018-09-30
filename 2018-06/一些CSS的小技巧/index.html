@@ -6,24 +6,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
   <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
-  <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
   <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <link href="https://cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
     <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
-  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.2">
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    version: '6.4.1',
+    version: '6.4.2',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     fastclick: false,
@@ -41,14 +41,14 @@
 </script>
   <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css" />
   <meta name="description" content="p标签换行CSS自动换行、强制不换行、强制断行、超出显示省略号 P标签是默认是自动换行的，因此设置好宽度之后，能够较好的实现效果，但是最近的项目中发现，使用ajax加载数据之后，p标签内的内容没有换行，导致布局错乱，于是尝试着使用换行样式，虽然解决了问题，但是并没有发现本质原因。经过研究，其本质在于，当时获取的数据是一长串的数字，浏览器应该是对数字和英文单词处理方式相近，不会截断。先给出各种方式，">
-<meta name="keywords" content="HTML,CSS">
+<meta name="keywords" content="CSS,HTML">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一些CSS的小技巧">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-06/一些CSS的小技巧/index.html">
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="p标签换行CSS自动换行、强制不换行、强制断行、超出显示省略号 P标签是默认是自动换行的，因此设置好宽度之后，能够较好的实现效果，但是最近的项目中发现，使用ajax加载数据之后，p标签内的内容没有换行，导致布局错乱，于是尝试着使用换行样式，虽然解决了问题，但是并没有发现本质原因。经过研究，其本质在于，当时获取的数据是一长串的数字，浏览器应该是对数字和英文单词处理方式相近，不会截断。先给出各种方式，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-29T14:09:57.222Z">
+<meta property="og:updated_time" content="2018-09-30T11:09:16.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些CSS的小技巧">
 <meta name="twitter:description" content="p标签换行CSS自动换行、强制不换行、强制断行、超出显示省略号 P标签是默认是自动换行的，因此设置好宽度之后，能够较好的实现效果，但是最近的项目中发现，使用ajax加载数据之后，p标签内的内容没有换行，导致布局错乱，于是尝试着使用换行样式，虽然解决了问题，但是并没有发现本质原因。经过研究，其本质在于，当时获取的数据是一长串的数字，浏览器应该是对数字和英文单词处理方式相近，不会截断。先给出各种方式，">
@@ -273,7 +273,7 @@
 </ul>
 <h2 id="content属性"><a href="#content属性" class="headerlink" title="content属性"></a>content属性</h2><p>content内容生成技术以及应用</p>
 <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>content属性早在CSS2.1的时候就被引入了，可以使用:before以及:after伪元素生成内容。此特性目前已被大部分的浏览器支持：(Firefox 1.5+, Safari 3.5+, IE 8+, Opera 9.2+, Chrome 0.2+)。另外，目前Opera 9.5+ 和 Safari 4已经支持所有元素的content属性，而不仅仅是:before和:after伪元素。<br>在CSS 3 Generated Content工作草案中，content属性添加了更多的特征，例如：插入以及移除文档内容的能力，以创建脚注，结语，及段落注释。但是目前还没有浏览器支持content的扩展功能。<br>下面将展示content内容生成的基本使用，以及一些您可以应用的特别的技术。</p>
-<h3 id="最基本的-–-生成内容"><a href="#最基本的-–-生成内容" class="headerlink" title="最基本的 – 生成内容"></a>最基本的 – 生成内容</h3><p>content使用如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h2</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"我是额外文字！"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="最基本的—–生成内容"><a href="#最基本的—–生成内容" class="headerlink" title="最基本的—–生成内容"></a>最基本的—–生成内容</h3><p>content使用如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h2</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"我是额外文字！"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>我是h2<span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>此段样式的作用是在每个h2标签的前面添加文字“我是额外文字”。<br>content属性的值除了使用文本值外，还可以使用标签的一些属性值，方法是attr()，参见如下代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-class">.content</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="built_in">attr</span>(href);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"content"</span> <span class="attr">href</span>=<span class="string">"http://www.zhangxinxu.com/"</span>&gt;</span>此标签的href值是：<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -298,8 +298,8 @@
 <p>HTML代码：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>您可以查看此PDF文件：<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/sample.pdf"</span>&gt;</span>web站点的性能优化.pdf<span class="tag">&lt;/<span class="name">a</span>&gt;</span>，或是在线查看，<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.zhangxinxu.com/wordpress/"</span> <span class="attr">rel</span>=<span class="string">"external"</span>&gt;</span>点击这里<span class="tag">&lt;/<span class="name">a</span>&gt;</span>。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="使用属性值作为content内容"><a href="#使用属性值作为content内容" class="headerlink" title="使用属性值作为content内容"></a>使用属性值作为content内容</h3><p>使用属性值当作content内容指的是将标签的title, src, href, alt等值当作内容显示在标签的内部，这是很强大的一个功能。由于此技术目前远未到普及的程度，所以这里简单介绍一下，您可以参见下面的两小段样式代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"("</span> <span class="built_in">attr</span>(href) <span class="string">")"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">abbr</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"("</span> <span class="built_in">attr</span>(title) <span class="string">")"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这里理解和使用都不难，关键就是CSS3的attr()方法。</p>
-<h3 id="前瞻：强大的CSS3-attr-方法。"><a href="#前瞻：强大的CSS3-attr-方法。" class="headerlink" title="前瞻：强大的CSS3 attr()方法。"></a>前瞻：强大的CSS3 attr()方法。</h3><p>CSS3 Values and Units草案扩展了attr()表达式的范围，除了返回字符串，还可以返回诸如CSS colors, CSS integer, length, angle, time, frequency以及其他一些单元。<br>通过使用自定义的data属性，可以实现一些非常强大的效果，诸如简单图表图形的渲染，动画效果的实现。例如我们可以设置根据元素的attribute值设定background-color的颜色值，这在显示在线调色板上会大放异彩；我们还可以根据attribute值指定元素的大小，就像定义图表每个条形的长度一样。总之，attr()的潜力惊人。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>推荐阅读：<br><a href="http://www.zhangxinxu.com/wordpress/2015/03/background-object-position-value-percent" target="_blank" rel="noopener">CSS <position>值简介理解background百分比定位</position></a><br><a href="http://www.zhangxinxu.com/wordpress/2013/06/伪元素-表单样式-pseudo-elements-style-form-controls" target="_blank" rel="noopener">伪元素表单控件默认样式重置与自定义大全</a></p>
+<h3 id="前瞻：强大的CSS3-attr-方法"><a href="#前瞻：强大的CSS3-attr-方法" class="headerlink" title="前瞻：强大的CSS3 attr()方法"></a>前瞻：强大的CSS3 attr()方法</h3><p>CSS3 Values and Units草案扩展了attr()表达式的范围，除了返回字符串，还可以返回诸如CSS colors, CSS integer, length, angle, time, frequency以及其他一些单元。<br>通过使用自定义的data属性，可以实现一些非常强大的效果，诸如简单图表图形的渲染，动画效果的实现。例如我们可以设置根据元素的attribute值设定background-color的颜色值，这在显示在线调色板上会大放异彩；我们还可以根据attribute值指定元素的大小，就像定义图表每个条形的长度一样。总之，attr()的潜力惊人。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>推荐阅读：<br><a href="http://www.zhangxinxu.com/wordpress/2015/03/background-object-position-value-percent" target="_blank" rel="noopener">CSS <position> 值简介理解background百分比定位</position></a><br><a href="http://www.zhangxinxu.com/wordpress/2013/06/伪元素-表单样式-pseudo-elements-style-form-controls" target="_blank" rel="noopener">伪元素表单控件默认样式重置与自定义大全</a></p>
 <p>参考文章：<br><a href="https://blog.csdn.net/liuyan19891230/article/details/50969393" target="_blank" rel="noopener">CSS自动换行、强制不换行、强制断行、超出显示省略号</a><br><a href="http://www.zhangxinxu.com/wordpress/2010/04/css-content内容生成技术以及应用" target="_blank" rel="noopener">CSS content内容生成技术以及应用</a></p>
     </div>
       <div>
@@ -334,8 +334,8 @@
       </div>
     <footer class="post-footer">
         <div class="post-tags">
-            <a href="/tags/HTML/" rel="tag"># HTML</a>
             <a href="/tags/CSS/" rel="tag"># CSS</a>
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
         </div>
         <div class="post-widgets">
               <div>
@@ -406,7 +406,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">76</span>
+                    <span class="site-state-item-count">77</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -450,7 +450,7 @@
       <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#p标签换行"><span class="nav-number">1.</span> <span class="nav-text">p标签换行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#contenteditable"><span class="nav-number">2.</span> <span class="nav-text">contenteditable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3-calc-方法"><span class="nav-number">3.</span> <span class="nav-text">CSS3 calc()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#content属性"><span class="nav-number">4.</span> <span class="nav-text">content属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">4.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最基本的-–-生成内容"><span class="nav-number">4.2.</span> <span class="nav-text">最基本的 – 生成内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用计数器创建号码内容"><span class="nav-number">4.3.</span> <span class="nav-text">使用计数器创建号码内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为多语言内容插入正确的引号"><span class="nav-number">4.4.</span> <span class="nav-text">为多语言内容插入正确的引号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用图片替换文字"><span class="nav-number">4.5.</span> <span class="nav-text">用图片替换文字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示相对应的链接图标"><span class="nav-number">4.6.</span> <span class="nav-text">显示相对应的链接图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用属性值作为content内容"><span class="nav-number">4.7.</span> <span class="nav-text">使用属性值作为content内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前瞻：强大的CSS3-attr-方法。"><span class="nav-number">4.8.</span> <span class="nav-text">前瞻：强大的CSS3 attr()方法。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多"><span class="nav-number">5.</span> <span class="nav-text">更多</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#p标签换行"><span class="nav-number">1.</span> <span class="nav-text">p标签换行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#contenteditable"><span class="nav-number">2.</span> <span class="nav-text">contenteditable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3-calc-方法"><span class="nav-number">3.</span> <span class="nav-text">CSS3 calc()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#content属性"><span class="nav-number">4.</span> <span class="nav-text">content属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">4.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最基本的—–生成内容"><span class="nav-number">4.2.</span> <span class="nav-text">最基本的—–生成内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用计数器创建号码内容"><span class="nav-number">4.3.</span> <span class="nav-text">使用计数器创建号码内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为多语言内容插入正确的引号"><span class="nav-number">4.4.</span> <span class="nav-text">为多语言内容插入正确的引号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用图片替换文字"><span class="nav-number">4.5.</span> <span class="nav-text">用图片替换文字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示相对应的链接图标"><span class="nav-number">4.6.</span> <span class="nav-text">显示相对应的链接图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用属性值作为content内容"><span class="nav-number">4.7.</span> <span class="nav-text">使用属性值作为content内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前瞻：强大的CSS3-attr-方法"><span class="nav-number">4.8.</span> <span class="nav-text">前瞻：强大的CSS3 attr()方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多"><span class="nav-number">5.</span> <span class="nav-text">更多</span></a></li></ol></div>
           </div>
         </section>
       <!--/noindex-->
@@ -492,21 +492,21 @@
     window.Promise = null;
   }
 </script>
-    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.min.js"></script>
-    <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="https://cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.2/velocity.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.2/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
     <script type="text/javascript" src="/lib/custom.js"></script>
-  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
-  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
-  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.2"></script>
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="/lib/Valine.min.js"></script>
   <script type="text/javascript">
@@ -836,7 +836,7 @@
           pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
-  <script src="https://cdn.bootcss.com/pangu/3.3.0/pangu.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
   <script type="text/javascript">pangu.spacingPage();</script>
   <style>
     .copy-btn {

@@ -218,7 +218,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">965</span>
+                <span title="本文字数">1.1k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
@@ -234,6 +234,7 @@
 <p>于是就有了光<br><strong>注：以上文字旨在测试LaTeX兼容情况。</strong><br>使用方法：在HTML页面中，通过<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--config后的参数可以根据需求自定义，默认为?config=default--&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>即可加载MathJax，该脚本将会把所有LaTeX公式正确显示出来。尽情的按照LaTeX语法插入公式就好啦！<br>如果要在WordPress中使用，可以通过在编辑文章界面，选择“文本”（如果使用“可视化”，字符将被转义，导致脚本无法加载），输入以上内容达到相同效果。<br>使用时请注意：<br>The default math delimiters are <code>$$...$$</code> and <code>\[...\]</code> for displayed mathematics, and <code>\(...\)</code> for in-line mathematics. Note in particular that the <code>$...$</code> in-line delimiters are <strong>not</strong> used by default.<br>官方网站：<br><a href="https://www.mathjax.org" target="_blank" rel="noopener">https://www.mathjax.org/</a></p>
 <p>本文更新于2018年5月20日：<br>在Hexo中，如果使用了NexT主题，可以通过配置主题目录下的_config.yml简单地使用MathJax。在_config.yml中找到mathjax，将其子选项改为<code>enable: true</code>，并在需要加载MathJax的文章头添加<code>mathjax: true</code>即可。</p>
+<p>本文更新于2018年10月3日：<br>还有一种解决方案是调用知乎的API：<code>https://www.zhihu.com/equation?tex=</code>，通过GET请求，就可以将你的LaTeX表达式转换为公式的图片。</p>
     </div>
     <footer class="post-footer">
         <div class="post-eof"></div>

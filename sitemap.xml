@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhangshuqiao.org/friends/index.html</loc>
+    
+    <lastmod>2018-10-08T07:43:11.227Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhangshuqiao.org/2018-09/%E5%85%B3%E4%BA%8E%E9%BB%8E%E6%9B%BC%E7%8C%9C%E6%83%B3/</loc>
+    
+    <lastmod>2018-10-08T01:50:33.051Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhangshuqiao.org/2018-08/%E5%85%A5%E6%89%8B%E4%BF%A1%E8%BE%BE%E5%B0%8F%E9%BB%91%E5%A4%A9%E6%96%87%E6%9C%9B%E8%BF%9C%E9%95%9C/</loc>
+    
+    <lastmod>2018-10-06T02:46:38.121Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhangshuqiao.org/2018-10/%E5%8F%A4%E6%83%91%E7%8B%BC%E6%B8%B8%E6%88%8F%E7%89%B5%E6%89%AF%E5%87%BA%E7%9A%84%E7%A1%AC%E4%BB%B6bug/</loc>
     
-    <lastmod>2018-10-04T02:56:04.935Z</lastmod>
+    <lastmod>2018-10-05T17:01:23.843Z</lastmod>
     
   </url>
   
@@ -19,13 +40,6 @@
     <loc>https://zhangshuqiao.org/2018-08/%E7%9B%98%E7%82%B9%E9%82%A3%E4%BA%9B%E6%9C%89%E5%BF%85%E8%A6%81%E7%9A%84HTTP%E5%A4%B4/</loc>
     
     <lastmod>2018-10-04T02:46:55.126Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhangshuqiao.org/2018-09/%E5%85%B3%E4%BA%8E%E9%BB%8E%E6%9B%BC%E7%8C%9C%E6%83%B3/</loc>
-    
-    <lastmod>2018-10-04T02:46:18.349Z</lastmod>
     
   </url>
   
@@ -236,20 +250,6 @@
     <loc>https://zhangshuqiao.org/2018-04/Mac%E5%90%AF%E5%8A%A8Apache%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     
     <lastmod>2018-09-29T12:19:34.050Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhangshuqiao.org/2018-08/%E5%85%A5%E6%89%8B%E4%BF%A1%E8%BE%BE%E5%B0%8F%E9%BB%91%E5%A4%A9%E6%96%87%E6%9C%9B%E8%BF%9C%E9%95%9C/</loc>
-    
-    <lastmod>2018-09-28T17:57:47.765Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhangshuqiao.org/friends/index.html</loc>
-    
-    <lastmod>2018-09-28T02:44:22.294Z</lastmod>
     
   </url>
   

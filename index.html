@@ -232,7 +232,7 @@
           <p>这篇文章翻译自：<a href="https://www.quora.com/Programming-Interviews/Whats-the-hardest-bug-youve-debugged/answer/Dave-Baggett" target="_blank" rel="noopener">What’s the hardest bug you’ve debugged?</a></p>
 <p>It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blame the compiler. Well down the list after that, you blame the hardware.<br>回想起这个bug，仍然让我感觉有些痛苦。作为一个程序员，在发现bug时，你学会了首先在自己代码中找问题，一次、两次、三次……或许在测试一万次之后，你会把问题归咎于编译器。只有在这所有的都不起作用之后，你才会把问题归咎于硬件。</p>
 <p>This is my hardware bug story.<br>这是我遭遇硬件bug的故事。</p>
-<p>Among other things, I wrote the memory card (load/save) code for Crash Bandicoot. For a swaggering game coder, this is like a walk in the park; I expected it would take a few days. I ended up debugging that code for six weeks. I did other stuff during that time, but I kept coming back to this bug – a few hours every few days. It was agonizing.<br>抛开别的不说，我曾为古惑狼（Crash Bandicoot，PS1游戏）写存储卡（读写）代码。对于一个自大的游戏程序员，这就像是在公园里散步一样轻松愉快，我认为只要几天就写完了，不过最终调试用了六个礼拜。在此期间我也做过一些其他的事情，但却一直绕不开这个bug——每几天内就要花上好几个小时来处理。这个bug实在烦人。</p>
+<p>Among other things, I wrote the memory card (load/save) code for Crash Bandicoot. For a swaggering game coder, this is like a walk in the park; I expected it would take a few days. I ended up debugging that code for six weeks. I did other stuff during that time, but I kept coming back to this bug – a few hours every few days. It was agonizing.<br>抛开别的不说，我曾为古惑狼（Crash Bandicoot，PS1游戏）写存储卡（读写）代码。对于一个自大的游戏程序员，这就像是在公园里散步一样轻松愉快；我预计只要几天就可以写完。我最终用了六个礼拜把那些代码调试完毕。在此期间我也做过一些其他的事情，但却一直绕不开这个bug——每几天内就要花上好几个小时来处理。这个bug实在烦人。</p>
 <p>The symptom was that you’d go to save your progress and it would access the memory card, and almost all the time, it worked normally… But every once in a while the write or read would time out… for no obvious reason. A short write would often corrupt the memory card. The player would go to save, and not only would we not save, we’d wipe their memory card. D’Oh.<br>这个bug的症状是，当你需要保存你的进度时，代码会访问存储卡，而大部分情况下没有什么问题…但是偶尔读写会超时…没有任何明显的原因。一个简短的写入经常毁掉存储卡。玩家要保存进度，我们不仅不保存，还擦除他们存储卡上的全部东西。天哪。</p>
 <p>After a while, our producer at Sony, Connie Booth, began to panic. We obviously couldn’t ship the game with that bug, and after six weeks I still had no clue what the problem was. Via Connie we put the word out to other PlayStation 1 developers – had anybody seen anything like this? Nope. Absolutely nobody had any problems with the memory card system.<br>过了一段时间，我们在Sony的制作人Connie Booth慌了。我们显然不能发布带有这个bug游戏，而六个星期之后我对于问题出在哪一点线索都没有。通过Connie我们向其他PS1开发者求助：有没有人出现过像我们这样的情况？没有。绝对没有任何人在存储卡系统上出现任何问题。</p>
 <p>About the only thing you can do when you run out of ideas debugging is divide and conquer: keep removing more and more of the errant program’s code until you’re left with something relatively small that still exhibits the problem. You keep carving parts away until the only stuff left is where the bug is.<br>在你绞尽脑汁之后，你能做的唯一一个调试方法就是分而治之：一点点去除错误程序中的代码，直到留下的代码相对很少，但仍然表现出问题。像雕刻一样去除没有问题的代码，留下的就是你的bug所在。</p>
@@ -308,13 +308,13 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">3.5k</span>
+                <span title="本文字数">7k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
                 </span>
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">6 分钟</span>
             </div>
         </div>
       </header>
@@ -545,7 +545,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">734</span>
+                <span title="本文字数">746</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
@@ -557,7 +557,7 @@
       </header>
     <div class="post-body" itemprop="articleBody">
             <p>2018年的暑期，诸多天文奇观轮番上演：火星冲日、日偏食、英仙座流星雨，这对天文爱好者来说是绝佳的观测机会。在好基友的怂恿下，博主也正式踏入了天文摄影的巨坑。<br>博主在小学时曾拥有一台700/60入门级伽利略式天文望远镜，但是其使用的经纬仪是纯手动的，调节精度较差；且望远镜本身存在明显的色差，成像效果不佳。为了满足行星摄影的要求，需要入手一台更为可靠的天文望远镜。目前市面上常见的天文望远镜，一般由三部分组成：三脚架（底座），赤道仪（经纬仪），以及望远镜镜筒。镜筒主体根据成像原理划分，有牛顿反射式、马克苏托夫-卡塞格林式和复消色差（APO）式等等。基于其他成像原理的望远镜也能在市面上买到，不过从销量和评价上来看，前文提到的这三种望远镜占主流。在查阅了大量资料，并参考了天文相关贴吧、论坛后，博主决定入手信达小黑天文望远镜。这是一款入门级牛顿反射式望远镜，其焦距750mm，口径150mm，等效光圈较大，适合摄影；赤道仪采用EQ3D，搭配双轴电跟，在通过北极星校准极轴后，即可进行长时间曝光。<br>这是望远镜组装完成的状态：<br><img src="/images/2018-08/IMG_0272.jpg" alt=""><br>安装EF卡口转接环，就可以连接单反相机了：<br><img src="/images/2018-08/IMG_0199.jpg" alt=""><br>8月11日拍摄的日偏食：<br><img src="/images/2018-08/IMG_5639.jpg" alt=""><br>由于望远镜自带的巴罗镜只适用于目镜，为了增加拍照的放大率，博主还购买了一个EF卡口的增倍镜。这是使用增倍镜后拍摄的月球：<br><img src="/images/2018-08/IMG_5767.jpg" alt=""><br>由于视宁度不佳（以及可能的对焦问题），虽然也成功拍摄了土星，但是土星环的辨识度较差：<br><img src="/images/2018-08/IMG_5758.jpg" alt=""><br>仙后座（以及划过天空的飞机航行灯）：<br><img src="/images/2018-08/IMG_5680.jpg" alt=""></p>
-<p>本文更新于2018年9月28日：<br>与学校的青年天文爱好者协会部分（矿里有家的）前辈交流后，发现EQ3D赤道仪和双轴电跟还是弱了一些。看上去，NEQ6搭配GOTO似乎才是天文摄影的入门标配，该赤道仪的稳定性与鲁棒性都更胜一筹（当然价格也略高）。</p>
+<p>本文更新于2018年9月28日：<br>与学校的青年天文爱好者协会部分（矿里有家的）前辈交流后，发现EQ3D赤道仪和双轴电跟仍有许多不足，可能并不是天文摄影的入门首选。如果有足够多的预算，可以购买NEQ6搭配GOTO，该赤道仪的稳定性与鲁棒性都更胜一筹（当然价格也略高）。</p>
     </div>
     <footer class="post-footer">
         <div class="post-eof"></div>

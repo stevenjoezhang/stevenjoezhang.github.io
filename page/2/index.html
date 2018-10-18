@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
-    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
@@ -58,7 +58,8 @@
   };
 </script>
   <title>米米的博客</title>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>
+<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
+<script async src="/lib/gtag.js"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -171,6 +172,96 @@
         <div class="content-wrap">
           <div id="content" class="content">
   <section id="posts" class="posts-expand">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/盘点那些有必要的HTTP头/">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a class="post-title-link" href="/2018-08/盘点那些有必要的HTTP头/" itemprop="url">
+                  盘点那些有必要的HTTP头
+                </a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <span title="创建时间：2018-08-11 21:35:23" itemprop="dateCreated datePublished" datetime="2018-08-11T21:35:23+08:00">2018-08-11</span>
+          </span>
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-08/盘点那些有必要的HTTP头/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-08/盘点那些有必要的HTTP头/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">7.9k</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">7 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+          <p>这篇文章翻译自：<a href="https://www.fastly.com/blog/headers-we-want" target="_blank" rel="noopener">The headers we want</a></p>
+<p>The headers we want</p>
+<p>By <a href="https://www.fastly.com/blog/andrew-betts" target="_blank" rel="noopener">Andrew Betts</a> | May 17, 2018</p>
+<p>Manipulating HTTP headers is one of the most common things that Fastly customers do. Using the right combination of headers is one of the best things you can do for the security of your site, and also a significant contributor to performance.</p>
+<p>Most developers know about and depend on a variety of HTTP headers to make their content work. Those that are best known include <code>Content-Type</code> and <code>Content-Length</code>, which are both almost universal. But more recently, headers such as <code>Content-Security-Policy</code> and <code>Strict-Transport-Security</code> have started to improve security, and <code>Link rel=preload</code> headers to improve performance. Few sites use these, despite their wide support across browsers.</p>
+<p>In the <a href="https://www.fastly.com/blog/headers-we-dont-want" target="_blank" rel="noopener">previous post</a> in this series, we looked at unnecessary headers. This time around, I’m going to help you figure out what headers you should be configuring for your site.</p>
+<h2 id="Doing-some-homework"><a href="#Doing-some-homework" class="headerlink" title="Doing some homework"></a>Doing some homework</h2><p>There are multiple services around the web that will analyse your site and tell you what headers you should add. I looked at <a href="https://securityheaders.io/" target="_blank" rel="noopener">securityheaders.io</a> and <a href="https://observatory.mozilla.org/" target="_blank" rel="noopener">Observatory by Mozilla</a> to supplement my own research and data drawn from the Fastly network.</p>
+<h2 id="The-headers-you-should-have-on-your-site"><a href="#The-headers-you-should-have-on-your-site" class="headerlink" title="The headers you should have on your site"></a>The headers you should have on your site</h2><p>So, what are the key headers you should have in responses from your servers? The bulk are responsible for improving security:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" target="_blank" rel="noopener">Content-Security-Policy</a>: Acts like a firewall in the browser. If your site is compromised, helps limit the damage by preventing connections to hosts you don’t approve. Essential. If you don’t have one, you should.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy" target="_blank" rel="noopener">Referrer-Policy</a>: Configures the level of detail to include in the <code>Referer</code> header when navigating away from the page. Helps to prevent data leaking from your site to sites that you link to. Highly recommended.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security" target="_blank" rel="noopener">Strict-Transport-Security</a>: Prevents any attempt to connect to your site over plain HTTP. Helps stop man-in-the-middle attacks, and upgrades your site’s security. Also highly recommended.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection" target="_blank" rel="noopener">X-XSS-Protection</a>: Prevents some forms of cross site scripting attack, by preventing script from executing if any of the markup in the document is also present in the same form in the request. Basically if you load a page with url <code>/index.html?foo=&lt;script&gt;alert(‘foo’);&lt;/script&gt;</code> and the browser sees <code>&lt;script&gt;alert(‘foo’);&lt;/script&gt;</code> in the page source, the script is blocked. These days this is largely made redundant by CSP.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options" target="_blank" rel="noopener">X-Content-Type-Options</a>: Set this to <code>nosniff</code> to prevent browsers allowing content that looks like JavaScript to execute even if it doesn’t have the right content-type. Prevents mime confusion attacks, and more recently is being used by Chrome to enable <a href="https://www.chromium.org/Home/chromium-security/site-isolation#TOC-Recommendations-for-Web-Developers" target="_blank" rel="noopener">site isolation</a>. It’s getting less necessary over time, due to better default behaviours, but this is currently still a best practice.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank" rel="noopener">CORS</a>: Cross-Origin Resource Sharing headers allow your URL to be loaded by script operating on another origin. This one’s optional. These headers are permissive, not restrictive, so not having them at all gives you the highest level of security.</p>
+<p>Others are for performance:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin" target="_blank" rel="noopener">Timing-Allow-Origin</a>: Allows monitoring tools access to timing data for the request. It’s good to throw this in on pretty much anything, as it will allow you to get much richer data from services like Google Analytics or Speedcurve.</p>
+<p><a href="https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/" target="_blank" rel="noopener">Link rel=preload</a>: Tells the browser of critical resources that it should get downloading even though it hasn’t encountered the need for them yet. Use this for fonts and important CSS (and read on for how we’re going to make this technique even more effective in future).</p>
+<p><a href="https://www.w3.org/TR/server-timing/" target="_blank" rel="noopener">Server-Timing</a>: Provides server-side timing information, which allows navigation and resource timing APIs to be supplemented with more granular information about individual tasks that make up the server side processing (eg. ‘how long did we spend in MySQL’). Great for monitoring performance data, in conjunction with RUM beacon tools.</p>
+<p>Let’s look at a couple of these in more detail.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018-08/盘点那些有必要的HTTP头/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/盘点那些不需要的HTTP头/">
@@ -740,80 +831,6 @@
     </footer>
   </div>
   </article>
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/改变世界的17个公式/">
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="/2018-07/改变世界的17个公式/" itemprop="url">
-                  改变世界的17个公式
-                </a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-07-18 11:53:28" itemprop="dateCreated datePublished" datetime="2018-07-18T11:53:28+08:00">2018-07-18</span>
-          </span>
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-07/改变世界的17个公式/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-07/改变世界的17个公式/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">23k</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">21 分钟</span>
-            </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-          <p>这篇文章翻译自：<a href="http://www.businessinsider.com/equations-that-changed-the-world-2016-3" target="_blank" rel="noopener">17 Equations That Changed the World</a></p>
-<p>In 2012, Mathematician Ian Stewart came out with an excellent and deeply researched book titled “In Pursuit of the Unknown: 17 Equations That Changed the World.”<br>在2012年，数学家斯图尔特（Ian Stewart）出版了一本精彩而深入研究的著作，名为《追寻未知：改变世界的17个公式》。<br>His book takes a look at the most pivotal equations of all time, and puts them in a human, rather than technical context.<br>他的书着眼于有史以来最关键的方程式，并将它们置于普通人而非专业的背景中。<br>“Equations definitely can be dull, and they can seem complicated, but that’s because they are often presented in a dull and complicated way,” Stewart told Business Insider. “I have an advantage over school math teachers: I’m not trying to show you how to do the sums yourself.”<br>“方程式肯定会显得沉闷，而且它们看起来很复杂，但那是因为它们经常以这样的方式呈现，”斯图尔特告诉Business Insider。 “我比学校的数学老师更有优势：我不会试图告诉你如何自己算出它们。”<br>He explained that anyone can “appreciate the beauty and importance of equations without knowing how to solve them … The intention is to locate them in their cultural and human context, and pull back the veil on their hidden effects on history.”<br>他解释说，任何人都可以“欣赏方程式的美丽和重要性，而不去知道如何解它们……目的是将它们置于文化和人文环境中，并揭开它们对历史隐藏效应的面纱。”<br>Stewart continued that “equations are a vital part of our culture. The stories behind them — the people who discovered or invented them and the periods in which they lived — are fascinating.”<br>斯图尔特继续说道，“方程式是我们文化的重要组成部分。他们背后的故事——发现或发明它们的人以及他们生活的时期——都很吸引人。”<br>Here are 17 equations that have changed the world:<br>以下是改变世界的17个方程式：<br>Max Nisen contributed to an earlier version of this post.<br>Max Nisen为本文的早期版本做出了贡献。</p>
-<h2 id="The-Pythagorean-Theorem"><a href="#The-Pythagorean-Theorem" class="headerlink" title="The Pythagorean Theorem"></a>The Pythagorean Theorem</h2><p>$$a^{2}+b^{2}=c^{2}$$<br>Pythagoras, 530 BC<br>What does it mean? The square of the hypotenuse of a right triangle is equal to the sum of the squares of its legs.<br>作用：直角三角形的斜边的平方等于其直角边的平方和。<br>History: Though attributed to Pythagoras, it is not certain that he was the first person to prove it. The first clear proof came from Euclid, and it is possible the concept was known 1,000 years before Pythagoras by the Babylonians.<br>历史：虽然认为毕达哥拉斯（Pythagoras）发现了这个公式，但不确定他是否是第一个证明它的人。第一个明确的证明来自欧几里得，而这个概念可能是在毕达哥拉斯之前1000年就被巴比伦人知道了。<br>Importance: The equation is at the core of much of geometry, links it with algebra, and is the foundation of trigonometry. Without it, accurate surveying, mapmaking, and navigation would be impossible.<br>重要性：勾股定理是几何的核心，它与代数联系起来，是三角学的基础。没有它，准确的测量、地图制作和导航将是不可能的。<br>In terms of pure math, the Pythagorean Theorem defines normal, Euclidean plane geometry. For example, a right triangle drawn on the surface of a sphere like the Earth doesn’t necessarily satisfy the theorem.<br>在纯数学方面，毕达哥拉斯定理定义了正常的欧几里德平面几何。例如，在像地球一样的球体表面上绘制的直角三角形不一定满足该定理。<br>Modern use: Triangulation is used to this day to pinpoint relative location for GPS navigation.<br>现代用途：今天使用三角测量来确定GPS导航的相对位置。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018-07/改变世界的17个公式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
   </section>
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -841,7 +858,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">77</span>
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -921,8 +938,8 @@
   }
 </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.2/velocity.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.2/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
@@ -1253,25 +1270,6 @@
       }
     });
   </script>
-      <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      },
-      TeX: {equationNumbers: { autoNumber: "AMS" }}
-    });
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <script src="/lib/needsharebutton/needsharebutton.js"></script>
   <script>
       pbOptions = {};

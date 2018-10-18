@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
-    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
@@ -58,7 +58,8 @@
   };
 </script>
   <title>米米的博客</title>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>
+<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
+<script async src="/lib/gtag.js"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -171,6 +172,72 @@
         <div class="content-wrap">
           <div id="content" class="content">
   <section id="posts" class="posts-expand">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-10/使用OpenCV进行星轨的后期处理/">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a class="post-title-link" href="/2018-10/使用OpenCV进行星轨的后期处理/" itemprop="url">
+                  使用OpenCV进行星轨的后期处理
+                </a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <span title="创建时间：2018-10-10 19:33:26" itemprop="dateCreated datePublished" datetime="2018-10-10T19:33:26+08:00">2018-10-10</span>
+          </span>
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-10/使用OpenCV进行星轨的后期处理/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-10/使用OpenCV进行星轨的后期处理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">1.8k</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">2 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+            <p>贴上代码，稍后填坑。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">addImage</span><span class="params">(img1_path, img2_path, alpha = <span class="number">0.5</span>)</span>:</span></span><br><span class="line">    img1 = cv2.imread(img1_path)</span><br><span class="line">    img = cv2.imread(img2_path)</span><br><span class="line">    h, w, _ = img1.shape</span><br><span class="line">    beta = <span class="number">1</span> - alpha</span><br><span class="line">    gamma = <span class="number">0</span></span><br><span class="line">    img_add = cv2.addWeighted(img1, alpha, img2, beta, gamma)</span><br><span class="line">    <span class="keyword">return</span> img_add</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    img_root = <span class="string">''</span> <span class="comment">#这里写你的文件夹路径，比如：/home/youname/data/img/,注意最后一个文件夹要有斜杠</span></span><br><span class="line">    fps = <span class="number">24</span> <span class="comment">#保存视频的FPS，可以适当调整</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#可以用(*'DVIX')或(*'X264'),如果都不行先装ffmepg: sudo apt-get install ffmepg</span></span><br><span class="line">    fourcc = cv2.VideoWriter_fourcc(*<span class="string">'MJPG'</span>)</span><br><span class="line">    videoWriter = cv2.VideoWriter(<span class="string">'saveVideo.mp4v'</span>, fourcc, fps, (<span class="number">3168</span>, <span class="number">4752</span>))<span class="comment">#最后一个是保存图片的尺寸</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">99</span>):</span><br><span class="line">        <span class="comment">#frame = cv2.imread(img_root+str(i+1)+'.jpg')</span></span><br><span class="line">        frame = addImage(<span class="string">'IMG_3866.jpg'</span>, <span class="string">'IMG_3869.jpg'</span>)</span><br><span class="line">        videoWriter.write(frame)</span><br><span class="line">    videoWriter.release()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    folder = input(<span class="string">"请输入照片所在文件夹"</span>) <span class="keyword">or</span> <span class="string">'.'</span></span><br><span class="line">    prefix = input(<span class="string">"请输入照片前缀"</span>) <span class="keyword">or</span> <span class="string">'IMG_'</span></span><br><span class="line">    suffix = input(<span class="string">"请输入照片后缀"</span>) <span class="keyword">or</span> <span class="string">'jpg'</span></span><br><span class="line">    digits = int(input(<span class="string">"请输入照片序号位数"</span>) <span class="keyword">or</span> <span class="number">4</span>)</span><br><span class="line">    start = int(input(<span class="string">"请输入第一张照片序号"</span>) <span class="keyword">or</span> <span class="number">0</span>)</span><br><span class="line">    end = int(input(<span class="string">"请输入最后一张照片序号"</span>) <span class="keyword">or</span> <span class="number">1</span>)</span><br><span class="line">    fps = int(input(<span class="string">"请输入视频帧率"</span>) <span class="keyword">or</span> <span class="number">24</span>)</span><br><span class="line">    fpp = int(input(<span class="string">"请输入每张照片持续的帧数"</span>) <span class="keyword">or</span> <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    imgArray = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(start, end + <span class="number">1</span>):</span><br><span class="line">        imgPath = folder + <span class="string">"/"</span> + prefix + i + <span class="string">"."</span> + suffix</span><br><span class="line">        <span class="keyword">if</span> os.path.exists(imgPath):</span><br><span class="line">            imgArray.append(imgPath)</span><br><span class="line"></span><br><span class="line">    h, w, _ = imgArray[<span class="number">0</span>].shape</span><br><span class="line">    fourcc = cv2.VideoWriter_fourcc(*<span class="string">'MJPG'</span>)</span><br><span class="line">    videoWriter = cv2.VideoWriter(<span class="string">'saveVideo.mp4v'</span>, fourcc, fps, (w, h))</span><br><span class="line">    frame = cv2.imread(imgArray[<span class="number">0</span>])</span><br><span class="line">    <span class="comment">#videoWriter.write(frame)</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(imgArray)):</span><br><span class="line">        <span class="comment">#frame = cv2.imread(img_root+str(i+1)+'.jpg')</span></span><br><span class="line">        frame = addImage(frame, imgArray[i], i / (i + <span class="number">1</span>))</span><br><span class="line">        videoWriter.write(frame)</span><br><span class="line">        print(i + <span class="string">'/'</span> + (i + <span class="number">1</span>))</span><br><span class="line">    videoWriter.release()</span><br></pre></td></tr></table></figure>
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-10/古惑狼游戏牵扯出的硬件bug/">
@@ -564,96 +631,6 @@
     </footer>
   </div>
   </article>
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/盘点那些有必要的HTTP头/">
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="/2018-08/盘点那些有必要的HTTP头/" itemprop="url">
-                  盘点那些有必要的HTTP头
-                </a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-08-11 21:35:23" itemprop="dateCreated datePublished" datetime="2018-08-11T21:35:23+08:00">2018-08-11</span>
-          </span>
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-08/盘点那些有必要的HTTP头/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-08/盘点那些有必要的HTTP头/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">7.9k</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">7 分钟</span>
-            </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-          <p>这篇文章翻译自：<a href="https://www.fastly.com/blog/headers-we-want" target="_blank" rel="noopener">The headers we want</a></p>
-<p>The headers we want</p>
-<p>By <a href="https://www.fastly.com/blog/andrew-betts" target="_blank" rel="noopener">Andrew Betts</a> | May 17, 2018</p>
-<p>Manipulating HTTP headers is one of the most common things that Fastly customers do. Using the right combination of headers is one of the best things you can do for the security of your site, and also a significant contributor to performance.</p>
-<p>Most developers know about and depend on a variety of HTTP headers to make their content work. Those that are best known include <code>Content-Type</code> and <code>Content-Length</code>, which are both almost universal. But more recently, headers such as <code>Content-Security-Policy</code> and <code>Strict-Transport-Security</code> have started to improve security, and <code>Link rel=preload</code> headers to improve performance. Few sites use these, despite their wide support across browsers.</p>
-<p>In the <a href="https://www.fastly.com/blog/headers-we-dont-want" target="_blank" rel="noopener">previous post</a> in this series, we looked at unnecessary headers. This time around, I’m going to help you figure out what headers you should be configuring for your site.</p>
-<h2 id="Doing-some-homework"><a href="#Doing-some-homework" class="headerlink" title="Doing some homework"></a>Doing some homework</h2><p>There are multiple services around the web that will analyse your site and tell you what headers you should add. I looked at <a href="https://securityheaders.io/" target="_blank" rel="noopener">securityheaders.io</a> and <a href="https://observatory.mozilla.org/" target="_blank" rel="noopener">Observatory by Mozilla</a> to supplement my own research and data drawn from the Fastly network.</p>
-<h2 id="The-headers-you-should-have-on-your-site"><a href="#The-headers-you-should-have-on-your-site" class="headerlink" title="The headers you should have on your site"></a>The headers you should have on your site</h2><p>So, what are the key headers you should have in responses from your servers? The bulk are responsible for improving security:</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" target="_blank" rel="noopener">Content-Security-Policy</a>: Acts like a firewall in the browser. If your site is compromised, helps limit the damage by preventing connections to hosts you don’t approve. Essential. If you don’t have one, you should.</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy" target="_blank" rel="noopener">Referrer-Policy</a>: Configures the level of detail to include in the <code>Referer</code> header when navigating away from the page. Helps to prevent data leaking from your site to sites that you link to. Highly recommended.</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security" target="_blank" rel="noopener">Strict-Transport-Security</a>: Prevents any attempt to connect to your site over plain HTTP. Helps stop man-in-the-middle attacks, and upgrades your site’s security. Also highly recommended.</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection" target="_blank" rel="noopener">X-XSS-Protection</a>: Prevents some forms of cross site scripting attack, by preventing script from executing if any of the markup in the document is also present in the same form in the request. Basically if you load a page with url <code>/index.html?foo=&lt;script&gt;alert(‘foo’);&lt;/script&gt;</code> and the browser sees <code>&lt;script&gt;alert(‘foo’);&lt;/script&gt;</code> in the page source, the script is blocked. These days this is largely made redundant by CSP.</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options" target="_blank" rel="noopener">X-Content-Type-Options</a>: Set this to <code>nosniff</code> to prevent browsers allowing content that looks like JavaScript to execute even if it doesn’t have the right content-type. Prevents mime confusion attacks, and more recently is being used by Chrome to enable <a href="https://www.chromium.org/Home/chromium-security/site-isolation#TOC-Recommendations-for-Web-Developers" target="_blank" rel="noopener">site isolation</a>. It’s getting less necessary over time, due to better default behaviours, but this is currently still a best practice.</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank" rel="noopener">CORS</a>: Cross-Origin Resource Sharing headers allow your URL to be loaded by script operating on another origin. This one’s optional. These headers are permissive, not restrictive, so not having them at all gives you the highest level of security.</p>
-<p>Others are for performance:</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin" target="_blank" rel="noopener">Timing-Allow-Origin</a>: Allows monitoring tools access to timing data for the request. It’s good to throw this in on pretty much anything, as it will allow you to get much richer data from services like Google Analytics or Speedcurve.</p>
-<p><a href="https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/" target="_blank" rel="noopener">Link rel=preload</a>: Tells the browser of critical resources that it should get downloading even though it hasn’t encountered the need for them yet. Use this for fonts and important CSS (and read on for how we’re going to make this technique even more effective in future).</p>
-<p><a href="https://www.w3.org/TR/server-timing/" target="_blank" rel="noopener">Server-Timing</a>: Provides server-side timing information, which allows navigation and resource timing APIs to be supplemented with more granular information about individual tasks that make up the server side processing (eg. ‘how long did we spend in MySQL’). Great for monitoring performance data, in conjunction with RUM beacon tools.</p>
-<p>Let’s look at a couple of these in more detail.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018-08/盘点那些有必要的HTTP头/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
   </section>
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -681,7 +658,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">77</span>
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -761,8 +738,8 @@
   }
 </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.2/velocity.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.2/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
@@ -1111,7 +1088,7 @@
         }
     });
 </script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <script src="/lib/needsharebutton/needsharebutton.js"></script>
   <script>
       pbOptions = {};

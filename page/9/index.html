@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
-    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
@@ -58,7 +58,8 @@
   };
 </script>
   <title>米米的博客</title>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>
+<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
+<script async src="/lib/gtag.js"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -171,6 +172,82 @@
         <div class="content-wrap">
           <div id="content" class="content">
   <section id="posts" class="posts-expand">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/CentOS 7安装bbr教程/">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a class="post-title-link" href="/2018-02/CentOS 7安装bbr教程/" itemprop="url">
+                  CentOS 7安装bbr教程
+                </a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <span title="创建时间：2018-02-21 23:09:38" itemprop="dateCreated datePublished" datetime="2018-02-21T23:09:38+08:00">2018-02-21</span>
+          </span>
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-02/CentOS 7安装bbr教程/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-02/CentOS 7安装bbr教程/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">1.8k</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">2 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="yum系统更新"><a href="#yum系统更新" class="headerlink" title="yum系统更新"></a>yum系统更新</h2><p>将CentOS系统版本更新到7.3或更高<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br><span class="line">yum upgrade</span><br></pre></td></tr></table></figure></p>
+<p>查看系统版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/redhat-release</span><br></pre></td></tr></table></figure></p>
+<p>输出如下，则表示已升级到7.3<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CentOS Linux release 7.3.1611 (Core)</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装elrepo并升级内核"><a href="#安装elrepo并升级内核" class="headerlink" title="安装elrepo并升级内核"></a>安装elrepo并升级内核</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line">rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span><br><span class="line">yum --enablerepo=elrepo-kernel install kernel-ml -y</span><br></pre></td></tr></table></figure>
+<p>正常情况下将输出如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Transaction Summary</span><br><span class="line">================================================================================</span><br><span class="line">Install  1 Package</span><br><span class="line"></span><br><span class="line">Total download size: 39 M</span><br><span class="line">Installed size: 169 M</span><br><span class="line">Downloading packages:</span><br><span class="line">kernel-ml-4.9.0-1.el7.elrepo.x86_64.rpm                    |  39 MB   00:00</span><br><span class="line">Running transaction check</span><br><span class="line">Running transaction <span class="built_in">test</span></span><br><span class="line">Transaction <span class="built_in">test</span> succeeded</span><br><span class="line">Running transaction</span><br><span class="line">Warning: RPMDB altered outside of yum.</span><br><span class="line">  Installing : kernel-ml-4.9.0-1.el7.elrepo.x86_64                          1/1</span><br><span class="line">  Verifying  : kernel-ml-4.9.0-1.el7.elrepo.x86_64                          1/1</span><br><span class="line"></span><br><span class="line">Installed:</span><br><span class="line">  kernel-ml.x86_64 0:4.9.0-1.el7.elrepo</span><br><span class="line"></span><br><span class="line">Complete!</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018-02/CentOS 7安装bbr教程/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/米米弹幕系统正式上线/">
@@ -530,72 +607,6 @@
     </footer>
   </div>
   </article>
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-01/MCPE地图的正确使用方式/">
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="/2018-01/MCPE地图的正确使用方式/" itemprop="url">
-                  MCPE地图的正确使用方式
-                </a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-01-18 23:21:39" itemprop="dateCreated datePublished" datetime="2018-01-18T23:21:39+08:00">2018-01-18</span>
-          </span>
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-01/MCPE地图的正确使用方式/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-01/MCPE地图的正确使用方式/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">66</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">1 分钟</span>
-            </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-            <p>在我的世界中，制作不同区域的地图后，可以使用物品展示框将它们挂起来，这样便能拼出一幅巨大的高分辨率地图，如图。<br><img src="/images/2018-01/IMG_4541.png" alt=""></p>
-<p>效果还是挺不错的。</p>
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
   </section>
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -623,7 +634,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">77</span>
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -703,8 +714,8 @@
   }
 </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.2/velocity.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.2/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>

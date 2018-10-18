@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
-    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
@@ -58,7 +58,8 @@
   };
 </script>
   <title>米米的博客</title>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>
+<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
+<script async src="/lib/gtag.js"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -171,6 +172,83 @@
         <div class="content-wrap">
           <div id="content" class="content">
   <section id="posts" class="posts-expand">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/CUPT地震仪的实现/">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a class="post-title-link" href="/2018-07/CUPT地震仪的实现/" itemprop="url">
+                  CUPT地震仪的实现
+                </a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <span title="创建时间：2018-07-02 10:22:49" itemprop="dateCreated datePublished" datetime="2018-07-02T10:22:49+08:00">2018-07-02</span>
+          </span>
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-07/CUPT地震仪的实现/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-07/CUPT地震仪的实现/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">700</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">1 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+          <p>2018年CUPT的第一题：</p>
+<blockquote>
+<p><strong>Invent Yourself</strong><br>Construct a simple seismograph that amplifies a local disturbance by mechanical, optical or electrical methods. Determine the typical response curve of your device and investigate the parameters of the damping constant. What is the maximum amplification that you can achieve?<br><strong>自主发明</strong><br>建造一个可以通过力学、光学或电学方法放大局部扰动的简单地震仪。确定你装置的标准响应曲线并且研究阻尼常数的参量。你能达到的最大放大率是多少？</p>
+</blockquote>
+<p>此题的关键便是将地震仪的反应谱通过可观测量进行表示。实现的思路有很多，力学、光学或电学方法都是可行的。综合考虑了实现难度和测量精度后，决定采用以下方案：通过力学方法放大震动，然后利用霍尔片和磁铁将力学量转换为电学量，借助Arduino单片机的模数转换，通过串口将信号输入到电脑，电脑用python监听串口，将获得的数据保存并实时分析、绘图。</p>
+<p>仪器的整体构造如图：<br><img src="/images/2018-07/1.jpg" alt=""></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018-07/CUPT地震仪的实现/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/Safari顶栏彩虹效果/">
@@ -540,82 +618,6 @@
     </footer>
   </div>
   </article>
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/Python开发表情包网站/">
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="/2018-06/Python开发表情包网站/" itemprop="url">
-                  Python开发表情包网站
-                </a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-06-06 20:47:45" itemprop="dateCreated datePublished" datetime="2018-06-06T20:47:45+08:00">2018-06-06</span>
-          </span>
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-06/Python开发表情包网站/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-06/Python开发表情包网站/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">4.2k</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">4 分钟</span>
-            </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-          <p>“表情包”是一种利用图片来表示感情的方式。在社交软件活跃之后，“表情包”已经形成了一种流行文化，在互联网上，基本人人都会发表情。<br>不知曾经你是否也有过找不到表情包去应对别人的时候？<br>今天博主分享用Python开发个人专属的表情包网站的方法，想用什么表情包搜一下就有了！<br><strong>目标：获取海量表情包，存入数据库，然后搭建简单网站，通过输入关键字获取对应的的表情包</strong></p>
-<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p>首先，我们要从这个网站爬取表情包：<br><a href="http://www.doutula.com/photo/list/?page=0" target="_blank" rel="noopener">http://www.doutula.com/photo/list/?page=0</a><br>我们先来分析一下这个网页的源代码：<br><img src="/images/2018-06/1.png" alt=""></p>
-<p>通过源码，我们可以发现需要获取的内容包括每个img标签的data-original和alt属性。通过爬虫获取网页，用正则表达式提取内容，然后存入数据库即可。<br>首先，安装mysql，根据你的系统：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install mysql</span><br><span class="line"><span class="comment">#或者 yum install mysql</span></span><br><span class="line"><span class="comment">#或者 apt-get install mysql</span></span><br></pre></td></tr></table></figure></p>
-<p>安装完成后，可能需要使用<code>mysql.server start</code>或者<code>service mysqld start</code>等命令手动开启mysql服务。可以通过运行<code>lsof -i:3306</code>查看mysql是否正确工作在3306端口。<br>接下来，用root登陆mysql并新建数据库和数据表，用来存放表情包：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line"><span class="comment">#按下回车后，输入密码，无回显</span></span><br><span class="line">create database images;</span><br><span class="line"><span class="comment">#建立数据库images</span></span><br><span class="line">use images;</span><br><span class="line">create table images( name varchar(1000), imageUrl varchar(200) );</span><br><span class="line"><span class="comment">#然后在该数据库中新建一个表，并添加相应的name和imageUrl</span></span><br><span class="line">quit;</span><br></pre></td></tr></table></figure></p>
-<p>初次登陆时会让你设置密码，一定要记住。<br>至此数据库方面的工作就完成了。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018-06/Python开发表情包网站/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
   </section>
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -643,7 +645,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">77</span>
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -723,8 +725,8 @@
   }
 </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.2/velocity.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.2/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>

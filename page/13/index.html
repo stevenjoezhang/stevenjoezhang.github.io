@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
-    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
@@ -58,7 +58,8 @@
   };
 </script>
   <title>米米的博客</title>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>
+<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
+<script async src="/lib/gtag.js"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -171,6 +172,80 @@
         <div class="content-wrap">
           <div id="content" class="content">
   <section id="posts" class="posts-expand">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-10/MacBook使用一块移动硬盘做Win To Go及Time Machine备份/">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a class="post-title-link" href="/2017-10/MacBook使用一块移动硬盘做Win To Go及Time Machine备份/" itemprop="url">
+                  MacBook使用一块移动硬盘做Win To Go及Time Machine备份
+                </a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <span title="创建时间：2017-10-15 12:35:38" itemprop="dateCreated datePublished" datetime="2017-10-15T12:35:38+08:00">2017-10-15</span>
+          </span>
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017-10/MacBook使用一块移动硬盘做Win To Go及Time Machine备份/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017-10/MacBook使用一块移动硬盘做Win To Go及Time Machine备份/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">2.9k</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">3 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="/images/2017-10/macbookair.png" alt=""></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>博主使用的MacBook Air，256G闪存，可用空间约251G，曾经的分区表为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/dev/disk0 (internal, physical):</span><br><span class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></span><br><span class="line">   0:      GUID_partition_scheme                        *251.0 GB   disk0</span><br><span class="line">   1:                        EFI EFI                     209.7 MB   disk0s1</span><br><span class="line">   2:                 Apple_APFS Container disk1         215.4 GB   disk0s2</span><br><span class="line">   3:                   Bootcamp                         35.2 GB    disk0s3</span><br><span class="line">   4:            Winows Recovery                         212.4 MB   disk0s3</span><br><span class="line"></span><br><span class="line">/dev/disk1 (synthesized):</span><br><span class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></span><br><span class="line">   0:      APFS Container Scheme –                      +215.4 GB   disk1</span><br><span class="line">                                 Physical Store disk0s2</span><br><span class="line">   1:                APFS Volume Macintosh HD            152.3 GB   disk1s1</span><br><span class="line">   2:                APFS Volume Preboot                 20.1 MB    disk1s2</span><br><span class="line">   3:                APFS Volume Recovery                520.0 MB   disk1s3</span><br><span class="line">   4:                APFS Volume VM                      3.2 GB     disk1s4</span><br></pre></td></tr></table></figure></p>
+<p>（使用<code>diskutil list</code>命令查看）</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017-10/MacBook使用一块移动硬盘做Win To Go及Time Machine备份/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-10/C语言控制台程序清除输入缓冲区/">
@@ -553,7 +628,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">77</span>
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -633,8 +708,8 @@
   }
 </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.2/velocity.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.2/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>

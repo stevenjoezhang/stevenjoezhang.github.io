@@ -6,13 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
   <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
   <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+  <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
@@ -174,6 +174,143 @@
   <section id="posts" class="posts-expand">
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/MySQL5.7命令/">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a class="post-title-link" href="/2018-03/MySQL5.7命令/" itemprop="url">
+                  MySQL5.7命令
+                </a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <span title="创建时间：2018-03-09 10:16:24" itemprop="dateCreated datePublished" datetime="2018-03-09T10:16:24+08:00">2018-03-09</span>
+          </span>
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-03/MySQL5.7命令/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-03/MySQL5.7命令/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">1k</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">1 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+            <p>登录：<code>mysql -u username -p</code><br>创建数据库：<code>create database dbname;</code><br>查看所有的库：<code>show databases;</code><br>使用某个库：<code>use dbname;</code><br>查看库有哪些表：<code>show tables;</code><br>查看表的列：<code>describe tablename;</code><br>直接登录某个数据库：<code>mysql -h host -u user -p dbname</code><br>删库：<code>drop database dbname;</code><br>跑路：略<br>添加用户：<code>CREATE USER &#39;username&#39;@&#39;host&#39; IDENTIFIED BY &#39;password&#39;;</code><br>删除用户：<code>DROP USER &#39;username&#39;@&#39;host&#39;;</code><br>授权：<code>grant select,update on dbname.* to &#39;username&#39;@&#39;host&#39; identified by &#39;password&#39;;</code><br><code>grant all on dbname.* to &#39;username&#39;@&#39;host&#39; identified by &#39;password&#39;;</code><br>显示用户信息：<code>select user();</code><br>显示版本：<code>select version();</code><br>需要注意的是，如果数据库名、表名等包含特殊字符，例如减号等，需要使用`符号标记字符串，否则会出现语法错误。例如：<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> hello-world;</span><br></pre></td></tr></table></figure></p>
+<p>这样会出现语法错误，正确做法是：<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> <span class="symbol">`hello-world`</span>;</span><br></pre></td></tr></table></figure></p>
+<p>在WordPress中，文章、用户的ID都是通过<code>AUTO_INCREMENT</code>分配的，如果要改变其值，例如在wp_usermeta和wp_users数据表中，可以执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`wp_usermeta`</span></span><br><span class="line">  <span class="keyword">MODIFY</span> <span class="string">`umeta_id`</span> <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT, AUTO_INCREMENT=<span class="number">177</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`wp_users`</span></span><br><span class="line">  <span class="keyword">MODIFY</span> <span class="string">`ID`</span> <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT, AUTO_INCREMENT=<span class="number">6</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure>
+<p>其余类似。</p>
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/一行代码为网站添加访客地图/">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a class="post-title-link" href="/2018-02/一行代码为网站添加访客地图/" itemprop="url">
+                  一行代码为网站添加访客地图
+                </a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <span title="创建时间：2018-02-26 16:47:32" itemprop="dateCreated datePublished" datetime="2018-02-26T16:47:32+08:00">2018-02-26</span>
+          </span>
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-02/一行代码为网站添加访客地图/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-02/一行代码为网站添加访客地图/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">531</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">1 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+            <p>Revolver Maps是一个交互式的网站访客地图。每一个浏览者的位置都会实时在由Canvas渲染的地球上标记出来。在它的<a href="https://www.revolvermaps.com/?target=gallery" target="_blank" rel="noopener">官方网站</a>上，可以轻松地选择地图样式，并生成用于插入HTML页面的script标签。<br><img src="/images/2018-02/revolvermaps-1.png" alt=""></p>
+<p>其中，RevolverMaps Standard GL样式是响应式的，会自适应父元素大小，非常适合作为访客地图使用。点击“Get this Widget!”按钮，在新的页面中调整参数，自定义颜色、缩放、旋转等等，完成后，将生成的script标签复制下来，并放在你想要生成地图的地方即可。例如：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"//ra.revolvermaps.com/0/0/8.js?i=0pdvpgzth5r&amp;amp;m=7&amp;amp;c=ff0000&amp;amp;cr1=ffffff&amp;amp;f=arial&amp;amp;l=33&amp;amp;v0=20&amp;amp;z=11"</span> <span class="attr">async</span>=<span class="string">"async"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>类似地，你也可以把它放到WordPress博客的侧边小工具栏中，像下图这样：<br><img src="/images/2018-02/revolvermaps-2.png" alt=""></p>
+<p>访问站点时，访客地图就会自动显示了。</p>
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/CentOS 7安装bbr教程/">
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
@@ -236,11 +373,11 @@
 <h2 id="安装elrepo并升级内核"><a href="#安装elrepo并升级内核" class="headerlink" title="安装elrepo并升级内核"></a>安装elrepo并升级内核</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line">rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span><br><span class="line">yum --enablerepo=elrepo-kernel install kernel-ml -y</span><br></pre></td></tr></table></figure>
 <p>正常情况下将输出如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Transaction Summary</span><br><span class="line">================================================================================</span><br><span class="line">Install  1 Package</span><br><span class="line"></span><br><span class="line">Total download size: 39 M</span><br><span class="line">Installed size: 169 M</span><br><span class="line">Downloading packages:</span><br><span class="line">kernel-ml-4.9.0-1.el7.elrepo.x86_64.rpm                    |  39 MB   00:00</span><br><span class="line">Running transaction check</span><br><span class="line">Running transaction <span class="built_in">test</span></span><br><span class="line">Transaction <span class="built_in">test</span> succeeded</span><br><span class="line">Running transaction</span><br><span class="line">Warning: RPMDB altered outside of yum.</span><br><span class="line">  Installing : kernel-ml-4.9.0-1.el7.elrepo.x86_64                          1/1</span><br><span class="line">  Verifying  : kernel-ml-4.9.0-1.el7.elrepo.x86_64                          1/1</span><br><span class="line"></span><br><span class="line">Installed:</span><br><span class="line">  kernel-ml.x86_64 0:4.9.0-1.el7.elrepo</span><br><span class="line"></span><br><span class="line">Complete!</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018-02/CentOS 7安装bbr教程/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-02/CentOS 7安装bbr教程/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
     </div>
     <footer class="post-footer">
@@ -441,165 +578,11 @@
           <p>下面这两张图片拥有相同的MD5值<code>253dd04e87492e4fc3471de5e776bc3d</code>：<br><img src="/images/2018-02/plane.jpg" alt=""></p>
 <p><img src="/images/2018-02/ship.jpg" alt=""></p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018-02/制造MD5碰撞/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-01/基于Nginx搭建视频直播服务器/">
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="/2018-01/基于Nginx搭建视频直播服务器/" itemprop="url">
-                  基于Nginx搭建视频直播服务器
-                </a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-01-28 10:22:01" itemprop="dateCreated datePublished" datetime="2018-01-28T10:22:01+08:00">2018-01-28</span>
-          </span>
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-01/基于Nginx搭建视频直播服务器/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-01/基于Nginx搭建视频直播服务器/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">5.6k</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">5 分钟</span>
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-02/制造MD5碰撞/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
             </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-          <p>昨晚博主在VPS上搭建了基于Nginx的视频直播服务器，成功地使用OBS Studio推流，在Safari上实现了HTML5播放。下面附上具体步骤，请将所有<code>your.domain.com</code>替换为你的域名或者服务器IP。</p>
-<h2 id="Nginx环境搭建"><a href="#Nginx环境搭建" class="headerlink" title="Nginx环境搭建"></a>Nginx环境搭建</h2><p>首先，按照👇教程安装搭建lnmp环境！<br><a href="https://lnmp.org/install.html" target="_blank" rel="noopener">lnmp环境一键安装脚本</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下载并安装lnmp环境</span></span><br><span class="line">wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz &amp;&amp; tar zxf lnmp1.4.tar.gz &amp;&amp; <span class="built_in">cd</span> lnmp1.4 &amp;&amp; ./install.sh lnmp</span><br></pre></td></tr></table></figure>
-<p>请按照脚本的提示选择你要安装的各个组件版本，若不确定，选择默认选项即可。安装完成后，命令行输出：<br><img src="/images/2018-01/1774338-dc544ac657937d0d.png" alt=""></p>
-<p>此时访问服务器地址会出现如下界面：<br><img src="/images/2018-01/1774338-b0eb1df8603e632d.png" alt=""></p>
-<p><strong>注意：安装时生成的解压文件夹lnmp1.4先别删除！</strong></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018-01/基于Nginx搭建视频直播服务器/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-01/JavaScript常用的简写技术与展开操作符的绝妙使用/">
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="/2018-01/JavaScript常用的简写技术与展开操作符的绝妙使用/" itemprop="url">
-                  JavaScript常用的简写技术与展开操作符的绝妙使用
-                </a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-01-27 13:15:56" itemprop="dateCreated datePublished" datetime="2018-01-27T13:15:56+08:00">2018-01-27</span>
-          </span>
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-01/JavaScript常用的简写技术与展开操作符的绝妙使用/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-01/JavaScript常用的简写技术与展开操作符的绝妙使用/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">7.5k</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">7 分钟</span>
-            </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="三元操作符"><a href="#三元操作符" class="headerlink" title="三元操作符"></a>三元操作符</h2><p>当想写<code>if...else</code>语句时，使用三元操作符来代替。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">let</span> answer;</span><br><span class="line"><span class="keyword">if</span> (x &gt; <span class="number">10</span>) &#123;</span><br><span class="line">    answer = <span class="string">'is greater'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    answer = <span class="string">'is lesser'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>简写：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> answer = x &gt; <span class="number">10</span> ? <span class="string">'is greater'</span> : <span class="string">'is lesser'</span>;</span><br><span class="line"></span><br><span class="line">也可以嵌套<span class="keyword">if</span>语句：</span><br><span class="line"><span class="string">``</span><span class="string">`javascript</span></span><br><span class="line"><span class="string">const big = x &gt; 10 ? " greater 10" : x</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="短路求值简写方式"><a href="#短路求值简写方式" class="headerlink" title="短路求值简写方式"></a>短路求值简写方式</h2><p>当给一个变量分配另一个值时，想确定源始值不是<code>null</code>，<code>undefined</code>或空值。可以写撰写一个多重条件的if语句。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (variable1 !== <span class="literal">null</span> || variable1 !== <span class="literal">undefined</span> || variable1 !== <span class="string">''</span>) &#123;</span><br><span class="line">     <span class="keyword">let</span> variable2 = variable1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>或者可以使用短路求值方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> variable2 = variable1  || <span class="string">'new'</span>;</span><br></pre></td></tr></table></figure></p>
-<h2 id="声明变量简写方法"><a href="#声明变量简写方法" class="headerlink" title="声明变量简写方法"></a>声明变量简写方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x;</span><br><span class="line"><span class="keyword">let</span> y;</span><br><span class="line"><span class="keyword">let</span> z = <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
-<p>简写方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x, y, z=<span class="number">3</span>;</span><br></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018-01/JavaScript常用的简写技术与展开操作符的绝妙使用/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
           <!--/noindex-->
     </div>
     <footer class="post-footer">
@@ -609,7 +592,7 @@
   </article>
   </section>
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
           </div>
         </div>
@@ -634,7 +617,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">78</span>
+                    <span class="site-state-item-count">80</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -681,7 +664,7 @@
     </main>
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+        <div class="copyright"> &copy; 2017 – <span itemprop="copyrightYear">2018</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -713,10 +696,10 @@
     window.Promise = null;
   }
 </script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
@@ -1055,7 +1038,7 @@
           pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
   <script type="text/javascript">pangu.spacingPage();</script>
   <style>
     .copy-btn {

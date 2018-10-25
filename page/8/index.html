@@ -6,13 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
   <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
   <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+  <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
@@ -174,6 +174,157 @@
   <section id="posts" class="posts-expand">
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/Quine——输出自身的程序/">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a class="post-title-link" href="/2018-03/Quine——输出自身的程序/" itemprop="url">
+                  Quine——输出自身的程序
+                </a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <span title="创建时间：2018-03-27 09:48:33" itemprop="dateCreated datePublished" datetime="2018-03-27T09:48:33+08:00">2018-03-27</span>
+          </span>
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-03/Quine——输出自身的程序/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-03/Quine——输出自身的程序/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">3.4k</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">3 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+          <p>能够输出自身的代码被称为Quine，以哲学家 Willard van Orman Quine (1908-2000) 而命名。<br>Quine在图灵完备的语言中都是可行的。在可计算性理论(computability theory)中，图灵等价指的是：对于两个计算机A和B，如果A可以模拟B，B可以模拟A，就称他们是图灵等价的。根据“丘奇-图灵”理论，图灵机是表达能力最强大的计算系统，对现实世界中的任何计算机，都可以用图灵机1来模拟它。<br>套用上面的定义，如果一个编程语言可以完全模拟图灵机，那么它就是图灵完备的。大部分编程语言都是图灵完备的，因为他们需要解决各种问题的通用能力，而这正是图灵机所具备的。确实存在一些语言不是图灵完备的，他们通常是被设计用来解决某些特殊的问题，比如SQL以及正则表达式。</p>
+<p>Shell<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">z=\<span class="string">' a='</span>z=\\<span class="variable">$z</span> a=<span class="variable">$z</span><span class="variable">$a</span><span class="variable">$z</span>\; <span class="built_in">eval</span> <span class="built_in">echo</span> \<span class="variable">$a</span><span class="string">'; eval echo $a</span></span><br></pre></td></tr></table></figure></p>
+<p>PHP<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> file_get_content(<span class="keyword">__FILE__</span>);</span><br></pre></td></tr></table></figure></p>
+<p>JavaScript<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="string">'!'</span>+$+<span class="string">'()'</span>)&#125;()</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">'var%20s%20%3D%20%27__%27%3B%20console.log%28unescape%28s%29.replace%28%27__%27%2C%20s%29%29'</span>; <span class="built_in">console</span>.log(<span class="built_in">unescape</span>(s).replace(<span class="string">'__'</span>, s))</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-03/Quine——输出自身的程序/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/使用Electron构建桌面应用/">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a class="post-title-link" href="/2018-03/使用Electron构建桌面应用/" itemprop="url">
+                  使用Electron构建桌面应用
+                </a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <span title="创建时间：2018-03-25 23:41:04" itemprop="dateCreated datePublished" datetime="2018-03-25T23:41:04+08:00">2018-03-25</span>
+          </span>
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-03/使用Electron构建桌面应用/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-03/使用Electron构建桌面应用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">2.9k</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">3 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+          <p>Electron是基于Node.js的桌面应用开发框架，所有代码均在Chrome“外壳”下运行，因而可以调用所有Node.js和浏览器的API，并且具有跨平台的特性。下面介绍如何使用Electron构建简单的桌面应用。你可以参照官方给出的入门程序：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/electron/electron-quick-start</span><br></pre></td></tr></table></figure></p>
+<p>一个Electron应用应包含以下内容：</p>
+<h2 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h2><p>当你使用npm start启动Electron程序时，这是最先被执行的脚本。在main.js中可以创建窗口对象以构建图形界面。一个典型的main.js如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> electron = <span class="built_in">require</span>(<span class="string">'electron'</span>)</span><br><span class="line"><span class="keyword">const</span> app = electron.app</span><br><span class="line"><span class="keyword">const</span> BrowserWindow = electron.BrowserWindow</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>)</span><br><span class="line"><span class="keyword">let</span> mainWindow</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createWindow</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    mainWindow = <span class="keyword">new</span> BrowserWindow(&#123;<span class="attr">width</span>: <span class="number">800</span>, <span class="attr">height</span>: <span class="number">600</span>&#125;)</span><br><span class="line">    mainWindow.loadURL(url.format(&#123;</span><br><span class="line">        pathname: path.join(__dirname, <span class="string">'index.html'</span>),</span><br><span class="line">        protocol: <span class="string">'file:'</span>,</span><br><span class="line">        slashes: <span class="literal">true</span></span><br><span class="line">    &#125;))</span><br><span class="line">    mainWindow.on(<span class="string">'closed'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        mainWindow = <span class="literal">null</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">app.on(<span class="string">'ready'</span>, createWindow)</span><br><span class="line">app.on(<span class="string">'window-all-closed'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (process.platform !== <span class="string">'darwin'</span>) &#123;</span><br><span class="line">        app.quit()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">app.on(<span class="string">'activate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (mainWindow === <span class="literal">null</span>) &#123;</span><br><span class="line">        createWindow()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-03/使用Electron构建桌面应用/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/数学笑话/">
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
@@ -232,11 +383,11 @@
     <div class="post-body" itemprop="articleBody">
           <p>A point walks into A bar. \(\bar{A}\) says, “We’re closed.”<br>\(e^{x}\) is walking down the street when it sees \(\pi\) running towards him. “Help!”, \(\pi\) shouts, There’s a differential operator coming my way, and if it catches me, I’ll be reduced to nothing! \(e^{x}\) confidently says “Stand beside me, \(\pi\)! Together, we’ll be safe from any differential operators we come across!” Suddenly, the differential operator appears and asks “Who are you?” They respond “We are \(\pi e^{x}\). Who are you?” It smiles and says “\(\frac{\partial}{\partial{y}}\)”.<br><img src="/images/2018-03/calczilla.png" alt=""></p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018-03/数学笑话/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-03/数学笑话/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
     </div>
     <footer class="post-footer">
@@ -373,11 +524,11 @@
 <p>其中将jdk1.8.0_40.jdk换成你所安装的JDK对应的目录。修改完成后，重启终端或使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
 <p>使环境变量生效。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018-03/Mac反编译apk程序/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-03/Mac反编译apk程序/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
     </div>
     <footer class="post-footer">
@@ -450,149 +601,12 @@
 <h3 id="函数作为方法调用"><a href="#函数作为方法调用" class="headerlink" title="函数作为方法调用"></a>函数作为方法调用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    firstName: <span class="string">"John"</span>,</span><br><span class="line">    lastName: <span class="string">"Doe"</span>,</span><br><span class="line">    fullName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">" "</span> + <span class="keyword">this</span>.lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">myObject.fullName(); <span class="comment">//返回 "John Doe"</span></span><br></pre></td></tr></table></figure>
 <p>注意：函数作为对象方法调用，会使得this的值成为对象本身。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018-03/JavaScript中的this，prototype与函数原型/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-03/JavaScript中的this，prototype与函数原型/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/MySQL5.7命令/">
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="/2018-03/MySQL5.7命令/" itemprop="url">
-                  MySQL5.7命令
-                </a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-03-09 10:16:24" itemprop="dateCreated datePublished" datetime="2018-03-09T10:16:24+08:00">2018-03-09</span>
-          </span>
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-03/MySQL5.7命令/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-03/MySQL5.7命令/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">1k</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">1 分钟</span>
-            </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-            <p>登录：<code>mysql -u username -p</code><br>创建数据库：<code>create database dbname;</code><br>查看所有的库：<code>show databases;</code><br>使用某个库：<code>use dbname;</code><br>查看库有哪些表：<code>show tables;</code><br>查看表的列：<code>describe tablename;</code><br>直接登录某个数据库：<code>mysql -h host -u user -p dbname</code><br>删库：<code>drop database dbname;</code><br>跑路：略<br>添加用户：<code>CREATE USER &#39;username&#39;@&#39;host&#39; IDENTIFIED BY &#39;password&#39;;</code><br>删除用户：<code>DROP USER &#39;username&#39;@&#39;host&#39;;</code><br>授权：<code>grant select,update on dbname.* to &#39;username&#39;@&#39;host&#39; identified by &#39;password&#39;;</code><br><code>grant all on dbname.* to &#39;username&#39;@&#39;host&#39; identified by &#39;password&#39;;</code><br>显示用户信息：<code>select user();</code><br>显示版本：<code>select version();</code><br>需要注意的是，如果数据库名、表名等包含特殊字符，例如减号等，需要使用`符号标记字符串，否则会出现语法错误。例如：<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> hello-world;</span><br></pre></td></tr></table></figure></p>
-<p>这样会出现语法错误，正确做法是：<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> <span class="symbol">`hello-world`</span>;</span><br></pre></td></tr></table></figure></p>
-<p>在WordPress中，文章、用户的ID都是通过<code>AUTO_INCREMENT</code>分配的，如果要改变其值，例如在wp_usermeta和wp_users数据表中，可以执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`wp_usermeta`</span></span><br><span class="line">  <span class="keyword">MODIFY</span> <span class="string">`umeta_id`</span> <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT, AUTO_INCREMENT=<span class="number">177</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`wp_users`</span></span><br><span class="line">  <span class="keyword">MODIFY</span> <span class="string">`ID`</span> <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT, AUTO_INCREMENT=<span class="number">6</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure>
-<p>其余类似。</p>
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/一行代码为网站添加访客地图/">
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="/2018-02/一行代码为网站添加访客地图/" itemprop="url">
-                  一行代码为网站添加访客地图
-                </a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-02-26 16:47:32" itemprop="dateCreated datePublished" datetime="2018-02-26T16:47:32+08:00">2018-02-26</span>
-          </span>
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-02/一行代码为网站添加访客地图/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-02/一行代码为网站添加访客地图/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">531</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">1 分钟</span>
-            </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-            <p>Revolver Maps是一个交互式的网站访客地图。每一个浏览者的位置都会实时在由Canvas渲染的地球上标记出来。在它的<a href="https://www.revolvermaps.com/?target=gallery" target="_blank" rel="noopener">官方网站</a>上，可以轻松地选择地图样式，并生成用于插入HTML页面的script标签。<br><img src="/images/2018-02/revolvermaps-1.png" alt=""></p>
-<p>其中，RevolverMaps Standard GL样式是响应式的，会自适应父元素大小，非常适合作为访客地图使用。点击“Get this Widget!”按钮，在新的页面中调整参数，自定义颜色、缩放、旋转等等，完成后，将生成的script标签复制下来，并放在你想要生成地图的地方即可。例如：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"//ra.revolvermaps.com/0/0/8.js?i=0pdvpgzth5r&amp;amp;m=7&amp;amp;c=ff0000&amp;amp;cr1=ffffff&amp;amp;f=arial&amp;amp;l=33&amp;amp;v0=20&amp;amp;z=11"</span> <span class="attr">async</span>=<span class="string">"async"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>类似地，你也可以把它放到WordPress博客的侧边小工具栏中，像下图这样：<br><img src="/images/2018-02/revolvermaps-2.png" alt=""></p>
-<p>访问站点时，访客地图就会自动显示了。</p>
     </div>
     <footer class="post-footer">
         <div class="post-eof"></div>
@@ -601,7 +615,7 @@
   </article>
   </section>
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
           </div>
         </div>
@@ -626,7 +640,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">78</span>
+                    <span class="site-state-item-count">80</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -673,7 +687,7 @@
     </main>
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+        <div class="copyright"> &copy; 2017 – <span itemprop="copyrightYear">2018</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -705,10 +719,10 @@
     window.Promise = null;
   }
 </script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
@@ -1066,7 +1080,7 @@
           pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
   <script type="text/javascript">pangu.spacingPage();</script>
   <style>
     .copy-btn {

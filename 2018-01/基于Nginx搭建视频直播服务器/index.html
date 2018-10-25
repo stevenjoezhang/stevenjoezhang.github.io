@@ -6,13 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
   <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
   <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+  <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
@@ -52,7 +52,7 @@
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/1774338-b0eb1df8603e632d.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/2018-07-16.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/1774338-c2443fa915f45ef1.png">
-<meta property="og:updated_time" content="2018-09-30T11:02:11.575Z">
+<meta property="og:updated_time" content="2018-10-25T08:50:56.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Nginx搭建视频直播服务器">
 <meta name="twitter:description" content="昨晚博主在VPS上搭建了基于Nginx的视频直播服务器，成功地使用OBS Studio推流，在Safari上实现了HTML5播放。下面附上具体步骤，请将所有your.domain.com替换为你的域名或者服务器IP。 Nginx环境搭建首先，按照👇教程安装搭建lnmp环境！lnmp环境一键安装脚本 12#下载并安装lnmp环境wget -c http://soft.vpser.net/lnmp/">
@@ -247,7 +247,7 @@
 <p>此时访问服务器地址会出现如下界面：<br><img src="/images/2018-01/1774338-b0eb1df8603e632d.png" alt=""></p>
 <p><strong>注意：安装时生成的解压文件夹lnmp1.4先别删除！</strong></p>
 <a id="more"></a>
-<h2 id="安装Nginx的扩展模块"><a href="#安装Nginx的扩展模块" class="headerlink" title="安装Nginx的扩展模块"></a>安装Nginx的扩展模块</h2><h3 id="下载nginx-http-flv-module"><a href="#下载nginx-http-flv-module" class="headerlink" title="下载nginx-http-flv-module"></a>下载nginx-http-flv-module</h3><p>GitHub地址：<a href="https://github.com/winshining/nginx-http-flv-module" target="_blank" rel="noopener">https://github.com/winshining/nginx-http-flv-module</a></p>
+<h2 id="安装Nginx的扩展模块"><a href="#安装Nginx的扩展模块" class="headerlink" title="安装Nginx的扩展模块"></a>安装Nginx的扩展模块</h2><h3 id="下载nginx-http-flv-module"><a href="#下载nginx-http-flv-module" class="headerlink" title="下载nginx-http-flv-module"></a>下载nginx-http-flv-module</h3><p>GitHub项目地址：<a href="https://github.com/winshining/nginx-http-flv-module" target="_blank" rel="noopener">https://github.com/winshining/nginx-http-flv-module</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下载扩展包</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/winshining/nginx-http-flv-module</span><br><span class="line"><span class="comment">#为nginx创建扩展模块目录</span></span><br><span class="line">mkdir /usr/<span class="built_in">local</span>/nginx/extend_module </span><br><span class="line"><span class="comment">#将解压后的nginx-rtmp-module目录移动到nginx扩展模块目录下</span></span><br><span class="line">mv nginx-http-flv-module/ /usr/<span class="built_in">local</span>/nginx/extend_module/nginx-http-flv-module</span><br></pre></td></tr></table></figure>
 <h3 id="查看nginx配置参数"><a href="#查看nginx配置参数" class="headerlink" title="查看nginx配置参数"></a>查看nginx配置参数</h3><p>执行<code>nginx -V</code>：<br><img src="/images/2018-01/2018-07-16.png" alt=""></p>
 <p>复制<code>configure arguments</code>后的所有参数，例如：<br><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">-</span><span class="literal">-</span><span class="comment">prefix=/usr/local/nginx</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">user=www</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">group=www</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">http_stub_status_module</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">http_v2_module</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">http_ssl_module</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">http_gzip_static_module</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">ipv6</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">http_sub_module</span></span><br></pre></td></tr></table></figure></p>
@@ -383,7 +383,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">78</span>
+                    <span class="site-state-item-count">80</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -437,7 +437,7 @@
     </main>
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+        <div class="copyright"> &copy; 2017 – <span itemprop="copyrightYear">2018</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -469,10 +469,10 @@
     window.Promise = null;
   }
 </script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
@@ -813,7 +813,7 @@
           pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
   <script type="text/javascript">pangu.spacingPage();</script>
   <style>
     .copy-btn {

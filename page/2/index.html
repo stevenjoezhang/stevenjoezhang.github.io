@@ -6,13 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
   <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
   <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+  <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
@@ -174,6 +174,157 @@
   <section id="posts" class="posts-expand">
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-09/十个UI设计的基本原理/">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a class="post-title-link" href="/2018-09/十个UI设计的基本原理/" itemprop="url">
+                  十个UI设计的基本原理
+                </a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <span title="创建时间：2018-09-16 09:52:56" itemprop="dateCreated datePublished" datetime="2018-09-16T09:52:56+08:00">2018-09-16</span>
+          </span>
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-09/十个UI设计的基本原理/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-09/十个UI设计的基本原理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">7.3k</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">7 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+          <p>这篇文章翻译自：<a href="https://blog.teamtreehouse.com/10-user-interface-design-fundamentals" target="_blank" rel="noopener">10 User Interface Design Fundamentals</a></p>
+<p>It’s no great mystery that truly great user interfaces are the ones that are engineered to stay out of the way.<br>真正优秀的用户界面都是那些设计得“不挡路”的——这并不是什么奥秘。<br>‘Staying out of the way’ means not distracting your users. Rather, good UIs let your users complete goals. The result? A reduction in training and support costs, and happier, satisfied and highly engaged users.<br>“不挡路”意味着不会分散用户的注意力。事实上，良好的用户界面可以让您的用户完成目标。结果呢？减少培训和支持的成本，以及让用户更快乐、更满意并被深深吸引。<br>Check out our other <a href="http://teamtreehouse.com/library/topic:design" target="_blank" rel="noopener">design courses</a> at Treehouse.<br>在Treehouse查看我们的其他<a href="http://teamtreehouse.com/library/topic:design" target="_blank" rel="noopener">设计课程</a>。<br>When getting started on a new interface, make sure to remember these fundamentals:<br>在开始设计新的用户界面时，请务必记住以下原则：</p>
+<h2 id="Know-your-user"><a href="#Know-your-user" class="headerlink" title="Know your user"></a>Know your user</h2><p>了解您的用户</p>
+<blockquote>
+<p>“Obsess over customers: when given the choice between obsessing over competitors or customers, always obsess over customers. Start with customers and work backward.” – Jeff Bezos<br>“对顾客的关注：当在关注竞争对手或顾客之间做出选择时，总是应该关注顾客。从顾客开始，用逆向思维工作。” —— Jeff Bezos</p>
+</blockquote>
+<p>Your user’s goals are your goals, so learn them. Restate them, repeat them. Then, learn about your user’s skills and experience, and what they need. Find out what interfaces they like and sit down and watch how they <em>use</em> them. Do not get carried away trying to keep up with the competition by mimicking trendy design styles or adding new features. By focusing on your user first, you will be able to create an interface that lets them achieve their goals.<br>您的用户的目标就是您的目标，因此请了解它们。重申它们，重复它们。然后，了解您的用户的技能和经验，以及他们需要什么。找出他们喜欢的界面，坐下来看看他们如何<em>使用</em>这些界面。不要试图通过模仿时尚的设计风格或添加新功能来跟上竞争对手，而忘乎所以。通过首先关注您的用户，您将能够创建一个让他们完成目标的界面。</p>
+<h2 id="Pay-attention-to-patterns"><a href="#Pay-attention-to-patterns" class="headerlink" title="Pay attention to patterns"></a>Pay attention to patterns</h2><p>注意UI样式</p>
+<p>Users spend the majority of their time on interfaces other than your own (Facebook, MySpace, Blogger, Bank of America, school/university, news websites, etc). There is no need to reinvent the wheel. Those interfaces may solve some of the same problems that users perceive within the one you are creating. By using familiar UI patterns, you will help your users feel at home.<br>用户会将大部分时间花在除您以外的其他界面上（Facebook，MySpace，Blogger，美国银行，学校/大学，新闻网站等等）。没有必要重新发明轮子。这些接口可以解决用户在您正在创建的问题中感知的一些相同问题。通过使用熟悉的UI模式，您将让您的用户有宾至如归的感觉。</p>
+<h2 id="Stay-consistent"><a href="#Stay-consistent" class="headerlink" title="Stay consistent"></a>Stay consistent</h2><p>保持一致性</p>
+<blockquote>
+<p>“The more users’ expectations prove right, the more they will feel in control of the system and the more they will like it.” – Jakob Nielson<br>“越多用户的期望被证明是正确的，他们对系统的控制感越强，他们就会越喜欢它。” —— Jakob Nielson</p>
+</blockquote>
+<p>Your users <em>need</em> consistency. They need to know that once they learn to do something, they will be able to do it again. Language, layout, and design are just a few interface elements that need consistency. A consistent interface enables your users to have a better understanding of how things will work, increasing their efficiency.<br>您的用户<em>需要</em>一致性。他们需要知道，一旦他们学会做某事，他们就能再次做到。语言、布局和设计只是需要一致性的一些界面元素。一致的界面使您的用户能够更好地了解事物的运作方式，从而提高效率。</p>
+          <!--noindex-->
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-09/十个UI设计的基本原理/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/入手信达小黑天文望远镜/">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a class="post-title-link" href="/2018-08/入手信达小黑天文望远镜/" itemprop="url">
+                  入手信达小黑天文望远镜
+                </a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <span title="创建时间：2018-08-20 23:44:29" itemprop="dateCreated datePublished" datetime="2018-08-20T23:44:29+08:00">2018-08-20</span>
+          </span>
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-08/入手信达小黑天文望远镜/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-08/入手信达小黑天文望远镜/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">746</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">1 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+            <p>2018年的暑期，诸多天文奇观轮番上演：火星冲日、日偏食、英仙座流星雨，这对天文爱好者来说是绝佳的观测机会。在好基友的怂恿下，博主也正式踏入了天文摄影的巨坑。<br>博主在小学时曾拥有一台700/60入门级伽利略式天文望远镜，但是其使用的经纬仪是纯手动的，调节精度较差；且望远镜本身存在明显的色差，成像效果不佳。为了满足行星摄影的要求，需要入手一台更为可靠的天文望远镜。目前市面上常见的天文望远镜，一般由三部分组成：三脚架（底座），赤道仪（经纬仪），以及望远镜镜筒。镜筒主体根据成像原理划分，有牛顿反射式、马克苏托夫-卡塞格林式和复消色差（APO）式等等。基于其他成像原理的望远镜也能在市面上买到，不过从销量和评价上来看，前文提到的这三种望远镜占主流。在查阅了大量资料，并参考了天文相关贴吧、论坛后，博主决定入手信达小黑天文望远镜。这是一款入门级牛顿反射式望远镜，其焦距750mm，口径150mm，等效光圈较大，适合摄影；赤道仪采用EQ3D，搭配双轴电跟，在通过北极星校准极轴后，即可进行长时间曝光。<br>这是望远镜组装完成的状态：<br><img src="/images/2018-08/IMG_0272.jpg" alt=""><br>安装EF卡口转接环，就可以连接单反相机了：<br><img src="/images/2018-08/IMG_0199.jpg" alt=""><br>8月11日拍摄的日偏食：<br><img src="/images/2018-08/IMG_5639.jpg" alt=""><br>由于望远镜自带的巴罗镜只适用于目镜，为了增加拍照的放大率，博主还购买了一个EF卡口的增倍镜。这是使用增倍镜后拍摄的月球：<br><img src="/images/2018-08/IMG_5767.jpg" alt=""><br>由于视宁度不佳（以及可能的对焦问题），虽然也成功拍摄了土星，但是土星环的辨识度较差：<br><img src="/images/2018-08/IMG_5758.jpg" alt=""><br>仙后座（以及划过天空的飞机航行灯）：<br><img src="/images/2018-08/IMG_5680.jpg" alt=""></p>
+<p>本文更新于2018年9月28日：<br>与学校的青年天文爱好者协会部分（矿里有家的）前辈交流后，发现EQ3D赤道仪和双轴电跟仍有许多不足，可能并不是天文摄影的入门首选。如果有足够多的预算，可以购买NEQ6搭配GOTO，该赤道仪的稳定性与鲁棒性都更胜一筹（当然价格也略高）。</p>
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/盘点那些有必要的HTTP头/">
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
@@ -250,11 +401,11 @@
 <p><a href="https://www.w3.org/TR/server-timing/" target="_blank" rel="noopener">Server-Timing</a>: Provides server-side timing information, which allows navigation and resource timing APIs to be supplemented with more granular information about individual tasks that make up the server side processing (eg. ‘how long did we spend in MySQL’). Great for monitoring performance data, in conjunction with RUM beacon tools.</p>
 <p>Let’s look at a couple of these in more detail.</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018-08/盘点那些有必要的HTTP头/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-08/盘点那些有必要的HTTP头/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
     </div>
     <footer class="post-footer">
@@ -516,11 +667,11 @@
 </table>
 <p>Let’s look at the unnecessary headers and see why we don’t need them, and what we can do about it.</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018-08/盘点那些不需要的HTTP头/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-08/盘点那些不需要的HTTP头/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
     </div>
     <footer class="post-footer">
@@ -593,11 +744,11 @@
 <h2 id="Step-1-Proof-of-Concept-on-Breadboard"><a href="#Step-1-Proof-of-Concept-on-Breadboard" class="headerlink" title="Step 1: Proof of Concept on Breadboard"></a>Step 1: Proof of Concept on Breadboard</h2><p>第一步：面包板上的论证<br><img src="/images/2018-08/F3ULXLHHMEXSREA.LARGE.jpg" alt=""><br><img src="/images/2018-08/FQHGSW5HMF6R1XF.LARGE.jpg" alt=""></p>
 <p>Before going all out on the development of this electronic Enigma replica, we wanted to make sure we could properly drive the 16 Segment LEDs. If we can do that, than we will be able to do everything as the rest is only Math…<br>在开始制作电子Enigma机之前，我们先要确保能驱动16段LED显示。如果成功，我们就能做接下来的所有步骤——除了数学上的问题，一切都是浮云。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018-08/自己打造一台恩尼格玛密码机/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-08/自己打造一台恩尼格玛密码机/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
     </div>
     <footer class="post-footer">
@@ -669,162 +820,12 @@
 <p>Mac Sky壁纸 vs 日出前的云海<br><img src="/images/2018-08/Sky.jpg" alt=""><br><img src="/images/2018-08/IMG_5485.jpg" alt=""></p>
 <p><em>19mm f/4.0 4s</em></p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018-08/武功山游记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/Unicode字符与颜文字表情/">
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="/2018-07/Unicode字符与颜文字表情/" itemprop="url">
-                  Unicode字符与颜文字表情
-                </a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-07-25 14:10:27" itemprop="dateCreated datePublished" datetime="2018-07-25T14:10:27+08:00">2018-07-25</span>
-          </span>
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-07/Unicode字符与颜文字表情/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-07/Unicode字符与颜文字表情/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">3.7k</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">3 分钟</span>
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-08/武功山游记/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
             </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>编码，是每个程序员绕不开的话题。对于前端工程师而言，字符更是会直观地展示在界面上。<br>提起文字，大部分人的脑中，都会定式为规整排列的字符。但是林子大了什么鸟都有，世界上可是存在着6800+种文字，难免会飞出来一些诡异的鸟…<br>而号称“万国码”的Unicode，在实现编码与展示的时候，也会不会遇到一些奇葩的事情呢？<br>事实上，可能你早已见识过了：</p>
-<hr>
-<p>x̙͈̝͍͕̙̄͛̽̆͌́̕͟g̘̣̠̝̟̤̥̼̼̽͑͋̈̑̒͟͞q̛̤̦̝̘͎͋̔̋͌͒̆̋̚͡f̵̢̙͇̮̠̋̀͌̅̉̃̔͜͜͠͡r̢̜̩͙̭̲͓͈̈̀͑̆͋̚͢͜m̷̛͙̝̣̲̭͍͉̊̓̾̈̋̿̚͢͟͠s̷̡̩͔̮͈̜̊̽͂̆̈́̃̓͋̏</p>
-<p>热҈的҈字҈都҈出҈汗҈了҈</p>
-<p>你的屏幕被蓝翔挖掘机给挖坏了不信你看;̷̸̨̀͒̏̃ͦ̈́̾̀́̎͢҉̵̶͚̼͉͖̺̥͔͇̰̹̮͙͉̻̼̭̻͕̮͇ͨͬͪ͗̇̑̽͋̀̋̊͌ͧͨͭ̓̅͐ͥ̂̔̊ͧ͊҉̶̵̷̞̩̦̳̺̳̬̬̩̣̫͇̯̥͖͍͕̠̦̼̗ͯ̽͌̔ͪͯ́́͋̍ͨ̿̿̎͒ͤ̓̅̀͂ͧ͋̏ͫͣ̔͘͜͠͏̶̵̸̧̧̥̺͓̘̺͎̜̥͕͈̝̫͎̺̮̱̤̠̠͖̳̻̥̣̪͍͕͇̮͙̹̪ͮͧͫ͂͒ͤͣ̌̽ͨͪ͒̄̄̉̒̊ͩ̅͆͘̚͘͘̚͟͟͝ͅ</p>
-<hr>
-<p>今天我们就来探讨一下这些奇怪的字符。</p>
-<h2 id="文字可以戴帽子和穿鞋子"><a href="#文字可以戴帽子和穿鞋子" class="headerlink" title="文字可以戴帽子和穿鞋子"></a>文字可以戴帽子和穿鞋子</h2><p>提起泰文，很多朋友都会立即想到：<strong>萨瓦迪卡（你好）</strong>。<br>但这句话是怎么写的呢？<br>其实这句你好，男生和女生之间还有差异，男生写法是：<code>สวัสดีครับ</code>，女生则是：<code>สวัสดีค่ะ</code>。<br>不过这并不重要，重要的是，我们发现某些字的上面，还带了特殊的符号。就好像是戴上了帽子。<br>事实上，泰文字符不仅会“戴帽子”，偶尔还会“穿鞋子”，比如这三个字符：<code>ผ ผู ผู้</code>。<br>如果脑洞再大一点，有人就会想，那是不是还可以戴多顶帽子呢？<br>的确如此…泰文允许你穿一双鞋子，并且戴两顶帽子。完整的形式是这样的：<br><img src="/images/2018-07/FqLq54KAJkoSVA-7_jdJpSRI3fcI.png" alt=""></p>
-<p>所以，平时看惯了中英文的我们，需要改变一下思路了。<br>世界上的文字，并不全是规规整整横向排列的格子，也存在像泰文这种变形金刚<strong>组合式</strong>的文字。<br>虽然标准的泰文里，“帽子”和“鞋子”的数量是有限制的，但由于国际码的迷之设计（先卖个关子），在计算机里显示的泰文字符，却可以拥有无数的帽子和鞋子。也就是说，它变成了一款可以在Y轴无限拓展的文字！<br>并且，咱不光可以往上喷，还可以有一定角度…<br><img src="/images/2018-07/Fr8cS9UX21MEgBtmOU_CDhreGqlO.jpeg" alt=""></p>
-<p><img src="/images/2018-07/Fr-rlbbriydg4cUmoU_Zs6VQSbpU.jpeg" alt=""></p>
-<p>还可以<br><img src="/images/2018-07/Fk0kXSTymPxute84rceAkzGd5PKA.jpeg" alt=""></p>
-<p>简直是不讲道理。<br>（由于一些系统会崩溃，这里使用截图）</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018-07/Unicode字符与颜文字表情/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
           <!--/noindex-->
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/在网页中添加Live2D看板娘/">
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="钻拉练测刷，道处书山有路<br/>力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="/2018-07/在网页中添加Live2D看板娘/" itemprop="url">
-                  在网页中添加Live2D看板娘
-                </a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-07-21 20:05:32" itemprop="dateCreated datePublished" datetime="2018-07-21T20:05:32+08:00">2018-07-21</span>
-          </span>
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-07/在网页中添加Live2D看板娘/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-07/在网页中添加Live2D看板娘/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">237</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">1 分钟</span>
-            </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-            <p><img src="/images/2018-07/photo.jpg" alt=""><br>项目地址：<a href="https://github.com/stevenjoezhang/live2d-widget" target="_blank" rel="noopener">live2d-widget</a></p>
-<p>克隆这个仓库到服务器上，并配置<code>autoload.js</code>，修改其中的链接为各文件的绝对地址，即可在网页中添加Live2D看板娘。<br>相对于市面上广为流传的版本，博主对触发动作和语言进行了魔改（针对Hexo NexT主题），调整了图标样式、元素定位，并解决了CSS的前缀等问题。<br>更多内容可以参考项目文档及下方链接。<br>快来把萌萌哒的看板娘抱回家吧！</p>
-<p>参考文章：<br><a href="https://www.fghrsh.net/post/123.html" target="_blank" rel="noopener">网页添加 Live2D 看板娘</a><br><a href="https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02" target="_blank" rel="noopener">给博客添加能动的看板娘(Live2D)-将其添加到网页上吧</a></p>
     </div>
     <footer class="post-footer">
         <div class="post-eof"></div>
@@ -833,7 +834,7 @@
   </article>
   </section>
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
           </div>
         </div>
@@ -858,7 +859,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">78</span>
+                    <span class="site-state-item-count">80</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -905,7 +906,7 @@
     </main>
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+        <div class="copyright"> &copy; 2017 – <span itemprop="copyrightYear">2018</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -937,10 +938,10 @@
     window.Promise = null;
   }
 </script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
@@ -1279,7 +1280,7 @@
           pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
   <script type="text/javascript">pangu.spacingPage();</script>
   <style>
     .copy-btn {

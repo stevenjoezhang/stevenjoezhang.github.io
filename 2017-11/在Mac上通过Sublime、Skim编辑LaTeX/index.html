@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="Sublime Text是一款非常优秀的编辑器：速度快，界面简洁，插件众多；并且能够跨平台使用，在Mac和Windows上都发挥完美。虽然是一款付费软件，但作者很厚道地给了无限期的试用期限。这一切正如其官网广告词说的那样：The text editor you’ll fall in love with.Skim是一款免费轻量的PDF阅读、标注工具，布局贴心友好，与OS X自带的Previewer相">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-14T13:02:10.541Z">
+<meta property="og:updated_time" content="2018-10-31T04:14:57.442Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Mac上通过Sublime、Skim编辑LaTeX">
 <meta name="twitter:description" content="Sublime Text是一款非常优秀的编辑器：速度快，界面简洁，插件众多；并且能够跨平台使用，在Mac和Windows上都发挥完美。虽然是一款付费软件，但作者很厚道地给了无限期的试用期限。这一切正如其官网广告词说的那样：The text editor you’ll fall in love with.Skim是一款免费轻量的PDF阅读、标注工具，布局贴心友好，与OS X自带的Previewer相">
@@ -232,7 +232,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-        <p>Sublime Text是一款非常优秀的编辑器：速度快，界面简洁，插件众多；并且能够跨平台使用，在Mac和Windows上都发挥完美。虽然是一款付费软件，但作者很厚道地给了无限期的试用期限。这一切正如其官网广告词说的那样：The text editor you’ll fall in love with.<br>Skim是一款免费轻量的PDF阅读、标注工具，布局贴心友好，与OS X自带的Previewer相比，Skim能更好的注释PDF文件。<br>LaTeX是一款权威的科技论文排版系统，不仅可以写论文，也可以处理日常的各种文档工作，甚至是做幻灯片。相比于Word，LaTeX最大的优势是对于复杂公式的编辑与排版非常漂亮，并且用简单的命令就可以生成脚注、索引、目录和参考文献等复杂的结构。这一切优点都使得世界上众多的科学家们不再需要身兼作者与排版工两职，从而将更多的精力集中于文章内容本身。<br>本文的目的是将上述三种软件综合部署在Mac上。完成之后，你将可以在Sublime Text里面进行LaTeX代码编辑，用Skim预览生成的PDF文件。更重要的是，让你觉得，写论文也可以是一件很优美的事。</p>
+        <p>Sublime Text是一款非常优秀的编辑器：速度快，界面简洁，插件众多；并且能够跨平台使用，在Mac和Windows上都发挥完美。虽然是一款付费软件，但作者很厚道地给了无限期的试用期限。这一切正如其官网广告词说的那样：The text editor you’ll fall in love with.<br>Skim是一款免费轻量的PDF阅读、标注工具，布局贴心友好，与OS X自带的Previewer相比，Skim能更好的注释PDF文件。<br>$\LaTeX$是一款权威的科技论文排版系统，不仅可以写论文，也可以处理日常的各种文档工作，甚至是做幻灯片。相比于Word，$\LaTeX$最大的优势是对于复杂公式的编辑与排版非常漂亮，并且用简单的命令就可以生成脚注、索引、目录和参考文献等复杂的结构。这一切优点都使得世界上众多的科学家们不再需要身兼作者与排版工两职，从而将更多的精力集中于文章内容本身。<br>本文的目的是将上述三种软件综合部署在Mac上。完成之后，你将可以在Sublime Text里面进行$\LaTeX$代码编辑，用Skim预览生成的PDF文件。更重要的是，让你觉得，写论文也可以是一件很优美的事。</p>
 <a id="more"></a>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
 <li>Mac上至少4GB的空余空间</li>
@@ -247,7 +247,7 @@
 <li>进入<a href="http://www.sublimetext.com" target="_blank" rel="noopener">Sublime Text官网</a>下载最新版本的Sublime Text 3。</li>
 <li>下载完成之后，将文件拖入应用程序文件夹安装。</li>
 </ul>
-<h2 id="在Sublime-Text中安装Package-Control"><a href="#在Sublime-Text中安装Package-Control" class="headerlink" title="在Sublime Text中安装Package Control"></a>在Sublime Text中安装Package Control</h2><p>我们需要在Sublime Text中下载插件以便能够很好地操作与LaTeX有关的文件。而插件是通过Package Control下载的。</p>
+<h2 id="在Sublime-Text中安装Package-Control"><a href="#在Sublime-Text中安装Package-Control" class="headerlink" title="在Sublime Text中安装Package Control"></a>在Sublime Text中安装Package Control</h2><p>我们需要在Sublime Text中下载插件以便能够很好地操作与$\LaTeX$有关的文件。而插件是通过Package Control下载的。</p>
 <ul>
 <li>进入<a href="http://sublime.wbond.net/installation" target="_blank" rel="noopener">Package Control官网</a>复制灰色区块的代码。</li>
 <li>打开Sublime Text。</li>
@@ -273,7 +273,7 @@
 <p>找到其中大概第41行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pdflatex = [<span class="string">"pdflatex"</span>, <span class="string">"-interaction=nonstopmode"</span>, <span class="string">"-synctex=1"</span>]</span><br></pre></td></tr></table></figure></p>
 <p>修改为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pdflatex = [<span class="string">"xelatex"</span>, <span class="string">"-interaction=nonstopmode"</span>, <span class="string">"-synctex=1"</span>]</span><br></pre></td></tr></table></figure></p>
 <p>保存后关闭，重新编译一下，中文正常啦！</p>
-<p>现在，我们已经做完了所有的步骤✌️，可以打开Sublime Text，<code>Command+N</code>新建文件并在里面编写LaTeX代码了，完成编辑之后，<code>Command+S</code>保存文件，<code>Command+B</code>编译并运行，这时就可以在Skim里面看到PDF预览了。<br>如果使用LaTeX Tools编译出现问题，可以尝试在命令行中直接进行编译：在第一步完成后，打开终端，cd到tex所在到文件夹，使用<code>xelatex *.tex</code>，编译tex文件为pdf。如果成功，你可见将它添加到Sublime Text的Build System中，也可以实现一键编译。除此之外，还可以使用Pandoc等命令行工具将tex转为其他格式的文档。<br>在Windows上可以通过安装TexLive的方法配置TeX环境，过程是类似的。需要注意的是，tex文件需采用UTF-8编码。</p>
+<p>现在，我们已经做完了所有的步骤✌️，可以打开Sublime Text，<code>Command+N</code>新建文件并在里面编写$\LaTeX$代码了，完成编辑之后，<code>Command+S</code>保存文件，<code>Command+B</code>编译并运行，这时就可以在Skim里面看到PDF预览了。<br>如果使用LaTeX Tools编译出现问题，可以尝试在命令行中直接进行编译：在第一步完成后，打开终端，cd到tex所在到文件夹，使用<code>xelatex *.tex</code>，编译tex文件为pdf。如果成功，你可见将它添加到Sublime Text的Build System中，也可以实现一键编译。除此之外，还可以使用Pandoc等命令行工具将tex转为其他格式的文档。<br>在Windows上可以通过安装TexLive的方法配置TeX环境，过程是类似的。需要注意的是，tex文件需采用UTF-8编码。</p>
 <p>参考文章：<a href="http://blog.csdn.net/songrotek/article/details/46457571?readlog" target="_blank" rel="noopener">http://blog.csdn.net/songrotek/article/details/46457571?readlog</a></p>
 <p>本文更新于2018年5月</p>
     </div>
@@ -800,6 +800,51 @@
       }
     });
   </script>
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: { equationNumbers: { autoNumber: "AMS" } },
+      "HTML-CSS": {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+      },
+      SVG: {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+      },
+      PreviewHTML: {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        }
+      },
+      CommonHTML: {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        }
+      }
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <script src="/lib/needsharebutton/needsharebutton.js"></script>
   <script>
       pbOptions = {};

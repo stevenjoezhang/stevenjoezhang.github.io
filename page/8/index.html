@@ -379,7 +379,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-          <p>A point walks into A bar. \(\bar{A}\) says, “We’re closed.”<br>\(e^{x}\) is walking down the street when it sees \(\pi\) running towards him. “Help!”, \(\pi\) shouts, There’s a differential operator coming my way, and if it catches me, I’ll be reduced to nothing! \(e^{x}\) confidently says “Stand beside me, \(\pi\)! Together, we’ll be safe from any differential operators we come across!” Suddenly, the differential operator appears and asks “Who are you?” They respond “We are \(\pi e^{x}\). Who are you?” It smiles and says “\(\frac{\partial}{\partial{y}}\)”.<br><img src="/images/2018-03/calczilla.png" alt=""></p>
+          <p>A point walks into A bar. $\bar{A}$ says, “We’re closed.”<br>$e^{x}$ is walking down the street when it sees $\pi$ running towards him. “Help!”, $\pi$ shouts, There’s a differential operator coming my way, and if it catches me, I’ll be reduced to nothing! $e^{x}$ confidently says “Stand beside me, $\pi$! Together, we’ll be safe from any differential operators we come across!” Suddenly, the differential operator appears and asks “Who are you?” They respond “We are $\pi e^{x}$. Who are you?” It smiles and says “$\frac{\partial}{\partial{y}}$”.<br><img src="/images/2018-03/calczilla.png" alt=""></p>
           <!--noindex-->
             <div class="post-button text-center">
               <a class="btn" href="/2018-03/数学笑话/#more" rel="contents">
@@ -1051,11 +1051,37 @@
       <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
         processEscapes: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       },
-      TeX: {equationNumbers: { autoNumber: "AMS" }}
+      TeX: { equationNumbers: { autoNumber: "AMS" } },
+      "HTML-CSS": {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+      },
+      SVG: {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+      },
+      PreviewHTML: {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        }
+      },
+      CommonHTML: {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        }
+      }
     });
 </script>
 <script type="text/x-mathjax-config">

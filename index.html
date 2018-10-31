@@ -504,7 +504,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">8.2k</span>
+                <span title="本文字数">8k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
@@ -516,9 +516,9 @@
       </header>
     <div class="post-body" itemprop="articleBody">
           <p>前几日关于黎曼猜想（Riemann Hypothesis）被证明的消息在网络上炒得沸沸扬扬，菲尔兹奖、阿贝尔奖双料得主Michael Francis Atiyah爵士声称他证明了这个困扰了数学界160年的问题，且其目的是为了研究精细结构常数。然而，在他公布了他的Simple Proof后，却不被学界所看好，甚至遭到了一些尖锐的批评。毕竟，这篇只有五页纸的文章，刨去介绍等内容，并没有展示太多的细节；其证明过程，又依赖于一个存疑的Todd function。如果如证明中所说，黎曼猜想真的指向了精细结构常数，这对于由第一性原理出发构建物理学体系将有极大的启发性，其结果无疑是令人激动的。但是经过计算，却发现文中所声称的极限存在问题，整个理论的正确性难以得到证实。<br>有鉴于此，博主研究该证明过程的计划搁置了（毕竟没有什么价值，大概可以用来提升读Paper的能力#捂脸），还是写篇文章介绍下黎曼猜想本身吧。</p>
-<h2 id="猜想的提出"><a href="#猜想的提出" class="headerlink" title="猜想的提出"></a>猜想的提出</h2><p>时间回到1859年，著名的德国数学家波恩哈德·黎曼（Bernhard Riemann）在他的论文《Über die Anzahl der Primzahlen unter einer gegebenen Größe》中提及了这个著名的猜想。黎曼本人在数学界颇有建树，但他却并没有试图对论文中的猜想给出证明。<br>这个猜想是关于黎曼\(\zeta\)函数的，该函数的定义为：<br>$$\zeta(s)=\frac{1}{1^s}+\frac{1}{2^s}+\frac{1}{3^s}+\frac{1}{4^s}+\cdots$$<br>注意，\(\zeta\)函数必须经过解析延拓，才能在全复平面上有定义，稍后将给出解析延拓的过程。<br>而黎曼猜想就是：\(\zeta(s)\)的所有非平凡零点的实部均为\(\frac{1}{2}\)。</p>
-<h2 id="zeta-函数的解析延拓"><a href="#zeta-函数的解析延拓" class="headerlink" title="\(\zeta\)函数的解析延拓"></a>\(\zeta\)函数的解析延拓</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在中学数学中，我们所接触到的函数都是实变函数，即从实数集到实数集的映射，写为\(f:\mathbb{R}\rightarrow\mathbb{R}\)。在接触了虚数单位i和复数后，就可以开始定义复变函数，即复数集到复数集的映射，写为\(f:\mathbb{C}\rightarrow\mathbb{C}\)。实变函数的定义域被限制在了实轴上，而为了表示出一个与之对应的复变函数，就需要扩充其定义域到复平面上。这样，可以定义出复数域上的各种函数：指数、对数、三角函数等。由于复数的性质，还需要根据枝点规定割线、单值分支等，来确定出函数值。而原本定义域只在复平面上某一区域的复变函数，经过严格的数学推导（例如级数展开等），也可以扩充其定义域。这时，解析延拓的办法应运而生。对于\(\zeta(s)\)函数而言，非常明显，当\(s\)取在实轴上（即作为实变函数时），若\(s\le 1\)，其函数值发散；而\(s&gt;1\)时收敛。特别的，\(s=1\)时为调和级数，而\(s=2\)时由高斯最早计算出了其函数值\(\frac{\pi^2}{6}\)。<br>在复数域上，可以证明，\(\zeta(s)\)在\(Re(s)&gt;1\)上解析。接下来，我们需要将其定义域扩展到全复平面；之前的级数定义将不在对\(Re(s)&lt;1\)的情况使用，因为它不收敛，无法采用Cauchy和。</p>
-<h3 id="梅林变换"><a href="#梅林变换" class="headerlink" title="梅林变换"></a>梅林变换</h3><p>梅林（Mellin）变换是一个积分变换，它把一个正实数域\(\mathbb{R}^+\)上的函数变换为一个复数域\(\mathbb{C}\)上的函数。设\(f:\mathbb{R}^+\rightarrow\mathbb{C}\)是一个函数，定义：<br>$$\mathcal{M}f(z)=\int_0^{+\infty}f(s)s^z\frac{ds}{s}$$<br>称\(\mathcal{M}f:\mathbb{C}\rightarrow\mathbb{C}\)为\(f\)的梅林变换。<br>取\(f(s)\)为\(f_\lambda (s)=e^{-\lambda s}\)，则有：<br>\begin{align*}<br>\mathcal{M}f(z)&amp;=\int_0^{+\infty}e^{-\lambda s}s^z\frac{ds}{s}\\<br>&amp;=\lambda^{-z}\int_0^{+\infty}e^{-s}s^{z-1}ds\\<br>&amp;=\lambda^{-z}\Gamma(z)<br>\end{align*}<br>这里的\(\Gamma(z)\)就是一般数理方程中会涉及到的\(\Gamma\)函数，其性质不再赘述。<br>记住以上结论，取\(\lambda=\pi n^2\)，继续构造函数：<br>$$f(s)=\sum_{n=1}^{\infty}f_{\pi n^2}(s)=\sum_{n=1}^{\infty}e^{-\pi n^2 s}$$<br>注意到梅林变换是线性的，这时，<br>\begin{align*}<br>\mathcal{M}f(z)&amp;=\sum_{n=1}^{\infty}\mathcal{M}f_{\pi n^2}(z)\\<br>&amp;=\sum_{n=1}^{\infty}(\pi n^2)^{-z}\Gamma(z)\\<br>&amp;=\pi^{-z}\sum_{n=1}^{\infty}n^{-2z}\Gamma(z)\\<br>&amp;=\pi^{-z}\zeta(2z)\Gamma(z)<br>\end{align*}<br>最后一个等号使用了\(\zeta\)函数的原始定义。考虑到：<br>$$\mathcal{M}f(z)=\int_0^{+\infty}(\sum_{n=1}^{\infty}e^{-\pi n^2 s})s^{z-1}ds$$<br>于是，利用\(\mathcal{M}f(z)\)的两个等价表达式，我们得到了一个重要结论：<br>$$\pi^{-z}\zeta(2z)\Gamma(z)=\int_0^{+\infty}(\sum_{n=1}^{\infty}e^{-\pi n^2 s})s^{z-1}ds$$<br>注意，这里的推导并非十分严谨，还需要证明其收敛性，才能交换积分与极限。这要求\(Re(z)&gt;\frac{1}{2}\)。</p>
+<h2 id="猜想的提出"><a href="#猜想的提出" class="headerlink" title="猜想的提出"></a>猜想的提出</h2><p>时间回到1859年，著名的德国数学家波恩哈德·黎曼（Bernhard Riemann）在他的论文《Über die Anzahl der Primzahlen unter einer gegebenen Größe》中提及了这个著名的猜想。黎曼本人在数学界颇有建树，但他却并没有试图对论文中的猜想给出证明。<br>这个猜想是关于黎曼$\zeta$函数的，该函数的定义为：<br>$$\zeta(s)=\frac{1}{1^s}+\frac{1}{2^s}+\frac{1}{3^s}+\frac{1}{4^s}+\cdots$$<br>注意，$\zeta$函数必须经过解析延拓，才能在全复平面上有定义，稍后将给出解析延拓的过程。<br>而黎曼猜想就是：$\zeta(s)$的所有非平凡零点的实部均为$\frac{1}{2}$。</p>
+<h2 id="zeta-函数的解析延拓"><a href="#zeta-函数的解析延拓" class="headerlink" title="$\zeta$函数的解析延拓"></a>$\zeta$函数的解析延拓</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在中学数学中，我们所接触到的函数都是实变函数，即从实数集到实数集的映射，写为$f:\mathbb{R}\rightarrow\mathbb{R}$。在接触了虚数单位i和复数后，就可以开始定义复变函数，即复数集到复数集的映射，写为$f:\mathbb{C}\rightarrow\mathbb{C}$。实变函数的定义域被限制在了实轴上，而为了表示出一个与之对应的复变函数，就需要扩充其定义域到复平面上。这样，可以定义出复数域上的各种函数：指数、对数、三角函数等。由于复数的性质，还需要根据枝点规定割线、单值分支等，来确定出函数值。而原本定义域只在复平面上某一区域的复变函数，经过严格的数学推导（例如级数展开等），也可以扩充其定义域。这时，解析延拓的办法应运而生。对于$\zeta(s)$函数而言，非常明显，当$s$取在实轴上（即作为实变函数时），若$s\le 1$，其函数值发散；而$s&gt;1$时收敛。特别的，$s=1$时为调和级数，而$s=2$时由高斯最早计算出了其函数值$\frac{\pi^2}{6}$。<br>在复数域上，可以证明，$\zeta(s)$在$Re(s)&gt;1$上解析。接下来，我们需要将其定义域扩展到全复平面；之前的级数定义将不在对$Re(s)&lt;1$的情况使用，因为它不收敛，无法采用Cauchy和。</p>
+<h3 id="梅林变换"><a href="#梅林变换" class="headerlink" title="梅林变换"></a>梅林变换</h3><p>梅林（Mellin）变换是一个积分变换，它把一个正实数域$\mathbb{R}^+$上的函数变换为一个复数域$\mathbb{C}$上的函数。设$f:\mathbb{R}^+\rightarrow\mathbb{C}$是一个函数，定义：<br>$$\mathcal{M}f(z)=\int_0^{+\infty}f(s)s^z\frac{ds}{s}$$<br>称$\mathcal{M}f:\mathbb{C}\rightarrow\mathbb{C}$为$f$的梅林变换。<br>取$f(s)$为$f_\lambda (s)=e^{-\lambda s}$，则有：<br>\begin{align*}<br>\mathcal{M}f(z)&amp;=\int_0^{+\infty}e^{-\lambda s}s^z\frac{ds}{s}\\<br>&amp;=\lambda^{-z}\int_0^{+\infty}e^{-s}s^{z-1}ds\\<br>&amp;=\lambda^{-z}\Gamma(z)<br>\end{align*}<br>这里的$\Gamma(z)$就是一般数理方程中会涉及到的$\Gamma$函数，其性质不再赘述。<br>记住以上结论，取$\lambda=\pi n^2$，继续构造函数：<br>$$f(s)=\sum_{n=1}^{\infty}f_{\pi n^2}(s)=\sum_{n=1}^{\infty}e^{-\pi n^2 s}$$<br>注意到梅林变换是线性的，这时，<br>\begin{align*}<br>\mathcal{M}f(z)&amp;=\sum_{n=1}^{\infty}\mathcal{M}f_{\pi n^2}(z)\\<br>&amp;=\sum_{n=1}^{\infty}(\pi n^2)^{-z}\Gamma(z)\\<br>&amp;=\pi^{-z}\sum_{n=1}^{\infty}n^{-2z}\Gamma(z)\\<br>&amp;=\pi^{-z}\zeta(2z)\Gamma(z)<br>\end{align*}<br>最后一个等号使用了$\zeta$函数的原始定义。考虑到：<br>$$\mathcal{M}f(z)=\int_0^{+\infty}(\sum_{n=1}^{\infty}e^{-\pi n^2 s})s^{z-1}ds$$<br>于是，利用$\mathcal{M}f(z)$的两个等价表达式，我们得到了一个重要结论：<br>$$\pi^{-z}\zeta(2z)\Gamma(z)=\int_0^{+\infty}(\sum_{n=1}^{\infty}e^{-\pi n^2 s})s^{z-1}ds$$<br>注意，这里的推导并非十分严谨，还需要证明其收敛性，才能交换积分与极限。这要求$Re(z)&gt;\frac{1}{2}$。</p>
           <!--noindex-->
             <div class="post-button text-center">
               <a class="btn" href="/2018-09/关于黎曼猜想/#more" rel="contents">
@@ -1049,11 +1049,37 @@
       <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
         processEscapes: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       },
-      TeX: {equationNumbers: { autoNumber: "AMS" }}
+      TeX: { equationNumbers: { autoNumber: "AMS" } },
+      "HTML-CSS": {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+      },
+      SVG: {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+      },
+      PreviewHTML: {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        }
+      },
+      CommonHTML: {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        }
+      }
     });
 </script>
 <script type="text/x-mathjax-config">

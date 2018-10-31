@@ -1069,11 +1069,37 @@
       <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
         processEscapes: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       },
-      TeX: {equationNumbers: { autoNumber: "AMS" }}
+      TeX: { equationNumbers: { autoNumber: "AMS" } },
+      "HTML-CSS": {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+      },
+      SVG: {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+      },
+      PreviewHTML: {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        }
+      },
+      CommonHTML: {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        }
+      }
     });
 </script>
 <script type="text/x-mathjax-config">

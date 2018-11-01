@@ -47,7 +47,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="这篇文章翻译自：What’s the hardest bug you’ve debugged? It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blam">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-05T17:01:23.843Z">
+<meta property="og:updated_time" content="2018-11-02T07:08:33.018Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="古惑狼游戏牵扯出的硬件bug">
 <meta name="twitter:description" content="这篇文章翻译自：What’s the hardest bug you’ve debugged? It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blam">
@@ -238,6 +238,7 @@
 <p>The symptom was that you’d go to save your progress and it would access the memory card, and almost all the time, it worked normally… But every once in a while the write or read would time out… for no obvious reason. A short write would often corrupt the memory card. The player would go to save, and not only would we not save, we’d wipe their memory card. D’Oh.<br>这个bug的症状是，当你需要保存你的进度时，代码会访问存储卡，而大部分情况下没有什么问题…但是偶尔读写会超时…没有任何明显的原因。一个简短的写入经常毁掉存储卡。玩家要保存进度，我们不仅不保存，还擦除他们存储卡上的全部东西。天哪。</p>
 <p>After a while, our producer at Sony, Connie Booth, began to panic. We obviously couldn’t ship the game with that bug, and after six weeks I still had no clue what the problem was. Via Connie we put the word out to other PlayStation 1 developers – had anybody seen anything like this? Nope. Absolutely nobody had any problems with the memory card system.<br>过了一段时间，我们在Sony的制作人Connie Booth慌了。我们显然不能发布带有这个bug游戏，而六个星期之后我对于问题出在哪一点线索都没有。通过Connie我们向其他PS1开发者求助：有没有人出现过像我们这样的情况？没有。绝对没有任何人在存储卡系统上出现任何问题。</p>
 <p>About the only thing you can do when you run out of ideas debugging is divide and conquer: keep removing more and more of the errant program’s code until you’re left with something relatively small that still exhibits the problem. You keep carving parts away until the only stuff left is where the bug is.<br>在你绞尽脑汁之后，你能做的唯一一个调试方法就是分而治之：一点点去除错误程序中的代码，直到留下的代码相对很少，但仍然表现出问题。像雕刻一样去除没有问题的代码，留下的就是你的bug所在。</p>
+<a id="more"></a>
 <p>The challenge with this in the context of, say, a video game is that it’s very hard to remove pieces. How do you still run the game if you remove the code that simulates gravity in the game? Or renders the characters?<br>在这样的背景下挑战在于，视频游戏是很难去除某一部分的。在你删除模拟重力或者显示字符的代码后，如何运行游戏？</p>
 <p>What you have to do is replace entire modules with stubs that pretend to do the real thing, but actually do something completely trivial that can’t be buggy. You have to write new scaffolding code just to keep things working at all. It is a slow, painful process.<br>你必须做的是用一个假装做真正的事情，但实际上只是做很简单的不会出现bug事情的东西来替换掉整个模块。你必须写新的支撑代码来让这些玩意正常工作。这是一个缓慢而痛苦的过程。</p>
 <p>Long story short: I did this. I kept removing more and more hunks of code until I ended up, pretty much, with nothing but the startup code – just the code that set up the system to run the game, initialized the rendering hardware, etc. Of course, I couldn’t put up the load/save menu at that point because I’d stubbed out all the graphics code. But I could pretend the user used the (invisible) load/save screen and asked to save, then write to the card.<br>长话短说：我做完了。我移除了大片大片的代码，相当多，只留下了初始化代码——就是准备游戏运行系统，初始化渲染硬件等等。当然，我不能显示加载/保存菜单，因为我掐掉了所有的图像代码。但是我能够假装用户使用（不可见的）加载/保存屏幕并且请求保存，然后写入卡中。</p>
@@ -250,7 +251,6 @@
 <p>I commented the timer code out. I couldn’t make the error happen again. But this didn’t mean it was fixed; the problem only happened randomly. What if I was just getting lucky?<br>我将计时器代码注释掉。然后我就无法复现这个bug了。但是这并不表示bug被修复了，这个问题是随机发生的。万一我只是运气好呢？</p>
 <p>As more days went on, I kept playing with my test program. The bug never happened again. I went back to the full Crash Bandicoot code base, and modified the load/save code to reset the programmable timer to its default setting (100 Hz) before accessing the memory card, then put it back to 1 kHz afterwards. We never saw the read/write problems again.<br>几天过去了，我还是在玩我的测试程序。Bug没有再出现。我又回到完整的古惑狼游戏代码中，修改了加载/保存代码，在访问存储卡之前将可编程计时器重置为默认设置（100Hz），之后设置回1kHz。从此之后没有发现问题再次出现。</p>
 <p>But why?<br>但是…为什么？</p>
-<a id="more"></a>
 <p>I returned repeatedly to the test program, trying to detect some pattern to the errors that occurred when the timer was set to 1 kHz. Eventually, I noticed that the errors happened when someone was playing with the PlayStation 1 controller. Since I would rarely do this myself – why would I play with the controller when testing the load/save code? – I hadn’t noticed it. But one day one of the artists was waiting for me to finish testing – I’m sure I was cursing at the time – and he was nervously fiddling with the controller. It failed. “Wait, what? Hey, do that again!”<br>我重新回到测试程序上，试着检测当计时器设置为1kHz时出现的那些错误的模式。终于，我注意到这些错误出现在使用PS1手柄的人身上。因为我自己很少这样做，所以我没有注意到（为啥我要在测试加载/保存代码的时候用手柄）。但是有一天我们的美工等我去完成测试（我确定那时候我在爆粗口），而他紧张的摆弄着手柄。卡损坏了。“等下，怎么回事？喂，再来一次！”</p>
 <p>Once I had the insight that the two things were correlated, it was easy to reproduce: start writing to memory card, wiggle controller, corrupt memory card. Sure looked like a hardware bug to me.<br>一旦我发现了这两件事是联系着的，就很容易重现bug：开始写入存储卡，动一下手柄，存储卡损坏。在我看来这完全是硬件bug。</p>
 <p>I went back to Connie and told her what I’d found. She relayed this to one of the hardware engineers who had designed the PlayStation 1. “Impossible,” she was told. “This cannot be a hardware problem.” I told her to ask if I could speak with him.<br>我去找Connie告诉他我的发现。她转述给设计过PS1的硬件工程师。她被告知：“不可能，这不可能是硬件问题。”我跟她说问一下我能不能直接和硬件工程师交流。</p>
@@ -407,9 +407,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">张书樵</span>
 </div>
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a></div>
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="site-uv" title="总访客量">

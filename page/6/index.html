@@ -172,71 +172,6 @@
   <section id="posts" class="posts-expand">
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/WordPress 3.x版本中的彩蛋/">
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="数理化生科，道处书山有路<br/>力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="/2017-11/WordPress 3.x版本中的彩蛋/" itemprop="url">
-                  未命名
-                </a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-05-19 12:26:26" itemprop="dateCreated datePublished" datetime="2018-05-19T12:26:26+08:00">2018-05-19</span>
-          </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017-11/WordPress 3.x版本中的彩蛋/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017-11/WordPress 3.x版本中的彩蛋/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">1.5k</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">1 分钟</span>
-            </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-            <hr>
-<p>title: WordPress 3.x版本中的彩蛋<br>categories: 程序设计<br>date: 2017-11-10 12:44:27</p>
-<h2 id="tags-WordPress"><a href="#tags-WordPress" class="headerlink" title="tags: WordPress"></a>tags: WordPress</h2><p>今天博主在进行WordPress博客考古活动时，得知了一个彩蛋。来源见：<br><a href="http://www.kaisir.com/2010/02/the-egg-wordpress.html" target="_blank" rel="noopener">WordPress的彩蛋 - Kaisir</a><br><a href="http://www.codeweblog.com/wordpress的一个彩蛋" target="_blank" rel="noopener">WordPress的一个彩蛋 - 张磊的blog</a><br>在WordPress文章中使用Compare Revisions功能，如果两个相比较的文章ID一致，就会触发彩蛋。其效果是显示文字：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Wake <span class="keyword">up</span> XXX… The matrix <span class="built_in">has</span> you. Follow the white rabbit. Don’t <span class="keyword">let</span> this happen again.</span><br></pre></td></tr></table></figure></p>
-<p>这是一个致敬The Matrix的彩蛋。经过对<a href="https://cn.wordpress.org/releases" target="_blank" rel="noopener">WordPress历史版本</a>的分析，发现该彩蛋已在4.x版本移除。通过分析3.0.2版本的文件，找到了该版本的revision.php和revision-js.php文件，并大致研究出了其实现方法。在revision.php中有这样一串代码：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// If we're comparing a revision to itself, redirect to the 'view' page for that revision or the edit page for that post</span></span><br><span class="line"><span class="keyword">if</span> ( $left_revision-&gt;ID == $right_revision-&gt;ID ) &#123;</span><br><span class="line">    $redirect = get_edit_post_link( $left_revision-&gt;ID );</span><br><span class="line">    <span class="keyword">include</span>( <span class="string">'./js/revisions-js.php'</span> );</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>而在revision-js.php中，有一串经过了eval混淆的代码，用于向用户输出彩蛋内容。 目前博主正在尝试反混淆代码，并复现这个彩蛋。如果你有兴趣，也可以下载revision-js.php进行研究。</p>
-<p>本文更新于2017年11月11日：<br>由于博主并不准备搭建旧版本WordPress的运行环境，于是决定从代码入手，分析这个彩蛋。<br>在revisions-js.php中定义的函数dvortr()作用是使用一对一的替换来加密字符串，该文件中有两次调用此函数：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dvortr( <span class="string">"Erb-y n.y ydco dall.b aiacbv Wa ce]-irxajt- dp.u]-$-VIr XajtWzaVv"</span> )</span><br></pre></td></tr></table></figure></p>
-<p>和<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dvortr( <span class="string">'Eabi.p!'</span> )</span><br></pre></td></tr></table></figure></p>
-<p>经过解密，其输出分别为<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Don't let this happen again. <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">'goback'</span> <span class="attr">href</span>=<span class="string">'$'</span>&gt;</span>Go Back<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>和<code>Danger!</code>。<br>而定义的变量<code>$j</code>作用是包含jQuery库，<code>$n</code>是获取的当前用户名，<code>$d</code>是noscript时的输出。通过替换掉一些WordPress中定义的函数，我成功地使部分解码后的php文件在本地Apache服务器成功运行。并且，我还重新制作了这个彩蛋，现在它已经可以在本站以某种方式触发～<br>下面附上整个解密过程中所用到的文件。其中revision.php和revisions-js.php是原文件，decode.php是部分解密后的文件，decode.js是浏览器获取的匿名js文件，decoder.html是根据原文件的加密算法编写的加密、解密脚本。<br><a href="/downloads/WordPressEasterEgg.zip">WordPressEasterEgg</a></p>
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/Nginx配置SSL/">
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
@@ -697,6 +632,75 @@
     </footer>
   </div>
   </article>
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/搭建MCPE服务器/">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="数理化生科，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a class="post-title-link" href="/2018-04/搭建MCPE服务器/" itemprop="url">
+                  搭建MCPE服务器
+                </a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <span title="创建时间：2018-04-23 16:19:36" itemprop="dateCreated datePublished" datetime="2018-04-23T16:19:36+08:00">2018-04-23</span>
+          </span>
+            <span class="post-category">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-04/搭建MCPE服务器/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-04/搭建MCPE服务器/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">753</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">1 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+            <p>目前搭建MCPE服务器的方法主要有两种：<a href="https://github.com/pmmp/PocketMine-MP" target="_blank" rel="noopener">PocketMine-MP</a>和<a href="https://github.com/Nukkit/Nukkit" target="_blank" rel="noopener">Nukkit</a>。前者基于PHP，而后者基于Java。<br>无论选择哪一种方法，都要确保游戏客户端和服务器端均是最新版本。如果版本不匹配，可能造成无法连接等问题。</p>
+<h2 id="PocketMine-MP"><a href="#PocketMine-MP" class="headerlink" title="PocketMine-MP"></a>PocketMine-MP</h2><p>运行PocketMine-MP的方法非常简单：克隆这个项目，然后执行<code>bash start.sh</code>就可以了。但是，这样会有一个问题：PocketMine-MP需要php7环境和大量的拓展库，例如php-leveldb。通过brew或yum编译安装的php一般是不会自带这些拓展的，这样在启动时会报错。为了免去手动编译拓展的麻烦，解决方法是使用<a href="https://github.com/pmmp/php-build-scripts" target="_blank" rel="noopener">php-build-scripts</a>。它会编译出带有所有必要的拓展库的php，供PocketMine-MP使用，并且不会与系统原有的php环境冲突。比如在Mac下，执行<code>./compile.sh -t mac64 -l -j4 -c -f</code>，完成后，再执行<code>./installer.sh</code>和<code>./start.sh</code>就可以运行了，根据提示进行配置即可。</p>
+<h2 id="Nukkit"><a href="#Nukkit" class="headerlink" title="Nukkit"></a>Nukkit</h2><p>Nukkit需要Java8环境，如果没有安装，可以前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>寻找帮助。运行方式也很简单，依次执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git submodule <span class="keyword">update</span> <span class="comment">--init</span></span><br><span class="line">mvn clean <span class="keyword">package</span></span><br><span class="line"><span class="keyword">java</span> -jar Nukkit.jar</span><br></pre></td></tr></table></figure></p>
+<p>在其官网上也有发布的版本，无需自行编译Jar文件，可以前往<a href="https://nukkit.io" target="_blank" rel="noopener">Nukkit.io</a>查看。<br>Nukkit的主要问题是不支持leveldb，也就是无法打开较新的MCPE存档，只支持MC存档和上古的MCPE存档。</p>
+<h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>PocketMine-MP和Nukkit启动后默认都会监听19132端口，配置服务器时填写局域网或公网IP/域名即可。</p>
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
   </section>
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -775,9 +779,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">张书樵</span>
 </div>
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a></div>
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="site-uv" title="总访客量">

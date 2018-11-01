@@ -13,17 +13,17 @@
   <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.2">
-  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    version: '6.4.2',
+    version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     fastclick: false,
@@ -41,13 +41,14 @@
 </script>
   <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
   <meta name="description" content="前几日关于黎曼猜想（Riemann Hypothesis）被证明的消息在网络上炒得沸沸扬扬，菲尔兹奖、阿贝尔奖双料得主Michael Francis Atiyah爵士声称他证明了这个困扰了数学界160年的问题，且其目的是为了研究精细结构常数。然而，在他公布了他的Simple Proof后，却不被学界所看好，甚至遭到了一些尖锐的批评。毕竟，这篇只有五页纸的文章，刨去介绍等内容，并没有展示太多的细节；">
+<meta name="keywords" content="数学">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于黎曼猜想">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-09/关于黎曼猜想/index.html">
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="前几日关于黎曼猜想（Riemann Hypothesis）被证明的消息在网络上炒得沸沸扬扬，菲尔兹奖、阿贝尔奖双料得主Michael Francis Atiyah爵士声称他证明了这个困扰了数学界160年的问题，且其目的是为了研究精细结构常数。然而，在他公布了他的Simple Proof后，却不被学界所看好，甚至遭到了一些尖锐的批评。毕竟，这篇只有五页纸的文章，刨去介绍等内容，并没有展示太多的细节；">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-31T04:07:36.938Z">
+<meta property="og:updated_time" content="2018-11-01T01:23:36.837Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于黎曼猜想">
 <meta name="twitter:description" content="前几日关于黎曼猜想（Riemann Hypothesis）被证明的消息在网络上炒得沸沸扬扬，菲尔兹奖、阿贝尔奖双料得主Michael Francis Atiyah爵士声称他证明了这个困扰了数学界160年的问题，且其目的是为了研究精细结构常数。然而，在他公布了他的Simple Proof后，却不被学界所看好，甚至遭到了一些尖锐的批评。毕竟，这篇只有五页纸的文章，刨去介绍等内容，并没有展示太多的细节；">
@@ -220,7 +221,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">8k</span>
+                <span title="本文字数">8.1k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
@@ -237,7 +238,7 @@
 <h3 id="梅林变换"><a href="#梅林变换" class="headerlink" title="梅林变换"></a>梅林变换</h3><p>梅林（Mellin）变换是一个积分变换，它把一个正实数域$\mathbb{R}^+$上的函数变换为一个复数域$\mathbb{C}$上的函数。设$f:\mathbb{R}^+\rightarrow\mathbb{C}$是一个函数，定义：<br>$$\mathcal{M}f(z)=\int_0^{+\infty}f(s)s^z\frac{ds}{s}$$<br>称$\mathcal{M}f:\mathbb{C}\rightarrow\mathbb{C}$为$f$的梅林变换。<br>取$f(s)$为$f_\lambda (s)=e^{-\lambda s}$，则有：<br>\begin{align*}<br>\mathcal{M}f(z)&amp;=\int_0^{+\infty}e^{-\lambda s}s^z\frac{ds}{s}\\<br>&amp;=\lambda^{-z}\int_0^{+\infty}e^{-s}s^{z-1}ds\\<br>&amp;=\lambda^{-z}\Gamma(z)<br>\end{align*}<br>这里的$\Gamma(z)$就是一般数理方程中会涉及到的$\Gamma$函数，其性质不再赘述。<br>记住以上结论，取$\lambda=\pi n^2$，继续构造函数：<br>$$f(s)=\sum_{n=1}^{\infty}f_{\pi n^2}(s)=\sum_{n=1}^{\infty}e^{-\pi n^2 s}$$<br>注意到梅林变换是线性的，这时，<br>\begin{align*}<br>\mathcal{M}f(z)&amp;=\sum_{n=1}^{\infty}\mathcal{M}f_{\pi n^2}(z)\\<br>&amp;=\sum_{n=1}^{\infty}(\pi n^2)^{-z}\Gamma(z)\\<br>&amp;=\pi^{-z}\sum_{n=1}^{\infty}n^{-2z}\Gamma(z)\\<br>&amp;=\pi^{-z}\zeta(2z)\Gamma(z)<br>\end{align*}<br>最后一个等号使用了$\zeta$函数的原始定义。考虑到：<br>$$\mathcal{M}f(z)=\int_0^{+\infty}(\sum_{n=1}^{\infty}e^{-\pi n^2 s})s^{z-1}ds$$<br>于是，利用$\mathcal{M}f(z)$的两个等价表达式，我们得到了一个重要结论：<br>$$\pi^{-z}\zeta(2z)\Gamma(z)=\int_0^{+\infty}(\sum_{n=1}^{\infty}e^{-\pi n^2 s})s^{z-1}ds$$<br>注意，这里的推导并非十分严谨，还需要证明其收敛性，才能交换积分与极限。这要求$Re(z)&gt;\frac{1}{2}$。</p>
 <a id="more"></a>
 <h3 id="泊松求和"><a href="#泊松求和" class="headerlink" title="泊松求和"></a>泊松求和</h3><p>再来看一下Fourier变换<br>$$\mathcal{F}f(x)=\int_{-\infty}^{+\infty}f(t)e^{ixt}dt$$<br>对于足够“好”的函数$f$，可以证明泊松（Poisson）求和公式<br>$$\sum_{n\in\mathbb{Z}}f(n)=\sum_{n\in\mathbb{Z}}\mathcal{F}f(n)$$<br>这部分我们就证明这个公式。<br>假设$f$足够“好”（要多好有多好），定义<br>$$F(t)=\sum_{n\in\mathbb{Z}}f(n+t)$$<br>则$F$是$\mathbb{R}$上周期为$1$的函数，于是可以构造$F$的Fourier级数：令<br>$$c_k=\int_0^1F(t)e^{-2\pi ikt}dt$$<br>是第$k$个Fourier系数，则<br>$$F(t)\sim\sum_{k\in\mathbb{Z}}c_ke^{2\pi ikt}$$<br>而这个系数<br>\begin{align*}<br>c_k&amp;=\int_0^1F(t)e^{-2\pi ikt}dt\\<br>&amp;=\int_0^1\sum_{n\in\mathbb{Z}}f(n+t)e^{-2\pi ik(n+t)}dt\\<br>&amp;=\int_{-\infty}^{+\infty}f(t)e^{-2\pi ikt}dt\\<br>&amp;=\mathcal{F}f(k)<br>\end{align*}<br>从而<br>$$\sum_{n\in\mathbb{Z}}f(n)=F(0)\sim\sum_{k\in\mathbb{Z}}c_k=\sum_{k\in\mathbb{Z}}\mathcal{F}f(k)$$<br>就得到了Poisson求和公式形式上的“证明”。<br>那么$f$究竟要满足什么条件呢？<br>如果周期函数$F\in C^2[0,1]$，就有$F(t)=\sum_{k\in\mathbb{Z}}c_ke^{2\pi ikt}$。因此，我们要求$f$二阶连续可导，并且<br>$$\sum_{n\in\mathbb{Z}}||f||_{[n.n+1],\infty}+||f’||_{[n.n+1],\infty}+||f’’||_{[n.n+1],\infty}&lt;+\infty$$<br>使用导数一致收敛的判别法则，就得到$F\in C^2[0,1]$啦。<br>也就是说，如果$f\in C^2(\mathbb{R})$，并且满足以上条件，就有Poisson求和公式<br>$$\sum_{n\in\mathbb{Z}}f(n)=\sum_{n\in\mathbb{Z}}\mathcal{F}f(n)$$</p>
-<h3 id="解析延拓"><a href="#解析延拓" class="headerlink" title="解析延拓"></a>解析延拓</h3><p>设$\lambda&gt;0$，令<br>$$\theta(\lambda)=\sum_{n\in\mathbb{Z}}e^{-\pi n^2\lambda}$$<br>$$\psi(\lambda)=\sum_{n=1}^\infty e^{-\pi n^2\lambda}$$<br>很显然$\theta(\lambda)=2\psi(\lambda)+1$。<br>考虑$f(t)=e^{-\pi t^2\lambda}$，计算得$\mathcal{F}f(x)=\frac{1}{\sqrt{\lambda}}e^{-\pi\frac{x^2}{\lambda}}$，而且满足相应条件，因此用Poisson求和公式，<br>$$\sum_{n\in\mathbb{Z}}e^{-\pi n^2\lambda}=\frac{1}{\sqrt{\lambda}}\sum_{n\in\mathbb{Z}}e^{-\pi\frac{n^2}{\lambda}}$$<br>即$\theta(\lambda)=\frac{1}{\sqrt{\lambda}}\theta\left(\frac{1}{\lambda}\right)$。<br>换成$\psi$就是$\psi\left(\frac{1}{\lambda}\right)=\sqrt{\lambda}\psi(\lambda)+\frac{\sqrt{\lambda}-1}{2}$。<br>第二部分的最后，得到了<br>\begin{align*}<br>\pi^{-z}\zeta(2z)\Gamma(z)&amp;=\int_0^{+\infty}\left(\sum_{n=1}^\infty e^{-\pi n^2s}\right)s^{z-1}ds\\<br>&amp;=\int_0^{+\infty}\psi(s)s^{z-1}ds<br>\end{align*}<br>因此<br>\begin{align*}<br>\pi^{-z}\zeta(2z)\Gamma(z)&amp;=\int_0^{+\infty}\psi(s)s^{z-1}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)s^{z-1}ds+\int_0^1\psi(s)s^{z-1}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)s^{z-1}ds+\int_1^{+\infty}\psi\left(\frac{1}{s}\right)s^{1-z}\frac{ds}{s^2}\\<br>&amp;=\int_1^{+\infty}\psi(s)s^{z-1}ds+\int_1^{+\infty}\left(\psi(s)\sqrt{s}+\frac{\sqrt{s}-1}{2}\right)s^{-1-z}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)(s^{z-1}+s^{-z-\frac{1}{2}})ds+\int_1^{+\infty}\frac{s^{-z-\frac{1}{2}}-s^{-z-1}}{2}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)(s^{z-1}+s^{-z-\frac{1}{2}})ds+\frac{1}{2z(2z-1)}<br>\end{align*}<br>以上计算的前提是$Re(z)&gt;\frac{1}{2}$。<br>令$w=2z$，则当$Re(w)&gt;1$时，<br>$$\sqrt{\pi}^{-w}\zeta(w)\Gamma\left(\frac{w}{2}\right)=\int_1^{+\infty}\psi(s)(\sqrt{s}^{w-2}+\sqrt{s}^{-w-1})ds-\frac{1}{w(1-w)}$$<br>现在观察：等号右边是一个亚纯函数（亚纯函数就是“能表示成两个解析函数的商”的函数，或者“没有本性奇点”的函数，两个亚纯函数经过四则运算仍然是亚纯函数），而等号左边的$\sqrt{\pi}^{-w}$、$\Gamma\left(\frac{w}{2}\right)$也都是亚纯函数。这样，上式相当于给出了$\zeta(w)$在$w\in\mathbb{C}$上的定义！</p>
+<h3 id="解析延拓"><a href="#解析延拓" class="headerlink" title="解析延拓"></a>解析延拓</h3><p>设$\lambda&gt;0$，令<br>\begin{eqnarray*}<br>\theta(\lambda)&amp;=&amp;\sum_{n\in\mathbb{Z}}e^{-\pi n^2\lambda}\\<br>\psi(\lambda)&amp;=&amp;\sum_{n=1}^\infty e^{-\pi n^2\lambda}<br>\end{eqnarray*}<br>很显然$\theta(\lambda)=2\psi(\lambda)+1$。<br>考虑$f(t)=e^{-\pi t^2\lambda}$，计算得$\mathcal{F}f(x)=\frac{1}{\sqrt{\lambda}}e^{-\pi\frac{x^2}{\lambda}}$，而且满足相应条件，因此用Poisson求和公式，<br>$$\sum_{n\in\mathbb{Z}}e^{-\pi n^2\lambda}=\frac{1}{\sqrt{\lambda}}\sum_{n\in\mathbb{Z}}e^{-\pi\frac{n^2}{\lambda}}$$<br>即$\theta(\lambda)=\frac{1}{\sqrt{\lambda}}\theta\left(\frac{1}{\lambda}\right)$。<br>换成$\psi$就是$\psi\left(\frac{1}{\lambda}\right)=\sqrt{\lambda}\psi(\lambda)+\frac{\sqrt{\lambda}-1}{2}$。<br>第二部分的最后，得到了<br>\begin{align*}<br>\pi^{-z}\zeta(2z)\Gamma(z)&amp;=\int_0^{+\infty}\left(\sum_{n=1}^\infty e^{-\pi n^2s}\right)s^{z-1}ds\\<br>&amp;=\int_0^{+\infty}\psi(s)s^{z-1}ds<br>\end{align*}<br>因此<br>\begin{align*}<br>\pi^{-z}\zeta(2z)\Gamma(z)&amp;=\int_0^{+\infty}\psi(s)s^{z-1}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)s^{z-1}ds+\int_0^1\psi(s)s^{z-1}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)s^{z-1}ds+\int_1^{+\infty}\psi\left(\frac{1}{s}\right)s^{1-z}\frac{ds}{s^2}\\<br>&amp;=\int_1^{+\infty}\psi(s)s^{z-1}ds+\int_1^{+\infty}\left(\psi(s)\sqrt{s}+\frac{\sqrt{s}-1}{2}\right)s^{-1-z}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)(s^{z-1}+s^{-z-\frac{1}{2}})ds+\int_1^{+\infty}\frac{s^{-z-\frac{1}{2}}-s^{-z-1}}{2}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)(s^{z-1}+s^{-z-\frac{1}{2}})ds+\frac{1}{2z(2z-1)}<br>\end{align*}<br>以上计算的前提是$Re(z)&gt;\frac{1}{2}$。<br>令$w=2z$，则当$Re(w)&gt;1$时，<br>$$\sqrt{\pi}^{-w}\zeta(w)\Gamma\left(\frac{w}{2}\right)=\int_1^{+\infty}\psi(s)(\sqrt{s}^{w-2}+\sqrt{s}^{-w-1})ds-\frac{1}{w(1-w)}$$<br>现在观察：等号右边是一个亚纯函数（亚纯函数就是“能表示成两个解析函数的商”的函数，或者“没有本性奇点”的函数，两个亚纯函数经过四则运算仍然是亚纯函数），而等号左边的$\sqrt{\pi}^{-w}$、$\Gamma\left(\frac{w}{2}\right)$也都是亚纯函数。这样，上式相当于给出了$\zeta(w)$在$w\in\mathbb{C}$上的定义！</p>
 <h2 id="所有自然数的“和”"><a href="#所有自然数的“和”" class="headerlink" title="所有自然数的“和”"></a>所有自然数的“和”</h2><p>这还没完，试试在等号右边把$w$换为$1-w$，你会发现式子根本没变。这就说明：<br>$$\sqrt{\pi}^{-w}\zeta(w)\Gamma\left(\frac{w}{2}\right)=\sqrt{\pi}^{w-1}\zeta(1-w)\Gamma\left(\frac{1-w}{2}\right)$$<br>现在让$w=-1$，就有<br>$$\sqrt{\pi}\zeta(-1)\Gamma\left(-\frac{1}{2}\right)=\sqrt{\pi}^{-2}\zeta(2)\Gamma(1)$$<br>我们知道<br>$$\zeta(2)=\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}$$<br>并且，<br>$$\Gamma(1)=1$$<br>$$\Gamma\left(\frac{1}{2}\right)=\sqrt{\pi}$$<br>$$\Gamma\left(-\frac{1}{2}\right)=\frac{\Gamma\left(\frac{1}{2}\right)}{-\frac{1}{2}}=-2\sqrt{\pi}$$<br>因此：<br>$$\zeta(-1)=\frac{\sqrt{\pi}^{-2}\zeta(2)\Gamma(1)}{\sqrt{\pi}\Gamma\left(-\frac{1}{2}\right)}=\frac{\frac{\pi^2}{6}}{\sqrt{\pi}^3(-2)\sqrt{\pi}}=-\frac{1}{12}$$<br>我们便得出了全体自然数的“和”为$-\frac{1}{12}$这一结论。</p>
 <h2 id="黎曼猜想与素数"><a href="#黎曼猜想与素数" class="headerlink" title="黎曼猜想与素数"></a>黎曼猜想与素数</h2><h3 id="欧拉乘积公式"><a href="#欧拉乘积公式" class="headerlink" title="欧拉乘积公式"></a>欧拉乘积公式</h3><p>从$\zeta$函数的原始定义出发：<br>$$\zeta(s)=\frac{1}{1^s}+\frac{1}{2^s}+\frac{1}{3^s}+\cdots$$<br>在等式两边同时乘以第二项：<br>$$\frac{1}{2^s}\times\zeta(s)=\frac{1}{2^s}+\frac{1}{4^s}+\frac{1}{6^s}+\cdots$$<br>两式相减得：<br>$$(1-\frac{1}{2^s})\times\zeta(s)=\frac{1}{1^s}+\frac{1}{3^s}+\frac{1}{5^s}+\cdots$$<br>这时，等号右边的分母上已经没有2的倍数了。重复这一过程：<br>$$\frac{1}{3^s}\times(1-\frac{1}{2^s})\zeta(s)=\frac{1}{3^s}+\frac{1}{9^s}+\frac{1}{15^s}+\cdots$$<br>以上两式相减，又有：<br>$$(1-\frac{1}{3^s})(1-\frac{1}{2^s})\zeta(s)=\frac{1}{1^s}+\frac{1}{5^s}+\frac{1}{7^s}+\cdots$$<br>等号右边也没有3的倍数了。无限重复此过程，就有：<br>$$\cdots(1-\frac{1}{11^s})(1-\frac{1}{7^s})(1-\frac{1}{5^s})(1-\frac{1}{3^s})\zeta(s)=1$$<br>即：<br>$$\zeta(s)=\frac{1}{1-\frac{1}{2^s}}\times\frac{1}{1-\frac{1}{3^s}}\times\frac{1}{1-\frac{1}{5^s}}\times\frac{1}{1-\frac{1}{7^s}}\times\cdots$$<br>可以写成：<br>$$\zeta(s)=\sum_n \frac{1}{n^s}=\prod_p \frac{1}{1-p^{-s}}$$<br>这就是欧拉乘积公式，该表达式首先出现在1737年一篇题为《Variae observationes circa series infinitas》（无穷级数的各种观察）的论文中。<br>该恒等式展示了素数与$\zeta$函数间的联系。</p>
 <h3 id="莫比乌斯函数"><a href="#莫比乌斯函数" class="headerlink" title="莫比乌斯函数"></a>莫比乌斯函数</h3><p>奥古斯特·费迪南德·莫比乌斯之后重写了欧拉乘积公式，创造了一个新的求和。首先引入莫比乌斯函数：<br>\begin{equation*}<br>\mu(n)=\Biggl\{<br>\begin{array}{ll}<br>1 &amp; n是偶数个不同的素数相乘\\<br>-1 &amp; n是奇数个不同的素数相乘\\<br>0 &amp; n被某个素数的平方整除<br>\end{array}<br>\end{equation*}<br>和式用$\mu(n)$表示如下：<br>$$\frac{1}{\zeta(s)}=\sum_{n\in\mathbb{N}}\frac{\mu(n)}{n^s}$$</p>
@@ -278,6 +279,9 @@
 </ul>
       </div>
     <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/数学/" rel="tag"># 数学</a>
+        </div>
         <div class="post-widgets">
               <div>
                 <span class="btn" style="font-size: 18px;">
@@ -357,7 +361,7 @@
                 </div>
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -439,13 +443,13 @@
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
     <script type="text/javascript" src="/lib/custom.js"></script>
-  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
-  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
-  <script type="text/javascript" src="/js/src/affix.js?v=6.4.2"></script>
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.2"></script>
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="/lib/Valine.min.js"></script>
   <script type="text/javascript">
@@ -775,31 +779,15 @@
       },
       TeX: { equationNumbers: { autoNumber: "AMS" } },
       "HTML-CSS": {
-        linebreaks: {
-          automatic: true,
-          width: "90% container"
-        },
+        linebreaks: { automatic: true },
         EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
       },
       SVG: {
-        linebreaks: {
-          automatic: true,
-          width: "90% container"
-        },
+        linebreaks: { automatic: true },
         EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
       },
-      PreviewHTML: {
-        linebreaks: {
-          automatic: true,
-          width: "90% container"
-        }
-      },
-      CommonHTML: {
-        linebreaks: {
-          automatic: true,
-          width: "90% container"
-        }
-      }
+      PreviewHTML: { linebreaks: { automatic: true } },
+      CommonHTML: { linebreaks: { automatic: true } }
     });
 </script>
 <script type="text/x-mathjax-config">
@@ -811,6 +799,12 @@
     });
 </script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<style>
+.MathJax_Display {
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+</style>
   <script src="/lib/needsharebutton/needsharebutton.js"></script>
   <script>
       pbOptions = {};

@@ -41,7 +41,7 @@
 </script>
   <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
   <meta name="description" content="上帝说，要有\begin{eqnarray*}\nabla\cdot\vec{E}&amp;amp;=&amp;amp;\frac{\rho}{\epsilon_0}\\\nabla\cdot\vec{B}&amp;amp;=&amp;amp;0\\\nabla\times\vec{E}&amp;amp;=&amp;amp;-\frac{\partial B}{\partial t}\\\nabla\times\vec{B}&amp;amp;=&amp;amp">
-<meta name="keywords" content="WordPress,LaTeX">
+<meta name="keywords" content="LaTeX,WordPress">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在WordPress博客中使用LaTeX">
 <meta property="og:url" content="https://zhangshuqiao.org/2017-11/在WordPress博客中使用LaTeX/index.html">
@@ -176,7 +176,7 @@
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/在WordPress博客中使用LaTeX/">
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="数理化生科，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
       <meta itemprop="image" content="/images/icon.gif">
     </span>
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -271,8 +271,8 @@
       </div>
     <footer class="post-footer">
         <div class="post-tags">
-            <a href="/tags/WordPress/" rel="tag"># WordPress</a>
             <a href="/tags/LaTeX/" rel="tag"># LaTeX</a>
+            <a href="/tags/WordPress/" rel="tag"># WordPress</a>
         </div>
         <div class="post-widgets">
               <div>
@@ -328,7 +328,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
               <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
               <p class="site-author-name" itemprop="name">张书樵</p>
-              <p class="site-description motion-element" itemprop="description">数理化生科，道处书山有路<br>力电声光热，涵尽学海无涯</p>
+              <p class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</p>
           </div>
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
@@ -745,38 +745,40 @@
     });
   </script>
       <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      },
-      TeX: { equationNumbers: { autoNumber: "AMS" } },
-      "HTML-CSS": {
-        linebreaks: { automatic: true },
-        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-      },
-      SVG: {
-        linebreaks: { automatic: true },
-        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-      },
-      PreviewHTML: { linebreaks: { automatic: true } },
-      CommonHTML: { linebreaks: { automatic: true } }
-    });
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: { equationNumbers: { autoNumber: "AMS" } },
+    "HTML-CSS": {
+      linebreaks: { automatic: true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    SVG: {
+      linebreaks: { automatic: true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    PreviewHTML: { linebreaks: { automatic: true } },
+    CommonHTML: { linebreaks: { automatic: true } }
+  });
 </script>
 <script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
 </script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <style>
-.MathJax_Display {
-    overflow-x: scroll;
+@media screen and (max-width: 767px) {
+  .MathJax_Display {
+    overflow: auto;
     overflow-y: hidden;
+  }
 }
 </style>
   <script src="/lib/needsharebutton/needsharebutton.js"></script>

@@ -49,7 +49,7 @@
 <meta property="og:description" content="这篇文章翻译自：The headers we don’t want The headers we don’t want By Andrew Betts | May 10, 2018 If you want to learn more about headers, don’t miss Andrew’s talk at Altitude London on May 22. HTTP headers">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.fastly.com/cimages/6pk8mg3yh2ee/63zsHXNxp6YmWacesKYgwy/e3f1040e2d948b0655667aaa86d5310f/Screen_Shot_2018-05-10_at_21.49.25.png">
-<meta property="og:updated_time" content="2018-08-07T01:48:31.547Z">
+<meta property="og:updated_time" content="2018-11-03T07:50:19.776Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="盘点那些不需要的HTTP头">
 <meta name="twitter:description" content="这篇文章翻译自：The headers we don’t want The headers we don’t want By Andrew Betts | May 10, 2018 If you want to learn more about headers, don’t miss Andrew’s talk at Altitude London on May 22. HTTP headers">
@@ -178,7 +178,7 @@
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/盘点那些不需要的HTTP头/">
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="数理化生科，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
       <meta itemprop="image" content="/images/icon.gif">
     </span>
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -240,7 +240,7 @@
 <p><em>If you want to learn more about headers, don’t miss Andrew’s talk at <a href="https://www.fastly.com/altitude/2018/london" target="_blank" rel="noopener">Altitude London</a> on May 22.</em></p>
 <p>HTTP headers are an important way of controlling how caches and browsers process your web content. But many are used incorrectly or pointlessly, which adds overhead at a critical time in the loading of your page, and may not work as you intended. In this first of a series of posts about header best practice, we’ll look at unnecessary headers.</p>
 <p>Most developers know about and depend on a variety of HTTP headers to make their content work. Those that are best known include <code>Content-Type</code> and <code>Content-Length</code>, which are both almost universal. But more recently, headers such as <code>Content-Security-Policy</code> and <code>Strict-Transport-Security</code> have started to improve security, and <code>Link rel=preload</code> headers to improve performance. Few sites use these, despite their wide support across browsers.</p>
-<p>At the same time, there are lots of headers that are hugely popular but aren’t new and aren’t actually all that useful. We can prove this using <a href="http://httparchive.org/" target="_blank" rel="noopener">HTTP Archive</a>, a project run by Google and sponsored by Fastly that loads 500,000 websites every month using <a href="https://www.webpagetest.org/" target="_blank" rel="noopener">WebPageTest</a>, and makes the results available in <a href="https://cloud.google.com/bigquery/" target="_blank" rel="noopener">BigQuery</a>.</p>
+<p>At the same time, there are lots of headers that are hugely popular but aren’t new and aren’t actually all that useful. We can prove this using <a href="http://httparchive.org" target="_blank" rel="noopener">HTTP Archive</a>, a project run by Google and sponsored by Fastly that loads 500,000 websites every month using <a href="https://www.webpagetest.org" target="_blank" rel="noopener">WebPageTest</a>, and makes the results available in <a href="https://cloud.google.com/bigquery" target="_blank" rel="noopener">BigQuery</a>.</p>
 <p>From the HTTP Archive data, here are the 30 most popular response headers (based on the number of domains in the archive which are serving each header), and roughly how useful each one is:</p>
 <table>
 <thead>
@@ -459,7 +459,7 @@
 <p>Nevertheless it’s use as a response header is so widespread that some browsers recognise it in this context as well. Today the probability that your response will transit a cache that understands <code>Pragma</code> in a response context, and doesn’t understand <code>Cache-Control</code>, is vanishingly small. If you want to make sure that something isn’t cached, <code>Cache-Control: no-store, private</code> is all you need.</p>
 <h2 id="Non-Browser-X-Robots-Tag"><a href="#Non-Browser-X-Robots-Tag" class="headerlink" title="Non-Browser (X-Robots-Tag)"></a>Non-Browser (X-Robots-Tag)</h2><p>One header in our top 30 is a non-browser header. <code>X-Robots-Tag</code> is intended to be consumed by a crawler, such as Google or Bing’s bots. Since it has no meaning to a browser, you could choose to only set it when the requesting user-agent is a crawler. Equally, you might decide that this makes testing harder, or perhaps that it violates the terms of service of the search engine.</p>
 <h2 id="Bugs"><a href="#Bugs" class="headerlink" title="Bugs"></a>Bugs</h2><p>Finally, it’s worth finishing on an honourable mention for simple bugs. In a <em>request</em>, a <code>Host</code> header makes sense, but seeing it on a response probably means your server is misconfigured somehow (I’d love to know how, exactly). Nevertheless, 68 domains in HTTP archive are returning a <code>Host</code> header in their responses.</p>
-<h2 id="Removing-headers-at-the-edge"><a href="#Removing-headers-at-the-edge" class="headerlink" title="Removing headers at the edge"></a>Removing headers at the edge</h2><p>Fortunately, if your site is behind Fastly, removing headers is pretty easy using <a href="https://docs.fastly.com/guides/vcl/" target="_blank" rel="noopener">VCL</a>. It makes sense that you might want to keep the genuinely useful debug data available to your dev team, but hide it for public users, so that’s easily done by detecting a cookie or inbound HTTP header:</p>
+<h2 id="Removing-headers-at-the-edge"><a href="#Removing-headers-at-the-edge" class="headerlink" title="Removing headers at the edge"></a>Removing headers at the edge</h2><p>Fortunately, if your site is behind Fastly, removing headers is pretty easy using <a href="https://docs.fastly.com/guides/vcl" target="_blank" rel="noopener">VCL</a>. It makes sense that you might want to keep the genuinely useful debug data available to your dev team, but hide it for public users, so that’s easily done by detecting a cookie or inbound HTTP header:</p>
 <p>In the next post in this series, I’ll be talking about best practices for headers that you should be setting, and how to enable them at the edge.</p>
     </div>
       <div>
@@ -558,7 +558,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
               <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
               <p class="site-author-name" itemprop="name">张书樵</p>
-              <p class="site-description motion-element" itemprop="description">数理化生科，道处书山有路<br>力电声光热，涵尽学海无涯</p>
+              <p class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</p>
           </div>
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">

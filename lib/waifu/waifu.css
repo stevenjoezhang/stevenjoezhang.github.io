@@ -19,7 +19,7 @@
 	opacity: 0;
 	width: 250px;
 	min-height: 70px;
-	margin: 0px 20px;
+	margin: -30px 20px;
 	padding: 5px 10px;
 	border: 1px solid rgba(224, 186, 140, 0.62);
 	border-radius: 12px;
@@ -52,7 +52,7 @@
 }
 .waifu-tool {
 	color: #aaa;
-	top: 90px;
+	top: 70px;
 	right: -10px;
 	position: absolute;
 	opacity: 0;
@@ -64,7 +64,7 @@
 .waifu-tool span {
 	display: block;
 	cursor: pointer;
-	line-height: 24px;
+	line-height: 26px;
 	text-align: center;
 	color: #5b6c7d;
 	transition: color .3s;

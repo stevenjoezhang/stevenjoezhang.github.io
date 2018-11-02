@@ -40,16 +40,16 @@
   };
 </script>
   <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
-  <meta name="description" content="数理化生科，道处书山有路力电声光热，涵尽学海无涯">
+  <meta name="description" content="力电声光热，涵尽学海无涯">
 <meta property="og:type" content="website">
 <meta property="og:title" content="米米的博客">
 <meta property="og:url" content="https://zhangshuqiao.org/page/2/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="数理化生科，道处书山有路力电声光热，涵尽学海无涯">
+<meta property="og:description" content="力电声光热，涵尽学海无涯">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="米米的博客">
-<meta name="twitter:description" content="数理化生科，道处书山有路力电声光热，涵尽学海无涯">
+<meta name="twitter:description" content="力电声光热，涵尽学海无涯">
   <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
   <link rel="canonical" href="https://zhangshuqiao.org/page/2/">
 <script type="text/javascript" id="page.configurations">
@@ -175,7 +175,7 @@
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-09/十个UI设计的基本原理/">
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="数理化生科，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
       <meta itemprop="image" content="/images/icon.gif">
     </span>
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -260,7 +260,7 @@
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/入手信达小黑天文望远镜/">
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="数理化生科，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
       <meta itemprop="image" content="/images/icon.gif">
     </span>
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -326,7 +326,7 @@
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/盘点那些有必要的HTTP头/">
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="数理化生科，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
       <meta itemprop="image" content="/images/icon.gif">
     </span>
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -385,7 +385,7 @@
 <p>Manipulating HTTP headers is one of the most common things that Fastly customers do. Using the right combination of headers is one of the best things you can do for the security of your site, and also a significant contributor to performance.</p>
 <p>Most developers know about and depend on a variety of HTTP headers to make their content work. Those that are best known include <code>Content-Type</code> and <code>Content-Length</code>, which are both almost universal. But more recently, headers such as <code>Content-Security-Policy</code> and <code>Strict-Transport-Security</code> have started to improve security, and <code>Link rel=preload</code> headers to improve performance. Few sites use these, despite their wide support across browsers.</p>
 <p>In the <a href="https://www.fastly.com/blog/headers-we-dont-want" target="_blank" rel="noopener">previous post</a> in this series, we looked at unnecessary headers. This time around, I’m going to help you figure out what headers you should be configuring for your site.</p>
-<h2 id="Doing-some-homework"><a href="#Doing-some-homework" class="headerlink" title="Doing some homework"></a>Doing some homework</h2><p>There are multiple services around the web that will analyse your site and tell you what headers you should add. I looked at <a href="https://securityheaders.io/" target="_blank" rel="noopener">securityheaders.io</a> and <a href="https://observatory.mozilla.org/" target="_blank" rel="noopener">Observatory by Mozilla</a> to supplement my own research and data drawn from the Fastly network.</p>
+<h2 id="Doing-some-homework"><a href="#Doing-some-homework" class="headerlink" title="Doing some homework"></a>Doing some homework</h2><p>There are multiple services around the web that will analyse your site and tell you what headers you should add. I looked at <a href="https://securityheaders.io" target="_blank" rel="noopener">securityheaders.io</a> and <a href="https://observatory.mozilla.org" target="_blank" rel="noopener">Observatory by Mozilla</a> to supplement my own research and data drawn from the Fastly network.</p>
 <h2 id="The-headers-you-should-have-on-your-site"><a href="#The-headers-you-should-have-on-your-site" class="headerlink" title="The headers you should have on your site"></a>The headers you should have on your site</h2><p>So, what are the key headers you should have in responses from your servers? The bulk are responsible for improving security:</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" target="_blank" rel="noopener">Content-Security-Policy</a>: Acts like a firewall in the browser. If your site is compromised, helps limit the damage by preventing connections to hosts you don’t approve. Essential. If you don’t have one, you should.</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy" target="_blank" rel="noopener">Referrer-Policy</a>: Configures the level of detail to include in the <code>Referer</code> header when navigating away from the page. Helps to prevent data leaking from your site to sites that you link to. Highly recommended.</p>
@@ -395,8 +395,8 @@
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank" rel="noopener">CORS</a>: Cross-Origin Resource Sharing headers allow your URL to be loaded by script operating on another origin. This one’s optional. These headers are permissive, not restrictive, so not having them at all gives you the highest level of security.</p>
 <p>Others are for performance:</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin" target="_blank" rel="noopener">Timing-Allow-Origin</a>: Allows monitoring tools access to timing data for the request. It’s good to throw this in on pretty much anything, as it will allow you to get much richer data from services like Google Analytics or Speedcurve.</p>
-<p><a href="https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/" target="_blank" rel="noopener">Link rel=preload</a>: Tells the browser of critical resources that it should get downloading even though it hasn’t encountered the need for them yet. Use this for fonts and important CSS (and read on for how we’re going to make this technique even more effective in future).</p>
-<p><a href="https://www.w3.org/TR/server-timing/" target="_blank" rel="noopener">Server-Timing</a>: Provides server-side timing information, which allows navigation and resource timing APIs to be supplemented with more granular information about individual tasks that make up the server side processing (eg. ‘how long did we spend in MySQL’). Great for monitoring performance data, in conjunction with RUM beacon tools.</p>
+<p><a href="https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for" target="_blank" rel="noopener">Link rel=preload</a>: Tells the browser of critical resources that it should get downloading even though it hasn’t encountered the need for them yet. Use this for fonts and important CSS (and read on for how we’re going to make this technique even more effective in future).</p>
+<p><a href="https://www.w3.org/TR/server-timing" target="_blank" rel="noopener">Server-Timing</a>: Provides server-side timing information, which allows navigation and resource timing APIs to be supplemented with more granular information about individual tasks that make up the server side processing (eg. ‘how long did we spend in MySQL’). Great for monitoring performance data, in conjunction with RUM beacon tools.</p>
 <p>Let’s look at a couple of these in more detail.</p>
           <!--noindex-->
             <div class="post-button text-center">
@@ -416,7 +416,7 @@
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/盘点那些不需要的HTTP头/">
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="数理化生科，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
       <meta itemprop="image" content="/images/icon.gif">
     </span>
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -475,7 +475,7 @@
 <p><em>If you want to learn more about headers, don’t miss Andrew’s talk at <a href="https://www.fastly.com/altitude/2018/london" target="_blank" rel="noopener">Altitude London</a> on May 22.</em></p>
 <p>HTTP headers are an important way of controlling how caches and browsers process your web content. But many are used incorrectly or pointlessly, which adds overhead at a critical time in the loading of your page, and may not work as you intended. In this first of a series of posts about header best practice, we’ll look at unnecessary headers.</p>
 <p>Most developers know about and depend on a variety of HTTP headers to make their content work. Those that are best known include <code>Content-Type</code> and <code>Content-Length</code>, which are both almost universal. But more recently, headers such as <code>Content-Security-Policy</code> and <code>Strict-Transport-Security</code> have started to improve security, and <code>Link rel=preload</code> headers to improve performance. Few sites use these, despite their wide support across browsers.</p>
-<p>At the same time, there are lots of headers that are hugely popular but aren’t new and aren’t actually all that useful. We can prove this using <a href="http://httparchive.org/" target="_blank" rel="noopener">HTTP Archive</a>, a project run by Google and sponsored by Fastly that loads 500,000 websites every month using <a href="https://www.webpagetest.org/" target="_blank" rel="noopener">WebPageTest</a>, and makes the results available in <a href="https://cloud.google.com/bigquery/" target="_blank" rel="noopener">BigQuery</a>.</p>
+<p>At the same time, there are lots of headers that are hugely popular but aren’t new and aren’t actually all that useful. We can prove this using <a href="http://httparchive.org" target="_blank" rel="noopener">HTTP Archive</a>, a project run by Google and sponsored by Fastly that loads 500,000 websites every month using <a href="https://www.webpagetest.org" target="_blank" rel="noopener">WebPageTest</a>, and makes the results available in <a href="https://cloud.google.com/bigquery" target="_blank" rel="noopener">BigQuery</a>.</p>
 <p>From the HTTP Archive data, here are the 30 most popular response headers (based on the number of domains in the archive which are serving each header), and roughly how useful each one is:</p>
 <table>
 <thead>
@@ -682,7 +682,7 @@
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/自己打造一台恩尼格玛密码机/">
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="数理化生科，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
       <meta itemprop="image" content="/images/icon.gif">
     </span>
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -759,7 +759,7 @@
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/武功山游记/">
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="数理化生科，道处书山有路<br/>力电声光热，涵尽学海无涯">
+      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
       <meta itemprop="image" content="/images/icon.gif">
     </span>
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -850,7 +850,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
               <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
               <p class="site-author-name" itemprop="name">张书樵</p>
-              <p class="site-description motion-element" itemprop="description">数理化生科，道处书山有路<br>力电声光热，涵尽学海无涯</p>
+              <p class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</p>
           </div>
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">

@@ -10,6 +10,7 @@
   <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
   <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -41,7 +42,7 @@
 </script>
   <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
   <meta name="description" content="“表情包”是一种利用图片来表示感情的方式。在社交软件活跃之后，“表情包”已经形成了一种流行文化，在互联网上，基本人人都会发表情。不知曾经你是否也有过找不到表情包去应对别人的时候？今天博主分享用Python开发个人专属的表情包网站的方法，想用什么表情包搜一下就有了！目标：获取海量表情包，存入数据库，然后搭建简单网站，通过输入关键字获取对应的的表情包 创建数据库首先，我们要从这个网站爬取表情包：htt">
-<meta name="keywords" content="Python,MySQL">
+<meta name="keywords" content="MySQL,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python开发表情包网站">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-06/Python开发表情包网站/index.html">
@@ -122,28 +123,22 @@
 <nav class="site-nav">
     <ul id="menu" class="menu">
           <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
   </li>
           <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
   </li>
           <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
   </li>
           <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
   </li>
           <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
   </li>
           <li class="menu-item menu-item-friends">
-    <a href="/friends/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-globe"></i> <br>友情链接</a>
+    <a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
   </li>
         <li class="menu-item menu-item-search">
             <a href="javascript:;" class="popup-trigger">
@@ -267,7 +262,7 @@
 </div>
       </div>
       <div>
-        <ul class="post-copyright">
+<ul class="post-copyright">
   <li class="post-copyright-author">
     <strong>本文作者： </strong>张书樵</li>
   <li class="post-copyright-link">
@@ -275,13 +270,13 @@
     <a href="https://zhangshuqiao.org/2018-06/Python开发表情包网站/" title="Python开发表情包网站">https://zhangshuqiao.org/2018-06/Python开发表情包网站/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
       </div>
     <footer class="post-footer">
         <div class="post-tags">
-            <a href="/tags/Python/" rel="tag"># Python</a>
             <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
         </div>
         <div class="post-widgets">
               <div>
@@ -373,11 +368,9 @@
                 RSS
               </a>
             </div>
-            <div class="cc-license motion-element" itemprop="license">
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
-              </a>
-            </div>
+             <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
             <div class="links-of-blogroll motion-element links-of-blogroll-block">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-institution"></i>
@@ -385,7 +378,7 @@
               </div>
               <ul class="links-of-blogroll-list">
                   <li class="links-of-blogroll-item">
-                    <a href="https://galaxymimi.com" title="Galaxy Mimi" target="_blank">Galaxy Mimi</a>
+                    <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
                   </li>
               </ul>
             </div>
@@ -404,7 +397,7 @@
     </main>
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright"> &copy; 2017 – <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>

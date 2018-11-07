@@ -5,15 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
   <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-  <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
@@ -49,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="p标签换行CSS自动换行、强制不换行、强制断行、超出显示省略号 P标签是默认是自动换行的，因此设置好宽度之后，能够较好的实现效果，但是最近的项目中发现，使用ajax加载数据之后，p标签内的内容没有换行，导致布局错乱，于是尝试着使用换行样式，虽然解决了问题，但是并没有发现本质原因。经过研究，其本质在于，当时获取的数据是一长串的数字，浏览器应该是对数字和英文单词处理方式相近，不会截断。先给出各种方式，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-30T11:09:16.538Z">
+<meta property="og:updated_time" content="2018-11-09T03:30:34.457Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些CSS的小技巧">
 <meta name="twitter:description" content="p标签换行CSS自动换行、强制不换行、强制断行、超出显示省略号 P标签是默认是自动换行的，因此设置好宽度之后，能够较好的实现效果，但是最近的项目中发现，使用ajax加载数据之后，p标签内的内容没有换行，导致布局错乱，于是尝试着使用换行样式，虽然解决了问题，但是并没有发现本质原因。经过研究，其本质在于，当时获取的数据是一长串的数字，浏览器应该是对数字和英文单词处理方式相近，不会截断。先给出各种方式，">
@@ -125,17 +124,20 @@
           <li class="menu-item menu-item-about">
     <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
   </li>
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
   </li>
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
   </li>
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
   </li>
           <li class="menu-item menu-item-friends">
     <a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
+  </li>
+          <li class="menu-item menu-item-lab">
+    <a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
   </li>
         <li class="menu-item menu-item-search">
             <a href="javascript:;" class="popup-trigger">
@@ -265,31 +267,31 @@
 <li>表达式中有“*”和“/”时，其前后可以没有空格，但建议留有空格</li>
 </ul>
 <h2 id="content属性"><a href="#content属性" class="headerlink" title="content属性"></a>content属性</h2><p>content内容生成技术以及应用</p>
-<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>content属性早在CSS2.1的时候就被引入了，可以使用:before以及:after伪元素生成内容。此特性目前已被大部分的浏览器支持：(Firefox 1.5+, Safari 3.5+, IE 8+, Opera 9.2+, Chrome 0.2+)。另外，目前Opera 9.5+ 和 Safari 4已经支持所有元素的content属性，而不仅仅是:before和:after伪元素。<br>在CSS 3 Generated Content工作草案中，content属性添加了更多的特征，例如：插入以及移除文档内容的能力，以创建脚注，结语，及段落注释。但是目前还没有浏览器支持content的扩展功能。<br>下面将展示content内容生成的基本使用，以及一些您可以应用的特别的技术。</p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>content属性早在CSS2.1的时候就被引入了，可以使用:before以及:after伪元素生成内容。此特性目前已被大部分的浏览器支持：(Firefox 1.5+, Safari 3.5+, IE 8+, Opera 9.2+, Chrome 0.2+)。另外，目前Opera 9.5+ 和 Safari 4已经支持所有元素的content属性，而不仅仅是:before和:after伪元素。<br>在CSS 3 Generated Content工作草案中，content属性添加了更多的特征，例如：插入以及移除文档内容的能力，以创建脚注，结语，及段落注释。但是目前还没有浏览器支持content的扩展功能。<br>下面将展示content内容生成的基本使用，以及一些你可以应用的特别的技术。</p>
 <h3 id="最基本的—–生成内容"><a href="#最基本的—–生成内容" class="headerlink" title="最基本的—–生成内容"></a>最基本的—–生成内容</h3><p>content使用如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h2</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"我是额外文字！"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>我是h2<span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>此段样式的作用是在每个h2标签的前面添加文字“我是额外文字”。<br>content属性的值除了使用文本值外，还可以使用标签的一些属性值，方法是attr()，参见如下代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-class">.content</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="built_in">attr</span>(href);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"content"</span> <span class="attr">href</span>=<span class="string">"http://www.zhangxinxu.com/"</span>&gt;</span>此标签的href值是：<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>对应a标签内的文字值的最后添加了此标签的href属性的值。<br>注意：当使用<code>attr()</code>获取标签属性名的时候，千万不要添加引号!</p>
-<p>您还可以使用计数器产生动态数字或运用<code>url(/path/to/your/file)</code>路径插入图片。要想获得更多信息，请继续看下面的应用实例。</p>
-<h3 id="使用计数器创建号码内容"><a href="#使用计数器创建号码内容" class="headerlink" title="使用计数器创建号码内容"></a>使用计数器创建号码内容</h3><p>如果您想插入一系列递增的值，比如说“图片1，图片2，图片3，图片4……”，您就可以使用计数器在每个列表项的前面插入递增的序号值。CSS代码如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ol</span> &#123;</span><br><span class="line">    <span class="attribute">list-style-type</span>: none;</span><br><span class="line">    <span class="attribute">counter-reset</span>: sectioncounter;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">ol</span> <span class="selector-tag">li</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"图片"</span> <span class="built_in">counter</span>(sectioncounter) <span class="string">"： "</span>;</span><br><span class="line">    <span class="attribute">counter-increment</span>: sectioncounter;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>你还可以使用计数器产生动态数字或运用<code>url(/path/to/your/file)</code>路径插入图片。要想获得更多信息，请继续看下面的应用实例。</p>
+<h3 id="使用计数器创建号码内容"><a href="#使用计数器创建号码内容" class="headerlink" title="使用计数器创建号码内容"></a>使用计数器创建号码内容</h3><p>如果你想插入一系列递增的值，比如说“图片1，图片2，图片3，图片4……”，你就可以使用计数器在每个列表项的前面插入递增的序号值。CSS代码如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ol</span> &#123;</span><br><span class="line">    <span class="attribute">list-style-type</span>: none;</span><br><span class="line">    <span class="attribute">counter-reset</span>: sectioncounter;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">ol</span> <span class="selector-tag">li</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"图片"</span> <span class="built_in">counter</span>(sectioncounter) <span class="string">"： "</span>;</span><br><span class="line">    <span class="attribute">counter-increment</span>: sectioncounter;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>HTML代码如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"mm1.jpg"</span> <span class="attr">width</span>=<span class="string">"128"</span> <span class="attr">height</span>=<span class="string">"96"</span> /&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"mm3.jpg"</span> <span class="attr">width</span>=<span class="string">"128"</span> <span class="attr">height</span>=<span class="string">"96"</span> /&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>说明：<br><code>&lt;ol&gt;</code>标签应用<code>counter-reset</code>属性，<code>&lt;li&gt;</code>标签应用<code>counter-increment</code>属性，值均为<code>sectioncounter</code>，再配合<code>content</code>属性，以及<code>counter</code>计数器就可以实现递增的效果了。<br>如果您指定了元素<code>display:none</code>，则<code>content</code>下的计数器不会产生递增值。<br>当然，如果浏览器不支持此方法，那么就不会有数字出现，您使用<code>firebug</code>或是之类的工具查看真实的HTML时不会看到产生的数值，不要有疑惑，<code>content</code>属性动态生成的内容是纯粹的装饰而已，虚假的表象。<br>如果您对CSS计数器感兴趣，想深入了解，可以参见David Storey一篇优秀的文章：<a href="https://dev.opera.com/articles/automatic-numbering-with-css-counters" target="_blank" rel="noopener">Automatic numbering with CSS Counters</a></p>
+<p>说明：<br><code>&lt;ol&gt;</code>标签应用<code>counter-reset</code>属性，<code>&lt;li&gt;</code>标签应用<code>counter-increment</code>属性，值均为<code>sectioncounter</code>，再配合<code>content</code>属性，以及<code>counter</code>计数器就可以实现递增的效果了。<br>如果你指定了元素<code>display:none</code>，则<code>content</code>下的计数器不会产生递增值。<br>当然，如果浏览器不支持此方法，那么就不会有数字出现，你使用<code>firebug</code>或是之类的工具查看真实的HTML时不会看到产生的数值，不要有疑惑，<code>content</code>属性动态生成的内容是纯粹的装饰而已，虚假的表象。<br>如果你对CSS计数器感兴趣，想深入了解，可以参见David Storey一篇优秀的文章：<a href="https://dev.opera.com/articles/automatic-numbering-with-css-counters" target="_blank" rel="noopener">Automatic numbering with CSS Counters</a></p>
 <h3 id="为多语言内容插入正确的引号"><a href="#为多语言内容插入正确的引号" class="headerlink" title="为多语言内容插入正确的引号"></a>为多语言内容插入正确的引号</h3><p>不同的语言使用不同的引号字符。比如英文的引号就是<code>&quot;&quot;</code>，而中文引号就是<code>“”</code>。使用content可以使得不同的语言使用对应的一些字符。例如，我们需要对下面的些文字添加其对应语言的引号，该怎么办呢？<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span><span class="tag">&lt;<span class="name">q</span>&gt;</span>It’s only work if somebody makes you do it.<span class="tag">&lt;/<span class="name">q</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">lang</span>=<span class="string">"no"</span>&gt;</span><span class="tag">&lt;<span class="name">q</span>&gt;</span>Hvis du forteller meg nok en vits, så skal jeg slå deg til jorden.<span class="tag">&lt;/<span class="name">q</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">lang</span>=<span class="string">"ch"</span>&gt;</span><span class="tag">&lt;<span class="name">q</span>&gt;</span>欢迎来到上海，欢迎参观世博会！<span class="tag">&lt;/<span class="name">q</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>我们不妨试试下面的代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 为不同语言指定引号的表现 */</span></span><br><span class="line"><span class="selector-pseudo">:lang(en)</span> &gt; <span class="selector-tag">q</span> &#123; <span class="attribute">quotes</span>:<span class="string">'"'</span> <span class="string">'"'</span>; &#125;</span><br><span class="line"><span class="selector-pseudo">:lang(no)</span> &gt; <span class="selector-tag">q</span> &#123; <span class="attribute">quotes</span>:<span class="string">"«"</span> <span class="string">"»"</span>; &#125;</span><br><span class="line"><span class="selector-pseudo">:lang(ch)</span> &gt; <span class="selector-tag">q</span> &#123; <span class="attribute">quotes</span>:<span class="string">"“"</span> <span class="string">"”"</span>; &#125;</span><br><span class="line"><span class="comment">/* 在q标签的前后插入引号 */</span></span><br><span class="line"><span class="selector-tag">q</span><span class="selector-pseudo">:before</span> &#123; <span class="attribute">content</span>: open-quote; &#125;</span><br><span class="line"><span class="selector-tag">q</span><span class="selector-pseudo">:after</span> &#123; <span class="attribute">content</span>: close-quote; &#125;</span><br></pre></td></tr></table></figure></p>
 <p>此技术可以应用于各类元素，而不仅仅是q标签。</p>
 <h3 id="用图片替换文字"><a href="#用图片替换文字" class="headerlink" title="用图片替换文字"></a>用图片替换文字</h3><p>关于图片替换技术，可以参见这里：<a href="http://www.mezzoblue.com/tests/revised-image-replacement" target="_blank" rel="noopener">several image replacement techniques</a>，里面提供了几种方法。而这里展示的则是另外不同的用图片替换方法，使用的是content。</p>
-<p>您可以参见下面的代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-class">.logo</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="built_in">url</span>(logo.png);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这种图片替换技术的优点在于文字内容确实被替换了。因此，您没有必要设定高宽为图片的显示创造空间，或是使用text-indent或是padding隐藏最初的文字。</p>
+<p>你可以参见下面的代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-class">.logo</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="built_in">url</span>(logo.png);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这种图片替换技术的优点在于文字内容确实被替换了。因此，你没有必要设定高宽为图片的显示创造空间，或是使用text-indent或是padding隐藏最初的文字。</p>
 <p>然而，就目前而言，还是有不少需要注意的：</p>
 <ul>
 <li>你不能对图片进行重复或平铺，或是使用image sprite。</li>
 <li>目前仅在Opera 9.5+ 和 Safari 4+浏览器下起作用，因为这些浏览器支持所有元素的content方法，而不仅仅局限于:after或是:before。</li>
 </ul>
-<p>替换的图片无法应用alt属性，所以一些特殊的使用屏幕阅读器的用户可能无法理解您替换的图片的含义。</p>
-<h3 id="显示相对应的链接图标"><a href="#显示相对应的链接图标" class="headerlink" title="显示相对应的链接图标"></a>显示相对应的链接图标</h3><p>指的是针对不同的链接类型，在链接的后面显示对应链接类型的图标，例如，链接的对象是一个图片，则显示图片的小图标，如果链接对象是视频，则显示视频小图标，如果链接就是个URL网页链接，则显示链接的小图标。您可以参见下面的代码：<br>CSS代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> <span class="selector-tag">a</span><span class="selector-attr">[href $=".pdf"]</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="built_in">url</span>(../image/icon_pdf.png);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span> <span class="selector-tag">a</span><span class="selector-attr">[rel = "external"]</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="built_in">url</span>(../image/icon_link.png);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>HTML代码：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>您可以查看此PDF文件：<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/sample.pdf"</span>&gt;</span>web站点的性能优化.pdf<span class="tag">&lt;/<span class="name">a</span>&gt;</span>，或是在线查看，<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.zhangxinxu.com/wordpress/"</span> <span class="attr">rel</span>=<span class="string">"external"</span>&gt;</span>点击这里<span class="tag">&lt;/<span class="name">a</span>&gt;</span>。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="使用属性值作为content内容"><a href="#使用属性值作为content内容" class="headerlink" title="使用属性值作为content内容"></a>使用属性值作为content内容</h3><p>使用属性值当作content内容指的是将标签的title, src, href, alt等值当作内容显示在标签的内部，这是很强大的一个功能。由于此技术目前远未到普及的程度，所以这里简单介绍一下，您可以参见下面的两小段样式代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"("</span> <span class="built_in">attr</span>(href) <span class="string">")"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">abbr</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"("</span> <span class="built_in">attr</span>(title) <span class="string">")"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>替换的图片无法应用alt属性，所以一些特殊的使用屏幕阅读器的用户可能无法理解你替换的图片的含义。</p>
+<h3 id="显示相对应的链接图标"><a href="#显示相对应的链接图标" class="headerlink" title="显示相对应的链接图标"></a>显示相对应的链接图标</h3><p>指的是针对不同的链接类型，在链接的后面显示对应链接类型的图标，例如，链接的对象是一个图片，则显示图片的小图标，如果链接对象是视频，则显示视频小图标，如果链接就是个URL网页链接，则显示链接的小图标。你可以参见下面的代码：<br>CSS代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> <span class="selector-tag">a</span><span class="selector-attr">[href $=".pdf"]</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="built_in">url</span>(../image/icon_pdf.png);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span> <span class="selector-tag">a</span><span class="selector-attr">[rel = "external"]</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="built_in">url</span>(../image/icon_link.png);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>HTML代码：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>你可以查看此PDF文件：<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/sample.pdf"</span>&gt;</span>web站点的性能优化.pdf<span class="tag">&lt;/<span class="name">a</span>&gt;</span>，或是在线查看，<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.zhangxinxu.com/wordpress/"</span> <span class="attr">rel</span>=<span class="string">"external"</span>&gt;</span>点击这里<span class="tag">&lt;/<span class="name">a</span>&gt;</span>。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="使用属性值作为content内容"><a href="#使用属性值作为content内容" class="headerlink" title="使用属性值作为content内容"></a>使用属性值作为content内容</h3><p>使用属性值当作content内容指的是将标签的title, src, href, alt等值当作内容显示在标签的内部，这是很强大的一个功能。由于此技术目前远未到普及的程度，所以这里简单介绍一下，你可以参见下面的两小段样式代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"("</span> <span class="built_in">attr</span>(href) <span class="string">")"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">abbr</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"("</span> <span class="built_in">attr</span>(title) <span class="string">")"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这里理解和使用都不难，关键就是CSS3的attr()方法。</p>
 <h3 id="前瞻：强大的CSS3-attr-方法"><a href="#前瞻：强大的CSS3-attr-方法" class="headerlink" title="前瞻：强大的CSS3 attr()方法"></a>前瞻：强大的CSS3 attr()方法</h3><p>CSS3 Values and Units草案扩展了attr()表达式的范围，除了返回字符串，还可以返回诸如CSS colors, CSS integer, length, angle, time, frequency以及其他一些单元。<br>通过使用自定义的data属性，可以实现一些非常强大的效果，诸如简单图表图形的渲染，动画效果的实现。例如我们可以设置根据元素的attribute值设定background-color的颜色值，这在显示在线调色板上会大放异彩；我们还可以根据attribute值指定元素的大小，就像定义图表每个条形的长度一样。总之，attr()的潜力惊人。</p>
 <h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>推荐阅读：<br><a href="http://www.zhangxinxu.com/wordpress/2015/03/background-object-position-value-percent" target="_blank" rel="noopener">CSS <position> 值简介理解background百分比定位</position></a><br><a href="http://www.zhangxinxu.com/wordpress/2013/06/伪元素-表单样式-pseudo-elements-style-form-controls" target="_blank" rel="noopener">伪元素表单控件默认样式重置与自定义大全</a></p>
@@ -329,25 +331,6 @@
         <div class="post-tags">
             <a href="/tags/CSS/" rel="tag"># CSS</a>
             <a href="/tags/HTML/" rel="tag"># HTML</a>
-        </div>
-        <div class="post-widgets">
-              <div>
-                <span class="btn" style="font-size: 18px;">
-                  <i class="fa fa-star-o" aria-hidden="true"></i> 收藏
-                </span>
-              </div>
-                <span class="post-meta-divider">|</span>
-              <div id="needsharebutton-postbottom">
-                <span class="btn" style="font-size: 18px;">
-                  <i class="fa fa-share-alt" aria-hidden="true"></i> 分享
-                </span>
-              </div>
-                <span class="post-meta-divider">|</span>
-              <div>
-                <span class="btn" style="font-size: 18px;">
-                  <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 点赞
-                </span>
-              </div>
         </div>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
@@ -397,7 +380,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">80</span>
+                    <span class="site-state-item-count">81</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -478,10 +461,10 @@
     window.Promise = null;
   }
 </script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
@@ -813,16 +796,7 @@
       }
     });
   </script>
-  <script src="/lib/needsharebutton/needsharebutton.js"></script>
-  <script>
-      pbOptions = {};
-          pbOptions.iconStyle = "box";
-          pbOptions.boxForm = "horizontal";
-          pbOptions.position = "middleCenter";
-          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
-  </script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@3.3.0/dist/browser/pangu.min.js"></script>
   <script type="text/javascript">pangu.spacingPage();</script>
   <style>
     .copy-btn {

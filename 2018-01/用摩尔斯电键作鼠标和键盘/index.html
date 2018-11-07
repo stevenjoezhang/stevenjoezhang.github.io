@@ -5,15 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
   <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-  <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
@@ -56,7 +55,7 @@
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/ArduinoLeonardo2.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/IMG_4490.jpg">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/IMG_4491.jpg">
-<meta property="og:updated_time" content="2018-09-30T11:04:56.480Z">
+<meta property="og:updated_time" content="2018-11-09T03:59:03.357Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用摩尔斯电键作鼠标和键盘">
 <meta name="twitter:description" content="上一篇文章介绍了使用Teensy 3.2将摩尔斯电键变为键盘的方法。经过研究，我决定使用Arduino Leonardo实现之。相比Teensy 3.2，Arduino Leonardo成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。 Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入/输">
@@ -133,17 +132,20 @@
           <li class="menu-item menu-item-about">
     <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
   </li>
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
   </li>
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
   </li>
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
   </li>
           <li class="menu-item menu-item-friends">
     <a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
+  </li>
+          <li class="menu-item menu-item-lab">
+    <a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
   </li>
         <li class="menu-item menu-item-search">
             <a href="javascript:;" class="popup-trigger">
@@ -247,7 +249,7 @@
 <p>取决于摩尔斯电键的输出方式，可能还需要一个3.5mm/6.5mm音频接口<br>有必要的话，还可以准备万用表等辅助工具</p>
 <h2 id="软件准备工作"><a href="#软件准备工作" class="headerlink" title="软件准备工作"></a>软件准备工作</h2><ul>
 <li><a href="https://www.arduino.cc/en/Main/Software" target="_blank" rel="noopener">Arduino IDE</a></li>
-<li><a href="/downloads/MimiMorse.zip">准备烧录的程序源代码</a></li>
+<li><a href="/files/MimiMorse.zip">准备烧录的程序源代码</a></li>
 <li><a href="https://playground.arduino.cc/Code/Bounce" target="_blank" rel="noopener">Bounce2库</a></li>
 </ul>
 <p>理论上Arduino Leonardo在Mac下可以无需驱动，即插即用；如果出现系统无法识别设备（串口）的情况，可以到相关论坛寻求帮助（出现这种情况，常见的可能是FTDI驱动冲突，或者是由macOS系统完整性保护造成的问题；常见的解决方案包括重启Arduino Leonardo并等待几秒、外接9V电源或者检查驱动问题）Windows下情况暂未测试。</p>
@@ -302,25 +304,6 @@
             <a href="/tags/Morse-Code/" rel="tag"># Morse Code</a>
             <a href="/tags/Arduino/" rel="tag"># Arduino</a>
         </div>
-        <div class="post-widgets">
-              <div>
-                <span class="btn" style="font-size: 18px;">
-                  <i class="fa fa-star-o" aria-hidden="true"></i> 收藏
-                </span>
-              </div>
-                <span class="post-meta-divider">|</span>
-              <div id="needsharebutton-postbottom">
-                <span class="btn" style="font-size: 18px;">
-                  <i class="fa fa-share-alt" aria-hidden="true"></i> 分享
-                </span>
-              </div>
-                <span class="post-meta-divider">|</span>
-              <div>
-                <span class="btn" style="font-size: 18px;">
-                  <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 点赞
-                </span>
-              </div>
-        </div>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
               <a href="/2018-01/将摩尔斯电键改造为USB键盘/" rel="next" title="将摩尔斯电键改造为USB键盘">
@@ -369,7 +352,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">80</span>
+                    <span class="site-state-item-count">81</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -450,10 +433,10 @@
     window.Promise = null;
   }
 </script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
@@ -785,16 +768,7 @@
       }
     });
   </script>
-  <script src="/lib/needsharebutton/needsharebutton.js"></script>
-  <script>
-      pbOptions = {};
-          pbOptions.iconStyle = "box";
-          pbOptions.boxForm = "horizontal";
-          pbOptions.position = "middleCenter";
-          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
-  </script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@3.3.0/dist/browser/pangu.min.js"></script>
   <script type="text/javascript">pangu.spacingPage();</script>
   <style>
     .copy-btn {

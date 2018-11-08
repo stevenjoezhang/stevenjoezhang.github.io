@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, viewport-fit=cover">
+<title>Mimi</title>
+<link rel="shortcut icon" href="/favicon.ico">
+<style>
+html, body {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: black;
+}
+</style>
+</head>
+<body translate="no">
+<script src="js/stopExecutionOnTimeout.js"></script>
+<script src="js/p5.js"></script>
+<script>
+(function() {
+	var myp5, sketch;
+	sketch = function(p) {
+		p.system = [];
+		p.textOn = false;
+		p.string = "Mimi";
+		p.preload = function() {
+			p.font = p.loadFont("/font/PFDinTextCondPro-Bold.ttf");
+		};
+		p.setup = function() {
+			var i;
+			p.frameRate(30);
+			p.density = p.displayDensity();
+			p.pixelDensity(p.density);
+			p.createCanvas(window.innerWidth, window.innerHeight);
+			i = 0;
+			while (i < 10) {
+				if (window.CP.shouldStopExecution(1)) {
+					break;
+				}
+				p.system[i] = new p.ParticleSystem(p.createVector(p.random(200, p.width - 200), p.random(100, p.height - 100)));
+				i++;
+			}
+			window.CP.exitedLoop(1);
+			p.init();
+		};
+		p.init = function() {
+			p.cnv = p.createGraphics(window.innerWidth, window.innerHeight);
+			p.cnv.background(0, 0, 0, 100);
+			p.cnv.loadPixels();
+		};
+		p.draw = function() {
+			var j;
+			p.background(255);
+			j = 0;
+			while (j < p.system.length) {
+				if (window.CP.shouldStopExecution(2)) {
+					break;
+				}
+				p.system[j].addParticle();
+				p.system[j].run();
+				j++;
+			}
+			window.CP.exitedLoop(2);
+			if (!p.textOn) {
+				p.drawText();
+			} else {
+				p.image(p.cache, 0, 0);
+			}
+		};
+		p.ParticleSystem = function(position) {
+			this.origin = position.copy();
+			this.particles = [];
+		};
+		p.ParticleSystem.prototype.addParticle = function() {
+			this.particles.push(new p.Particle(this.origin));
+		};
+		p.ParticleSystem.prototype.run = function() {
+			var i, part;
+			i = this.particles.length - 1;
+			while (i >= 0) {
+				if (window.CP.shouldStopExecution(3)) {
+					break;
+				}
+				part = this.particles[i];
+				part.run();
+				if (this.particles[i].dead()) {
+					this.particles.splice(i, 1);
+				}
+				i--;
+			}
+			window.CP.exitedLoop(3);
+		};
+		p.Particle = function(position) {
+			this.position = position.copy();
+			this.acceleration = p.createVector(0.5, 1);
+			this.velocity = p.createVector(p.random(-10, 10), p.random(-10, 10));
+			this.life = 255;
+			this.c = p.color(p.random(255), 0, p.random(255), p.random(255));
+			this.size = p.random(10, 30);
+		};
+		p.Particle.prototype.run = function() {
+			this.update();
+			this.display();
+		};
+		p.Particle.prototype.update = function() {
+			var offset, xoff, yoff;
+			xoff = (p.mouseX - p.pmouseX) / 10;
+			yoff = (p.mouseY - p.pmouseY) / 10;
+			offset = p.createVector(xoff, yoff);
+			this.position.add(this.velocity);
+			this.position.add(offset);
+			this.life -= 2;
+		};
+		p.Particle.prototype.display = function() {
+			p.fill(this.c);
+			p.noStroke();
+			p.ellipse(this.position.x, this.position.y, this.size, this.size);
+		};
+		p.Particle.prototype.dead = function() {
+			if (this.life < 0) {
+				return true;
+			} else {
+				return false;
+			}
+		};
+		p.drawText = function() {
+			var i, pixelsImage;
+			p.cache = p.createGraphics(p.width, p.height);
+			p.txtSize = p.calSizeText(p.cache);
+			p.cache.clear();
+			p.cache.textFont(p.font);
+			p.cache.textSize(p.txtSize);
+			p.cache.fill(255, 255, 255, 255);
+			p.cache.textAlign(p.CENTER, p.CENTER);
+			p.cache.text(p.string, p.cache.width / 2, p.cache.height / 2);
+			p.cache.loadPixels();
+			pixelsImage = 4 * p.cache.width * p.density * p.cache.height * p.density;
+			i = 0;
+			while (i < pixelsImage) {
+				if (window.CP.shouldStopExecution(4)) {
+					break;
+				}
+				p.cache.pixels[i] = 0;
+				p.cache.pixels[i + 1] = 0;
+				p.cache.pixels[i + 2] = 0;
+				p.cache.pixels[i + 3] = 255 - p.cache.pixels[i + 3];
+				i += 4;
+			}
+			window.CP.exitedLoop(4);
+			p.cache.updatePixels();
+			p.textOn = true;
+		};
+		p.calSizeText = function(cache) {
+			var rightSize, size;
+			cache.textFont(p.font);
+			rightSize = true;
+			size = 100;
+			while (rightSize) {
+				if (window.CP.shouldStopExecution(5)) {
+					break;
+				}
+				cache.textSize(size);
+				if (((cache.width - 100) - cache.textWidth(p.string)) < 0) {
+					rightSize = false;
+				}
+				size += 10;
+			}
+			window.CP.exitedLoop(5);
+			return size;
+		};
+		p.windowResized = function() {
+			p.resizeCanvas(window.innerWidth, window.innerHeight);
+			p.init();
+			p.textOn = false;
+		};
+	};
+	myp5 = new p5(sketch);
+}).call(this);
+</script>
+</body>
+</html>

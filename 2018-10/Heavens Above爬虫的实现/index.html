@@ -26,7 +26,7 @@
     version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    fastclick: false,
+    fastclick: true,
     lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="Heavens Above是一个天文数据库网站，可以查询到诸如卫星过境的很多信息。虽然数据很全面，但是检索方式非常繁琐，在网站上需要依次打开多个链接进行比对，难以迅速地获取需要的信息。故博主决定写一个爬虫，以直观地展现所有数据。由于Heavens Above采取了大量的反爬虫措施，例如校验Cookie、限制单个IP的访问次数等，因此必须严格地模拟浏览器请求，才能正确爬取数据。博主也参考了大量Git">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-31T08:33:41.957Z">
+<meta property="og:updated_time" content="2018-11-09T17:29:37.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Heavens Above爬虫的实现">
 <meta name="twitter:description" content="Heavens Above是一个天文数据库网站，可以查询到诸如卫星过境的很多信息。虽然数据很全面，但是检索方式非常繁琐，在网站上需要依次打开多个链接进行比对，难以迅速地获取需要的信息。故博主决定写一个爬虫，以直观地展现所有数据。由于Heavens Above采取了大量的反爬虫措施，例如校验Cookie、限制单个IP的访问次数等，因此必须严格地模拟浏览器请求，才能正确爬取数据。博主也参考了大量Git">
@@ -188,7 +188,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-10-23 11:00:19" itemprop="dateCreated datePublished" datetime="2018-10-23T11:00:19+08:00">2018-10-23</span>
+              <time title="创建时间：2018-10-23 11:00:19" itemprop="dateCreated datePublished" datetime="2018-10-23T11:00:19+08:00">2018-10-23</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -230,7 +230,7 @@
       </header>
     <div class="post-body" itemprop="articleBody">
         <p><a href="https://www.heavens-above.com" target="_blank" rel="noopener">Heavens Above</a>是一个天文数据库网站，可以查询到诸如卫星过境的很多信息。虽然数据很全面，但是检索方式非常繁琐，在网站上需要依次打开多个链接进行比对，难以迅速地获取需要的信息。故博主决定写一个爬虫，以直观地展现所有数据。由于Heavens Above采取了大量的反爬虫措施，例如校验Cookie、限制单个IP的访问次数等，因此必须严格地模拟浏览器请求，才能正确爬取数据。<br>博主也参考了大量GitHub上已有的Heavens Above爬虫项目，不过它们大部分失去维护，停留在数年前，已经不再适用。具体的逻辑还是要自行测试。</p>
-<p>项目地址：<a href="https://github.com/stevenjoezhang/heavens-above" target="_blank" rel="noopener">heavens-above</a></p>
+<p>项目地址：<a href="https://github.com/stevenjoezhang/heavens-above/" target="_blank" rel="noopener">heavens-above</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -382,6 +382,7 @@
   }
 </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>

@@ -26,7 +26,7 @@
     version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    fastclick: false,
+    fastclick: true,
     lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -55,7 +55,7 @@
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/ArduinoLeonardo2.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/IMG_4490.jpg">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/IMG_4491.jpg">
-<meta property="og:updated_time" content="2018-11-09T03:59:03.357Z">
+<meta property="og:updated_time" content="2018-11-09T17:29:37.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用摩尔斯电键作鼠标和键盘">
 <meta name="twitter:description" content="上一篇文章介绍了使用Teensy 3.2将摩尔斯电键变为键盘的方法。经过研究，我决定使用Arduino Leonardo实现之。相比Teensy 3.2，Arduino Leonardo成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。 Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入/输">
@@ -196,7 +196,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-01-12 16:10:20" itemprop="dateCreated datePublished" datetime="2018-01-12T16:10:20+08:00">2018-01-12</span>
+              <time title="创建时间：2018-01-12 16:10:20" itemprop="dateCreated datePublished" datetime="2018-01-12T16:10:20+08:00">2018-01-12</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -238,7 +238,7 @@
       </header>
     <div class="post-body" itemprop="articleBody">
         <p>上一篇文章介绍了使用Teensy 3.2将摩尔斯电键变为键盘的方法。经过研究，我决定使用Arduino Leonardo实现之。相比Teensy 3.2，Arduino Leonardo成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。<br><img src="/images/2018-01/IMG_4488.jpg" alt=""></p>
-<p>Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入/输出引脚（在写入程序时可以定义各个引脚的作用，其中最多有7个可用于PWM输出、12个可用于模拟输入），一个16 MHz的晶体振荡器，一个Micro USB接口，一个DC接口，一个ICSP接口，一个复位按钮。它包含了支持微控制器所需的一切，你可以简单地通过把它连接到计算机的USB接口来驱动它。<br>Leonardo不同于之前所有的Arduino控制器，他直接使用了ATmega32U4的USB通信功能，取消了USB转UART芯片。这使得Leonardo不仅可以作为一个虚拟的（CDC）串行/COM端口，还可以作为鼠标或者键盘连接到计算机。更多内容可以<a href="https://store.arduino.cc/usa/arduino-leonardo-with-headers" target="_blank" rel="noopener">参考文档</a>（在DOCUMENTATION选单中包含完整电路图）。</p>
+<p>Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入/输出引脚（在写入程序时可以定义各个引脚的作用，其中最多有7个可用于PWM输出、12个可用于模拟输入），一个16 MHz的晶体振荡器，一个Micro USB接口，一个DC接口，一个ICSP接口，一个复位按钮。它包含了支持微控制器所需的一切，你可以简单地通过把它连接到计算机的USB接口来驱动它。<br>Leonardo不同于之前所有的Arduino控制器，他直接使用了ATmega32U4的USB通信功能，取消了USB转UART芯片。这使得Leonardo不仅可以作为一个虚拟的（CDC）串行/COM端口，还可以作为鼠标或者键盘连接到计算机。更多内容可以<a href="https://store.arduino.cc/usa/arduino-leonardo-with-headers/" target="_blank" rel="noopener">参考文档</a>（在DOCUMENTATION选单中包含完整电路图）。</p>
 <a id="more"></a>
 <h2 id="硬件准备工作"><a href="#硬件准备工作" class="headerlink" title="硬件准备工作"></a>硬件准备工作</h2><p>需要准备</p>
 <ul>
@@ -248,9 +248,9 @@
 </ul>
 <p>取决于摩尔斯电键的输出方式，可能还需要一个3.5mm/6.5mm音频接口<br>有必要的话，还可以准备万用表等辅助工具</p>
 <h2 id="软件准备工作"><a href="#软件准备工作" class="headerlink" title="软件准备工作"></a>软件准备工作</h2><ul>
-<li><a href="https://www.arduino.cc/en/Main/Software" target="_blank" rel="noopener">Arduino IDE</a></li>
+<li><a href="https://www.arduino.cc/en/Main/Software/" target="_blank" rel="noopener">Arduino IDE</a></li>
 <li><a href="/files/MimiMorse.zip">准备烧录的程序源代码</a></li>
-<li><a href="https://playground.arduino.cc/Code/Bounce" target="_blank" rel="noopener">Bounce2库</a></li>
+<li><a href="https://playground.arduino.cc/Code/Bounce/" target="_blank" rel="noopener">Bounce2库</a></li>
 </ul>
 <p>理论上Arduino Leonardo在Mac下可以无需驱动，即插即用；如果出现系统无法识别设备（串口）的情况，可以到相关论坛寻求帮助（出现这种情况，常见的可能是FTDI驱动冲突，或者是由macOS系统完整性保护造成的问题；常见的解决方案包括重启Arduino Leonardo并等待几秒、外接9V电源或者检查驱动问题）Windows下情况暂未测试。</p>
 <h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><ul>
@@ -434,6 +434,7 @@
   }
 </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>

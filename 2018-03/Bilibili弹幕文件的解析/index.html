@@ -26,7 +26,7 @@
     version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    fastclick: false,
+    fastclick: true,
     lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -47,7 +47,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="B站的每个视频都有aid和cid两个参数，在已知视频aid（AV号）的情况下，可以通过https://www.bilibili.com/widget/getPageList?aid=$aid获取cid（将$aid替换为视频的aid）。视频的弹幕文件采用xml格式存储，地址与其cid有关，为https://comment.bilibili.com/$cid.xml（将$cid替换为视频的cid即可）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-19T07:42:28.818Z">
+<meta property="og:updated_time" content="2018-11-09T17:29:37.177Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bilibili弹幕文件的解析">
 <meta name="twitter:description" content="B站的每个视频都有aid和cid两个参数，在已知视频aid（AV号）的情况下，可以通过https://www.bilibili.com/widget/getPageList?aid=$aid获取cid（将$aid替换为视频的aid）。视频的弹幕文件采用xml格式存储，地址与其cid有关，为https://comment.bilibili.com/$cid.xml（将$cid替换为视频的cid即可）">
@@ -187,7 +187,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-03-30 00:07:56" itemprop="dateCreated datePublished" datetime="2018-03-30T00:07:56+08:00">2018-03-30</span>
+              <time title="创建时间：2018-03-30 00:07:56" itemprop="dateCreated datePublished" datetime="2018-03-30T00:07:56+08:00">2018-03-30</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -240,7 +240,7 @@
 <li>第七个参数是发送者的ID，用于“屏蔽此弹幕的发送者”功能</li>
 <li>第八个参数是弹幕在弹幕数据库中rowID，用于“历史弹幕”功能</li>
 </ul>
-<p>将Bilibili弹幕的xml文件转为ass字幕，可以使用以下脚本：<br><a href="http://tiansh.github.io/us-danmaku/bilibili" target="_blank" rel="noopener">http://tiansh.github.io/us-danmaku/bilibili/</a><br><a href="https://github.com/tiansh/us-danmaku" target="_blank" rel="noopener">https://github.com/tiansh/us-danmaku/</a><br>关于ass字幕格式可以参考以下文章：<br><a href="https://www.douban.com/note/658520175" target="_blank" rel="noopener">ASS字幕格式规范</a></p>
+<p>将Bilibili弹幕的xml文件转为ass字幕，可以使用以下脚本：<br><a href="http://tiansh.github.io/us-danmaku/bilibili/" target="_blank" rel="noopener">http://tiansh.github.io/us-danmaku/bilibili/</a><br><a href="https://github.com/tiansh/us-danmaku/" target="_blank" rel="noopener">https://github.com/tiansh/us-danmaku/</a><br>关于ass字幕格式可以参考以下文章：<br><a href="https://www.douban.com/note/658520175/" target="_blank" rel="noopener">ASS字幕格式规范</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -388,6 +388,7 @@
   }
 </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>

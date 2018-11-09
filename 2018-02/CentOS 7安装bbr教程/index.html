@@ -26,7 +26,7 @@
     version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    fastclick: false,
+    fastclick: true,
     lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="yum系统更新将CentOS系统版本更新到7.3或更高12yum updateyum upgrade 查看系统版本1cat /etc/redhat-release 输出如下，则表示已升级到7.31CentOS Linux release 7.3.1611 (Core) 安装elrepo并升级内核123rpm --import https://www.elrepo.org/RPM-GPG-KEY-e">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-30T11:05:23.327Z">
+<meta property="og:updated_time" content="2018-11-09T17:29:37.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 7安装bbr教程">
 <meta name="twitter:description" content="yum系统更新将CentOS系统版本更新到7.3或更高12yum updateyum upgrade 查看系统版本1cat /etc/redhat-release 输出如下，则表示已升级到7.31CentOS Linux release 7.3.1611 (Core) 安装elrepo并升级内核123rpm --import https://www.elrepo.org/RPM-GPG-KEY-e">
@@ -188,7 +188,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-02-21 23:09:38" itemprop="dateCreated datePublished" datetime="2018-02-21T23:09:38+08:00">2018-02-21</span>
+              <time title="创建时间：2018-02-21 23:09:38" itemprop="dateCreated datePublished" datetime="2018-02-21T23:09:38+08:00">2018-02-21</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -250,7 +250,7 @@
 <p>返回形如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcp_bbr                16384  1</span><br></pre></td></tr></table></figure></p>
 <p>则成功</p>
 <p>原文链接：<a href="https://www.vmvps.com/speed-up-your-vps-with-installing-bbr-to-centos-7.html" target="_blank" rel="noopener">#为VPS加速度# CentOS 7安装bbr教程</a></p>
-<p>本文更新于2018年6月：<br>bbr的效果是非常显著的，只要带宽足够，流畅播放YouTube上4320p的视频毫无压力。可以通过<a href="https://www.youtube.com/channel/UCqOecsBLULnuUtls0tISTCw" target="_blank" rel="noopener">Timestorm Films</a>发布的超高分辨率视频测试效果～</p>
+<p>本文更新于2018年6月：<br>bbr的效果是非常显著的，只要带宽足够，流畅播放YouTube上4320p的视频毫无压力。可以通过<a href="https://www.youtube.com/channel/UCqOecsBLULnuUtls0tISTCw/" target="_blank" rel="noopener">Timestorm Films</a>发布的超高分辨率视频测试效果～</p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -416,6 +416,7 @@
   }
 </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>

@@ -26,7 +26,7 @@
     version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    fastclick: false,
+    fastclick: true,
     lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="本教程以macOS 10.13为例 准备工作下载最新的JDK在ORACLE官网下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，在打开的页面中找到JDK，选择Download，下载对应的版本 配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了使终端能正确">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-30T11:06:12.071Z">
+<meta property="og:updated_time" content="2018-11-09T17:29:37.180Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac反编译apk程序">
 <meta name="twitter:description" content="本教程以macOS 10.13为例 准备工作下载最新的JDK在ORACLE官网下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，在打开的页面中找到JDK，选择Download，下载对应的版本 配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了使终端能正确">
@@ -188,7 +188,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-03-17 12:20:17" itemprop="dateCreated datePublished" datetime="2018-03-17T12:20:17+08:00">2018-03-17</span>
+              <time title="创建时间：2018-03-17 12:20:17" itemprop="dateCreated datePublished" datetime="2018-03-17T12:20:17+08:00">2018-03-17</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -236,9 +236,9 @@
 <p>使环境变量生效。</p>
 <a id="more"></a>
 <h3 id="下载apk反编译组件"><a href="#下载apk反编译组件" class="headerlink" title="下载apk反编译组件"></a>下载apk反编译组件</h3><ul>
-<li>Apktool <a href="https://ibotpeaches.github.io/Apktool/install" target="_blank" rel="noopener">https://ibotpeaches.github.io/Apktool/install/</a></li>
+<li>Apktool <a href="https://ibotpeaches.github.io/Apktool/install/" target="_blank" rel="noopener">https://ibotpeaches.github.io/Apktool/install/</a></li>
 <li>JD-GUI <a href="http://jd.benow.ca" target="_blank" rel="noopener">http://jd.benow.ca/</a></li>
-<li>dex2jar <a href="https://github.com/pxb1988/dex2jar" target="_blank" rel="noopener">https://github.com/pxb1988/dex2jar</a></li>
+<li>dex2jar <a href="https://github.com/pxb1988/dex2jar/" target="_blank" rel="noopener">https://github.com/pxb1988/dex2jar</a></li>
 </ul>
 <h2 id="运行Apktool"><a href="#运行Apktool" class="headerlink" title="运行Apktool"></a>运行Apktool</h2><p>按照官网上的教程，将shell脚本和apktool.jar移动到<code>/usr/local/bin</code>后，在终端执行<code>apktool -h</code>，如果能正确显示帮助，则安装正常。<br>将需要反编译的apk文件（例如example.apk）放入任意目录中，cd进入该目录，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apktool d example.apk</span><br></pre></td></tr></table></figure></p>
 <p>即可进行反编译，这是会生成一个名为example的目录。如果要回编译，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apktool b example</span><br></pre></td></tr></table></figure></p>
@@ -248,7 +248,7 @@
 <h3 id="查看源代码"><a href="#查看源代码" class="headerlink" title="查看源代码"></a>查看源代码</h3><p>打开JD-GUI，将example-dex2jar.jar拖进去就看到源码了。<br>请注意，如果使用了JAVA9，打开JD-GUI.app时会出现问题，解决方法是：<br>打开JD-GUI.app/Contents/Info.plist，找到<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>VMOptions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>-Xms512m<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>修改为<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>VMOptions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>-Xms512m --add-opens java.base/jdk.internal.loader=ALL-UNNAMED --add-opens jdk.zipfs/jdk.nio.zipfs=ALL-UNNAMED<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>通过看java源码对比smali文件，修改后回编译就ok了！</p>
-<p>参考文章：<br><a href="http://blog.csdn.net/vvv_110/article/details/72897142" target="_blank" rel="noopener">MAC安装JDK及环境变量配置</a><br><a href="http://blog.csdn.net/yanzi1225627/article/details/48215549" target="_blank" rel="noopener">MAC上反编译android apk—apktool, dex2jar, jd-jui安装使用(含手动签名)</a><br><a href="http://blog.csdn.net/wh_19910525/article/details/7915738" target="_blank" rel="noopener">apk反编译获取完整源码 及 apk反编译后的处理</a><br><a href="https://github.com/java-decompiler/jd-gui/issues/187" target="_blank" rel="noopener">https://github.com/java-decompiler/jd-gui/issues/187</a></p>
+<p>参考文章：<br><a href="http://blog.csdn.net/vvv_110/article/details/72897142/" target="_blank" rel="noopener">MAC安装JDK及环境变量配置</a><br><a href="http://blog.csdn.net/yanzi1225627/article/details/48215549/" target="_blank" rel="noopener">MAC上反编译android apk—apktool, dex2jar, jd-jui安装使用(含手动签名)</a><br><a href="http://blog.csdn.net/wh_19910525/article/details/7915738/" target="_blank" rel="noopener">apk反编译获取完整源码 及 apk反编译后的处理</a><br><a href="https://github.com/java-decompiler/jd-gui/issues/187/" target="_blank" rel="noopener">https://github.com/java-decompiler/jd-gui/issues/187</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -414,6 +414,7 @@
   }
 </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>

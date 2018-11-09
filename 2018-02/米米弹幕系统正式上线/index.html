@@ -26,7 +26,7 @@
     version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    fastclick: false,
+    fastclick: true,
     lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="经过数天的调试，全新的米米弹幕系统已经可以正常使用了。经过重制的弹幕系统，使用WebSocket代替了原先效率极低的Ajax轮询，实现了消息即时收发、自定义弹幕颜色、大小等功能。下一步我们将把弹幕系统整合到直播中。附上链接：米米弹幕同时还开放了一个随机生成用户名（来自魔兽世界）的API：随机用户名 本文更新于2018年5月18日：zsq.im和galaxymimi.com即日起全站支持https访">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-02T02:12:07.169Z">
+<meta property="og:updated_time" content="2018-11-09T17:29:37.172Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="米米弹幕系统正式上线">
 <meta name="twitter:description" content="经过数天的调试，全新的米米弹幕系统已经可以正常使用了。经过重制的弹幕系统，使用WebSocket代替了原先效率极低的Ajax轮询，实现了消息即时收发、自定义弹幕颜色、大小等功能。下一步我们将把弹幕系统整合到直播中。附上链接：米米弹幕同时还开放了一个随机生成用户名（来自魔兽世界）的API：随机用户名 本文更新于2018年5月18日：zsq.im和galaxymimi.com即日起全站支持https访">
@@ -188,7 +188,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-02-19 13:22:49" itemprop="dateCreated datePublished" datetime="2018-02-19T13:22:49+08:00">2018-02-19</span>
+              <time title="创建时间：2018-02-19 13:22:49" itemprop="dateCreated datePublished" datetime="2018-02-19T13:22:49+08:00">2018-02-19</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -229,7 +229,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-        <p>经过数天的调试，全新的米米弹幕系统已经可以正常使用了。经过重制的弹幕系统，使用WebSocket代替了原先效率极低的Ajax轮询，实现了消息即时收发、自定义弹幕颜色、大小等功能。下一步我们将把弹幕系统整合到直播中。附上链接：<br><a href="https://galaxymimi.com/danmaku" target="_blank" rel="noopener">米米弹幕</a><br>同时还开放了一个随机生成用户名（来自魔兽世界）的API：<br><a href="https://galaxymimi.com/api/name" target="_blank" rel="noopener">随机用户名</a></p>
+        <p>经过数天的调试，全新的米米弹幕系统已经可以正常使用了。经过重制的弹幕系统，使用WebSocket代替了原先效率极低的Ajax轮询，实现了消息即时收发、自定义弹幕颜色、大小等功能。下一步我们将把弹幕系统整合到直播中。附上链接：<br><a href="https://galaxymimi.com/danmaku/" target="_blank" rel="noopener">米米弹幕</a><br>同时还开放了一个随机生成用户名（来自魔兽世界）的API：<br><a href="https://galaxymimi.com/api/name/" target="_blank" rel="noopener">随机用户名</a></p>
 <p>本文更新于2018年5月18日：<br>zsq.im和galaxymimi.com即日起全站支持https访问，ws连接也升级为了wss。</p>
     </div>
       <div>
@@ -381,6 +381,7 @@
   }
 </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>

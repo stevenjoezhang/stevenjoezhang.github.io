@@ -26,7 +26,7 @@
     version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    fastclick: false,
+    fastclick: true,
     lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -47,7 +47,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="这篇文章翻译自：What’s the hardest bug you’ve debugged? It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blam">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-02T07:08:33.018Z">
+<meta property="og:updated_time" content="2018-11-09T17:29:37.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="古惑狼游戏牵扯出的硬件bug">
 <meta name="twitter:description" content="这篇文章翻译自：What’s the hardest bug you’ve debugged? It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blam">
@@ -187,7 +187,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-10-04 08:41:46" itemprop="dateCreated datePublished" datetime="2018-10-04T08:41:46+08:00">2018-10-04</span>
+              <time title="创建时间：2018-10-04 08:41:46" itemprop="dateCreated datePublished" datetime="2018-10-04T08:41:46+08:00">2018-10-04</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -228,7 +228,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-        <p>这篇文章翻译自：<a href="https://www.quora.com/Programming-Interviews/Whats-the-hardest-bug-youve-debugged/answer/Dave-Baggett" target="_blank" rel="noopener">What’s the hardest bug you’ve debugged?</a></p>
+        <p>这篇文章翻译自：<a href="https://www.quora.com/Programming-Interviews/Whats-the-hardest-bug-youve-debugged/answer/Dave-Baggett/" target="_blank" rel="noopener">What’s the hardest bug you’ve debugged?</a></p>
 <p>It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blame the compiler. Well down the list after that, you blame the hardware.<br>回想起这个bug，仍然让我感觉有些痛苦。作为一个程序员，在发现bug时，你学会了首先在自己代码中找问题，一次、两次、三次……或许在测试一万次之后，你会把问题归咎于编译器。只有在这所有的都不起作用之后，你才会把问题归咎于硬件。</p>
 <p>This is my hardware bug story.<br>这是我遭遇硬件bug的故事。</p>
 <p>Among other things, I wrote the memory card (load/save) code for Crash Bandicoot. For a swaggering game coder, this is like a walk in the park; I expected it would take a few days. I ended up debugging that code for six weeks. I did other stuff during that time, but I kept coming back to this bug – a few hours every few days. It was agonizing.<br>抛开别的不说，我曾为古惑狼（Crash Bandicoot，PS1游戏）写存储卡（读写）代码。对于一个自大的游戏程序员，这就像是在公园里散步一样轻松愉快；我预计只要几天就可以写完。我最终用了六个礼拜把那些代码调试完毕。在此期间我也做过一些其他的事情，但却一直绕不开这个bug——每几天内就要花上好几个小时来处理。这个bug实在烦人。</p>
@@ -407,6 +407,7 @@
   }
 </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>

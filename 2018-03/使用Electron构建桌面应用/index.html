@@ -26,7 +26,7 @@
     version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    fastclick: false,
+    fastclick: true,
     lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="Electron是基于Node.js的桌面应用开发框架，所有代码均在Chrome“外壳”下运行，因而可以调用所有Node.js和浏览器的API，并且具有跨平台的特性。下面介绍如何使用Electron构建简单的桌面应用。你可以参照官方给出的入门程序：1git clone https://github.com/electron/electron-quick-start 一个Electron应用应包含以">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-30T11:06:44.011Z">
+<meta property="og:updated_time" content="2018-11-09T17:29:37.187Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Electron构建桌面应用">
 <meta name="twitter:description" content="Electron是基于Node.js的桌面应用开发框架，所有代码均在Chrome“外壳”下运行，因而可以调用所有Node.js和浏览器的API，并且具有跨平台的特性。下面介绍如何使用Electron构建简单的桌面应用。你可以参照官方给出的入门程序：1git clone https://github.com/electron/electron-quick-start 一个Electron应用应包含以">
@@ -188,7 +188,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-03-25 23:41:04" itemprop="dateCreated datePublished" datetime="2018-03-25T23:41:04+08:00">2018-03-25</span>
+              <time title="创建时间：2018-03-25 23:41:04" itemprop="dateCreated datePublished" datetime="2018-03-25T23:41:04+08:00">2018-03-25</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -250,7 +250,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ipcRender = <span class="built_in">require</span>(<span class="string">"electron"</span>).ipcRenderer</span><br><span class="line">ipcRender.on(channel, <span class="function"><span class="keyword">function</span>(<span class="params">event, message</span>) </span>&#123;</span><br><span class="line">    alert(messgae)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>监听消息即可。</p>
 <h2 id="renderer-js"><a href="#renderer-js" class="headerlink" title="renderer.js"></a>renderer.js</h2><p>默认里面就一堆注释，用来放业务相关JS的，和网页JS的区别在于，这里的JS不仅可以访问DOM，还能使用Node.js所有的API。能前能后，想怎么玩都行。</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>如果你需要更多的页面，可以创建HTML文件并使用<code>new BrowserWindow()</code>加载这些页面。在设计完成后，使用命令<code>npm start</code>即可运行。如果需要将应用打包，可以使用electron-packager（用npm安装），在Windows系统下就会打包成.exe格式，macOS则为.app。 发挥你的想象力，便能使用Electron构建功能丰富的跨平台应用啦！<br>参考文章：<a href="http://www.zhangxinxu.com/wordpress/2017/05/electron-node-js-desktop-application-experience" target="_blank" rel="noopener">使用electron构建跨平台Node.js桌面应用经验分享</a><br>官方文档：<a href="https://electronjs.org/docs" target="_blank" rel="noopener">Electron 文档</a></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>如果你需要更多的页面，可以创建HTML文件并使用<code>new BrowserWindow()</code>加载这些页面。在设计完成后，使用命令<code>npm start</code>即可运行。如果需要将应用打包，可以使用electron-packager（用npm安装），在Windows系统下就会打包成.exe格式，macOS则为.app。 发挥你的想象力，便能使用Electron构建功能丰富的跨平台应用啦！<br>参考文章：<a href="http://www.zhangxinxu.com/wordpress/2017/05/electron-node-js-desktop-application-experience/" target="_blank" rel="noopener">使用electron构建跨平台Node.js桌面应用经验分享</a><br>官方文档：<a href="https://electronjs.org/docs/" target="_blank" rel="noopener">Electron 文档</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -417,6 +417,7 @@
   }
 </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>

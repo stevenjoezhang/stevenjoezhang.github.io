@@ -26,7 +26,7 @@
     version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    fastclick: false,
+    fastclick: true,
     lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -188,7 +188,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-07-10 07:16:41" itemprop="dateCreated datePublished" datetime="2018-07-10T07:16:41+08:00">2018-07-10</span>
+              <time title="创建时间：2018-07-10 07:16:41" itemprop="dateCreated datePublished" datetime="2018-07-10T07:16:41+08:00">2018-07-10</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -259,7 +259,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-07-08 12:06:22" itemprop="dateCreated datePublished" datetime="2018-07-08T12:06:22+08:00">2018-07-08</span>
+              <time title="创建时间：2018-07-08 12:06:22" itemprop="dateCreated datePublished" datetime="2018-07-08T12:06:22+08:00">2018-07-08</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -296,13 +296,13 @@
     <div class="post-body" itemprop="articleBody">
             <p>因为旧版本已经停止维护，博主近日将Hexo博客的NexT主题由5.1版本升级为了6.0。由于曾经手动修改过主题的部分css样式和js代码，更新后需要再次调整，故将具体的内容记录于此。<br>这些自定义内容适用于Gemini，对于其它主题可能需要微调。以下所有提到的文件都在<code>themes/next</code>目录下，为相对路径。对于css（即styl文件），可以直接修改原文件，也可以将样式添加到<code>source/css/_custom/custom.styl</code>中。</p>
 <h2 id="链接颜色"><a href="#链接颜色" class="headerlink" title="链接颜色"></a>链接颜色</h2><p>在<code>source/css/_variables/base.styl</code>文件中定义了各种项目的默认颜色。<code>$link-color</code>和<code>$link-hover-color</code>就是链接在默认和鼠标悬浮状态下的颜色，可以将他们修改为其他的颜色宏。</p>
-<h2 id="“链接”到顶部高度"><a href="#“链接”到顶部高度" class="headerlink" title="“链接”到顶部高度"></a>“链接”到顶部高度</h2><p>侧边栏中的“链接”项，距离顶部的高度较小，可以将其修改得更合适一些。方法是在<code>source/css/_schemes/Pisces/_sidebar.styl</code>文件中，找到并注释掉<code>margin-top: 0;</code>这一条件：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.links-of-blogroll-title</span> &#123; <span class="comment">/* margin-top: 0; */</span> &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="canvas-ribbon"><a href="#canvas-ribbon" class="headerlink" title="canvas-ribbon"></a>canvas-ribbon</h2><p>没人知道为什么canvas-ribbon背景“Only fit scheme Pisces”而不能在其它主题下使用。在<code>layout/_scripts/vendors.swig</code>中，找到<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.canvas_ribbon.enable and theme.scheme === <span class="string">'Pisces'</span>%&#125;</span><br><span class="line">  &#123;% set js_vendors.canvas_ribbon  = <span class="string">'canvas-ribbon/canvas-ribbon.js'</span> %&#125;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>删除<code>theme.scheme === &#39;Pisces&#39;</code>即可。</p>
+<h2 id="侧栏“链接”到顶部高度"><a href="#侧栏“链接”到顶部高度" class="headerlink" title="侧栏“链接”到顶部高度"></a>侧栏“链接”到顶部高度</h2><p>侧边栏中的“链接”项，距离顶部的高度较小，可以将其修改得更合适一些。方法是在<code>source/css/_schemes/Pisces/_sidebar.styl</code>文件中，找到并注释掉<code>margin-top: 0;</code>这一条件：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.links-of-blogroll-title</span> &#123; <span class="comment">/* margin-top: 0; */</span> &#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="time标签"><a href="#time标签" class="headerlink" title="time标签"></a>time标签</h2><p>新版本中的文章发布时间使用了time标签，部分浏览器下可能出现问题，可以将其改为span标签，方法是编辑<code>layout/_macro/post-collapse.swig</code>和<code>layout/_macro/post.swig</code>，将其中的time标签对应修改为span即可。</p>
 <h2 id="图片margin"><a href="#图片margin" class="headerlink" title="图片margin"></a>图片margin</h2><p>加载了fancybox的图片，其在页面中的位置也需要修改。在<code>source/css/_common/components/post/post-expand.styl</code>文件中找到并修改如下内容：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.posts-expand</span> <span class="selector-class">.post-body</span> <span class="selector-class">.fancybox</span> <span class="selector-tag">img</span> &#123; <span class="attribute">margin</span>: <span class="number">10px</span> auto -<span class="number">10px</span>; &#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="word-break"><a href="#word-break" class="headerlink" title="word-break"></a>word-break</h2><p>如果博客内容是中英文混排，为了防止移动端下出现错误的换行问题，可以打开<code>source/css/_common/components/post/post.styl</code>，编辑<code>word-break</code>的规则：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.post-body</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: $font-family-posts;</span><br><span class="line">  +mobile() &#123;</span><br><span class="line">    <span class="selector-tag">word-break</span>: <span class="selector-tag">break-all</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="needsharebutton"><a href="#needsharebutton" class="headerlink" title="needsharebutton"></a>needsharebutton</h2><p>可以为needsharebutton添加自定义文字。在<code>layout/_macro/post.swig</code>中，找到并修改：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"needsharebutton-postbottom"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"btn"</span> <span class="attr">style</span>=<span class="string">"font-size: 18px;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-share-alt"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span> 分享<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="canvas-ribbon"><a href="#canvas-ribbon" class="headerlink" title="canvas-ribbon"></a>canvas-ribbon</h2><p>没人知道为什么canvas-ribbon背景“Only fit scheme Pisces”而不能在其它主题下使用。在<code>layout/_scripts/vendors.swig</code>中，找到<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.canvas_ribbon.enable and theme.scheme === <span class="string">'Pisces'</span>%&#125;</span><br><span class="line">  &#123;% set js_vendors.canvas_ribbon  = <span class="string">'canvas-ribbon/canvas-ribbon.js'</span> %&#125;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure></p>
-<p>删除<code>theme.scheme === &#39;Pisces&#39;</code>即可。</p>
 <p><strong>注：如果在NexT主题下的<code>_config.yml</code>文件中，设置了<code>han: true</code>，这时还需要修改以下内容。若没有启用可忽略。</strong></p>
 <h2 id="正文到标题距离"><a href="#正文到标题距离" class="headerlink" title="正文到标题距离"></a>正文到标题距离</h2><p>每一篇文章的内容到文章标题的margin默认是60px，在某些情况下这可能太大了。在<code>source/css/_common/components/post/post-meta.styl</code>中，将<code>.posts-expand .post-meta</code>的margin-bottom修改为30px：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.posts-expand</span> <span class="selector-class">.post-meta</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">3px</span> <span class="number">0</span> <span class="number">30px</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure></p>
 <h2 id="小标题的margin"><a href="#小标题的margin" class="headerlink" title="小标题的margin"></a>小标题的margin</h2><p>文章内部的h1到h6标题，会存在margin-bottom较小的问题。<br>在<code>source/css/_common/scaffolding/base.styl</code>中找到并修改内容：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span> &#123; <span class="attribute">margin</span>: <span class="number">20px</span> <span class="number">0</span> <span class="number">30px</span>; &#125;</span><br></pre></td></tr></table></figure></p>
@@ -334,7 +334,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-07-05 21:25:35" itemprop="dateCreated datePublished" datetime="2018-07-05T21:25:35+08:00">2018-07-05</span>
+              <time title="创建时间：2018-07-05 21:25:35" itemprop="dateCreated datePublished" datetime="2018-07-05T21:25:35+08:00">2018-07-05</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -369,85 +369,10 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-          <p>反机器人和垃圾评论是个人博客老生常谈的话题。除了算法特征识别外，最普遍使用的屏蔽方法就是验证码了。在WordPress插件库中，有着各式各样的验证码插件。然而，很多验证码插件都依赖于Google的reCAPTCHA，这在国内无法访问；而一些基于Session或文件验证的验证码插件功能和质量参差不齐，性能和安全程度难以得到保障。虽然博主已经抛弃了WordPress转投Hexo静态博客（正如你所看到的这样），但考虑到WordPress中少有适合我国国情的验证码插件，故决定将一些主流图形验证码的功能进行整合，制作出一个全新的通用性更强的验证码解决方案。这个WordPress插件是博主第一次尝试魔改的结果，它被命名为Mimi Captcha，一个同时支持数字、大小写字母、中文、算术的图形验证码插件。<br>本项目基于Vinoj Cardoza的<a href="https://wordpress.org/plugins/captcha-code-authentication" target="_blank" rel="noopener">Captcha Code</a>在GPL协议下二次开发。原项目存在的问题是，验证码中的字符采用同一字体在同一高度下顺序排列，这样非常容易被识别。改动过程中，加入了“超时时间”设置，以及对用户更为友好的“不区分大小写”设置。而验证码图片的生成算法，则进行了重构，很大程度上采用了<a href="http://www.iteye.com/topic/469170" target="_blank" rel="noopener">流水孟春</a>的方案。同时，在IP白名单等功能上，参考了<a href="https://wordpress.org/plugins/captcha" target="_blank" rel="noopener">Captcha</a>的代码。中文验证码和算术验证码则是新加入的功能，在原插件上拓展而成。最终效果如图：<br><img src="/images/2018-07/screenshot-2.png" alt=""></p>
+          <p>反机器人和垃圾评论是个人博客老生常谈的话题。除了算法特征识别外，最普遍使用的屏蔽方法就是验证码了。在WordPress插件库中，有着各式各样的验证码插件。然而，很多验证码插件都依赖于Google的reCAPTCHA，这在国内无法访问；而一些基于Session或文件验证的验证码插件功能和质量参差不齐，性能和安全程度难以得到保障。虽然博主已经抛弃了WordPress转投Hexo静态博客（正如你所看到的这样），但考虑到WordPress中少有适合我国国情的验证码插件，故决定将一些主流图形验证码的功能进行整合，制作出一个全新的通用性更强的验证码解决方案。这个WordPress插件是博主第一次尝试魔改的结果，它被命名为Mimi Captcha，一个同时支持数字、大小写字母、中文、算术的图形验证码插件。<br>本项目基于Vinoj Cardoza的<a href="https://wordpress.org/plugins/captcha-code-authentication/" target="_blank" rel="noopener">Captcha Code</a>在GPL协议下二次开发。原项目存在的问题是，验证码中的字符采用同一字体在同一高度下顺序排列，这样非常容易被识别。改动过程中，加入了“超时时间”设置，以及对用户更为友好的“不区分大小写”设置。而验证码图片的生成算法，则进行了重构，很大程度上采用了<a href="http://www.iteye.com/topic/469170/" target="_blank" rel="noopener">流水孟春</a>的方案。同时，在IP白名单等功能上，参考了<a href="https://wordpress.org/plugins/captcha/" target="_blank" rel="noopener">Captcha</a>的代码。中文验证码和算术验证码则是新加入的功能，在原插件上拓展而成。最终效果如图：<br><img src="/images/2018-07/screenshot-2.png" alt=""></p>
           <!--noindex-->
             <div class="post-button text-center">
               <a class="btn" href="/2018-07/WordPress中文验证码/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/CUPT地震仪的实现/">
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a href="/2018-07/CUPT地震仪的实现/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/4/index.html">CUPT地震仪的实现</a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-07-02 10:22:49" itemprop="dateCreated datePublished" datetime="2018-07-02T10:22:49+08:00">2018-07-02</span>
-          </span>
-            <span class="post-category">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-07/CUPT地震仪的实现/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-07/CUPT地震仪的实现/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">778</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">1 分钟</span>
-            </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-          <p>2018年CUPT的第一题：</p>
-<blockquote>
-<p><strong>Invent Yourself</strong><br>Construct a simple seismograph that amplifies a local disturbance by mechanical, optical or electrical methods. Determine the typical response curve of your device and investigate the parameters of the damping constant. What is the maximum amplification that you can achieve?<br><strong>自主发明</strong><br>建造一个可以通过力学、光学或电学方法放大局部扰动的简单地震仪。确定你装置的标准响应曲线并且研究阻尼常数的参量。你能达到的最大放大率是多少？</p>
-</blockquote>
-<p>此题的关键便是将地震仪的反应谱通过可观测量进行表示。实现的思路有很多，力学、光学或电学方法都是可行的。综合考虑了实现难度和测量精度后，决定采用以下方案：通过力学方法放大震动，然后利用霍尔片和磁铁将力学量转换为电学量，借助Arduino单片机的模数转换，通过串口将信号输入到电脑，电脑用python监听串口，将获得的数据保存并实时分析、绘图。</p>
-<p>仪器的整体构造如图：<br><img src="/images/2018-07/1.jpg" alt=""></p>
-          <!--noindex-->
-            <div class="post-button text-center">
-              <a class="btn" href="/2018-07/CUPT地震仪的实现/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -479,7 +404,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-06-25 10:58:01" itemprop="dateCreated datePublished" datetime="2018-06-25T10:58:01+08:00">2018-06-25</span>
+              <time title="创建时间：2018-06-25 10:58:01" itemprop="dateCreated datePublished" datetime="2018-06-25T10:58:01+08:00">2018-06-25</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -543,7 +468,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-06-24 11:18:32" itemprop="dateCreated datePublished" datetime="2018-06-24T11:18:32+08:00">2018-06-24</span>
+              <time title="创建时间：2018-06-24 11:18:32" itemprop="dateCreated datePublished" datetime="2018-06-24T11:18:32+08:00">2018-06-24</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -594,6 +519,86 @@
           <!--noindex-->
             <div class="post-button text-center">
               <a class="btn" href="/2018-06/Python标签云拟合图片/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/Linux下增加、删除Swap文件/">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a href="/2018-06/Linux下增加、删除Swap文件/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/4/index.html">Linux下增加、删除Swap文件</a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <time title="创建时间：2018-06-18 17:14:42" itemprop="dateCreated datePublished" datetime="2018-06-18T17:14:42+08:00">2018-06-18</time>
+          </span>
+            <span class="post-category">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-06/Linux下增加、删除Swap文件/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-06/Linux下增加、删除Swap文件/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">800</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">1 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="创建Swap文件"><a href="#创建Swap文件" class="headerlink" title="创建Swap文件"></a>创建Swap文件</h2><h3 id="检查Swap空间"><a href="#检查Swap空间" class="headerlink" title="检查Swap空间"></a>检查Swap空间</h3><p>先检查一下系统里有没有既存的Swap文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon -s</span><br></pre></td></tr></table></figure></p>
+<p>如果返回的信息概要是空的，则表示Swap文件不存在。</p>
+<h3 id="确定Swap文件的大小"><a href="#确定Swap文件的大小" class="headerlink" title="确定Swap文件的大小"></a>确定Swap文件的大小</h3><p>Swap文件单位为M。将该值乘以1024得到块大小。例如，64MB的Swap文件的块大小是65536，而1G的Swap文件的块大小是1048576。</p>
+<h3 id="使用dd命令来创建Swap"><a href="#使用dd命令来创建Swap" class="headerlink" title="使用dd命令来创建Swap"></a>使用dd命令来创建Swap</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd <span class="keyword">if</span>=/dev/zero of=/swapfile bs=1024 count=1048576 <span class="comment">#分配1G的Swap空间</span></span><br></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<ul>
+<li>if=文件名：输入文件名，缺省为标准输入。即指定源文件。</li>
+<li>of=文件名：输出文件名，缺省为标准输出。即指定目的文件。</li>
+<li>bs=bytes：同时设置读入/输出的块大小为bytes个字节，取为1024。</li>
+<li>count=blocks：拷贝的块数，块大小等于bs指定的字节数。将前面算出的数字填入即可。</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-06/Linux下增加、删除Swap文件/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -704,6 +709,7 @@
   }
 </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>

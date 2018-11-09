@@ -26,7 +26,7 @@
     version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    fastclick: false,
+    fastclick: true,
     lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="目前搭建MCPE服务器的方法主要有两种：PocketMine-MP和Nukkit。前者基于PHP，而后者基于Java。无论选择哪一种方法，都要确保游戏客户端和服务器端均是最新版本。如果版本不匹配，可能造成无法连接等问题。 PocketMine-MP运行PocketMine-MP的方法非常简单：克隆这个项目，然后执行bash start.sh就可以了。但是，这样会有一个问题：PocketMine-M">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-30T11:07:18.495Z">
+<meta property="og:updated_time" content="2018-11-09T17:29:37.198Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建MCPE服务器">
 <meta name="twitter:description" content="目前搭建MCPE服务器的方法主要有两种：PocketMine-MP和Nukkit。前者基于PHP，而后者基于Java。无论选择哪一种方法，都要确保游戏客户端和服务器端均是最新版本。如果版本不匹配，可能造成无法连接等问题。 PocketMine-MP运行PocketMine-MP的方法非常简单：克隆这个项目，然后执行bash start.sh就可以了。但是，这样会有一个问题：PocketMine-M">
@@ -188,7 +188,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-04-23 16:19:36" itemprop="dateCreated datePublished" datetime="2018-04-23T16:19:36+08:00">2018-04-23</span>
+              <time title="创建时间：2018-04-23 16:19:36" itemprop="dateCreated datePublished" datetime="2018-04-23T16:19:36+08:00">2018-04-23</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -229,8 +229,8 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-        <p>目前搭建MCPE服务器的方法主要有两种：<a href="https://github.com/pmmp/PocketMine-MP" target="_blank" rel="noopener">PocketMine-MP</a>和<a href="https://github.com/Nukkit/Nukkit" target="_blank" rel="noopener">Nukkit</a>。前者基于PHP，而后者基于Java。<br>无论选择哪一种方法，都要确保游戏客户端和服务器端均是最新版本。如果版本不匹配，可能造成无法连接等问题。</p>
-<h2 id="PocketMine-MP"><a href="#PocketMine-MP" class="headerlink" title="PocketMine-MP"></a>PocketMine-MP</h2><p>运行PocketMine-MP的方法非常简单：克隆这个项目，然后执行<code>bash start.sh</code>就可以了。但是，这样会有一个问题：PocketMine-MP需要php7环境和大量的拓展库，例如php-leveldb。通过brew或yum编译安装的php一般是不会自带这些拓展的，这样在启动时会报错。为了免去手动编译拓展的麻烦，解决方法是使用<a href="https://github.com/pmmp/php-build-scripts" target="_blank" rel="noopener">php-build-scripts</a>。它会编译出带有所有必要的拓展库的php，供PocketMine-MP使用，并且不会与系统原有的php环境冲突。比如在Mac下，执行<code>./compile.sh -t mac64 -l -j4 -c -f</code>，完成后，再执行<code>./installer.sh</code>和<code>./start.sh</code>就可以运行了，根据提示进行配置即可。</p>
+        <p>目前搭建MCPE服务器的方法主要有两种：<a href="https://github.com/pmmp/PocketMine-MP/" target="_blank" rel="noopener">PocketMine-MP</a>和<a href="https://github.com/Nukkit/Nukkit/" target="_blank" rel="noopener">Nukkit</a>。前者基于PHP，而后者基于Java。<br>无论选择哪一种方法，都要确保游戏客户端和服务器端均是最新版本。如果版本不匹配，可能造成无法连接等问题。</p>
+<h2 id="PocketMine-MP"><a href="#PocketMine-MP" class="headerlink" title="PocketMine-MP"></a>PocketMine-MP</h2><p>运行PocketMine-MP的方法非常简单：克隆这个项目，然后执行<code>bash start.sh</code>就可以了。但是，这样会有一个问题：PocketMine-MP需要php7环境和大量的拓展库，例如php-leveldb。通过brew或yum编译安装的php一般是不会自带这些拓展的，这样在启动时会报错。为了免去手动编译拓展的麻烦，解决方法是使用<a href="https://github.com/pmmp/php-build-scripts/" target="_blank" rel="noopener">php-build-scripts</a>。它会编译出带有所有必要的拓展库的php，供PocketMine-MP使用，并且不会与系统原有的php环境冲突。比如在Mac下，执行<code>./compile.sh -t mac64 -l -j4 -c -f</code>，完成后，再执行<code>./installer.sh</code>和<code>./start.sh</code>就可以运行了，根据提示进行配置即可。</p>
 <h2 id="Nukkit"><a href="#Nukkit" class="headerlink" title="Nukkit"></a>Nukkit</h2><p>Nukkit需要Java8环境，如果没有安装，可以前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>寻找帮助。运行方式也很简单，依次执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git submodule <span class="keyword">update</span> <span class="comment">--init</span></span><br><span class="line">mvn clean <span class="keyword">package</span></span><br><span class="line"><span class="keyword">java</span> -jar Nukkit.jar</span><br></pre></td></tr></table></figure></p>
 <p>在其官网上也有发布的版本，无需自行编译Jar文件，可以前往<a href="https://nukkit.io" target="_blank" rel="noopener">Nukkit.io</a>查看。<br>Nukkit的主要问题是不支持leveldb，也就是无法打开较新的MCPE存档，只支持MC存档和上古的MCPE存档。</p>
 <h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>PocketMine-MP和Nukkit启动后默认都会监听19132端口，配置服务器时填写局域网或公网IP/域名即可。</p>
@@ -399,6 +399,7 @@
   }
 </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>

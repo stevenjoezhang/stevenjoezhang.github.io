@@ -26,7 +26,7 @@
     version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    fastclick: false,
+    fastclick: true,
     lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -169,86 +169,6 @@
   <section id="posts" class="posts-expand">
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/Linux下增加、删除Swap文件/">
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a href="/2018-06/Linux下增加、删除Swap文件/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/5/index.html">Linux下增加、删除Swap文件</a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-06-18 17:14:42" itemprop="dateCreated datePublished" datetime="2018-06-18T17:14:42+08:00">2018-06-18</span>
-          </span>
-            <span class="post-category">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-06/Linux下增加、删除Swap文件/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-06/Linux下增加、删除Swap文件/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">800</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">1 分钟</span>
-            </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="创建Swap文件"><a href="#创建Swap文件" class="headerlink" title="创建Swap文件"></a>创建Swap文件</h2><h3 id="检查Swap空间"><a href="#检查Swap空间" class="headerlink" title="检查Swap空间"></a>检查Swap空间</h3><p>先检查一下系统里有没有既存的Swap文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon -s</span><br></pre></td></tr></table></figure></p>
-<p>如果返回的信息概要是空的，则表示Swap文件不存在。</p>
-<h3 id="确定Swap文件的大小"><a href="#确定Swap文件的大小" class="headerlink" title="确定Swap文件的大小"></a>确定Swap文件的大小</h3><p>Swap文件单位为M。将该值乘以1024得到块大小。例如，64MB的Swap文件的块大小是65536，而1G的Swap文件的块大小是1048576。</p>
-<h3 id="使用dd命令来创建Swap"><a href="#使用dd命令来创建Swap" class="headerlink" title="使用dd命令来创建Swap"></a>使用dd命令来创建Swap</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd <span class="keyword">if</span>=/dev/zero of=/swapfile bs=1024 count=1048576 <span class="comment">#分配1G的Swap空间</span></span><br></pre></td></tr></table></figure>
-<p>参数说明：</p>
-<ul>
-<li>if=文件名：输入文件名，缺省为标准输入。即指定源文件。</li>
-<li>of=文件名：输出文件名，缺省为标准输出。即指定目的文件。</li>
-<li>bs=bytes：同时设置读入/输出的块大小为bytes个字节，取为1024。</li>
-<li>count=blocks：拷贝的块数，块大小等于bs指定的字节数。将前面算出的数字填入即可。</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button text-center">
-              <a class="btn" href="/2018-06/Linux下增加、删除Swap文件/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/震惊！黄金卡包竟能出橙/">
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
@@ -268,7 +188,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-06-15 15:55:32" itemprop="dateCreated datePublished" datetime="2018-06-15T15:55:32+08:00">2018-06-15</span>
+              <time title="创建时间：2018-06-15 15:55:32" itemprop="dateCreated datePublished" datetime="2018-06-15T15:55:32+08:00">2018-06-15</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -331,7 +251,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-06-13 19:46:22" itemprop="dateCreated datePublished" datetime="2018-06-13T19:46:22+08:00">2018-06-13</span>
+              <time title="创建时间：2018-06-13 19:46:22" itemprop="dateCreated datePublished" datetime="2018-06-13T19:46:22+08:00">2018-06-13</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -401,7 +321,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-06-06 20:47:45" itemprop="dateCreated datePublished" datetime="2018-06-06T20:47:45+08:00">2018-06-06</span>
+              <time title="创建时间：2018-06-06 20:47:45" itemprop="dateCreated datePublished" datetime="2018-06-06T20:47:45+08:00">2018-06-06</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -475,7 +395,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-06-01 08:53:13" itemprop="dateCreated datePublished" datetime="2018-06-01T08:53:13+08:00">2018-06-01</span>
+              <time title="创建时间：2018-06-01 08:53:13" itemprop="dateCreated datePublished" datetime="2018-06-01T08:53:13+08:00">2018-06-01</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -569,7 +489,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-05-27 17:24:22" itemprop="dateCreated datePublished" datetime="2018-05-27T17:24:22+08:00">2018-05-27</span>
+              <time title="创建时间：2018-05-27 17:24:22" itemprop="dateCreated datePublished" datetime="2018-05-27T17:24:22+08:00">2018-05-27</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -639,6 +559,70 @@
               </a>
             </div>
           <!--/noindex-->
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/博客迁移至GitHub Pages/">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a href="/2018-05/博客迁移至GitHub Pages/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/5/index.html">博客迁移至GitHub Pages</a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <time title="创建时间：2018-05-20 16:44:30" itemprop="dateCreated datePublished" datetime="2018-05-20T16:44:30+08:00">2018-05-20</time>
+          </span>
+            <span class="post-category">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-05/博客迁移至GitHub Pages/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-05/博客迁移至GitHub Pages/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">2.2k</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">2 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+            <p>由于之前使用的WordPress博客在更新后出现未知问题，同时考虑到WordPress存在的一些弊端（例如较为臃肿的PHP后端），博主决定将所有内容迁移至GitHub Pages，使用Hexo进行静态页面渲染。<br>目前新站点使用了zhangshuqiao.org的域名，已可以通过https正常访问。旧的WordPress博客仍会保留，但不再更新。<br>同时博主计划于下半年将原来Galaxy Mimi站点的所有内容迁移至zsq.im下，进行统一管理。<br>Galaxy Mimi站点近期也实装了全新LOGO（使用Monodraw制作）：<br><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">     ___           ___           ___       ___           ___           ___      </span><br><span class="line">    /<span class="symbol">\ </span> <span class="symbol">\ </span>        /<span class="symbol">\ </span> <span class="symbol">\ </span>        /<span class="symbol">\_</span>_<span class="symbol">\ </span>    /<span class="symbol">\ </span> <span class="symbol">\ </span>        |<span class="symbol">\_</span>_<span class="symbol">\ </span>        |<span class="symbol">\_</span>_<span class="symbol">\ </span>    </span><br><span class="line">   /::<span class="symbol">\ </span> <span class="symbol">\ </span>      /::<span class="symbol">\ </span> <span class="symbol">\ </span>      /:/  /    /::<span class="symbol">\ </span> <span class="symbol">\ </span>       |:|  |        |:|  |    </span><br><span class="line">  /:/<span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>    /:/<span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>    /:/  /    /:/<span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>      |:|  |        |:|  |    </span><br><span class="line"> /:/  <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>  /::<span class="symbol">\~</span><span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>  /:/  /    /::<span class="symbol">\~</span><span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>     |:|__|__      |:|__|__  </span><br><span class="line">/:/__/_<span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>/:/<span class="symbol">\:</span><span class="symbol">\ </span><span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>/:/__/    /:/<span class="symbol">\:</span><span class="symbol">\ </span><span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>____/::::<span class="symbol">\_</span>_<span class="symbol">\ </span>    /::::<span class="symbol">\_</span>_<span class="symbol">\ </span></span><br><span class="line"><span class="symbol">\:</span><span class="symbol">\ </span> /<span class="symbol">\ </span><span class="symbol">\/</span>__/ <span class="symbol">\/</span>__<span class="symbol">\:</span><span class="symbol">\/</span>:/  / <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>   <span class="symbol">\/</span>__<span class="symbol">\:</span><span class="symbol">\/</span>:/  / <span class="symbol">\:</span>:::/~~/~       /:/~~/~    </span><br><span class="line"> <span class="symbol">\:</span><span class="symbol">\ </span><span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>       <span class="symbol">\:</span>:/  /   <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>       <span class="symbol">\:</span>:/  /   ~~|:|~~|       /:/  /      </span><br><span class="line">  <span class="symbol">\:</span><span class="symbol">\/</span>:/  /        /:/  /     <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>      /:/  /      |:|  |       <span class="symbol">\/</span>__/       </span><br><span class="line">   <span class="symbol">\:</span>:/  /        /:/  /       <span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>    /:/  /       |:|  |                   </span><br><span class="line">    <span class="symbol">\/</span>__/         <span class="symbol">\/</span>__/         <span class="symbol">\/</span>__/     <span class="symbol">\/</span>__/         <span class="symbol">\|</span>__|                   </span><br><span class="line">                   ___                       ___                                </span><br><span class="line">                  /<span class="symbol">\_</span>_<span class="symbol">\ </span>         ___        /<span class="symbol">\_</span>_<span class="symbol">\ </span>         ___                  </span><br><span class="line">                 /::|  |        /<span class="symbol">\ </span> <span class="symbol">\ </span>     /::|  |        /<span class="symbol">\ </span> <span class="symbol">\ </span>                </span><br><span class="line">                /:|:|  |        <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>   /:|:|  |        <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>               </span><br><span class="line">               /:/|:|__|__      /::<span class="symbol">\_</span>_<span class="symbol">\ </span> /:/|:|__|__      /::<span class="symbol">\_</span>_<span class="symbol">\ </span>              </span><br><span class="line">              /:/ |::::<span class="symbol">\_</span>_<span class="symbol">\ </span> __/:/<span class="symbol">\/</span>__/ /:/ |::::<span class="symbol">\_</span>_<span class="symbol">\ </span> __/:/<span class="symbol">\/</span>__/               </span><br><span class="line">              <span class="symbol">\/</span>__/~~/:/  / /<span class="symbol">\/</span>:/  /    <span class="symbol">\/</span>__/~~/:/  / /<span class="symbol">\/</span>:/  /                  </span><br><span class="line">                    /:/  /  <span class="symbol">\:</span>:/__/           /:/  /  <span class="symbol">\:</span>:/__/                   </span><br><span class="line">                   /:/  /    <span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>         /:/  /    <span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>                  </span><br><span class="line">                  /:/  /      <span class="symbol">\/</span>__/         /:/  /      <span class="symbol">\/</span>__/                   </span><br><span class="line">                  <span class="symbol">\/</span>__/                     <span class="symbol">\/</span>__/</span><br></pre></td></tr></table></figure></p>
+<p>本文更新于2018年7月8日：<br>由于在国内GitHub Pages加载速度不稳定，且由于GitHub政策不利于SEO，博主已将所有托管在GitHub Pages上的页面迁移至另一台独立服务器。<br>目前全站已启用HSTS，支持HTTPS和HTTP/2访问。</p>
     </div>
     <footer class="post-footer">
         <div class="post-eof"></div>
@@ -745,6 +729,7 @@
   }
 </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>

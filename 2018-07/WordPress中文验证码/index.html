@@ -26,7 +26,7 @@
     version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    fastclick: false,
+    fastclick: true,
     lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -51,7 +51,7 @@
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/screenshot-2.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/screenshot-3.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/screenshot-1.png">
-<meta property="og:updated_time" content="2018-11-09T03:33:52.457Z">
+<meta property="og:updated_time" content="2018-11-09T17:29:37.240Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WordPress中文验证码">
 <meta name="twitter:description" content="反机器人和垃圾评论是个人博客老生常谈的话题。除了算法特征识别外，最普遍使用的屏蔽方法就是验证码了。在WordPress插件库中，有着各式各样的验证码插件。然而，很多验证码插件都依赖于Google的reCAPTCHA，这在国内无法访问；而一些基于Session或文件验证的验证码插件功能和质量参差不齐，性能和安全程度难以得到保障。虽然博主已经抛弃了WordPress转投Hexo静态博客（正如你所看到的">
@@ -192,7 +192,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-07-05 21:25:35" itemprop="dateCreated datePublished" datetime="2018-07-05T21:25:35+08:00">2018-07-05</span>
+              <time title="创建时间：2018-07-05 21:25:35" itemprop="dateCreated datePublished" datetime="2018-07-05T21:25:35+08:00">2018-07-05</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -233,10 +233,10 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-        <p>反机器人和垃圾评论是个人博客老生常谈的话题。除了算法特征识别外，最普遍使用的屏蔽方法就是验证码了。在WordPress插件库中，有着各式各样的验证码插件。然而，很多验证码插件都依赖于Google的reCAPTCHA，这在国内无法访问；而一些基于Session或文件验证的验证码插件功能和质量参差不齐，性能和安全程度难以得到保障。虽然博主已经抛弃了WordPress转投Hexo静态博客（正如你所看到的这样），但考虑到WordPress中少有适合我国国情的验证码插件，故决定将一些主流图形验证码的功能进行整合，制作出一个全新的通用性更强的验证码解决方案。这个WordPress插件是博主第一次尝试魔改的结果，它被命名为Mimi Captcha，一个同时支持数字、大小写字母、中文、算术的图形验证码插件。<br>本项目基于Vinoj Cardoza的<a href="https://wordpress.org/plugins/captcha-code-authentication" target="_blank" rel="noopener">Captcha Code</a>在GPL协议下二次开发。原项目存在的问题是，验证码中的字符采用同一字体在同一高度下顺序排列，这样非常容易被识别。改动过程中，加入了“超时时间”设置，以及对用户更为友好的“不区分大小写”设置。而验证码图片的生成算法，则进行了重构，很大程度上采用了<a href="http://www.iteye.com/topic/469170" target="_blank" rel="noopener">流水孟春</a>的方案。同时，在IP白名单等功能上，参考了<a href="https://wordpress.org/plugins/captcha" target="_blank" rel="noopener">Captcha</a>的代码。中文验证码和算术验证码则是新加入的功能，在原插件上拓展而成。最终效果如图：<br><img src="/images/2018-07/screenshot-2.png" alt=""></p>
+        <p>反机器人和垃圾评论是个人博客老生常谈的话题。除了算法特征识别外，最普遍使用的屏蔽方法就是验证码了。在WordPress插件库中，有着各式各样的验证码插件。然而，很多验证码插件都依赖于Google的reCAPTCHA，这在国内无法访问；而一些基于Session或文件验证的验证码插件功能和质量参差不齐，性能和安全程度难以得到保障。虽然博主已经抛弃了WordPress转投Hexo静态博客（正如你所看到的这样），但考虑到WordPress中少有适合我国国情的验证码插件，故决定将一些主流图形验证码的功能进行整合，制作出一个全新的通用性更强的验证码解决方案。这个WordPress插件是博主第一次尝试魔改的结果，它被命名为Mimi Captcha，一个同时支持数字、大小写字母、中文、算术的图形验证码插件。<br>本项目基于Vinoj Cardoza的<a href="https://wordpress.org/plugins/captcha-code-authentication/" target="_blank" rel="noopener">Captcha Code</a>在GPL协议下二次开发。原项目存在的问题是，验证码中的字符采用同一字体在同一高度下顺序排列，这样非常容易被识别。改动过程中，加入了“超时时间”设置，以及对用户更为友好的“不区分大小写”设置。而验证码图片的生成算法，则进行了重构，很大程度上采用了<a href="http://www.iteye.com/topic/469170/" target="_blank" rel="noopener">流水孟春</a>的方案。同时，在IP白名单等功能上，参考了<a href="https://wordpress.org/plugins/captcha/" target="_blank" rel="noopener">Captcha</a>的代码。中文验证码和算术验证码则是新加入的功能，在原插件上拓展而成。最终效果如图：<br><img src="/images/2018-07/screenshot-2.png" alt=""></p>
 <a id="more"></a>
 <p><img src="/images/2018-07/screenshot-3.png" alt=""><br><img src="/images/2018-07/screenshot-1.png" alt=""></p>
-<p>如果你对这个插件有任何意见或建议，敬请在评论区留言！<br>代码可以在GitHub上查看：<a href="https://github.com/stevenjoezhang/mimi-captcha" target="_blank" rel="noopener">Mimi Captcha</a><br>同时也发布在了WordPress插件库：<a href="https://wordpress.org/plugins/mimi-captcha" target="_blank" rel="noopener">Mimi Captcha</a><br>顺便吐槽一下WordPress官方团队粗暴无礼的插件审核机制，真的是非常严格呢。</p>
+<p>如果你对这个插件有任何意见或建议，敬请在评论区留言！<br>代码可以在GitHub上查看：<a href="https://github.com/stevenjoezhang/mimi-captcha/" target="_blank" rel="noopener">Mimi Captcha</a><br>同时也发布在了WordPress插件库：<a href="https://wordpress.org/plugins/mimi-captcha/" target="_blank" rel="noopener">Mimi Captcha</a><br>顺便吐槽一下WordPress官方团队粗暴无礼的插件审核机制，真的是非常严格呢。</p>
 <p>拓展阅读：<a href="https://doc.yonyoucloud.com/doc/ae/920457.html" target="_blank" rel="noopener">知识库：使用Tesseract识别弱验证码</a></p>
     </div>
       <div>
@@ -276,8 +276,8 @@
         </div>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-              <a href="/2018-07/CUPT地震仪的实现/" rel="next" title="CUPT地震仪的实现">
-                <i class="fa fa-chevron-left"></i> CUPT地震仪的实现
+              <a href="/2018-06/Safari顶栏彩虹效果/" rel="next" title="Safari顶栏彩虹效果">
+                <i class="fa fa-chevron-left"></i> Safari顶栏彩虹效果
               </a>
           </div>
           <span class="post-nav-divider"></span>
@@ -389,6 +389,7 @@
   }
 </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>

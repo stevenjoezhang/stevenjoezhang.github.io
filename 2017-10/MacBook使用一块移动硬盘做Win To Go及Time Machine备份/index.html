@@ -26,7 +26,7 @@
     version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    fastclick: false,
+    fastclick: true,
     lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -51,7 +51,7 @@
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/macbookair.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/4500.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/diskutillist.png">
-<meta property="og:updated_time" content="2018-11-02T02:07:41.884Z">
+<meta property="og:updated_time" content="2018-11-09T17:12:34.179Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacBook使用一块移动硬盘做Win To Go及Time Machine备份">
 <meta name="twitter:description" content="前言博主使用的MacBook Air，256G闪存，可用空间约251G，曾经的分区表为：12345678910111213141516/dev/disk0 (internal, physical):   #:                       TYPE NAME                    SIZE       IDENTIFIER   0:      GUID_partit">
@@ -192,7 +192,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2017-10-15 12:35:38" itemprop="dateCreated datePublished" datetime="2017-10-15T12:35:38+08:00">2017-10-15</span>
+              <time title="创建时间：2017-10-15 12:35:38" itemprop="dateCreated datePublished" datetime="2017-10-15T12:35:38+08:00">2017-10-15</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -255,7 +255,7 @@
 <h3 id="下载必要的文件"><a href="#下载必要的文件" class="headerlink" title="下载必要的文件"></a>下载必要的文件</h3><ul>
 <li><a href="https://msdn.itellyou.cn" target="_blank" rel="noopener">Windows镜像</a>（请选择Windows 10的ISO镜像文件）</li>
 <li><a href="http://dl.luobotou.org/wtga4800.zip" target="_blank" rel="noopener">Win To Go安装工具</a></li>
-<li><a href="http://pan.baidu.com/s/1jIJ0hfS" target="_blank" rel="noopener">Bootcamp驱动程序</a></li>
+<li><a href="http://pan.baidu.com/s/1jIJ0hfS/" target="_blank" rel="noopener">Bootcamp驱动程序</a></li>
 </ul>
 <h3 id="创建Win-To-Go"><a href="#创建Win-To-Go" class="headerlink" title="创建Win To Go"></a>创建Win To Go</h3><p>使用系统自带工具或下载第三方软件，将Windows镜像装载到虚拟光驱。将移动硬盘连接到PC上。在PC上打开Win To Go安装工具，如图所示（目前已更新到4.8.0.0）。<br><img src="/images/2017-10/4500.png" alt=""></p>
 <p>点击“浏览”，在虚拟光驱中找到install.wim文件并选中；在下方选择目标磁盘，即需要安装的移动硬盘。右侧高级选项中，“常用”栏下选择VHD，以及UEFI+GPT，“分区”栏下手动输入第二个分区的大小，单位为MB；程序会自动调整第一个分区的大小；第三个分区若无需要，填0即可。第一个分区即作为Win To Go分区，第二个分区作为Time Machine备份分区。请再次确认移动硬盘上所有分区的文件都已备份。接下来点击“创建”，就将进行全盘格式化，并建立引导，创建Win To Go相关文件。</p>
@@ -427,6 +427,7 @@
   }
 </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>

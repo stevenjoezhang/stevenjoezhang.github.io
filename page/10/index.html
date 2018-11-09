@@ -26,7 +26,7 @@
     version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    fastclick: false,
+    fastclick: true,
     lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -188,7 +188,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-01-28 10:22:01" itemprop="dateCreated datePublished" datetime="2018-01-28T10:22:01+08:00">2018-01-28</span>
+              <time title="创建时间：2018-01-28 10:22:01" itemprop="dateCreated datePublished" datetime="2018-01-28T10:22:01+08:00">2018-01-28</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -263,7 +263,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-01-27 13:15:56" itemprop="dateCreated datePublished" datetime="2018-01-27T13:15:56+08:00">2018-01-27</span>
+              <time title="创建时间：2018-01-27 13:15:56" itemprop="dateCreated datePublished" datetime="2018-01-27T13:15:56+08:00">2018-01-27</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -338,7 +338,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-01-18 23:21:39" itemprop="dateCreated datePublished" datetime="2018-01-18T23:21:39+08:00">2018-01-18</span>
+              <time title="创建时间：2018-01-18 23:21:39" itemprop="dateCreated datePublished" datetime="2018-01-18T23:21:39+08:00">2018-01-18</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -402,7 +402,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-01-12 16:10:20" itemprop="dateCreated datePublished" datetime="2018-01-12T16:10:20+08:00">2018-01-12</span>
+              <time title="创建时间：2018-01-12 16:10:20" itemprop="dateCreated datePublished" datetime="2018-01-12T16:10:20+08:00">2018-01-12</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -438,7 +438,7 @@
       </header>
     <div class="post-body" itemprop="articleBody">
           <p>上一篇文章介绍了使用Teensy 3.2将摩尔斯电键变为键盘的方法。经过研究，我决定使用Arduino Leonardo实现之。相比Teensy 3.2，Arduino Leonardo成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。<br><img src="/images/2018-01/IMG_4488.jpg" alt=""></p>
-<p>Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入/输出引脚（在写入程序时可以定义各个引脚的作用，其中最多有7个可用于PWM输出、12个可用于模拟输入），一个16 MHz的晶体振荡器，一个Micro USB接口，一个DC接口，一个ICSP接口，一个复位按钮。它包含了支持微控制器所需的一切，你可以简单地通过把它连接到计算机的USB接口来驱动它。<br>Leonardo不同于之前所有的Arduino控制器，他直接使用了ATmega32U4的USB通信功能，取消了USB转UART芯片。这使得Leonardo不仅可以作为一个虚拟的（CDC）串行/COM端口，还可以作为鼠标或者键盘连接到计算机。更多内容可以<a href="https://store.arduino.cc/usa/arduino-leonardo-with-headers" target="_blank" rel="noopener">参考文档</a>（在DOCUMENTATION选单中包含完整电路图）。</p>
+<p>Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入/输出引脚（在写入程序时可以定义各个引脚的作用，其中最多有7个可用于PWM输出、12个可用于模拟输入），一个16 MHz的晶体振荡器，一个Micro USB接口，一个DC接口，一个ICSP接口，一个复位按钮。它包含了支持微控制器所需的一切，你可以简单地通过把它连接到计算机的USB接口来驱动它。<br>Leonardo不同于之前所有的Arduino控制器，他直接使用了ATmega32U4的USB通信功能，取消了USB转UART芯片。这使得Leonardo不仅可以作为一个虚拟的（CDC）串行/COM端口，还可以作为鼠标或者键盘连接到计算机。更多内容可以<a href="https://store.arduino.cc/usa/arduino-leonardo-with-headers/" target="_blank" rel="noopener">参考文档</a>（在DOCUMENTATION选单中包含完整电路图）。</p>
           <!--noindex-->
             <div class="post-button text-center">
               <a class="btn" href="/2018-01/用摩尔斯电键作鼠标和键盘/#more" rel="contents">
@@ -473,7 +473,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-01-08 11:02:35" itemprop="dateCreated datePublished" datetime="2018-01-08T11:02:35+08:00">2018-01-08</span>
+              <time title="创建时间：2018-01-08 11:02:35" itemprop="dateCreated datePublished" datetime="2018-01-08T11:02:35+08:00">2018-01-08</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -508,7 +508,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-          <p>这篇文章翻译自：<a href="https://imgur.com/gallery/lNAtQ" target="_blank" rel="noopener">I Turned my Dad’s 1950s Morse Key into a USB Keyboard</a><br><img src="/images/2018-01/Vi93ahx.jpg" alt=""></p>
+          <p>这篇文章翻译自：<a href="https://imgur.com/gallery/lNAtQ/" target="_blank" rel="noopener">I Turned my Dad’s 1950s Morse Key into a USB Keyboard</a><br><img src="/images/2018-01/Vi93ahx.jpg" alt=""></p>
 <p>The finished Morse key sitting happily on my laptop. Full project details below.<br>最终完成的莫尔斯键盘与笔记本电脑的合影～整个项目的细节如下：</p>
 <p>Background: I can just about remember growing up around beautifully designed analogue devices like rotary dial phones, typewriters, and record players. I’ve always like the idea of converting these largely defunct objects into digital devices, and my Dad’s old Morse key seemed like a simple project to get started on.<br>背景：打从记事以来，我就生活在设计精美的模拟设备的环境中，比如旋转式拨号电话，打字机和唱片机。我一直有把这些大部分现在不常用的东西转换成数字设备的想法，而这其中，老爸的旧莫尔斯电键看起来像是一个简单的项目。</p>
           <!--noindex-->
@@ -545,7 +545,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2017-12-31 00:47:19" itemprop="dateCreated datePublished" datetime="2017-12-31T00:47:19+08:00">2017-12-31</span>
+              <time title="创建时间：2017-12-31 00:47:19" itemprop="dateCreated datePublished" datetime="2017-12-31T00:47:19+08:00">2017-12-31</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -687,6 +687,7 @@
   }
 </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>

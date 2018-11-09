@@ -26,7 +26,7 @@
     version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    fastclick: false,
+    fastclick: true,
     lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -49,7 +49,7 @@
 <meta property="og:description" content="经过为期半个月的测试，米米直播平台成功实现了多线路及多种播放方式的直播：线路一是无需Flash支持的HLS直播，对移动端支持极为友好，只是由于原理所限，延时约为45秒；线路一的播放方式有原生HLS和Video.js解码的HLS，能够覆盖大部分设备。线路二是基于Bilibili开源的flv.js的HTTP FLV直播，同样无须Flash，且延时仅有3秒；该播放方式兼容大部分桌面浏览器，但由于需要Me">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-02/mimilive.png">
-<meta property="og:updated_time" content="2018-11-02T02:12:09.657Z">
+<meta property="og:updated_time" content="2018-11-09T17:29:37.175Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="米米直播平台正式上线">
 <meta name="twitter:description" content="经过为期半个月的测试，米米直播平台成功实现了多线路及多种播放方式的直播：线路一是无需Flash支持的HLS直播，对移动端支持极为友好，只是由于原理所限，延时约为45秒；线路一的播放方式有原生HLS和Video.js解码的HLS，能够覆盖大部分设备。线路二是基于Bilibili开源的flv.js的HTTP FLV直播，同样无须Flash，且延时仅有3秒；该播放方式兼容大部分桌面浏览器，但由于需要Me">
@@ -190,7 +190,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <span title="创建时间：2018-02-10 18:03:14" itemprop="dateCreated datePublished" datetime="2018-02-10T18:03:14+08:00">2018-02-10</span>
+              <time title="创建时间：2018-02-10 18:03:14" itemprop="dateCreated datePublished" datetime="2018-02-10T18:03:14+08:00">2018-02-10</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -231,8 +231,8 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-        <p>经过为期半个月的测试，米米直播平台成功实现了多线路及多种播放方式的直播：<br>线路一是无需Flash支持的HLS直播，对移动端支持极为友好，只是由于原理所限，延时约为45秒；线路一的播放方式有原生HLS和Video.js解码的HLS，能够覆盖大部分设备。<br>线路二是基于<a href="https://github.com/Bilibili/flv.js" target="_blank" rel="noopener">Bilibili开源的flv.js</a>的HTTP FLV直播，同样无须Flash，且延时仅有3秒；该播放方式兼容大部分桌面浏览器，但由于需要<a href="https://w3c.github.io/media-source" target="_blank" rel="noopener">Media Source Extensions</a> API支持，对移动端不友好；该线路各项直播数据已经可以媲美各大主流直播平台。<br>线路三为基于video.js和Flash的RTMP直播流，延时亦为3秒左右；不过考虑到Flash的种种弊端，线路三只是作为备用线路。原生HTML5直播在性能上明显优于Flash。<br><img src="/images/2018-02/mimilive.png" alt=""></p>
-<p>根据最新规划，米米视频将专注于视频点播功能，点播的视频大部分为原创作品；而米米直播目前已开放了一个测试频道，未来将进行拓展。关于推流码验证的相关功能正在完善。附上链接：<br><a href="https://galaxymimi.com/player" target="_blank" rel="noopener">米米视频</a><br><a href="https://galaxymimi.com/live" target="_blank" rel="noopener">米米直播</a></p>
+        <p>经过为期半个月的测试，米米直播平台成功实现了多线路及多种播放方式的直播：<br>线路一是无需Flash支持的HLS直播，对移动端支持极为友好，只是由于原理所限，延时约为45秒；线路一的播放方式有原生HLS和Video.js解码的HLS，能够覆盖大部分设备。<br>线路二是基于<a href="https://github.com/Bilibili/flv.js/" target="_blank" rel="noopener">Bilibili开源的flv.js</a>的HTTP FLV直播，同样无须Flash，且延时仅有3秒；该播放方式兼容大部分桌面浏览器，但由于需要<a href="https://w3c.github.io/media-source/" target="_blank" rel="noopener">Media Source Extensions</a> API支持，对移动端不友好；该线路各项直播数据已经可以媲美各大主流直播平台。<br>线路三为基于video.js和Flash的RTMP直播流，延时亦为3秒左右；不过考虑到Flash的种种弊端，线路三只是作为备用线路。原生HTML5直播在性能上明显优于Flash。<br><img src="/images/2018-02/mimilive.png" alt=""></p>
+<p>根据最新规划，米米视频将专注于视频点播功能，点播的视频大部分为原创作品；而米米直播目前已开放了一个测试频道，未来将进行拓展。关于推流码验证的相关功能正在完善。附上链接：<br><a href="https://galaxymimi.com/player/" target="_blank" rel="noopener">米米视频</a><br><a href="https://galaxymimi.com/live/" target="_blank" rel="noopener">米米直播</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -383,6 +383,7 @@
   }
 </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>

@@ -1970,7 +1970,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #dbdb66;
+  background: #1d4b6b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3272,12 +3272,26 @@ ul.breadcrumb li+li:last-child {
 body {
   overflow-x: hidden;
 }
+body:before {
+  right: 0;
+  top: 0;
+  left: 0;
+  height: 100px;
+  z-index: 99999999999;
+  position: fixed;
+  content: "";
+  display: block;
+  -webkit-transform: translateY(-99.99px);
+  background: linear-gradient(124deg, #f00, #ff7f00, #ff0, #7fff00, #0f0, #00ff7f, #0ff, #007fff, #00f, #7f00ff, #f0f, #ff007f, #f00);
+  animation: rainbow 15s ease infinite;
+  background-size: 1000% 1000%;
+}
 .douqilai,
 .douqilai * {
   animation: shake-it 0.5s reverse infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 .caihong {
-  animation: rainbow 1.5s infinite;
+  animation: caihong 1.5s infinite;
 }
 .disco_dancing {
   animation: quan 1.5s infinite;
@@ -3311,6 +3325,50 @@ body {
 .glitch:hover:after {
   text-shadow: -5px 0 #00a7e0;
   animation: glitch-loop-2 0.8s infinite ease-in-out alternate-reverse;
+}
+@-moz-keyframes rainbow {
+  0% {
+    background-position: 0% 80%;
+  }
+  50% {
+    background-position: 100% 20%;
+  }
+  100% {
+    background-position: 0% 80%;
+  }
+}
+@-webkit-keyframes rainbow {
+  0% {
+    background-position: 0% 80%;
+  }
+  50% {
+    background-position: 100% 20%;
+  }
+  100% {
+    background-position: 0% 80%;
+  }
+}
+@-o-keyframes rainbow {
+  0% {
+    background-position: 0% 80%;
+  }
+  50% {
+    background-position: 100% 20%;
+  }
+  100% {
+    background-position: 0% 80%;
+  }
+}
+@keyframes rainbow {
+  0% {
+    background-position: 0% 80%;
+  }
+  50% {
+    background-position: 100% 20%;
+  }
+  100% {
+    background-position: 0% 80%;
+  }
 }
 @-moz-keyframes shake-it {
   0% {
@@ -3368,22 +3426,22 @@ body {
     text-shadow: 3px 0 rgba(0,255,255,0.5), 5px 0 rgba(255,0,0,0.5);
   }
 }
-@-moz-keyframes rainbow {
+@-moz-keyframes caihong {
   100% {
     filter: hue-rotate(360deg);
   }
 }
-@-webkit-keyframes rainbow {
+@-webkit-keyframes caihong {
   100% {
     filter: hue-rotate(360deg);
   }
 }
-@-o-keyframes rainbow {
+@-o-keyframes caihong {
   100% {
     filter: hue-rotate(360deg);
   }
 }
-@keyframes rainbow {
+@keyframes caihong {
   100% {
     filter: hue-rotate(360deg);
   }

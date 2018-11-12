@@ -212,7 +212,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">5.6k</span>
+                <span title="本文字数">5.8k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
@@ -224,11 +224,12 @@
       </header>
     <div class="post-body" itemprop="articleBody">
           <p>昨晚博主在VPS上搭建了基于Nginx的视频直播服务器，成功地使用OBS Studio推流，在Safari上实现了HTML5播放。下面附上具体步骤，请将所有<code>your.domain.com</code>替换为你的域名或者服务器IP。</p>
-<h2 id="Nginx环境搭建"><a href="#Nginx环境搭建" class="headerlink" title="Nginx环境搭建"></a>Nginx环境搭建</h2><p>首先，按照👇教程安装搭建lnmp环境！<br><a href="https://lnmp.org/install.html" target="_blank" rel="noopener">lnmp环境一键安装脚本</a></p>
+<h2 id="Nginx环境搭建"><a href="#Nginx环境搭建" class="headerlink" title="Nginx环境搭建"></a>Nginx环境搭建</h2><p>首先，需要下载可编译的Nginx源代码，以及必要的拓展库。如果你是萌新，请按照👇教程安装搭建lnmp环境！<br><a href="https://lnmp.org/install.html" target="_blank" rel="noopener">lnmp环境一键安装脚本</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下载并安装lnmp环境</span></span><br><span class="line">wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz &amp;&amp; tar zxf lnmp1.4.tar.gz &amp;&amp; <span class="built_in">cd</span> lnmp1.4 &amp;&amp; ./install.sh lnmp</span><br></pre></td></tr></table></figure>
 <p>请按照脚本的提示选择你要安装的各个组件版本，若不确定，选择默认选项即可。安装完成后，命令行输出：<br><img src="/images/2018-01/1774338-dc544ac657937d0d.png" alt=""></p>
 <p>此时访问服务器地址会出现如下界面：<br><img src="/images/2018-01/1774338-b0eb1df8603e632d.png" alt=""></p>
 <p><strong>注意：安装时生成的解压文件夹lnmp1.4先别删除！</strong></p>
+<p>如果你对在Linux上安装配置Nginx和PHP等有所了解，可以直接使用源码安装，不必通过lnmp。Nginx源码<a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">在此处下载</a>，PHP源码<a href="http://php.net/downloads.php" target="_blank" rel="noopener">在此处下载</a>。需要注意的是，编译PHP时要指定<code>make ZEND_EXTRA_LIBS=&#39;-liconv&#39;</code>，否则可能会出现<code>undefined reference to &#39;libiconv&#39;</code>的错误。</p>
           <!--noindex-->
             <div class="post-button text-center">
               <a class="btn" href="/2018-01/基于Nginx搭建视频直播服务器/#more" rel="contents">

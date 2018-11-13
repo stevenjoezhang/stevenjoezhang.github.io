@@ -212,7 +212,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">753</span>
+                <span title="本文字数">1k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
@@ -224,10 +224,12 @@
       </header>
     <div class="post-body" itemprop="articleBody">
             <p>目前搭建MCPE服务器的方法主要有两种：<a href="https://github.com/pmmp/PocketMine-MP/" target="_blank" rel="noopener">PocketMine-MP</a>和<a href="https://github.com/Nukkit/Nukkit/" target="_blank" rel="noopener">Nukkit</a>。前者基于PHP，而后者基于Java。<br>无论选择哪一种方法，都要确保游戏客户端和服务器端均是最新版本。如果版本不匹配，可能造成无法连接等问题。</p>
-<h2 id="PocketMine-MP"><a href="#PocketMine-MP" class="headerlink" title="PocketMine-MP"></a>PocketMine-MP</h2><p>运行PocketMine-MP的方法非常简单：克隆这个项目，然后执行<code>bash start.sh</code>就可以了。但是，这样会有一个问题：PocketMine-MP需要php7环境和大量的拓展库，例如php-leveldb。通过brew或yum编译安装的php一般是不会自带这些拓展的，这样在启动时会报错。为了免去手动编译拓展的麻烦，解决方法是使用<a href="https://github.com/pmmp/php-build-scripts/" target="_blank" rel="noopener">php-build-scripts</a>。它会编译出带有所有必要的拓展库的php，供PocketMine-MP使用，并且不会与系统原有的php环境冲突。比如在Mac下，执行<code>./compile.sh -t mac64 -l -j4 -c -f</code>，完成后，再执行<code>./installer.sh</code>和<code>./start.sh</code>就可以运行了，根据提示进行配置即可。</p>
-<h2 id="Nukkit"><a href="#Nukkit" class="headerlink" title="Nukkit"></a>Nukkit</h2><p>Nukkit需要Java8环境，如果没有安装，可以前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>寻找帮助。运行方式也很简单，依次执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git submodule <span class="keyword">update</span> <span class="comment">--init</span></span><br><span class="line">mvn clean <span class="keyword">package</span></span><br><span class="line"><span class="keyword">java</span> -jar Nukkit.jar</span><br></pre></td></tr></table></figure></p>
-<p>在其官网上也有发布的版本，无需自行编译Jar文件，可以前往<a href="https://nukkit.io" target="_blank" rel="noopener">Nukkit.io</a>查看。<br>Nukkit的主要问题是不支持leveldb，也就是无法打开较新的MCPE存档，只支持MC存档和上古的MCPE存档。</p>
-<h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>PocketMine-MP和Nukkit启动后默认都会监听19132端口，配置服务器时填写局域网或公网IP/域名即可。</p>
+<h2 id="PocketMine-MP"><a href="#PocketMine-MP" class="headerlink" title="PocketMine-MP"></a>PocketMine-MP</h2><p>运行PocketMine-MP需要php7环境和大量的拓展库，例如php-leveldb和yaml等。即使你已经通过brew、yum等包管理工具安装了php，也可能无法正确启动服务器——它们一般是不会自带这些拓展库的。为了免去手动编译安装拓展的麻烦，比较简单的解决方法是使用<a href="https://github.com/pmmp/php-build-scripts/" target="_blank" rel="noopener">php-build-scripts</a>。它会编译出带有所有必要的拓展库的php，供PocketMine-MP使用，并且不会与系统原有的php环境冲突。比如在Mac下，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/pmmp/php-build-scripts.git</span><br><span class="line"><span class="built_in">cd</span> php-build-scripts</span><br><span class="line">bash compile.sh -t mac64 -l -j4 -f</span><br></pre></td></tr></table></figure></p>
+<p>即可编译安装php(Linux将参数对应改为<code>-t linux64</code>即可)。<br>完成后，再执行<code>bash installer.sh</code>，就会自动下载<code>PocketMine-MP.phar</code>等必要程序。最后，执行<code>bash start.sh</code>就可以运行了，接下来根据提示进行配置即可。这种方式非常方便，只要记得使用<code>screen</code>，然后等上几分钟就行。更多配置可以参考其官方文档。</p>
+<h2 id="Nukkit"><a href="#Nukkit" class="headerlink" title="Nukkit"></a>Nukkit</h2><p>Nukkit需要Java8环境，如果没有安装，可以前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>下载。运行方式也很简单，克隆这个仓库后，依次执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git submodule <span class="keyword">update</span> <span class="comment">--init</span></span><br><span class="line">mvn clean <span class="keyword">package</span></span><br><span class="line"><span class="keyword">java</span> -jar Nukkit.jar</span><br></pre></td></tr></table></figure></p>
+<p>当然，在其官网上也有发布的版本，无需自行编译Jar文件，可以前往<a href="https://nukkit.io" target="_blank" rel="noopener">Nukkit.io</a>查看。<br>Nukkit的主要问题是不支持leveldb，也就是无法打开较新的MCPE存档，只支持MC存档和上古的MCPE存档。而且Nukkit似乎已经失去维护，因此建议使用第一种方法。</p>
+<h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>PocketMine-MP和Nukkit启动后默认都会监听19132端口，配置服务器时填写局域网或公网IP/域名即可。更多的设置项可以参考它们的文档。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>转换存档的格式可以用这个脚本：<a href="https://github.com/ljyloo/LevelDb2Avnil/" target="_blank" rel="noopener">LevelDb2Avnil</a>，不过看上去兼容性仍存在问题，请谨慎使用。</p>
     </div>
     <footer class="post-footer">
         <div class="post-eof"></div>
@@ -279,7 +281,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">1.3k</span>
+                <span title="本文字数">1.4k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
@@ -295,7 +297,7 @@
 <p>即可。</p>
 <h2 id="配置服务器"><a href="#配置服务器" class="headerlink" title="配置服务器"></a>配置服务器</h2><p>Apache的配置文件为<code>/etc/apache2/httpd.conf</code>，为防止出现问题，请将其备份后进行编辑。如果更新了Mac系统，可能需要重新进行配置。<br>Apache默认的根目录在<code>/Library/WebServer/Documents/</code>下，你可以通过编辑<code>DocumentRoot</code>属性来修改它。<br>你也可以配置启用php等模块。在httpd.conf中，找到<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#LoadModule php7_module libexec/apache2/libphp7.so</span></span><br></pre></td></tr></table></figure></p>
 <p>将其行首用于注释的#去掉，即可启用php。<br>如果你使用Brew或通过源码编译安装了其他版本的php，将<code>libphp7.so</code>的路径替换为对应的文件即可，例如<code>/usr/local/Cellar/php/7.2.10/lib/httpd/modules/libphp7.so</code>。通过<code>php -v</code>可以查看php版本，<code>php -m</code>可以查看所有拓展。很多php应用都需要拓展模块的支持，例如搭建Minecraft服务器的PocketMine-MP需要leveldb支持，而生成图片验证码需要gd2支持，一些应用可能还需要redis等。php支持动态拓展，编译安装后可以通过<code>php.ini</code>进行配置。以安装phpredis为例，具体步骤为：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> /path/<span class="keyword">to</span>/your/phpredis</span><br><span class="line">phpize</span><br><span class="line">./configure</span><br><span class="line"><span class="keyword">make</span></span><br><span class="line"><span class="keyword">make</span> install</span><br></pre></td></tr></table></figure></p>
-<p>编译安装完成后，在<code>php.ini</code>中加入<code>extension=redis.so</code>，重启服务后即可启用拓展模块。如果你的软件包安装较为混乱，找不到<code>php.ini</code>，那么可以通过<code>php -i | grep &quot;/php.ini&quot;</code>获得它所在的目录，一般为<code>/private/etc/php.ini</code>。更多方法可以参考：<a href="https://blog.flxxyz.com/technology/2018/find-php-ini.html" target="_blank" rel="noopener">PHP 查找php.ini</a>。</p>
+<p>编译安装完成后，在<code>php.ini</code>中加入<code>extension=redis.so</code>，重启服务后即可启用拓展模块。如果你的软件包安装较为混乱，找不到<code>php.ini</code>，那么可以通过<code>php -i | grep &quot;/php.ini&quot;</code>获得它所在的目录，一般为<code>/private/etc/php.ini</code>。更多方法可以参考：<a href="https://blog.flxxyz.com/technology/2018/find-php-ini.html" target="_blank" rel="noopener">PHP 查找php.ini</a>。<br>还有一件事情是，要确保运行Apache的用户（默认为<code>_www</code>）对其根目录有读写权限，可以通过右键点击<code>Documents</code>文件夹，选择“显示简介”来修改权限，或通过<code>chmod</code>和<code>chown</code>命令递归的修改之。</p>
 <h2 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h2><p>如果使用<code>sudo apachectl start</code>命令启动Apache服务器，是不会显示错误信息的。因此，如果启动失败，还需要使用<code>sudo /usr/sbin/httpd -k start</code>查看报错信息。如果是httpd.conf配置出现问题，请对照报错的行数进行修改。如果是找不到目录等问题，检查相应的目录或权限即可。</p>
     </div>
     <footer class="post-footer">

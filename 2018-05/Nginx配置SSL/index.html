@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="安装CertBot首先，克隆Certbot在GitHub上的仓库到本地：1git clone https://github.com/certbot/certbot.git 在certbot文件夹下，有一个shell脚本，名为certbot-auto。你可以将其软链接为certbot，方便进行接下来的步骤。具体操作是，在你的家目录~下的.bashrc或.bash_profile文件中追加以下内容：1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-09T17:29:37.215Z">
+<meta property="og:updated_time" content="2018-11-15T12:56:53.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx配置SSL">
 <meta name="twitter:description" content="安装CertBot首先，克隆Certbot在GitHub上的仓库到本地：1git clone https://github.com/certbot/certbot.git 在certbot文件夹下，有一个shell脚本，名为certbot-auto。你可以将其软链接为certbot，方便进行接下来的步骤。具体操作是，在你的家目录~下的.bashrc或.bash_profile文件中追加以下内容：1">
@@ -196,7 +196,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
                 <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
             </span>
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
@@ -218,7 +218,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">3.2k</span>
+                <span title="本文字数">3.4k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
@@ -232,7 +232,7 @@
         <h2 id="安装CertBot"><a href="#安装CertBot" class="headerlink" title="安装CertBot"></a>安装CertBot</h2><p>首先，克隆Certbot在GitHub上的仓库到本地：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/certbot/certbot.git</span><br></pre></td></tr></table></figure></p>
 <p>在certbot文件夹下，有一个shell脚本，名为certbot-auto。你可以将其软链接为certbot，方便进行接下来的步骤。具体操作是，在你的家目录<code>~</code>下的<code>.bashrc</code>或<code>.bash_profile</code>文件中追加以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> certbot=/path/to/your/certbot/certbot-auto</span><br></pre></td></tr></table></figure></p>
 <p>然后执行<code>source ~/.bashrc</code>或<code>source ~/.bash_profile</code>，这样就可以直接使用certbot命令进行接下来的操作了。<br>当然，你也可以使用包管理工具安装certbot。不过，经测试，这种安装方式经常会产生错误，因此不建议使用。<br>以yum为例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install yum-utils</span><br><span class="line">yum-config-manager --<span class="built_in">enable</span> rhui-REGION-rhel-server-extras rhui-REGION-rhel-server-optional</span><br><span class="line">yum install certbot</span><br></pre></td></tr></table></figure></p>
-<p>其它系统的安装方式可以在官网上查询：<a href="https://certbot.eff.org" target="_blank" rel="noopener">https://certbot.eff.org</a><br>安装完成后，可以使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot -h</span><br></pre></td></tr></table></figure></p>
+<p>其它系统的安装方式可以在<a href="https://certbot.eff.org" target="_blank" rel="noopener">Certbot官网</a>上查询。<br>安装完成后，可以使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot -h</span><br></pre></td></tr></table></figure></p>
 <p>查看安装是否成功。如果报错，也可以尝试使用<code>pip install certbot</code>。<br>如果你使用了nginx服务器，还可以执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install certbot-nginx</span><br></pre></td></tr></table></figure></p>
 <p>安装Certbot的Nginx拓展。</p>
 <h2 id="配置CertBot"><a href="#配置CertBot" class="headerlink" title="配置CertBot"></a>配置CertBot</h2><p>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot --nginx</span><br></pre></td></tr></table></figure></p>
@@ -240,8 +240,8 @@
 <p>将<code>/path/to/your/webroot</code>替换为nginx的根目录，<code>your.domain.com</code>替换为你的域名，多个域名用逗号隔开。如果要申请通配符证书，请参考这篇文章：<a href="https://imjad.cn/archives/lab/letsencrypt-wildcard-certificate-support-is-live/" target="_blank" rel="noopener">Let’s Encrypt现已正式支持泛域名证书</a>。<br>如果一切顺利，会输出以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">IMPORTANT NOTES:</span><br><span class="line"> - Congratulations! Your certificate and chain have been saved at</span><br><span class="line">   /etc/letsencrypt/live/your.domain.com/fullchain.pem. Your cert</span><br><span class="line">   will expire on 20XX-09-23. To obtain a new or tweaked version of</span><br><span class="line">   this certificate <span class="keyword">in</span> the future, simply run certbot again. To</span><br><span class="line">   non-interactively renew *all* of your certificates, run <span class="string">"certbot</span></span><br><span class="line"><span class="string">   renew"</span></span><br><span class="line"> - If you like Certbot, please consider supporting our work by: </span><br><span class="line">   Donating to ISRG / Let<span class="string">'s Encrypt:   https://letsencrypt.org/donate</span></span><br><span class="line"><span class="string">   Donating to EFF:                    https://eff.org/donate-le</span></span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>  
 <p>生成的证书将会存放在<code>/etc/letsencrypt/live/</code>目录下。</p>
-<h2 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h2><p>接下来配置nginx.conf：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80 default backlog=2048;  <span class="comment">#如果硬性要求全部走https协议，这一行去除</span></span><br><span class="line">    listen 443 ssl;  <span class="comment">#如果硬性要求全部走https协议，这里去除ssl</span></span><br><span class="line">    server_name your.domain.com;</span><br><span class="line">    <span class="comment">#ssl on;  #如果硬性要求全部走https协议，这里开启ssl</span></span><br><span class="line">    ssl_certificate /etc/letsencrypt/live/your.domain.com/fullchain.pem;</span><br><span class="line">    ssl_certificate_key /etc/letsencrypt/live/your.domain.com/privkey.pem;</span><br><span class="line">    ssl_trusted_certificate /etc/letsencrypt/live/your.domain.com/chain.pem;</span><br><span class="line">    <span class="comment">#其余内容省略，无需更改</span></span><br></pre></td></tr></table></figure></p>
-<p>同理，将<code>your.domain.com</code>替换为你的域名。<br>更改完成后，执行<code>nginx -s reload</code>重新加载配置，这时就可以使用https访问了。</p>
+<h2 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h2><p>接下来配置nginx.conf：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    listen [::]:80; <span class="comment">#监听ipv6，如果没有必要可以删去</span></span><br><span class="line">    <span class="comment">#如果硬性要求全部走https协议，注释上两行</span></span><br><span class="line">    listen 443 ssl;</span><br><span class="line">    listen [::]:443 ssl; <span class="comment">#监听ipv6，如果没有必要可以删去</span></span><br><span class="line">    server_name your.domain.com;</span><br><span class="line">    ssl_certificate /etc/letsencrypt/live/your.domain.com/fullchain.pem;</span><br><span class="line">    ssl_certificate_key /etc/letsencrypt/live/your.domain.com/privkey.pem;</span><br><span class="line">    ssl_trusted_certificate /etc/letsencrypt/live/your.domain.com/chain.pem;</span><br><span class="line">    <span class="comment">#其余内容省略，无需更改</span></span><br></pre></td></tr></table></figure></p>
+<p>同理，将<code>your.domain.com</code>替换为你的域名。如果还要支持HTTP/2，请确保编译Nginx时设置了参数<code>--with-http_v2_module</code>，然后在这个配置文件中，将<code>listen 443 ssl;</code>改为<code>listen 443 ssl http2;</code>，ipv6同理。<br>更改完成后，执行<code>nginx -s reload</code>重新加载配置，这时就可以使用https访问了。</p>
 <h2 id="更新证书"><a href="#更新证书" class="headerlink" title="更新证书"></a>更新证书</h2><p>先在命令行模拟证书更新：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot renew --dry-run</span><br></pre></td></tr></table></figure></p>
 <p>模拟更新成功的效果如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">Processing /etc/letsencrypt/renewal/your.domain.com.conf</span><br><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">** DRY RUN: simulating <span class="string">'certbot renew'</span> close to cert expiry</span><br><span class="line">**          (The <span class="built_in">test</span> certificates below have not been saved.)</span><br><span class="line"></span><br><span class="line">Congratulations, all renewals succeeded. The following certs have been renewed:</span><br><span class="line">  /etc/letsencrypt/live/your.domain.com/fullchain.pem (success)</span><br><span class="line">** DRY RUN: simulating <span class="string">'certbot renew'</span> close to cert expiry</span><br><span class="line">**          (The <span class="built_in">test</span> certificates above have not been saved.)</span><br></pre></td></tr></table></figure></p>
 <p>如果模拟成功，就可以使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot renew &gt;&gt; /var/<span class="built_in">log</span>/le-renew.log</span><br></pre></td></tr></table></figure></p>
@@ -249,7 +249,7 @@
 <p>在打开的文件中添加配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">30 2 * * 1 /path/to/your/certbot renew  &gt;&gt; /var/<span class="built_in">log</span>/le-renew.log</span><br></pre></td></tr></table></figure></p>
 <p>这里建议使用certbot或certbot-auto的绝对地址，避免出现问题。这样，在每周一半夜2点30分就会执行renew任务，自动更新证书。<br>如果一切OK，那么我们的配置到此结束！</p>
 <p>参考文章：<br><a href="https://blog.csdn.net/p793049488/article/details/53483381/" target="_blank" rel="noopener">nginx+ssl配置http和https共存</a><br><a href="https://segmentfault.com/a/1190000005797776/" target="_blank" rel="noopener">手把手教你在Nginx上使用CertBot</a></p>
-<p>本文更新于2018年7月28日：<br>将推荐的CertBot安装方式由包管理工具改为Git项目</p>
+<p>本文更新于2018年7月28日：<br>在较新版本中，<code>ssl on</code>不再被使用，否则会报错：[warn] the “ssl” directive is deprecated, use the “listen … ssl” directive instead；将推荐的CertBot安装方式由包管理工具改为Git项目。</p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -333,13 +333,13 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">81</span>
+                    <span class="site-state-item-count">80</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
                 <div class="site-state-item site-state-categories">
                   <a href="/categories/index.html">
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="shell中的赋值和操作默认都是字符串处理，在此记下shell中进行数学运算的几个特殊方法。 错误方法12var=1+1echo $var 输出的结果是1+1123var=1var=$var+1echo $var 输出结果是1+1 正确方法使用let123var=1let &quot;var+=1&quot;echo $var 输出结果为2注意：经测试，let几乎支持所有的运算符，包括自加、自减以及括号等，且不同运算">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-30T11:07:10.104Z">
+<meta property="og:updated_time" content="2018-11-15T05:29:51.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell中数学运算总结">
 <meta name="twitter:description" content="shell中的赋值和操作默认都是字符串处理，在此记下shell中进行数学运算的几个特殊方法。 错误方法12var=1+1echo $var 输出的结果是1+1123var=1var=$var+1echo $var 输出结果是1+1 正确方法使用let123var=1let &quot;var+=1&quot;echo $var 输出结果为2注意：经测试，let几乎支持所有的运算符，包括自加、自减以及括号等，且不同运算">
@@ -248,7 +248,7 @@
 <h3 id="使用awk-支持浮点数计算"><a href="#使用awk-支持浮点数计算" class="headerlink" title="使用awk(支持浮点数计算)"></a>使用awk(支持浮点数计算)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var=1</span><br><span class="line">var=`<span class="built_in">echo</span> <span class="string">"<span class="variable">$var</span> 1"</span>|awk <span class="string">'&#123;printf("%g",$1+$2)&#125;'</span>`</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br></pre></td></tr></table></figure>
 <p>输出结果为2<br>介绍：<br>awk是一种文本处理工具，同时也是一种程序设计语言，作为一种程序设计语言，awk支持多种运算，而我们可以利用awk来进行浮点数计算，和上面bc一样，通过一个简单的管道，我们便可在程序中直接调用awk进行浮点数计算。<br>注意：<br>awk支持除微操作运算符之外的所有运算符<br>awk内置有log、sqr、cos、sin等函数<br>浮点数计算实例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var=3.14</span><br><span class="line">var=`<span class="built_in">echo</span> <span class="string">"<span class="variable">$var</span> 2"</span>|awk <span class="string">'&#123;printf("%g",sin($1/$2))&#125;'</span>`</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br></pre></td></tr></table></figure></p>
 <p>输出结果为1</p>
-<p>转载自：<a href="https://www.cnblogs.com/liujiahi/archive/2011/03/30/2196400.html" target="_blank" rel="noopener">shell 中数学计算总结</a></p>
+<p>本文转载自：<a href="https://www.cnblogs.com/liujiahi/archive/2011/03/30/2196400.html" target="_blank" rel="noopener">shell 中数学计算总结</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -333,13 +333,13 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">81</span>
+                    <span class="site-state-item-count">80</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
                 <div class="site-state-item site-state-categories">
                   <a href="/categories/index.html">
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

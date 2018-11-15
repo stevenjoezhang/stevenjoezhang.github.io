@@ -40,18 +40,18 @@
   };
 </script>
   <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
-  <meta name="description" content="本教程以macOS 10.13为例 准备工作下载最新的JDK在ORACLE官网下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，在打开的页面中找到JDK，选择Download，下载对应的版本 配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了使终端能正确">
+  <meta name="description" content="本教程以macOS 10.13为例 准备工作下载最新的JDK在ORACLE官网下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，在打开的页面中找到JDK，选择Download，下载对应的版本。 配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了使终端能正">
 <meta name="keywords" content="Mac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac反编译apk程序">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-03/Mac反编译apk程序/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="本教程以macOS 10.13为例 准备工作下载最新的JDK在ORACLE官网下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，在打开的页面中找到JDK，选择Download，下载对应的版本 配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了使终端能正确">
+<meta property="og:description" content="本教程以macOS 10.13为例 准备工作下载最新的JDK在ORACLE官网下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，在打开的页面中找到JDK，选择Download，下载对应的版本。 配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了使终端能正">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-09T17:29:37.180Z">
+<meta property="og:updated_time" content="2018-11-15T12:25:54.936Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac反编译apk程序">
-<meta name="twitter:description" content="本教程以macOS 10.13为例 准备工作下载最新的JDK在ORACLE官网下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，在打开的页面中找到JDK，选择Download，下载对应的版本 配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了使终端能正确">
+<meta name="twitter:description" content="本教程以macOS 10.13为例 准备工作下载最新的JDK在ORACLE官网下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，在打开的页面中找到JDK，选择Download，下载对应的版本。 配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了使终端能正">
   <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
   <link rel="canonical" href="https://zhangshuqiao.org/2018-03/Mac反编译apk程序/">
 <script type="text/javascript" id="page.configurations">
@@ -218,7 +218,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">1.6k</span>
+                <span title="本文字数">1.5k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
@@ -230,15 +230,15 @@
       </header>
     <div class="post-body" itemprop="articleBody">
         <p>本教程以macOS 10.13为例</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载最新的JDK"><a href="#下载最新的JDK" class="headerlink" title="下载最新的JDK"></a>下载最新的JDK</h3><p>在ORACLE官网下载最新的JDK<br>前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>，在底部找到<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Download Java for Developers</a>，在打开的页面中找到JDK，选择Download，下载对应的版本</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载最新的JDK"><a href="#下载最新的JDK" class="headerlink" title="下载最新的JDK"></a>下载最新的JDK</h3><p>在ORACLE官网下载最新的JDK<br>前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>，在底部找到<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Download Java for Developers</a>，在打开的页面中找到JDK，选择Download，下载对应的版本。</p>
 <h3 id="配置JDK"><a href="#配置JDK" class="headerlink" title="配置JDK"></a>配置JDK</h3><p>下载完成后，打开dmg镜像进行安装。JDK会被安装到<code>/Library/Java/JavaVirtualMachines</code>目录下。为了使终端能正确运行最新的JDK，需要在<code>~/.bash_profile</code>中增加以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home</span><br><span class="line">PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span>:.</span><br><span class="line">CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:.</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME</span><br><span class="line"><span class="built_in">export</span> PATH</span><br><span class="line"><span class="built_in">export</span> CLASSPATH</span><br></pre></td></tr></table></figure></p>
 <p>其中将jdk1.8.0_40.jdk换成你所安装的JDK对应的目录。修改完成后，重启终端或使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
 <p>使环境变量生效。</p>
 <a id="more"></a>
 <h3 id="下载apk反编译组件"><a href="#下载apk反编译组件" class="headerlink" title="下载apk反编译组件"></a>下载apk反编译组件</h3><ul>
-<li>Apktool <a href="https://ibotpeaches.github.io/Apktool/install/" target="_blank" rel="noopener">https://ibotpeaches.github.io/Apktool/install/</a></li>
-<li>JD-GUI <a href="http://jd.benow.ca" target="_blank" rel="noopener">http://jd.benow.ca/</a></li>
-<li>dex2jar <a href="https://github.com/pxb1988/dex2jar/" target="_blank" rel="noopener">https://github.com/pxb1988/dex2jar</a></li>
+<li><a href="https://ibotpeaches.github.io/Apktool/install/" target="_blank" rel="noopener">Apktool</a></li>
+<li><a href="http://jd.benow.ca" target="_blank" rel="noopener">JD-GUI</a></li>
+<li><a href="https://github.com/pxb1988/dex2jar/" target="_blank" rel="noopener">dex2jar</a></li>
 </ul>
 <h2 id="运行Apktool"><a href="#运行Apktool" class="headerlink" title="运行Apktool"></a>运行Apktool</h2><p>按照官网上的教程，将shell脚本和apktool.jar移动到<code>/usr/local/bin</code>后，在终端执行<code>apktool -h</code>，如果能正确显示帮助，则安装正常。<br>将需要反编译的apk文件（例如example.apk）放入任意目录中，cd进入该目录，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apktool d example.apk</span><br></pre></td></tr></table></figure></p>
 <p>即可进行反编译，这是会生成一个名为example的目录。如果要回编译，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apktool b example</span><br></pre></td></tr></table></figure></p>
@@ -286,8 +286,8 @@
         </div>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-              <a href="/2018-03/JavaScript中的this，prototype与函数原型/" rel="next" title="JavaScript中的this，prototype与函数原型">
-                <i class="fa fa-chevron-left"></i> JavaScript中的this，prototype与函数原型
+              <a href="/2018-03/MySQL5.7命令/" rel="next" title="MySQL5.7命令">
+                <i class="fa fa-chevron-left"></i> MySQL5.7命令
               </a>
           </div>
           <span class="post-nav-divider"></span>
@@ -332,13 +332,13 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">81</span>
+                    <span class="site-state-item-count">80</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
                 <div class="site-state-item site-state-categories">
                   <a href="/categories/index.html">
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

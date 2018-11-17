@@ -10,7 +10,7 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="Sublime Text是一款非常优秀的编辑器：速度快，界面简洁，插件众多；并且能够跨平台使用，在Mac和Windows上都发挥完美。虽然是一款付费软件，但作者很厚道地给了无限期的试用期限。这一切正如其官网广告词说的那样：The text editor you’ll fall in love with.Skim是一款免费轻量的PDF阅读、标注工具，布局贴心友好，与OS X自带的Previewer相">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-15T12:15:37.518Z">
+<meta property="og:updated_time" content="2018-11-18T08:49:51.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Mac上通过Sublime、Skim编辑LaTeX">
 <meta name="twitter:description" content="Sublime Text是一款非常优秀的编辑器：速度快，界面简洁，插件众多；并且能够跨平台使用，在Mac和Windows上都发挥完美。虽然是一款付费软件，但作者很厚道地给了无限期的试用期限。这一切正如其官网广告词说的那样：The text editor you’ll fall in love with.Skim是一款免费轻量的PDF阅读、标注工具，布局贴心友好，与OS X自带的Previewer相">
@@ -60,14 +60,6 @@
   };
 </script>
   <title>在Mac上通过Sublime、Skim编辑LaTeX | 米米的博客</title>
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
-<script async src="/lib/gtag.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-108155018-2');
-</script>
   <noscript>
   <style type="text/css">
     .use-motion .motion-element,
@@ -236,7 +228,7 @@
 <li>高速的互联网连接</li>
 </ul>
 <h2 id="安装MacTeX"><a href="#安装MacTeX" class="headerlink" title="安装MacTeX"></a>安装MacTeX</h2><ul>
-<li>进入<a href="http://www.tug.org/mactex/" target="_blank" rel="noopener">MacTeX官网</a>下载<code>MacTeX.pkg</code>文件。文件大约3GB，需要一段时间才能完成下载，趁现在去喝杯咖啡吧。</li>
+<li>进入<a href="http://www.tug.org/mactex" target="_blank" rel="noopener">MacTeX官网</a>下载<code>MacTeX.pkg</code>文件。文件大约3GB，需要一段时间才能完成下载，趁现在去喝杯咖啡吧。</li>
 <li>下载完成之后，双击<code>MacTeX.pkg</code>进行安装。</li>
 <li>安装完成之后，会看到许多与TeX有关的程序图标，暂时忽略它们。</li>
 </ul>
@@ -246,7 +238,7 @@
 </ul>
 <h2 id="在Sublime-Text中安装Package-Control"><a href="#在Sublime-Text中安装Package-Control" class="headerlink" title="在Sublime Text中安装Package Control"></a>在Sublime Text中安装Package Control</h2><p>我们需要在Sublime Text中下载插件以便能够很好地操作与$\LaTeX$有关的文件。而插件是通过Package Control下载的。</p>
 <ul>
-<li>进入<a href="http://sublime.wbond.net/installation/" target="_blank" rel="noopener">Package Control官网</a>复制灰色区块的代码。</li>
+<li>进入<a href="http://sublime.wbond.net/installation" target="_blank" rel="noopener">Package Control官网</a>复制灰色区块的代码。</li>
 <li>打开Sublime Text。</li>
 <li>使用快捷键<code>control+~</code>打开控制面板Console。你会在Sublime Text的底部看到弹出一个白色窗口。</li>
 <li>将刚才复制的代码粘贴到控制面板。</li>
@@ -271,7 +263,7 @@
 <p>修改为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pdflatex = [<span class="string">"xelatex"</span>, <span class="string">"-interaction=nonstopmode"</span>, <span class="string">"-synctex=1"</span>]</span><br></pre></td></tr></table></figure></p>
 <p>保存后关闭，重新编译一下，中文正常啦！</p>
 <p>现在，我们已经做完了所有的步骤✌️，可以打开Sublime Text，<code>Command+N</code>新建文件并在里面编写$\LaTeX$代码了，完成编辑之后，<code>Command+S</code>保存文件，<code>Command+B</code>编译并运行，这时就可以在Skim里面看到PDF预览了。<br>如果使用LaTeX Tools编译出现问题，可以尝试在命令行中直接进行编译：在第一步完成后，打开终端，cd到tex所在到文件夹，使用<code>xelatex *.tex</code>，编译tex文件为pdf。如果成功，你可见将它添加到Sublime Text的Build System中，也可以实现一键编译。除此之外，还可以使用Pandoc等命令行工具将tex转为其他格式的文档。<br>在Windows上可以通过安装TexLive的方法配置TeX环境，过程是类似的。需要注意的是，tex文件需采用UTF-8编码。</p>
-<p>参考文章：<a href="http://blog.csdn.net/songrotek/article/details/46457571/" target="_blank" rel="noopener">在Mac OS X下搭建Latex编辑环境</a></p>
+<p>参考文章：<a href="http://blog.csdn.net/songrotek/article/details/46457571" target="_blank" rel="noopener">在Mac OS X下搭建Latex编辑环境</a></p>
 <p>本文更新于2018年5月</p>
     </div>
       <div>
@@ -288,6 +280,10 @@
       <div id="alipay" style="display: inline-block">
         <img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝">
         <p>支付宝</p>
+      </div>
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="张书樵 比特币">
+        <p>比特币</p>
       </div>
   </div>
 </div>
@@ -442,7 +438,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>

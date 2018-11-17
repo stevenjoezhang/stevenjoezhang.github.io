@@ -10,7 +10,7 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
@@ -59,14 +59,6 @@
   };
 </script>
   <title>米米的博客</title>
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
-<script async src="/lib/gtag.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-108155018-2');
-</script>
   <noscript>
   <style type="text/css">
     .use-motion .motion-element,
@@ -361,18 +353,18 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">2.8k</span>
+                <span title="本文字数">4.2k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
                 </span>
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">4 分钟</span>
             </div>
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-            <p>因为旧版本已经停止维护，博主近日将Hexo博客的NexT主题由5.1版本升级为了6.0。由于曾经手动修改过主题的部分css样式和js代码，更新后需要再次调整，故将具体的内容记录于此。<br>这些自定义内容适用于Gemini，对于其它主题可能需要微调。以下所有提到的文件都在<code>themes/next</code>目录下，为相对路径。对于css（即styl文件），可以直接修改原文件，也可以将样式添加到<code>source/css/_custom/custom.styl</code>中。</p>
+          <p>因为旧版本已经停止维护，博主近日将Hexo博客的NexT主题由5.1版本升级为了6.0。由于曾经手动修改过主题的部分css样式和js代码，更新后需要再次调整，故将具体的内容记录于此。<br>这些自定义内容适用于Gemini，对于其它主题可能需要微调。以下所有提到的文件都在<code>themes/next</code>目录下，为相对路径。对于css（即styl文件），可以直接修改原文件，也可以将样式添加到<code>source/css/_custom/custom.styl</code>中。</p>
 <h2 id="链接颜色"><a href="#链接颜色" class="headerlink" title="链接颜色"></a>链接颜色</h2><p>在<code>source/css/_variables/base.styl</code>文件中定义了各种项目的默认颜色。<code>$link-color</code>和<code>$link-hover-color</code>就是链接在默认和鼠标悬浮状态下的颜色，可以将他们修改为其他的颜色宏。</p>
 <h2 id="canvas-ribbon"><a href="#canvas-ribbon" class="headerlink" title="canvas-ribbon"></a>canvas-ribbon</h2><p>没人知道为什么canvas-ribbon背景“Only fit scheme Pisces”而不能在其它主题下使用。在<code>layout/_scripts/vendors.swig</code>中，找到<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.canvas_ribbon.enable and theme.scheme === <span class="string">'Pisces'</span>%&#125;</span><br><span class="line">  &#123;% set js_vendors.canvas_ribbon  = <span class="string">'canvas-ribbon/canvas-ribbon.js'</span> %&#125;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure></p>
 <p>删除<code>theme.scheme === &#39;Pisces&#39;</code>即可。</p>
@@ -383,10 +375,13 @@
 <h2 id="needsharebutton"><a href="#needsharebutton" class="headerlink" title="needsharebutton"></a>needsharebutton</h2><p>可以为needsharebutton添加自定义文字。在<code>layout/_macro/post.swig</code>中，找到以下内容：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"needsharebutton-postbottom"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"btn"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-share-alt"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>将其修改为：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"btn"</span> <span class="attr">style</span>=<span class="string">"font-size: 18px;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-star-o"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span> 收藏</span><br><span class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-divider"</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"needsharebutton-postbottom"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"btn"</span> <span class="attr">style</span>=<span class="string">"font-size: 18px;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-share-alt"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span> 分享</span><br><span class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-divider"</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"btn"</span> <span class="attr">style</span>=<span class="string">"font-size: 18px;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-thumbs-o-up"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span> 点赞</span><br><span class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>你还可以删除它的父元素<code>&lt;div class=&quot;social_share&quot;&gt;</code>以防止被某些浏览器屏蔽。</p>
-<p><strong>注：如果在NexT主题下的<code>_config.yml</code>文件中，设置了<code>han: true</code>，这时还需要修改以下内容。若没有启用可忽略。</strong></p>
-<h2 id="正文到标题距离"><a href="#正文到标题距离" class="headerlink" title="正文到标题距离"></a>正文到标题距离</h2><p>每一篇文章的内容到文章标题的margin默认是60px，在某些情况下这可能太大了。在<code>source/css/_common/components/post/post-meta.styl</code>中，将<code>.posts-expand .post-meta</code>的margin-bottom修改为30px：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.posts-expand</span> <span class="selector-class">.post-meta</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">3px</span> <span class="number">0</span> <span class="number">30px</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure></p>
-<h2 id="小标题的margin"><a href="#小标题的margin" class="headerlink" title="小标题的margin"></a>小标题的margin</h2><p>文章内部的h1到h6标题，会存在margin-bottom较小的问题。<br>在<code>source/css/_common/scaffolding/base.styl</code>中找到并修改内容：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span> &#123; <span class="attribute">margin</span>: <span class="number">20px</span> <span class="number">0</span> <span class="number">30px</span>; &#125;</span><br></pre></td></tr></table></figure></p>
-<p>将0px改为30px即可。</p>
+          <!--noindex-->
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-07/Hexo NexT主题优化/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
     </div>
     <footer class="post-footer">
         <div class="post-eof"></div>
@@ -449,7 +444,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-          <p>反机器人和垃圾评论是个人博客老生常谈的话题。除了算法特征识别外，最普遍使用的屏蔽方法就是验证码了。在WordPress插件库中，有着各式各样的验证码插件。然而，很多验证码插件都依赖于Google的reCAPTCHA，这在国内无法访问；而一些基于Session或文件验证的验证码插件功能和质量参差不齐，性能和安全程度难以得到保障。虽然博主已经抛弃了WordPress转投Hexo静态博客（正如你所看到的这样），但考虑到WordPress中少有适合我国国情的验证码插件，故决定将一些主流图形验证码的功能进行整合，制作出一个全新的通用性更强的验证码解决方案。这个WordPress插件是博主第一次尝试魔改的结果，它被命名为Mimi Captcha，一个同时支持数字、大小写字母、中文、算术的图形验证码插件。<br>本项目基于Vinoj Cardoza的<a href="https://wordpress.org/plugins/captcha-code-authentication/" target="_blank" rel="noopener">Captcha Code</a>在GPL协议下二次开发。原项目存在的问题是，验证码中的字符采用同一字体在同一高度下顺序排列，这样非常容易被识别。改动过程中，加入了“超时时间”设置，以及对用户更为友好的“不区分大小写”设置。而验证码图片的生成算法，则进行了重构，很大程度上采用了<a href="http://www.iteye.com/topic/469170/" target="_blank" rel="noopener">流水孟春</a>的方案。同时，在IP白名单等功能上，参考了<a href="https://wordpress.org/plugins/captcha/" target="_blank" rel="noopener">Captcha</a>的代码。中文验证码和算术验证码则是新加入的功能，在原插件上拓展而成。最终效果如图：<br><img src="/images/2018-07/screenshot-2.png" alt=""></p>
+          <p>反机器人和垃圾评论是个人博客老生常谈的话题。除了算法特征识别外，最普遍使用的屏蔽方法就是验证码了。在WordPress插件库中，有着各式各样的验证码插件。然而，很多验证码插件都依赖于Google的reCAPTCHA，这在国内无法访问；而一些基于Session或文件验证的验证码插件功能和质量参差不齐，性能和安全程度难以得到保障。虽然博主已经抛弃了WordPress转投Hexo静态博客（正如你所看到的这样），但考虑到WordPress中少有适合我国国情的验证码插件，故决定将一些主流图形验证码的功能进行整合，制作出一个全新的通用性更强的验证码解决方案。这个WordPress插件是博主第一次尝试魔改的结果，它被命名为Mimi Captcha，一个同时支持数字、大小写字母、中文、算术的图形验证码插件。<br>本项目基于Vinoj Cardoza的<a href="https://wordpress.org/plugins/captcha-code-authentication/" target="_blank" rel="noopener">Captcha Code</a>在GPL协议下二次开发。原项目存在的问题是，验证码中的字符采用同一字体在同一高度下顺序排列，这样非常容易被识别。改动过程中，加入了“超时时间”设置，以及对用户更为友好的“不区分大小写”设置。而验证码图片的生成算法，则进行了重构，很大程度上采用了<a href="http://www.iteye.com/topic/469170/" target="_blank" rel="noopener">流水孟春</a>的方案。同时，在IP白名单等功能上，参考了<a href="https://wordpress.org/plugins/captcha" target="_blank" rel="noopener">Captcha</a>的代码。中文验证码和算术验证码则是新加入的功能，在原插件上拓展而成。最终效果如图：<br><img src="/images/2018-07/screenshot-2.png" alt=""></p>
           <!--noindex-->
             <div class="post-button text-center">
               <a class="btn" href="/2018-07/WordPress中文验证码/#more" rel="contents">
@@ -712,7 +707,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>

@@ -10,7 +10,7 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
@@ -59,14 +59,6 @@
   };
 </script>
   <title>米米的博客</title>
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
-<script async src="/lib/gtag.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-108155018-2');
-</script>
   <noscript>
   <style type="text/css">
     .use-motion .motion-element,
@@ -495,7 +487,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-            <p>经过为期半个月的测试，米米直播平台成功实现了多线路及多种播放方式的直播：<br>线路一是无需Flash支持的HLS直播，对移动端支持极为友好，只是由于原理所限，延时约为45秒；线路一的播放方式有原生HLS和Video.js解码的HLS，能够覆盖大部分设备。<br>线路二是基于Bilibili开源的<a href="https://github.com/Bilibili/flv.js/" target="_blank" rel="noopener">flv.js</a>的HTTP FLV直播，同样无须Flash，且延时仅有3秒；该播放方式兼容大部分桌面浏览器，但由于需要<a href="https://w3c.github.io/media-source/" target="_blank" rel="noopener">Media Source Extensions</a> API支持，对移动端不友好；该线路各项直播数据已经可以媲美各大主流直播平台。<br>线路三为基于video.js和Flash的RTMP直播流，延时亦为3秒左右；不过考虑到Flash的种种弊端，线路三只是作为备用线路。原生HTML5直播在性能上明显优于Flash。<br><img src="/images/2018-02/mimilive.png" alt=""></p>
+            <p>经过为期半个月的测试，米米直播平台成功实现了多线路及多种播放方式的直播：<br>线路一是无需Flash支持的HLS直播，对移动端支持极为友好，只是由于原理所限，延时约为45秒；线路一的播放方式有原生HLS和Video.js解码的HLS，能够覆盖大部分设备。<br>线路二是基于Bilibili开源的<a href="https://github.com/Bilibili/flv.js/" target="_blank" rel="noopener">flv.js</a>的HTTP FLV直播，同样无须Flash，且延时仅有3秒；该播放方式兼容大部分桌面浏览器，但由于需要<a href="https://w3c.github.io/media-source" target="_blank" rel="noopener">Media Source Extensions</a> API支持，对移动端不友好；该线路各项直播数据已经可以媲美各大主流直播平台。<br>线路三为基于video.js和Flash的RTMP直播流，延时亦为3秒左右；不过考虑到Flash的种种弊端，线路三只是作为备用线路。原生HTML5直播在性能上明显优于Flash。<br><img src="/images/2018-02/mimilive.png" alt=""></p>
 <p>根据最新规划，米米视频将专注于视频点播功能，点播的视频大部分为原创作品；而米米直播目前已开放了一个<a href="https://galaxymimi.com/live/?room=mimi&amp;player=1" target="_blank" rel="noopener">测试频道</a>，未来将进行拓展。关于推流码验证的相关功能正在完善。附上链接：<br><a href="https://galaxymimi.com/player/" target="_blank" rel="noopener">米米视频</a><br><a href="https://galaxymimi.com/live/" target="_blank" rel="noopener">米米直播</a></p>
     </div>
     <footer class="post-footer">
@@ -677,7 +669,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>

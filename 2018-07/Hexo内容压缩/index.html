@@ -10,7 +10,7 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="Hexo生成的博客静态页面存在一些问题：页面中有大量空白行。虽然这对浏览器的渲染影响微乎其微，但是让强迫症极为难受。可以在博客的主目录下（与public文件夹同级）新建以下python脚本：12345678910111213141516171819202122232425262728#!/usr/bin/env python#-*- coding:utf-8 -*-import re, osdef">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-15T05:30:43.619Z">
+<meta property="og:updated_time" content="2018-11-18T08:49:51.215Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo内容压缩">
 <meta name="twitter:description" content="Hexo生成的博客静态页面存在一些问题：页面中有大量空白行。虽然这对浏览器的渲染影响微乎其微，但是让强迫症极为难受。可以在博客的主目录下（与public文件夹同级）新建以下python脚本：12345678910111213141516171819202122232425262728#!/usr/bin/env python#-*- coding:utf-8 -*-import re, osdef">
@@ -60,14 +60,6 @@
   };
 </script>
   <title>Hexo内容压缩 | 米米的博客</title>
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
-<script async src="/lib/gtag.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-108155018-2');
-</script>
   <noscript>
   <style type="text/css">
     .use-motion .motion-element,
@@ -234,8 +226,8 @@
 <a id="more"></a>
 <p>如果Hexo博客托管在GitHub Pages等第三方平台上，为了减少页面的加载时间，对图片等内容进行CDN加速是一个不错的方法。当然，还有一个更为直接的方法，那就是通过调整分辨率减少图片大小。这是压缩图片的脚本：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compressImage</span><span class="params">(srcPath, dstPath)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(srcPath):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(dstPath):</span><br><span class="line">            os.makedirs(dstPath)</span><br><span class="line"></span><br><span class="line">        srcFile = os.path.join(srcPath, filename)</span><br><span class="line">        dstFile = os.path.join(dstPath, filename)</span><br><span class="line">        <span class="keyword">if</span> os.path.isfile(srcFile):</span><br><span class="line">            <span class="keyword">if</span> os.path.isfile(dstFile) <span class="keyword">or</span> (<span class="keyword">not</span> srcFile.endswith(<span class="string">".jpg"</span>) <span class="keyword">and</span> <span class="keyword">not</span> srcFile.endswith(<span class="string">".png"</span>)):</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> os.path.getsize(srcFile) &lt;= <span class="number">300000</span>:</span><br><span class="line">                shutil.copyfile(srcFile, dstFile)</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            sImg = Image.open(srcFile)</span><br><span class="line">            w, h = sImg.size</span><br><span class="line">            dImg = sImg.resize((w * <span class="number">2</span> / <span class="number">3</span>, h * <span class="number">2</span> / <span class="number">3</span>), Image.ANTIALIAS)</span><br><span class="line">            dImg.save(dstFile)</span><br><span class="line">            <span class="keyword">print</span> <span class="string">'INFO  Minified: \033[35m%s\033[0m'</span> % dstFile</span><br><span class="line"></span><br><span class="line">        <span class="keyword">elif</span> os.path.isdir(srcFile):</span><br><span class="line">            compressImage(srcFile, dstFile)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</span><br><span class="line">    compressImage(<span class="string">"images"</span>, <span class="string">"source/images"</span>)</span><br></pre></td></tr></table></figure></p>
 <p>在每次执行<code>hexo g</code>之前，在博客的主目录下执行该脚本，就可以将images目录下的高分辨率图片，压缩并存储到source/images目录下。如果要在Markdown文件中插入图片，使用<code>![](/images/path/to/your/images)</code>即可。<br>如果有兴趣，你也可以使用<code>os.walk()</code>方法改写以上脚本，这可能会更加简洁。</p>
-<p>参考文章：<br><a href="https://blog.jiangjiaolong.com/hexo-next-theme-minify.html" target="_blank" rel="noopener">hexo next主题大量空白行问题</a><br><a href="https://blog.csdn.net/u012234115/article/details/50248409/" target="_blank" rel="noopener">python脚本编程：批量压缩图片大小</a></p>
-<p>本文更新于2018年11月15日：<br>也可以使用官方的插件：<a href="https://github.com/hexojs/hexo-html-minifier/" target="_blank" rel="noopener">hexo-html-minifier</a></p>
+<p>参考文章：<br><a href="https://blog.jiangjiaolong.com/hexo-next-theme-minify.html" target="_blank" rel="noopener">hexo next主题大量空白行问题</a><br><a href="https://blog.csdn.net/u012234115/article/details/50248409" target="_blank" rel="noopener">python脚本编程：批量压缩图片大小</a></p>
+<p>本文更新于2018年11月15日：<br>也可以使用官方的插件：<a href="https://github.com/hexojs/hexo-html-minifier" target="_blank" rel="noopener">hexo-html-minifier</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -251,6 +243,10 @@
       <div id="alipay" style="display: inline-block">
         <img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝">
         <p>支付宝</p>
+      </div>
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="张书樵 比特币">
+        <p>比特币</p>
       </div>
   </div>
 </div>
@@ -390,7 +386,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>

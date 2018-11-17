@@ -10,7 +10,7 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
@@ -50,7 +50,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-06/1.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-06/2.png">
-<meta property="og:updated_time" content="2018-11-09T17:29:37.225Z">
+<meta property="og:updated_time" content="2018-11-18T08:49:51.211Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python开发表情包网站">
 <meta name="twitter:description" content="“表情包”是一种利用图片来表示感情的方式。在社交软件活跃之后，“表情包”已经形成了一种流行文化，在互联网上，基本人人都会发表情。不知曾经你是否也有过找不到表情包去应对别人的时候？今天博主分享用Python开发个人专属的表情包网站的方法，想用什么表情包搜一下就有了！目标：获取海量表情包，存入数据库，然后搭建简单网站，通过输入关键字获取对应的的表情包 创建数据库首先，我们要从这个网站爬取表情包：htt">
@@ -63,14 +63,6 @@
   };
 </script>
   <title>Python开发表情包网站 | 米米的博客</title>
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
-<script async src="/lib/gtag.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-108155018-2');
-</script>
   <noscript>
   <style type="text/css">
     .use-motion .motion-element,
@@ -243,7 +235,7 @@
 <p>将这个文件命名为<code>index.py</code>。在这个py文件的同一目录下，新建文件夹，命名为<code>templates</code>，在该文件夹内创建<code>index.html</code>：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>斗图网站<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span> = <span class="string">'/search'</span>&gt;</span></span><br><span class="line">    关键字：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">'text'</span> <span class="attr">name</span> = <span class="string">'kw'</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    查询的数量：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">'text'</span> <span class="attr">name</span> = <span class="string">'count'</span> <span class="attr">value</span> = <span class="string">'100'</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">'submit'</span> <span class="attr">value</span> = <span class="string">'查询'</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;% for i in images %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span> = <span class="string">"&#123;&#123;i.imageUrl&#125;&#125;"</span> <span class="attr">alt</span> = <span class="string">"&#123;&#123;i.name&#125;&#125;"</span>&gt;</span></span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>完成后，回到上一目录，在命令行执行<code>python3 index.py</code>，然后访问<code>localhost:5000</code>即可开始斗图了！<br><img src="/images/2018-06/2.png" alt=""></p>
 <p>其他设备获取本机IP后，通过5000端口也可以正常浏览。</p>
-<p>参考文章：<br><a href="https://blog.csdn.net/three_co/article/details/78575634/" target="_blank" rel="noopener">关于Python爬虫之获取海量表情包+存入数据库+搭建网站通过关键字查询表情包</a><br><a href="https://mp.weixin.qq.com/s/dpJOMSdDzkONzV79z7RgYQ/" target="_blank" rel="noopener">Python开发个人专属表情包网站，表情在手，天下我有</a></p>
+<p>参考文章：<br><a href="https://blog.csdn.net/three_co/article/details/78575634" target="_blank" rel="noopener">关于Python爬虫之获取海量表情包+存入数据库+搭建网站通过关键字查询表情包</a><br><a href="https://mp.weixin.qq.com/s/dpJOMSdDzkONzV79z7RgYQ" target="_blank" rel="noopener">Python开发个人专属表情包网站，表情在手，天下我有</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -259,6 +251,10 @@
       <div id="alipay" style="display: inline-block">
         <img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝">
         <p>支付宝</p>
+      </div>
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="张书樵 比特币">
+        <p>比特币</p>
       </div>
   </div>
 </div>
@@ -413,7 +409,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>

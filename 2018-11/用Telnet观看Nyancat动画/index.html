@@ -10,7 +10,7 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
@@ -49,7 +49,7 @@
 <meta property="og:description" content="前言最近在知乎上看到一个关于VPS有趣的用途的问题，其中一个回答提到了可以搭建Telnet服务器，成功运行后别人用Telnet连接你的主机将会看到Nyancat动画。大致效果如图所示：然而，回答中给出的Demo已经失效，telnet nyancat.dakko.us会返回一个Connection refused错误。不过值得庆幸的是，这个项目的官方网站Nyan Cat Telnet Server和">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-11/nyancat.png">
-<meta property="og:updated_time" content="2018-11-15T06:24:32.081Z">
+<meta property="og:updated_time" content="2018-11-18T08:49:51.252Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用Telnet观看Nyancat动画">
 <meta name="twitter:description" content="前言最近在知乎上看到一个关于VPS有趣的用途的问题，其中一个回答提到了可以搭建Telnet服务器，成功运行后别人用Telnet连接你的主机将会看到Nyancat动画。大致效果如图所示：然而，回答中给出的Demo已经失效，telnet nyancat.dakko.us会返回一个Connection refused错误。不过值得庆幸的是，这个项目的官方网站Nyan Cat Telnet Server和">
@@ -62,14 +62,6 @@
   };
 </script>
   <title>用Telnet观看Nyancat动画 | 米米的博客</title>
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
-<script async src="/lib/gtag.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-108155018-2');
-</script>
   <noscript>
   <style type="text/css">
     .use-motion .motion-element,
@@ -231,7 +223,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在知乎上看到一个关于VPS有趣的用途的问题，<a href="https://www.zhihu.com/question/24284566/answer/27291403/" target="_blank" rel="noopener">其中一个回答</a>提到了可以搭建Telnet服务器，成功运行后别人用Telnet连接你的主机将会看到Nyancat动画。大致效果如图所示：<br><img src="/images/2018-11/nyancat.png" alt=""><br>然而，回答中给出的Demo已经失效，<code>telnet nyancat.dakko.us</code>会返回一个<code>Connection refused</code>错误。不过值得庆幸的是，这个项目的官方网站<a href="http://nyancat.dakko.us" target="_blank" rel="noopener">Nyan Cat Telnet Server</a>和<a href="https://github.com/klange/nyancat/" target="_blank" rel="noopener">GitHub项目地址</a>都还可以正常访问，因此可以尝试重新把它搭起来。你可以查看博主建立的镜像：<code>telnet zsq.im 8080</code>，这是按以下方法搭建好的结果。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在知乎上看到一个关于VPS有趣的用途的问题，<a href="https://www.zhihu.com/question/24284566/answer/27291403" target="_blank" rel="noopener">其中一个回答</a>提到了可以搭建Telnet服务器，成功运行后别人用Telnet连接你的主机将会看到Nyancat动画。大致效果如图所示：<br><img src="/images/2018-11/nyancat.png" alt=""><br>然而，回答中给出的Demo已经失效，<code>telnet nyancat.dakko.us</code>会返回一个<code>Connection refused</code>错误。不过值得庆幸的是，这个项目的官方网站<a href="http://nyancat.dakko.us" target="_blank" rel="noopener">Nyan Cat Telnet Server</a>和<a href="https://github.com/klange/nyancat" target="_blank" rel="noopener">GitHub项目地址</a>都还可以正常访问，因此可以尝试重新把它搭起来。你可以查看博主建立的镜像：<code>telnet zsq.im 8080</code>，这是按以下方法搭建好的结果。</p>
 <h2 id="下载编译"><a href="#下载编译" class="headerlink" title="下载编译"></a>下载编译</h2><p>在命令行执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/klange/nyancat.git</span><br><span class="line"><span class="built_in">cd</span> nyancat</span><br><span class="line">make &amp;&amp; <span class="built_in">cd</span> src</span><br><span class="line">mv nyancat usr/<span class="built_in">local</span>/bin <span class="comment">#or make install</span></span><br></pre></td></tr></table></figure></p>
 <p>这时，通过<code>nyancat</code>或<code>nyancat -t</code>命令就可以查看效果。接下来把Telnet配置好就行了。</p>
 <h2 id="配置Telnet"><a href="#配置Telnet" class="headerlink" title="配置Telnet"></a>配置Telnet</h2><p>使用包管理工具安装<code>xinetd</code>，例如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install xinetd</span><br></pre></td></tr></table></figure></p>
@@ -254,6 +246,10 @@
       <div id="alipay" style="display: inline-block">
         <img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝">
         <p>支付宝</p>
+      </div>
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="张书樵 比特币">
+        <p>比特币</p>
       </div>
   </div>
 </div>
@@ -407,7 +403,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>

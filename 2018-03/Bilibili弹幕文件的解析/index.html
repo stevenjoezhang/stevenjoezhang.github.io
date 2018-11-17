@@ -10,7 +10,7 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="B站的每个视频都有aid和cid两个参数，在已知视频aid（AV号）的情况下，可以通过https://www.bilibili.com/widget/getPageList?aid=$aid获取cid（将$aid替换为视频的aid）。视频的弹幕文件采用xml格式存储，地址与其cid有关，为https://comment.bilibili.com/$cid.xml（将$cid替换为视频的cid即可）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-15T12:22:02.833Z">
+<meta property="og:updated_time" content="2018-11-18T08:49:51.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bilibili弹幕文件的解析">
 <meta name="twitter:description" content="B站的每个视频都有aid和cid两个参数，在已知视频aid（AV号）的情况下，可以通过https://www.bilibili.com/widget/getPageList?aid=$aid获取cid（将$aid替换为视频的aid）。视频的弹幕文件采用xml格式存储，地址与其cid有关，为https://comment.bilibili.com/$cid.xml（将$cid替换为视频的cid即可）">
@@ -60,14 +60,6 @@
   };
 </script>
   <title>Bilibili弹幕文件的解析 | 米米的博客</title>
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
-<script async src="/lib/gtag.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-108155018-2');
-</script>
   <noscript>
   <style type="text/css">
     .use-motion .motion-element,
@@ -241,7 +233,7 @@
 <li>第七个参数是发送者的ID，用于“屏蔽此弹幕的发送者”功能</li>
 <li>第八个参数是弹幕在弹幕数据库中rowID，用于“历史弹幕”功能</li>
 </ul>
-<p>将Bilibili弹幕的xml文件转为ass字幕，可以使用以下脚本：<br><a href="http://tiansh.github.io/us-danmaku/bilibili/" target="_blank" rel="noopener">bilibili ASS 弹幕在线转换</a><br><a href="https://github.com/tiansh/us-danmaku/" target="_blank" rel="noopener">us-danmaku</a><br>关于ass字幕格式可以参考以下文章：<br><a href="https://www.douban.com/note/658520175/" target="_blank" rel="noopener">ASS字幕格式规范</a></p>
+<p>将Bilibili弹幕的xml文件转为ass字幕，可以使用以下脚本：<br><a href="http://tiansh.github.io/us-danmaku/bilibili" target="_blank" rel="noopener">bilibili ASS 弹幕在线转换</a><br><a href="https://github.com/tiansh/us-danmaku" target="_blank" rel="noopener">us-danmaku</a><br>关于ass字幕格式可以参考以下文章：<br><a href="https://www.douban.com/note/658520175" target="_blank" rel="noopener">ASS字幕格式规范</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -257,6 +249,10 @@
       <div id="alipay" style="display: inline-block">
         <img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝">
         <p>支付宝</p>
+      </div>
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="张书樵 比特币">
+        <p>比特币</p>
       </div>
   </div>
 </div>
@@ -392,7 +388,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>

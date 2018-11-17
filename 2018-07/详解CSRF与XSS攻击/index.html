@@ -10,7 +10,7 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="在之前的一篇文章中，提到了WordPress的插件审核机制，其中对于代码安全性的要求，主要就是对CSRF与XSS攻击的防范。官方邮件中这样写道：  Not using Nonces and/or checking permissionsPlease add a nonce to your POST calls to prevent unauthorized access.Keep in mind,">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-09T17:29:37.254Z">
+<meta property="og:updated_time" content="2018-11-18T08:49:51.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="详解CSRF与XSS攻击">
 <meta name="twitter:description" content="在之前的一篇文章中，提到了WordPress的插件审核机制，其中对于代码安全性的要求，主要就是对CSRF与XSS攻击的防范。官方邮件中这样写道：  Not using Nonces and/or checking permissionsPlease add a nonce to your POST calls to prevent unauthorized access.Keep in mind,">
@@ -60,14 +60,6 @@
   };
 </script>
   <title>详解CSRF与XSS攻击 | 米米的博客</title>
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
-<script async src="/lib/gtag.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-108155018-2');
-</script>
   <noscript>
   <style type="text/css">
     .use-motion .motion-element,
@@ -266,7 +258,7 @@
 <h3 id="使用HTTP头指定类型"><a href="#使用HTTP头指定类型" class="headerlink" title="使用HTTP头指定类型"></a>使用HTTP头指定类型</h3><p>很多时候可以使用HTTP头指定内容的类型，使得输出的内容避免被作为HTML解析。如在PHP语言中使用以下代码：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    header(<span class="string">'Content-Type: text/javascript; charset=utf-8'</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>即可强行指定输出内容为文本/JavaScript脚本（顺便指定了内容编码），而非可以引发攻击的HTML。</p>
 <h3 id="用户方面"><a href="#用户方面" class="headerlink" title="用户方面"></a>用户方面</h3><p>包括Internet Explorer、Mozilla Firefox在内的大多数浏览器皆有关闭JavaScript的选项，但关闭功能并非是最好的方法，因为许多网站都需要使用JavaScript语言才能正常运作。通常来说，一个经常有安全更新推出的浏览器，在使用上会比很久都没有更新的浏览器更为安全。</p>
-<p>参考文章：<br><a href="https://zh.wikipedia.org/wiki/跨站请求伪造/" target="_blank" rel="noopener">跨站请求伪造 - 维基百科</a><br><a href="https://zh.wikipedia.org/wiki/跨網站指令碼/" target="_blank" rel="noopener">跨站脚本 - 维基百科</a><br><a href="https://codex.wordpress.org/WordPress_Nonces/" target="_blank" rel="noopener">WordPress Nonces</a><br><a href="https://developer.wordpress.org/plugins/security/securing-input/" target="_blank" rel="noopener">Securing Input</a></p>
+<p>参考文章：<br><a href="https://zh.wikipedia.org/wiki/跨站请求伪造" target="_blank" rel="noopener">跨站请求伪造 - 维基百科</a><br><a href="https://zh.wikipedia.org/wiki/跨網站指令碼" target="_blank" rel="noopener">跨站脚本 - 维基百科</a><br><a href="https://codex.wordpress.org/WordPress_Nonces" target="_blank" rel="noopener">WordPress Nonces</a><br><a href="https://developer.wordpress.org/plugins/security/securing-input" target="_blank" rel="noopener">Securing Input</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -282,6 +274,10 @@
       <div id="alipay" style="display: inline-block">
         <img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝">
         <p>支付宝</p>
+      </div>
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="张书樵 比特币">
+        <p>比特币</p>
       </div>
   </div>
 </div>
@@ -435,7 +431,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>

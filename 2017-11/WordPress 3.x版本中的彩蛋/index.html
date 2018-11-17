@@ -10,7 +10,7 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="今天博主在进行WordPress博客考古活动时，得知了一个彩蛋。来源见：WordPress的彩蛋WordPress的一个彩蛋在WordPress文章中使用Compare Revisions功能，如果两个相比较的文章ID一致，就会触发彩蛋。其效果是显示文字：1Wake up XXX… The matrix has you. Follow the white rabbit. Don’t let thi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-15T12:14:05.910Z">
+<meta property="og:updated_time" content="2018-11-18T08:49:51.155Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WordPress 3.x版本中的彩蛋">
 <meta name="twitter:description" content="今天博主在进行WordPress博客考古活动时，得知了一个彩蛋。来源见：WordPress的彩蛋WordPress的一个彩蛋在WordPress文章中使用Compare Revisions功能，如果两个相比较的文章ID一致，就会触发彩蛋。其效果是显示文字：1Wake up XXX… The matrix has you. Follow the white rabbit. Don’t let thi">
@@ -60,14 +60,6 @@
   };
 </script>
   <title>WordPress 3.x版本中的彩蛋 | 米米的博客</title>
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
-<script async src="/lib/gtag.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-108155018-2');
-</script>
   <noscript>
   <style type="text/css">
     .use-motion .motion-element,
@@ -229,8 +221,8 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-        <p>今天博主在进行WordPress博客考古活动时，得知了一个彩蛋。来源见：<br><a href="http://www.kaisir.com/2010/02/the-egg-wordpress.html" target="_blank" rel="noopener">WordPress的彩蛋</a><br><a href="http://www.codeweblog.com/wordpress的一个彩蛋/" target="_blank" rel="noopener">WordPress的一个彩蛋</a><br>在WordPress文章中使用Compare Revisions功能，如果两个相比较的文章ID一致，就会触发彩蛋。其效果是显示文字：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Wake <span class="keyword">up</span> XXX… The matrix <span class="built_in">has</span> you. Follow the white rabbit. Don’t <span class="keyword">let</span> this happen again.</span><br></pre></td></tr></table></figure></p>
-<p>这是一个致敬The Matrix的彩蛋。经过对<a href="https://cn.wordpress.org/releases/" target="_blank" rel="noopener">WordPress历史版本</a>的分析，发现该彩蛋已在4.x版本移除。通过分析3.0.2版本的文件，找到了该版本的revision.php和revision-js.php文件，并大致研究出了其实现方法。在revision.php中有这样一串代码：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// If we're comparing a revision to itself, redirect to the 'view' page for that revision or the edit page for that post</span></span><br><span class="line"><span class="keyword">if</span> ( $left_revision-&gt;ID == $right_revision-&gt;ID ) &#123;</span><br><span class="line">    $redirect = get_edit_post_link( $left_revision-&gt;ID );</span><br><span class="line">    <span class="keyword">include</span>( <span class="string">'./js/revisions-js.php'</span> );</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>今天博主在进行WordPress博客考古活动时，得知了一个彩蛋。来源见：<br><a href="http://www.kaisir.com/2010/02/the-egg-wordpress.html" target="_blank" rel="noopener">WordPress的彩蛋</a><br><a href="http://www.codeweblog.com/wordpress的一个彩蛋" target="_blank" rel="noopener">WordPress的一个彩蛋</a><br>在WordPress文章中使用Compare Revisions功能，如果两个相比较的文章ID一致，就会触发彩蛋。其效果是显示文字：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Wake <span class="keyword">up</span> XXX… The matrix <span class="built_in">has</span> you. Follow the white rabbit. Don’t <span class="keyword">let</span> this happen again.</span><br></pre></td></tr></table></figure></p>
+<p>这是一个致敬The Matrix的彩蛋。经过对<a href="https://cn.wordpress.org/releases" target="_blank" rel="noopener">WordPress历史版本</a>的分析，发现该彩蛋已在4.x版本移除。通过分析3.0.2版本的文件，找到了该版本的revision.php和revision-js.php文件，并大致研究出了其实现方法。在revision.php中有这样一串代码：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// If we're comparing a revision to itself, redirect to the 'view' page for that revision or the edit page for that post</span></span><br><span class="line"><span class="keyword">if</span> ( $left_revision-&gt;ID == $right_revision-&gt;ID ) &#123;</span><br><span class="line">    $redirect = get_edit_post_link( $left_revision-&gt;ID );</span><br><span class="line">    <span class="keyword">include</span>( <span class="string">'./js/revisions-js.php'</span> );</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>而在revision-js.php中，有一串经过了eval混淆的代码，用于向用户输出彩蛋内容。 目前博主正在尝试反混淆代码，并复现这个彩蛋。如果你有兴趣，也可以下载revision-js.php进行研究。</p>
 <p>本文更新于2017年11月11日：<br>由于博主并不准备搭建旧版本WordPress的运行环境，于是决定从代码入手，分析这个彩蛋。<br>在revisions-js.php中定义的函数dvortr()作用是使用一对一的替换来加密字符串，该文件中有两次调用此函数：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dvortr( <span class="string">"Erb-y n.y ydco dall.b aiacbv Wa ce]-irxajt- dp.u]-$-VIr XajtWzaVv"</span> )</span><br></pre></td></tr></table></figure></p>
 <p>和<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dvortr( <span class="string">'Eabi.p!'</span> )</span><br></pre></td></tr></table></figure></p>
@@ -251,6 +243,10 @@
       <div id="alipay" style="display: inline-block">
         <img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝">
         <p>支付宝</p>
+      </div>
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="张书樵 比特币">
+        <p>比特币</p>
       </div>
   </div>
 </div>
@@ -389,7 +385,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>

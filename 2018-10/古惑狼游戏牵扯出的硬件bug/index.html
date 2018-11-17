@@ -10,7 +10,7 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="这篇文章翻译自：What’s the hardest bug you’ve debugged? It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blam">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-09T17:29:37.281Z">
+<meta property="og:updated_time" content="2018-11-18T08:49:51.248Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="古惑狼游戏牵扯出的硬件bug">
 <meta name="twitter:description" content="这篇文章翻译自：What’s the hardest bug you’ve debugged? It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blam">
@@ -60,14 +60,6 @@
   };
 </script>
   <title>古惑狼游戏牵扯出的硬件bug | 米米的博客</title>
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
-<script async src="/lib/gtag.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-108155018-2');
-</script>
   <noscript>
   <style type="text/css">
     .use-motion .motion-element,
@@ -229,7 +221,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-        <p>这篇文章翻译自：<a href="https://www.quora.com/Programming-Interviews/Whats-the-hardest-bug-youve-debugged/answer/Dave-Baggett/" target="_blank" rel="noopener">What’s the hardest bug you’ve debugged?</a></p>
+        <p>这篇文章翻译自：<a href="https://www.quora.com/Programming-Interviews/Whats-the-hardest-bug-youve-debugged/answer/Dave-Baggett" target="_blank" rel="noopener">What’s the hardest bug you’ve debugged?</a></p>
 <p>It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blame the compiler. Well down the list after that, you blame the hardware.<br>回想起这个bug，仍然让我感觉有些痛苦。作为一个程序员，在发现bug时，你学会了首先在自己代码中找问题，一次、两次、三次……或许在测试一万次之后，你会把问题归咎于编译器。只有在这所有的都不起作用之后，你才会把问题归咎于硬件。</p>
 <p>This is my hardware bug story.<br>这是我遭遇硬件bug的故事。</p>
 <p>Among other things, I wrote the memory card (load/save) code for Crash Bandicoot. For a swaggering game coder, this is like a walk in the park; I expected it would take a few days. I ended up debugging that code for six weeks. I did other stuff during that time, but I kept coming back to this bug – a few hours every few days. It was agonizing.<br>抛开别的不说，我曾为古惑狼（Crash Bandicoot，PS1游戏）写存储卡（读写）代码。对于一个自大的游戏程序员，这就像是在公园里散步一样轻松愉快；我预计只要几天就可以写完。我最终用了六个礼拜把那些代码调试完毕。在此期间我也做过一些其他的事情，但却一直绕不开这个bug——每几天内就要花上好几个小时来处理。这个bug实在烦人。</p>
@@ -276,6 +268,10 @@
       <div id="alipay" style="display: inline-block">
         <img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝">
         <p>支付宝</p>
+      </div>
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="张书樵 比特币">
+        <p>比特币</p>
       </div>
   </div>
 </div>
@@ -411,7 +407,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>

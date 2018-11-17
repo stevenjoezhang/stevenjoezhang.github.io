@@ -10,7 +10,7 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
@@ -51,7 +51,7 @@
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/macbookair.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/4500.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/diskutillist.png">
-<meta property="og:updated_time" content="2018-11-09T17:12:34.179Z">
+<meta property="og:updated_time" content="2018-11-18T08:49:22.644Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacBook使用一块移动硬盘做Win To Go及Time Machine备份">
 <meta name="twitter:description" content="前言博主使用的MacBook Air，256G闪存，可用空间约251G，曾经的分区表为：12345678910111213141516/dev/disk0 (internal, physical):   #:                       TYPE NAME                    SIZE       IDENTIFIER   0:      GUID_partit">
@@ -64,14 +64,6 @@
   };
 </script>
   <title>MacBook使用一块移动硬盘做Win To Go及Time Machine备份 | 米米的博客</title>
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
-<script async src="/lib/gtag.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-108155018-2');
-</script>
   <noscript>
   <style type="text/css">
     .use-motion .motion-element,
@@ -237,9 +229,9 @@
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>博主使用的MacBook Air，256G闪存，可用空间约251G，曾经的分区表为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/dev/disk0 (internal, physical):</span><br><span class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></span><br><span class="line">   0:      GUID_partition_scheme                        *251.0 GB   disk0</span><br><span class="line">   1:                        EFI EFI                     209.7 MB   disk0s1</span><br><span class="line">   2:                 Apple_APFS Container disk1         215.4 GB   disk0s2</span><br><span class="line">   3:                   Bootcamp                         35.2 GB    disk0s3</span><br><span class="line">   4:            Winows Recovery                         212.4 MB   disk0s3</span><br><span class="line"></span><br><span class="line">/dev/disk1 (synthesized):</span><br><span class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></span><br><span class="line">   0:      APFS Container Scheme –                      +215.4 GB   disk1</span><br><span class="line">                                 Physical Store disk0s2</span><br><span class="line">   1:                APFS Volume Macintosh HD            152.3 GB   disk1s1</span><br><span class="line">   2:                APFS Volume Preboot                 20.1 MB    disk1s2</span><br><span class="line">   3:                APFS Volume Recovery                520.0 MB   disk1s3</span><br><span class="line">   4:                APFS Volume VM                      3.2 GB     disk1s4</span><br></pre></td></tr></table></figure></p>
 <p>（这是使用<code>diskutil list</code>命令输出的结果）</p>
 <a id="more"></a>
-<p>GUID分区表，共四个分区，分别是EFI引导分区、APFS的Mac主分区（在更新macOS 10.13之前为HFS+）、NTFS的Bootcamp分区以及Windows Recovery分区。<br>在最初安装Bootcamp时，考虑到Windows系统只是用来运行某些没有macOS版本或无法移植到macOS的程序（例如《红色警戒2》），Bootcamp分区的大小仅分配了35G。然而，在8月中旬昆特牌国服开启公测后，入坑的我发现Bootcamp分区的大小似乎不够用了（来把昆特牌吧）。<br>由于Bootcamp是磁盘上靠后的分区，并不能用常规操作向前扩充，吞并APFS分区的空间（DiskGenius使用计算器+手动改分区表数据似乎属于非常规操作，且面临着分区出现问题的危险），所以只能考虑备份Bootcamp分区内容，然后将其移除，并在主硬盘上重新划分Bootcamp分区。<br>不过，新的问题又产生了：Mac主分区的大小也很有限（毕竟是安装了Adobe全家桶、Matlab、XCode等程序的），并不足以重新划分出较大的Bootcamp分区以安装Windows。于是只得寻求其他解决方案。比较显而易见的解决方案有：</p>
+<p>GUID分区表，共四个分区，分别是EFI引导分区、APFS的Mac主分区（在更新macOS 10.13之前为HFS+）、NTFS的Bootcamp分区以及Windows Recovery分区。<br>在最初安装Bootcamp时，考虑到Windows系统只是用来运行某些没有macOS版本或无法移植到macOS的程序（例如《红色警戒2》），Bootcamp分区的大小仅分配了35G。然而，在8月中旬昆特牌国服开启公测后，入坑的我发现Bootcamp分区的大小似乎不够用了（来把昆特牌吧）。<br>由于Bootcamp是磁盘上靠后的分区，并不能用常规操作向前扩充，吞并APFS分区的空间（DiskGenius使用计算器+手动改分区表数据似乎属于非常规操作，且面临着分区出现问题的危险），所以只能考虑备份Bootcamp分区内容，然后将其移除，并在主硬盘上重新划分Bootcamp分区。<br>不过，新的问题又产生了：Mac主分区的大小也很有限（毕竟是安装了Adobe全家桶、Autodesk Maya、XCode等程序的），并不足以重新划分出较大的Bootcamp分区以安装Windows。于是只得寻求其他解决方案。比较显而易见的解决方案有：</p>
 <ul>
-<li>换个Mac（超出预算）</li>
+<li>换个Mac（超出预算，并且没有了信仰灯）</li>
 <li>换个硬盘（MacBook Air的闪存是BGA封装的，并不能像SATA的SSD那样直接拆）</li>
 <li>装个SD卡（高性能大容量的SD卡价格感人，并且不适合NTFS文件系统）</li>
 </ul>
@@ -255,7 +247,7 @@
 <h3 id="下载必要的文件"><a href="#下载必要的文件" class="headerlink" title="下载必要的文件"></a>下载必要的文件</h3><ul>
 <li><a href="https://msdn.itellyou.cn" target="_blank" rel="noopener">Windows镜像</a>（请选择Windows 10的ISO镜像文件）</li>
 <li><a href="http://dl.luobotou.org/wtga4800.zip" target="_blank" rel="noopener">Win To Go安装工具</a></li>
-<li><a href="http://pan.baidu.com/s/1jIJ0hfS/" target="_blank" rel="noopener">Bootcamp驱动程序</a></li>
+<li><a href="https://pan.baidu.com/s/1jIJ0hfS" target="_blank" rel="noopener">Bootcamp驱动程序</a></li>
 </ul>
 <h3 id="创建Win-To-Go"><a href="#创建Win-To-Go" class="headerlink" title="创建Win To Go"></a>创建Win To Go</h3><p>使用系统自带工具或下载第三方软件，将Windows镜像装载到虚拟光驱。将移动硬盘连接到PC上。在PC上打开Win To Go安装工具，如图所示（目前已更新到4.8.0.0）。<br><img src="/images/2017-10/4500.png" alt=""></p>
 <p>点击“浏览”，在虚拟光驱中找到install.wim文件并选中；在下方选择目标磁盘，即需要安装的移动硬盘。右侧高级选项中，“常用”栏下选择VHD，以及UEFI+GPT，“分区”栏下手动输入第二个分区的大小，单位为MB；程序会自动调整第一个分区的大小；第三个分区若无需要，填0即可。第一个分区即作为Win To Go分区，第二个分区作为Time Machine备份分区。请再次确认移动硬盘上所有分区的文件都已备份。接下来点击“创建”，就将进行全盘格式化，并建立引导，创建Win To Go相关文件。</p>
@@ -277,6 +269,10 @@
       <div id="alipay" style="display: inline-block">
         <img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝">
         <p>支付宝</p>
+      </div>
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="张书樵 比特币">
+        <p>比特币</p>
       </div>
   </div>
 </div>
@@ -430,7 +426,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>

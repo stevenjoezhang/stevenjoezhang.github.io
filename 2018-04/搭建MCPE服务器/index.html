@@ -10,7 +10,7 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="目前搭建MCPE服务器的方法主要有两种：PocketMine-MP和Nukkit。前者基于PHP，而后者基于Java。无论选择哪一种方法，都要确保游戏客户端和服务器端均是最新版本。如果版本不匹配，可能造成无法连接等问题。 PocketMine-MP运行PocketMine-MP需要php7环境和大量的拓展库，例如php-leveldb和yaml等。即使你已经通过brew、yum等包管理工具安装了p">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-14T06:26:40.325Z">
+<meta property="og:updated_time" content="2018-11-18T08:49:51.193Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建MCPE服务器">
 <meta name="twitter:description" content="目前搭建MCPE服务器的方法主要有两种：PocketMine-MP和Nukkit。前者基于PHP，而后者基于Java。无论选择哪一种方法，都要确保游戏客户端和服务器端均是最新版本。如果版本不匹配，可能造成无法连接等问题。 PocketMine-MP运行PocketMine-MP需要php7环境和大量的拓展库，例如php-leveldb和yaml等。即使你已经通过brew、yum等包管理工具安装了p">
@@ -60,14 +60,6 @@
   };
 </script>
   <title>搭建MCPE服务器 | 米米的博客</title>
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
-<script async src="/lib/gtag.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-108155018-2');
-</script>
   <noscript>
   <style type="text/css">
     .use-motion .motion-element,
@@ -229,13 +221,13 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-        <p>目前搭建MCPE服务器的方法主要有两种：<a href="https://github.com/pmmp/PocketMine-MP/" target="_blank" rel="noopener">PocketMine-MP</a>和<a href="https://github.com/Nukkit/Nukkit/" target="_blank" rel="noopener">Nukkit</a>。前者基于PHP，而后者基于Java。<br>无论选择哪一种方法，都要确保游戏客户端和服务器端均是最新版本。如果版本不匹配，可能造成无法连接等问题。</p>
-<h2 id="PocketMine-MP"><a href="#PocketMine-MP" class="headerlink" title="PocketMine-MP"></a>PocketMine-MP</h2><p>运行PocketMine-MP需要php7环境和大量的拓展库，例如php-leveldb和yaml等。即使你已经通过brew、yum等包管理工具安装了php，也可能无法正确启动服务器——它们一般是不会自带这些拓展库的。为了免去手动编译安装拓展的麻烦，比较简单的解决方法是使用<a href="https://github.com/pmmp/php-build-scripts/" target="_blank" rel="noopener">php-build-scripts</a>。它会编译出带有所有必要的拓展库的php，供PocketMine-MP使用，并且不会与系统原有的php环境冲突。比如在Mac下，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/pmmp/php-build-scripts.git</span><br><span class="line"><span class="built_in">cd</span> php-build-scripts</span><br><span class="line">bash compile.sh -t mac64 -l -j4 -f</span><br></pre></td></tr></table></figure></p>
+        <p>目前搭建MCPE服务器的方法主要有两种：<a href="https://github.com/pmmp/PocketMine-MP/" target="_blank" rel="noopener">PocketMine-MP</a>和<a href="https://github.com/Nukkit/Nukkit" target="_blank" rel="noopener">Nukkit</a>。前者基于PHP，而后者基于Java。<br>无论选择哪一种方法，都要确保游戏客户端和服务器端均是最新版本。如果版本不匹配，可能造成无法连接等问题。</p>
+<h2 id="PocketMine-MP"><a href="#PocketMine-MP" class="headerlink" title="PocketMine-MP"></a>PocketMine-MP</h2><p>运行PocketMine-MP需要php7环境和大量的拓展库，例如php-leveldb和yaml等。即使你已经通过brew、yum等包管理工具安装了php，也可能无法正确启动服务器——它们一般是不会自带这些拓展库的。为了免去手动编译安装拓展的麻烦，比较简单的解决方法是使用<a href="https://github.com/pmmp/php-build-scripts" target="_blank" rel="noopener">php-build-scripts</a>。它会编译出带有所有必要的拓展库的php，供PocketMine-MP使用，并且不会与系统原有的php环境冲突。比如在Mac下，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/pmmp/php-build-scripts.git</span><br><span class="line"><span class="built_in">cd</span> php-build-scripts</span><br><span class="line">bash compile.sh -t mac64 -l -j4 -f</span><br></pre></td></tr></table></figure></p>
 <p>即可编译安装php(Linux将参数对应改为<code>-t linux64</code>即可)。<br>完成后，再执行<code>bash installer.sh</code>，就会自动下载<code>PocketMine-MP.phar</code>等必要程序。最后，执行<code>bash start.sh</code>就可以运行了，接下来根据提示进行配置即可。这种方式非常方便，只要记得使用<code>screen</code>，然后等上几分钟就行。更多配置可以参考其官方文档。</p>
 <h2 id="Nukkit"><a href="#Nukkit" class="headerlink" title="Nukkit"></a>Nukkit</h2><p>Nukkit需要Java8环境，如果没有安装，可以前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>下载。运行方式也很简单，克隆这个仓库后，依次执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git submodule <span class="keyword">update</span> <span class="comment">--init</span></span><br><span class="line">mvn clean <span class="keyword">package</span></span><br><span class="line"><span class="keyword">java</span> -jar Nukkit.jar</span><br></pre></td></tr></table></figure></p>
 <p>当然，在其官网上也有发布的版本，无需自行编译Jar文件，可以前往<a href="https://nukkit.io" target="_blank" rel="noopener">Nukkit.io</a>查看。<br>Nukkit的主要问题是不支持leveldb，也就是无法打开较新的MCPE存档，只支持MC存档和上古的MCPE存档。而且Nukkit似乎已经失去维护，因此建议使用第一种方法。</p>
 <h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>PocketMine-MP和Nukkit启动后默认都会监听19132端口，配置服务器时填写局域网或公网IP/域名即可。更多的设置项可以参考它们的文档。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>转换存档的格式可以用这个脚本：<a href="https://github.com/ljyloo/LevelDb2Avnil/" target="_blank" rel="noopener">LevelDb2Avnil</a>，不过看上去兼容性仍存在问题，请谨慎使用。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>转换存档的格式可以用这个脚本：<a href="https://github.com/ljyloo/LevelDb2Avnil" target="_blank" rel="noopener">LevelDb2Avnil</a>，不过看上去兼容性仍存在问题，请谨慎使用。</p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -251,6 +243,10 @@
       <div id="alipay" style="display: inline-block">
         <img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝">
         <p>支付宝</p>
+      </div>
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="张书樵 比特币">
+        <p>比特币</p>
       </div>
   </div>
 </div>
@@ -279,8 +275,8 @@
           </div>
           <span class="post-nav-divider"></span>
           <div class="post-nav-prev post-nav-item">
-              <a href="/2018-04/JavaScript运算符/" rel="prev" title="JavaScript运算符">
-                JavaScript运算符 <i class="fa fa-chevron-right"></i>
+              <a href="/2018-04/文艺的代码/" rel="prev" title="文艺的代码">
+                文艺的代码 <i class="fa fa-chevron-right"></i>
               </a>
           </div>
         </div>
@@ -404,7 +400,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>

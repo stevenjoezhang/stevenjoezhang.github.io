@@ -10,7 +10,7 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="Conway’s Game of Life康威生命游戏是英国数学家约翰·何顿·康威在1970年发明的细胞自动机。它最初于1970年10月在《科学美国人》杂志上马丁·葛登能的“数学游戏”专栏出现。 规则生命游戏中，对于任意细胞，规则如下：每个细胞有两种状态——存活或死亡，每个细胞与以自身为中心的周围八格细胞产生互动。当前细胞为存活状态时，当周围低于2个（不包含2个）存活细胞时，该细胞变成死亡状态。（">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-09T17:29:37.157Z">
+<meta property="og:updated_time" content="2018-11-18T08:50:44.893Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="近期完成的数个游戏及应用">
 <meta name="twitter:description" content="Conway’s Game of Life康威生命游戏是英国数学家约翰·何顿·康威在1970年发明的细胞自动机。它最初于1970年10月在《科学美国人》杂志上马丁·葛登能的“数学游戏”专栏出现。 规则生命游戏中，对于任意细胞，规则如下：每个细胞有两种状态——存活或死亡，每个细胞与以自身为中心的周围八格细胞产生互动。当前细胞为存活状态时，当周围低于2个（不包含2个）存活细胞时，该细胞变成死亡状态。（">
@@ -60,14 +60,6 @@
   };
 </script>
   <title>近期完成的数个游戏及应用 | 米米的博客</title>
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
-<script async src="/lib/gtag.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-108155018-2');
-</script>
   <noscript>
   <style type="text/css">
     .use-motion .motion-element,
@@ -232,7 +224,7 @@
         <h2 id="Conway’s-Game-of-Life"><a href="#Conway’s-Game-of-Life" class="headerlink" title="Conway’s Game of Life"></a>Conway’s Game of Life</h2><p>康威生命游戏是英国数学家约翰·何顿·康威在1970年发明的细胞自动机。它最初于1970年10月在《科学美国人》杂志上马丁·葛登能的“数学游戏”专栏出现。</p>
 <h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><p>生命游戏中，对于任意细胞，规则如下：<br>每个细胞有两种状态——存活或死亡，每个细胞与以自身为中心的周围八格细胞产生互动。<br>当前细胞为存活状态时，当周围低于2个（不包含2个）存活细胞时，该细胞变成死亡状态。（模拟生命数量稀少）<br>当前细胞为存活状态时，当周围有2个或3个存活细胞时，该细胞保持原样。<br>当前细胞为存活状态时，当周围有3个以上的存活细胞时，该细胞变成死亡状态。（模拟生命数量过多）<br>当前细胞为死亡状态时，当周围有3个存活细胞时，该细胞变成存活状态。（模拟繁殖）<br>可以把最初的细胞结构定义为种子，当所有在种子中的细胞同时被以上规则处理后，可以得到第一代细胞图。按规则继续处理当前的细胞图，可以得到下一代的细胞图，周而复始。</p>
 <a id="more"></a>
-<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>生命游戏是一个零玩家游戏。它包括一个二维矩形世界，这个世界中的每个方格居住着一个活着的或死了的细胞。一个细胞在下一个时刻生死取决于相邻八个方格中活着的或死了的细胞的数量。如果相邻方格活着的细胞数量过多，这个细胞会因为资源匮乏而在下一个时刻死去；相反，如果周围活细胞过少，这个细胞会因太孤单而死去。实际中，玩家可以设定周围活细胞的数目怎样时才适宜该细胞的生存。如果这个数目设定过高，世界中的大部分细胞会因为找不到太多的活的邻居而死去，直到整个世界都没有生命；如果这个数目设定过低，世界中又会被生命充满而没有什么变化。<br>实际中，这个数目一般选取2或者3；这样整个生命世界才不至于太过荒凉或拥挤，而是一种动态的平衡。这样的话，游戏的规则就是：当一个方格周围有2或3个活细胞时，方格中的活细胞在下一个时刻继续存活；即使这个时刻方格中没有活细胞，在下一个时刻也会“诞生”活细胞。<br>在这个游戏中，还可以设定一些更加复杂的规则，例如当前方格的状况不仅由父一代决定，而且还考虑祖父一代的情况。玩家还可以作为这个世界的“上帝”，随意设定某个方格细胞的死活，以观察对世界的影响。<br>在游戏的进行中，杂乱无序的细胞会逐渐演化出各种精致、有形的结构；这些结构往往有很好的对称性，而且每一代都在变化形状。一些形状已经锁定，不会逐代变化。有时，一些已经成形的结构会因为一些无序细胞的“入侵”而被破坏。但是形状和秩序经常能从杂乱中产生出来。<br>这个游戏被许多计算机程序实现了。Unix世界中的许多黑客喜欢玩这个游戏，他们用字符代表一个细胞，在一个计算机屏幕上进行演化。比较著名的例子是，GNU Emacs编辑器中就包括这样一个小游戏。<br>查看更多信息：<a href="http://www.conwaylife.com" target="_blank" rel="noopener">ConwayLife.com</a><br>多平台元胞自动机模拟软件Golly，下载地址：<a href="https://sourceforge.net/projects/golly/" target="_blank" rel="noopener">Golly - sourceforge</a><br>本站的JavaScript版本：<a href="https://galaxymimi.com/app/life.html" target="_blank" rel="noopener">主站&gt;应用&gt;Remix项目&gt;Life</a></p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>生命游戏是一个零玩家游戏。它包括一个二维矩形世界，这个世界中的每个方格居住着一个活着的或死了的细胞。一个细胞在下一个时刻生死取决于相邻八个方格中活着的或死了的细胞的数量。如果相邻方格活着的细胞数量过多，这个细胞会因为资源匮乏而在下一个时刻死去；相反，如果周围活细胞过少，这个细胞会因太孤单而死去。实际中，玩家可以设定周围活细胞的数目怎样时才适宜该细胞的生存。如果这个数目设定过高，世界中的大部分细胞会因为找不到太多的活的邻居而死去，直到整个世界都没有生命；如果这个数目设定过低，世界中又会被生命充满而没有什么变化。<br>实际中，这个数目一般选取2或者3；这样整个生命世界才不至于太过荒凉或拥挤，而是一种动态的平衡。这样的话，游戏的规则就是：当一个方格周围有2或3个活细胞时，方格中的活细胞在下一个时刻继续存活；即使这个时刻方格中没有活细胞，在下一个时刻也会“诞生”活细胞。<br>在这个游戏中，还可以设定一些更加复杂的规则，例如当前方格的状况不仅由父一代决定，而且还考虑祖父一代的情况。玩家还可以作为这个世界的“上帝”，随意设定某个方格细胞的死活，以观察对世界的影响。<br>在游戏的进行中，杂乱无序的细胞会逐渐演化出各种精致、有形的结构；这些结构往往有很好的对称性，而且每一代都在变化形状。一些形状已经锁定，不会逐代变化。有时，一些已经成形的结构会因为一些无序细胞的“入侵”而被破坏。但是形状和秩序经常能从杂乱中产生出来。<br>这个游戏被许多计算机程序实现了。Unix世界中的许多黑客喜欢玩这个游戏，他们用字符代表一个细胞，在一个计算机屏幕上进行演化。比较著名的例子是，GNU Emacs编辑器中就包括这样一个小游戏。<br>查看更多信息：<a href="http://www.conwaylife.com" target="_blank" rel="noopener">ConwayLife.com</a><br>多平台元胞自动机模拟软件Golly，下载地址：<a href="https://sourceforge.net/projects/golly" target="_blank" rel="noopener">Golly - sourceforge</a><br>本站的JavaScript版本：<a href="https://galaxymimi.com/app/life.html" target="_blank" rel="noopener">主站&gt;应用&gt;Remix项目&gt;Life</a></p>
 <h2 id="Play-Coins"><a href="#Play-Coins" class="headerlink" title="Play Coins!"></a>Play Coins!</h2><p>这个弹硬币的游戏来自于高中时在教室里进行的娱乐活动。本项目于2017年11月23日晚开始构思，11月24日完成了框架，包括物理引擎的相关计算，11月25日完成了跨平台适配，11月26日加入了背景音乐，修复了大量bug，11月27日加入了欢呼音效和音频的跨浏览器适配。现在，它已经可以流畅地在全平台运行了。<br>本站的JavaScript版本：<a href="https://galaxymimi.com/app/coin/" target="_blank" rel="noopener">主站&gt;应用&gt;原创游戏&gt;Coin</a></p>
 <h2 id="MHC-MHC-Hyper-Calculator"><a href="#MHC-MHC-Hyper-Calculator" class="headerlink" title="MHC - MHC Hyper Calculator"></a>MHC - MHC Hyper Calculator</h2><p>一个用C语言编写的计算器，作为本学期计算概论大作业的成果。计算器支持任意大数字的加减乘除求余乘方阶乘运算，拓展功能则是RSA加密和中文输出。<br>虽然在这个项目上耗费了不少时间，但由于只是完成作业，实际上是重复造轮子，项目源代码就不展出了。</p>
     </div>
@@ -250,6 +242,10 @@
       <div id="alipay" style="display: inline-block">
         <img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝">
         <p>支付宝</p>
+      </div>
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="张书樵 比特币">
+        <p>比特币</p>
       </div>
   </div>
 </div>
@@ -278,8 +274,8 @@
           </div>
           <span class="post-nav-divider"></span>
           <div class="post-nav-prev post-nav-item">
-              <a href="/2017-12/文艺的代码/" rel="prev" title="文艺的代码">
-                文艺的代码 <i class="fa fa-chevron-right"></i>
+              <a href="/2017-12/JavaScript运算符/" rel="prev" title="JavaScript运算符">
+                JavaScript运算符 <i class="fa fa-chevron-right"></i>
               </a>
           </div>
         </div>
@@ -403,7 +399,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>

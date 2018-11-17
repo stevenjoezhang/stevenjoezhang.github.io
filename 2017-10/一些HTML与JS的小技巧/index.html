@@ -10,7 +10,7 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
@@ -50,7 +50,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/2018-07-17.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/3386824149-594a3500b37f4.png">
-<meta property="og:updated_time" content="2018-11-15T12:56:15.763Z">
+<meta property="og:updated_time" content="2018-11-18T08:49:51.151Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些HTML与JS的小技巧">
 <meta name="twitter:description" content="最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。 使某个函数直接被运行在&amp;lt;script&amp;gt;标签中的代码会被浏览器顺序执行，而函数大括号{}内的代码，在函数被调用时才会执行。如果要直接运行一个匿名函数，可以使用!function(){}();，这样可以有效地避免全局变量名污染。如果需要调用getElementById之类的函数，务必把&amp;lt;script&amp;">
@@ -63,14 +63,6 @@
   };
 </script>
   <title>一些HTML与JS的小技巧 | 米米的博客</title>
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108155018-2"></script>-->
-<script async src="/lib/gtag.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-108155018-2');
-</script>
   <noscript>
   <style type="text/css">
     .use-motion .motion-element,
@@ -302,8 +294,8 @@
 <li>startOffset startContainer中的开始点位置。</li>
 </ul>
 <h3 id="Range对象的操作"><a href="#Range对象的操作" class="headerlink" title="Range对象的操作"></a>Range对象的操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//选中区域的文字</span></span><br><span class="line"><span class="keyword">var</span> text = range.toString();</span><br><span class="line"></span><br><span class="line"><span class="comment">//选中区域的Element元素</span></span><br><span class="line"><span class="keyword">var</span> elem = range.commonAncestorContainer;</span><br><span class="line"><span class="keyword">if</span> (elem.nodeType != <span class="number">1</span>) &#123;</span><br><span class="line">    elem = elem.parentNode;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//选中区域的html</span></span><br><span class="line"><span class="keyword">var</span> span = <span class="built_in">document</span>.createElement(<span class="string">'SPAN'</span>);</span><br><span class="line">span.appendChild(range.cloneContents());</span><br><span class="line"></span><br><span class="line"><span class="comment">//选区是否为空</span></span><br><span class="line"><span class="keyword">var</span> isSelectionEmpty = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">if</span> (range.startContainer === range.endContainer) &#123;</span><br><span class="line">    <span class="keyword">if</span> (range.startOffset === range.endOffset) &#123;</span><br><span class="line">        isSelectionEmpty = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="关于Safari-4-0的一些回忆"><a href="#关于Safari-4-0的一些回忆" class="headerlink" title="关于Safari 4.0的一些回忆"></a>关于Safari 4.0的一些回忆</h2><p>为了测试网站对不同浏览器的友好程度，我下载了Oracle和Firefox，看到首次打开Firefox的欢迎动画时，突然想到多年之前，我在Windows上首次运行Safari时看到的极为惊艳的动画。经过推断，那是2010年左右，版本是Safari 4.0，欢迎动画展示了HTML5的诸多新特性。查找各大论坛后，找到了这个Safari欢迎动画的网址：<code>http://www.apple.com/safari/welcome/</code>可惜年代久远，它（可能）已经永远地从苹果的服务器上消失了。非常遗憾，那个时候的我还too young，沉迷于制作逐帧flash动画，丝毫没有了解html的奇妙世界。当今天我的回忆再一次被唤起时，Safari for Windows已经凉了，<a href="https://www.apple.com/hotnews/thoughts-on-flash/" target="_blank" rel="noopener">Flash已经凉了</a>，Safari for macOS已经是11.0版本。互联网时代的高速发展实在是令人感慨万千。</p>
-<p>参考文章：<a href="https://segmentfault.com/a/1190000009875696/" target="_blank" rel="noopener">JS Range 对象的使用</a></p>
+<h2 id="关于Safari-4-0的一些回忆"><a href="#关于Safari-4-0的一些回忆" class="headerlink" title="关于Safari 4.0的一些回忆"></a>关于Safari 4.0的一些回忆</h2><p>为了测试网站对不同浏览器的友好程度，我下载了Oracle和Firefox，看到首次打开Firefox的欢迎动画时，突然想到多年之前，我在Windows上首次运行Safari时看到的极为惊艳的动画。经过推断，那是2010年左右，版本是Safari 4.0，欢迎动画展示了HTML5的诸多新特性。查找各大论坛后，找到了这个Safari欢迎动画的网址：<code>http://www.apple.com/safari/welcome/</code>可惜年代久远，它（可能）已经永远地从苹果的服务器上消失了。非常遗憾，那个时候的我还too young，沉迷于制作逐帧flash动画，丝毫没有了解html的奇妙世界。当今天我的回忆再一次被唤起时，Safari for Windows已经凉了，<a href="https://www.apple.com/hotnews/thoughts-on-flash" target="_blank" rel="noopener">Flash已经凉了</a>，Safari for macOS已经是11.0版本。互联网时代的高速发展实在是令人感慨万千。</p>
+<p>参考文章：<a href="https://segmentfault.com/a/1190000009875696" target="_blank" rel="noopener">JS Range 对象的使用</a></p>
 <p>本文更新于2018年6月21日</p>
     </div>
       <div>
@@ -320,6 +312,10 @@
       <div id="alipay" style="display: inline-block">
         <img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝">
         <p>支付宝</p>
+      </div>
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="张书樵 比特币">
+        <p>比特币</p>
       </div>
   </div>
 </div>
@@ -474,7 +470,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
     <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
     <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
     <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>

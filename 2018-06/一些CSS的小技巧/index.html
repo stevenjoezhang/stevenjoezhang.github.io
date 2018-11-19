@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="p标签换行CSS自动换行、强制不换行、强制断行、超出显示省略号 P标签是默认是自动换行的，因此设置好宽度之后，能够较好的实现效果，但是最近的项目中发现，使用ajax加载数据之后，p标签内的内容没有换行，导致布局错乱，于是尝试着使用换行样式，虽然解决了问题，但是并没有发现本质原因。经过研究，其本质在于，当时获取的数据是一长串的数字，浏览器应该是对数字和英文单词处理方式相近，不会截断。先给出各种方式，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-18T08:49:51.213Z">
+<meta property="og:updated_time" content="2018-11-18T09:08:25.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些CSS的小技巧">
 <meta name="twitter:description" content="p标签换行CSS自动换行、强制不换行、强制断行、超出显示省略号 P标签是默认是自动换行的，因此设置好宽度之后，能够较好的实现效果，但是最近的项目中发现，使用ajax加载数据之后，p标签内的内容没有换行，导致布局错乱，于是尝试着使用换行样式，虽然解决了问题，但是并没有发现本质原因。经过研究，其本质在于，当时获取的数据是一长串的数字，浏览器应该是对数字和英文单词处理方式相近，不会截断。先给出各种方式，">
@@ -286,8 +286,8 @@
 <h3 id="使用属性值作为content内容"><a href="#使用属性值作为content内容" class="headerlink" title="使用属性值作为content内容"></a>使用属性值作为content内容</h3><p>使用属性值当作content内容指的是将标签的title, src, href, alt等值当作内容显示在标签的内部，这是很强大的一个功能。由于此技术目前远未到普及的程度，所以这里简单介绍一下，你可以参见下面的两小段样式代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"("</span> <span class="built_in">attr</span>(href) <span class="string">")"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">abbr</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"("</span> <span class="built_in">attr</span>(title) <span class="string">")"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这里理解和使用都不难，关键就是CSS3的attr()方法。</p>
 <h3 id="前瞻：强大的CSS3-attr-方法"><a href="#前瞻：强大的CSS3-attr-方法" class="headerlink" title="前瞻：强大的CSS3 attr()方法"></a>前瞻：强大的CSS3 attr()方法</h3><p>CSS3 Values and Units草案扩展了attr()表达式的范围，除了返回字符串，还可以返回诸如CSS colors, CSS integer, length, angle, time, frequency以及其他一些单元。<br>通过使用自定义的data属性，可以实现一些非常强大的效果，诸如简单图表图形的渲染，动画效果的实现。例如我们可以设置根据元素的attribute值设定background-color的颜色值，这在显示在线调色板上会大放异彩；我们还可以根据attribute值指定元素的大小，就像定义图表每个条形的长度一样。总之，attr()的潜力惊人。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>推荐阅读：<br><a href="http://www.zhangxinxu.com/wordpress/2015/03/background-object-position-value-percent" target="_blank" rel="noopener">CSS <position> 值简介理解background百分比定位</position></a><br><a href="http://www.zhangxinxu.com/wordpress/2013/06/伪元素-表单样式-pseudo-elements-style-form-controls" target="_blank" rel="noopener">伪元素表单控件默认样式重置与自定义大全</a></p>
-<p>参考文章：<br><a href="https://blog.csdn.net/liuyan19891230/article/details/50969393" target="_blank" rel="noopener">CSS自动换行、强制不换行、强制断行、超出显示省略号</a><br><a href="http://www.zhangxinxu.com/wordpress/2010/04/css-content内容生成技术以及应用" target="_blank" rel="noopener">CSS content内容生成技术以及应用</a></p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>推荐阅读：<br><a href="https://www.zhangxinxu.com/wordpress/2015/03/background-object-position-value-percent" target="_blank" rel="noopener">CSS <position> 值简介理解background百分比定位</position></a><br><a href="https://www.zhangxinxu.com/wordpress/2013/06/伪元素-表单样式-pseudo-elements-style-form-controls" target="_blank" rel="noopener">伪元素表单控件默认样式重置与自定义大全</a></p>
+<p>参考文章：<br><a href="https://blog.csdn.net/liuyan19891230/article/details/50969393" target="_blank" rel="noopener">CSS自动换行、强制不换行、强制断行、超出显示省略号</a><br><a href="https://www.zhangxinxu.com/wordpress/2010/04/css-content内容生成技术以及应用" target="_blank" rel="noopener">CSS content内容生成技术以及应用</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -376,7 +376,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">80</span>
+                    <span class="site-state-item-count">81</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

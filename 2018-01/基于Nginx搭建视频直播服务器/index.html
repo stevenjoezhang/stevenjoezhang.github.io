@@ -52,7 +52,7 @@
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/1774338-b0eb1df8603e632d.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/2018-07-16.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/1774338-c2443fa915f45ef1.png">
-<meta property="og:updated_time" content="2018-11-18T08:49:51.171Z">
+<meta property="og:updated_time" content="2018-11-18T09:03:43.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Nginx搭建视频直播服务器">
 <meta name="twitter:description" content="昨晚博主在VPS上搭建了基于Nginx的视频直播服务器，成功地使用OBS Studio推流，在Safari上实现了HTML5播放。下面附上具体步骤，请将所有your.domain.com替换为你的域名或者服务器IP。 Nginx环境搭建首先，需要下载可编译的Nginx源代码，以及必要的拓展库。如果你是萌新，请按照👇教程安装搭建lnmp环境！lnmp环境一键安装脚本 12#下载并安装lnmp环境w">
@@ -232,7 +232,7 @@
 <p>请按照脚本的提示选择你要安装的各个组件版本，若不确定，选择默认选项即可。安装完成后，命令行输出：<br><img src="/images/2018-01/1774338-dc544ac657937d0d.png" alt=""></p>
 <p>此时访问服务器地址会出现如下界面：<br><img src="/images/2018-01/1774338-b0eb1df8603e632d.png" alt=""></p>
 <p><strong>注意：安装时生成的解压文件夹lnmp1.4先别删除！</strong></p>
-<p>如果你对在Linux上安装配置Nginx和PHP等有所了解，可以直接使用源码安装，不必通过lnmp。Nginx源码<a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">在此处下载</a>，PHP源码<a href="http://php.net/downloads.php" target="_blank" rel="noopener">在此处下载</a>。需要注意的是，编译PHP时要指定<code>make ZEND_EXTRA_LIBS=&#39;-liconv&#39;</code>，否则可能会出现<code>undefined reference to &#39;libiconv&#39;</code>的错误。</p>
+<p>如果你对在Linux上安装配置Nginx和PHP等有所了解，可以直接使用源码安装，不必通过lnmp。Nginx源码<a href="https://nginx.org/en/download.html" target="_blank" rel="noopener">在此处下载</a>，PHP源码<a href="https://secure.php.net/downloads.php" target="_blank" rel="noopener">在此处下载</a>。需要注意的是，编译PHP时要指定<code>make ZEND_EXTRA_LIBS=&#39;-liconv&#39;</code>，否则可能会出现<code>undefined reference to &#39;libiconv&#39;</code>的错误。</p>
 <a id="more"></a>
 <h2 id="安装Nginx的扩展模块"><a href="#安装Nginx的扩展模块" class="headerlink" title="安装Nginx的扩展模块"></a>安装Nginx的扩展模块</h2><h3 id="下载nginx-http-flv-module"><a href="#下载nginx-http-flv-module" class="headerlink" title="下载nginx-http-flv-module"></a>下载nginx-http-flv-module</h3><p>GitHub项目地址：<a href="https://github.com/winshining/nginx-http-flv-module" target="_blank" rel="noopener">nginx-http-flv-module</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#为nginx创建扩展模块目录</span></span><br><span class="line">mkdir /usr/<span class="built_in">local</span>/nginx/extend_module</span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/nginx/extend_module</span><br><span class="line"><span class="comment">#下载扩展包到nginx扩展模块目录下</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/winshining/nginx-http-flv-module.git</span><br></pre></td></tr></table></figure>
@@ -354,7 +354,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">80</span>
+                    <span class="site-state-item-count">81</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

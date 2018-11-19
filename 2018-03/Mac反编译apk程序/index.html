@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="本教程以macOS 10.13为例 准备工作下载最新的JDK在ORACLE官网下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，在打开的页面中找到JDK，选择Download，下载对应的版本。 配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了使终端能正">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-18T08:49:51.185Z">
+<meta property="og:updated_time" content="2018-11-18T09:06:04.253Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac反编译apk程序">
 <meta name="twitter:description" content="本教程以macOS 10.13为例 准备工作下载最新的JDK在ORACLE官网下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，在打开的页面中找到JDK，选择Download，下载对应的版本。 配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了使终端能正">
@@ -222,7 +222,7 @@
       </header>
     <div class="post-body" itemprop="articleBody">
         <p>本教程以macOS 10.13为例</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载最新的JDK"><a href="#下载最新的JDK" class="headerlink" title="下载最新的JDK"></a>下载最新的JDK</h3><p>在ORACLE官网下载最新的JDK<br>前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>，在底部找到<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Download Java for Developers</a>，在打开的页面中找到JDK，选择Download，下载对应的版本。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载最新的JDK"><a href="#下载最新的JDK" class="headerlink" title="下载最新的JDK"></a>下载最新的JDK</h3><p>在ORACLE官网下载最新的JDK<br>前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>，在底部找到<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Download Java for Developers</a>，在打开的页面中找到JDK，选择Download，下载对应的版本。</p>
 <h3 id="配置JDK"><a href="#配置JDK" class="headerlink" title="配置JDK"></a>配置JDK</h3><p>下载完成后，打开dmg镜像进行安装。JDK会被安装到<code>/Library/Java/JavaVirtualMachines</code>目录下。为了使终端能正确运行最新的JDK，需要在<code>~/.bash_profile</code>中增加以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home</span><br><span class="line">PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span>:.</span><br><span class="line">CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:.</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME</span><br><span class="line"><span class="built_in">export</span> PATH</span><br><span class="line"><span class="built_in">export</span> CLASSPATH</span><br></pre></td></tr></table></figure></p>
 <p>其中将jdk1.8.0_40.jdk换成你所安装的JDK对应的目录。修改完成后，重启终端或使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
 <p>使环境变量生效。</p>
@@ -240,7 +240,7 @@
 <h3 id="查看源代码"><a href="#查看源代码" class="headerlink" title="查看源代码"></a>查看源代码</h3><p>打开JD-GUI，将example-dex2jar.jar拖进去就看到源码了。<br>请注意，如果使用了JAVA9，打开JD-GUI.app时会出现问题，解决方法是：<br>打开JD-GUI.app/Contents/Info.plist，找到<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>VMOptions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>-Xms512m<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>修改为<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>VMOptions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>-Xms512m --add-opens java.base/jdk.internal.loader=ALL-UNNAMED --add-opens jdk.zipfs/jdk.nio.zipfs=ALL-UNNAMED<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>通过看java源码对比smali文件，修改后回编译就ok了！</p>
-<p>参考文章：<br><a href="http://blog.csdn.net/vvv_110/article/details/72897142" target="_blank" rel="noopener">MAC安装JDK及环境变量配置</a><br><a href="http://blog.csdn.net/yanzi1225627/article/details/48215549" target="_blank" rel="noopener">MAC上反编译android apk—apktool, dex2jar, jd-jui安装使用(含手动签名)</a><br><a href="http://blog.csdn.net/wh_19910525/article/details/7915738" target="_blank" rel="noopener">apk反编译获取完整源码 及 apk反编译后的处理</a><br><a href="https://github.com/java-decompiler/jd-gui/issues/187" target="_blank" rel="noopener">https://github.com/java-decompiler/jd-gui/issues/187</a></p>
+<p>参考文章：<br><a href="https://blog.csdn.net/vvv_110/article/details/72897142" target="_blank" rel="noopener">MAC安装JDK及环境变量配置</a><br><a href="https://blog.csdn.net/yanzi1225627/article/details/48215549" target="_blank" rel="noopener">MAC上反编译android apk—apktool, dex2jar, jd-jui安装使用(含手动签名)</a><br><a href="https://blog.csdn.net/wh_19910525/article/details/7915738" target="_blank" rel="noopener">apk反编译获取完整源码 及 apk反编译后的处理</a><br><a href="https://github.com/java-decompiler/jd-gui/issues/187" target="_blank" rel="noopener">https://github.com/java-decompiler/jd-gui/issues/187</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -328,7 +328,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">80</span>
+                    <span class="site-state-item-count">81</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

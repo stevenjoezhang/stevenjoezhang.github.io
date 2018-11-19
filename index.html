@@ -162,6 +162,103 @@
   <section id="posts" class="posts-expand">
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/在网页上实现3D Touch效果/">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a href="/2018-11/在网页上实现3D Touch效果/" class="post-title-link" itemprop="https://zhangshuqiao.org/index.html">在网页上实现3D Touch效果</a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <time title="创建时间：2018-11-18 20:52:12" itemprop="dateCreated datePublished" datetime="2018-11-18T20:52:12+08:00">2018-11-18</time>
+          </span>
+            <span class="post-category">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-11/在网页上实现3D Touch效果/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-11/在网页上实现3D Touch效果/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">3.9k</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">4 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="/images/2018-11/3d_touch_cover_.jpg" alt=""></p>
+<p>2016年9月14日凌晨，iOS 10正式版开始向用户推送更新，而iOS 10搭载的Safari10亦带来了不少新特性，其中就有3D Touch事件的支持（官方文档<a href="https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html" target="_blank" rel="noopener">《What’s New in Safari 10》</a>）。</p>
+<h2 id="Force-Touch与3D-Touch"><a href="#Force-Touch与3D-Touch" class="headerlink" title="Force Touch与3D Touch"></a>Force Touch与3D Touch</h2><p>说到3D Touch不能不提与之相似的Force Touch。Force Touch是苹果公司在2014年9月公布的一项压力敏感屏幕技术，最早用于Apple Watch，可识别轻点、轻按两种操作。随后Force Touch于2015年9月在iPhone 6S上得到改进并更名为3D Touch，提供了更高灵敏度的触控力度识别、及更强的触感反馈，支持轻点、轻按及重按三个维度。</p>
+<p>支持3D Touch的设备，目前有iPhone 6S、iPhone 6S Plus、iPhone 7以及iPhone 7 Plus（注：截止2018年，还要加上iPhone 8和iPhone X等）。这是后文的硬件要求。</p>
+<h2 id="感受3D-Touch"><a href="#感受3D-Touch" class="headerlink" title="感受3D Touch"></a>感受3D Touch</h2><p>3D Touch最为典型的交互有Quick Actions和Peek and Pop两种。在APP图标上重按呼出一组快捷操作菜单，这即是典型的Quick Actions：</p>
+<p><img src="/images/2018-11/quick_actions.jpg" alt=""></p>
+<p>而使用Peek and Pop则可以快速地对内容进行预览，以及后续的其他操作：</p>
+<p><img src="/images/2018-11/peek_and_pop.jpg" alt=""></p>
+<p>如上图所示，在系统的邮件APP中，以一定的力度按压邮件列表中的某一项，会触发Peek弹出一个内容预览窗口（在Peek状态下上滑还能触发Quick Actions调出一些快捷操作项哦），如果继续加大按压力度，则会触发Pop进入邮件内容界面，这整个过程就称之为Peek and Pop。</p>
+<p>除了邮件APP以外，信息、照片等多个系统APP以及一些第三方APP（如微信、Facebook、Twitter等）也都很好的支持了Peek and Pop这种3D Touch交互形式。</p>
+<h2 id="网页中的3D-Touch"><a href="#网页中的3D-Touch" class="headerlink" title="网页中的3D Touch"></a>网页中的3D Touch</h2><p>要在网页中实现3D Touch，需要用到以下两个知识点：</p>
+<ul>
+<li><p>touch.force<br>在touch对象中包含有一个名为<code>force</code>的只读属性，它的取值从0到1，表示的是触碰点的按压力度，0表示没有检测到压力，而1则是设备能识别出的最大压力。</p>
+</li>
+<li><p>touchforcechange<br><code>touchforcechange</code>是Safari 10新增的事件，该事件会在按压力度改变时被触发。</p>
+</li>
+</ul>
+<p>（注：在MacOS Safari上也有与之对应的<code>webkitmouseforcechanged</code>事件，该事件会在支持Force Touch的Trackpad上反应出按压力度值force的变化，但本文仅讨论手机设备的情况）</p>
+<h2 id="实现3D-Touch效果"><a href="#实现3D-Touch效果" class="headerlink" title="实现3D Touch效果"></a>实现3D Touch效果</h2><p>要实现3D Touch效果，关键在于实时地获取touch.force的值。而由于网页上的3D Touch很大程度上受限于设备及浏览器的支持情况，因此我们划分以下3种情况，分别来看看要如何实现：</p>
+<ul>
+<li><p>支持3D Touch且升级到了iOS 10的设备<br>在这种最为理想的情况下，只需要监听touchforcechange事件即可获取到force的当前值，将force值的变化以适当的形式反馈在界面上以实现3D Touch效果。</p>
+</li>
+<li><p>支持3D Touch但系统版本低于iOS 10的设备<br>这种情况虽然无法监听touchforcechange事件，但Touch对象的force属性仍然可以反应出正确的按压力度，可以巧妙地设置一个定时器，以轮询的方式获取force的当前值。</p>
+</li>
+<li><p>不支持3D Touch的设备<br>这种情况下touch.force的取值始终为0，虽然可以用长按的交互形式来代替，但建议还是以优雅降级的方式，索性就不处理了吧。</p>
+</li>
+</ul>
+<h2 id="一个3D-Touch的例子"><a href="#一个3D-Touch的例子" class="headerlink" title="一个3D Touch的例子"></a>一个3D Touch的例子</h2><p>看到这里你肯定想说”Shut up and show me the code…”。好的，那我们来看一个例子，在这个事例页面，用支持3D Touch的设备按压蓝色按钮可以将树懒兄逗笑哦，嘿嘿嘿～</p>
+          <!--noindex-->
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-11/在网页上实现3D Touch效果/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/使用示波器播放Bad Apple!!/">
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
@@ -181,7 +278,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <time title="创建时间：2018-11-15 10:09:01" itemprop="dateCreated datePublished" datetime="2018-11-15T10:09:01+08:00">2018-11-15</time>
+              <time title="创建时间：2018-11-14 10:09:01" itemprop="dateCreated datePublished" datetime="2018-11-14T10:09:01+08:00">2018-11-14</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -485,82 +582,6 @@
     </footer>
   </div>
   </article>
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-10/古惑狼游戏牵扯出的硬件bug/">
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a href="/2018-10/古惑狼游戏牵扯出的硬件bug/" class="post-title-link" itemprop="https://zhangshuqiao.org/index.html">古惑狼游戏牵扯出的硬件bug</a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <time title="创建时间：2018-10-04 08:41:46" itemprop="dateCreated datePublished" datetime="2018-10-04T08:41:46+08:00">2018-10-04</time>
-          </span>
-            <span class="post-category">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-10/古惑狼游戏牵扯出的硬件bug/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-10/古惑狼游戏牵扯出的硬件bug/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">11k</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">10 分钟</span>
-            </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-          <p>这篇文章翻译自：<a href="https://www.quora.com/Programming-Interviews/Whats-the-hardest-bug-youve-debugged/answer/Dave-Baggett" target="_blank" rel="noopener">What’s the hardest bug you’ve debugged?</a></p>
-<p>It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blame the compiler. Well down the list after that, you blame the hardware.<br>回想起这个bug，仍然让我感觉有些痛苦。作为一个程序员，在发现bug时，你学会了首先在自己代码中找问题，一次、两次、三次……或许在测试一万次之后，你会把问题归咎于编译器。只有在这所有的都不起作用之后，你才会把问题归咎于硬件。</p>
-<p>This is my hardware bug story.<br>这是我遭遇硬件bug的故事。</p>
-<p>Among other things, I wrote the memory card (load/save) code for Crash Bandicoot. For a swaggering game coder, this is like a walk in the park; I expected it would take a few days. I ended up debugging that code for six weeks. I did other stuff during that time, but I kept coming back to this bug – a few hours every few days. It was agonizing.<br>抛开别的不说，我曾为古惑狼（Crash Bandicoot，PS1游戏）写存储卡（读写）代码。对于一个自大的游戏程序员，这就像是在公园里散步一样轻松愉快；我预计只要几天就可以写完。我最终用了六个礼拜把那些代码调试完毕。在此期间我也做过一些其他的事情，但却一直绕不开这个bug——每几天内就要花上好几个小时来处理。这个bug实在烦人。</p>
-<p>The symptom was that you’d go to save your progress and it would access the memory card, and almost all the time, it worked normally… But every once in a while the write or read would time out… for no obvious reason. A short write would often corrupt the memory card. The player would go to save, and not only would we not save, we’d wipe their memory card. D’Oh.<br>这个bug的症状是，当你需要保存你的进度时，代码会访问存储卡，而大部分情况下没有什么问题…但是偶尔读写会超时…没有任何明显的原因。一个简短的写入经常毁掉存储卡。玩家要保存进度，我们不仅不保存，还擦除他们存储卡上的全部东西。天哪。</p>
-<p>After a while, our producer at Sony, Connie Booth, began to panic. We obviously couldn’t ship the game with that bug, and after six weeks I still had no clue what the problem was. Via Connie we put the word out to other PlayStation 1 developers – had anybody seen anything like this? Nope. Absolutely nobody had any problems with the memory card system.<br>过了一段时间，我们在Sony的制作人Connie Booth慌了。我们显然不能发布带有这个bug游戏，而六个星期之后我对于问题出在哪一点线索都没有。通过Connie我们向其他PS1开发者求助：有没有人出现过像我们这样的情况？没有。绝对没有任何人在存储卡系统上出现任何问题。</p>
-<p>About the only thing you can do when you run out of ideas debugging is divide and conquer: keep removing more and more of the errant program’s code until you’re left with something relatively small that still exhibits the problem. You keep carving parts away until the only stuff left is where the bug is.<br>在你绞尽脑汁之后，你能做的唯一一个调试方法就是分而治之：一点点去除错误程序中的代码，直到留下的代码相对很少，但仍然表现出问题。像雕刻一样去除没有问题的代码，留下的就是你的bug所在。</p>
-          <!--noindex-->
-            <div class="post-button text-center">
-              <a class="btn" href="/2018-10/古惑狼游戏牵扯出的硬件bug/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
   </section>
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -586,7 +607,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">80</span>
+                    <span class="site-state-item-count">81</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

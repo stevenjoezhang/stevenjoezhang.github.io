@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="Hexo生成的博客静态页面存在一些问题：页面中有大量空白行。虽然这对浏览器的渲染影响微乎其微，但是让强迫症极为难受。可以在博客的主目录下（与public文件夹同级）新建以下python脚本：12345678910111213141516171819202122232425262728#!/usr/bin/env python#-*- coding:utf-8 -*-import re, osdef">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-18T08:49:51.215Z">
+<meta property="og:updated_time" content="2018-11-19T16:13:46.394Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo内容压缩">
 <meta name="twitter:description" content="Hexo生成的博客静态页面存在一些问题：页面中有大量空白行。虽然这对浏览器的渲染影响微乎其微，但是让强迫症极为难受。可以在博客的主目录下（与public文件夹同级）新建以下python脚本：12345678910111213141516171819202122232425262728#!/usr/bin/env python#-*- coding:utf-8 -*-import re, osdef">
@@ -228,6 +228,7 @@
 <p>在每次执行<code>hexo g</code>之前，在博客的主目录下执行该脚本，就可以将images目录下的高分辨率图片，压缩并存储到source/images目录下。如果要在Markdown文件中插入图片，使用<code>![](/images/path/to/your/images)</code>即可。<br>如果有兴趣，你也可以使用<code>os.walk()</code>方法改写以上脚本，这可能会更加简洁。</p>
 <p>参考文章：<br><a href="https://blog.jiangjiaolong.com/hexo-next-theme-minify.html" target="_blank" rel="noopener">hexo next主题大量空白行问题</a><br><a href="https://blog.csdn.net/u012234115/article/details/50248409" target="_blank" rel="noopener">python脚本编程：批量压缩图片大小</a></p>
 <p>本文更新于2018年11月15日：<br>也可以使用官方的插件：<a href="https://github.com/hexojs/hexo-html-minifier" target="_blank" rel="noopener">hexo-html-minifier</a></p>
+<p>本文更新于2018年11月20日：<br>博主将以上脚本整合，制作了一个工具，欢迎使用：<a href="https://github.com/stevenjoezhang/hexo-helper" target="_blank" rel="noopener">hexo-helper</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">

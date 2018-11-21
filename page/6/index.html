@@ -456,13 +456,13 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-          <p>这篇文章翻译自：<a href="https://www.tecmint.com/20-funny-commands-of-linux-or-linux-is-fun-in-terminal" target="_blank" rel="noopener">20 Funny Commands of Linux or Linux is Fun in Terminal</a><br>Linux is fun! Huhhh. OK so you don’t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.<br>Linux是非常有趣的，别不相信–看完这篇文章，你一定会发现Linux系统神奇的用法。<br>请注意，下面部分命令给出了两种包管理软件的安装方式，如果是Debian系的系统，请使用<code>apt-get</code>，如果是Red Hat系的系统，请使用<code>yum</code>。如果你使用了其他Linux发行版、macOS，或使用了其他包管理工具（例如brew），可能无法找到所有这些命令。</p>
-<h2 id="sl-Steam-Locomotive"><a href="#sl-Steam-Locomotive" class="headerlink" title="sl (Steam Locomotive)"></a>sl (Steam Locomotive)</h2><p>命令：sl（蒸汽机车的缩写）<br>You might be aware of command ‘ls’ the list command and use it frequently to view the contents of a folder but because of miss-typing sometimes you would result in ‘sl’, how about getting a little fun in terminal and not “command not found”.<br>你一定知道ls是用来显示文件夹内容的常见命令，但如果不小心打成sl呢？通过包管理工具安装它，你就能看见一辆跑过屏幕的火车，而不是“找不到命令”：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ apt-get install sl <span class="comment">#In Debian like OS, or aptitude based system</span></span><br><span class="line">root@mimi:~ yum -y install sl <span class="comment">#In Red Hat like OS, or yum based system</span></span><br><span class="line">root@mimi:~ sl</span><br></pre></td></tr></table></figure></p>
+          <p>这篇文章翻译自：<a href="https://www.tecmint.com/20-funny-commands-of-linux-or-linux-is-fun-in-terminal" target="_blank" rel="noopener">20 Funny Commands of Linux or Linux is Fun in Terminal</a><br>Linux is fun! Huhhh. OK so you don’t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.<br>Linux是非常有趣的，别不相信–看完这篇文章，你一定会发现Linux系统神奇的用法。<br>请注意，下面部分命令给出了两种包管理软件的安装方式，如果是Debian系的系统，请使用<code>apt</code>，如果是Red Hat系的系统，请使用<code>yum</code>。如果你使用了其他Linux发行版、macOS，或使用了其他包管理工具（例如brew），可能无法找到所有这些命令。</p>
+<h2 id="sl-Steam-Locomotive"><a href="#sl-Steam-Locomotive" class="headerlink" title="sl (Steam Locomotive)"></a>sl (Steam Locomotive)</h2><p>命令：sl（蒸汽机车的缩写）<br>You might be aware of command ‘ls’ the list command and use it frequently to view the contents of a folder but because of miss-typing sometimes you would result in ‘sl’, how about getting a little fun in terminal and not “command not found”.<br>你一定知道ls是用来显示文件夹内容的常见命令，但如果不小心打成sl呢？通过包管理工具安装它，你就能看见一辆跑过屏幕的火车，而不是“找不到命令”：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ apt install sl <span class="comment">#In Debian like OS, or aptitude based system</span></span><br><span class="line">root@mimi:~ yum -y install sl <span class="comment">#In Red Hat like OS, or yum based system</span></span><br><span class="line">root@mimi:~ sl</span><br></pre></td></tr></table></figure></p>
 <p>This command works even when you type ‘LS’ and not ‘ls’.</p>
 <h2 id="telnet"><a href="#telnet" class="headerlink" title="telnet"></a>telnet</h2><p>命令：telnet<br>No! No!! it is not as much complex as it seems. You would be familiar with telnet. Telnet is a text-oriented bidirectional network protocol over network. Here is nothing to be installed. What you should have is a Linux box and a working Internet.<br>不！它并不像看上去那样复杂。你会熟悉它的。Telnet是一个基于文本的双向网络协议。你无需安装它，只需要一台能够联网的linux机器就行。<br>输入以下命令即可观看ASCII版星球大战：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ telnet towel.blinkenlights.nl</span><br></pre></td></tr></table></figure></p>
 <p>而以下命令将会在你的命令行中生成一个ASCII世界地图：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ telnet mapscii.me</span><br></pre></td></tr></table></figure></p>
 <p>是不是很有趣？</p>
-<h2 id="fortune"><a href="#fortune" class="headerlink" title="fortune"></a>fortune</h2><p>命令：fortune What about getting your random fortune, sometimes funny in<br>terminal.<br>在终端获取随机的人生经验，听上去不错吧？<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ apt-get install fortune</span><br><span class="line">root@mimi:~ yum install fortune</span><br><span class="line">root@mimi:~ fortune</span><br><span class="line">You<span class="string">'re not my type.  For that matter, you'</span>re not even my species!!!</span><br><span class="line">Future looks spotty.  You will spill soup <span class="keyword">in</span> late evening.</span><br><span class="line">You worry too much about your job.  Stop it.  You are not paid enough to worry.</span><br><span class="line">Your love life will be... interesting.</span><br></pre></td></tr></table></figure></p>
+<h2 id="fortune"><a href="#fortune" class="headerlink" title="fortune"></a>fortune</h2><p>命令：fortune What about getting your random fortune, sometimes funny in<br>terminal.<br>在终端获取随机的人生经验，听上去不错吧？<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@mimi:~ apt install fortune</span><br><span class="line">root@mimi:~ yum install fortune</span><br><span class="line">root@mimi:~ fortune</span><br><span class="line">You<span class="string">'re not my type.  For that matter, you'</span>re not even my species!!!</span><br><span class="line">Future looks spotty.  You will spill soup <span class="keyword">in</span> late evening.</span><br><span class="line">You worry too much about your job.  Stop it.  You are not paid enough to worry.</span><br><span class="line">Your love life will be... interesting.</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
             <div class="post-button text-center">
               <a class="btn" href="/2018-05/有趣的Linux命令行工具/#more" rel="contents">
@@ -534,37 +534,37 @@
     <div class="post-body" itemprop="articleBody">
           <p>Linux 命令行快捷键<br>涉及在Linux命令行下进行快速移动光标、命令编辑、编辑后执行历史命令、Bang(!)命令、控制命令等，有效提高工作效率。</p>
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
-<li>Ctrl - k : 先按住 Ctrl 键，然后再按 k 键</li>
-<li>Ctrl - kl : 先按住 Ctrl 键，然后再按 k 键，然后松开 k 键，再按 l 键</li>
-<li>Alt - k : 先按住 Alt 键，然后再按 k 键</li>
-<li>M - k : 先单击 Meta(Esc) 键，然后再按 k 键</li>
+<li><code>Ctrl - k</code>: 先按住 Ctrl 键，然后再按 k 键</li>
+<li><code>Ctrl - kl</code>: 先按住 Ctrl 键，然后再按 k 键，然后松开 k 键，再按 l 键</li>
+<li><code>Alt - k</code>: 先按住 Alt 键，然后再按 k 键</li>
+<li><code>M - k</code>: 先单击 Meta(Esc) 键，然后再按 k 键</li>
 </ul>
 <h2 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h2><ul>
-<li>Ctrl - 左右键 : 在单词之间跳转</li>
-<li>Ctrl - a : 移到行首</li>
-<li>Ctrl - e : 移到行尾</li>
-<li>Ctrl - b : 往回(左)移动一个字符</li>
-<li>Ctrl - f : 往后(右)移动一个字符</li>
-<li>Ctrl - xx : 在命令行尾和光标之间移动</li>
-<li>Alt - b : 往回(左)移动一个单词</li>
-<li>Alt - f : 往后(右)移动一个单词</li>
-<li>M - b : 往回(左)移动一个单词</li>
-<li>M - f : 往后(右)移动一个单词</li>
+<li><code>Ctrl - 左右键</code>: 在单词之间跳转</li>
+<li><code>Ctrl - a</code>: 移到行首</li>
+<li><code>Ctrl - e</code>: 移到行尾</li>
+<li><code>Ctrl - b</code>: 往回(左)移动一个字符</li>
+<li><code>Ctrl - f</code>: 往后(右)移动一个字符</li>
+<li><code>Ctrl - xx</code>: 在命令行尾和光标之间移动</li>
+<li><code>Alt - b</code>: 往回(左)移动一个单词</li>
+<li><code>Alt - f</code>: 往后(右)移动一个单词</li>
+<li><code>M - b</code>: 往回(左)移动一个单词</li>
+<li><code>M - f</code>: 往后(右)移动一个单词</li>
 </ul>
 <h2 id="编辑命令"><a href="#编辑命令" class="headerlink" title="编辑命令"></a>编辑命令</h2><ul>
-<li>Ctrl - h : 删除光标左方位置的字符</li>
-<li>Ctrl - d : 删除光标右方位置的字符(注意：Ctrl - d 也代表EOF，当前命令行没有任何字符时，会注销系统或结束终端)</li>
-<li>Ctrl - w : 由光标位置开始，往左删除单词(往行首删)</li>
-<li>Alt - d : 由光标位置开始，往右删除单词(往行尾删)</li>
-<li>M - d : 由光标位置开始，删除单词，直到该单词结束</li>
-<li>Ctrl - u : 由光标所在位置开始，删除左方所有的字符，直到该行开始</li>
-<li>Ctrl - k : 由光标所在位置开始，删除右方所有的字符，直到该行结束</li>
-<li>Ctrl - y : 粘贴 Ctrl - u 或 Ctrl - k 剪切的内容到光标后</li>
-<li>Ctrl - t : 交换光标处和之前两个字符的位置</li>
-<li>Alt - . : 使用上一条命令的最后一个参数</li>
-<li>Ctrl - _ : 回复之前的状态，撤销操作</li>
+<li><code>Ctrl - h</code>: 删除光标左方位置的字符</li>
+<li><code>Ctrl - d</code>: 删除光标右方位置的字符（注意：<code>Ctrl - d</code>也代表EOF，当前命令行没有任何字符时，会注销系统或结束终端）</li>
+<li><code>Ctrl - w</code>: 由光标位置开始，往左删除单词(往行首删)</li>
+<li><code>Alt - d</code>: 由光标位置开始，往右删除单词(往行尾删)</li>
+<li><code>M - d</code>: 由光标位置开始，删除单词，直到该单词结束</li>
+<li><code>Ctrl - u</code>: 由光标所在位置开始，删除左方所有的字符，直到该行开始</li>
+<li><code>Ctrl - k</code>: 由光标所在位置开始，删除右方所有的字符，直到该行结束</li>
+<li><code>Ctrl - y</code>: 粘贴<code>Ctrl - u</code>或<code>Ctrl - k</code>剪切的内容到光标后</li>
+<li><code>Ctrl - t</code>: 交换光标处和之前两个字符的位置</li>
+<li><code>Alt - .</code>: 使用上一条命令的最后一个参数</li>
+<li><code>Ctrl - _</code>: 回复之前的状态，撤销操作</li>
 </ul>
-<p>Ctrl - ak 或 Ctrl - eu 或 Ctrl - ku 组合可删除整行</p>
+<p>另外，<code>Ctrl - ak</code>或<code>Ctrl - eu</code>或<code>Ctrl - ku</code>组合可删除整行。</p>
           <!--noindex-->
             <div class="post-button text-center">
               <a class="btn" href="/2018-05/Linux命令行常用快捷键/#more" rel="contents">

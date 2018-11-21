@@ -354,7 +354,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">1k</span>
+                <span title="本文字数">1.1k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
@@ -365,11 +365,11 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-            <p>目前搭建MCPE服务器的方法主要有两种：<a href="https://github.com/pmmp/PocketMine-MP/" target="_blank" rel="noopener">PocketMine-MP</a>和<a href="https://github.com/Nukkit/Nukkit" target="_blank" rel="noopener">Nukkit</a>。前者基于PHP，而后者基于Java。<br>无论选择哪一种方法，都要确保游戏客户端和服务器端均是最新版本。如果版本不匹配，可能造成无法连接等问题。</p>
+            <p>目前搭建MCPE服务器的方法主要有两种：<a href="https://github.com/pmmp/PocketMine-MP" target="_blank" rel="noopener">PocketMine-MP</a>和<a href="https://github.com/NukkitX/Nukkit" target="_blank" rel="noopener">Nukkit</a>。前者基于PHP，而后者基于Java。<br>无论选择哪一种方法，都要确保游戏客户端和服务器端均是最新版本。如果版本不匹配，可能造成无法连接等问题。</p>
 <h2 id="PocketMine-MP"><a href="#PocketMine-MP" class="headerlink" title="PocketMine-MP"></a>PocketMine-MP</h2><p>运行PocketMine-MP需要php7环境和大量的拓展库，例如php-leveldb和yaml等。即使你已经通过brew、yum等包管理工具安装了php，也可能无法正确启动服务器——它们一般是不会自带这些拓展库的。为了免去手动编译安装拓展的麻烦，比较简单的解决方法是使用<a href="https://github.com/pmmp/php-build-scripts" target="_blank" rel="noopener">php-build-scripts</a>。它会编译出带有所有必要的拓展库的php，供PocketMine-MP使用，并且不会与系统原有的php环境冲突。比如在Mac下，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/pmmp/php-build-scripts.git</span><br><span class="line"><span class="built_in">cd</span> php-build-scripts</span><br><span class="line">bash compile.sh -t mac64 -l -j4 -f</span><br></pre></td></tr></table></figure></p>
 <p>即可编译安装php(Linux将参数对应改为<code>-t linux64</code>即可)。<br>完成后，再执行<code>bash installer.sh</code>，就会自动下载<code>PocketMine-MP.phar</code>等必要程序。最后，执行<code>bash start.sh</code>就可以运行了，接下来根据提示进行配置即可。这种方式非常方便，只要记得使用<code>screen</code>，然后等上几分钟就行。更多配置可以参考其官方文档。</p>
-<h2 id="Nukkit"><a href="#Nukkit" class="headerlink" title="Nukkit"></a>Nukkit</h2><p>Nukkit需要Java8环境，如果没有安装，可以前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>下载。运行方式也很简单，克隆这个仓库后，依次执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git submodule <span class="keyword">update</span> <span class="comment">--init</span></span><br><span class="line">mvn clean <span class="keyword">package</span></span><br><span class="line"><span class="keyword">java</span> -jar Nukkit.jar</span><br></pre></td></tr></table></figure></p>
-<p>当然，在其官网上也有发布的版本，无需自行编译Jar文件，可以前往<a href="https://nukkit.io" target="_blank" rel="noopener">Nukkit.io</a>查看。<br>Nukkit的主要问题是不支持leveldb，也就是无法打开较新的MCPE存档，只支持MC存档和上古的MCPE存档。而且Nukkit似乎已经失去维护，因此建议使用第一种方法。</p>
+<h2 id="Nukkit"><a href="#Nukkit" class="headerlink" title="Nukkit"></a>Nukkit</h2><p>Nukkit的原版似乎已经失去维护，其官方网站<a href="https://nukkit.io" target="_blank" rel="noopener">Nukkit.io</a>也无法打开。这里介绍的是一个fork出的分支。<br>Nukkit需要Java8环境，如果没有安装，可以前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>下载。运行方式也很简单，克隆这个仓库后，依次执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git submodule <span class="keyword">update</span> <span class="comment">--init</span></span><br><span class="line">mvn clean <span class="keyword">package</span></span><br><span class="line"><span class="keyword">java</span> -jar Nukkit.jar</span><br></pre></td></tr></table></figure></p>
+<p>当然，在其新维护者的官网上也有发布的版本，无需自行编译Jar文件，可以前往<a href="https://nukkitx.com" target="_blank" rel="noopener">NukkitX</a>查看。<br>Nukkit的主要问题是不支持leveldb，也就是无法打开较新的MCPE存档，只支持MC存档和上古的MCPE存档，因此建议使用第一种方法。</p>
 <h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>PocketMine-MP和Nukkit启动后默认都会监听19132端口，配置服务器时填写局域网或公网IP/域名即可。更多的设置项可以参考它们的文档。</p>
 <h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>转换存档的格式可以用这个脚本：<a href="https://github.com/ljyloo/LevelDb2Avnil" target="_blank" rel="noopener">LevelDb2Avnil</a>，不过看上去兼容性仍存在问题，请谨慎使用。</p>
     </div>

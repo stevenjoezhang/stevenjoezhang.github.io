@@ -162,6 +162,100 @@
   <section id="posts" class="posts-expand">
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/一些CSS的小技巧/">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a href="/2018-06/一些CSS的小技巧/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/6/index.html">一些CSS的小技巧</a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <time title="创建时间：2018-06-01 08:53:13" itemprop="dateCreated datePublished" datetime="2018-06-01T08:53:13+08:00">2018-06-01</time>
+          </span>
+            <span class="post-category">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-06/一些CSS的小技巧/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-06/一些CSS的小技巧/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">8.2k</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">7 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="p标签换行"><a href="#p标签换行" class="headerlink" title="p标签换行"></a>p标签换行</h2><p>CSS自动换行、强制不换行、强制断行、超出显示省略号</p>
+<p>P标签是默认是自动换行的，因此设置好宽度之后，能够较好的实现效果，但是最近的项目中发现，使用ajax加载数据之后，p标签内的内容没有换行，导致布局错乱，于是尝试着使用换行样式，虽然解决了问题，但是并没有发现本质原因。经过研究，其本质在于，当时获取的数据是一长串的数字，浏览器应该是对数字和英文单词处理方式相近，不会截断。<br>先给出各种方式，再具体介绍每一个属性。<br>强制不换行：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">white-space</span>: nowrap; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>自动换行：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">word-wrap</span>: break-word; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>强制英文单词断行：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">word-break</span>: break-all; &#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意：设置强制将英文单词断行，需要将行内元素设置为块级元素。</strong><br>超出显示省略号：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">text-overflow</span>: ellipsis; <span class="attribute">overflow</span>: hidden; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>white-space 属性设置如何处理元素内的空白。</p>
+<ul>
+<li>normal 默认。空白会被浏览器忽略</li>
+<li>pre 空白会被浏览器保留。其行为方式类似 HTML 中的 pre 标签</li>
+<li>nowrap 文本不会换行，文本会在在同一行上继续，直到遇到 br 标签为止</li>
+<li>pre-wrap 保留空白符序列，但是正常地进行换行</li>
+<li>pre-line 合并空白符序列，但是保留换行符</li>
+<li>inherit 规定应该从父元素继承 white-space 属性的值</li>
+</ul>
+<p>word-wrap 属性用来标明是否允许浏览器在单词内进行断句，这是为了防止当一个字符串太长而找不到它的自然断句点时产生溢出现象。</p>
+<ul>
+<li>normal 只在允许的断字点换行(浏览器保持默认处理)</li>
+<li>break-word 在长单词或URL地址内部进行换行</li>
+</ul>
+<p>word-break 属性用来标明怎么样进行单词内的断句。</p>
+<ul>
+<li>normal 使用浏览器默认的换行规则</li>
+<li>break-all 允许再单词内换行</li>
+<li>keep-all 只能在半角空格或连字符处换行</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-06/一些CSS的小技巧/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/Crontab定时写法整理/">
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
@@ -259,7 +353,7 @@
   </article>
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/博客迁移至GitHub Pages/">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/博客迁移至Hexo/">
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
       <meta itemprop="description" content="力电声光热，涵尽学海无涯">
@@ -270,7 +364,7 @@
     </span>
       <header class="post-header">
           <h1 class="post-title" itemprop="name headline">
-                <a href="/2018-05/博客迁移至GitHub Pages/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/6/index.html">博客迁移至GitHub Pages</a>
+                <a href="/2018-05/博客迁移至Hexo/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/6/index.html">博客迁移至Hexo</a>
           </h1>
         <div class="post-meta">
           <span class="post-time">
@@ -293,8 +387,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018-05/博客迁移至GitHub Pages/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-05/博客迁移至GitHub Pages/" itemprop="commentCount"></span>
+                <a href="/2018-05/博客迁移至Hexo/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-05/博客迁移至Hexo/" itemprop="commentCount"></span>
                 </a>
               </span>
             <div class="post-symbolscount">
@@ -302,7 +396,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">2.1k</span>
+                <span title="本文字数">2.3k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
@@ -313,8 +407,14 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-            <p>由于之前使用的WordPress博客在更新后出现未知问题，同时考虑到WordPress存在的一些弊端（例如较为臃肿的PHP后端），博主决定将所有内容迁移至GitHub Pages，使用Hexo进行静态页面渲染。<br>目前新站点使用了zhangshuqiao.org的域名，已可以通过https正常访问。旧的WordPress博客仍会保留，但不再更新。<br>Galaxy Mimi站点近期也实装了全新LOGO（使用Monodraw制作）：<br><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">     ___           ___           ___       ___           ___           ___      </span><br><span class="line">    /<span class="symbol">\ </span> <span class="symbol">\ </span>        /<span class="symbol">\ </span> <span class="symbol">\ </span>        /<span class="symbol">\_</span>_<span class="symbol">\ </span>    /<span class="symbol">\ </span> <span class="symbol">\ </span>        |<span class="symbol">\_</span>_<span class="symbol">\ </span>        |<span class="symbol">\_</span>_<span class="symbol">\ </span>    </span><br><span class="line">   /::<span class="symbol">\ </span> <span class="symbol">\ </span>      /::<span class="symbol">\ </span> <span class="symbol">\ </span>      /:/  /    /::<span class="symbol">\ </span> <span class="symbol">\ </span>       |:|  |        |:|  |    </span><br><span class="line">  /:/<span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>    /:/<span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>    /:/  /    /:/<span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>      |:|  |        |:|  |    </span><br><span class="line"> /:/  <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>  /::<span class="symbol">\~</span><span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>  /:/  /    /::<span class="symbol">\~</span><span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>     |:|__|__      |:|__|__  </span><br><span class="line">/:/__/_<span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>/:/<span class="symbol">\:</span><span class="symbol">\ </span><span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>/:/__/    /:/<span class="symbol">\:</span><span class="symbol">\ </span><span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>____/::::<span class="symbol">\_</span>_<span class="symbol">\ </span>    /::::<span class="symbol">\_</span>_<span class="symbol">\ </span></span><br><span class="line"><span class="symbol">\:</span><span class="symbol">\ </span> /<span class="symbol">\ </span><span class="symbol">\/</span>__/ <span class="symbol">\/</span>__<span class="symbol">\:</span><span class="symbol">\/</span>:/  / <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>   <span class="symbol">\/</span>__<span class="symbol">\:</span><span class="symbol">\/</span>:/  / <span class="symbol">\:</span>:::/~~/~       /:/~~/~    </span><br><span class="line"> <span class="symbol">\:</span><span class="symbol">\ </span><span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>       <span class="symbol">\:</span>:/  /   <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>       <span class="symbol">\:</span>:/  /   ~~|:|~~|       /:/  /      </span><br><span class="line">  <span class="symbol">\:</span><span class="symbol">\/</span>:/  /        /:/  /     <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>      /:/  /      |:|  |       <span class="symbol">\/</span>__/       </span><br><span class="line">   <span class="symbol">\:</span>:/  /        /:/  /       <span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>    /:/  /       |:|  |                   </span><br><span class="line">    <span class="symbol">\/</span>__/         <span class="symbol">\/</span>__/         <span class="symbol">\/</span>__/     <span class="symbol">\/</span>__/         <span class="symbol">\|</span>__|                   </span><br><span class="line">                   ___                       ___                                </span><br><span class="line">                  /<span class="symbol">\_</span>_<span class="symbol">\ </span>         ___        /<span class="symbol">\_</span>_<span class="symbol">\ </span>         ___                  </span><br><span class="line">                 /::|  |        /<span class="symbol">\ </span> <span class="symbol">\ </span>     /::|  |        /<span class="symbol">\ </span> <span class="symbol">\ </span>                </span><br><span class="line">                /:|:|  |        <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>   /:|:|  |        <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>               </span><br><span class="line">               /:/|:|__|__      /::<span class="symbol">\_</span>_<span class="symbol">\ </span> /:/|:|__|__      /::<span class="symbol">\_</span>_<span class="symbol">\ </span>              </span><br><span class="line">              /:/ |::::<span class="symbol">\_</span>_<span class="symbol">\ </span> __/:/<span class="symbol">\/</span>__/ /:/ |::::<span class="symbol">\_</span>_<span class="symbol">\ </span> __/:/<span class="symbol">\/</span>__/               </span><br><span class="line">              <span class="symbol">\/</span>__/~~/:/  / /<span class="symbol">\/</span>:/  /    <span class="symbol">\/</span>__/~~/:/  / /<span class="symbol">\/</span>:/  /                  </span><br><span class="line">                    /:/  /  <span class="symbol">\:</span>:/__/           /:/  /  <span class="symbol">\:</span>:/__/                   </span><br><span class="line">                   /:/  /    <span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>         /:/  /    <span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>                  </span><br><span class="line">                  /:/  /      <span class="symbol">\/</span>__/         /:/  /      <span class="symbol">\/</span>__/                   </span><br><span class="line">                  <span class="symbol">\/</span>__/                     <span class="symbol">\/</span>__/</span><br></pre></td></tr></table></figure></p>
-<p>同时博主计划于下半年将原来Galaxy Mimi站点的所有静态页面进行统一调整，敬请期待。</p>
+            <p>由于之前使用的WordPress博客在更新后出现未知错误（最后证实是主机商的问题），同时考虑到WordPress存在的一些弊端，例如：</p>
+<ul>
+<li>较为臃肿的PHP后端</li>
+<li>除了官方主题外，难以找到适合博客写作的主题，大多只适合做展示站</li>
+<li>不安装插件的情况下，编辑文章，特别是长文，是一件非常麻烦的事情</li>
+</ul>
+<p>博主决定将所有内容导出，转而使用Hexo进行静态页面渲染，并部署到GitHub Pages上。借助于<code>hexo-migrator-wordpress</code>，这一工作进行的非常顺利。<br>目前新站点使用了zhangshuqiao.org的域名，已可以通过https正常访问。旧的WordPress博客仍会保留，但不再更新，未来可能更多的用于进行插件的测试。<br>Galaxy Mimi站点近期也实装了全新LOGO（使用Monodraw制作）：<br><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">     ___           ___           ___       ___           ___           ___      </span><br><span class="line">    /<span class="symbol">\ </span> <span class="symbol">\ </span>        /<span class="symbol">\ </span> <span class="symbol">\ </span>        /<span class="symbol">\_</span>_<span class="symbol">\ </span>    /<span class="symbol">\ </span> <span class="symbol">\ </span>        |<span class="symbol">\_</span>_<span class="symbol">\ </span>        |<span class="symbol">\_</span>_<span class="symbol">\ </span>    </span><br><span class="line">   /::<span class="symbol">\ </span> <span class="symbol">\ </span>      /::<span class="symbol">\ </span> <span class="symbol">\ </span>      /:/  /    /::<span class="symbol">\ </span> <span class="symbol">\ </span>       |:|  |        |:|  |    </span><br><span class="line">  /:/<span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>    /:/<span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>    /:/  /    /:/<span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>      |:|  |        |:|  |    </span><br><span class="line"> /:/  <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>  /::<span class="symbol">\~</span><span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>  /:/  /    /::<span class="symbol">\~</span><span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>     |:|__|__      |:|__|__  </span><br><span class="line">/:/__/_<span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>/:/<span class="symbol">\:</span><span class="symbol">\ </span><span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>/:/__/    /:/<span class="symbol">\:</span><span class="symbol">\ </span><span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>____/::::<span class="symbol">\_</span>_<span class="symbol">\ </span>    /::::<span class="symbol">\_</span>_<span class="symbol">\ </span></span><br><span class="line"><span class="symbol">\:</span><span class="symbol">\ </span> /<span class="symbol">\ </span><span class="symbol">\/</span>__/ <span class="symbol">\/</span>__<span class="symbol">\:</span><span class="symbol">\/</span>:/  / <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>   <span class="symbol">\/</span>__<span class="symbol">\:</span><span class="symbol">\/</span>:/  / <span class="symbol">\:</span>:::/~~/~       /:/~~/~    </span><br><span class="line"> <span class="symbol">\:</span><span class="symbol">\ </span><span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>       <span class="symbol">\:</span>:/  /   <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>       <span class="symbol">\:</span>:/  /   ~~|:|~~|       /:/  /      </span><br><span class="line">  <span class="symbol">\:</span><span class="symbol">\/</span>:/  /        /:/  /     <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>      /:/  /      |:|  |       <span class="symbol">\/</span>__/       </span><br><span class="line">   <span class="symbol">\:</span>:/  /        /:/  /       <span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>    /:/  /       |:|  |                   </span><br><span class="line">    <span class="symbol">\/</span>__/         <span class="symbol">\/</span>__/         <span class="symbol">\/</span>__/     <span class="symbol">\/</span>__/         <span class="symbol">\|</span>__|                   </span><br><span class="line">                   ___                       ___                                </span><br><span class="line">                  /<span class="symbol">\_</span>_<span class="symbol">\ </span>         ___        /<span class="symbol">\_</span>_<span class="symbol">\ </span>         ___                  </span><br><span class="line">                 /::|  |        /<span class="symbol">\ </span> <span class="symbol">\ </span>     /::|  |        /<span class="symbol">\ </span> <span class="symbol">\ </span>                </span><br><span class="line">                /:|:|  |        <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>   /:|:|  |        <span class="symbol">\:</span><span class="symbol">\ </span> <span class="symbol">\ </span>               </span><br><span class="line">               /:/|:|__|__      /::<span class="symbol">\_</span>_<span class="symbol">\ </span> /:/|:|__|__      /::<span class="symbol">\_</span>_<span class="symbol">\ </span>              </span><br><span class="line">              /:/ |::::<span class="symbol">\_</span>_<span class="symbol">\ </span> __/:/<span class="symbol">\/</span>__/ /:/ |::::<span class="symbol">\_</span>_<span class="symbol">\ </span> __/:/<span class="symbol">\/</span>__/               </span><br><span class="line">              <span class="symbol">\/</span>__/~~/:/  / /<span class="symbol">\/</span>:/  /    <span class="symbol">\/</span>__/~~/:/  / /<span class="symbol">\/</span>:/  /                  </span><br><span class="line">                    /:/  /  <span class="symbol">\:</span>:/__/           /:/  /  <span class="symbol">\:</span>:/__/                   </span><br><span class="line">                   /:/  /    <span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>         /:/  /    <span class="symbol">\:</span><span class="symbol">\_</span>_<span class="symbol">\ </span>                  </span><br><span class="line">                  /:/  /      <span class="symbol">\/</span>__/         /:/  /      <span class="symbol">\/</span>__/                   </span><br><span class="line">                  <span class="symbol">\/</span>__/                     <span class="symbol">\/</span>__/</span><br></pre></td></tr></table></figure></p>
+<p>同时博主计划于下半年将原来Galaxy Mimi站点的所有静态页面进行一次大型的改进，敬请期待。</p>
 <p>本文更新于2018年7月8日：<br>由于在国内GitHub Pages加载速度不稳定，且由于GitHub政策不利于SEO，博主已将所有托管在GitHub Pages上的页面迁移至另一台独立服务器。<br>目前全站已启用HSTS，支持HTTPS和HTTP/2访问。</p>
     </div>
     <footer class="post-footer">
@@ -578,70 +678,6 @@
     </footer>
   </div>
   </article>
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/在GitHub热点图上绘画/">
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a href="/2018-05/在GitHub热点图上绘画/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/6/index.html">在GitHub热点图上绘画</a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <time title="创建时间：2018-05-04 07:00:35" itemprop="dateCreated datePublished" datetime="2018-05-04T07:00:35+08:00">2018-05-04</time>
-          </span>
-            <span class="post-category">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-05/在GitHub热点图上绘画/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-05/在GitHub热点图上绘画/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">207</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">1 分钟</span>
-            </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-            <p>借助这个项目，你可以在GitHub热点图（动态图）上绘制图案，并由此生成shell脚本；在空项目中执行该脚本，便能创造过去的commit记录；而将该项目push到GitHub上，你的热点图就变得和绘制的图案完全相同。<br><img src="/images/2018-05/gitdraw.png" alt=""></p>
-<p>项目地址：<a href="https://github.com/stevenjoezhang/git-draw" target="_blank" rel="noopener">git-draw</a><br>原项目是一个Chrome插件，由于长期没有维护，且GitHub改变了页面结构，导致插件不可用。新项目重写了部分JavaScript代码，使得其能够正常运行。快来试试吧！</p>
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
   </section>
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -667,7 +703,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">81</span>
+                    <span class="site-state-item-count">82</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

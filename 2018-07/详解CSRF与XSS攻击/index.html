@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="在之前的一篇文章中，提到了WordPress的插件审核机制，其中对于代码安全性的要求，主要就是对CSRF与XSS攻击的防范。官方邮件中这样写道：  Not using Nonces and/or checking permissionsPlease add a nonce to your POST calls to prevent unauthorized access.Keep in mind,">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-18T08:49:51.227Z">
+<meta property="og:updated_time" content="2018-11-25T05:26:20.841Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="详解CSRF与XSS攻击">
 <meta name="twitter:description" content="在之前的一篇文章中，提到了WordPress的插件审核机制，其中对于代码安全性的要求，主要就是对CSRF与XSS攻击的防范。官方邮件中这样写道：  Not using Nonces and/or checking permissionsPlease add a nonce to your POST calls to prevent unauthorized access.Keep in mind,">
@@ -221,7 +221,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-        <p>在之前的一篇文章中，提到了WordPress的插件审核机制，其中对于代码安全性的要求，主要就是对CSRF与XSS攻击的防范。官方邮件中这样写道：</p>
+        <p>在<a href="/2018-07/WordPress中文验证码/">之前的一篇文章</a>中，提到了WordPress的插件审核机制，其中对于代码安全性的要求，主要就是对CSRF与XSS攻击的防范。官方邮件中这样写道：</p>
 <blockquote>
 <h2 id="Not-using-Nonces-and-or-checking-permissions"><a href="#Not-using-Nonces-and-or-checking-permissions" class="headerlink" title="Not using Nonces and/or checking permissions"></a>Not using Nonces and/or checking permissions</h2><p>Please add a nonce to your POST calls to prevent unauthorized access.<br>Keep in mind, check_admin_referer alone is NOT bulletproof security. Do not rely on nonces for authorization purposes. Use current_user_can() in order to prevent users without the right permissions from accessing things.</p>
 </blockquote>

@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="B站的每个视频都有aid和cid两个参数，在已知视频aid（AV号）的情况下，可以通过https://www.bilibili.com/widget/getPageList?aid=$aid获取cid（将$aid替换为视频的aid）。视频的弹幕文件采用xml格式存储，地址与其cid有关，为https://comment.bilibili.com/$cid.xml（将$cid替换为视频的cid即可）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-18T08:49:51.183Z">
+<meta property="og:updated_time" content="2018-11-25T05:15:19.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bilibili弹幕文件的解析">
 <meta name="twitter:description" content="B站的每个视频都有aid和cid两个参数，在已知视频aid（AV号）的情况下，可以通过https://www.bilibili.com/widget/getPageList?aid=$aid获取cid（将$aid替换为视频的aid）。视频的弹幕文件采用xml格式存储，地址与其cid有关，为https://comment.bilibili.com/$cid.xml（将$cid替换为视频的cid即可）">
@@ -210,7 +210,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">823</span>
+                <span title="本文字数">775</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
@@ -224,14 +224,14 @@
         <p>B站的每个视频都有aid和cid两个参数，在已知视频aid（AV号）的情况下，可以通过<code>https://www.bilibili.com/widget/getPageList?aid=$aid</code>获取cid（将$aid替换为视频的aid）。<br>视频的弹幕文件采用xml格式存储，地址与其cid有关，为<code>https://comment.bilibili.com/$cid.xml</code>（将$cid替换为视频的cid即可）。<br>对于有许多分P的视频，它们的aid（AV号）相同，每个分P则对应一个不同的cid。而在同一个页面下的番剧、影视等内容，每一分集的cid也是唯一的。<br>弹幕内容的存储方式为：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">d</span> <span class="attr">p</span>=<span class="string">"0,1,25,16777215,1312863760,0,eff85771,42759017"</span>&gt;</span>前排占位置<span class="tag">&lt;/<span class="name">d</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>这个元素中的各个参数由逗号分割，其意义分别为：</p>
 <ul>
-<li>第一个参数是弹幕出现的时间，以秒数为单位</li>
-<li>第二个参数是弹幕的模式：1～3滚动弹幕 4底端弹幕 5顶端弹幕 6.逆向弹幕 7精准定位 8高级弹幕</li>
-<li>第三个参数是字号：12非常小，16特小，18小，25中，36大，45很大，64特别大</li>
-<li>第四个参数是字体的颜色：将HTML六位十六进制颜色转为十进制表示，例如#FFFFFF会被存储为16777215，因为(FFFFFF)16=(16777215)10</li>
-<li>第五个参数是Unix时间戳，以毫秒为单位，基准时间为 1970-1-1 08:00:00</li>
-<li>第六个参数是弹幕池：0普通池 1字幕池 2特殊池（注，目前特殊池为高级弹幕专用）</li>
-<li>第七个参数是发送者的ID，用于“屏蔽此弹幕的发送者”功能</li>
-<li>第八个参数是弹幕在弹幕数据库中rowID，用于“历史弹幕”功能</li>
+<li>弹幕出现的时间，以秒数为单位</li>
+<li>弹幕的模式：1～3滚动弹幕 4底端弹幕 5顶端弹幕 6.逆向弹幕 7精准定位 8高级弹幕</li>
+<li>字号：12非常小，16特小，18小，25中，36大，45很大，64特别大</li>
+<li>字体的颜色：将HTML六位十六进制颜色转为十进制表示，例如#FFFFFF会被存储为16777215，因为(FFFFFF)16=(16777215)10</li>
+<li>Unix时间戳，以毫秒为单位，基准时间为 1970-1-1 08:00:00</li>
+<li>弹幕池：0普通池 1字幕池 2特殊池（注，目前特殊池为高级弹幕专用）</li>
+<li>发送者的ID，用于“屏蔽此弹幕的发送者”功能</li>
+<li>弹幕在弹幕数据库中rowID，用于“历史弹幕”功能</li>
 </ul>
 <p>将Bilibili弹幕的xml文件转为ass字幕，可以使用以下脚本：<br><a href="http://tiansh.github.io/us-danmaku/bilibili" target="_blank" rel="noopener">bilibili ASS 弹幕在线转换</a><br><a href="https://github.com/tiansh/us-danmaku" target="_blank" rel="noopener">us-danmaku</a><br>关于ass字幕格式可以参考以下文章：<br><a href="https://www.douban.com/note/658520175" target="_blank" rel="noopener">ASS字幕格式规范</a></p>
     </div>

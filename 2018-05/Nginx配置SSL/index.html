@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="安装CertBot首先，克隆Certbot在GitHub上的仓库到本地：1git clone https://github.com/certbot/certbot.git 在certbot文件夹下，有一个shell脚本，名为certbot-auto。你可以将其软链接为certbot，方便进行接下来的步骤。具体操作是，在你的家目录~下的.bashrc或.bash_profile文件中追加以下内容：1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-18T08:49:51.203Z">
+<meta property="og:updated_time" content="2018-11-26T14:00:37.594Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx配置SSL">
 <meta name="twitter:description" content="安装CertBot首先，克隆Certbot在GitHub上的仓库到本地：1git clone https://github.com/certbot/certbot.git 在certbot文件夹下，有一个shell脚本，名为certbot-auto。你可以将其软链接为certbot，方便进行接下来的步骤。具体操作是，在你的家目录~下的.bashrc或.bash_profile文件中追加以下内容：1">
@@ -210,13 +210,13 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">3.4k</span>
+                <span title="本文字数">4.4k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
                 </span>
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">4 分钟</span>
             </div>
         </div>
       </header>
@@ -240,6 +240,21 @@
 <p>手动进行更新（注：证书只有在有效期小于一个月的时候才会更新，否则CertBot会提示无需更新）。<br>当然，你也可以通过Crontab来启用定时任务，自动更新证书。在命令行执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo crontab -e</span><br></pre></td></tr></table></figure></p>
 <p>在打开的文件中添加配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">30 2 * * 1 /path/to/your/certbot renew  &gt;&gt; /var/<span class="built_in">log</span>/le-renew.log</span><br></pre></td></tr></table></figure></p>
 <p>这里建议使用certbot或certbot-auto的绝对地址，避免出现问题。这样，在每周一半夜2点30分就会执行renew任务，自动更新证书。<br>如果一切OK，那么我们的配置到此结束！</p>
+<h2 id="关于HSTS"><a href="#关于HSTS" class="headerlink" title="关于HSTS"></a>关于HSTS</h2><p>如果你能够确保在未来足够长的时间内保持证书的有效性，则可以配置HSTS。HSTS是HTTP Strict Transport Security的缩写，它可以阻止基于SSLStrip的中间人攻击，这将增加访问的安全性。在http头中做出如下设置即可开启HSTS：<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Strict-Transport-Security: max-age=expireTime [; includeSubDomains] <span class="selector-attr">[; preload]</span></span><br></pre></td></tr></table></figure></p>
+<p>其中<code>expireTime</code>是过期时间，一旦用户通过https访问你开启了HSTS的站点，那么在<code>expireTime</code>之内再次访问，浏览器将强制启用https——这样可以防止发送不安全的流量。但是，如果你的证书此时过期了，那么用户将无法访问你的网站，因为http访问会被浏览器禁止。<br>更进一步，你可以把自己的网站提交到HSTS preload list中。这是Chrome浏览器中的HSTS预载入列表，在该列表中的网站，使用Chrome浏览器访问时，会自动转换成HTTPS。Firefox、Safari、Edge浏览器也在采用这个列表。<br>加入HSTS preload list的条件为：</p>
+<ul>
+<li>有效的证书（如果使用SHA-1证书，必须是2016年前就会过期的）</li>
+<li>将所有HTTP流量重定向到HTTPS</li>
+<li>确保所有子域名启用HTTPS，特别是www子域名</li>
+</ul>
+<p>同时输出的HSTS响应头部需要满足以下条件：</p>
+<ul>
+<li>max-age至少为一年，31536000秒</li>
+<li>必须指定includeSubdomains参数</li>
+<li>必须支持preload参数</li>
+</ul>
+<p>所以，一个典型满足HSTS preload list的响应头部为：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Strict-Transport-Security: <span class="built_in">max</span>-age=<span class="number">31536000</span>; includeSubDomains; <span class="built_in">preload</span>;</span><br></pre></td></tr></table></figure></p>
+<p>通过配置Nginx，利用<code>add_header</code>加上这个响应头，然后就可以在HSTS preload list的<a href="https://hstspreload.org" target="_blank" rel="noopener">官方网站</a>上进行申请了。从申请到审核通过，时间在几天到几周不等。申请后，你可以随时查询最新的状态，也可以在Chrome浏览器的地址框中输入<code>chrome://net-internals/#hsts</code>查看。从审核通过到正式加入到Chrome的stable release版本中还需要一段时间，因为还要经过canary、dev、beta以及stable progression等步骤。</p>
 <p>参考文章：<br><a href="https://blog.csdn.net/p793049488/article/details/53483381" target="_blank" rel="noopener">nginx+ssl配置http和https共存</a><br><a href="https://segmentfault.com/a/1190000005797776" target="_blank" rel="noopener">手把手教你在Nginx上使用CertBot</a></p>
 <p>本文更新于2018年7月28日：<br>在较新版本中，<code>ssl on</code>不再被使用，否则会报错：[warn] the “ssl” directive is deprecated, use the “listen … ssl” directive instead；将推荐的CertBot安装方式由包管理工具改为Git项目。</p>
     </div>
@@ -371,7 +386,7 @@
       <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装CertBot"><span class="nav-number">1.</span> <span class="nav-text">安装CertBot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置CertBot"><span class="nav-number">2.</span> <span class="nav-text">配置CertBot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Nginx"><span class="nav-number">3.</span> <span class="nav-text">配置Nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新证书"><span class="nav-number">4.</span> <span class="nav-text">更新证书</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装CertBot"><span class="nav-number">1.</span> <span class="nav-text">安装CertBot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置CertBot"><span class="nav-number">2.</span> <span class="nav-text">配置CertBot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Nginx"><span class="nav-number">3.</span> <span class="nav-text">配置Nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新证书"><span class="nav-number">4.</span> <span class="nav-text">更新证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于HSTS"><span class="nav-number">5.</span> <span class="nav-text">关于HSTS</span></a></li></ol></div>
           </div>
         </section>
       <!--/noindex-->

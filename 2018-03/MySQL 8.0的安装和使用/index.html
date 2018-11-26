@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="MySQL的安装在MySQL官网的下载页上，提供了各种系统和环境的安装方法。你可以选择通过包管理工具的软件源安装，也可以通过源码编译安装。不过编译是非常吃内存的（至少需要4GiB内存），并且还很耗时（毕竟是C++写的），因此不推荐。具体来说，你可以： 使用包管理工具以yum为例，首先增加并启用MySQL软件源，在这个页面找到适合你的版本，然后下载并启用之：123wget https://dev.m">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-25T04:37:40.030Z">
+<meta property="og:updated_time" content="2018-11-26T12:11:19.314Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL 8.0的安装和使用">
 <meta name="twitter:description" content="MySQL的安装在MySQL官网的下载页上，提供了各种系统和环境的安装方法。你可以选择通过包管理工具的软件源安装，也可以通过源码编译安装。不过编译是非常吃内存的（至少需要4GiB内存），并且还很耗时（毕竟是C++写的），因此不推荐。具体来说，你可以： 使用包管理工具以yum为例，首先增加并启用MySQL软件源，在这个页面找到适合你的版本，然后下载并启用之：123wget https://dev.m">
@@ -210,13 +210,13 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">3.5k</span>
+                <span title="本文字数">4.7k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
                 </span>
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">4 分钟</span>
             </div>
         </div>
       </header>
@@ -227,6 +227,7 @@
 <p>安装完成后，会在<code>/usr/sbin/</code>和<code>/usr/bin/</code>目录下出现MySQL的可执行文件，而<code>mysqld.service</code>会自动加载好。MySQL的配置文件则是<code>/etc/my.cnf</code>。</p>
 <h3 id="使用源码编译安装"><a href="#使用源码编译安装" class="headerlink" title="使用源码编译安装"></a>使用源码编译安装</h3><p>再次提醒：源码编译安装方式非常麻烦，如果可以的话请使用包管理工具安装。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget wget https://cdn.mysql.com//Downloads/MySQL-8.0/mysql-boost-8.0.13.tar.gz</span><br><span class="line">tar -xzvf mysql-boost-8.0.13.tar.gz</span><br><span class="line"><span class="built_in">cd</span> mysql-boost-8.0.13</span><br><span class="line">cmake . -DCMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span>/mysql -DMYSQL_DATADIR=/data/mysql -DDOWNLOAD_BOOST=1 -DWITH_BOOST=boost -DSYSCONFDIR=/etc -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_PARTITION_STORAGE_ENGINE=1 -DWITH_FEDERATED_STORAGE_ENGINE=1 -DWITH_BLACKHOLE_STORAGE_ENGINE=1 -DWITH_MYISAM_STORAGE_ENGINE=1 -DWITH_EMBEDDED_SERVER=1 -DENABLE_DTRACE=0 -DENABLED_LOCAL_INFILE=1 -DDEFAULT_CHARSET=utf8mb4 -DEXTRA_CHARSETS=all</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure></p>
 <p><code>-DCMAKE_INSTALL_PREFIX</code>和<code>-DMYSQL_DATADIR</code>参数指定了MySQL的安装目录和数据文件存储目录。</p>
+<a id="more"></a>
 <h2 id="MySQL的配置"><a href="#MySQL的配置" class="headerlink" title="MySQL的配置"></a>MySQL的配置</h2><p>为了正确地让PHP链接MySQL数据库，在<code>/etc/my.cnf</code>中，配置以下内容：<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="attr">datadir</span>=/data/mysql</span><br><span class="line"><span class="attr">socket</span>=/tmp/mysql.sock</span><br><span class="line"></span><br><span class="line"><span class="attr">log-error</span>=/var/log/mysqld.log</span><br><span class="line"><span class="attr">pid-file</span>=/var/run/mysqld/mysqld.pid</span><br><span class="line"></span><br><span class="line"><span class="section">[client]</span></span><br><span class="line"><span class="attr">socket</span>=/tmp/mysql.sock</span><br></pre></td></tr></table></figure></p>
 <p>这里的datadir是数据文件存储目录，请确保用户mysql对其拥有访问权限。如果是覆盖升级安装，需要确保它与之前版本MySQL使用的目录相同。<br>而socket是UNIX套接字，使用它的地方要保持一致。具体来说，你需要保证：</p>
 <ul>
@@ -235,7 +236,131 @@
 <li><code>php.ini</code>中，<code>[Pdo_mysql]</code>下的<code>pdo_mysql.default_socket</code>值</li>
 <li><code>php.ini</code>中，<code>[MySQLi]</code>下的<code>mysqli.default_socket</code>值</li>
 </ul>
-<p>这四个值是一致的。而之所以选择<code>/tmp/mysql.sock</code>，是因为PHP默认的MySQL套接字在这个位置，配置好<code>my.cnf</code>就行，而不用修改PHP的配置（即php.ini中的对应项留空即可，会采用默认值）；如果用了其他的目录，就需要修改<code>php.ini</code>。<br><code>php.ini</code>根据你的安装方式，可能出现在<code>/etc</code>或<code>/usr/local/php</code>下的某个位置，可以自行处理。<br>完成后，重新启动mysqld即可：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure></p>
+<p>这四个值是一致的。而之所以选择<code>/tmp/mysql.sock</code>，是因为PHP默认的MySQL套接字在这个位置，配置好<code>my.cnf</code>就行，而不用修改PHP的配置（即php.ini中的对应项留空即可，会采用默认值）；如果用了其他的目录，就需要修改<code>php.ini</code>。<br><code>php.ini</code>根据你的安装方式，可能出现在<code>/etc</code>或<code>/usr/local/php</code>下的某个位置，可以自行处理。<br>为了优化MySQL，还可以在<code>/etc/my.cnf</code>中增加如下设置：<br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[mysql]</span><br><span class="line">no-auto-rehash</span><br><span class="line">connect_timeout=2</span><br><span class="line">prompt=<span class="string">"MySQL [\\d]&gt; "</span></span><br><span class="line"></span><br><span class="line">[mysqldump]</span><br><span class="line">quick</span><br><span class="line">max_allowed_packet = 500M</span><br></pre></td></tr></table></figure></p>
+<p>其中，<code>[mysql]</code>下的<code>prompt</code>允许个性化设置提示符，在操作数据库时更加方便快捷。可用的参数有：</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\c</td>
+<td>A counter that increments for each statement you issue</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>The full current date</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>The default database</td>
+</tr>
+<tr>
+<td>\h</td>
+<td>The server host</td>
+</tr>
+<tr>
+<td>\l</td>
+<td>The current delimiter (new in 5.0.25)</td>
+</tr>
+<tr>
+<td>\m</td>
+<td>Minutes of the current time</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>A newline character</td>
+</tr>
+<tr>
+<td>\O</td>
+<td>The current month in three-letter format (Jan, Feb, …)</td>
+</tr>
+<tr>
+<td>\o</td>
+<td>The current month in numeric format</td>
+</tr>
+<tr>
+<td>\P</td>
+<td>am/pm</td>
+</tr>
+<tr>
+<td>\p</td>
+<td>The current TCP/IP port or socket file</td>
+</tr>
+<tr>
+<td>\R</td>
+<td>The current time, in 24-hour military time (0–23)</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>The current time, standard 12-hour time (1–12)</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>Semicolon</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>Seconds of the current time</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>A tab character</td>
+</tr>
+<tr>
+<td>\U</td>
+<td>Your full user_name@host_name account name</td>
+</tr>
+<tr>
+<td>\u</td>
+<td>Your user name</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>The server version</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>The current day of the week in three-letter format (Mon, Tue, …)</td>
+</tr>
+<tr>
+<td>\Y</td>
+<td>The current year, four digits</td>
+</tr>
+<tr>
+<td>\y</td>
+<td>The current year, two digits</td>
+</tr>
+<tr>
+<td>\_</td>
+<td>A space</td>
+</tr>
+<tr>
+<td>\</td>
+<td>A space (a space follows the backslash)</td>
+</tr>
+<tr>
+<td>\’</td>
+<td>Single quote</td>
+</tr>
+<tr>
+<td>\”</td>
+<td>Double quote</td>
+</tr>
+<tr>
+<td>\\</td>
+<td>A literal “\” backslash character</td>
+</tr>
+<tr>
+<td>\x</td>
+<td>x, for any “x” not listed above</td>
+</tr>
+</tbody>
+</table>
+<p>这里的配置将会显示当前的数据库名。<br>完成设置后，重新启动mysqld即可：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure></p>
 <p>如果你是初次登陆，通过以下方式查看临时root密码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'temporary password'</span> /var/<span class="built_in">log</span>/mysqld.log</span><br></pre></td></tr></table></figure></p>
 <p>然后执行<code>mysql -u root -p</code>，随后输入密码，即可登录。<br>如果是升级安装的，需要执行<code>mysql_upgrade -u root -p</code>来升级数据库。</p>
 <h2 id="MySQL命令"><a href="#MySQL命令" class="headerlink" title="MySQL命令"></a>MySQL命令</h2><p>登录的命令是<code>mysql -u username -p</code>，按回车后输入密码即可。如果要直接登录某个数据库，执行：<code>mysql -h host -u user -p dbname</code>。<br>以下所有命令均需要以<code>;</code>结尾，大小写取决于系统设置。</p>

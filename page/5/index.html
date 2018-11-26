@@ -371,7 +371,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">870</span>
+                <span title="本文字数">1.1k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
@@ -383,17 +383,18 @@
       </header>
     <div class="post-body" itemprop="articleBody">
           <p>在使用VPS时，如果出现内存不够用的情况，可能会产生各种奇怪的问题。这个时候，增加Swap空间，就可以起到救急的作用。下面就来看看具体步骤。</p>
-<h2 id="创建Swap文件"><a href="#创建Swap文件" class="headerlink" title="创建Swap文件"></a>创建Swap文件</h2><h3 id="检查Swap空间"><a href="#检查Swap空间" class="headerlink" title="检查Swap空间"></a>检查Swap空间</h3><p>先检查一下系统里有没有既存的Swap文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon -s</span><br></pre></td></tr></table></figure></p>
+<h2 id="创建Swap文件"><a href="#创建Swap文件" class="headerlink" title="创建Swap文件"></a>创建Swap文件</h2><h3 id="检查Swap空间"><a href="#检查Swap空间" class="headerlink" title="检查Swap空间"></a>检查Swap空间</h3><p>先检查一下系统里有没有既存的Swap文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon -s</span><br></pre></td></tr></table></figure></p>
 <p>如果返回的信息概要是空的，则表示Swap文件不存在。</p>
-<h3 id="确定Swap文件的大小"><a href="#确定Swap文件的大小" class="headerlink" title="确定Swap文件的大小"></a>确定Swap文件的大小</h3><p>Swap文件单位为M。将该值乘以1024得到块大小。例如，64MB的Swap文件的块大小是65536，而1G的Swap文件的块大小是1048576。</p>
-<h3 id="使用dd命令来创建Swap"><a href="#使用dd命令来创建Swap" class="headerlink" title="使用dd命令来创建Swap"></a>使用dd命令来创建Swap</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd <span class="keyword">if</span>=/dev/zero of=/swapfile bs=1024 count=1048576 <span class="comment">#分配1G的Swap空间</span></span><br></pre></td></tr></table></figure>
+<h3 id="计算参数"><a href="#计算参数" class="headerlink" title="计算参数"></a>计算参数</h3><p>创建Swap文件将用到dd命令，我们需要根据需求（即要分配的Swap文件的大小）来计算出参数。一种典型的做法是，每次读写1KiB，重复N次，这样可以兼顾内存消耗和读写次数。因此，如果以MiB为单位计算你要分配的Swap文件的大小，那么读写次数（拷贝的块数）就是将该值乘以1024得到结果。例如，块大小为1KiB时，64MiB的Swap文件拷贝的块数是65536，而1GiB的Swap文件则是1048576。</p>
+<h3 id="使用dd命令来创建Swap"><a href="#使用dd命令来创建Swap" class="headerlink" title="使用dd命令来创建Swap"></a>使用dd命令来创建Swap</h3><p>根据前面的计算：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd <span class="keyword">if</span>=/dev/zero of=/swapfile bs=1024 count=1048576 <span class="comment">#分配1G的Swap空间</span></span><br></pre></td></tr></table></figure></p>
 <p>参数说明：</p>
 <ul>
-<li><code>if=文件名</code>：输入文件名，缺省为标准输入。即指定源文件。</li>
-<li><code>of=文件名</code>：输出文件名，缺省为标准输出。即指定目的文件。</li>
+<li><code>if=input file</code>：输入文件名，缺省为标准输入。即指定源文件。</li>
+<li><code>of=output file</code>：输出文件名，缺省为标准输出。即指定目的文件。</li>
 <li><code>bs=bytes</code>：同时设置读入/输出的块大小为bytes个字节，取为1024。</li>
 <li><code>count=blocks</code>：拷贝的块数，块大小等于bs指定的字节数。将前面算出的数字填入即可。</li>
 </ul>
+<p>这里的<code>if=/dev/zero</code>意味着向<code>/swapfile</code>填满空字符。你也可以尝试将它换成<code>/dev/random</code>，或许也可以正常初始化。</p>
           <!--noindex-->
             <div class="post-button text-center">
               <a class="btn" href="/2018-06/Linux下增加、删除Swap文件/#more" rel="contents">

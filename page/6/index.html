@@ -162,6 +162,82 @@
   <section id="posts" class="posts-expand">
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/Python开发表情包网站/">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a href="/2018-06/Python开发表情包网站/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/6/index.html">Python开发表情包网站</a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <time title="创建时间：2018-06-06 20:47:45" itemprop="dateCreated datePublished" datetime="2018-06-06T20:47:45+08:00">2018-06-06</time>
+          </span>
+            <span class="post-category">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-06/Python开发表情包网站/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-06/Python开发表情包网站/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">4.4k</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">4 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+          <p>“表情包”是一种利用图片来表示感情的方式。在社交软件活跃之后，“表情包”已经形成了一种流行文化，在互联网上，基本人人都会发表情。<br>不知曾经你是否也有过找不到表情包去应对别人的时候？<br>今天博主分享用Python开发个人专属的表情包网站的方法，想用什么表情包搜一下就有了！<br><strong>目标：获取海量表情包，存入数据库，然后搭建简单网站，通过输入关键字获取对应的的表情包</strong></p>
+<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p>首先，我们要从这个网站爬取表情包：<a href="http://www.doutula.com/photo/list/?page=0" target="_blank" rel="noopener">斗图啦</a>。<br>我们先来分析一下这个网页的源代码：<br><img src="/images/2018-06/1.png" alt=""></p>
+<p>通过源码，我们可以发现需要获取的内容包括每个img标签的data-original和alt属性。通过爬虫获取网页，用正则表达式提取内容，然后存入数据库即可。<br>首先，安装mysql，如果你在使用macOS，并配置好了Homebrew：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure></p>
+<p>其它系统可参考文章<a href="/2018-03/MySQL%208.0的安装和使用/">MySQL 8.0的安装和使用</a>。<br>安装完成后，可能需要使用<code>mysql.server start</code>或者<code>systemctl start mysqld</code>等命令手动开启mysql服务。可以通过运行<code>lsof -i:3306</code>查看mysql是否正确工作在3306端口。初次登陆时可能需要用到MySQL生成的随机密码，查看方法是：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'temporary password'</span> /var/<span class="built_in">log</span>/mysqld.log</span><br></pre></td></tr></table></figure></p>
+<p>然后使用以下命令登录：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line"><span class="comment">#按下回车后，输入密码，无回显</span></span><br></pre></td></tr></table></figure></p>
+<p>如果你登录后设置了新的root密码，一定要记住。<br>接下来，你可以用root，也可以创建一个新用户，来新建数据库和数据表，用来存放表情包：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> images;</span><br><span class="line">#建立数据库images</span><br><span class="line"><span class="keyword">USE</span> images;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> images (</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">UNSIGNED</span> PRIMARY <span class="keyword">KEY</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">1000</span>),</span><br><span class="line">  imageUrl <span class="built_in">varchar</span>(<span class="number">200</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br><span class="line">#然后在该数据库中新建一个表，并添加相应的name和imageUrl</span><br><span class="line">QUIT;</span><br></pre></td></tr></table></figure></p>
+<p>至此数据库方面的工作就完成了。</p>
+          <!--noindex-->
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-06/Python开发表情包网站/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/一些CSS的小技巧/">
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
@@ -583,108 +659,6 @@
     </footer>
   </div>
   </article>
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/Linux命令行常用快捷键/">
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a href="/2018-05/Linux命令行常用快捷键/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/6/index.html">Linux命令行常用快捷键</a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <time title="创建时间：2018-05-11 00:17:14" itemprop="dateCreated datePublished" datetime="2018-05-11T00:17:14+08:00">2018-05-11</time>
-          </span>
-            <span class="post-category">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-05/Linux命令行常用快捷键/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-05/Linux命令行常用快捷键/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">1.5k</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">1 分钟</span>
-            </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-          <p>通过快捷键，可以方便地在Linux命令行下快速移动光标、编辑命令、编辑后执行历史命令、Bang(!)命令、控制命令等，有效提高工作效率。</p>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
-<li><code>Ctrl - k</code>: 先按住 Ctrl 键，然后再按 k 键</li>
-<li><code>Ctrl - kl</code>: 先按住 Ctrl 键，然后再按 k 键，然后松开 k 键，再按 l 键</li>
-<li><code>Alt - k</code>: 先按住 Alt 键，然后再按 k 键</li>
-<li><code>M - k</code>: 先单击 Meta(Esc) 键，然后再按 k 键</li>
-</ul>
-<h2 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h2><ul>
-<li><code>Ctrl - 左右键</code>: 在单词之间跳转</li>
-<li><code>Ctrl - a</code>: 移到行首</li>
-<li><code>Ctrl - e</code>: 移到行尾</li>
-<li><code>Ctrl - b</code>: 往回(左)移动一个字符</li>
-<li><code>Ctrl - f</code>: 往后(右)移动一个字符</li>
-<li><code>Ctrl - xx</code>: 在命令行尾和光标之间移动</li>
-<li><code>Alt - b</code>: 往回(左)移动一个单词</li>
-<li><code>Alt - f</code>: 往后(右)移动一个单词</li>
-<li><code>M - b</code>: 往回(左)移动一个单词</li>
-<li><code>M - f</code>: 往后(右)移动一个单词</li>
-</ul>
-<h2 id="编辑命令"><a href="#编辑命令" class="headerlink" title="编辑命令"></a>编辑命令</h2><ul>
-<li><code>Ctrl - h</code>: 删除光标左方位置的字符</li>
-<li><code>Ctrl - d</code>: 删除光标右方位置的字符（注意：<code>Ctrl - d</code>也代表EOF，当前命令行没有任何字符时，会注销系统或结束终端）</li>
-<li><code>Ctrl - w</code>: 由光标位置开始，往左删除单词(往行首删)</li>
-<li><code>Alt - d</code>: 由光标位置开始，往右删除单词(往行尾删)</li>
-<li><code>M - d</code>: 由光标位置开始，删除单词，直到该单词结束</li>
-<li><code>Ctrl - u</code>: 由光标所在位置开始，删除左方所有的字符，直到该行开始</li>
-<li><code>Ctrl - k</code>: 由光标所在位置开始，删除右方所有的字符，直到该行结束</li>
-<li><code>Ctrl - y</code>: 粘贴<code>Ctrl - u</code>或<code>Ctrl - k</code>剪切的内容到光标后</li>
-<li><code>Ctrl - t</code>: 交换光标处和之前两个字符的位置</li>
-<li><code>Alt - .</code>: 使用上一条命令的最后一个参数</li>
-<li><code>Ctrl - _</code>: 回复之前的状态，撤销操作</li>
-</ul>
-<p>另外，<code>Ctrl - ak</code>或<code>Ctrl - eu</code>或<code>Ctrl - ku</code>组合可删除整行。</p>
-          <!--noindex-->
-            <div class="post-button text-center">
-              <a class="btn" href="/2018-05/Linux命令行常用快捷键/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
   </section>
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -710,7 +684,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">82</span>
+                    <span class="site-state-item-count">83</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

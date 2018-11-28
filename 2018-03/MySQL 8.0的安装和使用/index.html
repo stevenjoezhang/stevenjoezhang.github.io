@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="MySQL的安装在MySQL官网的下载页上，提供了各种系统和环境的安装方法。你可以选择通过包管理工具的软件源安装，也可以通过源码编译安装。不过编译是非常吃内存的（至少需要4GiB内存），并且还很耗时（毕竟是C++写的），因此不推荐。具体来说，你可以： 使用包管理工具以yum为例，首先增加并启用MySQL软件源，在这个页面找到适合你的版本，然后下载并启用之：123wget https://dev.m">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-26T12:11:19.314Z">
+<meta property="og:updated_time" content="2018-11-29T13:59:26.519Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL 8.0的安装和使用">
 <meta name="twitter:description" content="MySQL的安装在MySQL官网的下载页上，提供了各种系统和环境的安装方法。你可以选择通过包管理工具的软件源安装，也可以通过源码编译安装。不过编译是非常吃内存的（至少需要4GiB内存），并且还很耗时（毕竟是C++写的），因此不推荐。具体来说，你可以： 使用包管理工具以yum为例，首先增加并启用MySQL软件源，在这个页面找到适合你的版本，然后下载并启用之：123wget https://dev.m">
@@ -365,6 +365,7 @@
 <p>然后执行<code>mysql -u root -p</code>，随后输入密码，即可登录。<br>如果是升级安装的，需要执行<code>mysql_upgrade -u root -p</code>来升级数据库。</p>
 <h2 id="MySQL命令"><a href="#MySQL命令" class="headerlink" title="MySQL命令"></a>MySQL命令</h2><p>登录的命令是<code>mysql -u username -p</code>，按回车后输入密码即可。如果要直接登录某个数据库，执行：<code>mysql -h host -u user -p dbname</code>。<br>以下所有命令均需要以<code>;</code>结尾，大小写取决于系统设置。</p>
 <ul>
+<li>显示版本：<code>SHOW VARIABLES LIKE &quot;%version%&quot;;</code></li>
 <li>查看所有的库：<code>SHOW DATABASES;</code></li>
 <li>创建数据库：<code>CREATE DATABASE dbname;</code></li>
 <li>删库：<code>DROP DATABASE dbname;</code></li>
@@ -376,18 +377,18 @@
 <li>删除某个表：<code>DROP TABLE tablename</code></li>
 <li>添加用户：<code>CREATE USER &#39;username&#39;@&#39;host&#39; IDENTIFIED BY &#39;password&#39;;</code></li>
 <li>删除用户：<code>DROP USER &#39;username&#39;@&#39;host&#39;;</code></li>
-<li>授权：<code>GRANT SELECT, UPDATE ON dbname.* TO &#39;username&#39;@&#39;host&#39; IDENTIFIED BY &#39;password&#39;;</code></li>
-<li>所有权限：<code>GRANT ALL ON dbname.* TO &#39;username&#39;@&#39;host&#39; IDENTIFIED BY &#39;password&#39;;</code></li>
 <li>显示用户信息：<code>SELECT User, Host FROM mysql.user;</code></li>
-<li>显示版本：<code>SHOW VARIABLES LIKE &quot;%version%&quot;;</code></li>
+<li>授权：<code>GRANT SELECT, UPDATE ON dbname.* TO &#39;username&#39;@&#39;host&#39; WITH GRANT OPTION;</code></li>
+<li>所有权限：<code>GRANT ALL ON dbname.* TO &#39;username&#39;@&#39;host&#39; WITH GRANT OPTION;</code></li>
+<li>刷新权限：<code>FLUSH PRIVILEGES;</code></li>
 <li>退出：<code>QUIT;</code></li>
 </ul>
-<p>需要注意的是，如果数据库名、表名等包含特殊字符，例如<code>-</code>等，需要标记字符串，否则会出现语法错误。例如：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> hello-world;</span><br></pre></td></tr></table></figure></p>
-<p>这样会出现语法错误，正确做法是：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> <span class="string">`hello-world`</span>;</span><br></pre></td></tr></table></figure></p>
+<p>MySQL 8.0的用户授权和之前有所区别，老版本的常用授权语句在8.0中会报错。<br>在执行命令时，如果数据库名、表名等包含特殊字符，例如<code>-</code>等，要避免出现语法错误。例如：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> hello-world;</span><br></pre></td></tr></table></figure></p>
+<p>直接这样输入会造成问题，正确做法是：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> <span class="string">`hello-world`</span>;</span><br></pre></td></tr></table></figure></p>
 <p>如果对这些命令不熟悉，也可以安装phpMyAdmin之类的辅助软件。</p>
-<h3 id="AUTO-INCREMENT的重置"><a href="#AUTO-INCREMENT的重置" class="headerlink" title="AUTO_INCREMENT的重置"></a>AUTO_INCREMENT的重置</h3><p>在WordPress中，文章、用户的ID都是通过<code>AUTO_INCREMENT</code>分配的，如果要改变其值，例如在wp_usermeta和wp_users数据表中，可以执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`wp_usermeta`</span></span><br><span class="line">  <span class="keyword">MODIFY</span> <span class="string">`umeta_id`</span> <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT, AUTO_INCREMENT=<span class="number">177</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="AUTO-INCREMENT的重置"><a href="#AUTO-INCREMENT的重置" class="headerlink" title="AUTO_INCREMENT的重置"></a>AUTO_INCREMENT的重置</h3><p>在WordPress中，文章、用户的ID都是通过<code>AUTO_INCREMENT</code>分配的，如果要改变其值，可以在<code>wp_usermeta</code>和<code>wp_users</code>数据表中执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`wp_usermeta`</span></span><br><span class="line">  <span class="keyword">MODIFY</span> <span class="string">`umeta_id`</span> <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT, AUTO_INCREMENT=<span class="number">177</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure></p>
 <p>以及<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`wp_users`</span></span><br><span class="line">  <span class="keyword">MODIFY</span> <span class="string">`ID`</span> <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT, AUTO_INCREMENT=<span class="number">6</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure></p>
-<p>其余类似。</p>
+<p>对于存储评论信息的<code>wp_comments</code>也是类似的。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>MySQL8.0是MySQL5.7的后继版本，这次更新带来了许多新特性，比如更好的字符集支持、降序排列的优化等。官方宣传性能提高了2倍。<br>不过版本号从5.7之间跨越到了8.0确实是一次大飞跃，PHP 6、Windows 9和iPhone 9点了个赞，Sketch和Java笑而不语。<br>当然，这样还有一个好处是，避免<a href="https://groups.google.com/forum/#!topic/nodejs/iAPl--KJhK8" target="_blank" rel="noopener">版本6.4被GFW屏蔽</a>。嗯，仿佛没有什么问题。</p>
     </div>
       <div>

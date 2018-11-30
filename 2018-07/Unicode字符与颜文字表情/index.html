@@ -55,7 +55,7 @@
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/Fk4jy-lOTJvqGmGul8nZfz8r9B7p.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/Fn9DaIzvbgkExdrsLhSdCvJjCqX1.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/IMG_0151.png">
-<meta property="og:updated_time" content="2018-11-18T08:49:51.217Z">
+<meta property="og:updated_time" content="2018-11-30T11:21:11.447Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unicode字符与颜文字表情">
 <meta name="twitter:description" content="前言编码，是每个程序员绕不开的话题。对于前端工程师而言，字符更是会直观地展示在界面上。提起文字，大部分人的脑中，都会定式为规整排列的字符。但是林子大了什么鸟都有，世界上可是存在着6800+种文字，难免会飞出来一些诡异的鸟…而号称“万国码”的Unicode，在实现编码与展示的时候，也会不会遇到一些奇葩的事情呢？事实上，可能你早已见识过了：  x̙͈̝͍͕̙̄͛̽̆͌́̕͟g̘̣̠̝̟̤̽͑͋̈̑̒͞">
@@ -218,7 +218,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">3.7k</span>
+                <span title="本文字数">3.8k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
@@ -256,10 +256,10 @@
 <h2 id="字体的错位"><a href="#字体的错位" class="headerlink" title="字体的错位"></a>字体的错位</h2><p>前面我们一直在谈字符的本质，但字符在屏幕中的展示，还有一个关键的因素：字体。<br>相同的字符，使用了不同的字体，它们的显示也会有差别。<br>一行中文，你设置黑体或草书，它大体来看还是规整的；但如果你设置一行英文为草书，可能就会有问题。<br>在浏览器里，如果对应编码在字体文件里为空，一般会展示成一个方格，起码不会影响其他正常字符的排版。但我们知道，Unicode的林子实在太大了…<br>在某些字体里，就会对一些特殊的字符产生错误的排版。<br>比如：热҈的҈字҈都҈出҈汗҈了҈<br>把它转义一下，就得到编码是：<br><code>\u70ed\u0488\u7684\u0488\u5b57\u0488\u90fd\u0488\u51fa\u0488\u6c57\u0488\u4e86\u0488</code><br>其中<code>\u0488</code>就是<code>҈</code>这个字符的编码，它是一个组合用的<a href="https://unicode-table.com/cn/0488" target="_blank" rel="noopener">西里尔文百千符号</a>。<br>它在大部分常用字体里，都有错位问题；而其他一些字体，比如Courier New字体，则是分开的展示：<br><img src="/images/2018-07/Fk4jy-lOTJvqGmGul8nZfz8r9B7p.png" alt=""></p>
 <p>那么，这两种展示哪种才是正常的呢？其实都不正常。<br>我们查看<a href="https://en.wikipedia.org/wiki/Cyrillic_numerals" target="_blank" rel="noopener">西里尔文计数法的wiki</a>，可以看到它只有配合西里尔数字时，才能展示正常：<br><img src="/images/2018-07/Fn9DaIzvbgkExdrsLhSdCvJjCqX1.png" alt=""></p>
 <p>至于你把它跟其他语言组合在一起时，我们要么看到错位，要么看到分离的展示。而且国际上并没有一个组织，去规定要怎么展示。事实上文字这么多，根本也管不过来，所以这也是混乱的原因。<br>最后补充一点，另外一小撮别有心裁的艺术家，还习惯使用这个字符去突破敏感词过滤…</p>
-<h2 id="混乱与创新？"><a href="#混乱与创新？" class="headerlink" title="混乱与创新？"></a>混乱与创新？</h2><p>值得一提的是，Unicode是不可阻挡的潮流，它也一直在更新。比如我们常用的<a href="https://unicode-table.com/cn/sets/emoji" target="_blank" rel="noopener">Emoji表情</a>，就已经是Unicode的标准字符集。和泰文的组合一样，Emoji表情也是可以叠加的，这一点在前面的一篇关于“JavaScript展开操作符”的文章中也提到过。👪和👨‍👩‍👧‍👧就是典型的例子，它们展开后的编码就是👨👩👦🧒。<br>而本文中我们说到，大家在玩这些奇奇怪怪的字符时，都是基于类似bug的设定在搞事情。这就有很大的局限性。<br>那艺术家们又会有些大胆的想法：我能不能主动创造一些新字符，就是为了错位和组合呢？<br>我也不清楚这是创新，还是会带来更多的混乱。但事实是，iOS系统自带的字符，已经有这样的尝试了。并且搜狗输入法在iOS系统提供的诸多符号里，挑选了一些，可供用户去使用。这个功能的名字，叫做花漾字。<br><img src="/images/2018-07/IMG_0151.png" alt=""></p>
+<h2 id="混乱与创新？"><a href="#混乱与创新？" class="headerlink" title="混乱与创新？"></a>混乱与创新？</h2><p>Unicode是不可阻挡的潮流，它也一直在更新。比如我们常用的<a href="https://unicode-table.com/cn/sets/emoji" target="_blank" rel="noopener">Emoji表情</a>，就已经是Unicode的标准字符集。和泰文的组合一样，Emoji表情也是可以叠加的，这一点在前面的一篇关于<a href="/2018-01/JavaScript常用简写技术与扩展运算符/">JavaScript常用简写技术与扩展运算符</a>的文章中也提到过。👪和👨‍👩‍👧‍👧就是典型的例子，它们展开后的编码就是👨👩👦🧒。<br>而本文中我们说到，大家在玩这些奇奇怪怪的字符时，都是基于类似bug的设定在搞事情。这就有很大的局限性。<br>那艺术家们又会有些大胆的想法：我能不能主动创造一些新字符，就是为了错位和组合呢？<br>我也不清楚这是创新，还是会带来更多的混乱。但事实是，iOS系统自带的字符，已经有这样的尝试了。并且搜狗输入法在iOS系统提供的诸多符号里，挑选了一些，可供用户去使用。这个功能的名字，叫做花漾字。<br><img src="/images/2018-07/IMG_0151.png" alt=""></p>
 <p>还是得感慨艺术家们的视角是多么独特。<br>既然都这样了…最后，希望我们的国产表情包能有朝一日打入Unicode吧。</p>
 <p>参考文章：<br><a href="http://litten.me/2017/11/13/strange-characters1" target="_blank" rel="noopener">人人都是艺术家！谈谈那些奇怪的字符（上）</a></p>
-<p>拓展阅读：<br><a href="https://unicode-table.com/cn" target="_blank" rel="noopener">Unicode字符百科</a></p>
+<p>拓展阅读：<br><a href="https://unicode-table.com/cn" target="_blank" rel="noopener">Unicode字符百科</a><br><a href="https://segmentfault.com/a/1190000007594620" target="_blank" rel="noopener">Emoji的编码以及常见问题处理</a><br><a href="https://lolico.moe/nodejs-memo/emoji.html" target="_blank" rel="noopener">Emoji 的处理 - 使用正则表达式匹配所有 Emoji</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -806,17 +806,25 @@
           return $(e).text()
         }).toArray().join('\n')
         var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
+        var range = document.createRange() //For Chrome
+        var sel = window.getSelection() //For Chrome
+        ta.style.width = '0px'
+        ta.style.height = '0px'
+        ta.style.opacity = '0'
         ta.value = code
-        ta.select()
-        ta.focus()
+        ta.textContent = code //For FireFox
+        ta.contentEditable = true
+        ta.readOnly = false
+        document.body.appendChild(ta)
+        //range.selectNodeContents(ta)
+        range.selectNode(ta)
+        sel.removeAllRanges()
+        sel.addRange(range)
+        ta.setSelectionRange(0, code.length)
         var result = document.execCommand('copy')
-        document.body.removeChild(ta)
           if(result)$(this).text('复制成功')
           else $(this).text('复制失败')
+        ta.blur() //For iOS
         $(this).blur()
       })).on('mouseleave', function (e) {
         var $b = $(this).find('.copy-btn')

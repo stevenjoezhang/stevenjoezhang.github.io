@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="本教程以macOS 10.13为例。 准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，在打开的页面中找到JDK，选择Download，下载对应的版本。 配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了使终端能正确运行最新的JDK，需要在~/.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-27T13:05:00.170Z">
+<meta property="og:updated_time" content="2018-11-30T05:31:51.314Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac反编译apk程序">
 <meta name="twitter:description" content="本教程以macOS 10.13为例。 准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，在打开的页面中找到JDK，选择Download，下载对应的版本。 配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了使终端能正确运行最新的JDK，需要在~/.">
@@ -237,10 +237,10 @@
 <p>同样，直接解压<code>example.apk</code>也可以得到一部分信息，如<code>classes.dex</code>等。</p>
 <h3 id="用dex2jar将apk转成jar文件"><a href="#用dex2jar将apk转成jar文件" class="headerlink" title="用dex2jar将apk转成jar文件"></a>用dex2jar将apk转成jar文件</h3><p>进入dex2jar文件夹，将dex2jar里的<code>d2j_invoke.sh</code>和<code>d2j-dex2jar.sh</code>增加可执行权限。然后在这个文件夹下运行:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./d2j-dex2jar.sh PATH-TO/example.apk</span><br></pre></td></tr></table></figure></p>
 <p>在dex2jar目录下将得到example-dex2jar.jar文件</p>
-<h3 id="查看源代码"><a href="#查看源代码" class="headerlink" title="查看源代码"></a>查看源代码</h3><p>打开JD-GUI，将<code>example-dex2jar.jar</code>拖进去就看到源码了。<br>请注意，如果使用了JAVA9，打开JD-GUI.app时会出现问题，解决方法是：<br>打开<code>JD-GUI.app/Contents/Info.plist</code>，找到<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>VMOptions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>-Xms512m<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>修改为<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>VMOptions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>-Xms512m --add-opens java.base/jdk.internal.loader=ALL-UNNAMED --add-opens jdk.zipfs/jdk.nio.zipfs=ALL-UNNAMED<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>通过看java源码对比smali文件，修改后回编译就ok了！</p>
-<p>参考文章：<br><a href="https://blog.csdn.net/vvv_110/article/details/72897142" target="_blank" rel="noopener">MAC安装JDK及环境变量配置</a><br><a href="https://blog.csdn.net/yanzi1225627/article/details/48215549" target="_blank" rel="noopener">MAC上反编译android apk—apktool, dex2jar, jd-jui安装使用(含手动签名)</a><br><a href="https://blog.csdn.net/wh_19910525/article/details/7915738" target="_blank" rel="noopener">apk反编译获取完整源码 及 apk反编译后的处理</a><br><a href="https://github.com/java-decompiler/jd-gui/issues/187" target="_blank" rel="noopener">https://github.com/java-decompiler/jd-gui/issues/187</a></p>
+<h3 id="查看源代码"><a href="#查看源代码" class="headerlink" title="查看源代码"></a>查看源代码</h3><p>打开<code>JD-GUI.app</code>，将<code>example-dex2jar.jar</code>拖进去就能看到源码了。<br>值得一提的是，如果你使用了JAVA9，打开JD-GUI时可能会出现问题，解决方法是修改<code>JD-GUI.app/Contents/Info.plist</code>，找到<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>VMOptions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>-Xms512m<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>改为<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>VMOptions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>-Xms512m --add-opens java.base/jdk.internal.loader=ALL-UNNAMED --add-opens jdk.zipfs/jdk.nio.zipfs=ALL-UNNAMED<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>即可正常启动。<br>通过看java源码对比smali文件，修改后回编译就ok了！</p>
+<p>参考文章：<br><a href="https://blog.csdn.net/vvv_110/article/details/72897142" target="_blank" rel="noopener">MAC安装JDK及环境变量配置</a><br><a href="https://blog.csdn.net/yanzi1225627/article/details/48215549" target="_blank" rel="noopener">MAC上反编译android apk—apktool, dex2jar, jd-jui安装使用(含手动签名)</a><br><a href="https://blog.csdn.net/wh_19910525/article/details/7915738" target="_blank" rel="noopener">apk反编译获取完整源码 及 apk反编译后的处理</a><br><a href="https://github.com/java-decompiler/jd-gui/issues/187" target="_blank" rel="noopener">Java 9 Compatibility</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -790,17 +790,25 @@
           return $(e).text()
         }).toArray().join('\n')
         var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
+        var range = document.createRange() //For Chrome
+        var sel = window.getSelection() //For Chrome
+        ta.style.width = '0px'
+        ta.style.height = '0px'
+        ta.style.opacity = '0'
         ta.value = code
-        ta.select()
-        ta.focus()
+        ta.textContent = code //For FireFox
+        ta.contentEditable = true
+        ta.readOnly = false
+        document.body.appendChild(ta)
+        //range.selectNodeContents(ta)
+        range.selectNode(ta)
+        sel.removeAllRanges()
+        sel.addRange(range)
+        ta.setSelectionRange(0, code.length)
         var result = document.execCommand('copy')
-        document.body.removeChild(ta)
           if(result)$(this).text('复制成功')
           else $(this).text('复制失败')
+        ta.blur() //For iOS
         $(this).blur()
       })).on('mouseleave', function (e) {
         var $b = $(this).find('.copy-btn')

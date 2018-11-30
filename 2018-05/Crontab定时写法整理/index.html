@@ -40,19 +40,19 @@
   };
 </script>
   <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
-  <meta name="description" content="在前面的文章NGINX配置SSL中，提到了关于创建Crontab定时任务的内容。事实上，在Linux系统的实际使用中，可能经常会碰到让系统在某个特定时间执行某些任务的情况，特别是在服务器中则更为常见。博主近期也对Crontab做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时给自己一个备忘。 Crontab使用方式12crontab [-u user] filecrontab">
+  <meta name="description" content="在前面的文章NGINX配置SSL中，提到了关于创建Crontab定时任务的内容。事实上，在使用Linux系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了Crontab的机制，并对常见的Crontab用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。 Crontab使用方式12crontab [-u user] fi">
 <meta name="keywords" content="Mac,Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Crontab定时写法整理">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-05/Crontab定时写法整理/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="在前面的文章NGINX配置SSL中，提到了关于创建Crontab定时任务的内容。事实上，在Linux系统的实际使用中，可能经常会碰到让系统在某个特定时间执行某些任务的情况，特别是在服务器中则更为常见。博主近期也对Crontab做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时给自己一个备忘。 Crontab使用方式12crontab [-u user] filecrontab">
+<meta property="og:description" content="在前面的文章NGINX配置SSL中，提到了关于创建Crontab定时任务的内容。事实上，在使用Linux系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了Crontab的机制，并对常见的Crontab用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。 Crontab使用方式12crontab [-u user] fi">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-05/crontab_thumb.png">
-<meta property="og:updated_time" content="2018-11-25T05:16:39.593Z">
+<meta property="og:updated_time" content="2018-11-30T16:59:49.298Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Crontab定时写法整理">
-<meta name="twitter:description" content="在前面的文章NGINX配置SSL中，提到了关于创建Crontab定时任务的内容。事实上，在Linux系统的实际使用中，可能经常会碰到让系统在某个特定时间执行某些任务的情况，特别是在服务器中则更为常见。博主近期也对Crontab做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时给自己一个备忘。 Crontab使用方式12crontab [-u user] filecrontab">
+<meta name="twitter:description" content="在前面的文章NGINX配置SSL中，提到了关于创建Crontab定时任务的内容。事实上，在使用Linux系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了Crontab的机制，并对常见的Crontab用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。 Crontab使用方式12crontab [-u user] fi">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-05/crontab_thumb.png">
   <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
   <link rel="canonical" href="https://zhangshuqiao.org/2018-05/Crontab定时写法整理/">
@@ -223,7 +223,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-        <p>在前面的文章<a href="/2018-05/Nginx配置SSL/">NGINX配置SSL</a>中，提到了关于创建Crontab定时任务的内容。事实上，在Linux系统的实际使用中，可能经常会碰到让系统在某个特定时间执行某些任务的情况，特别是在服务器中则更为常见。博主近期也对Crontab做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时给自己一个备忘。</p>
+        <p>在前面的文章<a href="/2018-05/Nginx配置SSL/">NGINX配置SSL</a>中，提到了关于创建Crontab定时任务的内容。事实上，在使用Linux系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了Crontab的机制，并对常见的Crontab用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。</p>
 <h2 id="Crontab使用方式"><a href="#Crontab使用方式" class="headerlink" title="Crontab使用方式"></a>Crontab使用方式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab [-u user] file</span><br><span class="line">crontab [-u user] [ -e | -l | -r ]</span><br></pre></td></tr></table></figure>
 <p>各参数为：</p>
 <ul>
@@ -235,22 +235,23 @@
 <li><code>-i</code>：在删除用户的crontab文件时给确认提示。</li>
 </ul>
 <h2 id="Crontab文件格式"><a href="#Crontab文件格式" class="headerlink" title="Crontab文件格式"></a>Crontab文件格式</h2><p>用户所建立的crontab文件中，每一行都代表一项任务，每行的每个字段代表一项设置，它的格式共分为六个字段，前五段是时间设定段，第六段是要执行的命令段，格式如下：<br><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">minute</span> <span class="built_in">hour</span> <span class="built_in">day</span> <span class="built_in">month</span> week command</span><br><span class="line">分　时　日　月　周　命令</span><br></pre></td></tr></table></figure></p>
-<p>具体来说，每一列的内容是：</p>
+<p>具体来说，每一列的内容分别是：</p>
 <ul>
-<li>第1列表示分钟，可以是从0到59之间的任何整数。每分钟用*或者*/1表示</li>
-<li>第2列表示小时，可以是从0到23之间的任何整数。（0表示0点）</li>
-<li>第3列表示日期，可以是从1到31之间的任何整数。</li>
-<li>第4列表示月份，可以是从1到12之间的任何整数。</li>
-<li>第5列表示星期几，可以是从0到7之间的任何整数，这里的0或7代表星期日。</li>
-<li>第6列是要执行的命令，可以是系统命令，也可以是自己编写的脚本文件。<br><img src="/images/2018-05/crontab_thumb.png" alt=""></li>
+<li>分钟，可以是从0到59之间的任何整数。</li>
+<li>小时，可以是从0到23之间的任何整数（0表示0点）。</li>
+<li>日期，可以是从1到31之间的任何整数。</li>
+<li>月份，可以是从1到12之间的任何整数。</li>
+<li>星期几，可以是从0到7之间的任何整数，这里的0或7代表星期日。</li>
+<li>要执行的命令，可以是系统命令，也可以是自己编写的脚本文件。<br><img src="/images/2018-05/crontab_thumb.png" alt=""></li>
 </ul>
 <p>在以上各个字段中，还可以使用以下特殊字符：</p>
 <ul>
 <li>星号（*）：代表所有可能的值，例如month字段如果是星号，则表示在满足其它字段的制约条件后每月都执行该命令操作。</li>
-<li>逗号（,）：可以用逗号隔开的值指定一个列表范围，例如，“1,2,5,7,8,9”</li>
-<li>中杠（-）：可以用整数之间的中杠表示一个整数范围，例如“2-6”表示“2,3,4,5,6”</li>
-<li>正斜线（/）：可以用正斜线指定时间的间隔频率，例如“0-23/2”表示每两小时执行一次。同时正斜线可以和星号一起使用，例如*/10，如果用在minute字段，表示每十分钟执行一次。</li>
+<li>逗号（,）：可以用逗号隔开的值指定一个列表范围，例如，“1,2,5,7,8,9”。</li>
+<li>中杠（-）：可以用整数之间的中杠表示一个整数范围，例如“2-6”表示“2,3,4,5,6”。</li>
+<li>正斜线（/）：可以用正斜线指定时间的间隔频率，例如“0-23/2”表示每两小时执行一次。</li>
 </ul>
+<p>同时正斜线可以和星号一起使用，例如*/10，如果用在minute字段，表示每十分钟执行一次。又如，每分钟可以用*或者*/1表示。</p>
 <a id="more"></a>
 <h2 id="Crontab文件样例"><a href="#Crontab文件样例" class="headerlink" title="Crontab文件样例"></a>Crontab文件样例</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">30 21 * * * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#每晚的21:30重启apache</span></span><br><span class="line">45 4 1,10,22 * * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#每月1、10、22日的4:45重启apache</span></span><br><span class="line">10 1 * * 6,0 /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#每周六、周日的1:10重启apache</span></span><br><span class="line">0,30 18-23 * * * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#每天18:00至23:00之间每隔30分钟重启apache</span></span><br><span class="line">0 23 * * 6 /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#每星期六的11:00pm重启apache</span></span><br><span class="line">0 */1 * * * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#每一小时重启apache</span></span><br><span class="line">0 23-7/1 * * * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#晚上11点到早上7点之间，每隔一小时重启apache</span></span><br><span class="line">0 11 4 * mon-wed /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#每月的4号与每周一到周三的11点重启apache</span></span><br><span class="line">0 4 1 jan * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#一月一号的4点重启apache</span></span><br><span class="line">0 7 * * * /bin/ls</span><br><span class="line"><span class="comment">#每天早上7点执行一次 /bin/ls</span></span><br><span class="line">0 6-12/3 * 12 * /usr/bin/backup</span><br><span class="line"><span class="comment">#在12月内，每天的早上6点到12点，每隔3个小时执行一次 /usr/bin/backup</span></span><br><span class="line">0 17 * * 1-5 mail -s <span class="string">"hi"</span> alex@domain.name &lt; /tmp/maildata</span><br><span class="line"><span class="comment">#周一到周五每天下午5:00寄一封信给 alex@domain.name</span></span><br><span class="line">20 0-23/2 * * * <span class="built_in">echo</span> <span class="string">"haha"</span></span><br><span class="line"><span class="comment">#每月每天的午夜0点20分，2点20分，4点20分等执行 echo "haha"</span></span><br><span class="line">0 */2 * * * date <span class="built_in">command</span></span><br><span class="line"><span class="comment">#每两个小时执行command</span></span><br><span class="line">0 23-7/2,8 * * * date <span class="built_in">command</span></span><br><span class="line"><span class="comment">#晚上11点到早上8点之间每两个小时，早上8点执行command</span></span><br><span class="line">0 11 4 * mon-wed date <span class="built_in">command</span></span><br><span class="line"><span class="comment">#每个月的4号和每个礼拜的礼拜一到礼拜三的早上11点执行command</span></span><br><span class="line">0 4 1 jan * date <span class="built_in">command</span></span><br><span class="line"><span class="comment">#1月份日早上4点执行command</span></span><br><span class="line">* * * * * <span class="built_in">command</span></span><br><span class="line"><span class="comment">#每1分钟执行一次command</span></span><br><span class="line">3,15 * * * * <span class="built_in">command</span></span><br><span class="line"><span class="comment">#每小时的第3和第15分钟执行</span></span><br><span class="line">3,15 8-11 * * * <span class="built_in">command</span></span><br><span class="line"><span class="comment">#在上午8点到11点的第3和第15分钟执行</span></span><br><span class="line">3,15 8-11 */2 * * <span class="built_in">command</span></span><br><span class="line"><span class="comment">#每隔两天的上午8点到11点的第3和第15分钟执行</span></span><br><span class="line">3,15 8-11 * * 1 <span class="built_in">command</span></span><br><span class="line"><span class="comment">#每个星期一的上午8点到11点的第3和第15分钟执行</span></span><br><span class="line">01 * * * * root run-parts /etc/cron.hourly</span><br><span class="line"><span class="comment">#每小时执行/etc/cron.hourly目录内的脚本</span></span><br></pre></td></tr></table></figure>
 <p><strong>注意：当程序在你所指定的时间执行后，系统会寄一封邮件给你，显示该程序执行的内容，若你不希望收到这样的信，请在每一行空一格之后加上<code>&gt; /dev/null 2&gt;&amp;1</code>，否则会产生不必要的浪费。</strong></p>
@@ -805,17 +806,25 @@
           return $(e).text()
         }).toArray().join('\n')
         var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
+        var range = document.createRange() //For Chrome
+        var sel = window.getSelection() //For Chrome
+        ta.style.width = '0px'
+        ta.style.height = '0px'
+        ta.style.opacity = '0'
         ta.value = code
-        ta.select()
-        ta.focus()
+        ta.textContent = code //For FireFox
+        ta.contentEditable = true
+        ta.readOnly = false
+        document.body.appendChild(ta)
+        //range.selectNodeContents(ta)
+        range.selectNode(ta)
+        sel.removeAllRanges()
+        sel.addRange(range)
+        ta.setSelectionRange(0, code.length)
         var result = document.execCommand('copy')
-        document.body.removeChild(ta)
           if(result)$(this).text('复制成功')
           else $(this).text('复制失败')
+        ta.blur() //For iOS
         $(this).blur()
       })).on('mouseleave', function (e) {
         var $b = $(this).find('.copy-btn')

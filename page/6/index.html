@@ -386,7 +386,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-          <p>在前面的文章<a href="/2018-05/Nginx配置SSL/">NGINX配置SSL</a>中，提到了关于创建Crontab定时任务的内容。事实上，在Linux系统的实际使用中，可能经常会碰到让系统在某个特定时间执行某些任务的情况，特别是在服务器中则更为常见。博主近期也对Crontab做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时给自己一个备忘。</p>
+          <p>在前面的文章<a href="/2018-05/Nginx配置SSL/">NGINX配置SSL</a>中，提到了关于创建Crontab定时任务的内容。事实上，在使用Linux系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了Crontab的机制，并对常见的Crontab用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。</p>
 <h2 id="Crontab使用方式"><a href="#Crontab使用方式" class="headerlink" title="Crontab使用方式"></a>Crontab使用方式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab [-u user] file</span><br><span class="line">crontab [-u user] [ -e | -l | -r ]</span><br></pre></td></tr></table></figure>
 <p>各参数为：</p>
 <ul>
@@ -398,22 +398,23 @@
 <li><code>-i</code>：在删除用户的crontab文件时给确认提示。</li>
 </ul>
 <h2 id="Crontab文件格式"><a href="#Crontab文件格式" class="headerlink" title="Crontab文件格式"></a>Crontab文件格式</h2><p>用户所建立的crontab文件中，每一行都代表一项任务，每行的每个字段代表一项设置，它的格式共分为六个字段，前五段是时间设定段，第六段是要执行的命令段，格式如下：<br><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">minute</span> <span class="built_in">hour</span> <span class="built_in">day</span> <span class="built_in">month</span> week command</span><br><span class="line">分　时　日　月　周　命令</span><br></pre></td></tr></table></figure></p>
-<p>具体来说，每一列的内容是：</p>
+<p>具体来说，每一列的内容分别是：</p>
 <ul>
-<li>第1列表示分钟，可以是从0到59之间的任何整数。每分钟用*或者*/1表示</li>
-<li>第2列表示小时，可以是从0到23之间的任何整数。（0表示0点）</li>
-<li>第3列表示日期，可以是从1到31之间的任何整数。</li>
-<li>第4列表示月份，可以是从1到12之间的任何整数。</li>
-<li>第5列表示星期几，可以是从0到7之间的任何整数，这里的0或7代表星期日。</li>
-<li>第6列是要执行的命令，可以是系统命令，也可以是自己编写的脚本文件。<br><img src="/images/2018-05/crontab_thumb.png" alt=""></li>
+<li>分钟，可以是从0到59之间的任何整数。</li>
+<li>小时，可以是从0到23之间的任何整数（0表示0点）。</li>
+<li>日期，可以是从1到31之间的任何整数。</li>
+<li>月份，可以是从1到12之间的任何整数。</li>
+<li>星期几，可以是从0到7之间的任何整数，这里的0或7代表星期日。</li>
+<li>要执行的命令，可以是系统命令，也可以是自己编写的脚本文件。<br><img src="/images/2018-05/crontab_thumb.png" alt=""></li>
 </ul>
 <p>在以上各个字段中，还可以使用以下特殊字符：</p>
 <ul>
 <li>星号（*）：代表所有可能的值，例如month字段如果是星号，则表示在满足其它字段的制约条件后每月都执行该命令操作。</li>
-<li>逗号（,）：可以用逗号隔开的值指定一个列表范围，例如，“1,2,5,7,8,9”</li>
-<li>中杠（-）：可以用整数之间的中杠表示一个整数范围，例如“2-6”表示“2,3,4,5,6”</li>
-<li>正斜线（/）：可以用正斜线指定时间的间隔频率，例如“0-23/2”表示每两小时执行一次。同时正斜线可以和星号一起使用，例如*/10，如果用在minute字段，表示每十分钟执行一次。</li>
+<li>逗号（,）：可以用逗号隔开的值指定一个列表范围，例如，“1,2,5,7,8,9”。</li>
+<li>中杠（-）：可以用整数之间的中杠表示一个整数范围，例如“2-6”表示“2,3,4,5,6”。</li>
+<li>正斜线（/）：可以用正斜线指定时间的间隔频率，例如“0-23/2”表示每两小时执行一次。</li>
 </ul>
+<p>同时正斜线可以和星号一起使用，例如*/10，如果用在minute字段，表示每十分钟执行一次。又如，每分钟可以用*或者*/1表示。</p>
           <!--noindex-->
             <div class="post-button text-center">
               <a class="btn" href="/2018-05/Crontab定时写法整理/#more" rel="contents">
@@ -550,7 +551,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">4.4k</span>
+                <span title="本文字数">4.6k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
@@ -563,13 +564,15 @@
     <div class="post-body" itemprop="articleBody">
           <h2 id="安装CertBot"><a href="#安装CertBot" class="headerlink" title="安装CertBot"></a>安装CertBot</h2><p>首先，克隆Certbot在GitHub上的仓库到本地：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/certbot/certbot.git</span><br></pre></td></tr></table></figure></p>
 <p>在certbot文件夹下，有一个shell脚本，名为certbot-auto。你可以将其软链接为certbot，方便进行接下来的步骤。具体操作是，在你的家目录<code>~</code>下的<code>.bashrc</code>或<code>.bash_profile</code>文件中追加以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> certbot=/path/to/your/certbot/certbot-auto</span><br></pre></td></tr></table></figure></p>
-<p>然后执行<code>source ~/.bashrc</code>或<code>source ~/.bash_profile</code>，这样就可以直接使用certbot命令进行接下来的操作了。<br>当然，你也可以使用包管理工具安装certbot。不过，经测试，这种安装方式经常会产生错误，因此不建议使用。<br>以yum为例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install yum-utils</span><br><span class="line">yum-config-manager --<span class="built_in">enable</span> rhui-REGION-rhel-server-extras rhui-REGION-rhel-server-optional</span><br><span class="line">yum install certbot</span><br></pre></td></tr></table></figure></p>
-<p>其它系统的安装方式可以在<a href="https://certbot.eff.org" target="_blank" rel="noopener">Certbot官网</a>上查询。<br>安装完成后，可以使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot -h</span><br></pre></td></tr></table></figure></p>
+<p>然后执行<code>source ~/.bashrc</code>或<code>source ~/.bash_profile</code>，这样就可以直接使用certbot命令进行接下来的操作了。<br>当然，你也可以使用包管理工具安装certbot。以yum为例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install yum-utils</span><br><span class="line">yum-config-manager --<span class="built_in">enable</span> rhui-REGION-rhel-server-extras rhui-REGION-rhel-server-optional</span><br><span class="line">yum install certbot</span><br></pre></td></tr></table></figure></p>
+<p>其它系统的安装方式可以在<a href="https://certbot.eff.org" target="_blank" rel="noopener">Certbot官网</a>上查询。<br>不过经博主测试，这种安装方式可能会产生错误，因此不建议使用。<br>安装完成后，可以使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot -h</span><br></pre></td></tr></table></figure></p>
 <p>查看安装是否成功。如果报错，也可以尝试使用<code>pip install certbot</code>。<br>如果你使用了nginx服务器，还可以执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install certbot-nginx</span><br></pre></td></tr></table></figure></p>
 <p>安装Certbot的Nginx拓展。</p>
 <h2 id="配置CertBot"><a href="#配置CertBot" class="headerlink" title="配置CertBot"></a>配置CertBot</h2><p>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot --nginx</span><br></pre></td></tr></table></figure></p>
-<p>即可自动完成配置。不过由于涉及到修改nginx.conf，建议手动进行配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot certonly --webroot -w /path/to/your/webroot -d your.domain.com,www.domain.com</span><br></pre></td></tr></table></figure></p>
-<p>将<code>/path/to/your/webroot</code>替换为nginx的根目录，<code>your.domain.com</code>替换为你的域名，多个域名用逗号隔开。如果要申请通配符证书，请参考这篇文章：<a href="https://imjad.cn/archives/lab/letsencrypt-wildcard-certificate-support-is-live" target="_blank" rel="noopener">Let’s Encrypt现已正式支持泛域名证书</a>。<br>如果一切顺利，会输出以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">IMPORTANT NOTES:</span><br><span class="line"> - Congratulations! Your certificate and chain have been saved at</span><br><span class="line">   /etc/letsencrypt/live/your.domain.com/fullchain.pem. Your cert</span><br><span class="line">   will expire on 20XX-09-23. To obtain a new or tweaked version of</span><br><span class="line">   this certificate <span class="keyword">in</span> the future, simply run certbot again. To</span><br><span class="line">   non-interactively renew *all* of your certificates, run <span class="string">"certbot</span></span><br><span class="line"><span class="string">   renew"</span></span><br><span class="line"> - If you like Certbot, please consider supporting our work by: </span><br><span class="line">   Donating to ISRG / Let<span class="string">'s Encrypt:   https://letsencrypt.org/donate</span></span><br><span class="line"><span class="string">   Donating to EFF:                    https://eff.org/donate-le</span></span><br></pre></td></tr></table></figure></p>
+<p>即可自动完成配置。不过由于涉及到修改nginx.conf，建议手动进行配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot certonly --webroot -w /path/to/your/webroot -d yourdomain.com,www.yourdomain.com</span><br></pre></td></tr></table></figure></p>
+<p>将<code>/path/to/your/webroot</code>替换为nginx的根目录，<code>yourdomain.com</code>替换为你的域名，多个域名用逗号隔开。<br>如果要申请泛域名证书，将上面的命令改为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot certonly --server https://acme-v02.api.letsencrypt.org/directory --manual --preferred-challenges dns -d yourdomain.com,*.yourdomain.com</span><br></pre></td></tr></table></figure></p>
+<p>泛域名证书还需要验证TXT记录，比较麻烦。可以参考这篇文章：<a href="https://imjad.cn/archives/lab/letsencrypt-wildcard-certificate-support-is-live" target="_blank" rel="noopener">Let’s Encrypt现已正式支持泛域名证书</a>。<br>如果一切顺利，会输出以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">IMPORTANT NOTES:</span><br><span class="line"> - Congratulations! Your certificate and chain have been saved at</span><br><span class="line">   /etc/letsencrypt/live/yourdomain.com/fullchain.pem. Your cert</span><br><span class="line">   will expire on 20XX-XX-XX. To obtain a new or tweaked version of</span><br><span class="line">   this certificate <span class="keyword">in</span> the future, simply run certbot again. To</span><br><span class="line">   non-interactively renew *all* of your certificates, run <span class="string">"certbot</span></span><br><span class="line"><span class="string">   renew"</span></span><br><span class="line"> - If you like Certbot, please consider supporting our work by: </span><br><span class="line">   Donating to ISRG / Let<span class="string">'s Encrypt:   https://letsencrypt.org/donate</span></span><br><span class="line"><span class="string">   Donating to EFF:                    https://eff.org/donate-le</span></span><br></pre></td></tr></table></figure></p>
+<p>生成的证书将会存放在<code>/etc/letsencrypt/live/</code>目录下。</p>
           <!--noindex-->
             <div class="post-button text-center">
               <a class="btn" href="/2018-05/Nginx配置SSL/#more" rel="contents">
@@ -1137,17 +1140,25 @@
           return $(e).text()
         }).toArray().join('\n')
         var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
+        var range = document.createRange() //For Chrome
+        var sel = window.getSelection() //For Chrome
+        ta.style.width = '0px'
+        ta.style.height = '0px'
+        ta.style.opacity = '0'
         ta.value = code
-        ta.select()
-        ta.focus()
+        ta.textContent = code //For FireFox
+        ta.contentEditable = true
+        ta.readOnly = false
+        document.body.appendChild(ta)
+        //range.selectNodeContents(ta)
+        range.selectNode(ta)
+        sel.removeAllRanges()
+        sel.addRange(range)
+        ta.setSelectionRange(0, code.length)
         var result = document.execCommand('copy')
-        document.body.removeChild(ta)
           if(result)$(this).text('复制成功')
           else $(this).text('复制失败')
+        ta.blur() //For iOS
         $(this).blur()
       })).on('mouseleave', function (e) {
         var $b = $(this).find('.copy-btn')

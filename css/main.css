@@ -1970,7 +1970,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c75b75;
+  background: #b08b0b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3294,11 +3294,11 @@ body:before {
 .douqilai * {
   animation: shake-it 0.5s reverse infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
-.caihong {
-  animation: caihong 1.5s infinite;
+.disco {
+  animation: disco-1 1.5s infinite;
 }
 .disco_dancing {
-  animation: quan 1.5s infinite;
+  animation: disco-2 1.5s infinite;
 }
 .glitch {
   position: relative;
@@ -3430,27 +3430,27 @@ body:before {
     text-shadow: 3px 0 rgba(0,255,255,0.5), 5px 0 rgba(255,0,0,0.5);
   }
 }
-@-moz-keyframes caihong {
+@-moz-keyframes disco-1 {
   100% {
     filter: hue-rotate(360deg);
   }
 }
-@-webkit-keyframes caihong {
+@-webkit-keyframes disco-1 {
   100% {
     filter: hue-rotate(360deg);
   }
 }
-@-o-keyframes caihong {
+@-o-keyframes disco-1 {
   100% {
     filter: hue-rotate(360deg);
   }
 }
-@keyframes caihong {
+@keyframes disco-1 {
   100% {
     filter: hue-rotate(360deg);
   }
 }
-@-moz-keyframes quan {
+@-moz-keyframes disco-2 {
   0% {
     -webkit-transform: rotate(0);
     -moz-transform: rotate(0);
@@ -3467,7 +3467,7 @@ body:before {
     transform: rotate(360deg);
   }
 }
-@-webkit-keyframes quan {
+@-webkit-keyframes disco-2 {
   0% {
     -webkit-transform: rotate(0);
     -moz-transform: rotate(0);
@@ -3484,7 +3484,7 @@ body:before {
     transform: rotate(360deg);
   }
 }
-@-o-keyframes quan {
+@-o-keyframes disco-2 {
   0% {
     -webkit-transform: rotate(0);
     -moz-transform: rotate(0);
@@ -3501,7 +3501,7 @@ body:before {
     transform: rotate(360deg);
   }
 }
-@keyframes quan {
+@keyframes disco-2 {
   0% {
     -webkit-transform: rotate(0);
     -moz-transform: rotate(0);

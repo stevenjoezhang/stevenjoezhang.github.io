@@ -40,22 +40,22 @@
   };
 </script>
   <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
-  <meta name="description" content="最近几年，网络视频直播处于蓬勃的发展期，各大直播平台的竞争也趋于白热化。在游戏直播领域，就有许多电子竞技的前职业选手，退役后转行游戏主播，收入不菲。当然，网络直播的用处不仅仅是娱乐行业，诸如实时视频监控等应用方向，同样潜力无限。如果没有太高的并发播放需求，完全可以自行搭建直播服务器。事实上，借助于Nginx，你就可以轻松地搭建一个小型的直播平台。博主在参看了大量教程后，成功地在VPS上搭建了这样的">
+  <meta name="description" content="最近几年，网络视频直播处于蓬勃的发展期，各大直播平台的竞争也趋于白热化。在游戏直播领域，就有许多电子竞技的前职业选手，退役后转行游戏主播，收入不菲。当然，网络直播的用处不仅仅是娱乐行业，诸如实时视频监控等应用方向，同样潜力无限。如果没有太高的并发播放需求，完全可以自行搭建直播服务器。借助于Nginx和一些拓展模块，你就可以轻松地运行一个小型的直播平台。博主在参看了大量教程后，成功地在VPS上搭建了">
 <meta name="keywords" content="Linux,Nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于Nginx搭建视频直播服务器">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-01/基于Nginx搭建视频直播服务器/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="最近几年，网络视频直播处于蓬勃的发展期，各大直播平台的竞争也趋于白热化。在游戏直播领域，就有许多电子竞技的前职业选手，退役后转行游戏主播，收入不菲。当然，网络直播的用处不仅仅是娱乐行业，诸如实时视频监控等应用方向，同样潜力无限。如果没有太高的并发播放需求，完全可以自行搭建直播服务器。事实上，借助于Nginx，你就可以轻松地搭建一个小型的直播平台。博主在参看了大量教程后，成功地在VPS上搭建了这样的">
+<meta property="og:description" content="最近几年，网络视频直播处于蓬勃的发展期，各大直播平台的竞争也趋于白热化。在游戏直播领域，就有许多电子竞技的前职业选手，退役后转行游戏主播，收入不菲。当然，网络直播的用处不仅仅是娱乐行业，诸如实时视频监控等应用方向，同样潜力无限。如果没有太高的并发播放需求，完全可以自行搭建直播服务器。借助于Nginx和一些拓展模块，你就可以轻松地运行一个小型的直播平台。博主在参看了大量教程后，成功地在VPS上搭建了">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/1774338-dc544ac657937d0d.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/1774338-b0eb1df8603e632d.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/2018-07-16.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/1774338-c2443fa915f45ef1.png">
-<meta property="og:updated_time" content="2018-11-30T17:21:49.702Z">
+<meta property="og:updated_time" content="2018-12-06T09:36:58.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Nginx搭建视频直播服务器">
-<meta name="twitter:description" content="最近几年，网络视频直播处于蓬勃的发展期，各大直播平台的竞争也趋于白热化。在游戏直播领域，就有许多电子竞技的前职业选手，退役后转行游戏主播，收入不菲。当然，网络直播的用处不仅仅是娱乐行业，诸如实时视频监控等应用方向，同样潜力无限。如果没有太高的并发播放需求，完全可以自行搭建直播服务器。事实上，借助于Nginx，你就可以轻松地搭建一个小型的直播平台。博主在参看了大量教程后，成功地在VPS上搭建了这样的">
+<meta name="twitter:description" content="最近几年，网络视频直播处于蓬勃的发展期，各大直播平台的竞争也趋于白热化。在游戏直播领域，就有许多电子竞技的前职业选手，退役后转行游戏主播，收入不菲。当然，网络直播的用处不仅仅是娱乐行业，诸如实时视频监控等应用方向，同样潜力无限。如果没有太高的并发播放需求，完全可以自行搭建直播服务器。借助于Nginx和一些拓展模块，你就可以轻松地运行一个小型的直播平台。博主在参看了大量教程后，成功地在VPS上搭建了">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-01/1774338-dc544ac657937d0d.png">
   <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
   <link rel="canonical" href="https://zhangshuqiao.org/2018-01/基于Nginx搭建视频直播服务器/">
@@ -226,7 +226,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-        <p>最近几年，网络视频直播处于蓬勃的发展期，各大直播平台的竞争也趋于白热化。在游戏直播领域，就有许多电子竞技的前职业选手，退役后转行游戏主播，收入不菲。当然，网络直播的用处不仅仅是娱乐行业，诸如实时视频监控等应用方向，同样潜力无限。如果没有太高的并发播放需求，完全可以自行搭建直播服务器。事实上，借助于Nginx，你就可以轻松地搭建一个小型的直播平台。<br>博主在参看了大量教程后，成功地在VPS上搭建了这样的视频直播服务器，而且在昨晚经过测试，能够正常地使用OBS Studio推流，在浏览器上实现HTML5播放。下面附上具体步骤，请将所有<code>yourdomain.com</code>替换为你的域名或者服务器IP。</p>
+        <p>最近几年，网络视频直播处于蓬勃的发展期，各大直播平台的竞争也趋于白热化。在游戏直播领域，就有许多电子竞技的前职业选手，退役后转行游戏主播，收入不菲。当然，网络直播的用处不仅仅是娱乐行业，诸如实时视频监控等应用方向，同样潜力无限。如果没有太高的并发播放需求，完全可以自行搭建直播服务器。借助于Nginx和一些拓展模块，你就可以轻松地运行一个小型的直播平台。<br>博主在参看了大量教程后，成功地在VPS上搭建了这样的视频直播服务器，而且在昨晚经过测试，能够正常地使用OBS Studio推流，在浏览器上实现HTML5播放。下面附上具体步骤，请将所有<code>yourdomain.com</code>替换为你的域名或者服务器IP。</p>
 <h2 id="Nginx环境搭建"><a href="#Nginx环境搭建" class="headerlink" title="Nginx环境搭建"></a>Nginx环境搭建</h2><p>首先，需要下载可编译的Nginx源代码，以及必要的拓展库。如果你是萌新，请按照👇教程安装搭建lnmp环境！<br><a href="https://lnmp.org/install.html" target="_blank" rel="noopener">lnmp环境一键安装脚本</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下载并安装lnmp环境</span></span><br><span class="line">wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz &amp;&amp; tar zxf lnmp1.4.tar.gz &amp;&amp; <span class="built_in">cd</span> lnmp1.4 &amp;&amp; ./install.sh lnmp</span><br></pre></td></tr></table></figure>
 <p>请按照脚本的提示选择你要安装的各个组件版本，若不确定，选择默认选项即可。安装完成后，命令行输出：<br><img src="/images/2018-01/1774338-dc544ac657937d0d.png" alt=""></p>
@@ -355,7 +355,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">84</span>
+                    <span class="site-state-item-count">85</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

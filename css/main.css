@@ -1972,7 +1972,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff94ff;
+  background: #0400e4;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3274,23 +3274,21 @@ ul.breadcrumb li+li:last-child {
 body {
   overflow-x: hidden;
 }
-body:before {
-  right: 0;
-  top: 0;
-  left: 0;
-  height: 100px;
-  z-index: 2147483647;
-  position: fixed;
-  content: "";
-  display: block;
-  -webkit-transform: translateY(-99.99px);
-  -moz-transform: translateY(-99.99px);
-  -ms-transform: translateY(-99.99px);
-  -o-transform: translateY(-99.99px);
-  transform: translateY(-99.99px);
-  background: linear-gradient(124deg, #f00, #ff7f00, #ff0, #7fff00, #0f0, #00ff7f, #0ff, #007fff, #00f, #7f00ff, #f0f, #ff007f, #f00);
-  animation: rainbow 15s ease infinite;
-  background-size: 1000% 1000%;
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  body:before {
+    right: 0;
+    top: 0;
+    left: 0;
+    height: 100px;
+    z-index: 2147483647;
+    position: fixed;
+    content: "";
+    display: block;
+    -webkit-transform: translateY(-99.99px);
+    background: linear-gradient(124deg, #f00, #ff7f00, #ff0, #7fff00, #0f0, #00ff7f, #0ff, #007fff, #00f, #7f00ff, #f0f, #ff007f, #f00);
+    animation: rainbow 15s ease infinite;
+    background-size: 1000% 1000%;
+  }
 }
 .douqilai,
 .douqilai * {

@@ -7,8 +7,6 @@
 <meta name="theme-color" content="#222">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
   <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
   <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -18,7 +16,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
   <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
@@ -53,14 +51,14 @@
 <meta name="twitter:description" content="力电声光热，涵尽学海无涯">
   <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
   <link rel="canonical" href="https://zhangshuqiao.org/page/4/">
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
 </script>
   <title>米米的博客</title>
   <noscript>
-  <style type="text/css">
+  <style>
     .use-motion .motion-element,
     .use-motion .brand,
     .use-motion .menu-item,
@@ -77,10 +75,8 @@
       opacity: initial;
       top: initial;
     }
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 </head>
@@ -217,7 +213,7 @@
       </header>
     <div class="post-body" itemprop="articleBody">
           <p><img src="/images/2018-08/F5YSP9KHMF6R1PD.LARGE.jpg" alt=""></p>
-<p>这篇文章翻译自：<a href="https://www.instructables.com/id/Make-your-own-Enigma-Replica" target="_blank" rel="noopener">MAKE YOUR OWN ENIGMA REPLICA</a><br>在对称加密学当中，恩尼格玛机绝对是承前启后的存在。它将密码学研究从以前的语言文字学中心完全转移到了数学身上。在这里牵涉的密码并不是我们平时邮箱、银行帐号那种狭义概念，那种顶多叫做口令。这里说的密码就是通过某种映射方式，把一篇文章变得面目全非，以达到保密效果；只有特定的转换规律才能将其解密。这篇文章适于电脑控、军事控、历史控、数学控阅读，请做好烧脑准备。</p>
+<p>在对称加密学当中，恩尼格玛机绝对是承前启后的存在。它将密码学研究从以前的语言文字学中心完全转移到了数学身上。在这里牵涉的密码并不是我们平时邮箱、银行帐号那种狭义概念，那种顶多叫做口令。这里说的密码就是通过某种映射方式，把一篇文章变得面目全非，以达到保密效果；只有特定的转换规律才能将其解密。这篇文章适于电脑控、军事控、历史控、数学控阅读，请做好烧脑准备。</p>
 <p>EDIT: This Instructable has won Second prize in the 2013 Radio Shack Microcontroller Contest. Thank You to all who voted!<br>按：这个作品是2013年无线电单片机竞赛的亚军。感谢所有支持这个作品的你们！<br>EDIT2: An Open Enigma with fake Standup Nixie Tubes like the ones pictured in this Instructable will soon be available as a Special Kickstarter edition.</p>
 <p>This is our very first Instructable and this step by step guide will show you how to build a fully functional electronic replica of the world famous German Enigma machine. This Arduino based Open Source project is able to encrypt &amp; decrypt any Enigma M4 encoded message.<br>这是我们的初号机。以下教程将手把手教你如何完美复刻史上著名的德国恩尼格玛密码机。这个基于Arduino的开源程序能够加解密任何Enigma机M4型（海军型）的信息。<br>This first ever fully functional Open Source Enigma “exact” Replica was inspired by the Kid’s Game to Arduino Enigma Machine by sketchsk3tch.<br>这个第一台全功能开源完美Enigma机复制品是根据sketchsk3tch写的《Kid’s Game to Arduino Enigma Machine（从儿童玩具到Arduino恩尼格玛机）》所作。<br>Using Multiplexing for the LEDs, this circuit with 115 light emitting diodes uses only 38 pins and the 36 push buttons use only 4 pins total thanks to properly placed resistors (and the P-Channel MOSFETs) in the keyboard loop. These 4 16-Segment displays &amp; an LED for each keyboard button would add up quickly the total number of pins required and even the Arduino Mega would have ran out of pins without the 2 methods mentioned above….<br>采用多路复用LED电路，仅用38个针脚的115个发光二极管和4个针脚的36个按键所连接的整个电路，全靠在键盘回路里准确放置的电阻以及P沟道场效应晶体管得以实现。要不然，4个16段显示器，以及每个按键上的LED将大幅增加所需针脚总量——即使用了Arduino Mega板，但如果没用上述两个方法，电路也不能如此简洁。<br>In response to the overwhelming demand, we designed the PCB and made it available through <a href="http://www.stgeotronics.com" target="_blank" rel="noopener">www.stgeotronics.com</a>. Skip to Step 10 &amp; beyond for more info. We also offer it as a complete electronics kit &amp; an assembled &amp; tested complete product.<br>面对电路的超额需求，我们在 <a href="http://www.stgeotronics.com" target="_blank" rel="noopener">http://www.stgeotronics.com</a> 设计了专用的PCB板。直接跳到第10步和以后的步骤可以找到更多信息。同时，我们也发布了测试过的完整电子组装套装。</p>
 <h2 id="Step-1-Proof-of-Concept-on-Breadboard"><a href="#Step-1-Proof-of-Concept-on-Breadboard" class="headerlink" title="Step 1: Proof of Concept on Breadboard"></a>Step 1: Proof of Concept on Breadboard</h2><p>第一步：面包板上的论证<br><img src="/images/2018-08/F3ULXLHHMEXSREA.LARGE.jpg" alt=""><br><img src="/images/2018-08/FQHGSW5HMF6R1XF.LARGE.jpg" alt=""></p>
@@ -511,8 +507,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-          <p>这篇文章翻译自：<a href="https://www.businessinsider.com/equations-that-changed-the-world-2016-3" target="_blank" rel="noopener">17 Equations That Changed the World</a></p>
-<p>In 2012, Mathematician Ian Stewart came out with an excellent and deeply researched book titled “In Pursuit of the Unknown: 17 Equations That Changed the World.”<br>在2012年，数学家斯图尔特（Ian Stewart）出版了一本精彩而深入研究的著作，名为《追寻未知：改变世界的17个公式》。<br>His book takes a look at the most pivotal equations of all time, and puts them in a human, rather than technical context.<br>他的书着眼于有史以来最关键的方程式，并将它们置于普通人而非专业的背景中。<br>“Equations definitely can be dull, and they can seem complicated, but that’s because they are often presented in a dull and complicated way,” Stewart told Business Insider. “I have an advantage over school math teachers: I’m not trying to show you how to do the sums yourself.”<br>“方程式肯定会显得沉闷，而且它们看起来很复杂，但那是因为它们经常以这样的方式呈现，”斯图尔特告诉Business Insider。 “我比学校的数学老师更有优势：我不会试图告诉你如何自己算出它们。”<br>He explained that anyone can “appreciate the beauty and importance of equations without knowing how to solve them … The intention is to locate them in their cultural and human context, and pull back the veil on their hidden effects on history.”<br>他解释说，任何人都可以“欣赏方程式的美丽和重要性，而不去知道如何解它们……目的是将它们置于文化和人文环境中，并揭开它们对历史隐藏效应的面纱。”<br>Stewart continued that “equations are a vital part of our culture. The stories behind them — the people who discovered or invented them and the periods in which they lived — are fascinating.”<br>斯图尔特继续说道，“方程式是我们文化的重要组成部分。他们背后的故事——发现或发明它们的人以及他们生活的时期——都很吸引人。”<br>Here are 17 equations that have changed the world:<br>以下是改变世界的17个方程式：<br>Max Nisen contributed to an earlier version of this post.<br>Max Nisen为本文的早期版本做出了贡献。</p>
+          <p>In 2012, Mathematician Ian Stewart came out with an excellent and deeply researched book titled “In Pursuit of the Unknown: 17 Equations That Changed the World.”<br>在2012年，数学家斯图尔特（Ian Stewart）出版了一本精彩而深入研究的著作，名为《追寻未知：改变世界的17个公式》。<br>His book takes a look at the most pivotal equations of all time, and puts them in a human, rather than technical context.<br>他的书着眼于有史以来最关键的方程式，并将它们置于普通人而非专业的背景中。<br>“Equations definitely can be dull, and they can seem complicated, but that’s because they are often presented in a dull and complicated way,” Stewart told Business Insider. “I have an advantage over school math teachers: I’m not trying to show you how to do the sums yourself.”<br>“方程式肯定会显得沉闷，而且它们看起来很复杂，但那是因为它们经常以这样的方式呈现，”斯图尔特告诉Business Insider。 “我比学校的数学老师更有优势：我不会试图告诉你如何自己算出它们。”<br>He explained that anyone can “appreciate the beauty and importance of equations without knowing how to solve them … The intention is to locate them in their cultural and human context, and pull back the veil on their hidden effects on history.”<br>他解释说，任何人都可以“欣赏方程式的美丽和重要性，而不去知道如何解它们……目的是将它们置于文化和人文环境中，并揭开它们对历史隐藏效应的面纱。”<br>Stewart continued that “equations are a vital part of our culture. The stories behind them — the people who discovered or invented them and the periods in which they lived — are fascinating.”<br>斯图尔特继续说道，“方程式是我们文化的重要组成部分。他们背后的故事——发现或发明它们的人以及他们生活的时期——都很吸引人。”<br>Here are 17 equations that have changed the world:<br>以下是改变世界的17个方程式：<br>Max Nisen contributed to an earlier version of this post.<br>Max Nisen为本文的早期版本做出了贡献。</p>
 <h2 id="The-Pythagorean-Theorem"><a href="#The-Pythagorean-Theorem" class="headerlink" title="The Pythagorean Theorem"></a>The Pythagorean Theorem</h2><p>$$a^{2}+b^{2}=c^{2}$$<br>Pythagoras, 530 BC<br>What does it mean? The square of the hypotenuse of a right triangle is equal to the sum of the squares of its legs.<br>作用：直角三角形的斜边的平方等于其直角边的平方和。<br>History: Though attributed to Pythagoras, it is not certain that he was the first person to prove it. The first clear proof came from Euclid, and it is possible the concept was known 1,000 years before Pythagoras by the Babylonians.<br>历史：虽然认为毕达哥拉斯（Pythagoras）发现了这个公式，但不确定他是否是第一个证明它的人。第一个明确的证明来自欧几里得，而这个概念可能是在毕达哥拉斯之前1000年就被巴比伦人知道了。<br>Importance: The equation is at the core of much of geometry, links it with algebra, and is the foundation of trigonometry. Without it, accurate surveying, mapmaking, and navigation would be impossible.<br>重要性：勾股定理是几何的核心，它与代数联系起来，是三角学的基础。没有它，准确的测量、地图制作和导航将是不可能的。<br>In terms of pure math, the Pythagorean Theorem defines normal, Euclidean plane geometry. For example, a right triangle drawn on the surface of a sphere like the Earth doesn’t necessarily satisfy the theorem.<br>在纯数学方面，毕达哥拉斯定理定义了正常的欧几里德平面几何。例如，在像地球一样的球体表面上绘制的直角三角形不一定满足该定理。<br>Modern use: Triangulation is used to this day to pinpoint relative location for GPS navigation.<br>现代用途：今天使用三角测量来确定GPS导航的相对位置。</p>
           <!--noindex-->
             <div class="post-button text-center">
@@ -619,7 +614,7 @@
   </div>
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
               <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
@@ -667,7 +662,7 @@
               </ul>
             </div>
         </div>
-      </section>
+      </div>
     </div>
   </aside>
       </div>
@@ -698,28 +693,28 @@
           <span id="scrollpercent"><span>0</span>%</span>
       </div>
   </div>
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
 </script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
-    <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-    <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
-    <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
-    <script type="text/javascript" src="/lib/custom.js"></script>
-  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+    <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+    <script src="/lib/waifu/live2d.min.js"></script>
+    <script src="/lib/waifu/waifu-tips.js"></script>
+    <script src="/lib/custom.js"></script>
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+  <script src="/js/src/affix.js?v=6.6.0"></script>
+  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="/lib/Valine.min.js"></script>
-  <script type="text/javascript">
+  <script>
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(function (item) {
@@ -738,7 +733,7 @@
         visitor: false
     });
   </script>
-  <script type="text/javascript">
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -1065,14 +1060,14 @@
       }
   });
 </script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <style>
 .MathJax_Display {
     overflow: auto hidden;
 }
 </style>
   <script src="//cdn.jsdelivr.net/npm/pangu@3.3.0/dist/browser/pangu.min.js"></script>
-  <script type="text/javascript">pangu.spacingPage();</script>
+  <script>pangu.spacingPage();</script>
   <style>
     .copy-btn {
       display: inline-block;
@@ -1109,39 +1104,39 @@
   </style>
   <script>
     $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
       $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
         var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        var range = document.createRange() //For Chrome
-        var sel = window.getSelection() //For Chrome
-        ta.style.width = '0px'
-        ta.style.height = '0px'
-        ta.style.opacity = '0'
-        ta.value = code
-        ta.textContent = code //For FireFox
-        ta.contentEditable = true
-        ta.readOnly = false
-        document.body.appendChild(ta)
-        //range.selectNodeContents(ta)
-        range.selectNode(ta)
-        sel.removeAllRanges()
-        sel.addRange(range)
-        ta.setSelectionRange(0, code.length)
-        var result = document.execCommand('copy')
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        ta.blur() //For iOS
-        $(this).blur()
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        ta.blur(); //For iOS
+        $(this).blur();
       })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
+        var $b = $(this).find('.copy-btn');
         setTimeout(function () {
-          $b.text('复制')
+          $b.text('复制');
         }, 300)
-      }).append(e)
+      }).append(e);
     })
   </script>
 </body>

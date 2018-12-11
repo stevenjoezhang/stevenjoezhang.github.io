@@ -7,8 +7,6 @@
 <meta name="theme-color" content="#222">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
   <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
   <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -18,7 +16,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
   <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
@@ -50,21 +48,21 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/spread-operator-emoji.jpg">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/emoji-replace.jpg">
-<meta property="og:updated_time" content="2018-11-18T08:49:51.166Z">
+<meta property="og:updated_time" content="2018-12-11T06:48:44.408Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript常用简写技术与扩展运算符">
 <meta name="twitter:description" content="三元操作符当想写if...else语句时，使用三元操作符来代替。1234567const x = 20;let answer;if (x &amp;gt; 10) &amp;#123;    answer = &apos;is greater&apos;;&amp;#125; else &amp;#123;    answer = &apos;is lesser&apos;;&amp;#125; 简写：12345const answer = x &amp;gt; 10 ? &apos;is g">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-01/spread-operator-emoji.jpg">
   <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
   <link rel="canonical" href="https://zhangshuqiao.org/2018-01/JavaScript常用简写技术与扩展运算符/">
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
 </script>
   <title>JavaScript常用简写技术与扩展运算符 | 米米的博客</title>
   <noscript>
-  <style type="text/css">
+  <style>
     .use-motion .motion-element,
     .use-motion .brand,
     .use-motion .menu-item,
@@ -81,10 +79,8 @@
       opacity: initial;
       top: initial;
     }
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 </head>
@@ -272,7 +268,8 @@
 <p>通过扩展运算符我们可以避免使用<code>apply</code>并且轻松地使用它呼叫函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doStuff(...args);</span><br></pre></td></tr></table></figure></p>
 <p>代码更少，更干净，而且不需要使用多余的<code>null</code>！</p>
 <p>很多Emoji字符不是独立的Unicode字符，而是由多个Emoji组合而成。最常见的就是家庭Emoji和有肤色的Emoji，例如👪和👨‍👩‍👧‍👧。<br>神奇的事情是，如果使用扩展运算符的话，它们是可以拆散的！<br><img src="/images/2018-01/spread-operator-emoji.jpg" alt=""><br>这些复合emoji字符甚至还允许做替换，形成新的emoji字符。<br><img src="/images/2018-01/emoji-replace.jpg" alt=""><br>不得不说这是一种绝妙的使用方式。</p>
-<p>原文链接：<br><a href="https://www.sitepoint.com/shorthand-javascript-techniques" target="_blank" rel="noopener">19+ JavaScript Shorthand Coding Techniques</a><br><a href="https://juejin.im/post/5948db9661ff4b006c061b2b" target="_blank" rel="noopener">19 个 JavaScript 常用的简写技术</a><br><a href="http://lightcss.com/6-spread-operator" target="_blank" rel="noopener">[译] 6 种 JavaScript 展开操作符的绝妙使用</a></p>
+<p>本文转载自：<a href="https://juejin.im/post/5948db9661ff4b006c061b2b" target="_blank" rel="noopener">19 个 JavaScript 常用的简写技术</a></p>
+<p>拓展阅读：<br><a href="https://www.sitepoint.com/shorthand-javascript-techniques" target="_blank" rel="noopener">19+ JavaScript Shorthand Coding Techniques</a><br><a href="http://lightcss.com/6-spread-operator" target="_blank" rel="noopener">[译] 6 种 JavaScript 展开操作符的绝妙使用</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -350,7 +347,7 @@
             站点概览
           </li>
         </ul>
-      <section class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
               <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
@@ -398,13 +395,13 @@
               </ul>
             </div>
         </div>
-      </section>
+      </div>
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#三元操作符"><span class="nav-number">1.</span> <span class="nav-text">三元操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#短路求值简写方式"><span class="nav-number">2.</span> <span class="nav-text">短路求值简写方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明变量简写方法"><span class="nav-number">3.</span> <span class="nav-text">声明变量简写方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if存在条件简写方法"><span class="nav-number">4.</span> <span class="nav-text">if存在条件简写方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript循环简写方法"><span class="nav-number">5.</span> <span class="nav-text">JavaScript循环简写方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#短路评价"><span class="nav-number">6.</span> <span class="nav-text">短路评价</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十进制指数"><span class="nav-number">7.</span> <span class="nav-text">十进制指数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象属性简写"><span class="nav-number">8.</span> <span class="nav-text">对象属性简写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#箭头函数简写"><span class="nav-number">9.</span> <span class="nav-text">箭头函数简写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐式返回值简写"><span class="nav-number">10.</span> <span class="nav-text">隐式返回值简写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#默认参数值"><span class="nav-number">11.</span> <span class="nav-text">默认参数值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板字符串"><span class="nav-number">12.</span> <span class="nav-text">模板字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解构赋值简写方法"><span class="nav-number">13.</span> <span class="nav-text">解构赋值简写方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多行字符串简写"><span class="nav-number">14.</span> <span class="nav-text">多行字符串简写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强制参数简写"><span class="nav-number">15.</span> <span class="nav-text">强制参数简写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array-find简写"><span class="nav-number">16.</span> <span class="nav-text">Array.find简写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-key-简写"><span class="nav-number">17.</span> <span class="nav-text">Object[key]简写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双重非位运算简写"><span class="nav-number">18.</span> <span class="nav-text">双重非位运算简写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展运算符简写"><span class="nav-number">19.</span> <span class="nav-text">扩展运算符简写</span></a></li></ol></div>
           </div>
-        </section>
+        </div>
       <!--/noindex-->
     </div>
   </aside>
@@ -436,30 +433,30 @@
           <span id="scrollpercent"><span>0</span>%</span>
       </div>
   </div>
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
 </script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
-    <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-    <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
-    <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
-    <script type="text/javascript" src="/lib/custom.js"></script>
-  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+    <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+    <script src="/lib/waifu/live2d.min.js"></script>
+    <script src="/lib/waifu/waifu-tips.js"></script>
+    <script src="/lib/custom.js"></script>
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+  <script src="/js/src/affix.js?v=6.6.0"></script>
+  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="/lib/Valine.min.js"></script>
-  <script type="text/javascript">
+  <script>
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(function (item) {
@@ -478,7 +475,7 @@
         visitor: false
     });
   </script>
-  <script type="text/javascript">
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -778,7 +775,7 @@
     });
   </script>
   <script src="//cdn.jsdelivr.net/npm/pangu@3.3.0/dist/browser/pangu.min.js"></script>
-  <script type="text/javascript">pangu.spacingPage();</script>
+  <script>pangu.spacingPage();</script>
   <style>
     .copy-btn {
       display: inline-block;
@@ -815,39 +812,39 @@
   </style>
   <script>
     $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
       $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
         var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        var range = document.createRange() //For Chrome
-        var sel = window.getSelection() //For Chrome
-        ta.style.width = '0px'
-        ta.style.height = '0px'
-        ta.style.opacity = '0'
-        ta.value = code
-        ta.textContent = code //For FireFox
-        ta.contentEditable = true
-        ta.readOnly = false
-        document.body.appendChild(ta)
-        //range.selectNodeContents(ta)
-        range.selectNode(ta)
-        sel.removeAllRanges()
-        sel.addRange(range)
-        ta.setSelectionRange(0, code.length)
-        var result = document.execCommand('copy')
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        ta.blur() //For iOS
-        $(this).blur()
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        ta.blur(); //For iOS
+        $(this).blur();
       })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
+        var $b = $(this).find('.copy-btn');
         setTimeout(function () {
-          $b.text('复制')
+          $b.text('复制');
         }, 300)
-      }).append(e)
+      }).append(e);
     })
   </script>
 </body>

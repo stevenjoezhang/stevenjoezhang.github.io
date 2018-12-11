@@ -7,8 +7,6 @@
 <meta name="theme-color" content="#222">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
   <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
   <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -18,7 +16,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
   <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
@@ -53,14 +51,14 @@
 <meta name="twitter:description" content="力电声光热，涵尽学海无涯">
   <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
   <link rel="canonical" href="https://zhangshuqiao.org/page/2/">
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
 </script>
   <title>米米的博客</title>
   <noscript>
-  <style type="text/css">
+  <style>
     .use-motion .motion-element,
     .use-motion .brand,
     .use-motion .menu-item,
@@ -77,10 +75,8 @@
       opacity: initial;
       top: initial;
     }
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 </head>
@@ -275,7 +271,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">284</span>
+                <span title="本文字数">285</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
@@ -286,7 +282,8 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-            <p><a href="https://www.heavens-above.com" target="_blank" rel="noopener">Heavens Above</a>是一个天文数据库网站，可以查询到诸如卫星过境的很多信息。虽然数据很全面，但是检索方式非常繁琐，在网站上需要依次打开多个链接进行比对，难以迅速地获取需要的信息。故博主决定写一个爬虫，以直观地展现所有数据。由于Heavens Above采取了大量的反爬虫措施，例如校验Cookie、限制单个IP的访问次数等，因此必须严格地模拟浏览器请求，才能正确爬取数据。<br>博主也参考了大量GitHub上已有的Heavens Above爬虫项目，不过它们大部分失去维护，停留在数年前，已经不再适用。具体的逻辑还是要自行测试。</p>
+            <p><a href="https://www.heavens-above.com" target="_blank" rel="noopener">Heavens Above</a>是一个天文数据库网站，可以查询到诸如卫星过境的很多信息。虽然数据很全面，但是检索方式非常繁琐，在网站上需要依次打开多个链接进行比对，难以迅速地获取需要的信息。故博主决定写一个爬虫，以直观地展现所有数据。由于Heavens Above采取了大量的反爬虫措施，例如校验Cookie、限制单个IP的访问次数等，因此必须严格地模拟浏览器请求，才能正确爬取数据。<br><img src="/images/2018-10/iss.png" alt=""></p>
+<p>博主也参考了大量GitHub上已有的Heavens Above爬虫项目，不过它们大部分失去维护，停留在数年前，已经不再适用。具体的逻辑还是要自行测试。</p>
 <p>项目地址：<a href="https://github.com/stevenjoezhang/heavens-above" target="_blank" rel="noopener">heavens-above</a></p>
     </div>
     <footer class="post-footer">
@@ -477,8 +474,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-          <p>这篇文章翻译自：<a href="https://www.quora.com/Programming-Interviews/Whats-the-hardest-bug-youve-debugged/answer/Dave-Baggett" target="_blank" rel="noopener">What’s the hardest bug you’ve debugged?</a></p>
-<p>It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blame the compiler. Well down the list after that, you blame the hardware.<br>回想起这个bug，仍然让我感觉有些痛苦。作为一个程序员，在发现bug时，你学会了首先在自己代码中找问题，一次、两次、三次……或许在测试一万次之后，你会把问题归咎于编译器。只有在这所有的都不起作用之后，你才会把问题归咎于硬件。</p>
+          <p>It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blame the compiler. Well down the list after that, you blame the hardware.<br>回想起这个bug，仍然让我感觉有些痛苦。作为一个程序员，在发现bug时，你学会了首先在自己代码中找问题，一次、两次、三次……或许在测试一万次之后，你会把问题归咎于编译器。只有在这所有的都不起作用之后，你才会把问题归咎于硬件。</p>
 <p>This is my hardware bug story.<br>这是我遭遇硬件bug的故事。</p>
 <p>Among other things, I wrote the memory card (load/save) code for Crash Bandicoot. For a swaggering game coder, this is like a walk in the park; I expected it would take a few days. I ended up debugging that code for six weeks. I did other stuff during that time, but I kept coming back to this bug – a few hours every few days. It was agonizing.<br>抛开别的不说，我曾为古惑狼（Crash Bandicoot，PS1游戏）写存储卡（读写）代码。对于一个自大的游戏程序员，这就像是在公园里散步一样轻松愉快；我预计只要几天就可以写完。我最终用了六个礼拜把那些代码调试完毕。在此期间我也做过一些其他的事情，但却一直绕不开这个bug——每几天内就要花上好几个小时来处理。这个bug实在烦人。</p>
 <p>The symptom was that you’d go to save your progress and it would access the memory card, and almost all the time, it worked normally… But every once in a while the write or read would time out… for no obvious reason. A short write would often corrupt the memory card. The player would go to save, and not only would we not save, we’d wipe their memory card. D’Oh.<br>这个bug的症状是，当你需要保存你的进度时，代码会访问存储卡，而大部分情况下没有什么问题…但是偶尔读写会超时…没有任何明显的原因。一个简短的写入经常毁掉存储卡。玩家要保存进度，我们不仅不保存，还擦除他们存储卡上的全部东西。天哪。</p>
@@ -585,7 +581,7 @@
   </div>
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
               <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
@@ -633,7 +629,7 @@
               </ul>
             </div>
         </div>
-      </section>
+      </div>
     </div>
   </aside>
       </div>
@@ -664,28 +660,28 @@
           <span id="scrollpercent"><span>0</span>%</span>
       </div>
   </div>
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
 </script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
-    <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-    <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
-    <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
-    <script type="text/javascript" src="/lib/custom.js"></script>
-  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+    <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+    <script src="/lib/waifu/live2d.min.js"></script>
+    <script src="/lib/waifu/waifu-tips.js"></script>
+    <script src="/lib/custom.js"></script>
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+  <script src="/js/src/affix.js?v=6.6.0"></script>
+  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="/lib/Valine.min.js"></script>
-  <script type="text/javascript">
+  <script>
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(function (item) {
@@ -704,7 +700,7 @@
         visitor: false
     });
   </script>
-  <script type="text/javascript">
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -1031,14 +1027,14 @@
       }
   });
 </script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <style>
 .MathJax_Display {
     overflow: auto hidden;
 }
 </style>
   <script src="//cdn.jsdelivr.net/npm/pangu@3.3.0/dist/browser/pangu.min.js"></script>
-  <script type="text/javascript">pangu.spacingPage();</script>
+  <script>pangu.spacingPage();</script>
   <style>
     .copy-btn {
       display: inline-block;
@@ -1075,39 +1071,39 @@
   </style>
   <script>
     $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
       $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
         var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        var range = document.createRange() //For Chrome
-        var sel = window.getSelection() //For Chrome
-        ta.style.width = '0px'
-        ta.style.height = '0px'
-        ta.style.opacity = '0'
-        ta.value = code
-        ta.textContent = code //For FireFox
-        ta.contentEditable = true
-        ta.readOnly = false
-        document.body.appendChild(ta)
-        //range.selectNodeContents(ta)
-        range.selectNode(ta)
-        sel.removeAllRanges()
-        sel.addRange(range)
-        ta.setSelectionRange(0, code.length)
-        var result = document.execCommand('copy')
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        ta.blur() //For iOS
-        $(this).blur()
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        ta.blur(); //For iOS
+        $(this).blur();
       })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
+        var $b = $(this).find('.copy-btn');
         setTimeout(function () {
-          $b.text('复制')
+          $b.text('复制');
         }, 300)
-      }).append(e)
+      }).append(e);
     })
   </script>
 </body>

@@ -7,8 +7,6 @@
 <meta name="theme-color" content="#222">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
   <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
   <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -18,7 +16,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
   <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
@@ -53,14 +51,14 @@
 <meta name="twitter:description" content="力电声光热，涵尽学海无涯">
   <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
   <link rel="canonical" href="https://zhangshuqiao.org/">
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
 </script>
   <title>米米的博客</title>
   <noscript>
-  <style type="text/css">
+  <style>
     .use-motion .motion-element,
     .use-motion .brand,
     .use-motion .menu-item,
@@ -77,10 +75,8 @@
       opacity: initial;
       top: initial;
     }
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 </head>
@@ -363,7 +359,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-            <p>从OS X Yosemite系统开始，Safari浏览器的顶部工具栏已经有了类似iOS中的半透明毛玻璃效果了。Safari会自动根据页面的颜色来显示工具栏的毛玻璃特效颜色，而通过CSS中的<code>body:before</code>类，我们可以将其定制一下。具体代码如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="selector-tag">body</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">        <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">        <span class="attribute">z-index</span>: <span class="number">2147483647</span>;</span><br><span class="line">        <span class="attribute">position</span>: fixed;</span><br><span class="line">        <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">        <span class="attribute">display</span>: block;</span><br><span class="line">        <span class="attribute">-webkit-transform</span>: <span class="built_in">translateY</span>(-99.99px);</span><br><span class="line">        <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(124deg,</span><br><span class="line">        #FF0000,</span><br><span class="line">        #FF7F00,</span><br><span class="line">        #FFFF00,</span><br><span class="line">        #7FFF00,</span><br><span class="line">        #00FF00,</span><br><span class="line">        #00FF7F,</span><br><span class="line">        #00FFFF,</span><br><span class="line">        #007FFF,</span><br><span class="line">        #0000FF,</span><br><span class="line">        #7F00FF,</span><br><span class="line">        #FF00FF,</span><br><span class="line">        #FF007F,</span><br><span class="line">        #FF0000);</span><br><span class="line">        <span class="attribute">animation</span>: rainbow <span class="number">15s</span> ease infinite;</span><br><span class="line">        <span class="attribute">background-size</span>: <span class="number">1000%</span> <span class="number">1000%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">keyframes</span> rainbow &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        <span class="attribute">background-position</span>: <span class="number">0%</span> <span class="number">80%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    50% &#123;</span><br><span class="line">        <span class="attribute">background-position</span>: <span class="number">100%</span> <span class="number">20%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        <span class="attribute">background-position</span>: <span class="number">0%</span> <span class="number">80%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+            <p>从OS X Yosemite系统开始，Safari浏览器的顶部工具栏加入了类似iOS中的半透明毛玻璃效果。Safari会自动根据页面的颜色来显示工具栏的毛玻璃特效颜色，而通过CSS中的<code>body:before</code>类，我们可以对其进行定制。具体代码如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="selector-tag">body</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">        <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">        <span class="attribute">z-index</span>: <span class="number">2147483647</span>;</span><br><span class="line">        <span class="attribute">position</span>: fixed;</span><br><span class="line">        <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">        <span class="attribute">display</span>: block;</span><br><span class="line">        <span class="attribute">-webkit-transform</span>: <span class="built_in">translateY</span>(-99.99px);</span><br><span class="line">        <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(124deg,</span><br><span class="line">        #FF0000,</span><br><span class="line">        #FF7F00,</span><br><span class="line">        #FFFF00,</span><br><span class="line">        #7FFF00,</span><br><span class="line">        #00FF00,</span><br><span class="line">        #00FF7F,</span><br><span class="line">        #00FFFF,</span><br><span class="line">        #007FFF,</span><br><span class="line">        #0000FF,</span><br><span class="line">        #7F00FF,</span><br><span class="line">        #FF00FF,</span><br><span class="line">        #FF007F,</span><br><span class="line">        #FF0000);</span><br><span class="line">        <span class="attribute">animation</span>: rainbow <span class="number">15s</span> ease infinite;</span><br><span class="line">        <span class="attribute">background-size</span>: <span class="number">1000%</span> <span class="number">1000%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">keyframes</span> rainbow &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        <span class="attribute">background-position</span>: <span class="number">0%</span> <span class="number">80%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    50% &#123;</span><br><span class="line">        <span class="attribute">background-position</span>: <span class="number">100%</span> <span class="number">20%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        <span class="attribute">background-position</span>: <span class="number">0%</span> <span class="number">80%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>将它们添加到页面中的<code>&lt;style&gt;</code>标签内，并在<code>&lt;body&gt;</code>中加入适当的内容。当使用Safari浏览器打开时，<strong>略微向下滚动页面</strong>，便可以看到顶部栏出现炫酷的彩虹效果。快去试试吧！<br><strong>注意：一些老旧浏览器不能正确识别<code>transform</code>，会导致彩色条挡住<code>&lt;body&gt;</code>，<code>-webkit-min-device-pixel-ratio</code>可以防止这一问题。</strong></p>
     </div>
     <footer class="post-footer">
@@ -647,7 +643,7 @@
   </div>
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
               <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
@@ -695,7 +691,7 @@
               </ul>
             </div>
         </div>
-      </section>
+      </div>
     </div>
   </aside>
       </div>
@@ -726,28 +722,28 @@
           <span id="scrollpercent"><span>0</span>%</span>
       </div>
   </div>
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
 </script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
-    <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-    <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
-    <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
-    <script type="text/javascript" src="/lib/custom.js"></script>
-  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+    <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+    <script src="/lib/waifu/live2d.min.js"></script>
+    <script src="/lib/waifu/waifu-tips.js"></script>
+    <script src="/lib/custom.js"></script>
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+  <script src="/js/src/affix.js?v=6.6.0"></script>
+  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="/lib/Valine.min.js"></script>
-  <script type="text/javascript">
+  <script>
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(function (item) {
@@ -766,7 +762,7 @@
         visitor: false
     });
   </script>
-  <script type="text/javascript">
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -1093,14 +1089,14 @@
       }
   });
 </script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <style>
 .MathJax_Display {
     overflow: auto hidden;
 }
 </style>
   <script src="//cdn.jsdelivr.net/npm/pangu@3.3.0/dist/browser/pangu.min.js"></script>
-  <script type="text/javascript">pangu.spacingPage();</script>
+  <script>pangu.spacingPage();</script>
   <style>
     .copy-btn {
       display: inline-block;
@@ -1137,39 +1133,39 @@
   </style>
   <script>
     $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
       $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
         var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        var range = document.createRange() //For Chrome
-        var sel = window.getSelection() //For Chrome
-        ta.style.width = '0px'
-        ta.style.height = '0px'
-        ta.style.opacity = '0'
-        ta.value = code
-        ta.textContent = code //For FireFox
-        ta.contentEditable = true
-        ta.readOnly = false
-        document.body.appendChild(ta)
-        //range.selectNodeContents(ta)
-        range.selectNode(ta)
-        sel.removeAllRanges()
-        sel.addRange(range)
-        ta.setSelectionRange(0, code.length)
-        var result = document.execCommand('copy')
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        ta.blur() //For iOS
-        $(this).blur()
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        ta.blur(); //For iOS
+        $(this).blur();
       })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
+        var $b = $(this).find('.copy-btn');
         setTimeout(function () {
-          $b.text('复制')
+          $b.text('复制');
         }, 300)
-      }).append(e)
+      }).append(e);
     })
   </script>
 </body>

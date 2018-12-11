@@ -7,8 +7,6 @@
 <meta name="theme-color" content="#222">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
   <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
   <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -18,7 +16,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
   <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
@@ -48,20 +46,22 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="本教程以macOS 10.13为例。 准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。 配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了能在终端正确运行最新的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-09T02:59:04.408Z">
+<meta property="og:image" content="https://zhangshuqiao.org/images/2018-03/jdk.png">
+<meta property="og:updated_time" content="2018-12-11T06:29:52.782Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac反编译apk程序">
 <meta name="twitter:description" content="本教程以macOS 10.13为例。 准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。 配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了能在终端正确运行最新的">
+<meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-03/jdk.png">
   <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
   <link rel="canonical" href="https://zhangshuqiao.org/2018-03/Mac反编译apk程序/">
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
 </script>
   <title>Mac反编译apk程序 | 米米的博客</title>
   <noscript>
-  <style type="text/css">
+  <style>
     .use-motion .motion-element,
     .use-motion .brand,
     .use-motion .menu-item,
@@ -78,10 +78,8 @@
       opacity: initial;
       top: initial;
     }
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 </head>
@@ -222,9 +220,9 @@
       </header>
     <div class="post-body" itemprop="articleBody">
         <p>本教程以macOS 10.13为例。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载最新的JDK"><a href="#下载最新的JDK" class="headerlink" title="下载最新的JDK"></a>下载最新的JDK</h3><p>前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>，在底部找到<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Download Java for Developers</a>，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载最新的JDK"><a href="#下载最新的JDK" class="headerlink" title="下载最新的JDK"></a>下载最新的JDK</h3><p>前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>，在底部找到<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Download Java for Developers</a>，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。<br><img src="/images/2018-03/jdk.png" alt=""></p>
 <h3 id="配置JDK"><a href="#配置JDK" class="headerlink" title="配置JDK"></a>配置JDK</h3><p>下载完成后，打开dmg镜像进行安装。JDK会被安装到<code>/Library/Java/JavaVirtualMachines</code>目录下。为了能在终端正确运行最新的JDK，需要配置环境变量。在<code>~/.bash_profile</code>中增加以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home</span><br><span class="line">PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span>:.</span><br><span class="line">CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:.</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME</span><br><span class="line"><span class="built_in">export</span> PATH</span><br><span class="line"><span class="built_in">export</span> CLASSPATH</span><br></pre></td></tr></table></figure></p>
-<p>其中，将<code>jdk1.8.0_40.jdk</code>换成你所安装的JDK对应的版本和目录。修改完成后，重启终端或使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
+<p>其中，将<code>jdk1.8.0_40.jdk</code>换成你所安装的JDK对应的版本和目录。修改完成后，重开终端或使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
 <p>使环境变量生效。</p>
 <a id="more"></a>
 <h3 id="下载apk反编译组件"><a href="#下载apk反编译组件" class="headerlink" title="下载apk反编译组件"></a>下载apk反编译组件</h3><ul>
@@ -318,7 +316,7 @@
             站点概览
           </li>
         </ul>
-      <section class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
               <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
@@ -366,13 +364,13 @@
               </ul>
             </div>
         </div>
-      </section>
+      </div>
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载最新的JDK"><span class="nav-number">1.1.</span> <span class="nav-text">下载最新的JDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置JDK"><span class="nav-number">1.2.</span> <span class="nav-text">配置JDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载apk反编译组件"><span class="nav-number">1.3.</span> <span class="nav-text">下载apk反编译组件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行Apktool"><span class="nav-number">2.</span> <span class="nav-text">运行Apktool</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用dex2jar将apk转成jar文件"><span class="nav-number">2.1.</span> <span class="nav-text">用dex2jar将apk转成jar文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看源代码"><span class="nav-number">2.2.</span> <span class="nav-text">查看源代码</span></a></li></ol></li></ol></div>
           </div>
-        </section>
+        </div>
       <!--/noindex-->
     </div>
   </aside>
@@ -404,30 +402,30 @@
           <span id="scrollpercent"><span>0</span>%</span>
       </div>
   </div>
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
 </script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
-    <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-    <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
-    <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
-    <script type="text/javascript" src="/lib/custom.js"></script>
-  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+    <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+    <script src="/lib/waifu/live2d.min.js"></script>
+    <script src="/lib/waifu/waifu-tips.js"></script>
+    <script src="/lib/custom.js"></script>
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+  <script src="/js/src/affix.js?v=6.6.0"></script>
+  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="/lib/Valine.min.js"></script>
-  <script type="text/javascript">
+  <script>
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(function (item) {
@@ -446,7 +444,7 @@
         visitor: false
     });
   </script>
-  <script type="text/javascript">
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -746,7 +744,7 @@
     });
   </script>
   <script src="//cdn.jsdelivr.net/npm/pangu@3.3.0/dist/browser/pangu.min.js"></script>
-  <script type="text/javascript">pangu.spacingPage();</script>
+  <script>pangu.spacingPage();</script>
   <style>
     .copy-btn {
       display: inline-block;
@@ -783,39 +781,39 @@
   </style>
   <script>
     $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
       $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
         var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        var range = document.createRange() //For Chrome
-        var sel = window.getSelection() //For Chrome
-        ta.style.width = '0px'
-        ta.style.height = '0px'
-        ta.style.opacity = '0'
-        ta.value = code
-        ta.textContent = code //For FireFox
-        ta.contentEditable = true
-        ta.readOnly = false
-        document.body.appendChild(ta)
-        //range.selectNodeContents(ta)
-        range.selectNode(ta)
-        sel.removeAllRanges()
-        sel.addRange(range)
-        ta.setSelectionRange(0, code.length)
-        var result = document.execCommand('copy')
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        ta.blur() //For iOS
-        $(this).blur()
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        ta.blur(); //For iOS
+        $(this).blur();
       })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
+        var $b = $(this).find('.copy-btn');
         setTimeout(function () {
-          $b.text('复制')
+          $b.text('复制');
         }, 300)
-      }).append(e)
+      }).append(e);
     })
   </script>
 </body>

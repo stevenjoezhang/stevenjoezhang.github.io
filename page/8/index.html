@@ -7,8 +7,6 @@
 <meta name="theme-color" content="#222">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
   <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
   <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -18,7 +16,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
   <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
@@ -53,14 +51,14 @@
 <meta name="twitter:description" content="力电声光热，涵尽学海无涯">
   <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
   <link rel="canonical" href="https://zhangshuqiao.org/page/8/">
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
 </script>
   <title>米米的博客</title>
   <noscript>
-  <style type="text/css">
+  <style>
     .use-motion .motion-element,
     .use-motion .brand,
     .use-motion .menu-item,
@@ -77,10 +75,8 @@
       opacity: initial;
       top: initial;
     }
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 </head>
@@ -556,7 +552,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">781</span>
+                <span title="本文字数">914</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
@@ -567,10 +563,10 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-            <p>B站的每个视频都有aid和cid两个参数，在已知视频aid（AV号）的情况下，可以通过链接<code>https://www.bilibili.com/widget/getPageList?aid=$aid</code>获取cid（将$aid替换为视频的aid）。<br>视频的弹幕文件采用xml格式存储，地址与其cid有关，为<code>https://comment.bilibili.com/$cid.xml</code>（将$cid替换为视频的cid）。<br>对于有许多分P的视频，它们的aid（AV号）相同，每个分P则对应一个不同的cid。而在同一个页面下的番剧、影视等内容，每一分集的cid也是唯一的。<br>弹幕内容的存储方式为：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">d</span> <span class="attr">p</span>=<span class="string">"0,1,25,16777215,1312863760,0,eff85771,42759017"</span>&gt;</span>前排占位置<span class="tag">&lt;/<span class="name">d</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+            <p>B站的每个视频都有aid和cid两个参数，在已知视频aid（即AV号）的情况下，可以通过链接<code>https://www.bilibili.com/widget/getPageList?aid=10492</code>获取cid（将10492替换为你要查询的视频的aid）。<br>视频的更多信息则可以通过<code>https://api.bilibili.com/view?type=jsonp&amp;appkey=8e9fc618fbd41e28&amp;id=10492</code>获取。<br>视频的弹幕文件采用xml格式存储，地址与其cid有关，为<code>https://comment.bilibili.com/$cid.xml</code>（将$cid替换为视频的cid）。<br>对于有许多分P的视频，它们的aid（AV号）相同，每个分P则对应一个不同的cid。而在同一个页面下的番剧、影视等内容，每一分集的cid也是唯一的。<br>弹幕内容的存储方式为：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">d</span> <span class="attr">p</span>=<span class="string">"0,1,25,16777215,1312863760,0,eff85771,42759017"</span>&gt;</span>前排占位置<span class="tag">&lt;/<span class="name">d</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>这个元素中的各个参数由逗号分割，其意义分别为：</p>
 <ul>
-<li>弹幕出现的时间，以秒数为单位</li>
+<li>弹幕出现的时间，以秒为单位</li>
 <li>弹幕的模式：1～3滚动弹幕 4底端弹幕 5顶端弹幕 6逆向弹幕 7精准定位 8高级弹幕</li>
 <li>字号：12非常小 16特小 18小 25中 36大 45很大 64特别大</li>
 <li>字体的颜色：将HTML六位十六进制颜色转为十进制表示，例如#FFFFFF会被存储为16777215，因为$(FFFFFF)_{16}=(16777215)_{10}$</li>
@@ -579,7 +575,7 @@
 <li>发送者的ID，用于“屏蔽此弹幕的发送者”功能</li>
 <li>弹幕在弹幕数据库中rowID，用于“历史弹幕”功能</li>
 </ul>
-<p>将Bilibili弹幕的xml文件转为ass字幕，可以使用以下脚本：<br><a href="http://tiansh.github.io/us-danmaku/bilibili" target="_blank" rel="noopener">bilibili ASS 弹幕在线转换</a><br><a href="https://github.com/tiansh/us-danmaku" target="_blank" rel="noopener">us-danmaku</a><br>关于ass字幕格式可以参考以下文章：<br><a href="https://www.douban.com/note/658520175" target="_blank" rel="noopener">ASS字幕格式规范</a></p>
+<p>将Bilibili弹幕的xml文件转为ass字幕，可以使用以下脚本：<br><a href="http://tiansh.github.io/us-danmaku/bilibili" target="_blank" rel="noopener">bilibili ASS 弹幕在线转换</a><br><a href="https://github.com/tiansh/us-danmaku" target="_blank" rel="noopener">us-danmaku</a><br>关于ass字幕格式可以参考以下文章：<br><a href="https://www.douban.com/note/658520175" target="_blank" rel="noopener">ASS字幕格式规范</a><br>拓展阅读：<br><a href="https://zhuanlan.zhihu.com/p/24599052" target="_blank" rel="noopener">Bilibili视频播放页面接口整理（不定期更新）</a></p>
     </div>
     <footer class="post-footer">
         <div class="post-eof"></div>
@@ -601,7 +597,7 @@
   </div>
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
               <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
@@ -649,7 +645,7 @@
               </ul>
             </div>
         </div>
-      </section>
+      </div>
     </div>
   </aside>
       </div>
@@ -680,28 +676,28 @@
           <span id="scrollpercent"><span>0</span>%</span>
       </div>
   </div>
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
 </script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
-    <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-    <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
-    <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
-    <script type="text/javascript" src="/lib/custom.js"></script>
-  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+    <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+    <script src="/lib/waifu/live2d.min.js"></script>
+    <script src="/lib/waifu/waifu-tips.js"></script>
+    <script src="/lib/custom.js"></script>
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+  <script src="/js/src/affix.js?v=6.6.0"></script>
+  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="/lib/Valine.min.js"></script>
-  <script type="text/javascript">
+  <script>
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(function (item) {
@@ -720,7 +716,7 @@
         visitor: false
     });
   </script>
-  <script type="text/javascript">
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -1047,14 +1043,14 @@
       }
   });
 </script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <style>
 .MathJax_Display {
     overflow: auto hidden;
 }
 </style>
   <script src="//cdn.jsdelivr.net/npm/pangu@3.3.0/dist/browser/pangu.min.js"></script>
-  <script type="text/javascript">pangu.spacingPage();</script>
+  <script>pangu.spacingPage();</script>
   <style>
     .copy-btn {
       display: inline-block;
@@ -1091,39 +1087,39 @@
   </style>
   <script>
     $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
       $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
         var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        var range = document.createRange() //For Chrome
-        var sel = window.getSelection() //For Chrome
-        ta.style.width = '0px'
-        ta.style.height = '0px'
-        ta.style.opacity = '0'
-        ta.value = code
-        ta.textContent = code //For FireFox
-        ta.contentEditable = true
-        ta.readOnly = false
-        document.body.appendChild(ta)
-        //range.selectNodeContents(ta)
-        range.selectNode(ta)
-        sel.removeAllRanges()
-        sel.addRange(range)
-        ta.setSelectionRange(0, code.length)
-        var result = document.execCommand('copy')
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        ta.blur() //For iOS
-        $(this).blur()
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        ta.blur(); //For iOS
+        $(this).blur();
       })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
+        var $b = $(this).find('.copy-btn');
         setTimeout(function () {
-          $b.text('复制')
+          $b.text('复制');
         }, 300)
-      }).append(e)
+      }).append(e);
     })
   </script>
 </body>

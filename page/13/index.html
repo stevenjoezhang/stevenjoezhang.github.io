@@ -7,8 +7,6 @@
 <meta name="theme-color" content="#222">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
   <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
   <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -18,7 +16,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
   <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
@@ -53,14 +51,14 @@
 <meta name="twitter:description" content="力电声光热，涵尽学海无涯">
   <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
   <link rel="canonical" href="https://zhangshuqiao.org/page/13/">
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
 </script>
   <title>米米的博客</title>
   <noscript>
-  <style type="text/css">
+  <style>
     .use-motion .motion-element,
     .use-motion .brand,
     .use-motion .menu-item,
@@ -77,10 +75,8 @@
       opacity: initial;
       top: initial;
     }
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 </head>
@@ -422,7 +418,7 @@
       </header>
     <div class="post-body" itemprop="articleBody">
             <p>上帝说，要有<br>\begin{eqnarray*}<br>\nabla\cdot\vec{E}&amp;=&amp;\frac{\rho}{\epsilon_0}\\<br>\nabla\cdot\vec{B}&amp;=&amp;0\\<br>\nabla\times\vec{E}&amp;=&amp;-\frac{\partial B}{\partial t}\\<br>\nabla\times\vec{B}&amp;=&amp;\mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t}\right)\\<br>\end{eqnarray*}<br>于是就有了光。<br><strong>注：以上文字旨在测试$\LaTeX$兼容情况。</strong><br>使用方法：在HTML页面中，通过<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--config后的参数可以根据需求自定义，默认为?config=default--&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>即可加载MathJax，该脚本将会把所有$\LaTeX$公式正确显示出来。尽情的按照$\LaTeX$语法插入公式就好啦！<br>如果要在WordPress中使用，可以通过在编辑文章界面，选择“文本”（如果使用“可视化”，字符将被转义，导致脚本无法加载），输入以上内容达到相同效果。<br>使用时请注意：<br>The default math delimiters are <code>$$...$$</code> and <code>\[...\]</code> for displayed mathematics, and <code>\(...\)</code> for in-line mathematics. Note in particular that the <code>$...$</code> in-line delimiters are <strong>not</strong> used by default.<br>也就是说，行内公式的<code>$</code>符号默认不会被识别。你可以在HTML页面中加入以下配置以启用之：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    MathJax.Hub.Config(&#123;</span></span><br><span class="line"><span class="undefined">      tex2jax: &#123;</span></span><br><span class="line"><span class="actionscript">        inlineMath: [ [<span class="string">'$'</span>,<span class="string">'$'</span>], [<span class="string">"\\("</span>,<span class="string">"\\)"</span>]  ],</span></span><br><span class="line"><span class="actionscript">        processEscapes: <span class="literal">true</span>,</span></span><br><span class="line"><span class="actionscript">        skipTags: [<span class="string">'script'</span>, <span class="string">'noscript'</span>, <span class="string">'style'</span>, <span class="string">'textarea'</span>, <span class="string">'pre'</span>, <span class="string">'code'</span>]</span></span><br><span class="line"><span class="undefined">      &#125;,</span></span><br><span class="line"><span class="actionscript">      TeX: &#123;equationNumbers: &#123; autoNumber: <span class="string">"AMS"</span> &#125;&#125;,</span></span><br><span class="line"><span class="actionscript">      <span class="string">"HTML-CSS"</span>: &#123; linebreaks: &#123; automatic: <span class="literal">true</span> &#125;, EqnChunk: (MathJax.Hub.Browser.isMobile ? <span class="number">10</span> : <span class="number">50</span>) &#125;,</span></span><br><span class="line"><span class="actionscript">      SVG: &#123; linebreaks: &#123; automatic: <span class="literal">true</span> &#125;&#125;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>即可加载MathJax，该脚本将会把所有$\LaTeX$公式正确显示出来。尽情的按照$\LaTeX$语法插入公式就好啦！<br>如果要在WordPress中使用，可以通过在编辑文章界面，选择“文本”（如果使用“可视化”，字符将被转义，导致脚本无法加载），输入以上内容达到相同效果。<br>使用时请注意：<br>The default math delimiters are <code>$$...$$</code> and <code>\[...\]</code> for displayed mathematics, and <code>\(...\)</code> for in-line mathematics. Note in particular that the <code>$...$</code> in-line delimiters are <strong>not</strong> used by default.<br>也就是说，行内公式的<code>$</code>符号默认不会被识别。你可以在HTML页面中加入以下配置以启用之：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    MathJax.Hub.Config(&#123;</span></span><br><span class="line"><span class="undefined">      tex2jax: &#123;</span></span><br><span class="line"><span class="undefined">        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],</span></span><br><span class="line"><span class="undefined">        processEscapes: true,</span></span><br><span class="line"><span class="undefined">        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']</span></span><br><span class="line"><span class="undefined">      &#125;,</span></span><br><span class="line"><span class="undefined">      TeX: &#123;equationNumbers: &#123; autoNumber: "AMS" &#125;&#125;,</span></span><br><span class="line"><span class="undefined">      "HTML-CSS": &#123; linebreaks: &#123; automatic: true &#125;, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) &#125;,</span></span><br><span class="line"><span class="undefined">      SVG: &#123; linebreaks: &#123; automatic: true &#125;&#125;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>其中<code>linebreaks</code>项会在屏幕宽度较小时自动使公式换行，而<code>inlineMath</code>项则启用了<code>$</code>符号标记的行内公式。</p>
 <p>更多信息可以访问官方网站：<a href="https://www.mathjax.org" target="_blank" rel="noopener">MathJax</a></p>
 <p>本文更新于2018年5月20日：<br>在Hexo中，如果使用了NexT主题，可以通过配置主题目录下的_config.yml简单地使用MathJax。在_config.yml中找到mathjax，将其子选项改为<code>enable: true</code>，并在需要加载MathJax的文章头添加<code>mathjax: true</code>即可。</p>
@@ -568,7 +564,7 @@
 <p>即可获取tag1的值，可以说是非常的巧妙了。</p>
 <h2 id="IE条件注释"><a href="#IE条件注释" class="headerlink" title="IE条件注释"></a>IE条件注释</h2><p>以下类型的注释会被IE9及更早的版本读取，而被其他浏览器忽略：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Since Conditional Comments have been deprecated since Internet Explorer 10, the following script will be ignored, so only Internet Explorer 9 (and below) users will be redirected to a page asking to upgrade their browsers. --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE]&gt;</span></span><br><span class="line"><span class="comment">    &lt;script type="text/javascript" src="./js/upgrade_your_fucking_browser.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>或者<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">    &lt;div class="notice chromeframe"&gt;您的浏览器版本&lt;strong&gt;很旧很旧&lt;/strong&gt;，为了正常地访问网站，请升级您的浏览器&lt;a target="_blank” href="http://browsehappy.com"&gt;立即升级&lt;/a&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>这种条件注释现在已经完全被用于提醒IE用户升级浏览器。不过，IE10及更新的IE不会读取这些条件注释。如果想要所有IE都看到提醒，可能还要靠别的办法，比如js判断User Agent。</p>
+<p>这种条件注释的一个主要用处是提醒IE用户升级浏览器。不过，IE10及更新的IE不会读取这些条件注释。如果想要所有IE都看到提醒，可能还要靠别的办法，比如用js判断User Agent。</p>
           <!--noindex-->
             <div class="post-button text-center">
               <a class="btn" href="/2017-10/一些HTML与JS的小技巧/#more" rel="contents">
@@ -597,7 +593,7 @@
   </div>
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
               <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
@@ -645,7 +641,7 @@
               </ul>
             </div>
         </div>
-      </section>
+      </div>
     </div>
   </aside>
       </div>
@@ -676,28 +672,28 @@
           <span id="scrollpercent"><span>0</span>%</span>
       </div>
   </div>
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
 </script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
-    <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-    <script type="text/javascript" src="/lib/waifu/live2d.min.js"></script>
-    <script type="text/javascript" src="/lib/waifu/waifu-tips.js"></script>
-    <script type="text/javascript" src="/lib/custom.js"></script>
-  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+    <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+    <script src="/lib/waifu/live2d.min.js"></script>
+    <script src="/lib/waifu/waifu-tips.js"></script>
+    <script src="/lib/custom.js"></script>
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+  <script src="/js/src/affix.js?v=6.6.0"></script>
+  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="/lib/Valine.min.js"></script>
-  <script type="text/javascript">
+  <script>
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(function (item) {
@@ -716,7 +712,7 @@
         visitor: false
     });
   </script>
-  <script type="text/javascript">
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -1043,14 +1039,14 @@
       }
   });
 </script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <style>
 .MathJax_Display {
     overflow: auto hidden;
 }
 </style>
   <script src="//cdn.jsdelivr.net/npm/pangu@3.3.0/dist/browser/pangu.min.js"></script>
-  <script type="text/javascript">pangu.spacingPage();</script>
+  <script>pangu.spacingPage();</script>
   <style>
     .copy-btn {
       display: inline-block;
@@ -1087,39 +1083,39 @@
   </style>
   <script>
     $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
       $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
         var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        var range = document.createRange() //For Chrome
-        var sel = window.getSelection() //For Chrome
-        ta.style.width = '0px'
-        ta.style.height = '0px'
-        ta.style.opacity = '0'
-        ta.value = code
-        ta.textContent = code //For FireFox
-        ta.contentEditable = true
-        ta.readOnly = false
-        document.body.appendChild(ta)
-        //range.selectNodeContents(ta)
-        range.selectNode(ta)
-        sel.removeAllRanges()
-        sel.addRange(range)
-        ta.setSelectionRange(0, code.length)
-        var result = document.execCommand('copy')
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        ta.blur() //For iOS
-        $(this).blur()
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        ta.blur(); //For iOS
+        $(this).blur();
       })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
+        var $b = $(this).find('.copy-btn');
         setTimeout(function () {
-          $b.text('复制')
+          $b.text('复制');
         }, 300)
-      }).append(e)
+      }).append(e);
     })
   </script>
 </body>

@@ -38,33 +38,28 @@
   };
 </script>
   <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
-  <meta name="description" content="The finished Morse key sitting happily on my laptop. Full project details below.最终完成的莫尔斯键盘与笔记本电脑的合影～整个项目的细节如下： Background: I can just about remember growing up around beautifully designed analogue de">
-<meta name="keywords" content="Morse Code">
+  <meta name="description" content="在数据传输的时候，并不是所有的字符都可以受到支持，很多时候只能传输可见字符，对于不可见字符的传输需要经过特殊处理，这就是Base64产生的原因。Base64编码是一种基于64个可打印字符来表示二进制数据的表示方法。由于$2^6=64$，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。在Base64中的可打印字符包括">
+<meta name="keywords" content="个人博客,张书樵,物理,技术,计算机">
 <meta property="og:type" content="article">
-<meta property="og:title" content="将摩尔斯电键改造为USB键盘">
-<meta property="og:url" content="https://zhangshuqiao.org/2018-01/将摩尔斯电键改造为USB键盘/index.html">
+<meta property="og:title" content="Base64编码原理及脚本的简单实现">
+<meta property="og:url" content="https://zhangshuqiao.org/2018-12/Base64编码的原理与实现/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="The finished Morse key sitting happily on my laptop. Full project details below.最终完成的莫尔斯键盘与笔记本电脑的合影～整个项目的细节如下： Background: I can just about remember growing up around beautifully designed analogue de">
+<meta property="og:description" content="在数据传输的时候，并不是所有的字符都可以受到支持，很多时候只能传输可见字符，对于不可见字符的传输需要经过特殊处理，这就是Base64产生的原因。Base64编码是一种基于64个可打印字符来表示二进制数据的表示方法。由于$2^6=64$，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。在Base64中的可打印字符包括">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/Vi93ahx.jpg">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/wb72Pzy.jpg">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/k8vNI65.jpg">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/4kpenAM.jpg">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/hncjuCW.jpg">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/WjlHEcO.jpg">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/ocVQDyq.jpg">
-<meta property="og:updated_time" content="2018-12-11T06:39:59.287Z">
+<meta property="og:image" content="https://zhangshuqiao.org/images/2018-12/1.png">
+<meta property="og:image" content="https://zhangshuqiao.org/images/2018-12/2.png">
+<meta property="og:updated_time" content="2018-12-12T17:40:24.842Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="将摩尔斯电键改造为USB键盘">
-<meta name="twitter:description" content="The finished Morse key sitting happily on my laptop. Full project details below.最终完成的莫尔斯键盘与笔记本电脑的合影～整个项目的细节如下： Background: I can just about remember growing up around beautifully designed analogue de">
-<meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-01/Vi93ahx.jpg">
-  <link rel="canonical" href="https://zhangshuqiao.org/2018-01/将摩尔斯电键改造为USB键盘/">
+<meta name="twitter:title" content="Base64编码原理及脚本的简单实现">
+<meta name="twitter:description" content="在数据传输的时候，并不是所有的字符都可以受到支持，很多时候只能传输可见字符，对于不可见字符的传输需要经过特殊处理，这就是Base64产生的原因。Base64编码是一种基于64个可打印字符来表示二进制数据的表示方法。由于$2^6=64$，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。在Base64中的可打印字符包括">
+<meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-12/1.png">
+  <link rel="canonical" href="https://zhangshuqiao.org/2018-12/Base64编码的原理与实现/">
 <script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
 </script>
-  <title>将摩尔斯电键改造为USB键盘 | 米米的博客</title>
+  <title>Base64编码原理及脚本的简单实现 | 米米的博客</title>
   <noscript>
   <style>
     .use-motion .motion-element,
@@ -165,7 +160,7 @@
   <div id="posts" class="posts-expand">
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-01/将摩尔斯电键改造为USB键盘/">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-12/Base64编码的原理与实现/">
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
       <meta itemprop="description" content="力电声光热，涵尽学海无涯">
@@ -175,7 +170,7 @@
       <meta itemprop="name" content="米米的博客">
     </span>
       <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">将摩尔斯电键改造为USB键盘
+          <h1 class="post-title" itemprop="name headline">Base64编码原理及脚本的简单实现
           </h1>
         <div class="post-meta">
           <span class="post-time">
@@ -183,7 +178,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">发表于</span>
-              <time title="创建时间：2018-01-08 11:02:35" itemprop="dateCreated datePublished" datetime="2018-01-08T11:02:35+08:00">2018-01-08</time>
+              <time title="创建时间：2018-12-12 16:21:01" itemprop="dateCreated datePublished" datetime="2018-12-12T16:21:01+08:00">2018-12-12</time>
           </span>
             <span class="post-category">
               <span class="post-meta-divider">|</span>
@@ -198,8 +193,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018-01/将摩尔斯电键改造为USB键盘/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-01/将摩尔斯电键改造为USB键盘/" itemprop="commentCount"></span>
+                <a href="/2018-12/Base64编码的原理与实现/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-12/Base64编码的原理与实现/" itemprop="commentCount"></span>
                 </a>
               </span>
             <span class="post-meta-divider">|</span>
@@ -213,33 +208,204 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                   <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">5.9k</span>
+                <span title="本文字数">4.8k</span>
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-clock-o"></i>
                 </span>
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">5 分钟</span>
+                <span title="阅读时长">4 分钟</span>
             </div>
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-        <p><img src="/images/2018-01/Vi93ahx.jpg" alt=""></p>
-<p>The finished Morse key sitting happily on my laptop. Full project details below.<br>最终完成的莫尔斯键盘与笔记本电脑的合影～整个项目的细节如下：</p>
-<p>Background: I can just about remember growing up around beautifully designed analogue devices like rotary dial phones, typewriters, and record players. I’ve always like the idea of converting these largely defunct objects into digital devices, and my Dad’s old Morse key seemed like a simple project to get started on.<br>背景：打从记事以来，我就生活在设计精美的模拟设备的环境中，比如旋转式拨号电话，打字机和唱片机。我一直有把这些大部分现在不常用的东西转换成数字设备的想法，而这其中，老爸的旧莫尔斯电键看起来像是一个简单的项目。</p>
+        <p>在数据传输的时候，并不是所有的字符都可以受到支持，很多时候只能传输可见字符，对于不可见字符的传输需要经过特殊处理，这就是Base64产生的原因。Base64编码是一种基于64个可打印字符来表示二进制数据的表示方法。由于$2^6=64$，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。在Base64中的可打印字符包括字母A-Z、a-z、数字0-9，这样共有62个字符，此外两个可打印符号在不同的系统中而不同。一些如uuencode的其他编码方法，和之后BinHex的版本使用不同的64字符集来代表6个二进制数字，但是不被称为Base64。<br>Base64常用于在通常处理文本数据的场合，表示、传输、存储一些二进制数据，包括MIME的电子邮件及XML的一些复杂数据。用Base64编码图片也是互联网上常见的做法。</p>
+<p>Base64的字符索引如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>数值</th>
+<th>字符</th>
+<th>数值</th>
+<th>字符</th>
+<th>数值</th>
+<th>字符</th>
+<th>数值</th>
+<th>字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>A</td>
+<td>16</td>
+<td>Q</td>
+<td>32</td>
+<td>g</td>
+<td>48</td>
+<td>w</td>
+</tr>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>17</td>
+<td>R</td>
+<td>33</td>
+<td>h</td>
+<td>49</td>
+<td>x</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C</td>
+<td>18</td>
+<td>S</td>
+<td>34</td>
+<td>i</td>
+<td>50</td>
+<td>y</td>
+</tr>
+<tr>
+<td>3</td>
+<td>D</td>
+<td>19</td>
+<td>T</td>
+<td>35</td>
+<td>j</td>
+<td>51</td>
+<td>z</td>
+</tr>
+<tr>
+<td>4</td>
+<td>E</td>
+<td>20</td>
+<td>U</td>
+<td>36</td>
+<td>k</td>
+<td>52</td>
+<td>0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>F</td>
+<td>21</td>
+<td>V</td>
+<td>37</td>
+<td>l</td>
+<td>53</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>G</td>
+<td>22</td>
+<td>W</td>
+<td>38</td>
+<td>m</td>
+<td>54</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>H</td>
+<td>23</td>
+<td>X</td>
+<td>39</td>
+<td>n</td>
+<td>55</td>
+<td>3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>I</td>
+<td>24</td>
+<td>Y</td>
+<td>40</td>
+<td>o</td>
+<td>56</td>
+<td>4</td>
+</tr>
+<tr>
+<td>9</td>
+<td>J</td>
+<td>25</td>
+<td>Z</td>
+<td>41</td>
+<td>p</td>
+<td>57</td>
+<td>5</td>
+</tr>
+<tr>
+<td>10</td>
+<td>K</td>
+<td>26</td>
+<td>a</td>
+<td>42</td>
+<td>q</td>
+<td>58</td>
+<td>6</td>
+</tr>
+<tr>
+<td>11</td>
+<td>L</td>
+<td>27</td>
+<td>b</td>
+<td>43</td>
+<td>r</td>
+<td>59</td>
+<td>7</td>
+</tr>
+<tr>
+<td>12</td>
+<td>M</td>
+<td>28</td>
+<td>c</td>
+<td>44</td>
+<td>s</td>
+<td>60</td>
+<td>8</td>
+</tr>
+<tr>
+<td>13</td>
+<td>N</td>
+<td>29</td>
+<td>d</td>
+<td>45</td>
+<td>t</td>
+<td>61</td>
+<td>9</td>
+</tr>
+<tr>
+<td>14</td>
+<td>O</td>
+<td>30</td>
+<td>e</td>
+<td>46</td>
+<td>u</td>
+<td>62</td>
+<td>+</td>
+</tr>
+<tr>
+<td>15</td>
+<td>P</td>
+<td>31</td>
+<td>f</td>
+<td>47</td>
+<td>v</td>
+<td>63</td>
+<td>/</td>
+</tr>
+</tbody>
+</table>
+<p>这是一个根据上表进行编码的例子：</p>
+<p><img src="/images/2018-12/1.png" alt=""></p>
+<p>如果要编码的字节数不能被3整除，最后会多出1个或2个字节，那么可以使用下面的方法进行处理：先使用0字节值在末尾补足，使其能够被3整除，然后再进行Base64的编码。在编码后的Base64文本后加上一个或两个=号，代表补足的字节数。也就是说，当最后剩余两个八位字节（2个byte）时，最后一个6位的Base64字节块有四位是0值，最后附加上两个等号；如果最后剩余一个八位字节（1个byte）时，最后一个6位的Base字节块有两位是0值，最后附加一个等号。可以参考下面的例子：</p>
+<p><img src="/images/2018-12/2.png" alt=""></p>
 <a id="more"></a>
-<p>Morse code is an internationally recognised way of representing letters of the alphabet (a-z) and numbers (0–9) as a series of dots and dashes. During WW1 and WW2, it became a handy way of sending encrypted messages across long distances and quite possibly sent carrier pigeon unemployment rates skyrocketing. A conventional Morse key acts like a switch, making and breaking a circuit connection to transmit these dots and dashes as short and long beeps over radio waves.<br>莫尔斯电码是一种将国际公认的字母表（a-z）和数字（0-9）字母表示为一系列点和破折号的方式。在一战和二战期间，它变成了一个十分方便发送加密的信息的方式。传统的莫尔斯电键就像一个开关，联通和断开电路连接就能通过无线电波传播这些点和点的音长。</p>
-<p>The idea was that the Morse key would behave like a keyboard when plugged into any laptop or PC’s USB 3.0 port; the user could key in messages in Morse code, and the corresponding English alphanumeric characters would appear on screen. Code for the project is here (<a href="https://github.com/nomblr/morse" target="_blank" rel="noopener">https://github.com/nomblr/morse/</a>) and full details are below.<br>所以我就想到当插入任何笔记本电脑或PC的USB 3.0端口时，莫尔斯键的行为就像一个键盘；用户可以用莫尔斯电码键入信息，并在屏幕上出现相应的英文字母数字字符。这个项目的代码我po到了Github上，有心人都可以去尝试一下。<br><img src="/images/2018-01/wb72Pzy.jpg" alt=""></p>
-<p>The Morse key was incredibly dusty and attached to a nasty plastic base, so I took the whole thing apart, scrapped the base, and gave the Morse key a good clean.<br>莫尔斯电键积了很多灰尘，而且装在一个很丑的塑料基地上，因此我准备把所有东西都拆开，把莫尔斯电键清洁干净。<br><img src="/images/2018-01/k8vNI65.jpg" alt=""></p>
-<p>Some wet wipes did the job nicely, and I also sanded down the two metal contacts (the ‘switch’) a tiny bit to improve the electrical connection and remove some of the accumulated gunk.<br>使用湿纸巾，这项工作完成的很出色。并且我还仔细打磨了两个金属触点（“开关”），改善电路连接的情况并去除一些沉积的脏东西。<br><img src="/images/2018-01/4kpenAM.jpg" alt=""></p>
-<p>Converting the (VERY analogue) Morse key into a digital device was the next step. To do this I used a tiny, cheap micro-controller aptly named a Teensy 3.2 (<a href="https://www.pjrc.com/teensy" target="_blank" rel="noopener">https://www.pjrc.com/teensy/</a>). The Teensy has 28 pins, each of which can be configured as an input or an output; because I wanted to the Teensy to receive signals from the Morse key, I configured Pin 7 of the Teensy as an input and wired it to one connection on Morse key. (This was an arbitrary choice, any of the I/O pins would have worked just fine.) I then wired the ground pin of the Teensy to the other connection on the Morse key.<br>接下来就是将电键转换为数字设备。为了实现这一点，我使用一个小巧，便宜的微型控制器——Teensy 3.2。</p>
-<p>This was my first foray into working with electronics or microcomputers so feel free to imagine a progress montage punctuated by thoughtful moustache stroking scenes, eighties music and gratuitous but entirely pointless shots of the terminal.<br>这是我第一次尝试做这种事，你可以想象当我点亮并且成功运行的时候，我的内心是多么喜悦。</p>
-<p>I wrote some test code for the Teensy to make sure it was working with the Morse key as expected; I expected to see ‘KEY PRESS’ printed out once every time I pressed the Morse key down once. This is where I hit my first problem. Mechanical switches don’t make perfect physical or electrical contact when they’re pressed; they’ll typically oscillate between being ‘open’ and ‘closed’ a few times over ～1ms before settling down to a stable ‘closed’ state. Microcomputers are fast enough to detect these oscillations so when I pressed my Morse key down just once, the Teensy detected several rapid key presses as shown in the photo. This effect is called ‘bounce’ and luckily there’s a built-in Teensy library (<a href="https://playground.arduino.cc/Code/Bounce" target="_blank" rel="noopener">https://playground.arduino.cc/Code/Bounce</a>) that compensates for it.<br>为了确保Teensy正确按照预期“翻译”莫尔斯密码，我为Teensy写了一些测试代码。因此每当按下莫尔斯电键一次，我就会看到电脑端有字符输出。然而很快我就遇到了一个问题：机械开关按下时不能形成完美的物理接触（通常在“通路”和“断路”之间摆动几次，持续约1ms，然后稳定到“通路”状态）。计算机能够快速检测到这些振荡，所以当我按下我的莫尔斯电键时，Teensy检测到照片中显示的几个快速按键。这种效应称为“反弹”，幸好内置的Teensy库能够补偿它。</p>
-<p>Once the Teensy could successfully detect single Morse key presses, I needed a way to differentiate the pauses between dots, dashes, letters, and words. Implementing a method for the Teensy to figure out relative timings for individual users would’ve involved a fair amount of faff, so I used absolute timings based on my own keying speeds. A threshold of 150ms was used to differentiate dots from dashes, and pauses between letters and words were set to 500ms and 3000ms. Of course, this configuration will break down with a faster or slower Morse operator, but as my old engineering tutor used to say, “good engineers are smart but lazy,” which for the purposes of this project I will choose to interpret as “good engineers are lazy”.<br>为了Teensy能够成功检测到每次点击莫尔斯电键的不同，来区分点、破折号、字母和单词之间的停顿。我在绝对时间的基础上结合自己的键控速度。用150ms的阈值来区分短划线，并且字母和单词之间的时间间隔被设置为500ms和3000ms。当然，每个人的习惯都不一样，这个就要自己把握了。<br><img src="/images/2018-01/hncjuCW.jpg" alt=""></p>
-<p>With the Teensy fully programmed, I was ready to build a wooden base to hide the electronics underneath the Morse key, with holes to feed through the two wires connecting the Morse key to the Teensy. I’d like to say I chose wood for aesthetic reasons, but in reality all my attempts at 3D printing a base failed so abysmally that I decided to try my luck with a plank I found lying around at my local Hackspace, of approximate width 130mm and depth 20mm.<br>Teensy编程完后，我准备制作一个隐藏莫尔斯电键下方的电子设备的木质底座，并且底座上有两个孔，用于连接Teensy到莫尔斯电键的电线。为啥选木材而不是3D打印呢？其实不是美观不美观的问题，而是因为用3D打印出来的底座都适配失败了。<br><img src="/images/2018-01/WjlHEcO.jpg" alt=""></p>
-<p>I sawed the plank down to 110x90mm so the Morse key would fit nicely on top, and chiselled out an indentation of approximate dimensions 50x40x10mm on the underside, so fit the Teensy and wiring.<br>我把木板锯成110x90mm，这样莫尔斯电键可以很恰当地放在上面。在下方我凿出了一个尺寸约为50x40x10mm的凹痕，用于放置微控制器Teensy和布线。<br><img src="/images/2018-01/ocVQDyq.jpg" alt=""></p>
-<p>I sanded the whole thing down and connected it to my laptop. You can see it in action here: <a href="https://www.youtube.com/watch?v=qh_apYcr4xI" target="_blank" rel="noopener">https://www.youtube.com/watch?v=qh_apYcr4xI</a><br>最后我打磨了一下新的键盘，并将其连接到我的笔记本电脑上。</p>
-<p>本文翻译自：<a href="https://imgur.com/gallery/lNAtQ" target="_blank" rel="noopener">I Turned my Dad’s 1950s Morse Key into a USB Keyboard</a></p>
+<p>这是一个用Python实现Base64编码的脚本：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myBase64Encode</span><span class="params">(preCoding)</span>:</span></span><br><span class="line">    charTable = <span class="string">'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'</span> <span class="comment">#字符表</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> len(preCoding) &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>  <span class="comment">#字符串为空则返回空</span></span><br><span class="line">    lackCharNums = <span class="number">3</span> - len(preCoding) % <span class="number">3</span></span><br><span class="line">    <span class="keyword">if</span> lackCharNums == <span class="number">3</span> : lackCharNums = <span class="number">0</span> <span class="comment">#整除说明不缺字符</span></span><br><span class="line">    <span class="comment">#待转换字符不是3的倍数的情况补全它</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(lackCharNums) :</span><br><span class="line">        preCoding = preCoding + <span class="string">b'\x00'</span></span><br><span class="line">    result = <span class="string">''</span> <span class="comment">#用于保存最终结果的str数据</span></span><br><span class="line">    rp = <span class="string">''</span> <span class="comment">#处理补全字符时的暂存变量</span></span><br><span class="line">    <span class="comment">#每三个字符处理一轮</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(int(len(preCoding) / <span class="number">3</span>)):</span><br><span class="line">        threeChar = preCoding[i * <span class="number">3</span> : i * <span class="number">3</span> + <span class="number">3</span>] <span class="comment">#取三个字符出来</span></span><br><span class="line">        tCode = <span class="string">''</span> <span class="comment">#用于存放三个字符拼接后的二进制数值 文本形式</span></span><br><span class="line">        pCode = <span class="string">''</span> <span class="comment">#暂存变量</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">3</span>) :</span><br><span class="line">            pCode = bin(threeChar[j])[<span class="number">2</span> :]  <span class="comment">#把省略的0补上</span></span><br><span class="line">            lackZeroNums = <span class="number">8</span> - len(pCode) <span class="comment">#省略的0的个数</span></span><br><span class="line">            <span class="keyword">for</span> x <span class="keyword">in</span> range(lackZeroNums):</span><br><span class="line">                pCode = <span class="string">'0'</span> + pCode</span><br><span class="line">            tCode = tCode + pCode</span><br><span class="line">        pCode = <span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">4</span>): <span class="comment">#每6位一个字符</span></span><br><span class="line">            pCode = tCode[j * <span class="number">6</span> : j * <span class="number">6</span> + <span class="number">6</span>]</span><br><span class="line">            rp = rp + charTable[int(pCode, <span class="number">2</span>)]</span><br><span class="line">        <span class="comment">#处理补全的00字符</span></span><br><span class="line">        result = rp[: len(rp) - lackCharNums]</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(lackCharNums):</span><br><span class="line">            result = result + <span class="string">'='</span></span><br><span class="line">    <span class="keyword">return</span> bytes(result, encoding = <span class="string">"utf-8"</span>)</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myBase64Decode</span><span class="params">(encodedBin)</span> :</span></span><br><span class="line">    charTable = <span class="string">'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'</span> <span class="comment">#字符表</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">#如果字符不是4的倍数 返回空</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> len(encodedBin) % <span class="number">4</span> == <span class="number">0</span> :</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line"> </span><br><span class="line">    tCode = <span class="string">''</span> <span class="comment">#用于存放最终的二进制文本字符串</span></span><br><span class="line">    pCpde = <span class="string">''</span> <span class="comment">#暂存变量</span></span><br><span class="line">    <span class="comment">#遍历encodedBin每一个字符</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> encodedBin:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(charTable)): <span class="comment">#找到表中对应坐标</span></span><br><span class="line">            <span class="keyword">if</span> chr(i) == charTable[j]:</span><br><span class="line">                pCode = bin(j)[<span class="number">2</span> :]  <span class="comment">#转二进制去除开头的0b</span></span><br><span class="line">                lackZeroNums = <span class="number">6</span> - len(pCode) <span class="comment">#省略的0的个数</span></span><br><span class="line">                <span class="keyword">for</span> x <span class="keyword">in</span> range(lackZeroNums):</span><br><span class="line">                    pCode = <span class="string">'0'</span> + pCode</span><br><span class="line">                tCode = tCode + pCode</span><br><span class="line">    pCode = <span class="string">''</span></span><br><span class="line">    result = <span class="string">''</span> <span class="comment">#储存最终结果</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(int(len(tCode) / <span class="number">8</span>)):</span><br><span class="line">        pCode = tCode[i * <span class="number">8</span> : i * <span class="number">8</span> + <span class="number">8</span>]</span><br><span class="line">        result = result + chr(int(pCode, <span class="number">2</span>))</span><br><span class="line">    <span class="keyword">return</span> bytes(result, encoding = <span class="string">"utf-8"</span>)</span><br><span class="line"></span><br><span class="line">print(myBase64Encode(<span class="string">b"helloworld"</span>))</span><br><span class="line">print(myBase64Decode(<span class="string">b"aGVsbG93b3JsZA=="</span>))</span><br></pre></td></tr></table></figure></p>
+<p>浏览器中可以直接调用相关的API：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>文件base64——直接拖进来<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">body &#123;</span></span><br><span class="line"><span class="undefined">    word-break: break-all;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="built_in">window</span>.addEventListener(<span class="string">"dragenter"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">    event.preventDefault();</span></span><br><span class="line"><span class="actionscript">&#125;, <span class="literal">false</span>);</span></span><br><span class="line"><span class="javascript"><span class="built_in">window</span>.addEventListener(<span class="string">"dragover"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">    event.preventDefault();</span></span><br><span class="line"><span class="actionscript">&#125;, <span class="literal">false</span>);</span></span><br><span class="line"><span class="javascript"><span class="built_in">window</span>.addEventListener(<span class="string">"drop"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span></span><br><span class="line"><span class="actionscript">    reader.onload = <span class="function"><span class="keyword">function</span><span class="params">(e)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.body.insertAdjacentHTML(<span class="string">"afterBegin"</span>, <span class="string">'&lt;p&gt;'</span> + e.target.result + <span class="string">'&lt;/p&gt;'</span>); </span></span><br><span class="line"><span class="actionscript">        <span class="comment">//base64 encoded file data!</span></span></span><br><span class="line"><span class="undefined">    &#125;;</span></span><br><span class="line"><span class="undefined">    reader.readAsDataURL(event.dataTransfer.files[0]);</span></span><br><span class="line"><span class="undefined">    event.preventDefault();</span></span><br><span class="line"><span class="actionscript">&#125;, <span class="literal">false</span>);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这是加载Base64编码的图片的方法。这可以将图片硬编码到网页中。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Base64 Encode编码实现1x1px透明(黑白)图片<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">body &#123;</span></span><br><span class="line"><span class="undefined">    text-align: center;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>以下是透明图片<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"100"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>以下是黑色图片<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"100"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>拓展阅读：<br><a href="https://zh.wikipedia.org/wiki/Base64" target="_blank" rel="noopener">Base64</a><br><a href="https://www.52pojie.cn/thread-831202-1-1.html" target="_blank" rel="noopener">Base64编码原理及脚本的简单实现</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -269,27 +435,21 @@
     <strong>本文作者： </strong>张书樵</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://zhangshuqiao.org/2018-01/将摩尔斯电键改造为USB键盘/" title="将摩尔斯电键改造为USB键盘">https://zhangshuqiao.org/2018-01/将摩尔斯电键改造为USB键盘/</a>
+    <a href="https://zhangshuqiao.org/2018-12/Base64编码的原理与实现/" title="Base64编码原理及脚本的简单实现">https://zhangshuqiao.org/2018-12/Base64编码的原理与实现/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
       </div>
     <footer class="post-footer">
-        <div class="post-tags">
-            <a href="/tags/Morse-Code/" rel="tag"># Morse Code</a>
-        </div>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-              <a href="/2017-12/2017——生命中的一年/" rel="next" title="2017——生命中的一年">
-                <i class="fa fa-chevron-left"></i> 2017——生命中的一年
+              <a href="/2018-12/历史上的今天/" rel="next" title="历史上的今天">
+                <i class="fa fa-chevron-left"></i> 历史上的今天
               </a>
           </div>
           <span class="post-nav-divider"></span>
           <div class="post-nav-prev post-nav-item">
-              <a href="/2018-01/用摩尔斯电键作鼠标和键盘/" rel="prev" title="用摩尔斯电键作鼠标和键盘">
-                用摩尔斯电键作鼠标和键盘 <i class="fa fa-chevron-right"></i>
-              </a>
           </div>
         </div>
     </footer>
@@ -723,6 +883,40 @@
       }
     });
   </script>
+      <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: { equationNumbers: { autoNumber: "AMS" } },
+    "HTML-CSS": {
+      linebreaks: { automatic: true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    SVG: {
+      linebreaks: { automatic: true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    PreviewHTML: { linebreaks: { automatic: true } },
+    CommonHTML: { linebreaks: { automatic: true } }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<style>
+.MathJax_Display {
+    overflow: auto hidden;
+}
+</style>
   <script src="//cdn.jsdelivr.net/npm/pangu@3.3.0/dist/browser/pangu.min.js"></script>
   <script>pangu.spacingPage();</script>
   <style>

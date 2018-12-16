@@ -39,7 +39,7 @@
 </script>
   <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
   <meta name="description" content="shell中的赋值和操作默认都是字符串处理，在此记下shell中进行数学运算的几个特殊方法。 错误方法12var=1+1echo $var 输出的结果是1+1123var=1var=$var+1echo $var 输出结果是1+1 正确方法使用let123var=1let &quot;var+=1&quot;echo $var 输出结果为2注意：经测试，let几乎支持所有的运算符，包括自加、自减以及括号等，且不同运算">
-<meta name="keywords" content="Mac,Linux">
+<meta name="keywords" content="Linux,Mac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shell中数学运算总结">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-04/Shell中数学运算总结/index.html">
@@ -50,6 +50,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell中数学运算总结">
 <meta name="twitter:description" content="shell中的赋值和操作默认都是字符串处理，在此记下shell中进行数学运算的几个特殊方法。 错误方法12var=1+1echo $var 输出的结果是1+1123var=1var=$var+1echo $var 输出结果是1+1 正确方法使用let123var=1let &quot;var+=1&quot;echo $var 输出结果为2注意：经测试，let几乎支持所有的运算符，包括自加、自减以及括号等，且不同运算">
+  <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
   <link rel="canonical" href="https://zhangshuqiao.org/2018-04/Shell中数学运算总结/">
 <script id="page.configurations">
   CONFIG.page = {
@@ -273,8 +274,8 @@
       </div>
     <footer class="post-footer">
         <div class="post-tags">
-            <a href="/tags/Mac/" rel="tag"># Mac</a>
             <a href="/tags/Linux/" rel="tag"># Linux</a>
+            <a href="/tags/Mac/" rel="tag"># Mac</a>
         </div>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
@@ -324,7 +325,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-count">87</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -341,6 +342,12 @@
                   </a>
                 </div>
             </nav>
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
             <div class="links-of-blogroll motion-element links-of-blogroll-block">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-institution"></i>

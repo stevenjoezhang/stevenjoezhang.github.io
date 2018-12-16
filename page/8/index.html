@@ -49,6 +49,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="米米的博客">
 <meta name="twitter:description" content="力电声光热，涵尽学海无涯">
+  <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
   <link rel="canonical" href="https://zhangshuqiao.org/page/8/">
 <script id="page.configurations">
   CONFIG.page = {
@@ -155,6 +156,81 @@
         <div class="content-wrap">
           <div id="content" class="content">
   <section id="posts" class="posts-expand">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/CUPT地震仪的实现/">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a href="/2018-05/CUPT地震仪的实现/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/8/index.html">CUPT地震仪的实现</a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <time title="创建时间：2018-05-02 10:22:49" itemprop="dateCreated datePublished" datetime="2018-05-02T10:22:49+08:00">2018-05-02</time>
+          </span>
+            <span class="post-category">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-05/CUPT地震仪的实现/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-05/CUPT地震仪的实现/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">788</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">1 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+          <p>2018年CUPT的第一题：</p>
+<blockquote>
+<p><strong>Invent Yourself</strong><br>Construct a simple seismograph that amplifies a local disturbance by mechanical, optical or electrical methods. Determine the typical response curve of your device and investigate the parameters of the damping constant. What is the maximum amplification that you can achieve?<br><strong>自主发明</strong><br>建造一个可以通过力学、光学或电学方法放大局部扰动的简单地震仪。确定你装置的标准响应曲线并且研究阻尼常数的参量。你能达到的最大放大率是多少？</p>
+</blockquote>
+<p>此题的关键便是将地震仪的反应谱通过可观测量进行表示。实现的思路有很多，力学、光学或电学方法都是可行的。综合考虑了实现难度和测量精度后，决定采用以下方案：通过力学方法放大震动，然后利用霍尔片和磁铁将力学量转换为电学量，借助Arduino单片机的模数转换，通过串口将信号输入到电脑，电脑用python监听串口，将获得的数据保存并实时分析、绘图。</p>
+<p>仪器的整体构造如图：<br><img src="/images/2018-05/1.jpg" alt=""></p>
+          <!--noindex-->
+            <div class="post-button text-center">
+              <a class="btn" href="/2018-05/CUPT地震仪的实现/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/文艺的代码/">
@@ -511,76 +587,6 @@
     </footer>
   </div>
   </article>
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/你的使用说明书/">
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a href="/2018-04/你的使用说明书/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/8/index.html">你的使用说明书</a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <time title="创建时间：2018-04-05 00:18:06" itemprop="dateCreated datePublished" datetime="2018-04-05T00:18:06+08:00">2018-04-05</time>
-          </span>
-            <span class="post-category">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-04/你的使用说明书/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-04/你的使用说明书/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">1.6k</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">1 分钟</span>
-            </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-          <p>____擅于发现美的事物，并从中吸收能量，变得越来越好看。<br>____笑起来像个孩子，把他带在身边，能带来青春永驻的效果。<br>请多给予____一点睡眠时间。<br>____偶尔也有像天使一样温柔的时候。<br>____喜欢自由，适合经常带出去放养。<br>肚子饿了就会心情不好，带____一起去吃美味的食物吧！<br>____常常给身边的人带来好运。<br>____因为太可爱了，会令人陷入沉迷，属于正常现象。<br>____遇到香喷喷的东西就会变圆。<br>可能因为材质特殊，____对外界的攻击有折射能力。<br>____虽然经过多次更新迭代，但依然有颗纯真的心。<br>____发光的时候，可能会使对象产生短时眩晕，使用时请注意。<br>____拥有迷之运气，中乐透的实力异于常人。<br>只要缘分到了，____自己就会瘦下来。<br>____拥有高性能大脑，可快速运转，但过度工作（学习）容易发热。<br>____买买买时会释放出强大气场，胆子也会变大。<br>____常常因为无法体验人类的乐趣而神伤。<br>____是能带来元气和灵感的谜之吉祥物。<br>____心心念念的梦，会在某个不经意的时候实现。<br>____的光芒太耀眼，但也不至于会刺瞎别人。<br>____历经严苛质检品控，是市面上难得一遇的珍品。<br>只要对____倾注感情，他就能成为最可靠的伙伴，遇到危机可无限次召唤。<br>____的出厂设定就是温暖的守护者，也是周围人快乐和活力的源泉。<br>____有极为罕见的感官知觉，对他说谎可不是明智之举。<br>____装备了精准的探测仪，能发觉并把握住人生中真正的机会。<br>____能通过每次挑战完成升级，获得更高的智慧和运气。<br>____具备安全与稳定性，是居家、旅行必备的小能手。<br>____能快速拆卸烦恼，重新制作出充满乐趣和创造力的产物。<br>变态（萌）是____的常态。<br>保温杯和泡脚桶，可延长____的使用寿命。<br>____偶尔会孤单，但也能享受孤单，是一款自由的产品。<br>____对时间的感知力弱，所以不知不觉又加班了。</p>
-          <!--noindex-->
-            <div class="post-button text-center">
-              <a class="btn" href="/2018-04/你的使用说明书/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
   </section>
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -606,7 +612,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-count">87</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -623,6 +629,12 @@
                   </a>
                 </div>
             </nav>
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
             <div class="links-of-blogroll motion-element links-of-blogroll-block">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-institution"></i>

@@ -38,19 +38,19 @@
   };
 </script>
   <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
-  <meta name="description" content="本教程以macOS 10.13为例。 准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。 配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了能在终端正确运行最新的">
+  <meta name="description" content="本教程以macOS 10.13为例。 准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。  配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了能在终端正确运行最新">
 <meta name="keywords" content="Mac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac反编译apk程序">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-03/Mac反编译apk程序/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="本教程以macOS 10.13为例。 准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。 配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了能在终端正确运行最新的">
+<meta property="og:description" content="本教程以macOS 10.13为例。 准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。  配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了能在终端正确运行最新">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-03/jdk.png">
-<meta property="og:updated_time" content="2018-12-14T08:43:57.372Z">
+<meta property="og:updated_time" content="2018-12-22T18:09:34.400Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac反编译apk程序">
-<meta name="twitter:description" content="本教程以macOS 10.13为例。 准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。 配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了能在终端正确运行最新的">
+<meta name="twitter:description" content="本教程以macOS 10.13为例。 准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。  配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了能在终端正确运行最新">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-03/jdk.png">
   <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
   <link rel="canonical" href="https://zhangshuqiao.org/2018-03/Mac反编译apk程序/">
@@ -88,7 +88,7 @@
     <div class="headband"></div>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
@@ -220,7 +220,8 @@
       </header>
     <div class="post-body" itemprop="articleBody">
         <p>本教程以macOS 10.13为例。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载最新的JDK"><a href="#下载最新的JDK" class="headerlink" title="下载最新的JDK"></a>下载最新的JDK</h3><p>前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>，在底部找到<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Download Java for Developers</a>，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。<br><img src="/images/2018-03/jdk.png" alt=""></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载最新的JDK"><a href="#下载最新的JDK" class="headerlink" title="下载最新的JDK"></a>下载最新的JDK</h3><p>前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>，在底部找到<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Download Java for Developers</a>，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。</p>
+<p><img src="/images/2018-03/jdk.png" alt=""></p>
 <h3 id="配置JDK"><a href="#配置JDK" class="headerlink" title="配置JDK"></a>配置JDK</h3><p>下载完成后，打开dmg镜像进行安装。JDK会被安装到<code>/Library/Java/JavaVirtualMachines</code>目录下。为了能在终端正确运行最新的JDK，需要配置环境变量。在<code>~/.bash_profile</code>中增加以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home</span><br><span class="line">PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span>:.</span><br><span class="line">CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:.</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME</span><br><span class="line"><span class="built_in">export</span> PATH</span><br><span class="line"><span class="built_in">export</span> CLASSPATH</span><br></pre></td></tr></table></figure></p>
 <p>其中，将<code>jdk1.8.0_40.jdk</code>换成你所安装的JDK对应的版本和目录。修改完成后，重开终端或使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
 <p>使环境变量生效。</p>
@@ -327,13 +328,13 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">87</span>
+                    <span class="site-state-item-count">88</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
                 <div class="site-state-item site-state-categories">
                   <a href="/categories/index.html">
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

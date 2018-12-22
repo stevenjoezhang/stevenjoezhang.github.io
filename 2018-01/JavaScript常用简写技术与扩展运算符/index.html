@@ -48,7 +48,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/spread-operator-emoji.jpg">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/emoji-replace.jpg">
-<meta property="og:updated_time" content="2018-12-11T06:48:44.408Z">
+<meta property="og:updated_time" content="2018-12-22T18:06:40.508Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript常用简写技术与扩展运算符">
 <meta name="twitter:description" content="三元操作符当想写if...else语句时，使用三元操作符来代替。1234567const x = 20;let answer;if (x &amp;gt; 10) &amp;#123;    answer = &apos;is greater&apos;;&amp;#125; else &amp;#123;    answer = &apos;is lesser&apos;;&amp;#125; 简写：12345const answer = x &amp;gt; 10 ? &apos;is g">
@@ -89,7 +89,7 @@
     <div class="headband"></div>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
@@ -267,7 +267,11 @@
 <p>也可以不使用 Apply 方法呼叫函数：这里指的是<code>Function.prototype.apply</code>，它允许我们将实参以数组形式传入函数并依次对应到形参上。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doStuff</span> (<span class="params">x, y, z</span>) </span>&#123; &#125;</span><br><span class="line"><span class="keyword">var</span> args = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="comment">// Call the function, passing args</span></span><br><span class="line">doStuff.apply(<span class="literal">null</span>, args);</span><br></pre></td></tr></table></figure></p>
 <p>通过扩展运算符我们可以避免使用<code>apply</code>并且轻松地使用它呼叫函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doStuff(...args);</span><br></pre></td></tr></table></figure></p>
 <p>代码更少，更干净，而且不需要使用多余的<code>null</code>！</p>
-<p>很多Emoji字符不是独立的Unicode字符，而是由多个Emoji组合而成。最常见的就是家庭Emoji和有肤色的Emoji，例如👪和👨‍👩‍👧‍👧。<br>神奇的事情是，如果使用扩展运算符的话，它们是可以拆散的！<br><img src="/images/2018-01/spread-operator-emoji.jpg" alt=""><br>这些复合emoji字符甚至还允许做替换，形成新的emoji字符。<br><img src="/images/2018-01/emoji-replace.jpg" alt=""><br>不得不说这是一种绝妙的使用方式。</p>
+<p>很多Emoji字符不是独立的Unicode字符，而是由多个Emoji组合而成。最常见的就是家庭Emoji和有肤色的Emoji，例如👪和👨‍👩‍👧‍👧。<br>神奇的事情是，如果使用扩展运算符的话，它们是可以拆散的！</p>
+<p><img src="/images/2018-01/spread-operator-emoji.jpg" alt=""></p>
+<p>这些复合emoji字符甚至还允许做替换，形成新的emoji字符。</p>
+<p><img src="/images/2018-01/emoji-replace.jpg" alt=""></p>
+<p>不得不说这是一种绝妙的使用方式。</p>
 <p>本文转载自：<a href="https://juejin.im/post/5948db9661ff4b006c061b2b" target="_blank" rel="noopener">19 个 JavaScript 常用的简写技术</a></p>
 <p>拓展阅读：<br><a href="https://www.sitepoint.com/shorthand-javascript-techniques" target="_blank" rel="noopener">19+ JavaScript Shorthand Coding Techniques</a><br><a href="http://lightcss.com/6-spread-operator" target="_blank" rel="noopener">[译] 6 种 JavaScript 展开操作符的绝妙使用</a></p>
     </div>
@@ -357,13 +361,13 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">87</span>
+                    <span class="site-state-item-count">88</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
                 <div class="site-state-item site-state-categories">
                   <a href="/categories/index.html">
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

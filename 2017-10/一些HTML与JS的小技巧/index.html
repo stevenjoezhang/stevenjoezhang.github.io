@@ -48,7 +48,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/2018-07-17.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/3386824149-594a3500b37f4.png">
-<meta property="og:updated_time" content="2018-12-15T12:32:13.480Z">
+<meta property="og:updated_time" content="2018-12-22T18:04:01.615Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些HTML与JS的小技巧">
 <meta name="twitter:description" content="最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。 document.write这个函数可以直接向HTML文档写入任何内容。比如，你需要根据屏幕宽度来加载不同js时，如果希望写入的内容是&amp;lt;script src=&amp;quot;main.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;，那么只要这样就可以了：1&amp;lt;script&amp;gt; if (screen">
@@ -89,7 +89,7 @@
     <div class="headband"></div>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
@@ -277,13 +277,15 @@
 </tr>
 </tbody>
 </table>
-<p>下面是一些例子：<br><img src="/images/2017-10/2018-07-17.png" alt=""></p>
+<p>下面是一些例子：</p>
+<p><img src="/images/2017-10/2018-07-17.png" alt=""></p>
 <h3 id="3D-Text"><a href="#3D-Text" class="headerlink" title="3D Text"></a>3D Text</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%c3D Text"</span>, <span class="string">"text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);\</span></span><br><span class="line"><span class="string">font-size: 5em;"</span>);</span><br></pre></td></tr></table></figure>
 <h3 id="Colorful-CSS"><a href="#Colorful-CSS" class="headerlink" title="Colorful CSS"></a>Colorful CSS</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%cColorful CSS"</span>, <span class="string">"background: rgba(252, 234, 187, 1);\</span></span><br><span class="line"><span class="string">background: -moz-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: -webkit-gradient(left top, right top, color-stop(0%, rgba(252, 234, 187, 1)), color-stop(12%, rgba(175, 250, 77, 1)), color-stop(28%, rgba(0, 247, 49, 1)), color-stop(39%, rgba(0, 210, 247, 1)), color-stop(51%, rgba(0, 189, 247, 1)), color-stop(64%, rgba(133, 108, 217, 1)), color-stop(78%, rgba(177, 0, 247, 1)), color-stop(87%, rgba(247, 0, 189, 1)), color-stop(100%, rgba(245, 22, 52, 1)));\</span></span><br><span class="line"><span class="string">background: -webkit-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: -o-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: -ms-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: linear-gradient(to right, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#f51634', GradientType=1);\</span></span><br><span class="line"><span class="string">font-size: 5em;"</span>);</span><br></pre></td></tr></table></figure>
 <h3 id="Rainbow-Text"><a href="#Rainbow-Text" class="headerlink" title="Rainbow Text"></a>Rainbow Text</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%cRainbow Text"</span>, <span class="string">"background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));\</span></span><br><span class="line"><span class="string">color: transparent;\</span></span><br><span class="line"><span class="string">-webkit-background-clip: text;\</span></span><br><span class="line"><span class="string">font-size: 5em;"</span>);</span><br></pre></td></tr></table></figure>
 <h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%c"</span>, <span class="string">"padding: 50px 300px; line-height: 120px; background: url('/images/icon.gif') no-repeat;"</span>);</span><br></pre></td></tr></table></figure>
 <p>更多内容可以参考<a href="https://www.cnblogs.com/Wayou/p/chrome_dev_tool_style_console.html" target="_blank" rel="noopener">Chrome控制台新玩法-console显示图片以及为文字加样式</a>。</p>
-<h2 id="Range对象的使用"><a href="#Range对象的使用" class="headerlink" title="Range对象的使用"></a>Range对象的使用</h2><h3 id="什么是Range对象"><a href="#什么是Range对象" class="headerlink" title="什么是Range对象"></a>什么是Range对象</h3><p>Range是指html文档中的区域，如用户用鼠标拖动选中的区域，如下图：<br><img src="/images/2017-10/3386824149-594a3500b37f4.png" alt=""></p>
+<h2 id="Range对象的使用"><a href="#Range对象的使用" class="headerlink" title="Range对象的使用"></a>Range对象的使用</h2><h3 id="什么是Range对象"><a href="#什么是Range对象" class="headerlink" title="什么是Range对象"></a>什么是Range对象</h3><p>Range是指html文档中的区域，如用户用鼠标拖动选中的区域，如下图：</p>
+<p><img src="/images/2017-10/3386824149-594a3500b37f4.png" alt=""></p>
 <p>通过Range对象，可以获取用户选中的区域，或者指定选中区域，得到Range的起点和终点、修改或者复制里边的文本，甚至是html。在富文本编辑器开发中，经常会使用到这些功能。</p>
 <h3 id="获取当前的选区"><a href="#获取当前的选区" class="headerlink" title="获取当前的选区"></a>获取当前的选区</h3><p>由于兼容性的问题,需要区分ie浏览器，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> selection, range;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.getSelection) &#123; </span><br><span class="line">    <span class="comment">//现代浏览器</span></span><br><span class="line">    selection = <span class="built_in">window</span>.getSelection();</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">document</span>.selection) &#123; </span><br><span class="line">    <span class="comment">//IE</span></span><br><span class="line">    selection = <span class="built_in">document</span>.selection.createRange();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Range对象</span></span><br><span class="line">range = selection.getRangeAt(<span class="number">0</span>);</span><br></pre></td></tr></table></figure></p>
 <h3 id="Range对象的属性"><a href="#Range对象的属性" class="headerlink" title="Range对象的属性"></a>Range对象的属性</h3><ul>
@@ -387,13 +389,13 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">87</span>
+                    <span class="site-state-item-count">88</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
                 <div class="site-state-item site-state-categories">
                   <a href="/categories/index.html">
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

@@ -1160,7 +1160,8 @@ pre .javascript .function {
 }
 .use-motion .logo,
 .use-motion .site-title,
-.use-motion .site-subtitle {
+.use-motion .site-subtitle,
+.use-motion .custom-logo-image {
   opacity: 0;
   position: relative;
   top: -10px;
@@ -1968,7 +1969,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e898be;
+  background: #ff28ab;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2814,6 +2815,19 @@ ul.breadcrumb li+li:last-child {
 .site-subtitle {
   margin: 10px 10px 0;
   font-weight: initial;
+}
+.custom-logo-image {
+  margin-top: 20px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .custom-logo-image {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .custom-logo-image {
+    display: none;
+  }
 }
 .site-search form {
   display: none;

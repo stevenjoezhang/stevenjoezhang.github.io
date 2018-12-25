@@ -5,8 +5,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
   <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -169,7 +167,7 @@
     </span>
       <header class="post-header">
           <h1 class="post-title" itemprop="name headline">
-                <a href="/2018-04/Shell中数学运算总结/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/9/index.html">Shell中数学运算总结</a>
+                <a href="/2018-04/Shell中数学运算总结/" class="post-title-link" itemprop="url">Shell中数学运算总结</a>
           </h1>
         <div class="post-meta">
           <span class="post-time">
@@ -217,7 +215,14 @@
 <p>输出的结果是1+1<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var=1</span><br><span class="line">var=<span class="variable">$var</span>+1</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br></pre></td></tr></table></figure></p>
 <p>输出结果是1+1</p>
 <h2 id="正确方法"><a href="#正确方法" class="headerlink" title="正确方法"></a>正确方法</h2><h3 id="使用let"><a href="#使用let" class="headerlink" title="使用let"></a>使用let</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var=1</span><br><span class="line"><span class="built_in">let</span> <span class="string">"var+=1"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br></pre></td></tr></table></figure>
-<p>输出结果为2<br>注意：<br>经测试，let几乎支持所有的运算符，包括自加、自减以及括号等，且不同运算的优先级都得到了很好的支持<br>方幂运算应使用“**”<br>参数在表达式中直接访问，不必加$<br>一般情况下算数表达式可以不加双引号，但是若表达式中有bash中的关键字则需加上<br>let后的表达式只能进行整数运算</p>
+<p>输出结果为2<br>注意：</p>
+<ul>
+<li>经测试，let几乎支持所有的运算符，包括自加、自减以及括号等，且不同运算的优先级都得到了很好的支持</li>
+<li>方幂运算应使用<code>**</code>，如<code>2**10</code></li>
+<li>参数在表达式中直接访问，不必加$</li>
+<li>一般情况下算数表达式可以不加双引号，但是若表达式中有bash中的关键字则需加上</li>
+<li>let后的表达式只能进行整数运算</li>
+</ul>
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用(())"></a>使用(())</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var=1</span><br><span class="line">((var+=1))</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br></pre></td></tr></table></figure>
 <p>输出结果为2<br>注意：<br>(())的使用方法与let完全相同</p>
           <!--noindex-->
@@ -246,7 +251,7 @@
     </span>
       <header class="post-header">
           <h1 class="post-title" itemprop="name headline">
-                <a href="/2018-04/你的使用说明书/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/9/index.html">你的使用说明书</a>
+                <a href="/2018-04/你的使用说明书/" class="post-title-link" itemprop="url">你的使用说明书</a>
           </h1>
         <div class="post-meta">
           <span class="post-time">
@@ -316,7 +321,7 @@
     </span>
       <header class="post-header">
           <h1 class="post-title" itemprop="name headline">
-                <a href="/2018-03/Bilibili弹幕文件的解析/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/9/index.html">Bilibili弹幕文件的解析</a>
+                <a href="/2018-03/Bilibili弹幕文件的解析/" class="post-title-link" itemprop="url">Bilibili弹幕文件的解析</a>
           </h1>
         <div class="post-meta">
           <span class="post-time">
@@ -368,8 +373,8 @@
 <li>字体的颜色：将HTML六位十六进制颜色转为十进制表示，例如#FFFFFF会被存储为16777215，因为$(FFFFFF)_{16}=(16777215)_{10}$</li>
 <li>Unix时间戳，以毫秒为单位，基准时间为1970-1-1 08:00:00</li>
 <li>弹幕池：0普通池 1字幕池 2特殊池（注：目前特殊池为高级弹幕专用）</li>
-<li>发送者的ID，用于“屏蔽此弹幕的发送者”功能</li>
-<li>弹幕在弹幕数据库中rowID，用于“历史弹幕”功能</li>
+<li>发送者的ID，用于『屏蔽此弹幕的发送者』功能</li>
+<li>弹幕在弹幕数据库中rowID，用于『历史弹幕』功能</li>
 </ul>
 <p>将Bilibili弹幕的xml文件转为ass字幕，可以使用以下脚本：<br><a href="http://tiansh.github.io/us-danmaku/bilibili" target="_blank" rel="noopener">bilibili ASS 弹幕在线转换</a><br><a href="https://github.com/tiansh/us-danmaku" target="_blank" rel="noopener">us-danmaku</a></p>
 <p>关于ass字幕格式可以参考以下文章：<a href="https://www.douban.com/note/658520175" target="_blank" rel="noopener">ASS字幕格式规范</a></p>
@@ -393,7 +398,7 @@
     </span>
       <header class="post-header">
           <h1 class="post-title" itemprop="name headline">
-                <a href="/2018-03/Quine——输出自身的程序/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/9/index.html">Quine——输出自身的程序</a>
+                <a href="/2018-03/Quine——输出自身的程序/" class="post-title-link" itemprop="url">Quine——输出自身的程序</a>
           </h1>
         <div class="post-meta">
           <span class="post-time">
@@ -436,7 +441,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-          <p>能够输出自身的代码被称为Quine，以哲学家Willard van Orman Quine（1908-2000）而命名。<br>Quine在图灵完备的语言中都是可行的。在可计算性理论（computability theory）中，图灵等价指的是：对于两个计算机A和B，如果A可以模拟B，B可以模拟A，就称他们是图灵等价的。根据“丘奇-图灵”理论，图灵机是表达能力最强大的计算系统，对现实世界中的任何计算机，都可以用图灵机来模拟它。<br>套用上面的定义，如果一个编程语言可以完全模拟图灵机，那么它就是图灵完备的。大部分编程语言都是图灵完备的，因为他们需要解决各种问题的通用能力，而这正是图灵机所具备的。不过也存在一些语言不是图灵完备的，他们通常是被设计用来解决某些特殊的问题，比如SQL以及正则表达式。</p>
+          <p>能够输出自身的代码被称为Quine，以哲学家Willard van Orman Quine（1908-2000）而命名。<br>Quine在图灵完备的语言中都是可行的。在可计算性理论（computability theory）中，图灵等价指的是：对于两个计算机A和B，如果A可以模拟B，B可以模拟A，就称他们是图灵等价的。根据『丘奇-图灵』理论，图灵机是表达能力最强大的计算系统，对现实世界中的任何计算机，都可以用图灵机来模拟它。<br>套用上面的定义，如果一个编程语言可以完全模拟图灵机，那么它就是图灵完备的。大部分编程语言都是图灵完备的，因为他们需要解决各种问题的通用能力，而这正是图灵机所具备的。不过也存在一些语言不是图灵完备的，他们通常是被设计用来解决某些特殊的问题，比如SQL以及正则表达式。</p>
 <p>Shell<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">z=\<span class="string">' a='</span>z=\\<span class="variable">$z</span> a=<span class="variable">$z</span><span class="variable">$a</span><span class="variable">$z</span>\; <span class="built_in">eval</span> <span class="built_in">echo</span> \<span class="variable">$a</span><span class="string">'; eval echo $a</span></span><br></pre></td></tr></table></figure></p>
 <p>PHP<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> file_get_content(<span class="keyword">__FILE__</span>);</span><br></pre></td></tr></table></figure></p>
 <p>JavaScript<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span> $(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="string">'!'</span>+$+<span class="string">'()'</span>)&#125;()</span><br></pre></td></tr></table></figure></p>
@@ -469,7 +474,7 @@
     </span>
       <header class="post-header">
           <h1 class="post-title" itemprop="name headline">
-                <a href="/2018-03/使用Electron构建桌面应用/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/9/index.html">使用Electron构建桌面应用</a>
+                <a href="/2018-03/使用Electron构建桌面应用/" class="post-title-link" itemprop="url">使用Electron构建桌面应用</a>
           </h1>
         <div class="post-meta">
           <span class="post-time">
@@ -512,7 +517,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-          <p>Electron是基于Node.js的桌面应用开发框架，所有代码均在Chrome“外壳”下运行，因而可以调用所有Node.js和浏览器的API，并且具有跨平台的特性。下面介绍如何使用Electron构建简单的桌面应用。你可以参照官方给出的入门程序：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/electron/electron-quick-start.git</span><br></pre></td></tr></table></figure></p>
+          <p>Electron是基于Node.js的桌面应用开发框架，所有代码均在Chrome『外壳』下运行，因而可以调用所有Node.js和浏览器的API，并且具有跨平台的特性。下面介绍如何使用Electron构建简单的桌面应用。你可以参照官方给出的入门程序：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/electron/electron-quick-start.git</span><br></pre></td></tr></table></figure></p>
 <p>一个Electron应用应包含以下内容：</p>
 <h2 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h2><p>当你使用npm start启动Electron程序时，这是最先被执行的脚本。在main.js中可以创建窗口对象以构建图形界面。一个典型的main.js如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> electron = <span class="built_in">require</span>(<span class="string">'electron'</span>)</span><br><span class="line"><span class="keyword">const</span> app = electron.app</span><br><span class="line"><span class="keyword">const</span> BrowserWindow = electron.BrowserWindow</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>)</span><br><span class="line"><span class="keyword">let</span> mainWindow</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createWindow</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    mainWindow = <span class="keyword">new</span> BrowserWindow(&#123;<span class="attr">width</span>: <span class="number">800</span>, <span class="attr">height</span>: <span class="number">600</span>&#125;)</span><br><span class="line">    mainWindow.loadURL(url.format(&#123;</span><br><span class="line">        pathname: path.join(__dirname, <span class="string">'index.html'</span>),</span><br><span class="line">        protocol: <span class="string">'file:'</span>,</span><br><span class="line">        slashes: <span class="literal">true</span></span><br><span class="line">    &#125;))</span><br><span class="line">    mainWindow.on(<span class="string">'closed'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        mainWindow = <span class="literal">null</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">app.on(<span class="string">'ready'</span>, createWindow)</span><br><span class="line">app.on(<span class="string">'window-all-closed'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (process.platform !== <span class="string">'darwin'</span>) &#123;</span><br><span class="line">        app.quit()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">app.on(<span class="string">'activate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (mainWindow === <span class="literal">null</span>) &#123;</span><br><span class="line">        createWindow()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
@@ -541,7 +546,7 @@
     </span>
       <header class="post-header">
           <h1 class="post-title" itemprop="name headline">
-                <a href="/2018-03/数学笑话/" class="post-title-link" itemprop="https://zhangshuqiao.org/page/9/index.html">数学笑话</a>
+                <a href="/2018-03/数学笑话/" class="post-title-link" itemprop="url">数学笑话</a>
           </h1>
         <div class="post-meta">
           <span class="post-time">

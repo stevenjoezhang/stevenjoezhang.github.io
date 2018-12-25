@@ -5,8 +5,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
   <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -38,20 +36,20 @@
   };
 </script>
   <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
-  <meta name="description" content="“表情包”是一种利用图片来表示感情的方式。在各种社交软件的带动下，“表情包”已经形成了一种流行文化。互联网上，基本人人都会发表情；很多实时通讯软件中，“斗图”成为了一种活跃气氛的常见方式。不知你是否曾有过找不到表情包去应对别人的时候？今天博主分享用Python开发个人专属的表情包网站的方法，想用什么表情包搜一下就有了！目标：获取海量表情包，存入数据库，然后搭建简单网站，通过输入关键字获取对应的的表">
+  <meta name="description" content="『表情包』是一种利用图片来表示感情的方式。在各种社交软件的带动下，『表情包』已经形成了一种流行文化。互联网上，基本人人都会发表情；很多实时通讯软件中，『斗图』成为了一种活跃气氛的常见方式。不知你是否曾有过找不到表情包去应对别人的时候？今天博主分享用Python开发个人专属的表情包网站的方法，想用什么表情包搜一下就有了！目标：获取海量表情包，存入数据库，然后搭建简单网站，通过输入关键字获取对应的的表">
 <meta name="keywords" content="Python,MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python开发表情包网站">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-06/Python开发表情包网站/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="“表情包”是一种利用图片来表示感情的方式。在各种社交软件的带动下，“表情包”已经形成了一种流行文化。互联网上，基本人人都会发表情；很多实时通讯软件中，“斗图”成为了一种活跃气氛的常见方式。不知你是否曾有过找不到表情包去应对别人的时候？今天博主分享用Python开发个人专属的表情包网站的方法，想用什么表情包搜一下就有了！目标：获取海量表情包，存入数据库，然后搭建简单网站，通过输入关键字获取对应的的表">
+<meta property="og:description" content="『表情包』是一种利用图片来表示感情的方式。在各种社交软件的带动下，『表情包』已经形成了一种流行文化。互联网上，基本人人都会发表情；很多实时通讯软件中，『斗图』成为了一种活跃气氛的常见方式。不知你是否曾有过找不到表情包去应对别人的时候？今天博主分享用Python开发个人专属的表情包网站的方法，想用什么表情包搜一下就有了！目标：获取海量表情包，存入数据库，然后搭建简单网站，通过输入关键字获取对应的的表">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-06/1.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-06/2.png">
-<meta property="og:updated_time" content="2018-12-22T18:11:08.481Z">
+<meta property="og:updated_time" content="2018-12-25T08:47:46.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python开发表情包网站">
-<meta name="twitter:description" content="“表情包”是一种利用图片来表示感情的方式。在各种社交软件的带动下，“表情包”已经形成了一种流行文化。互联网上，基本人人都会发表情；很多实时通讯软件中，“斗图”成为了一种活跃气氛的常见方式。不知你是否曾有过找不到表情包去应对别人的时候？今天博主分享用Python开发个人专属的表情包网站的方法，想用什么表情包搜一下就有了！目标：获取海量表情包，存入数据库，然后搭建简单网站，通过输入关键字获取对应的的表">
+<meta name="twitter:description" content="『表情包』是一种利用图片来表示感情的方式。在各种社交软件的带动下，『表情包』已经形成了一种流行文化。互联网上，基本人人都会发表情；很多实时通讯软件中，『斗图』成为了一种活跃气氛的常见方式。不知你是否曾有过找不到表情包去应对别人的时候？今天博主分享用Python开发个人专属的表情包网站的方法，想用什么表情包搜一下就有了！目标：获取海量表情包，存入数据库，然后搭建简单网站，通过输入关键字获取对应的的表">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-06/1.png">
   <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
   <link rel="canonical" href="https://zhangshuqiao.org/2018-06/Python开发表情包网站/">
@@ -220,7 +218,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-        <p>“表情包”是一种利用图片来表示感情的方式。在各种社交软件的带动下，“表情包”已经形成了一种流行文化。互联网上，基本人人都会发表情；很多实时通讯软件中，“斗图”成为了一种活跃气氛的常见方式。不知你是否曾有过找不到表情包去应对别人的时候？<br>今天博主分享用Python开发个人专属的表情包网站的方法，想用什么表情包搜一下就有了！<br><strong>目标：获取海量表情包，存入数据库，然后搭建简单网站，通过输入关键字获取对应的的表情包。</strong></p>
+        <p>『表情包』是一种利用图片来表示感情的方式。在各种社交软件的带动下，『表情包』已经形成了一种流行文化。互联网上，基本人人都会发表情；很多实时通讯软件中，『斗图』成为了一种活跃气氛的常见方式。不知你是否曾有过找不到表情包去应对别人的时候？<br>今天博主分享用Python开发个人专属的表情包网站的方法，想用什么表情包搜一下就有了！<br><strong>目标：获取海量表情包，存入数据库，然后搭建简单网站，通过输入关键字获取对应的的表情包。</strong></p>
 <h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p>首先，我们要从这个网站爬取表情包：<a href="http://www.doutula.com/photo/list/?page=0" target="_blank" rel="noopener">斗图啦</a>。<br>我们先来分析一下这个网页的源代码：</p>
 <p><img src="/images/2018-06/1.png" alt=""></p>
 <p>通过源码，我们可以发现需要获取的内容包括每个img标签的data-original和alt属性。通过爬虫获取网页，用正则表达式提取内容，然后存入数据库即可。<br>首先，安装mysql，如果你在使用macOS，并配置好了Homebrew：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure></p>

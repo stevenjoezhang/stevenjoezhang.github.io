@@ -5,8 +5,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
   <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -47,7 +45,7 @@
 <meta property="og:description" content="在前面的文章NGINX配置SSL中，提到了关于创建Crontab定时任务的内容。事实上，在使用Linux系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了Crontab的机制，并对常见的Crontab用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。 Crontab使用方式12crontab [-u user] fi">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-05/crontab_thumb.png">
-<meta property="og:updated_time" content="2018-12-22T18:10:17.028Z">
+<meta property="og:updated_time" content="2018-12-25T08:30:55.431Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Crontab定时写法整理">
 <meta name="twitter:description" content="在前面的文章NGINX配置SSL中，提到了关于创建Crontab定时任务的内容。事实上，在使用Linux系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了Crontab的机制，并对常见的Crontab用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。 Crontab使用方式12crontab [-u user] fi">
@@ -244,9 +242,9 @@
 <p>在以上各个字段中，还可以使用以下特殊字符：</p>
 <ul>
 <li>星号（*）：代表所有可能的值，例如month字段如果是星号，则表示在满足其它字段的制约条件后每月都执行该命令操作。</li>
-<li>逗号（,）：可以用逗号隔开的值指定一个列表范围，例如，“1,2,5,7,8,9”。</li>
-<li>中杠（-）：可以用整数之间的中杠表示一个整数范围，例如“2-6”表示“2,3,4,5,6”。</li>
-<li>正斜线（/）：可以用正斜线指定时间的间隔频率，例如“0-23/2”表示每两小时执行一次。</li>
+<li>逗号（,）：可以用逗号隔开的值指定一个列表范围，例如<code>1,2,5,7,8,9</code>。</li>
+<li>中杠（-）：可以用整数之间的中杠表示一个整数范围，例如<code>2-6</code>表示<code>2,3,4,5,6</code>。</li>
+<li>正斜线（/）：可以用正斜线指定时间的间隔频率，例如<code>0-23/2</code>表示每两小时执行一次。</li>
 </ul>
 <p>同时正斜线可以和星号一起使用，例如*/10，如果用在minute字段，表示每十分钟执行一次。又如，每分钟可以用*或者*/1表示。</p>
 <a id="more"></a>

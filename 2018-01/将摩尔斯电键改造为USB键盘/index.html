@@ -5,8 +5,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
   <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -53,7 +51,7 @@
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/hncjuCW.jpg">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/WjlHEcO.jpg">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/ocVQDyq.jpg">
-<meta property="og:updated_time" content="2018-12-22T18:08:19.859Z">
+<meta property="og:updated_time" content="2018-12-25T08:46:37.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="将摩尔斯电键改造为USB键盘">
 <meta name="twitter:description" content="The finished Morse key sitting happily on my laptop. Full project details below.最终完成的莫尔斯键盘与笔记本电脑的合影～整个项目的细节如下： Background: I can just about remember growing up around beautifully designed analogue de">
@@ -234,12 +232,12 @@
 <p><img src="/images/2018-01/wb72Pzy.jpg" alt=""></p>
 <p>The Morse key was incredibly dusty and attached to a nasty plastic base, so I took the whole thing apart, scrapped the base, and gave the Morse key a good clean.<br>莫尔斯电键积了很多灰尘，而且装在一个很丑的塑料基地上，因此我准备把所有东西都拆开，把莫尔斯电键清洁干净。</p>
 <p><img src="/images/2018-01/k8vNI65.jpg" alt=""></p>
-<p>Some wet wipes did the job nicely, and I also sanded down the two metal contacts (the ‘switch’) a tiny bit to improve the electrical connection and remove some of the accumulated gunk.<br>使用湿纸巾，这项工作完成的很出色。并且我还仔细打磨了两个金属触点（“开关”），改善电路连接的情况并去除一些沉积的脏东西。</p>
+<p>Some wet wipes did the job nicely, and I also sanded down the two metal contacts (the ‘switch’) a tiny bit to improve the electrical connection and remove some of the accumulated gunk.<br>使用湿纸巾，这项工作完成的很出色。并且我还仔细打磨了两个金属触点（即『开关』），改善电路连接的情况并去除一些沉积的脏东西。</p>
 <p><img src="/images/2018-01/4kpenAM.jpg" alt=""></p>
 <p>Converting the (VERY analogue) Morse key into a digital device was the next step. To do this I used a tiny, cheap micro-controller aptly named a Teensy 3.2 (<a href="https://www.pjrc.com/teensy" target="_blank" rel="noopener">https://www.pjrc.com/teensy/</a>). The Teensy has 28 pins, each of which can be configured as an input or an output; because I wanted to the Teensy to receive signals from the Morse key, I configured Pin 7 of the Teensy as an input and wired it to one connection on Morse key. (This was an arbitrary choice, any of the I/O pins would have worked just fine.) I then wired the ground pin of the Teensy to the other connection on the Morse key.<br>接下来就是将电键转换为数字设备。为了实现这一点，我使用一个小巧，便宜的微型控制器——Teensy 3.2。</p>
 <p>This was my first foray into working with electronics or microcomputers so feel free to imagine a progress montage punctuated by thoughtful moustache stroking scenes, eighties music and gratuitous but entirely pointless shots of the terminal.<br>这是我第一次尝试做这种事，你可以想象当我点亮并且成功运行的时候，我的内心是多么喜悦。</p>
-<p>I wrote some test code for the Teensy to make sure it was working with the Morse key as expected; I expected to see ‘KEY PRESS’ printed out once every time I pressed the Morse key down once. This is where I hit my first problem. Mechanical switches don’t make perfect physical or electrical contact when they’re pressed; they’ll typically oscillate between being ‘open’ and ‘closed’ a few times over ～1ms before settling down to a stable ‘closed’ state. Microcomputers are fast enough to detect these oscillations so when I pressed my Morse key down just once, the Teensy detected several rapid key presses as shown in the photo. This effect is called ‘bounce’ and luckily there’s a built-in Teensy library (<a href="https://playground.arduino.cc/Code/Bounce" target="_blank" rel="noopener">https://playground.arduino.cc/Code/Bounce</a>) that compensates for it.<br>为了确保Teensy正确按照预期“翻译”莫尔斯密码，我为Teensy写了一些测试代码。因此每当按下莫尔斯电键一次，我就会看到电脑端有字符输出。然而很快我就遇到了一个问题：机械开关按下时不能形成完美的物理接触（通常在“通路”和“断路”之间摆动几次，持续约1ms，然后稳定到“通路”状态）。计算机能够快速检测到这些振荡，所以当我按下我的莫尔斯电键时，Teensy检测到照片中显示的几个快速按键。这种效应称为“反弹”，幸好内置的Teensy库能够补偿它。</p>
-<p>Once the Teensy could successfully detect single Morse key presses, I needed a way to differentiate the pauses between dots, dashes, letters, and words. Implementing a method for the Teensy to figure out relative timings for individual users would’ve involved a fair amount of faff, so I used absolute timings based on my own keying speeds. A threshold of 150ms was used to differentiate dots from dashes, and pauses between letters and words were set to 500ms and 3000ms. Of course, this configuration will break down with a faster or slower Morse operator, but as my old engineering tutor used to say, “good engineers are smart but lazy,” which for the purposes of this project I will choose to interpret as “good engineers are lazy”.<br>为了Teensy能够成功检测到每次点击莫尔斯电键的不同，来区分点、破折号、字母和单词之间的停顿。我在绝对时间的基础上结合自己的键控速度。用150ms的阈值来区分短划线，并且字母和单词之间的时间间隔被设置为500ms和3000ms。当然，每个人的习惯都不一样，这个就要自己把握了。</p>
+<p>I wrote some test code for the Teensy to make sure it was working with the Morse key as expected; I expected to see ‘KEY PRESS’ printed out once every time I pressed the Morse key down once. This is where I hit my first problem. Mechanical switches don’t make perfect physical or electrical contact when they’re pressed; they’ll typically oscillate between being ‘open’ and ‘closed’ a few times over ～1ms before settling down to a stable ‘closed’ state. Microcomputers are fast enough to detect these oscillations so when I pressed my Morse key down just once, the Teensy detected several rapid key presses as shown in the photo. This effect is called ‘bounce’ and luckily there’s a built-in Teensy library (<a href="https://playground.arduino.cc/Code/Bounce" target="_blank" rel="noopener">https://playground.arduino.cc/Code/Bounce</a>) that compensates for it.<br>为了确保Teensy正确按照预期『翻译』莫尔斯密码，我为Teensy写了一些测试代码。因此每当按下莫尔斯电键一次，我就会看到电脑端有字符输出。然而很快我就遇到了一个问题：机械开关按下时不能形成完美的物理接触（通常在『通路』和『断路』之间摆动几次，持续约1ms，然后稳定到『通路』状态）。计算机能够快速检测到这些振荡，所以当我按下我的莫尔斯电键时，Teensy检测到照片中显示的几个快速按键。这种效应称为『反弹』，幸好内置的Teensy库能够补偿它。</p>
+<p>Once the Teensy could successfully detect single Morse key presses, I needed a way to differentiate the pauses between dots, dashes, letters, and words. Implementing a method for the Teensy to figure out relative timings for individual users would’ve involved a fair amount of faff, so I used absolute timings based on my own keying speeds. A threshold of 150ms was used to differentiate dots from dashes, and pauses between letters and words were set to 500ms and 3000ms. Of course, this configuration will break down with a faster or slower Morse operator, but as my old engineering tutor used to say, “good engineers are smart but lazy”, which for the purposes of this project I will choose to interpret as “good engineers are lazy”.<br>为了Teensy能够成功检测到每次点击莫尔斯电键的不同，来区分点、破折号、字母和单词之间的停顿。我在绝对时间的基础上结合自己的键控速度。用150ms的阈值来区分短划线，并且字母和单词之间的时间间隔被设置为500ms和3000ms。当然，每个人的习惯都不一样，这个就要自己把握了。</p>
 <p><img src="/images/2018-01/hncjuCW.jpg" alt=""></p>
 <p>With the Teensy fully programmed, I was ready to build a wooden base to hide the electronics underneath the Morse key, with holes to feed through the two wires connecting the Morse key to the Teensy. I’d like to say I chose wood for aesthetic reasons, but in reality all my attempts at 3D printing a base failed so abysmally that I decided to try my luck with a plank I found lying around at my local Hackspace, of approximate width 130mm and depth 20mm.<br>Teensy编程完后，我准备制作一个隐藏莫尔斯电键下方的电子设备的木质底座，并且底座上有两个孔，用于连接Teensy到莫尔斯电键的电线。为啥选木材而不是3D打印呢？其实不是美观不美观的问题，而是因为用3D打印出来的底座都适配失败了。</p>
 <p><img src="/images/2018-01/WjlHEcO.jpg" alt=""></p>
@@ -294,8 +292,8 @@
           </div>
           <span class="post-nav-divider"></span>
           <div class="post-nav-prev post-nav-item">
-              <a href="/2018-01/用摩尔斯电键作鼠标和键盘/" rel="prev" title="用摩尔斯电键作鼠标和键盘">
-                用摩尔斯电键作鼠标和键盘 <i class="fa fa-chevron-right"></i>
+              <a href="/2018-01/将电键变为鼠标和键盘——实现篇/" rel="prev" title="将电键变为鼠标和键盘——实现篇">
+                将电键变为鼠标和键盘——实现篇 <i class="fa fa-chevron-right"></i>
               </a>
           </div>
         </div>

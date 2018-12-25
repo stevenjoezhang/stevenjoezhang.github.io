@@ -5,8 +5,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
   <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -46,7 +44,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="B站的每个视频都有aid和cid两个参数，在已知视频aid（即AV号）的情况下，可以通过链接https://www.bilibili.com/widget/getPageList?aid=10492获取cid（将10492替换为你要查询的视频的aid）。视频的更多信息则可以通过https://api.bilibili.com/view?type=jsonp&amp;amp;appkey=8e9fc618f">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-17T10:53:27.818Z">
+<meta property="og:updated_time" content="2018-12-25T08:46:54.421Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bilibili弹幕文件的解析">
 <meta name="twitter:description" content="B站的每个视频都有aid和cid两个参数，在已知视频aid（即AV号）的情况下，可以通过链接https://www.bilibili.com/widget/getPageList?aid=10492获取cid（将10492替换为你要查询的视频的aid）。视频的更多信息则可以通过https://api.bilibili.com/view?type=jsonp&amp;amp;appkey=8e9fc618f">
@@ -226,8 +224,8 @@
 <li>字体的颜色：将HTML六位十六进制颜色转为十进制表示，例如#FFFFFF会被存储为16777215，因为$(FFFFFF)_{16}=(16777215)_{10}$</li>
 <li>Unix时间戳，以毫秒为单位，基准时间为1970-1-1 08:00:00</li>
 <li>弹幕池：0普通池 1字幕池 2特殊池（注：目前特殊池为高级弹幕专用）</li>
-<li>发送者的ID，用于“屏蔽此弹幕的发送者”功能</li>
-<li>弹幕在弹幕数据库中rowID，用于“历史弹幕”功能</li>
+<li>发送者的ID，用于『屏蔽此弹幕的发送者』功能</li>
+<li>弹幕在弹幕数据库中rowID，用于『历史弹幕』功能</li>
 </ul>
 <p>将Bilibili弹幕的xml文件转为ass字幕，可以使用以下脚本：<br><a href="http://tiansh.github.io/us-danmaku/bilibili" target="_blank" rel="noopener">bilibili ASS 弹幕在线转换</a><br><a href="https://github.com/tiansh/us-danmaku" target="_blank" rel="noopener">us-danmaku</a></p>
 <p>关于ass字幕格式可以参考以下文章：<a href="https://www.douban.com/note/658520175" target="_blank" rel="noopener">ASS字幕格式规范</a></p>

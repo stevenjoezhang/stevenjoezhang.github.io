@@ -5,8 +5,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
   <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -49,7 +47,7 @@
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/screenshot-1.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/screenshot-2.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/screenshot-3.png">
-<meta property="og:updated_time" content="2018-12-22T18:12:08.342Z">
+<meta property="og:updated_time" content="2018-12-25T08:49:31.442Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WordPress中文验证码">
 <meta name="twitter:description" content="反机器人和垃圾评论是个人博客老生常谈的话题。除了特征识别算法外，最普遍使用的屏蔽方法就是验证码了。在WordPress插件库中，有着各式各样的验证码插件。然而，很多验证码插件都依赖于Google的reCAPTCHA，这在国内无法访问；而一些基于Session或文件验证的验证码插件功能和质量参差不齐，性能和安全性难以得到保障。虽然博主已经抛弃了WordPress转投Hexo静态博客（正如你所看到的这">
@@ -221,7 +219,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-        <p>反机器人和垃圾评论是个人博客老生常谈的话题。除了特征识别算法外，最普遍使用的屏蔽方法就是验证码了。在WordPress插件库中，有着各式各样的验证码插件。然而，很多验证码插件都依赖于Google的reCAPTCHA，这在国内无法访问；而一些基于Session或文件验证的验证码插件功能和质量参差不齐，性能和安全性难以得到保障。虽然博主已经抛弃了WordPress转投Hexo静态博客（正如你所看到的这样），但考虑到WordPress中少有适合我国国情的验证码插件，故决定将一些主流图形验证码的功能进行整合，制作出一个全新的通用性更强的验证码解决方案。Mimi Captcha就这样诞生了。<br>这是一个同时支持数字、大小写字母、中文、算术的图形验证码插件。它是基于Vinoj Cardoza的<a href="https://wordpress.org/plugins/captcha-code-authentication" target="_blank" rel="noopener">Captcha Code</a>在GPL协议下二次开发的。原项目存在的问题是，验证码中的字符采用同一字体在同一高度下顺序排列，这样非常容易被识别。改动过程中，加入了“超时时间”设置，以及对用户更为友好的“不区分大小写”设置。而验证码图片的生成算法，则进行了重构，很大程度上采用了<a href="http://www.iteye.com/topic/469170" target="_blank" rel="noopener">流水孟春</a>的方案。同时，在IP白名单等功能上，参考了<a href="https://wordpress.org/plugins/captcha" target="_blank" rel="noopener">Captcha</a>的代码。中文验证码和算术验证码则是新加入的功能，在原插件上拓展而成。最终效果如图：</p>
+        <p>反机器人和垃圾评论是个人博客老生常谈的话题。除了特征识别算法外，最普遍使用的屏蔽方法就是验证码了。在WordPress插件库中，有着各式各样的验证码插件。然而，很多验证码插件都依赖于Google的reCAPTCHA，这在国内无法访问；而一些基于Session或文件验证的验证码插件功能和质量参差不齐，性能和安全性难以得到保障。虽然博主已经抛弃了WordPress转投Hexo静态博客（正如你所看到的这样），但考虑到WordPress中少有适合我国国情的验证码插件，故决定将一些主流图形验证码的功能进行整合，制作出一个全新的通用性更强的验证码解决方案。Mimi Captcha就这样诞生了。<br>这是一个同时支持数字、大小写字母、中文、算术的图形验证码插件。它是基于Vinoj Cardoza的<a href="https://wordpress.org/plugins/captcha-code-authentication" target="_blank" rel="noopener">Captcha Code</a>在GPL协议下二次开发的。原项目存在的问题是，验证码中的字符采用同一字体在同一高度下顺序排列，这样非常容易被识别。改动过程中，加入了『超时时间』设置，以及对用户更为友好的『不区分大小写』设置。而验证码图片的生成算法，则进行了重构，很大程度上采用了<a href="http://www.iteye.com/topic/469170" target="_blank" rel="noopener">流水孟春</a>的方案。同时，在IP白名单等功能上，参考了<a href="https://wordpress.org/plugins/captcha" target="_blank" rel="noopener">Captcha</a>的代码。中文验证码和算术验证码则是新加入的功能，在原插件上拓展而成。最终效果如图：</p>
 <p><img src="/images/2018-07/screenshot-1.png" alt=""></p>
 <a id="more"></a>
 <p><img src="/images/2018-07/screenshot-2.png" alt=""><br><img src="/images/2018-07/screenshot-3.png" alt=""></p>

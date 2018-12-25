@@ -5,8 +5,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
   <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -46,7 +44,7 @@
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="今天博主在进行WordPress博客考古活动时，得知了一个彩蛋。来源见：WordPress的彩蛋。在WordPress文章中使用Compare Revisions功能，如果两个相比较的文章ID一致，就会触发彩蛋。其效果是显示文字：  Wake up XXX… The matrix has you. Follow the white rabbit. Don’t let this happen aga">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-07T15:55:54.754Z">
+<meta property="og:updated_time" content="2018-12-24T02:31:45.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WordPress 3.x版本中的彩蛋">
 <meta name="twitter:description" content="今天博主在进行WordPress博客考古活动时，得知了一个彩蛋。来源见：WordPress的彩蛋。在WordPress文章中使用Compare Revisions功能，如果两个相比较的文章ID一致，就会触发彩蛋。其效果是显示文字：  Wake up XXX… The matrix has you. Follow the white rabbit. Don’t let this happen aga">
@@ -226,7 +224,7 @@
 <p>本文更新于2017年11月11日：<br>由于博主并不准备搭建旧版本WordPress的运行环境，于是决定从代码入手，分析这个彩蛋。<br>在revisions-js.php中定义的函数dvortr()作用是使用一对一的替换来加密字符串，该文件中有两次调用此函数：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dvortr( <span class="string">"Erb-y n.y ydco dall.b aiacbv Wa ce]-irxajt- dp.u]-$-VIr XajtWzaVv"</span> )</span><br></pre></td></tr></table></figure></p>
 <p>和<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dvortr( <span class="string">'Eabi.p!'</span> )</span><br></pre></td></tr></table></figure></p>
 <p>经过解密，其输出分别为<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Don't let this happen again. <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">'goback'</span> <span class="attr">href</span>=<span class="string">'$'</span>&gt;</span>Go Back<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>和<code>Danger!</code>。<br>而定义的变量<code>$j</code>作用是包含jQuery库，<code>$n</code>是获取的当前用户名，<code>$d</code>是noscript时的输出。通过替换掉一些WordPress中定义的函数，我成功地使部分解码后的php文件在本地Apache服务器成功运行。并且，我还重新制作了这个彩蛋，现在它已经可以在本站以某种方式触发～<br>下面附上整个解密过程中所用到的文件。其中revision.php和revisions-js.php是原文件，decode.php是部分解密后的文件，decode.js是浏览器获取的匿名js文件，decoder.html是根据原文件的加密算法编写的加密、解密脚本。<br><a href="/files/WordPressEasterEgg.zip">WordPressEasterEgg</a></p>
+<p>和<code>Danger!</code>。<br>而定义的变量<code>$j</code>作用是包含jQuery库，<code>$n</code>是获取的当前用户名，<code>$d</code>是noscript时的输出。通过替换掉一些WordPress中定义的函数，博主成功地使部分解码后的php文件在本地Apache服务器成功运行。并且，博主还重新制作了这个彩蛋，现在它已经可以在本站以某种方式触发～<br>下面附上整个解密过程中所用到的文件。其中revision.php和revisions-js.php是原文件，decode.php是部分解密后的文件，decode.js是浏览器获取的匿名js文件，decoder.html是根据原文件的加密算法编写的加密、解密脚本。<br><a href="/files/WordPressEasterEgg.zip">WordPressEasterEgg</a></p>
     </div>
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">

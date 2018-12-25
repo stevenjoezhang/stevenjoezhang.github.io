@@ -5,8 +5,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
   <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
   <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -91,7 +89,7 @@
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-08/FGKWVNEHP8PLOCX.LARGE.jpg">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-08/FVGEWVMHP989E1R.LARGE.jpg">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-08/FMICFEUHP989E1T.LARGE.jpg">
-<meta property="og:updated_time" content="2018-12-22T18:13:38.359Z">
+<meta property="og:updated_time" content="2018-12-25T08:49:45.408Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自己打造一台恩尼格玛密码机">
 <meta name="twitter:description" content="在对称加密学当中，恩尼格玛机绝对是承前启后的存在。它将密码学研究从以前的语言文字学中心完全转移到了数学身上。在这里牵涉的密码并不是我们平时邮箱、银行帐号那种狭义概念，那种顶多叫做口令。这里说的密码就是通过某种映射方式，把一篇文章变得面目全非，以达到保密效果；只有特定的转换规律才能将其解密。这篇文章适于电脑控、军事控、历史控、数学控阅读，请做好烧脑准备。 EDIT: This Instructab">
@@ -329,7 +327,7 @@
 <p>The Radio Shack 6” x 8” Micro Perboard is the perfect size to host all components as it provides just the right amount of space to fit everything on &amp; will fit perfectly inside the Enigma box.<br>6*8寸无线电面包版是最适合放置所有元件的，既不多余也不拥挤，而且和Enigma机盒子内部完美吻合。<br>We started dividing the space on the Perfboard equally between the 3 regions, but realized soon that this would make the electonic Enigma longer than the real one, so we compressed everything down to the proper spacing.<br>最初我们将面包板等分为三块区域，但很快意识到，如此一来，电子版Enigma机将比原版的机械Enigma机长。于是我们将所有零件缩放到正好够占用的空间。<br>Once satisfied with the positioning of each components, next step is soldering.<br>每个元件位置就绪，下一步就是焊接。</p>
 <h2 id="Step-4-Soldering-Soldering-amp-a-Little-More-Soldering"><a href="#Step-4-Soldering-Soldering-amp-a-Little-More-Soldering" class="headerlink" title="Step 4: Soldering, Soldering &amp; a Little More Soldering"></a>Step 4: Soldering, Soldering &amp; a Little More Soldering</h2><p>第四步：我焊，我焊，我焊焊焊……</p>
 <p><img src="/images/2018-08/FL8IEWNHMFQJENI.LARGE.jpg" alt=""><br><img src="/images/2018-08/F1UE3SZHMFQJENK.LARGE.jpg" alt=""><br><img src="/images/2018-08/F5B1IDKHM8D0839.LARGE.jpg" alt=""><br><img src="/images/2018-08/FCJKFP3HMEXWMPC.LARGE.jpg" alt=""><br><img src="/images/2018-08/FB9KU3WHM8CXMUR.LARGE.jpg" alt=""><br><img src="/images/2018-08/F6ZOVZKHMF6R1YM.LARGE.jpg" alt=""></p>
-<p>OK, this proved to be the most solder I have used on a single project ever. With 18 pins per 16 Segment, times 4 plus 26 keyboard keys + 26 keyboard lamps + a few LEDs &amp; 1 SPDT on/off/on switch, that was a lot of solder.<br>好吧，在单一作品身上，我从没焊接如此多次。16段显示的18个针脚，还有26个字母键乘以每个4个脚，外加26个键盘灯，一些其他LED，一个三掷开关，真乃“成吉思焊”。<br>Our decision to raise the 16 Segment displays up to make them look like old-time Nixie tubes certainly added a lot of solder points!<br>当初我们的决定是使这些16段LED显示看起来像老式电子管的感觉，增加了不少焊点，“巨焊”！<br>Our Arduino Mega Pin assignment:<br>Arduino Mega板上针脚的分配：</p>
+<p>OK, this proved to be the most solder I have used on a single project ever. With 18 pins per 16 Segment, times 4 plus 26 keyboard keys + 26 keyboard lamps + a few LEDs &amp; 1 SPDT on/off/on switch, that was a lot of solder.<br>好吧，在单一作品身上，我从没焊接如此多次。16段显示的18个针脚，还有26个字母键乘以每个4个脚，外加26个键盘灯，一些其他LED，一个三掷开关，真乃『成吉思焊』。<br>Our decision to raise the 16 Segment displays up to make them look like old-time Nixie tubes certainly added a lot of solder points!<br>当初我们的决定是使这些16段LED显示看起来像老式电子管的感觉，增加了不少焊点，『巨焊』！<br>Our Arduino Mega Pin assignment:<br>Arduino Mega板上针脚的分配：</p>
 <p>17 Segments:<br>Seg Pin Wire DuinoPin<br>a   2   blue  24<br>b   1   white 22<br>c   16  wh-bl 25<br>d   13  green 31<br>e   9   wh-br 38<br>f   8   brown 36<br>g   6   green 32<br>h   5   wh-or 30<br>k   4   orang 28<br>m   3   wh-bl 26<br>n   17  blue  23<br>p   15  orang 27<br>r   12  wh-gr 33<br>s   11  brown 35<br>t   7   wh-gr 34<br>u   14  wh-or 29<br>dp  10  wh-br 37<br>anode1 18 red 39<br>anode2 18 red 41<br>anode3 18 red 43<br>anode4 18 red 45</p>
 <p>LEDs:<br>1  40<br>2  42<br>3  44<br>4  46<br>5  48</p>
 <p>Lamps:<br>QAP 10<br>WSY 9<br>EDX 8<br>RFC 7<br>TGV 6<br>ZHB 5<br>UJN 4<br>IKM 3<br>OL  2<br>anode1 (First Row)  11<br>anode2 (Second Row) 12<br>anode3 (Third Row)  13</p>

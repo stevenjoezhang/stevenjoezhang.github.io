@@ -156,74 +156,6 @@
   <section id="posts" class="posts-expand">
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/在WordPress博客中使用LaTeX/">
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a href="/2017-11/在WordPress博客中使用LaTeX/" class="post-title-link" itemprop="url">在WordPress博客中使用LaTeX</a>
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <time title="创建时间：2017-11-08 13:43:27" itemprop="dateCreated datePublished" datetime="2017-11-08T13:43:27+08:00">2017-11-08</time>
-          </span>
-            <span class="post-category">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017-11/在WordPress博客中使用LaTeX/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017-11/在WordPress博客中使用LaTeX/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">1.8k</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">2 分钟</span>
-            </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-            <p>上帝说，要有<br>\begin{eqnarray*}<br>\nabla\cdot\vec{E}&amp;=&amp;\frac{\rho}{\epsilon_0}\\<br>\nabla\cdot\vec{B}&amp;=&amp;0\\<br>\nabla\times\vec{E}&amp;=&amp;-\frac{\partial B}{\partial t}\\<br>\nabla\times\vec{B}&amp;=&amp;\mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t}\right)\\<br>\end{eqnarray*}<br>于是就有了光。<br><strong>注：以上文字旨在测试$\LaTeX$兼容情况。</strong><br>使用方法：在HTML页面中，通过<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--config后的参数可以根据需求自定义，默认为?config=default--&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>即可加载MathJax，该脚本将会把所有$\LaTeX$公式正确显示出来。尽情的按照$\LaTeX$语法插入公式就好啦！<br>如果要在WordPress中使用，可以通过在编辑文章界面，选择『文本』（如果使用『可视化』，字符将被转义，导致脚本无法加载），输入以上内容达到相同效果。<br>使用时请注意：<br>The default math delimiters are <code>$$...$$</code> and <code>\[...\]</code> for displayed mathematics, and <code>\(...\)</code> for in-line mathematics. Note in particular that the <code>$...$</code> in-line delimiters are <strong>not</strong> used by default.<br>也就是说，行内公式的<code>$</code>符号默认不会被识别。你可以在HTML页面中加入以下配置以启用之：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    MathJax.Hub.Config(&#123;</span></span><br><span class="line"><span class="undefined">      tex2jax: &#123;</span></span><br><span class="line"><span class="undefined">        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],</span></span><br><span class="line"><span class="undefined">        processEscapes: true,</span></span><br><span class="line"><span class="undefined">        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']</span></span><br><span class="line"><span class="undefined">      &#125;,</span></span><br><span class="line"><span class="undefined">      TeX: &#123;equationNumbers: &#123; autoNumber: "AMS" &#125;&#125;,</span></span><br><span class="line"><span class="undefined">      "HTML-CSS": &#123; linebreaks: &#123; automatic: true &#125;, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) &#125;,</span></span><br><span class="line"><span class="undefined">      SVG: &#123; linebreaks: &#123; automatic: true &#125;&#125;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>其中<code>linebreaks</code>项会在屏幕宽度较小时自动使公式换行，而<code>inlineMath</code>项则启用了<code>$</code>符号标记的行内公式。</p>
-<p>更多信息可以访问官方网站：<a href="https://www.mathjax.org" target="_blank" rel="noopener">MathJax</a></p>
-<p>本文更新于2018年5月20日：<br>在Hexo中，如果使用了NexT主题，可以通过配置主题目录下的_config.yml简单地使用MathJax。在_config.yml中找到mathjax，将其子选项改为<code>enable: true</code>，并在需要加载MathJax的文章头添加<code>mathjax: true</code>即可。</p>
-<p>本文更新于2018年10月3日：<br>还有一种解决方案是调用知乎的API：<code>https://www.zhihu.com/equation?tex=</code>，通过GET请求，就可以将你的$\LaTeX$表达式转换为公式的图片。</p>
-    </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/在Mac上通过Sublime、Skim编辑LaTeX/">
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张书樵">
@@ -278,7 +210,7 @@
         </div>
       </header>
     <div class="post-body" itemprop="articleBody">
-          <p>Sublime Text是一款非常优秀的编辑器：速度快，界面简洁，插件众多；并且能够跨平台使用，在Mac和Windows上都发挥完美。虽然是一款付费软件，但作者很厚道地给了无限期的试用期限。这一切正如其官网广告词说的那样：The text editor you’ll fall in love with.<br>Skim是一款免费轻量的PDF阅读、标注工具，布局贴心友好，与OS X自带的Previewer相比，Skim能更好的注释PDF文件。<br>$\LaTeX$是一款权威的科技论文排版系统，不仅可以写论文，也可以处理日常的各种文档工作，甚至是做幻灯片。相比于Word，$\LaTeX$最大的优势是对于复杂公式的编辑与排版非常漂亮，并且用简单的命令就可以生成脚注、索引、目录和参考文献等复杂的结构。这一切优点都使得世界上众多的科学家们不再需要身兼作者与排版工两职，从而将更多的精力集中于文章内容本身。<br>本文的目的是将上述三种软件综合部署在Mac上。完成之后，你将可以在Sublime Text里面进行$\LaTeX$代码编辑，用Skim预览生成的PDF文件。更重要的是，让你觉得，写论文也可以是一件很优美的事。</p>
+          <p>Sublime Text是一款非常优秀的编辑器：速度快，界面简洁，插件众多；并且能够跨平台使用，在Mac和Windows上都发挥完美。虽然是一款付费软件，但作者很厚道地给了无限期的试用期限。这一切正如其官网广告词说的那样：The text editor you’ll fall in love with.<br>Skim是一款免费轻量的PDF阅读、标注工具，布局贴心友好，与OS X自带的Previewer相比，Skim能更好的注释PDF文件。<br>$\LaTeX$是一款权威的科技论文排版系统，不仅可以写论文，也可以处理日常的各种文档工作，甚至是做幻灯片。相比于Microsoft Word，$\LaTeX$最大的优势是对于复杂公式的编辑与排版非常漂亮，并且用简单的命令就可以生成脚注、索引、目录和参考文献等复杂的结构。这一切优点都使得世界上众多的科学家们不再需要身兼作者与排版工两职，从而将更多的精力集中于文章内容本身。<br>本文的目的是将上述三种软件综合部署在Mac上。完成之后，你将可以在Sublime Text里面进行$\LaTeX$代码编辑，用Skim预览生成的PDF文件。更重要的是，让你觉得，写论文也可以是一件很优美的事。</p>
           <!--noindex-->
             <div class="post-button text-center">
               <a class="btn" href="/2017-11/在Mac上通过Sublime、Skim编辑LaTeX/#more" rel="contents">
@@ -350,7 +282,7 @@
     <div class="post-body" itemprop="articleBody">
           <p>最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。</p>
 <h2 id="document-write"><a href="#document-write" class="headerlink" title="document.write"></a>document.write</h2><p>这个函数可以直接向HTML文档写入任何内容。比如，你需要根据屏幕宽度来加载不同js时，如果希望写入的内容是<code>&lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;</code>，那么只要这样就可以了：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="handlebars"><span class="xml"> if (screen.width &gt;= 1200) document.write('<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"main.js"</span>&gt;</span><span class="handlebars"><span class="xml"><span class="tag">&lt;<span class="name">\</span>/<span class="attr">script</span>&gt;</span>'); </span></span></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>由于script标签里有双引号，使用document.write时应该用单引号括起来，否则会造成错误。如果有多层引号，应将最内层的引号改为转义字符<code>&amp;quot;</code>。而对于所有的<code>/</code>，应改为<code>\/</code>，否则浏览器会认为这是<code>&lt;/script&gt;</code>闭合标签，造成解析错误。<br>通过<code>document.write</code>可以实现根据不同的条件向HTML写入不同的内容，但是要注意，如果这个时候页面已经加载完毕，<code>document.write</code>会导致页面的内容被清空。实际使用时一定要注意。</p>
+<p>JavaScript的字符串可以使用单引号或双引号表示，但是由于要写入的内容里有双引号，使用document.write时应该用单引号括起来，否则需要将双引号转义为<code>\&quot;</code>，避免造成错误。如果有多层引号，应将最内层的引号改为HTML转义字符<code>&amp;quot;</code>。而对于这里出现的<code>/</code>，将其改写为了<code>\/</code>，原因是浏览器会认为<code>&lt;/script&gt;</code>是闭合标签，造成代码解析错误。<br>通过<code>document.write</code>可以实现根据不同的条件向HTML写入不同的内容，但是要注意，如果这个时候页面已经加载完毕，<code>document.write</code>会导致页面的内容被清空。实际使用时一定要注意。</p>
 <h2 id="use-strict"><a href="#use-strict" class="headerlink" title="use strict"></a>use strict</h2><p>在一些脚本中，你或许会在最前面看到单独的一行<code>&quot;use strict&quot;</code>，这是严格模式的声明。<br>严格模式对正常的JavaScript语义做了一些更改：</p>
 <ul>
 <li>严格模式通过抛出错误来消除了一些原有静默错误。</li>
@@ -590,6 +522,69 @@
     </footer>
   </div>
   </article>
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-10/Minecraft存档Galaxy City地铁图（前瞻版）/">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张书樵">
+      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
+      <meta itemprop="image" content="/images/icon.gif">
+    </span>
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米米的博客">
+    </span>
+      <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">
+                <a href="/2017-10/Minecraft存档Galaxy City地铁图（前瞻版）/" class="post-title-link" itemprop="url">Minecraft存档Galaxy City地铁图（前瞻版）</a>
+          </h1>
+        <div class="post-meta">
+          <span class="post-time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                <span class="post-meta-item-text">发表于</span>
+              <time title="创建时间：2017-10-07 09:06:41" itemprop="dateCreated datePublished" datetime="2017-10-07T09:06:41+08:00">2017-10-07</time>
+          </span>
+            <span class="post-category">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
+            </span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017-10/Minecraft存档Galaxy City地铁图（前瞻版）/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017-10/Minecraft存档Galaxy City地铁图（前瞻版）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            <div class="post-symbolscount">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  <span class="post-meta-item-text">本文字数：</span>
+                <span title="本文字数">1</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span title="阅读时长">1 分钟</span>
+            </div>
+        </div>
+      </header>
+    <div class="post-body" itemprop="articleBody">
+            <p><img src="/images/2017-10/GalaxyCity大字体.svg" alt=""></p>
+    </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  </article>
   </section>
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -615,7 +610,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">88</span>
+                    <span class="site-state-item-count">87</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

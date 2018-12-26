@@ -39,16 +39,16 @@
   <meta name="description" content="在数据传输的时候，并不是所有的字符都可以受到支持，很多时候只能传输可见字符，对于不可见字符的传输需要经过特殊处理，这就是Base64产生的原因。Base64编码是一种基于64个可打印字符来表示二进制数据的表示方法。由于$2^6=64$，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。在Base64中的可打印字符包括">
 <meta name="keywords" content="Python,HTML">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Base64编码原理及脚本的简单实现">
+<meta property="og:title" content="Base64编码的原理与实现">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-12/Base64编码的原理与实现/index.html">
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="在数据传输的时候，并不是所有的字符都可以受到支持，很多时候只能传输可见字符，对于不可见字符的传输需要经过特殊处理，这就是Base64产生的原因。Base64编码是一种基于64个可打印字符来表示二进制数据的表示方法。由于$2^6=64$，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。在Base64中的可打印字符包括">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-12/1.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-12/2.png">
-<meta property="og:updated_time" content="2018-12-22T18:30:40.007Z">
+<meta property="og:updated_time" content="2018-12-25T13:56:35.712Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Base64编码原理及脚本的简单实现">
+<meta name="twitter:title" content="Base64编码的原理与实现">
 <meta name="twitter:description" content="在数据传输的时候，并不是所有的字符都可以受到支持，很多时候只能传输可见字符，对于不可见字符的传输需要经过特殊处理，这就是Base64产生的原因。Base64编码是一种基于64个可打印字符来表示二进制数据的表示方法。由于$2^6=64$，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。在Base64中的可打印字符包括">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-12/1.png">
   <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
@@ -58,7 +58,7 @@
     sidebar: "",
   };
 </script>
-  <title>Base64编码原理及脚本的简单实现 | 米米的博客</title>
+  <title>Base64编码的原理与实现 | 米米的博客</title>
   <noscript>
   <style>
     .use-motion .motion-element,
@@ -169,7 +169,7 @@
       <meta itemprop="name" content="米米的博客">
     </span>
       <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">Base64编码原理及脚本的简单实现
+          <h1 class="post-title" itemprop="name headline">Base64编码的原理与实现
           </h1>
         <div class="post-meta">
           <span class="post-time">
@@ -434,7 +434,7 @@
     <strong>本文作者： </strong>张书樵</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://zhangshuqiao.org/2018-12/Base64编码的原理与实现/" title="Base64编码原理及脚本的简单实现">https://zhangshuqiao.org/2018-12/Base64编码的原理与实现/</a>
+    <a href="https://zhangshuqiao.org/2018-12/Base64编码的原理与实现/" title="Base64编码的原理与实现">https://zhangshuqiao.org/2018-12/Base64编码的原理与实现/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -485,7 +485,7 @@
             <nav class="site-state motion-element">
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/">
-                    <span class="site-state-item-count">88</span>
+                    <span class="site-state-item-count">87</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

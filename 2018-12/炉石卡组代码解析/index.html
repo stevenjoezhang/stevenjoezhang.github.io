@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-  <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-  <link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
-  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+<meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="/css/main.css?v=6.6.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+<link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
 <script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '6.6.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
-    fancybox: true,
-    fastclick: true,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
+var NexT = window.NexT || {};
+var CONFIG = {
+root: '/',
+scheme: 'Gemini',
+version: '6.6.0',
+sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+fancybox: true,
+fastclick: true,
+lazyload: false,
+tabs: true,
+motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+algolia: {
+applicationID: '',
+apiKey: '',
+indexName: '',
+hits: {"per_page":10},
+labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+}
+};
 </script>
-  <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
-  <meta name="description" content="在前面的文章Base64编码的原理与实现中，讲到了Base64编码的诸多用处，例如编码图片以嵌入HTML代码。如果你对此有所了解，同时还是一个炉石玩家，就不难发现，暴雪推出的卡组代码功能，本质上就是用一个Base64编码的字符串来存储卡组信息。毕竟，你有时会见到以=或者==结尾的卡组代码，这正是Base64编码的典型特征。 注释当把卡组代码粘贴到炉石传说时，客户端将忽略以#字符开头的任何行，这就提">
+<link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
+<meta name="description" content="在前面的文章Base64编码的原理与实现中，讲到了Base64编码的诸多用处，例如编码图片以嵌入HTML代码。如果你对此有所了解，同时还是一个炉石玩家，就不难发现，暴雪推出的卡组代码功能，本质上就是用一个Base64编码的字符串来存储卡组信息。毕竟，你有时会见到以=或者==结尾的卡组代码，这正是Base64编码的典型特征。 注释当把卡组代码粘贴到炉石传说时，客户端将忽略以#字符开头的任何行，这就提">
 <meta name="keywords" content="PHP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="炉石卡组代码解析">
@@ -45,186 +45,186 @@
 <meta property="og:description" content="在前面的文章Base64编码的原理与实现中，讲到了Base64编码的诸多用处，例如编码图片以嵌入HTML代码。如果你对此有所了解，同时还是一个炉石玩家，就不难发现，暴雪推出的卡组代码功能，本质上就是用一个Base64编码的字符串来存储卡组信息。毕竟，你有时会见到以=或者==结尾的卡组代码，这正是Base64编码的典型特征。 注释当把卡组代码粘贴到炉石传说时，客户端将忽略以#字符开头的任何行，这就提">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-12/tyrande.png">
-<meta property="og:updated_time" content="2018-12-25T13:56:47.687Z">
+<meta property="og:updated_time" content="2018-12-29T16:55:49.581Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="炉石卡组代码解析">
 <meta name="twitter:description" content="在前面的文章Base64编码的原理与实现中，讲到了Base64编码的诸多用处，例如编码图片以嵌入HTML代码。如果你对此有所了解，同时还是一个炉石玩家，就不难发现，暴雪推出的卡组代码功能，本质上就是用一个Base64编码的字符串来存储卡组信息。毕竟，你有时会见到以=或者==结尾的卡组代码，这正是Base64编码的典型特征。 注释当把卡组代码粘贴到炉石传说时，客户端将忽略以#字符开头的任何行，这就提">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-12/tyrande.png">
-  <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
-  <link rel="canonical" href="https://zhangshuqiao.org/2018-12/炉石卡组代码解析/">
+<link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
+<link rel="canonical" href="https://zhangshuqiao.org/2018-12/炉石卡组代码解析/">
 <script id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
+CONFIG.page = {
+sidebar: "",
+};
 </script>
-  <title>炉石卡组代码解析 | 米米的博客</title>
-  <noscript>
-  <style>
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-    .use-motion .logo-line-before i { left: initial; }
-    .use-motion .logo-line-after i { right: initial; }
-  </style>
+<title>炉石卡组代码解析 | 米米的博客</title>
+<noscript>
+<style>
+.use-motion .motion-element,
+.use-motion .brand,
+.use-motion .menu-item,
+.sidebar-inner,
+.use-motion .post-block,
+.use-motion .pagination,
+.use-motion .comments,
+.use-motion .post-header,
+.use-motion .post-body,
+.use-motion .collection-title { opacity: initial; }
+.use-motion .logo,
+.use-motion .site-title,
+.use-motion .site-subtitle {
+opacity: initial;
+top: initial;
+}
+.use-motion .logo-line-before i { left: initial; }
+.use-motion .logo-line-after i { right: initial; }
+</style>
 </noscript>
 </head>
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">米米的博客</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-        <p class="site-subtitle">做了一点微小的工作</p>
-  </div>
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+<div class="container sidebar-position-left page-post-detail">
+<div class="headband"></div>
+<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<div class="header-inner"><div class="site-brand-wrapper">
+<div class="site-meta">
+<div class="custom-logo-site-title">
+<a href="/" class="brand" rel="start">
+<span class="logo-line-before"><i></i></span>
+<span class="site-title">米米的博客</span>
+<span class="logo-line-after"><i></i></span>
+</a>
+</div>
+<p class="site-subtitle">做了一点微小的工作</p>
+</div>
+<div class="site-nav-toggle">
+<button aria-label="切换导航栏">
+<span class="btn-bar"></span>
+<span class="btn-bar"></span>
+<span class="btn-bar"></span>
+</button>
+</div>
 </div>
 <nav class="site-nav">
-    <ul id="menu" class="menu">
-          <li class="menu-item menu-item-home">
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
-  </li>
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
-  </li>
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
-  </li>
-          <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
-  </li>
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
-  </li>
-          <li class="menu-item menu-item-friends">
-    <a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
-  </li>
-          <li class="menu-item menu-item-lab">
-    <a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
-  </li>
-        <li class="menu-item menu-item-search">
-            <a href="javascript:;" class="popup-trigger">
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-        </li>
-    </ul>
-    <div class="site-search">
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
+<ul id="menu" class="menu">
+<li class="menu-item menu-item-home">
+<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+</li>
+<li class="menu-item menu-item-about">
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
+</li>
+<li class="menu-item menu-item-tags">
+<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+</li>
+<li class="menu-item menu-item-categories">
+<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+</li>
+<li class="menu-item menu-item-archives">
+<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+</li>
+<li class="menu-item menu-item-friends">
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe-asia"></i> <br>朋友们</a>
+</li>
+<li class="menu-item menu-item-lab">
+<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href="javascript:;" class="popup-trigger">
+<i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+</li>
+</ul>
+<div class="site-search">
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class="search-icon">
+<i class="fa fa-search"></i>
+</span>
+<span class="popup-btn-close">
+<i class="fa fa-times-circle"></i>
+</span>
+<div class="local-search-input-wrapper">
+<input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
 </div>
-    </div>
+</div>
+<div id="local-search-result"></div>
+</div>
+</div>
 </nav>
 </div>
-    </header>
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-  <div id="posts" class="posts-expand">
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-12/炉石卡组代码解析/">
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张书樵">
-      <meta itemprop="description" content="力电声光热，涵尽学海无涯">
-      <meta itemprop="image" content="/images/icon.gif">
-    </span>
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米米的博客">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">炉石卡组代码解析
-          </h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">发表于</span>
-              <time title="创建时间：2018-12-22 21:51:38" itemprop="dateCreated datePublished" datetime="2018-12-22T21:51:38+08:00">2018-12-22</time>
-          </span>
-            <span class="post-category">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-                <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
-            </span>
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-12/炉石卡组代码解析/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-12/炉石卡组代码解析/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-file-o"></i>
-             阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-            <div class="post-symbolscount">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  <span class="post-meta-item-text">本文字数：</span>
-                <span title="本文字数">4k</span>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                <span title="阅读时长">4 分钟</span>
-            </div>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-        <p>在前面的文章<a href="/2018-12/Base64编码的原理与实现/">Base64编码的原理与实现</a>中，讲到了Base64编码的诸多用处，例如编码图片以嵌入HTML代码。如果你对此有所了解，同时还是一个炉石玩家，就不难发现，暴雪推出的卡组代码功能，本质上就是用一个Base64编码的字符串来存储卡组信息。毕竟，你有时会见到以<code>=</code>或者<code>==</code>结尾的卡组代码，这正是Base64编码的典型特征。</p>
+</header>
+<main id="main" class="main">
+<div class="main-inner">
+<div class="content-wrap">
+<div id="content" class="content">
+<div id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-12/炉石卡组代码解析/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">炉石卡组代码解析
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="far fa-calendar"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-12-22 21:51:38" itemprop="dateCreated datePublished" datetime="2018-12-22T21:51:38+08:00">2018-12-22</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="far fa-folder"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
+</span>
+<span class="post-comments-count">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="far fa-comment"></i>
+</span>
+<a href="/2018-12/炉石卡组代码解析/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-12/炉石卡组代码解析/" itemprop="commentCount"></span>
+</a>
+</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="far fa-file"></i>
+阅读次数：
+<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="far fa-file-word"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">4k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="far fa-clock"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">4 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>在前面的文章<a href="/2018-12/Base64编码的原理与实现/">Base64编码的原理与实现</a>中，讲到了Base64编码的诸多用处，例如编码图片以嵌入HTML代码。如果你对此有所了解，同时还是一个炉石玩家，就不难发现，暴雪推出的卡组代码功能，本质上就是用一个Base64编码的字符串来存储卡组信息。毕竟，你有时会见到以<code>=</code>或者<code>==</code>结尾的卡组代码，这正是Base64编码的典型特征。</p>
 <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>当把卡组代码粘贴到炉石传说时，客户端将忽略以<code>#</code>字符开头的任何行，这就提供了在卡组代码中插入注释的可能性。一个例外是在卡组代码最前面的，以<code>###</code>开头的第一行。如果可以的话，它将被用作套牌名称。你可以从炉石中复制一套卡组到文本编辑器看看效果。<br>没有被注释的那一行，包含了除套牌名称外的所有信息。玩家在各大论坛、社区分享卡组时，也往往只需要这一行卡组代码。</p>
 <h2 id="DBF-ID"><a href="#DBF-ID" class="headerlink" title="DBF ID"></a>DBF ID</h2><p>为了了解编码的机制，我们需要先介绍DBF ID。这是每张炉石卡牌（包括可收集卡牌、衍生卡牌、冒险模式专属卡牌、英雄皮肤等）的唯一标识符——是的，这也是能够卡出下图这种BUG的原因。皮肤被标记为了一张紫卡。</p>
 <p><img src="/images/2018-12/tyrande.png" alt=""></p>
 <p>而炉石卡组代码正是使用DBF ID来表示每张卡牌。DBF ID可在游戏文件中找到。更加方便的方法是通过<a href="https://hearthstonejson.com" target="_blank" rel="noopener">HearthstoneJSON</a>，这上面提供了相关API。你也可以在这个网站上直接下载最新的<code>cards.collectible.json</code>，这里面包含了所有可收集卡牌的信息，例如各种语言的卡牌名称、描述等。</p>
 <h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><p><strong>除非另有说明，否则后面的每个值都是一个整数，编码为无符号的<a href="https://en.wikipedia.org/wiki/Variable-length_quantity" target="_blank" rel="noopener">varint</a>。</strong><br>如前所述，卡组代码是Base64编码的字节串。我们先来解码它。许多编程语言都可以做到这一点，以最好的语言$PHP为例：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$deckstring = <span class="string">"AAEBAaoIBJsDoxTCrgLBiQMN/gXiDP8P5hausAKlvgL4vwL5vwKW7wKm7wKMhQPzigP2igMA"</span>;</span><br><span class="line"><span class="comment">#这是一个非常有趣的萨满卡组</span></span><br><span class="line">$binary = base64_decode($deckstring);</span><br><span class="line">$hex = bin2hex($binary);</span><br><span class="line"><span class="comment">#对于这个卡组，$hex="00010101aa08049b03a314c2ae02c189030dfe05e20cff0fe616aeb002a5be02f8bf02f9bf0296ef02a6ef028c8503f38a03f68a0300"</span></span><br></pre></td></tr></table></figure></p>
 <p>这样就能得到初步解码后的十六进制字符串。如果你不是很擅长编程，也可以搜索一些现成的Base64解码工具，看看它是如何工作的。<br>将这个十六进制字符串按每两个元素切割，再把它们从16进制字符串转化为整型。也就是说，它们可以是00-ff，即0-255。一种实现的方法是这样：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$arr = str_split($hex, <span class="number">2</span>);</span><br><span class="line">$arr = array_map(<span class="string">"hexdec"</span>, $arr);</span><br></pre></td></tr></table></figure></p>
-<p><code>$arr</code>是一个由整数组成的数组。更具体的来说，就是varint。我们还需要进一步的解码，才能读取出有用的信息：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">read_varint</span><span class="params">(&amp;$data)</span> </span>&#123;</span><br><span class="line">    $shift = <span class="number">0</span>;</span><br><span class="line">    $result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">        $c = array_shift($data);</span><br><span class="line">        $result |= ($c &amp; <span class="number">0x7f</span>) &lt;&lt; $shift;</span><br><span class="line">        $shift += <span class="number">7</span>;</span><br><span class="line">        <span class="keyword">if</span> (!($c &amp; <span class="number">0x80</span>)) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>$arr</code>是一个由整数组成的数组。更具体的来说，就是varint。我们还需要进一步的解码，才能读取出有用的信息：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">read_varint</span><span class="params">(&amp;$data)</span> </span>&#123;</span><br><span class="line">    $shift = <span class="number">0</span>;</span><br><span class="line">    $result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        $c = array_shift($data);</span><br><span class="line">        $result |= ($c &amp; <span class="number">0x7f</span>) &lt;&lt; $shift;</span><br><span class="line">        $shift += <span class="number">7</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> ($c &amp; <span class="number">0x80</span>);</span><br><span class="line">    <span class="keyword">return</span> $result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这里的<code>array_shift</code>会将数组的第一个元素移出数组，并返回它的值。在其它的编程语言中，类似的方法可能被叫做<code>lpop</code>，<code>pop</code>，<code>shift</code>等等。而<code>|</code>，<code>&amp;</code>，<code>&lt;&lt;</code>等都是位运算的运算符。<code>read_varint</code>函数完成了解码过程，如果有兴趣的话可以试试用C或Python实现它。<br>不断地执行<code>read_varint($arr)</code>，直到取完<code>$arr</code>中的元素，就能把内容全部解码出来。</p>
 <p>根据作用，我们可以把解码后的卡组代码分为两个部分：元数据块和卡牌块。</p>
 <a id="more"></a>
@@ -248,577 +248,576 @@
 <p>尽管最终排序无关紧要，但卡牌仍会在各自所在的数组中，按DBF ID的升序进行排序，以便始终为相同的卡组生成相同的卡组代码。我们称所有按照这种方式排列卡牌列表（包括英雄）的卡组代码为规范的卡组代码。下面的参考实现应该已经可以生成规范的卡组代码。</p>
 <h2 id="一种实现"><a href="#一种实现" class="headerlink" title="一种实现"></a>一种实现</h2><p>看代码可能比文字描述更加直观。下面的<code>parse_deck()</code>函数就会按照前面介绍的方法，依次读取元数据块和卡牌块的信息。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parse_deck</span><span class="params">($data)</span> </span>&#123;</span><br><span class="line">    $reserve = read_varint($data);</span><br><span class="line">    <span class="keyword">if</span> ($reserve != <span class="number">0</span>) &#123;</span><br><span class="line">        printf(<span class="string">"Invalid deckstring"</span>);</span><br><span class="line">        <span class="keyword">die</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    $version = read_varint($data);</span><br><span class="line">    <span class="keyword">if</span> ($version != <span class="number">1</span>) &#123;</span><br><span class="line">        printf(<span class="string">"Unsupported deckstring version %s"</span>, $version);</span><br><span class="line">        <span class="keyword">die</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    $format = read_varint($data);</span><br><span class="line">    $heroes = [];</span><br><span class="line">    $num_heroes = read_varint($data);</span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $num_heroes; $i++) &#123;</span><br><span class="line">        $heroes[] = read_varint($data);</span><br><span class="line">    &#125;</span><br><span class="line">    $cards = [];</span><br><span class="line">    $num_cards_x1 = read_varint($data);</span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $num_cards_x1; $i++) &#123;</span><br><span class="line">        $card_id = read_varint($data);</span><br><span class="line">        $cards[] = [$card_id, <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    $num_cards_x2 = read_varint($data);</span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $num_cards_x2; $i++) &#123;</span><br><span class="line">        $card_id = read_varint($data);</span><br><span class="line">        $cards[] = [$card_id, <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    $num_cards_xn = read_varint($data);</span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $num_cards_xn; $i++) &#123;</span><br><span class="line">        $card_id = read_varint($data);</span><br><span class="line">        $count = read_varint($data);</span><br><span class="line">        $cards[] = [$card_id, $count];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> [$cards, $heroes, $format];</span><br><span class="line">&#125;</span><br><span class="line">parse_deck($arr);</span><br></pre></td></tr></table></figure></p>
 <p>这时，再通过建立DBF ID与卡牌对应关系的数据库，就能够实现在游戏外导入、导出和编辑卡组的功能了。不论是官方的<a href="https://hs.blizzard.cn/cards" target="_blank" rel="noopener">卡牌工具</a>，还是第三方平台（如旅法师营地）的<a href="https://www.iyingdi.com/web/tools/hearthstone/decks" target="_blank" rel="noopener">套牌编辑</a>功能，原理都是相似的。<br>所有代码已开源：<a href="https://github.com/stevenjoezhang/Hearthstone-Deck" target="_blank" rel="noopener">Hearthstone-Deck</a><br>其他语言的实现方式可以在<a href="https://github.com/HearthSim" target="_blank" rel="noopener">HearthSim</a>的官方GitHub账户下找到。</p>
+<p>博主搭建的API：<a href="https://api.galaxymimi.com/deck/" target="_blank" rel="noopener">炉石传说卡组</a></p>
 <p>拓展阅读：<br><a href="https://2heng.xin/2018/12/12/embed-hearthstone-deck-with-iframe" target="_blank" rel="noopener">在网页上展示你的炉石卡组吧</a><br><a href="https://www.darkerror.com/2018/05/hearth-stone-deck-string-decoding" target="_blank" rel="noopener">炉石传说卡组代码生成机制</a><br><a href="https://hearthsim.info/docs/deckstrings" target="_blank" rel="noopener">Hearthstone Deckstrings</a></p>
-    </div>
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>🍭支持一根棒棒糖！</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.png" alt="张书樵 微信支付">
-        <p>微信支付</p>
-      </div>
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝">
-        <p>支付宝</p>
-      </div>
-      <div id="bitcoin" style="display: inline-block">
-        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="张书樵 比特币">
-        <p>比特币</p>
-      </div>
-  </div>
 </div>
-      </div>
-      <div>
+<div>
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+<div>🍭支持一根棒棒糖！</div>
+<button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+<span>打赏</span>
+</button>
+<div id="QR" style="display: none;">
+<div id="wechat" style="display: inline-block">
+<img id="wechat_qr" src="/images/wechatpay.png" alt="张书樵 微信支付">
+<p>微信支付</p>
+</div>
+<div id="alipay" style="display: inline-block">
+<img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝">
+<p>支付宝</p>
+</div>
+<div id="bitcoin" style="display: inline-block">
+<img id="bitcoin_qr" src="/images/bitcoin.png" alt="张书樵 比特币">
+<p>比特币</p>
+</div>
+</div>
+</div>
+</div>
+<div>
 <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>张书樵</li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="https://zhangshuqiao.org/2018-12/炉石卡组代码解析/" title="炉石卡组代码解析">https://zhangshuqiao.org/2018-12/炉石卡组代码解析/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+<li class="post-copyright-author">
+<strong>本文作者： </strong>张书樵</li>
+<li class="post-copyright-link">
+<strong>本文链接：</strong>
+<a href="https://zhangshuqiao.org/2018-12/炉石卡组代码解析/" title="炉石卡组代码解析">https://zhangshuqiao.org/2018-12/炉石卡组代码解析/</a>
+</li>
+<li class="post-copyright-license">
+<strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
-      </div>
-    <footer class="post-footer">
-        <div class="post-tags">
-            <a href="/tags/PHP/" rel="tag"># PHP</a>
-        </div>
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-              <a href="/2018-12/Command Line Russian Roulette/" rel="next" title="Command Line Russian Roulette">
-                <i class="fa fa-chevron-left"></i> Command Line Russian Roulette
-              </a>
-          </div>
-          <span class="post-nav-divider"></span>
-          <div class="post-nav-prev post-nav-item">
-          </div>
-        </div>
-    </footer>
-  </div>
-  </article>
-  </div>
-          </div>
-    <div class="comments" id="comments">
-    </div>
-        </div>
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-              <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
-              <p class="site-author-name" itemprop="name">张书樵</p>
-              <p class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</p>
-          </div>
-            <nav class="site-state motion-element">
-                <div class="site-state-item site-state-posts">
-                  <a href="/archives/">
-                    <span class="site-state-item-count">87</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    <span class="site-state-item-count">7</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    <span class="site-state-item-count">23</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-            </nav>
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-            <div class="links-of-blogroll motion-element links-of-blogroll-block">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-institution"></i>
-                主站
-              </div>
-              <ul class="links-of-blogroll-list">
-                  <li class="links-of-blogroll-item">
-                    <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
-                  </li>
-              </ul>
-            </div>
-        </div>
-      </div>
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DBF-ID"><span class="nav-number">2.</span> <span class="nav-text">DBF ID</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式"><span class="nav-number">3.</span> <span class="nav-text">格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#元数据块"><span class="nav-number">3.1.</span> <span class="nav-text">元数据块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卡牌块"><span class="nav-number">3.2.</span> <span class="nav-text">卡牌块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一种实现"><span class="nav-number">4.</span> <span class="nav-text">一种实现</span></a></li></ol></div>
-          </div>
-        </div>
-      <!--/noindex-->
-    </div>
-  </aside>
-      </div>
-    </main>
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">张书樵</span>
+</div>
+<footer class="post-footer">
+<div class="post-tags">
+<a href="/tags/PHP/" rel="tag"># PHP</a>
+</div>
+<div class="post-nav">
+<div class="post-nav-next post-nav-item">
+<a href="/2018-12/Command Line Russian Roulette/" rel="next" title="Command Line Russian Roulette">
+<i class="fa fa-chevron-left"></i> Command Line Russian Roulette
+</a>
+</div>
+<span class="post-nav-divider"></span>
+<div class="post-nav-prev post-nav-item">
+</div>
+</div>
+</footer>
+</div>
+</article>
+</div>
+</div>
+<div class="comments" id="comments">
+</div>
+</div>
+<div class="sidebar-toggle">
+<div class="sidebar-toggle-line-wrap">
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id="sidebar" class="sidebar">
+<div class="sidebar-inner">
+<ul class="sidebar-nav motion-element">
+<li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+文章目录
+</li>
+<li class="sidebar-nav-overview" data-target="site-overview-wrap">
+站点概览
+</li>
+</ul>
+<div class="site-overview-wrap sidebar-panel">
+<div class="site-overview">
+<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
+<p class="site-author-name" itemprop="name">张书樵</p>
+<p class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href="/archives/">
+<span class="site-state-item-count">87</span>
+<span class="site-state-item-name">日志</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href="/categories/index.html">
+<span class="site-state-item-count">7</span>
+<span class="site-state-item-name">分类</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href="/tags/index.html">
+<span class="site-state-item-count">23</span>
+<span class="site-state-item-name">标签</span>
+</a>
+</div>
+</nav>
+<div class="feed-link motion-element">
+<a href="/atom.xml" rel="alternate">
+<i class="fa fa-rss"></i>
+RSS
+</a>
+</div>
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+<i class="fa  fa-fw fa-university"></i>
+主站
+</div>
+<ul class="links-of-blogroll-list">
+<li class="links-of-blogroll-item">
+<a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!--noindex-->
+<div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+<div class="post-toc">
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DBF-ID"><span class="nav-number">2.</span> <span class="nav-text">DBF ID</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式"><span class="nav-number">3.</span> <span class="nav-text">格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#元数据块"><span class="nav-number">3.1.</span> <span class="nav-text">元数据块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卡牌块"><span class="nav-number">3.2.</span> <span class="nav-text">卡牌块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一种实现"><span class="nav-number">4.</span> <span class="nav-text">一种实现</span></a></li></ol></div>
+</div>
+</div>
+<!--/noindex-->
+</div>
+</aside>
+</div>
+</main>
+<footer id="footer" class="footer">
+<div class="footer-inner">
+<div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+<span class="with-love" id="animate">
+<i class="fa fa-heart"></i>
+</span>
+<span class="author" itemprop="copyrightHolder">张书樵</span>
 </div>
 <div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="site-uv" title="总访客量">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-    <span class="site-pv" title="总访问量">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span class="site-uv" title="总访客量">
+<i class="fa fa-user"></i>
+<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+</span>
+<span class="site-pv" title="总访问量">
+<i class="fa fa-eye"></i>
+<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+</span>
 </div>
-      </div>
-    </footer>
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-          <span id="scrollpercent"><span>0</span>%</span>
-      </div>
-  </div>
+</div>
+</footer>
+<div class="back-to-top">
+<i class="fa fa-arrow-up"></i>
+<span id="scrollpercent"><span>0</span>%</span>
+</div>
+</div>
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+window.Promise = null;
+}
 </script>
-    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5.1/velocity.ui.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
-    <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-    <script src="/lib/waifu/live2d.min.js"></script>
-    <script src="/lib/waifu/waifu-tips.js"></script>
-    <script src="/lib/custom.js"></script>
-  <script src="/js/src/utils.js?v=6.6.0"></script>
-  <script src="/js/src/motion.js?v=6.6.0"></script>
-  <script src="/js/src/affix.js?v=6.6.0"></script>
-  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
-  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/fastclick/lib/fastclick.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
+<script src="/js/src/utils.js?v=6.6.0"></script>
+<script src="/js/src/motion.js?v=6.6.0"></script>
+<script src="/js/src/affix.js?v=6.6.0"></script>
+<script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+<script src="/js/src/scrollspy.js?v=6.6.0"></script>
 <script src="/js/src/post-details.js?v=6.6.0"></script>
-  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="/lib/Valine.min.js"></script>
-  <script>
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(function (item) {
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: true,
-        notify: false,
-        appId: '2L2N30Kyi18K1DjU0qxMGALD-gzGzoHsz',
-        appKey: 'Bwrec8XDJon2rocQ5ScFcFWl',
-        placeholder: '您可以在这里输入评论哟～',
-        avatar:'mm',
-        meta:guest,
-        pageSize:'12' || 10,
-        visitor: false
-    });
-  </script>
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                content = unescapeHtml(content);
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-                // show search results
-                if (isMatch) {
-                  // sort index by position of keyword
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-                  // merge hits into slices
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-                      // move to next position of hit
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-                  // sort slices in content by search text's count and hits' count
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-                  // select top N slices in content
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-                  // highlight title and content
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-                  var resultItem = '';
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-          proceedsearch();
-        }
-      });
-    }
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-  <script src="//cdn.jsdelivr.net/npm/pangu@3.3.0/dist/browser/pangu.min.js"></script>
-  <script>pangu.spacingPage();</script>
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap');
-      $(e).after($wrap);
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text();
-        }).toArray().join('\n');
-        var ta = document.createElement('textarea');
-        var range = document.createRange(); //For Chrome
-        var sel = window.getSelection(); //For Chrome
-        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-        ta.style.top = yPosition + 'px'; //Prevent page scroll
-        ta.style.position = 'absolute';
-        ta.style.opacity = '0';
-        ta.value = code;
-        ta.textContent = code; //For FireFox
-        ta.contentEditable = true;
-        ta.readOnly = false;
-        document.body.appendChild(ta);
-        range.selectNode(ta);
-        sel.removeAllRanges();
-        sel.addRange(range);
-        ta.setSelectionRange(0, code.length);
-        var result = document.execCommand('copy');
-          if (result) $(this).text('复制成功');
-          else $(this).text('复制失败');
-        ta.blur(); //For iOS
-        $(this).blur();
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn');
-        setTimeout(function () {
-          $b.text('复制');
-        }, 300);
-      }).append(e);
-    })
-  </script>
+<script src="/js/src/bootstrap.js?v=6.6.0"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src="/lib/Valine.min.js"></script>
+<script>
+var GUEST = ['nick','mail','link'];
+var guest = 'nick,mail,link';
+guest = guest.split(',').filter(function (item) {
+return GUEST.indexOf(item) > -1;
+});
+new Valine({
+el: '#comments' ,
+verify: true,
+notify: false,
+appId: '2L2N30Kyi18K1DjU0qxMGALD-gzGzoHsz',
+appKey: 'Bwrec8XDJon2rocQ5ScFcFWl',
+placeholder: '您可以在这里输入评论哟～',
+avatar: 'mm',
+meta:guest,
+pageSize: '12' || 10,
+visitor: false
+});
+</script>
+<script>
+// Popup Window;
+var isfetched = false;
+var isXml = true;
+// Search DB path;
+var search_path = "search.xml";
+if (search_path.length === 0) {
+search_path = "search.xml";
+} else if (/json$/i.test(search_path)) {
+isXml = false;
+}
+var path = "/" + search_path;
+// monitor main search box;
+var onPopupClose = function (e) {
+$('.popup').hide();
+$('#local-search-input').val('');
+$('.search-result-list').remove();
+$('#no-result').remove();
+$(".local-search-pop-overlay").remove();
+$('body').css('overflow', '');
+}
+function proceedsearch() {
+$("body")
+.append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+.css('overflow', 'hidden');
+$('.search-popup-overlay').click(onPopupClose);
+$('.popup').toggle();
+var $localSearchInput = $('#local-search-input');
+$localSearchInput.attr("autocapitalize", "none");
+$localSearchInput.attr("autocorrect", "off");
+$localSearchInput.focus();
+}
+// search function;
+var searchFunc = function(path, search_id, content_id) {
+'use strict';
+// start loading animation
+$("body")
+.append('<div class="search-popup-overlay local-search-pop-overlay">' +
+'<div id="search-loading-icon">' +
+'<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+'</div>' +
+'</div>')
+.css('overflow', 'hidden');
+$("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+// ref: https://github.com/ForbesLindesay/unescape-html
+var unescapeHtml = function(html) {
+return String(html)
+.replace(/&quot;/g, '"')
+.replace(/&#39;/g, '\'')
+.replace(/&#x3A;/g, ':')
+// replace all the other &#x; chars
+.replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+.replace(/&lt;/g, '<')
+.replace(/&gt;/g, '>')
+.replace(/&amp;/g, '&');
+};
+$.ajax({
+url: path,
+dataType: isXml ? "xml" : "json",
+async: true,
+success: function(res) {
+// get the contents from search data
+isfetched = true;
+$('.popup').detach().appendTo('.header-inner');
+var datas = isXml ? $("entry", res).map(function() {
+return {
+title: $("title", this).text(),
+content: $("content",this).text(),
+url: $("url" , this).text()
+};
+}).get() : res;
+var input = document.getElementById(search_id);
+var resultContent = document.getElementById(content_id);
+var inputEventFunction = function() {
+var searchText = input.value.trim().toLowerCase();
+var keywords = searchText.split(/[\s\-]+/);
+if (keywords.length > 1) {
+keywords.push(searchText);
+}
+var resultItems = [];
+if (searchText.length > 0) {
+// perform local searching
+datas.forEach(function(data) {
+var isMatch = false;
+var hitCount = 0;
+var searchTextCount = 0;
+var title = data.title.trim();
+var titleInLowerCase = title.toLowerCase();
+var content = data.content.trim().replace(/<[^>]+>/g,"");
+content = unescapeHtml(content);
+var contentInLowerCase = content.toLowerCase();
+var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+var indexOfTitle = [];
+var indexOfContent = [];
+// only match articles with not empty titles
+if(title != '') {
+keywords.forEach(function(keyword) {
+function getIndexByWord(word, text, caseSensitive) {
+var wordLen = word.length;
+if (wordLen === 0) {
+return [];
+}
+var startPosition = 0, position = [], index = [];
+if (!caseSensitive) {
+text = text.toLowerCase();
+word = word.toLowerCase();
+}
+while ((position = text.indexOf(word, startPosition)) > -1) {
+index.push({position: position, word: word});
+startPosition = position + wordLen;
+}
+return index;
+}
+indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+});
+if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+isMatch = true;
+hitCount = indexOfTitle.length + indexOfContent.length;
+}
+}
+// show search results
+if (isMatch) {
+// sort index by position of keyword
+[indexOfTitle, indexOfContent].forEach(function (index) {
+index.sort(function (itemLeft, itemRight) {
+if (itemRight.position !== itemLeft.position) {
+return itemRight.position - itemLeft.position;
+} else {
+return itemLeft.word.length - itemRight.word.length;
+}
+});
+});
+// merge hits into slices
+function mergeIntoSlice(text, start, end, index) {
+var item = index[index.length - 1];
+var position = item.position;
+var word = item.word;
+var hits = [];
+var searchTextCountInSlice = 0;
+while (position + word.length <= end && index.length != 0) {
+if (word === searchText) {
+searchTextCountInSlice++;
+}
+hits.push({position: position, length: word.length});
+var wordEnd = position + word.length;
+// move to next position of hit
+index.pop();
+while (index.length != 0) {
+item = index[index.length - 1];
+position = item.position;
+word = item.word;
+if (wordEnd > position) {
+index.pop();
+} else {
+break;
+}
+}
+}
+searchTextCount += searchTextCountInSlice;
+return {
+hits: hits,
+start: start,
+end: end,
+searchTextCount: searchTextCountInSlice
+};
+}
+var slicesOfTitle = [];
+if (indexOfTitle.length != 0) {
+slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+}
+var slicesOfContent = [];
+while (indexOfContent.length != 0) {
+var item = indexOfContent[indexOfContent.length - 1];
+var position = item.position;
+var word = item.word;
+// cut out 100 characters
+var start = position - 20;
+var end = position + 80;
+if(start < 0){
+start = 0;
+}
+if (end < position + word.length) {
+end = position + word.length;
+}
+if(end > content.length){
+end = content.length;
+}
+slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+}
+// sort slices in content by search text's count and hits' count
+slicesOfContent.sort(function (sliceLeft, sliceRight) {
+if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+} else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+return sliceRight.hits.length - sliceLeft.hits.length;
+} else {
+return sliceLeft.start - sliceRight.start;
+}
+});
+// select top N slices in content
+var upperBound = parseInt('1');
+if (upperBound >= 0) {
+slicesOfContent = slicesOfContent.slice(0, upperBound);
+}
+// highlight title and content
+function highlightKeyword(text, slice) {
+var result = '';
+var prevEnd = slice.start;
+slice.hits.forEach(function (hit) {
+result += text.substring(prevEnd, hit.position);
+var end = hit.position + hit.length;
+result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+prevEnd = end;
+});
+result += text.substring(prevEnd, slice.end);
+return result;
+}
+var resultItem = '';
+if (slicesOfTitle.length != 0) {
+resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+} else {
+resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+}
+slicesOfContent.forEach(function (slice) {
+resultItem += "<a href='" + articleUrl + "'>" +
+"<p class=\"search-result\">" + highlightKeyword(content, slice) +
+"...</p>" + "</a>";
+});
+resultItem += "</li>";
+resultItems.push({
+item: resultItem,
+searchTextCount: searchTextCount,
+hitCount: hitCount,
+id: resultItems.length
+});
+}
+})
+};
+if (keywords.length === 1 && keywords[0] === "") {
+resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+} else if (resultItems.length === 0) {
+resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+} else {
+resultItems.sort(function (resultLeft, resultRight) {
+if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+return resultRight.searchTextCount - resultLeft.searchTextCount;
+} else if (resultLeft.hitCount !== resultRight.hitCount) {
+return resultRight.hitCount - resultLeft.hitCount;
+} else {
+return resultRight.id - resultLeft.id;
+}
+});
+var searchResultList = '<ul class=\"search-result-list\">';
+resultItems.forEach(function (result) {
+searchResultList += result.item;
+})
+searchResultList += "</ul>";
+resultContent.innerHTML = searchResultList;
+}
+}
+if ('auto' === 'auto') {
+input.addEventListener('input', inputEventFunction);
+} else {
+$('.search-icon').click(inputEventFunction);
+input.addEventListener('keypress', function (event) {
+if (event.keyCode === 13) {
+inputEventFunction();
+}
+});
+}
+// remove loading animation
+$(".local-search-pop-overlay").remove();
+$('body').css('overflow', '');
+proceedsearch();
+}
+});
+}
+// handle and trigger popup window;
+$('.popup-trigger').click(function(e) {
+e.stopPropagation();
+if (isfetched === false) {
+searchFunc(path, 'local-search-input', 'local-search-result');
+} else {
+proceedsearch();
+};
+});
+$('.popup-btn-close').click(onPopupClose);
+$('.popup').click(function(e){
+e.stopPropagation();
+});
+$(document).on('keyup', function (event) {
+var shouldDismissSearchPopup = event.which === 27 &&
+$('.search-popup').is(':visible');
+if (shouldDismissSearchPopup) {
+onPopupClose();
+}
+});
+</script>
+<style>
+.copy-btn {
+display: inline-block;
+padding: 6px 12px;
+font-size: 13px;
+font-weight: 700;
+line-height: 20px;
+color: #333;
+white-space: nowrap;
+vertical-align: middle;
+cursor: pointer;
+background-color: #eee;
+background-image: linear-gradient(#fcfcfc, #eee);
+border: 1px solid #d5d5d5;
+border-radius: 3px;
+user-select: none;
+outline: 0;
+}
+.highlight-wrap .copy-btn {
+transition: opacity .3s ease-in-out;
+opacity: 0;
+padding: 2px 6px;
+position: absolute;
+right: 4px;
+top: 8px;
+}
+.highlight-wrap:hover .copy-btn,
+.highlight-wrap .copy-btn:focus {
+opacity: 1
+}
+.highlight-wrap {
+position: relative;
+}
+</style>
+<script>
+$('.highlight').each(function (i, e) {
+var $wrap = $('<div>').addClass('highlight-wrap');
+$(e).after($wrap);
+$wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+return $(e).text();
+}).toArray().join('\n');
+var ta = document.createElement('textarea');
+var range = document.createRange(); //For Chrome
+var sel = window.getSelection(); //For Chrome
+var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+ta.style.top = yPosition + 'px'; //Prevent page scroll
+ta.style.position = 'absolute';
+ta.style.opacity = '0';
+ta.value = code;
+ta.textContent = code; //For FireFox
+ta.contentEditable = true;
+ta.readOnly = false;
+document.body.appendChild(ta);
+range.selectNode(ta);
+sel.removeAllRanges();
+sel.addRange(range);
+ta.setSelectionRange(0, code.length);
+var result = document.execCommand('copy');
+if (result) $(this).text('复制成功');
+else $(this).text('复制失败');
+ta.blur(); //For iOS
+$(this).blur();
+})).on('mouseleave', function (e) {
+var $b = $(this).find('.copy-btn');
+setTimeout(function () {
+$b.text('复制');
+}, 300);
+}).append(e);
+})
+</script>
 </body>
 </html>

@@ -498,9 +498,6 @@ body {
     width: 73%;
   }
 }
-.main {
-  padding-bottom: 150px;
-}
 .main-inner {
   margin: 0 auto;
   width: calc(100% - 20px);
@@ -516,7 +513,7 @@ body {
   }
 }
 .footer {
-  position: absolute;
+/*position: absolute;*/
   left: 0;
   bottom: 0;
   width: 100%;
@@ -1740,6 +1737,9 @@ pre .javascript .function {
   display: inline-block;
   margin: 0.8em 2em 0 2em;
 }
+#QR p {
+  text-align: center;
+}
 #QR > div:hover p {
   animation: roll 0.1s infinite linear;
   -webkit-animation: roll 0.1s infinite linear;
@@ -2005,7 +2005,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffcd69;
+  background: #7d8be2;
 }
 .links-of-blogroll {
   font-size: 13px;

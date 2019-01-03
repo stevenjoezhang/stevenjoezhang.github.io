@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangshuqiao.org/"/>
-  <updated>2018-12-29T16:55:49.581Z</updated>
+  <updated>2019-01-02T18:04:48.713Z</updated>
   <id>https://zhangshuqiao.org/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>成功召唤独角兽</title>
+    <link href="https://zhangshuqiao.org/2019-01/%E6%88%90%E5%8A%9F%E5%8F%AC%E5%94%A4%E7%8B%AC%E8%A7%92%E5%85%BD/"/>
+    <id>https://zhangshuqiao.org/2019-01/成功召唤独角兽/</id>
+    <published>2019-01-02T17:30:28.000Z</published>
+    <updated>2019-01-02T18:04:48.713Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/2019-01/Unicorn.png" alt=""></p><blockquote><p>当你的代码出现未定义行为时，你会得到一个<code>segmentation fault</code>和一堆损坏的数据。当Jeff Dean的代码出现未定义行为时，一个独角兽会踏着彩虹从天而降并给每个人提供免费的冰激凌。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/images/2019-01/Unicorn.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当你的代码出现未定义行为时，你会得到一个&lt;code&gt;segmentation fault&lt;/code&gt;和一堆损坏的数据。当Jeff Dean
+      
+    
+    </summary>
+    
+      <category term="幽默" scheme="https://zhangshuqiao.org/categories/%E5%B9%BD%E9%BB%98/"/>
+    
+    
+      <category term="GitHub" scheme="https://zhangshuqiao.org/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
     <title>炉石卡组代码解析</title>
     <link href="https://zhangshuqiao.org/2018-12/%E7%82%89%E7%9F%B3%E5%8D%A1%E7%BB%84%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
     <id>https://zhangshuqiao.org/2018-12/炉石卡组代码解析/</id>
     <published>2018-12-22T13:51:38.000Z</published>
-    <updated>2018-12-29T16:55:49.581Z</updated>
+    <updated>2018-12-31T13:23:23.347Z</updated>
     
     <content type="html"><![CDATA[<p>在前面的文章<a href="/2018-12/Base64编码的原理与实现/">Base64编码的原理与实现</a>中，讲到了Base64编码的诸多用处，例如编码图片以嵌入HTML代码。如果你对此有所了解，同时还是一个炉石玩家，就不难发现，暴雪推出的卡组代码功能，本质上就是用一个Base64编码的字符串来存储卡组信息。毕竟，你有时会见到以<code>=</code>或者<code>==</code>结尾的卡组代码，这正是Base64编码的典型特征。</p><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>当把卡组代码粘贴到炉石传说时，客户端将忽略以<code>#</code>字符开头的任何行，这就提供了在卡组代码中插入注释的可能性。一个例外是在卡组代码最前面的，以<code>###</code>开头的第一行。如果可以的话，它将被用作套牌名称。你可以从炉石中复制一套卡组到文本编辑器看看效果。<br>没有被注释的那一行，包含了除套牌名称外的所有信息。玩家在各大论坛、社区分享卡组时，也往往只需要这一行卡组代码。</p><h2 id="DBF-ID"><a href="#DBF-ID" class="headerlink" title="DBF ID"></a>DBF ID</h2><p>为了了解编码的机制，我们需要先介绍DBF ID。这是每张炉石卡牌（包括可收集卡牌、衍生卡牌、冒险模式专属卡牌、英雄皮肤等）的唯一标识符——是的，这也是能够卡出下图这种BUG的原因。皮肤被标记为了一张紫卡。</p><p><img src="/images/2018-12/tyrande.png" alt=""></p><p>而炉石卡组代码正是使用DBF ID来表示每张卡牌。DBF ID可在游戏文件中找到。更加方便的方法是通过<a href="https://hearthstonejson.com" target="_blank" rel="noopener">HearthstoneJSON</a>，这上面提供了相关API。你也可以在这个网站上直接下载最新的<code>cards.collectible.json</code>，这里面包含了所有可收集卡牌的信息，例如各种语言的卡牌名称、描述等。</p><h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><p><strong>除非另有说明，否则后面的每个值都是一个整数，编码为无符号的<a href="https://en.wikipedia.org/wiki/Variable-length_quantity" target="_blank" rel="noopener">varint</a>。</strong><br>如前所述，卡组代码是Base64编码的字节串。我们先来解码它。许多编程语言都可以做到这一点，以最好的语言$PHP为例：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$deckstring = <span class="string">"AAEBAaoIBJsDoxTCrgLBiQMN/gXiDP8P5hausAKlvgL4vwL5vwKW7wKm7wKMhQPzigP2igMA"</span>;</span><br><span class="line"><span class="comment">#这是一个非常有趣的萨满卡组</span></span><br><span class="line">$binary = base64_decode($deckstring);</span><br><span class="line">$hex = bin2hex($binary);</span><br><span class="line"><span class="comment">#对于这个卡组，$hex="00010101aa08049b03a314c2ae02c189030dfe05e20cff0fe616aeb002a5be02f8bf02f9bf0296ef02a6ef028c8503f38a03f68a0300"</span></span><br></pre></td></tr></table></figure></p><p>这样就能得到初步解码后的十六进制字符串。如果你不是很擅长编程，也可以搜索一些现成的Base64解码工具，看看它是如何工作的。<br>将这个十六进制字符串按每两个元素切割，再把它们从16进制字符串转化为整型。也就是说，它们可以是00-ff，即0-255。一种实现的方法是这样：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$arr = str_split($hex, <span class="number">2</span>);</span><br><span class="line">$arr = array_map(<span class="string">"hexdec"</span>, $arr);</span><br></pre></td></tr></table></figure></p><p><code>$arr</code>是一个由整数组成的数组。更具体的来说，就是varint。我们还需要进一步的解码，才能读取出有用的信息：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">read_varint</span><span class="params">(&amp;$data)</span> </span>&#123;</span><br><span class="line">    $shift = <span class="number">0</span>;</span><br><span class="line">    $result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        $c = array_shift($data);</span><br><span class="line">        $result |= ($c &amp; <span class="number">0x7f</span>) &lt;&lt; $shift;</span><br><span class="line">        $shift += <span class="number">7</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> ($c &amp; <span class="number">0x80</span>);</span><br><span class="line">    <span class="keyword">return</span> $result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>这里的<code>array_shift</code>会将数组的第一个元素移出数组，并返回它的值。在其它的编程语言中，类似的方法可能被叫做<code>lpop</code>，<code>pop</code>，<code>shift</code>等等。而<code>|</code>，<code>&amp;</code>，<code>&lt;&lt;</code>等都是位运算的运算符。<code>read_varint</code>函数完成了解码过程，如果有兴趣的话可以试试用C或Python实现它。<br>不断地执行<code>read_varint($arr)</code>，直到取完<code>$arr</code>中的元素，就能把内容全部解码出来。</p><p>根据作用，我们可以把解码后的卡组代码分为两个部分：元数据块和卡牌块。</p><a id="more"></a><h3 id="元数据块"><a href="#元数据块" class="headerlink" title="元数据块"></a>元数据块</h3><p>在<code>$arr</code>中，前五个元素分别为：</p><ul><li>保留字节0x00</li><li>版本号（固定为1）</li><li>模式（1为狂野，2为标准）</li><li>使用英雄卡牌的数量（固定为1）</li><li>使用的英雄卡牌的类型（长度不确定，一般是1-3位）</li></ul><p>可见卡组代码以字节0x00开头。然后是编码版本号，目前始终为1。虽然这五个元素并没有官方名称，不过从作用上可以看作元数据。<br>还有一点是，所谓『英雄卡牌的类型』就是你所使用的英雄皮肤。这个参数必不可少。英雄的职业决定了套牌所用的职业，但是套牌表面上是为英雄制作的，而不是为一个职业。如果卡组代码指定的英雄是皮肤而不是默认的英雄，那么在你复制卡组时，系统就会选择使用皮肤而不是默认英雄（前提是你买了这个皮肤）。<br><strong>关于英雄的注意事项：</strong>尽管它是一个数组，但它是用于<em>初始英雄</em>，而不是<em>可打出的英雄牌</em>（如冰封王座的DK）。</p><h3 id="卡牌块"><a href="#卡牌块" class="headerlink" title="卡牌块"></a>卡牌块</h3><p>在元数据块之后，继续读取<code>$arr</code>的元素，那么接下来就轮到卡牌块了。它按以下顺序分为三对长度+数组的组合：</p><ul><li>卡组中存在一张的卡</li><li>卡组中存在两张的卡</li><li>卡组中存在n张的卡</li></ul><p><strong>每对都有一个前导varint，指定数组中的项目数。</strong>这种结构的目标是使卡组代码尽可能紧凑。<strong>如前所述，每张卡都用varint型的DBF ID表示。</strong></p><p>所谓『卡组中存在n张的卡』，指的是卡组中的所有其他卡牌。此数组是一个varint对组成的列表，每一对的第一个元素表示DBF ID，第二个元素是该卡牌在卡组中出现的次数。它<strong>应该</strong>只包含在牌组中至少出现三次的牌，因而意味着它（在这种情况下）对于构筑卡组应当是空的（毕竟一张卡至多只能带两张）；但理论上它也可以包含有一张的卡和有两张的卡。</p><p>尽管最终排序无关紧要，但卡牌仍会在各自所在的数组中，按DBF ID的升序进行排序，以便始终为相同的卡组生成相同的卡组代码。我们称所有按照这种方式排列卡牌列表（包括英雄）的卡组代码为规范的卡组代码。下面的参考实现应该已经可以生成规范的卡组代码。</p><h2 id="一种实现"><a href="#一种实现" class="headerlink" title="一种实现"></a>一种实现</h2><p>看代码可能比文字描述更加直观。下面的<code>parse_deck()</code>函数就会按照前面介绍的方法，依次读取元数据块和卡牌块的信息。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parse_deck</span><span class="params">($data)</span> </span>&#123;</span><br><span class="line">    $reserve = read_varint($data);</span><br><span class="line">    <span class="keyword">if</span> ($reserve != <span class="number">0</span>) &#123;</span><br><span class="line">        printf(<span class="string">"Invalid deckstring"</span>);</span><br><span class="line">        <span class="keyword">die</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    $version = read_varint($data);</span><br><span class="line">    <span class="keyword">if</span> ($version != <span class="number">1</span>) &#123;</span><br><span class="line">        printf(<span class="string">"Unsupported deckstring version %s"</span>, $version);</span><br><span class="line">        <span class="keyword">die</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    $format = read_varint($data);</span><br><span class="line">    $heroes = [];</span><br><span class="line">    $num_heroes = read_varint($data);</span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $num_heroes; $i++) &#123;</span><br><span class="line">        $heroes[] = read_varint($data);</span><br><span class="line">    &#125;</span><br><span class="line">    $cards = [];</span><br><span class="line">    $num_cards_x1 = read_varint($data);</span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $num_cards_x1; $i++) &#123;</span><br><span class="line">        $card_id = read_varint($data);</span><br><span class="line">        $cards[] = [$card_id, <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    $num_cards_x2 = read_varint($data);</span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $num_cards_x2; $i++) &#123;</span><br><span class="line">        $card_id = read_varint($data);</span><br><span class="line">        $cards[] = [$card_id, <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    $num_cards_xn = read_varint($data);</span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $num_cards_xn; $i++) &#123;</span><br><span class="line">        $card_id = read_varint($data);</span><br><span class="line">        $count = read_varint($data);</span><br><span class="line">        $cards[] = [$card_id, $count];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> [$cards, $heroes, $format];</span><br><span class="line">&#125;</span><br><span class="line">parse_deck($arr);</span><br></pre></td></tr></table></figure></p><p>这时，再通过建立DBF ID与卡牌对应关系的数据库，就能够实现在游戏外导入、导出和编辑卡组的功能了。不论是官方的<a href="https://hs.blizzard.cn/cards" target="_blank" rel="noopener">卡牌工具</a>，还是第三方平台（如旅法师营地）的<a href="https://www.iyingdi.com/web/tools/hearthstone/decks" target="_blank" rel="noopener">套牌编辑</a>功能，原理都是相似的。<br>所有代码已开源：<a href="https://github.com/stevenjoezhang/Hearthstone-Deck" target="_blank" rel="noopener">Hearthstone-Deck</a><br>其他语言的实现方式可以在<a href="https://github.com/HearthSim" target="_blank" rel="noopener">HearthSim</a>的官方GitHub账户下找到。</p><p>博主搭建的API：<a href="https://api.galaxymimi.com/deck/" target="_blank" rel="noopener">炉石传说卡组</a></p><p>拓展阅读：<br><a href="https://2heng.xin/2018/12/12/embed-hearthstone-deck-with-iframe" target="_blank" rel="noopener">在网页上展示你的炉石卡组吧</a><br><a href="https://www.darkerror.com/2018/05/hearth-stone-deck-string-decoding" target="_blank" rel="noopener">炉石传说卡组代码生成机制</a><br><a href="https://hearthsim.info/docs/deckstrings" target="_blank" rel="noopener">Hearthstone Deckstrings</a></p>]]></content>
     
@@ -746,33 +773,6 @@
     
     
       <category term="JavaScript" scheme="https://zhangshuqiao.org/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>入手信达小黑天文望远镜</title>
-    <link href="https://zhangshuqiao.org/2018-08/%E5%85%A5%E6%89%8B%E4%BF%A1%E8%BE%BE%E5%B0%8F%E9%BB%91%E5%A4%A9%E6%96%87%E6%9C%9B%E8%BF%9C%E9%95%9C/"/>
-    <id>https://zhangshuqiao.org/2018-08/入手信达小黑天文望远镜/</id>
-    <published>2018-08-20T15:44:29.000Z</published>
-    <updated>2018-12-22T18:12:41.093Z</updated>
-    
-    <content type="html"><![CDATA[<p>2018年的暑期，诸多天文奇观轮番上演：火星冲日、日偏食、英仙座流星雨，这对天文爱好者来说是绝佳的观测机会。在好基友的怂恿下，博主也正式踏入了天文摄影的巨坑。<br>博主在小学时曾拥有一台700/60入门级伽利略式天文望远镜，但是其使用的经纬仪是纯手动的，调节精度较差；且望远镜本身存在明显的色差，成像效果不佳。为了满足行星摄影的要求，需要入手一台更为可靠的天文望远镜。目前市面上常见的天文望远镜，一般由三部分组成：三脚架（底座），赤道仪（经纬仪），以及望远镜镜筒。镜筒主体根据成像原理划分，有牛顿反射式、马克苏托夫-卡塞格林式和复消色差（APO）式等等。基于其他成像原理的望远镜也能在市面上买到，不过从销量和评价上来看，前文提到的这三种望远镜占主流。在查阅了大量资料，并参考了天文相关贴吧、论坛后，博主决定入手信达小黑天文望远镜。这是一款入门级牛顿反射式望远镜，其焦距750mm，口径150mm，等效光圈较大，适合摄影；赤道仪采用EQ3D，搭配双轴电跟，在通过北极星校准极轴后，即可进行长时间曝光。<br>这是望远镜组装完成的状态：</p><p><img src="/images/2018-08/IMG_0272.jpg" alt=""></p><p>安装EF卡口转接环，就可以连接单反相机了：</p><p><img src="/images/2018-08/IMG_0199.jpg" alt=""></p><p>8月11日拍摄的日偏食：</p><p><img src="/images/2018-08/IMG_5639.jpg" alt=""></p><p>由于望远镜自带的巴罗镜只适用于目镜，为了增加拍照的放大率，博主还购买了一个EF卡口的增倍镜。这是使用增倍镜后拍摄的月球：</p><p><img src="/images/2018-08/IMG_5767.jpg" alt=""></p><p>由于视宁度不佳（以及可能的对焦问题），虽然也成功拍摄了土星，但是土星环的辨识度较差：</p><p><img src="/images/2018-08/IMG_5758.jpg" alt=""></p><p>仙后座（以及划过天空的飞机航行灯）：</p><p><img src="/images/2018-08/IMG_5680.jpg" alt=""></p><p>本文更新于2018年9月28日：<br>与学校的青年天文爱好者协会部分（矿里有家的）前辈交流后，发现EQ3D赤道仪和双轴电跟仍有许多不足，可能并不是天文摄影的入门首选。如果有足够多的预算，可以购买NEQ6搭配GOTO，该赤道仪的稳定性与鲁棒性都更胜一筹（当然价格也略高）。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;2018年的暑期，诸多天文奇观轮番上演：火星冲日、日偏食、英仙座流星雨，这对天文爱好者来说是绝佳的观测机会。在好基友的怂恿下，博主也正式踏入了天文摄影的巨坑。&lt;br&gt;博主在小学时曾拥有一台700/60入门级伽利略式天文望远镜，但是其使用的经纬仪是纯手动的，调节精度较差；且望
-      
-    
-    </summary>
-    
-      <category term="物理" scheme="https://zhangshuqiao.org/categories/%E7%89%A9%E7%90%86/"/>
-    
-    
-      <category term="摄影" scheme="https://zhangshuqiao.org/tags/%E6%91%84%E5%BD%B1/"/>
-    
-      <category term="天文" scheme="https://zhangshuqiao.org/tags/%E5%A4%A9%E6%96%87/"/>
     
   </entry>
   

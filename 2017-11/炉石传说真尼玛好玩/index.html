@@ -9,17 +9,17 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-<link rel="stylesheet" href="/css/main.css?v=6.6.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
-<link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+<link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '6.6.0',
+version: '6.7.0',
 sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
 fancybox: true,
 fastclick: true,
@@ -298,7 +298,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">87</span>
+<span class="site-state-item-count">88</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -340,7 +340,7 @@ RSS
 </main>
 <footer id="footer" class="footer">
 <div class="footer-inner">
-<div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+<div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
 <span class="with-love" id="animate">
 <i class="fa fa-heart"></i>
 </span>
@@ -348,12 +348,17 @@ RSS
 </div>
 <div class="busuanzi-count">
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<span class="site-uv" title="总访客量">
+<span class="post-meta-item-icon">
 <i class="fa fa-user"></i>
+</span>
+<span class="site-uv" title="总访客量">
 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
 </span>
-<span class="site-pv" title="总访问量">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
 <i class="fa fa-eye"></i>
+</span>
+<span class="site-pv" title="总访问量">
 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
 </span>
 </div>
@@ -378,30 +383,30 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/src/utils.js?v=6.6.0"></script>
-<script src="/js/src/motion.js?v=6.6.0"></script>
-<script src="/js/src/affix.js?v=6.6.0"></script>
-<script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
-<script src="/js/src/scrollspy.js?v=6.6.0"></script>
-<script src="/js/src/post-details.js?v=6.6.0"></script>
-<script src="/js/src/bootstrap.js?v=6.6.0"></script>
+<script src="/js/src/utils.js?v=6.7.0"></script>
+<script src="/js/src/motion.js?v=6.7.0"></script>
+<script src="/js/src/affix.js?v=6.7.0"></script>
+<script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+<script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+<script src="/js/src/bootstrap.js?v=6.7.0"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
-var GUEST = ['nick','mail','link'];
+var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function (item) {
+guest = guest.split(',').filter(function(item) {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({
-el: '#comments' ,
+el: '#comments',
 verify: true,
 notify: false,
 appId: '2L2N30Kyi18K1DjU0qxMGALD-gzGzoHsz',
 appKey: 'Bwrec8XDJon2rocQ5ScFcFWl',
 placeholder: '您可以在这里输入评论哟～',
 avatar: 'mm',
-meta:guest,
+meta: guest,
 pageSize: '12' || 10,
 visitor: false
 });

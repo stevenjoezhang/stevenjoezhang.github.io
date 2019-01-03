@@ -9,17 +9,17 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-<link rel="stylesheet" href="/css/main.css?v=6.6.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
-<link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+<link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '6.6.0',
+version: '6.7.0',
 sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
 fancybox: true,
 fastclick: true,
@@ -156,6 +156,62 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/米米直播平台正式上线/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-02/米米直播平台正式上线/" class="post-title-link" itemprop="url">米米直播平台正式上线</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="far fa-calendar"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-02-10 18:03:14" itemprop="dateCreated datePublished" datetime="2018-02-10T18:03:14+08:00">2018-02-10</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="far fa-folder"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="far fa-file-word"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">444</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="far fa-clock"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">1 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>经过为期半个月的测试，米米直播平台成功实现了多线路及多种播放方式的直播：<br>线路一是无需Flash支持的HLS直播，对移动端支持极为友好，只是由于原理所限，延时约为45秒；线路一的播放方式有原生HLS和Video.js解码的HLS，能够覆盖大部分设备。<br>线路二是基于Bilibili开源的<a href="https://github.com/Bilibili/flv.js" target="_blank" rel="noopener">flv.js</a>的HTTP FLV直播，同样无须Flash，且延时仅有3秒；该播放方式兼容大部分桌面浏览器，但由于需要<a href="https://w3c.github.io/media-source" target="_blank" rel="noopener">Media Source Extensions</a> API支持，对移动端不友好；该线路各项直播数据已经可以媲美各大主流直播平台。<br>线路三为基于video.js和Flash的RTMP直播流，延时亦为3秒左右；不过考虑到Flash的种种弊端，线路三只是作为备用线路。原生HTML5直播在性能上明显优于Flash。</p>
+<p><img src="/images/2018-02/mimilive.png" alt=""></p>
+<p>根据最新规划，米米视频将专注于视频点播功能，点播的视频大部分为原创作品；而米米直播目前已开放了一个<a href="https://galaxymimi.com/live/?room=mimi&amp;player=1" target="_blank" rel="noopener">测试频道</a>，未来将进行拓展。关于推流码验证的相关功能正在完善。附上链接：<br><a href="https://galaxymimi.com/player/" target="_blank" rel="noopener">米米视频</a><br><a href="https://galaxymimi.com/live/" target="_blank" rel="noopener">米米直播</a></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/制造MD5碰撞/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -184,15 +240,6 @@ page-home">
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2018-02/制造MD5碰撞/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-02/制造MD5碰撞/" itemprop="commentCount"></span>
-</a>
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
@@ -255,15 +302,6 @@ page-home">
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2018-01/基于Nginx搭建视频直播服务器/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-01/基于Nginx搭建视频直播服务器/" itemprop="commentCount"></span>
-</a>
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
@@ -334,15 +372,6 @@ page-home">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
 </span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2018-01/JavaScript常用简写技术与扩展运算符/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-01/JavaScript常用简写技术与扩展运算符/" itemprop="commentCount"></span>
-</a>
-</span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
 <i class="far fa-file-word"></i>
@@ -409,15 +438,6 @@ page-home">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
 </span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2018-01/MCPE地图的正确使用方式/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-01/MCPE地图的正确使用方式/" itemprop="commentCount"></span>
-</a>
-</span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
 <i class="far fa-file-word"></i>
@@ -474,15 +494,6 @@ page-home">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
 </span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2018-01/为了联盟/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-01/为了联盟/" itemprop="commentCount"></span>
-</a>
-</span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
 <i class="far fa-file-word"></i>
@@ -501,78 +512,6 @@ page-home">
 <div class="post-body" itemprop="articleBody">
 <p>为了荣耀！</p>
 <p><img src="/images/2018-01/IMG_4186.jpg" alt=""></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-01/将电键变为鼠标和键盘——实现篇/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-01/将电键变为鼠标和键盘——实现篇/" class="post-title-link" itemprop="url">将电键变为鼠标和键盘——实现篇</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-01-12 16:10:20" itemprop="dateCreated datePublished" datetime="2018-01-12T16:10:20+08:00">2018-01-12</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2018-01/将电键变为鼠标和键盘——实现篇/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-01/将电键变为鼠标和键盘——实现篇/" itemprop="commentCount"></span>
-</a>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">1.4k</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">1 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p><a href="/2018-01/将摩尔斯电键改造为USB键盘/">上一篇文章</a>介绍了使用Teensy 3.2将摩尔斯电键变为键盘的方法。经过研究，博主决定使用Arduino Leonardo实现之。相比Teensy 3.2，Arduino Leonardo成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。</p>
-<p><img src="/images/2018-01/IMG_4488.jpg" alt=""></p>
-<p>Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入/输出引脚（在写入程序时可以定义各个引脚的作用，其中最多有7个可用于PWM输出、12个可用于模拟输入），一个16 MHz的晶体振荡器，一个Micro USB接口，一个DC接口，一个ICSP接口，一个复位按钮。它包含了支持微控制器所需的一切，你可以简单地通过把它连接到计算机的USB接口来驱动它。<br>Leonardo不同于之前所有的Arduino控制器，他直接使用了ATmega32U4的USB通信功能，取消了USB转UART芯片。这使得Leonardo不仅可以作为一个虚拟的（CDC）串行/COM端口，还可以作为鼠标或者键盘连接到计算机。更多内容可以<a href="https://store.arduino.cc/usa/arduino-leonardo-with-headers" target="_blank" rel="noopener">参考文档</a>（在DOCUMENTATION选单中包含完整电路图）。</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-01/将电键变为鼠标和键盘——实现篇/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -604,7 +543,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">87</span>
+<span class="site-state-item-count">88</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -646,7 +585,7 @@ RSS
 </main>
 <footer id="footer" class="footer">
 <div class="footer-inner">
-<div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+<div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
 <span class="with-love" id="animate">
 <i class="fa fa-heart"></i>
 </span>
@@ -654,12 +593,17 @@ RSS
 </div>
 <div class="busuanzi-count">
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<span class="site-uv" title="总访客量">
+<span class="post-meta-item-icon">
 <i class="fa fa-user"></i>
+</span>
+<span class="site-uv" title="总访客量">
 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
 </span>
-<span class="site-pv" title="总访问量">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
 <i class="fa fa-eye"></i>
+</span>
+<span class="site-pv" title="总访问量">
 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
 </span>
 </div>
@@ -684,28 +628,28 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/src/utils.js?v=6.6.0"></script>
-<script src="/js/src/motion.js?v=6.6.0"></script>
-<script src="/js/src/affix.js?v=6.6.0"></script>
-<script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
-<script src="/js/src/bootstrap.js?v=6.6.0"></script>
+<script src="/js/src/utils.js?v=6.7.0"></script>
+<script src="/js/src/motion.js?v=6.7.0"></script>
+<script src="/js/src/affix.js?v=6.7.0"></script>
+<script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+<script src="/js/src/bootstrap.js?v=6.7.0"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
-var GUEST = ['nick','mail','link'];
+var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function (item) {
+guest = guest.split(',').filter(function(item) {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({
-el: '#comments' ,
+el: '#comments',
 verify: true,
 notify: false,
 appId: '2L2N30Kyi18K1DjU0qxMGALD-gzGzoHsz',
 appKey: 'Bwrec8XDJon2rocQ5ScFcFWl',
 placeholder: '您可以在这里输入评论哟～',
 avatar: 'mm',
-meta:guest,
+meta: guest,
 pageSize: '12' || 10,
 visitor: false
 });

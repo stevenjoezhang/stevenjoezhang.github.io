@@ -9,17 +9,17 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-<link rel="stylesheet" href="/css/main.css?v=6.6.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
-<link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+<link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '6.6.0',
+version: '6.7.0',
 sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
 fancybox: true,
 fastclick: true,
@@ -156,6 +156,78 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-09/手机淘宝的flexible方案/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-09/手机淘宝的flexible方案/" class="post-title-link" itemprop="url">手机淘宝的flexible方案</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="far fa-calendar"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-09-15 19:20:25" itemprop="dateCreated datePublished" datetime="2018-09-15T19:20:25+08:00">2018-09-15</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="far fa-folder"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="far fa-file-word"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">2.5k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="far fa-clock"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">2 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>手机淘宝从2014年中开始，全面推行flexible设计。什么叫flexible呢？其实flexible就是responsive的低端形态和基础。对我们来说，最直观的感受就是，在超宽屏幕上，网页显示不会两边留白。以前pc时代大家经常讲的流体布局，其实就是一种flexible design。只不过，流体的表述角度是实现，flexible的表述角度是结果，为了跟高大上的responsive保持一致，我们这里使用了flexible这个说法。<br>讨论方案之前，需要先了解三个关键概念：</p>
+<ul>
+<li>单位英寸像素数（Pixel Per Inch，PPI）：现实世界的一英寸内像素数，决定了屏幕的显示质量</li>
+<li>设备像素比率（Device Pixel Ratio，DPR）：物理像素与逻辑像素（px）的对应关系</li>
+<li>分辨率（Resolution）：屏幕区域的宽高所占像素数</li>
+</ul>
+<p>当我们决定不同屏幕的字体和尺寸的单位时，屏幕的这几个参数非常重要。</p>
+<h2 id="Resolution适配"><a href="#Resolution适配" class="headerlink" title="Resolution适配"></a>Resolution适配</h2><p>一张banner图片，当你面对不同的屏幕时你希望它的行为是怎样的？<br>在这个场景中，我们主要需要面对的是分辨率适配问题，考虑到多数网页都是纵向滚动的，在不同的屏幕尺寸下，banner的行为应该是总是铺满屏幕宽度以及总是保持宽高比。<br>最自然的思路是使用百分比宽度，但是假如使用百分比宽度，即width:100%，我们又有两种思路来实现固定宽高比：一是利用img标签的特性，只设宽度等图片加载完，这种方法会导致大量的重排，并且非固定高度会导致懒加载等功能难以实现，所以果断放弃；二是使用before伪元素的margin撑开高度，这种方法是比较干净的纯css实现，但是不具备任何复用性而且要求特定html结构，所以也只好放弃了。<br>于是，剩下最合适的办法是使用其它相对单位，本来最合适的单位是vw，它的含义是视口宽度，但是这个单位存在严重的兼容问题，所以也只好放弃。<br>最后我们只好配合js来做，硬算也是一条路，但是同样不具备任何可复用性，最终我们选择了rem，我们用js给html设置一个跟屏幕宽度成正比的font-size，然后把元素宽高都用rem作为单位。<br>这是我们目前的线上方案了，它是一个近乎Hack的用法，已知的问题包括：</p>
+<ul>
+<li>某些Android机型会丢掉rem小数部分</li>
+<li>占用了rem单位</li>
+<li>不是纯css方案</li>
+</ul>
+<h2 id="PPI适配"><a href="#PPI适配" class="headerlink" title="PPI适配"></a>PPI适配</h2><p>一段文字，当你面对不同的屏幕时你希望它的行为是怎样的？<br>显然，我们在iPhone3G和iPhone4的Retina屏下面，希望看到的文字尺寸是相同的，也就是说，我们不希望文字在Retina屏尺寸变小，此外，我们在大屏手机上，希望看到更多文字，以及，现在绝大多数的字体文件，是自带一些点阵尺寸的，通常是16px和24px，所以我们不希望出现13px、15px这样的奇葩尺寸。<br>这样的特征决定了，场景1中的rem方案，不适合用到段落文字上。所以段落文字应该使用px作为单位，考虑到Retina，我们利用media query来指定不同的字体，考虑到dpr判定的兼容性，我们用宽度替换来代替：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.a</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">401px</span>) &#123;</span><br><span class="line">    <span class="selector-class">.a</span> &#123;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">24px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>另一种场景，一些标题性文字，希望随着屏幕宽而增大的，我们可以仍然使用rem作为单位。超过35px（个人直观感受）的文字，已经不用太考虑点阵信息了，靠字体的矢量信息也能渲染的很好。</p>
+<h2 id="DPR匹配"><a href="#DPR匹配" class="headerlink" title="DPR匹配"></a>DPR匹配</h2><p>一个区块，设计稿上有1像素边框，当你面对不同的屏幕时你希望它的行为是怎样的？<br>这个场景，需求很简单，设计师希望在任何屏幕上这条线都是1物理像素。<br>好吧，当然这个问题的答案不是写1px那么简单。在retina屏下面，如果你写了这样的meta：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>你将永远无法写出1px宽度的东西，除此之外，inline的SVG等元素，也会按照逻辑像素来渲染，整个页面的清晰度会打折。<br>所以，手机淘宝用JS来动态写meta标签，代码类似这样：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> metaEl = <span class="built_in">document</span>.createElement(<span class="string">'meta'</span>);</span><br><span class="line"><span class="keyword">var</span> scale = isRetina ? <span class="number">0.5</span> : <span class="number">1</span>;</span><br><span class="line">metaEl.setAttribute(<span class="string">'name'</span>, <span class="string">'viewport'</span>);</span><br><span class="line">metaEl.setAttribute(<span class="string">'content'</span>, <span class="string">'initial-scale='</span> + scale + <span class="string">', maximum-scale='</span> + scale + <span class="string">', minimum-scale='</span> + scale + <span class="string">', user-scalable=no'</span>);</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.documentElement.firstElementChild) &#123;</span><br><span class="line">    <span class="built_in">document</span>.documentElement.firstElementChild.appendChild(metaEl);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> wrap = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">    wrap.appendChild(metaEl);</span><br><span class="line">    <span class="built_in">document</span>.write(wrap.innerHTML);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>总的来说，手机淘宝的flexible方案是综合运用rem和px两种单位+js设置scale和html字体。<br>这些JS的内容，可以在我们开源的库<a href="https://github.com/amfe/ml" target="_blank" rel="noopener">ml</a>中找到，也可以参考<a href="https://github.com/amfe/lib-flexible" target="_blank" rel="noopener">lib-flexible</a>。</p>
+<p>参考文章：<br><a href="http://www.html-js.com/article/2402" target="_blank" rel="noopener">手机淘宝的flexible设计与实现</a><br><a href="http://www.html-js.com/article/2400" target="_blank" rel="noopener">关于webapp中的文字单位的一些捣腾</a></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/JavaScript的函数调用与this/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -184,15 +256,6 @@ page-home">
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
-</span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2018-08/JavaScript的函数调用与this/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-08/JavaScript的函数调用与this/" itemprop="commentCount"></span>
-</a>
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
@@ -262,15 +325,6 @@ page-home">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
 </span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2018-08/入手信达小黑天文望远镜/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-08/入手信达小黑天文望远镜/" itemprop="commentCount"></span>
-</a>
-</span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
 <i class="far fa-file-word"></i>
@@ -337,15 +391,6 @@ page-home">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
 </span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2018-08/膜法大赛预赛/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-08/膜法大赛预赛/" itemprop="commentCount"></span>
-</a>
-</span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
 <i class="far fa-file-word"></i>
@@ -399,15 +444,6 @@ page-home">
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2018-08/自己打造一台恩尼格玛密码机/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-08/自己打造一台恩尼格玛密码机/" itemprop="commentCount"></span>
-</a>
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
@@ -476,15 +512,6 @@ page-home">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
 </span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2018-08/武功山游记/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-08/武功山游记/" itemprop="commentCount"></span>
-</a>
-</span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
 <i class="far fa-file-word"></i>
@@ -521,89 +548,6 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/Unicode字符与颜文字表情/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-07/Unicode字符与颜文字表情/" class="post-title-link" itemprop="url">Unicode字符与颜文字表情</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-07-25 14:10:27" itemprop="dateCreated datePublished" datetime="2018-07-25T14:10:27+08:00">2018-07-25</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2018-07/Unicode字符与颜文字表情/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-07/Unicode字符与颜文字表情/" itemprop="commentCount"></span>
-</a>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">3.8k</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">3 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>编码，是每个程序员绕不开的话题。对于前端工程师而言，字符更是会直观地展示在界面上。<br>提起文字，大部分人的脑中，都会定式为规整排列的字符。但是林子大了什么鸟都有，世界上可是存在着6800+种文字，难免会飞出来一些诡异的鸟…<br>而号称『万国码』的Unicode，在实现编码与展示的时候，也会不会遇到一些奇葩的事情呢？<br>事实上，可能你早已见识过了：</p>
-<hr>
-<p>x̙͈̝͍͕̙̄͛̽̆͌́̕͟g̘̣̠̝̟̤̥̼̼̽͑͋̈̑̒͟͞q̛̤̦̝̘͎͋̔̋͌͒̆̋̚͡f̵̢̙͇̮̠̋̀͌̅̉̃̔͜͜͠͡r̢̜̩͙̭̲͓͈̈̀͑̆͋̚͢͜m̷̛͙̝̣̲̭͍͉̊̓̾̈̋̿̚͢͟͠s̷̡̩͔̮͈̜̊̽͂̆̈́̃̓͋̏</p>
-<p>热҈的҈字҈都҈出҈汗҈了҈</p>
-<p>你的屏幕被蓝翔挖掘机给挖坏了不信你看;̷̸̨̀͒̏̃ͦ̈́̾̀́̎͢҉̵̶͚̼͉͖̺̥͔͇̰̹̮͙͉̻̼̭̻͕̮͇ͨͬͪ͗̇̑̽͋̀̋̊͌ͧͨͭ̓̅͐ͥ̂̔̊ͧ͊҉̶̵̷̞̩̦̳̺̳̬̬̩̣̫͇̯̥͖͍͕̠̦̼̗ͯ̽͌̔ͪͯ́́͋̍ͨ̿̿̎͒ͤ̓̅̀͂ͧ͋̏ͫͣ̔͘͜͠͏̶̵̸̧̧̥̺͓̘̺͎̜̥͕͈̝̫͎̺̮̱̤̠̠͖̳̻̥̣̪͍͕͇̮͙̹̪ͮͧͫ͂͒ͤͣ̌̽ͨͪ͒̄̄̉̒̊ͩ̅͆͘̚͘͘̚͟͟͝ͅ</p>
-<hr>
-<p>今天我们就来探讨一下这些奇怪的字符。</p>
-<h2 id="文字可以戴帽子和穿鞋子"><a href="#文字可以戴帽子和穿鞋子" class="headerlink" title="文字可以戴帽子和穿鞋子"></a>文字可以戴帽子和穿鞋子</h2><p>提起泰文，很多朋友都会立即想到：<strong>萨瓦迪卡（你好）</strong>。<br>但这句话是怎么写的呢？<br>其实这句你好，男生和女生之间还有差异，男生写法是：<code>สวัสดีครับ</code>，女生则是：<code>สวัสดีค่ะ</code>。<br>不过这并不重要，重要的是，我们发现某些字的上面，还带了特殊的符号。就好像是戴上了帽子。<br>事实上，泰文字符不仅会『戴帽子』，偶尔还会『穿鞋子』，比如这三个字符：<code>ผ ผู ผู้</code>。<br>如果脑洞再大一点，有人就会想，那是不是还可以戴多顶帽子呢？<br>的确如此…泰文允许你穿一双鞋子，并且戴两顶帽子。完整的形式是这样的：</p>
-<p><img src="/images/2018-07/FqLq54KAJkoSVA-7_jdJpSRI3fcI.png" alt=""></p>
-<p>所以，平时看惯了中英文的我们，需要改变一下思路了。<br>世界上的文字，并不全是规规整整横向排列的格子，也存在像泰文这种变形金刚<strong>组合式</strong>的文字。<br>虽然标准的泰文里，『帽子』和『鞋子』的数量是有限制的，但由于国际码的迷之设计（先卖个关子），在计算机里显示的泰文字符，却可以拥有无数的帽子和鞋子。也就是说，它变成了一款可以在Y轴无限拓展的文字！<br>并且，咱不光可以往上喷，还可以有一定角度…</p>
-<p><img src="/images/2018-07/Fr8cS9UX21MEgBtmOU_CDhreGqlO.jpeg" alt=""><br><img src="/images/2018-07/Fr-rlbbriydg4cUmoU_Zs6VQSbpU.jpeg" alt=""></p>
-<p>还可以</p>
-<p><img src="/images/2018-07/Fk0kXSTymPxute84rceAkzGd5PKA.jpeg" alt=""></p>
-<p>简直是不讲道理。<br>（由于一些系统会崩溃，这里使用截图）</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-07/Unicode字符与颜文字表情/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -629,7 +573,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">87</span>
+<span class="site-state-item-count">88</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -671,7 +615,7 @@ RSS
 </main>
 <footer id="footer" class="footer">
 <div class="footer-inner">
-<div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+<div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
 <span class="with-love" id="animate">
 <i class="fa fa-heart"></i>
 </span>
@@ -679,12 +623,17 @@ RSS
 </div>
 <div class="busuanzi-count">
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<span class="site-uv" title="总访客量">
+<span class="post-meta-item-icon">
 <i class="fa fa-user"></i>
+</span>
+<span class="site-uv" title="总访客量">
 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
 </span>
-<span class="site-pv" title="总访问量">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
 <i class="fa fa-eye"></i>
+</span>
+<span class="site-pv" title="总访问量">
 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
 </span>
 </div>
@@ -709,28 +658,28 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/src/utils.js?v=6.6.0"></script>
-<script src="/js/src/motion.js?v=6.6.0"></script>
-<script src="/js/src/affix.js?v=6.6.0"></script>
-<script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
-<script src="/js/src/bootstrap.js?v=6.6.0"></script>
+<script src="/js/src/utils.js?v=6.7.0"></script>
+<script src="/js/src/motion.js?v=6.7.0"></script>
+<script src="/js/src/affix.js?v=6.7.0"></script>
+<script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+<script src="/js/src/bootstrap.js?v=6.7.0"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
-var GUEST = ['nick','mail','link'];
+var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function (item) {
+guest = guest.split(',').filter(function(item) {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({
-el: '#comments' ,
+el: '#comments',
 verify: true,
 notify: false,
 appId: '2L2N30Kyi18K1DjU0qxMGALD-gzGzoHsz',
 appKey: 'Bwrec8XDJon2rocQ5ScFcFWl',
 placeholder: '您可以在这里输入评论哟～',
 avatar: 'mm',
-meta:guest,
+meta: guest,
 pageSize: '12' || 10,
 visitor: false
 });
@@ -1123,7 +1072,7 @@ var href = $(this).attr("href");
 if (!href) return;
 if (href.endsWith(".pdf") || href.endsWith(".pdf/")) {
 var id = "pdf" + Math.floor(Math.random() * 10000);
-$(this).after("<div id='" + id + "'></div>").remove();
+$(this).after(`<div id="${id}"></div>`).remove();
 PDFObject.embed(href, "#" + id, options);
 }
 });

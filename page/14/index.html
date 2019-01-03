@@ -9,17 +9,17 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-<link rel="stylesheet" href="/css/main.css?v=6.6.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
-<link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+<link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '6.6.0',
+version: '6.7.0',
 sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
 fancybox: true,
 fastclick: true,
@@ -156,6 +156,69 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/WordPress 3.x版本中的彩蛋/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2017-11/WordPress 3.x版本中的彩蛋/" class="post-title-link" itemprop="url">WordPress 3.x版本中的彩蛋</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="far fa-calendar"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2017-11-10 12:44:27" itemprop="dateCreated datePublished" datetime="2017-11-10T12:44:27+08:00">2017-11-10</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="far fa-folder"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="far fa-file-word"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">1.4k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="far fa-clock"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">1 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>今天博主在进行WordPress博客考古活动时，得知了一个彩蛋。来源见：<a href="http://www.kaisir.com/2010/02/the-egg-wordpress.html" target="_blank" rel="noopener">WordPress的彩蛋</a>。<br>在WordPress文章中使用Compare Revisions功能，如果两个相比较的文章ID一致，就会触发彩蛋。其效果是显示文字：</p>
+<blockquote>
+<p>Wake up XXX… The matrix has you. Follow the white rabbit. Don’t let this happen again.</p>
+</blockquote>
+<p>这是一个致敬The Matrix的彩蛋。经过对<a href="https://cn.wordpress.org/releases" target="_blank" rel="noopener">WordPress历史版本</a>的分析，发现该彩蛋已在4.x版本移除。通过分析3.0.2版本的文件，找到了该版本的revision.php和revision-js.php文件，并大致研究出了其实现方法。在revision.php中有这样一串代码：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// If we're comparing a revision to itself, redirect to the 'view' page for that revision or the edit page for that post</span></span><br><span class="line"><span class="keyword">if</span> ( $left_revision-&gt;ID == $right_revision-&gt;ID ) &#123;</span><br><span class="line">    $redirect = get_edit_post_link( $left_revision-&gt;ID );</span><br><span class="line">    <span class="keyword">include</span>( <span class="string">'./js/revisions-js.php'</span> );</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>而在revision-js.php中，有一串经过了eval混淆的代码，用于向用户输出彩蛋内容。 目前博主正在尝试反混淆代码，并复现这个彩蛋。如果你有兴趣，也可以下载revision-js.php进行研究。</p>
+<p>本文更新于2017年11月11日：<br>由于博主并不准备搭建旧版本WordPress的运行环境，于是决定从代码入手，分析这个彩蛋。<br>在revisions-js.php中定义的函数dvortr()作用是使用一对一的替换来加密字符串，该文件中有两次调用此函数：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dvortr( <span class="string">"Erb-y n.y ydco dall.b aiacbv Wa ce]-irxajt- dp.u]-$-VIr XajtWzaVv"</span> )</span><br></pre></td></tr></table></figure></p>
+<p>和<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dvortr( <span class="string">'Eabi.p!'</span> )</span><br></pre></td></tr></table></figure></p>
+<p>经过解密，其输出分别为<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Don't let this happen again. <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">'goback'</span> <span class="attr">href</span>=<span class="string">'$'</span>&gt;</span>Go Back<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>和<code>Danger!</code>。<br>而定义的变量<code>$j</code>作用是包含jQuery库，<code>$n</code>是获取的当前用户名，<code>$d</code>是noscript时的输出。通过替换掉一些WordPress中定义的函数，博主成功地使部分解码后的php文件在本地Apache服务器成功运行。并且，博主还重新制作了这个彩蛋，现在它已经可以在本站以某种方式触发～<br>下面附上整个解密过程中所用到的文件。其中revision.php和revisions-js.php是原文件，decode.php是部分解密后的文件，decode.js是浏览器获取的匿名js文件，decoder.html是根据原文件的加密算法编写的加密、解密脚本。<br><a href="/files/WordPressEasterEgg.zip">WordPressEasterEgg</a></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/在WordPress博客中使用LaTeX/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -184,15 +247,6 @@ page-home">
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
-</span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2017-11/在WordPress博客中使用LaTeX/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017-11/在WordPress博客中使用LaTeX/" itemprop="commentCount"></span>
-</a>
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
@@ -252,15 +306,6 @@ page-home">
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
-</span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2017-11/在Mac上通过Sublime、Skim编辑LaTeX/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017-11/在Mac上通过Sublime、Skim编辑LaTeX/" itemprop="commentCount"></span>
-</a>
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
@@ -322,15 +367,6 @@ page-home">
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
-</span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2017-10/一些HTML与JS的小技巧/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017-10/一些HTML与JS的小技巧/" itemprop="commentCount"></span>
-</a>
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
@@ -408,15 +444,6 @@ page-home">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
 </span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2017-10/伟安生，不玩蛇/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017-10/伟安生，不玩蛇/" itemprop="commentCount"></span>
-</a>
-</span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
 <i class="far fa-file-word"></i>
@@ -472,15 +499,6 @@ page-home">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2017-10/MacBook使用一块移动硬盘做Win To Go及Time Machine备份/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017-10/MacBook使用一块移动硬盘做Win To Go及Time Machine备份/" itemprop="commentCount"></span>
-</a>
-</span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
 <i class="far fa-file-word"></i>
@@ -503,83 +521,6 @@ page-home">
 <!--noindex-->
 <div class="post-button text-center">
 <a class="btn" href="/2017-10/MacBook使用一块移动硬盘做Win To Go及Time Machine备份/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-10/C语言控制台程序清除输入缓冲区/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2017-10/C语言控制台程序清除输入缓冲区/" class="post-title-link" itemprop="url">C语言控制台程序清除输入缓冲区</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2017-10-09 10:07:57" itemprop="dateCreated datePublished" datetime="2017-10-09T10:07:57+08:00">2017-10-09</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
-</span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
-</span>
-<a href="/2017-10/C语言控制台程序清除输入缓冲区/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017-10/C语言控制台程序清除输入缓冲区/" itemprop="commentCount"></span>
-</a>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">936</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">1 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>编写C语言控制台程序时，如果使用<code>scanf()</code>函数作为输入，往往需要解决非法输入的问题。比如以下情况：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"输入一个0~9的整数a\n"</span>);</span><br><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a);</span><br></pre></td></tr></table></figure></p>
-<p>此时可能出现如下几种典型的非法输入：</p>
-<ul>
-<li>123</li>
-<li>123xyz</li>
-<li>xyz123</li>
-</ul>
-<p>对于第一种，使用if判断a的范围是否满足要求即可。第二种和第三种则较为复杂，因为其中涉及到了字符的输入。第二种情况，<code>scanf()</code>会将123存入a，而xyz留在了输入缓冲区；第三种情况，<code>scanf()</code>不会读取任何数据，xyz123都留在了输入缓冲区。<br>如果只是判断这一次输入的合法性，可以利用<code>scanf()</code>的返回值。如果输入有效，<code>scanf()</code>会返回1，否则返回0。由此可以排除<code>scanf()</code>无法读取的输入。</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2017-10/C语言控制台程序清除输入缓冲区/#more" rel="contents">
 阅读全文 &raquo;
 </a>
 </div>
@@ -615,7 +556,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">87</span>
+<span class="site-state-item-count">88</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -657,7 +598,7 @@ RSS
 </main>
 <footer id="footer" class="footer">
 <div class="footer-inner">
-<div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+<div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
 <span class="with-love" id="animate">
 <i class="fa fa-heart"></i>
 </span>
@@ -665,12 +606,17 @@ RSS
 </div>
 <div class="busuanzi-count">
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<span class="site-uv" title="总访客量">
+<span class="post-meta-item-icon">
 <i class="fa fa-user"></i>
+</span>
+<span class="site-uv" title="总访客量">
 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
 </span>
-<span class="site-pv" title="总访问量">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
 <i class="fa fa-eye"></i>
+</span>
+<span class="site-pv" title="总访问量">
 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
 </span>
 </div>
@@ -695,28 +641,28 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/src/utils.js?v=6.6.0"></script>
-<script src="/js/src/motion.js?v=6.6.0"></script>
-<script src="/js/src/affix.js?v=6.6.0"></script>
-<script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
-<script src="/js/src/bootstrap.js?v=6.6.0"></script>
+<script src="/js/src/utils.js?v=6.7.0"></script>
+<script src="/js/src/motion.js?v=6.7.0"></script>
+<script src="/js/src/affix.js?v=6.7.0"></script>
+<script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+<script src="/js/src/bootstrap.js?v=6.7.0"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
-var GUEST = ['nick','mail','link'];
+var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function (item) {
+guest = guest.split(',').filter(function(item) {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({
-el: '#comments' ,
+el: '#comments',
 verify: true,
 notify: false,
 appId: '2L2N30Kyi18K1DjU0qxMGALD-gzGzoHsz',
 appKey: 'Bwrec8XDJon2rocQ5ScFcFWl',
 placeholder: '您可以在这里输入评论哟～',
 avatar: 'mm',
-meta:guest,
+meta: guest,
 pageSize: '12' || 10,
 visitor: false
 });
@@ -1027,7 +973,11 @@ inlineMath: [ ['$','$'], ["\\(","\\)"] ],
 processEscapes: true,
 skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
 },
-TeX: { equationNumbers: { autoNumber: "AMS" } },
+TeX: {
+equationNumbers: {
+autoNumber: "AMS"
+}
+},
 "HTML-CSS": {
 linebreaks: { automatic: true },
 EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
@@ -1043,7 +993,7 @@ CommonHTML: { linebreaks: { automatic: true } }
 <script type="text/x-mathjax-config">
 MathJax.Hub.Queue(function() {
 var all = MathJax.Hub.getAllJax(), i;
-for (i=0; i < all.length; i += 1) {
+for (i = 0; i < all.length; i += 1) {
 all[i].SourceElement().parentNode.className += ' has-jax';
 }
 });

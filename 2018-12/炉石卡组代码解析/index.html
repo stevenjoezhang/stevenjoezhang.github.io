@@ -9,17 +9,17 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-<link rel="stylesheet" href="/css/main.css?v=6.6.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
-<link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+<link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '6.6.0',
+version: '6.7.0',
 sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
 fancybox: true,
 fastclick: true,
@@ -45,7 +45,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:description" content="在前面的文章Base64编码的原理与实现中，讲到了Base64编码的诸多用处，例如编码图片以嵌入HTML代码。如果你对此有所了解，同时还是一个炉石玩家，就不难发现，暴雪推出的卡组代码功能，本质上就是用一个Base64编码的字符串来存储卡组信息。毕竟，你有时会见到以=或者==结尾的卡组代码，这正是Base64编码的典型特征。 注释当把卡组代码粘贴到炉石传说时，客户端将忽略以#字符开头的任何行，这就提">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-12/tyrande.png">
-<meta property="og:updated_time" content="2018-12-29T16:55:49.581Z">
+<meta property="og:updated_time" content="2018-12-31T13:23:23.347Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="炉石卡组代码解析">
 <meta name="twitter:description" content="在前面的文章Base64编码的原理与实现中，讲到了Base64编码的诸多用处，例如编码图片以嵌入HTML代码。如果你对此有所了解，同时还是一个炉石玩家，就不难发现，暴雪推出的卡组代码功能，本质上就是用一个Base64编码的字符串来存储卡组信息。毕竟，你有时会见到以=或者==结尾的卡组代码，这正是Base64编码的典型特征。 注释当把卡组代码粘贴到炉石传说时，客户端将忽略以#字符开头的任何行，这就提">
@@ -297,6 +297,9 @@ top: initial;
 </div>
 <span class="post-nav-divider"></span>
 <div class="post-nav-prev post-nav-item">
+<a href="/2019-01/成功召唤独角兽/" rel="prev" title="成功召唤独角兽">
+成功召唤独角兽 <i class="fa fa-chevron-right"></i>
+</a>
 </div>
 </div>
 </footer>
@@ -334,7 +337,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">87</span>
+<span class="site-state-item-count">88</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -383,7 +386,7 @@ RSS
 </main>
 <footer id="footer" class="footer">
 <div class="footer-inner">
-<div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+<div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
 <span class="with-love" id="animate">
 <i class="fa fa-heart"></i>
 </span>
@@ -391,12 +394,17 @@ RSS
 </div>
 <div class="busuanzi-count">
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<span class="site-uv" title="总访客量">
+<span class="post-meta-item-icon">
 <i class="fa fa-user"></i>
+</span>
+<span class="site-uv" title="总访客量">
 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
 </span>
-<span class="site-pv" title="总访问量">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
 <i class="fa fa-eye"></i>
+</span>
+<span class="site-pv" title="总访问量">
 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
 </span>
 </div>
@@ -421,30 +429,30 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/src/utils.js?v=6.6.0"></script>
-<script src="/js/src/motion.js?v=6.6.0"></script>
-<script src="/js/src/affix.js?v=6.6.0"></script>
-<script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
-<script src="/js/src/scrollspy.js?v=6.6.0"></script>
-<script src="/js/src/post-details.js?v=6.6.0"></script>
-<script src="/js/src/bootstrap.js?v=6.6.0"></script>
+<script src="/js/src/utils.js?v=6.7.0"></script>
+<script src="/js/src/motion.js?v=6.7.0"></script>
+<script src="/js/src/affix.js?v=6.7.0"></script>
+<script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+<script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+<script src="/js/src/bootstrap.js?v=6.7.0"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
-var GUEST = ['nick','mail','link'];
+var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function (item) {
+guest = guest.split(',').filter(function(item) {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({
-el: '#comments' ,
+el: '#comments',
 verify: true,
 notify: false,
 appId: '2L2N30Kyi18K1DjU0qxMGALD-gzGzoHsz',
 appKey: 'Bwrec8XDJon2rocQ5ScFcFWl',
 placeholder: '您可以在这里输入评论哟～',
 avatar: 'mm',
-meta:guest,
+meta: guest,
 pageSize: '12' || 10,
 visitor: false
 });

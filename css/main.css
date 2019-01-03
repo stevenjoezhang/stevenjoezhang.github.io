@@ -513,15 +513,11 @@ body {
   }
 }
 .footer {
-/*position: absolute;*/
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  min-height: 50px;
+  padding: 20px 0;
 }
 .footer-inner {
   box-sizing: border-box;
-  margin: 20px auto;
+  margin: 0px auto;
   width: calc(100% - 20px);
 }
 @media (min-width: 1200px) {
@@ -1105,6 +1101,9 @@ pre .javascript .function {
 .tag-cloud a {
   display: inline-block;
   margin: 10px;
+}
+.tag-cloud a:hover {
+  color: #0684bd !important;
 }
 .back-to-top {
   box-sizing: border-box;
@@ -2005,7 +2004,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7d8be2;
+  background: #8bff50;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2392,16 +2391,6 @@ pre .javascript .function {
   transform: translate(-50%, -50%);
   color: #ccc;
 }
-.site-uv,
-.site-pv,
-.page-pv {
-  display: inline-block;
-}
-.site-uv .busuanzi-value,
-.site-pv .busuanzi-value,
-.page-pv .busuanzi-value {
-  margin: 0 5px;
-}
 .page-archive .archive-page-counter {
   position: relative;
   top: 3px;
@@ -2726,16 +2715,6 @@ ul.breadcrumb li+li:last-child {
 }
 .main:after {
   clear: both;
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .main {
-    padding-bottom: 100px;
-  }
-}
-@media (max-width: 767px) {
-  .main {
-    padding-bottom: 100px;
-  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .container .main-inner {
@@ -3299,7 +3278,7 @@ ul.breadcrumb li+li:last-child {
     margin: initial;
   }
   .posts-expand .post-button {
-    margin-top: 12px;
+    margin: 12px 0px;
   }
   .posts-expand img {
     padding: initial !important;

@@ -36,13 +36,13 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
-<meta name="description" content="上一篇文章介绍了使用Teensy 3.2将摩尔斯电键变为键盘的方法。经过研究，博主决定使用Arduino Leonardo实现之。相比Teensy 3.2，Arduino Leonardo成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。  Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入">
+<meta name="description" content="上一篇文章 介绍了使用 Teensy 3.2 将摩尔斯电键变为键盘的方法。经过研究，博主决定使用 Arduino Leonardo 实现之。相比 Teensy 3.2，Arduino Leonardo 成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。  Arduino Leonardo 是基于 ATmega32U4 微控制器的开">
 <meta name="keywords" content="Morse Code,Arduino">
 <meta property="og:type" content="article">
 <meta property="og:title" content="将电键变为鼠标和键盘——实现篇">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-01/将电键变为鼠标和键盘——实现篇/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="上一篇文章介绍了使用Teensy 3.2将摩尔斯电键变为键盘的方法。经过研究，博主决定使用Arduino Leonardo实现之。相比Teensy 3.2，Arduino Leonardo成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。  Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入">
+<meta property="og:description" content="上一篇文章 介绍了使用 Teensy 3.2 将摩尔斯电键变为键盘的方法。经过研究，博主决定使用 Arduino Leonardo 实现之。相比 Teensy 3.2，Arduino Leonardo 成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。  Arduino Leonardo 是基于 ATmega32U4 微控制器的开">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/IMG_4488.jpg">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/ArduinoLeonardo1.png">
@@ -54,7 +54,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:updated_time" content="2018-12-25T08:46:42.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="将电键变为鼠标和键盘——实现篇">
-<meta name="twitter:description" content="上一篇文章介绍了使用Teensy 3.2将摩尔斯电键变为键盘的方法。经过研究，博主决定使用Arduino Leonardo实现之。相比Teensy 3.2，Arduino Leonardo成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。  Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入">
+<meta name="twitter:description" content="上一篇文章 介绍了使用 Teensy 3.2 将摩尔斯电键变为键盘的方法。经过研究，博主决定使用 Arduino Leonardo 实现之。相比 Teensy 3.2，Arduino Leonardo 成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。  Arduino Leonardo 是基于 ATmega32U4 微控制器的开">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-01/IMG_4488.jpg">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2018-01/将电键变为鼠标和键盘——实现篇/">
@@ -203,7 +203,7 @@ top: initial;
 </span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-file"></i>
+<i class="fa fa-file"></i>
 阅读次数：
 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
@@ -212,7 +212,7 @@ top: initial;
 <i class="far fa-file-word"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">1.4k</span>
+<span title="本文字数">1.5k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
 <i class="far fa-clock"></i>
@@ -223,45 +223,45 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p><a href="/2018-01/将摩尔斯电键改造为USB键盘/">上一篇文章</a>介绍了使用Teensy 3.2将摩尔斯电键变为键盘的方法。经过研究，博主决定使用Arduino Leonardo实现之。相比Teensy 3.2，Arduino Leonardo成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。</p>
+<p><a href="/2018-01 / 将摩尔斯电键改造为 USB 键盘 /">上一篇文章</a> 介绍了使用 Teensy 3.2 将摩尔斯电键变为键盘的方法。经过研究，博主决定使用 Arduino Leonardo 实现之。相比 Teensy 3.2，Arduino Leonardo 成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。</p>
 <p><img src="/images/2018-01/IMG_4488.jpg" alt=""></p>
-<p>Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入/输出引脚（在写入程序时可以定义各个引脚的作用，其中最多有7个可用于PWM输出、12个可用于模拟输入），一个16 MHz的晶体振荡器，一个Micro USB接口，一个DC接口，一个ICSP接口，一个复位按钮。它包含了支持微控制器所需的一切，你可以简单地通过把它连接到计算机的USB接口来驱动它。<br>Leonardo不同于之前所有的Arduino控制器，他直接使用了ATmega32U4的USB通信功能，取消了USB转UART芯片。这使得Leonardo不仅可以作为一个虚拟的（CDC）串行/COM端口，还可以作为鼠标或者键盘连接到计算机。更多内容可以<a href="https://store.arduino.cc/usa/arduino-leonardo-with-headers" target="_blank" rel="noopener">参考文档</a>（在DOCUMENTATION选单中包含完整电路图）。</p>
+<p>Arduino Leonardo 是基于 ATmega32U4 微控制器的开发板。它有 20 个输入 / 输出引脚（在写入程序时可以定义各个引脚的作用，其中最多有 7 个可用于 PWM 输出、12 个可用于模拟输入），一个 16 MHz 的晶体振荡器，一个 Micro USB 接口，一个 DC 接口，一个 ICSP 接口，一个复位按钮。它包含了支持微控制器所需的一切，你可以简单地通过把它连接到计算机的 USB 接口来驱动它。<br>Leonardo 不同于之前所有的 Arduino 控制器，他直接使用了 ATmega32U4 的 USB 通信功能，取消了 USB 转 UART 芯片。这使得 Leonardo 不仅可以作为一个虚拟的（CDC）串行 / COM 端口，还可以作为鼠标或者键盘连接到计算机。更多内容可以 <a href="https://store.arduino.cc/usa/arduino-leonardo-with-headers" target="_blank" rel="noopener">参考文档</a>（在 DOCUMENTATION 选单中包含完整电路图）。</p>
 <a id="more"></a>
 <h2 id="硬件准备工作"><a href="#硬件准备工作" class="headerlink" title="硬件准备工作"></a>硬件准备工作</h2><p>需要准备</p>
 <ul>
-<li>Arduino Leonardo开发板1一块</li>
-<li>摩尔斯电键一个（例如K4型重型电键）</li>
-<li>面包板、导线（杜邦头连接线）及USB线</li>
+<li>Arduino Leonardo 开发板 1 一块</li>
+<li>摩尔斯电键一个（例如 K4 型重型电键）</li>
+<li>面包板、导线（杜邦头连接线）及 USB 线</li>
 </ul>
-<p>取决于摩尔斯电键的输出方式，可能还需要一个3.5mm/6.5mm音频接口<br>有必要的话，还可以准备万用表等辅助工具</p>
+<p>取决于摩尔斯电键的输出方式，可能还需要一个 3.5mm/6.5mm 音频接口<br>有必要的话，还可以准备万用表等辅助工具</p>
 <h2 id="软件准备工作"><a href="#软件准备工作" class="headerlink" title="软件准备工作"></a>软件准备工作</h2><ul>
 <li><a href="https://www.arduino.cc/en/Main/Software" target="_blank" rel="noopener">Arduino IDE</a></li>
 <li><a href="/files/MimiMorse.zip">准备烧录的程序源代码</a></li>
-<li><a href="https://playground.arduino.cc/Code/Bounce" target="_blank" rel="noopener">Bounce2库</a></li>
+<li><a href="https://playground.arduino.cc/Code/Bounce" target="_blank" rel="noopener">Bounce2 库</a></li>
 </ul>
-<p>理论上Arduino Leonardo在Mac下可以无需驱动，即插即用；如果出现系统无法识别设备（串口）的情况，可以到相关论坛寻求帮助。出现这种情况，常见的可能是FTDI驱动冲突，或者是由macOS系统完整性保护造成的问题。你可以试试重启Arduino Leonardo并等待几秒、外接9V电源或者检查驱动问题。Windows下情况暂未测试。</p>
+<p>理论上 Arduino Leonardo 在 Mac 下可以无需驱动，即插即用；如果出现系统无法识别设备（串口）的情况，可以到相关论坛寻求帮助。出现这种情况，常见的可能是 FTDI 驱动冲突，或者是由 macOS 系统完整性保护造成的问题。你可以试试重启 Arduino Leonardo 并等待几秒、外接 9V 电源或者检查驱动问题。Windows 下情况暂未测试。</p>
 <h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><ul>
-<li>打开Arduino IDE，导入下载的Bounce2库。</li>
+<li>打开 Arduino IDE，导入下载的 Bounce2 库。</li>
 </ul>
 <p><img src="/images/2018-01/ArduinoLeonardo1.png" alt=""></p>
 <ul>
-<li>将Arduino Leonardo开发板通过USB线连接到电脑上，在Arduino IDE的『工具』菜单下设置正确的开发板和端口，如图所示。</li>
+<li>将 Arduino Leonardo 开发板通过 USB 线连接到电脑上，在 Arduino IDE 的『工具』菜单下设置正确的开发板和端口，如图所示。</li>
 </ul>
 <p><img src="/images/2018-01/ArduinoLeonardo3.png" alt=""><br><img src="/images/2018-01/ArduinoLeonardo4.png" alt=""></p>
 <ul>
-<li>如果是初次使用，在『文件』菜单下选择示例，找到Blink，打开后，依次点击编译、上传。如果出现未响应、无法找到端口等现象，请点击开发板上的按钮重启。如果上传成功，并且二极管L以0.5Hz的频率闪烁，则说明配置正确。</li>
+<li>如果是初次使用，在『文件』菜单下选择示例，找到 Blink，打开后，依次点击编译、上传。如果出现未响应、无法找到端口等现象，请点击开发板上的按钮重启。如果上传成功，并且二极管 L 以 0.5Hz 的频率闪烁，则说明配置正确。</li>
 </ul>
 <p><img src="/images/2018-01/ArduinoLeonardo2.png" alt=""></p>
 <ul>
-<li>解压并打开下载的源代码文件。其中Keyboard文件能够将摩尔斯电键变为虚拟键盘，通过敲击字符的摩尔斯电码输入；Mouse文件能够将摩尔斯电键变为虚拟鼠标，按下即触发一次鼠标点击。选择你需要的文件，使用Arduino IDE打开，然后依次点击编译、上传。</li>
-<li>请使用物理方法将摩尔斯电键的两端分别连到Arduino Leonardo的GND和12端口，如图所示（当然，你可以更改源代码来使用别的端口）。如果是虚拟键盘模式，连接GND和8端口可以输入大写字母，不连接则输入小写字母。</li>
+<li>解压并打开下载的源代码文件。其中 Keyboard 文件能够将摩尔斯电键变为虚拟键盘，通过敲击字符的摩尔斯电码输入；Mouse 文件能够将摩尔斯电键变为虚拟鼠标，按下即触发一次鼠标点击。选择你需要的文件，使用 Arduino IDE 打开，然后依次点击编译、上传。</li>
+<li>请使用物理方法将摩尔斯电键的两端分别连到 Arduino Leonardo 的 GND 和 12 端口，如图所示（当然，你可以更改源代码来使用别的端口）。如果是虚拟键盘模式，连接 GND 和 8 端口可以输入大写字母，不连接则输入小写字母。</li>
 </ul>
 <p><img src="/images/2018-01/IMG_4490.jpg" alt=""></p>
 <ul>
 <li>如果一切就绪，那么，当你按下电键或输入摩尔斯电码，电脑就会作出正确的反应。</li>
 </ul>
 <p><img src="/images/2018-01/IMG_4491.jpg" alt=""></p>
-<p>以上就是用摩尔斯电键作鼠标和键盘的教程。当然，Arduino Leonardo开发板的作用远远不止这些，如果发现更为有趣的应用，我会继续分享出来。</p>
+<p>以上就是用摩尔斯电键作鼠标和键盘的教程。当然，Arduino Leonardo 开发板的作用远远不止这些，如果发现更为有趣的应用，我会继续分享出来。</p>
 </div>
 <div>
 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -304,8 +304,8 @@ top: initial;
 </div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
-<a href="/2018-01/将摩尔斯电键改造为USB键盘/" rel="next" title="将摩尔斯电键改造为USB键盘">
-<i class="fa fa-chevron-left"></i> 将摩尔斯电键改造为USB键盘
+<a href="/2018-01/将摩尔斯电键改造为USB键盘/" rel="next" title="将摩尔斯电键改造为 USB 键盘">
+<i class="fa fa-chevron-left"></i> 将摩尔斯电键改造为 USB 键盘
 </a>
 </div>
 <span class="post-nav-divider"></span>
@@ -350,7 +350,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">88</span>
+<span class="site-state-item-count">89</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -454,7 +454,7 @@ window.Promise = null;
 <script>
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function(item) {
+guest = guest.split(',').filter(function (item) {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({

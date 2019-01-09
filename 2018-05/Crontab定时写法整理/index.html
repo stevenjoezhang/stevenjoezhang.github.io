@@ -36,19 +36,19 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
-<meta name="description" content="在前面的文章NGINX配置SSL中，提到了关于创建Crontab定时任务的内容。事实上，在使用Linux系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了Crontab的机制，并对常见的Crontab用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。 Crontab使用方式12crontab [-u user] fi">
-<meta name="keywords" content="Linux,Mac">
+<meta name="description" content="在前面的文章 NGINX 配置 SSL 中，提到了关于创建 Crontab 定时任务的内容。事实上，在使用 Linux 系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了 Crontab 的机制，并对常见的 Crontab 用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。 Crontab 使用方式12crontab">
+<meta name="keywords" content="Mac,Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Crontab定时写法整理">
+<meta property="og:title" content="Crontab 定时写法整理">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-05/Crontab定时写法整理/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="在前面的文章NGINX配置SSL中，提到了关于创建Crontab定时任务的内容。事实上，在使用Linux系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了Crontab的机制，并对常见的Crontab用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。 Crontab使用方式12crontab [-u user] fi">
+<meta property="og:description" content="在前面的文章 NGINX 配置 SSL 中，提到了关于创建 Crontab 定时任务的内容。事实上，在使用 Linux 系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了 Crontab 的机制，并对常见的 Crontab 用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。 Crontab 使用方式12crontab">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-05/crontab_thumb.png">
 <meta property="og:updated_time" content="2018-12-29T16:51:35.171Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Crontab定时写法整理">
-<meta name="twitter:description" content="在前面的文章NGINX配置SSL中，提到了关于创建Crontab定时任务的内容。事实上，在使用Linux系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了Crontab的机制，并对常见的Crontab用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。 Crontab使用方式12crontab [-u user] fi">
+<meta name="twitter:title" content="Crontab 定时写法整理">
+<meta name="twitter:description" content="在前面的文章 NGINX 配置 SSL 中，提到了关于创建 Crontab 定时任务的内容。事实上，在使用 Linux 系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了 Crontab 的机制，并对常见的 Crontab 用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。 Crontab 使用方式12crontab">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-05/crontab_thumb.png">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2018-05/Crontab定时写法整理/">
@@ -57,7 +57,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
-<title>Crontab定时写法整理 | 米米的博客</title>
+<title>Crontab 定时写法整理 | 米米的博客</title>
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -168,7 +168,7 @@ top: initial;
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
-<h1 class="post-title" itemprop="name headline">Crontab定时写法整理
+<h1 class="post-title" itemprop="name headline">Crontab 定时写法整理
 </h1>
 <div class="post-meta">
 <span class="post-time">
@@ -197,7 +197,7 @@ top: initial;
 </span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-file"></i>
+<i class="fa fa-file"></i>
 阅读次数：
 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
@@ -206,7 +206,7 @@ top: initial;
 <i class="far fa-file-word"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">2.8k</span>
+<span title="本文字数">3.1k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
 <i class="far fa-clock"></i>
@@ -217,40 +217,40 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>在前面的文章<a href="/2018-05/Nginx配置SSL/">NGINX配置SSL</a>中，提到了关于创建Crontab定时任务的内容。事实上，在使用Linux系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了Crontab的机制，并对常见的Crontab用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。</p>
-<h2 id="Crontab使用方式"><a href="#Crontab使用方式" class="headerlink" title="Crontab使用方式"></a>Crontab使用方式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab [-u user] file</span><br><span class="line">crontab [-u user] [ -e | -l | -r ]</span><br></pre></td></tr></table></figure>
+<p>在前面的文章 <a href="/2018-05/Nginx 配置 SSL/">NGINX 配置 SSL</a> 中，提到了关于创建 Crontab 定时任务的内容。事实上，在使用 Linux 系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了 Crontab 的机制，并对常见的 Crontab 用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。</p>
+<h2 id="Crontab-使用方式"><a href="#Crontab-使用方式" class="headerlink" title="Crontab 使用方式"></a>Crontab 使用方式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab [-u user] file</span><br><span class="line">crontab [-u user] [ -e | -l | -r ]</span><br></pre></td></tr></table></figure>
 <p>各参数为：</p>
 <ul>
-<li><code>-u user</code>：用来设定某个用户的crontab服务。</li>
-<li><code>file</code>：file是命令文件的名字，表示将file做为crontab的任务列表文件并载入crontab。如果在命令行中没有指定这个文件，crontab将接受从标准输入（如键盘）中键入的命令，并将它们载入crontab任务列表。</li>
-<li><code>-e</code>：编辑某个用户的crontab文件内容。如果不指定用户，则表示编辑当前用户的crontab文件。</li>
-<li><code>-l</code>：显示某个用户的crontab文件内容。如果不指定用户，则表示显示当前用户的crontab文件内容。</li>
-<li><code>-r</code>：从<code>/var/spool/cron</code>目录中删除某个用户的crontab文件。如果不指定用户，则默认删除当前用户的crontab文件。</li>
-<li><code>-i</code>：在删除用户的crontab文件时给确认提示。</li>
+<li><code>-u user</code>：用来设定某个用户的 crontab 服务。</li>
+<li><code>file</code>：file 是命令文件的名字，表示将 file 做为 crontab 的任务列表文件并载入 crontab。如果在命令行中没有指定这个文件，crontab 将接受从标准输入（如键盘）中键入的命令，并将它们载入 crontab 任务列表。</li>
+<li><code>-e</code>：编辑某个用户的 crontab 文件内容。如果不指定用户，则表示编辑当前用户的 crontab 文件。</li>
+<li><code>-l</code>：显示某个用户的 crontab 文件内容。如果不指定用户，则表示显示当前用户的 crontab 文件内容。</li>
+<li><code>-r</code>：从 <code>/var/spool/cron</code> 目录中删除某个用户的 crontab 文件。如果不指定用户，则默认删除当前用户的 crontab 文件。</li>
+<li><code>-i</code>：在删除用户的 crontab 文件时给确认提示。</li>
 </ul>
-<h2 id="Crontab文件格式"><a href="#Crontab文件格式" class="headerlink" title="Crontab文件格式"></a>Crontab文件格式</h2><p>用户所建立的crontab文件中，每一行都代表一项任务，每行的每个字段代表一项设置，它的格式共分为六个字段，前五段是时间设定段，第六段是要执行的命令段，格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">minute hour day month week command</span><br><span class="line">分　时　日　月　周　命令</span><br></pre></td></tr></table></figure></p>
+<h2 id="Crontab-文件格式"><a href="#Crontab-文件格式" class="headerlink" title="Crontab 文件格式"></a>Crontab 文件格式</h2><p>用户所建立的 crontab 文件中，每一行都代表一项任务，每行的每个字段代表一项设置，它的格式共分为六个字段，前五段是时间设定段，第六段是要执行的命令段，格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">minute hour day month week command</span><br><span class="line">分　时　日　月　周　命令</span><br></pre></td></tr></table></figure></p>
 <p>具体来说，每一列的内容分别是：</p>
 <ul>
-<li>分钟，可以是从0到59之间的任何整数。</li>
-<li>小时，可以是从0到23之间的任何整数（0表示0点）。</li>
-<li>日期，可以是从1到31之间的任何整数。</li>
-<li>月份，可以是从1到12之间的任何整数。</li>
-<li>星期几，可以是从0到7之间的任何整数，这里的0或7代表星期日。</li>
+<li>分钟，可以是从 0 到 59 之间的任何整数。</li>
+<li>小时，可以是从 0 到 23 之间的任何整数（0 表示 0 点）。</li>
+<li>日期，可以是从 1 到 31 之间的任何整数。</li>
+<li>月份，可以是从 1 到 12 之间的任何整数。</li>
+<li>星期几，可以是从 0 到 7 之间的任何整数，这里的 0 或 7 代表星期日。</li>
 <li>要执行的命令，可以是系统命令，也可以是自己编写的脚本文件。</li>
 </ul>
 <p><img src="/images/2018-05/crontab_thumb.png" alt=""></p>
 <p>在以上各个字段中，还可以使用以下特殊字符：</p>
 <ul>
-<li>星号（*）：代表所有可能的值，例如month字段如果是星号，则表示在满足其它字段的制约条件后每月都执行该命令操作。</li>
-<li>逗号（,）：可以用逗号隔开的值指定一个列表范围，例如<code>1,2,5,7,8,9</code>。</li>
-<li>中杠（-）：可以用整数之间的中杠表示一个整数范围，例如<code>2-6</code>表示<code>2,3,4,5,6</code>。</li>
-<li>正斜线（/）：可以用正斜线指定时间的间隔频率，例如<code>0-23/2</code>表示每两小时执行一次。</li>
+<li>星号（*）：代表所有可能的值，例如 month 字段如果是星号，则表示在满足其它字段的制约条件后每月都执行该命令操作。</li>
+<li>逗号（,）：可以用逗号隔开的值指定一个列表范围，例如 <code>1,2,5,7,8,9</code>。</li>
+<li>中杠（-）：可以用整数之间的中杠表示一个整数范围，例如 <code>2-6</code> 表示 <code>2,3,4,5,6</code>。</li>
+<li>正斜线（/）：可以用正斜线指定时间的间隔频率，例如 <code>0-23/2</code> 表示每两小时执行一次。</li>
 </ul>
-<p>同时正斜线可以和星号一起使用，例如<code>*/10</code>，如果用在minute字段，表示每十分钟执行一次。又如，每分钟可以用<code>*</code>或者<code>*/1</code>表示。</p>
+<p>同时正斜线可以和星号一起使用，例如 <code>*/10</code>，如果用在 minute 字段，表示每十分钟执行一次。又如，每分钟可以用 <code>*</code> 或者 <code>*/1</code> 表示。</p>
 <a id="more"></a>
-<h2 id="Crontab文件样例"><a href="#Crontab文件样例" class="headerlink" title="Crontab文件样例"></a>Crontab文件样例</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">30 21 * * * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#每晚的21:30重启apache</span></span><br><span class="line">45 4 1,10,22 * * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#每月1、10、22日的4:45重启apache</span></span><br><span class="line">10 1 * * 6,0 /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#每周六、周日的1:10重启apache</span></span><br><span class="line">0,30 18-23 * * * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#每天18:00至23:00之间每隔30分钟重启apache</span></span><br><span class="line">0 23 * * 6 /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#每星期六的11:00pm重启apache</span></span><br><span class="line">0 */1 * * * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#每一小时重启apache</span></span><br><span class="line">0 23-7/1 * * * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#晚上11点到早上7点之间，每隔一小时重启apache</span></span><br><span class="line">0 11 4 * mon-wed /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#每月的4号与每周一到周三的11点重启apache</span></span><br><span class="line">0 4 1 jan * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment">#一月一号的4点重启apache</span></span><br><span class="line">0 7 * * * /bin/ls</span><br><span class="line"><span class="comment">#每天早上7点执行一次 /bin/ls</span></span><br><span class="line">0 6-12/3 * 12 * /usr/bin/backup</span><br><span class="line"><span class="comment">#在12月内，每天的早上6点到12点，每隔3个小时执行一次 /usr/bin/backup</span></span><br><span class="line">0 17 * * 1-5 mail -s <span class="string">"hi"</span> alex@domain.name &lt; /tmp/maildata</span><br><span class="line"><span class="comment">#周一到周五每天下午5:00寄一封信给 alex@domain.name</span></span><br><span class="line">20 0-23/2 * * * <span class="built_in">echo</span> <span class="string">"haha"</span></span><br><span class="line"><span class="comment">#每月每天的午夜0点20分，2点20分，4点20分等执行 echo "haha"</span></span><br><span class="line">0 */2 * * * date <span class="built_in">command</span></span><br><span class="line"><span class="comment">#每两个小时执行command</span></span><br><span class="line">0 23-7/2,8 * * * date <span class="built_in">command</span></span><br><span class="line"><span class="comment">#晚上11点到早上8点之间每两个小时，早上8点执行command</span></span><br><span class="line">0 11 4 * mon-wed date <span class="built_in">command</span></span><br><span class="line"><span class="comment">#每个月的4号和每个礼拜的礼拜一到礼拜三的早上11点执行command</span></span><br><span class="line">0 4 1 jan * date <span class="built_in">command</span></span><br><span class="line"><span class="comment">#1月份日早上4点执行command</span></span><br><span class="line">* * * * * <span class="built_in">command</span></span><br><span class="line"><span class="comment">#每1分钟执行一次command</span></span><br><span class="line">3,15 * * * * <span class="built_in">command</span></span><br><span class="line"><span class="comment">#每小时的第3和第15分钟执行</span></span><br><span class="line">3,15 8-11 * * * <span class="built_in">command</span></span><br><span class="line"><span class="comment">#在上午8点到11点的第3和第15分钟执行</span></span><br><span class="line">3,15 8-11 */2 * * <span class="built_in">command</span></span><br><span class="line"><span class="comment">#每隔两天的上午8点到11点的第3和第15分钟执行</span></span><br><span class="line">3,15 8-11 * * 1 <span class="built_in">command</span></span><br><span class="line"><span class="comment">#每个星期一的上午8点到11点的第3和第15分钟执行</span></span><br><span class="line">01 * * * * root run-parts /etc/cron.hourly</span><br><span class="line"><span class="comment">#每小时执行/etc/cron.hourly目录内的脚本</span></span><br></pre></td></tr></table></figure>
-<p><strong>注意：当程序在你所指定的时间执行后，系统会寄一封邮件给你，显示该程序执行的内容，若你不希望收到这样的信，请在每一行空一格之后加上<code>&gt; /dev/null 2&gt;&amp;1</code>，否则会产生不必要的浪费。</strong></p>
-<p>参考文章及更多内容：<br><a href="https://blog.csdn.net/bsf5521/article/details/76522222" target="_blank" rel="noopener">crontab 定时写法整理</a><br><a href="https://www.cnblogs.com/xingzc/p/5969777.html" target="_blank" rel="noopener">crontab命令</a><br><a href="http://www.opsers.org/base/crontab-linux-system-tasks-and-examples-of-projects.html" target="_blank" rel="noopener">Linux系统的计划任务Crontab及实例</a></p>
+<h2 id="Crontab-文件样例"><a href="#Crontab-文件样例" class="headerlink" title="Crontab 文件样例"></a>Crontab 文件样例</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">30 21 * * * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment"># 每晚的 21:30 重启 apache</span></span><br><span class="line">45 4 1,10,22 * * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment"># 每月 1、10、22 日的 4:45 重启 apache</span></span><br><span class="line">10 1 * * 6,0 /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment"># 每周六、周日的 1:10 重启 apache</span></span><br><span class="line">0,30 18-23 * * * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment"># 每天 18:00 至 23:00 之间每隔 30 分钟重启 apache</span></span><br><span class="line">0 23 * * 6 /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment"># 每星期六的 11:00pm 重启 apache</span></span><br><span class="line">0 */1 * * * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment"># 每一小时重启 apache</span></span><br><span class="line">0 23-7/1 * * * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment"># 晚上 11 点到早上 7 点之间，每隔一小时重启 apache</span></span><br><span class="line">0 11 4 * mon-wed /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment"># 每月的 4 号与每周一到周三的 11 点重启 apache</span></span><br><span class="line">0 4 1 jan * /usr/<span class="built_in">local</span>/etc/rc.d/lighttpd restart</span><br><span class="line"><span class="comment"># 一月一号的 4 点重启 apache</span></span><br><span class="line">0 7 * * * /bin/ls</span><br><span class="line"><span class="comment"># 每天早上 7 点执行一次 /bin/ls</span></span><br><span class="line">0 6-12/3 * 12 * /usr/bin/backup</span><br><span class="line"><span class="comment"># 在 12 月内，每天的早上 6 点到 12 点，每隔 3 个小时执行一次 /usr/bin/backup</span></span><br><span class="line">0 17 * * 1-5 mail -s <span class="string">"hi"</span> alex@domain.name &lt; /tmp/maildata</span><br><span class="line"><span class="comment"># 周一到周五每天下午 5:00 寄一封信给 alex@domain.name</span></span><br><span class="line">20 0-23/2 * * * <span class="built_in">echo</span> <span class="string">"haha"</span></span><br><span class="line"><span class="comment"># 每月每天的午夜 0 点 20 分，2 点 20 分，4 点 20 分等执行 echo "haha"</span></span><br><span class="line">0 */2 * * * date <span class="built_in">command</span></span><br><span class="line"><span class="comment"># 每两个小时执行 command</span></span><br><span class="line">0 23-7/2,8 * * * date <span class="built_in">command</span></span><br><span class="line"><span class="comment"># 晚上 11 点到早上 8 点之间每两个小时，早上 8 点执行 command</span></span><br><span class="line">0 11 4 * mon-wed date <span class="built_in">command</span></span><br><span class="line"><span class="comment"># 每个月的 4 号和每个礼拜的礼拜一到礼拜三的早上 11 点执行 command</span></span><br><span class="line">0 4 1 jan * date <span class="built_in">command</span></span><br><span class="line"><span class="comment">#1 月份日早上 4 点执行 command</span></span><br><span class="line">* * * * * <span class="built_in">command</span></span><br><span class="line"><span class="comment"># 每 1 分钟执行一次 command</span></span><br><span class="line">3,15 * * * * <span class="built_in">command</span></span><br><span class="line"><span class="comment"># 每小时的第 3 和第 15 分钟执行</span></span><br><span class="line">3,15 8-11 * * * <span class="built_in">command</span></span><br><span class="line"><span class="comment"># 在上午 8 点到 11 点的第 3 和第 15 分钟执行</span></span><br><span class="line">3,15 8-11 */2 * * <span class="built_in">command</span></span><br><span class="line"><span class="comment"># 每隔两天的上午 8 点到 11 点的第 3 和第 15 分钟执行</span></span><br><span class="line">3,15 8-11 * * 1 <span class="built_in">command</span></span><br><span class="line"><span class="comment"># 每个星期一的上午 8 点到 11 点的第 3 和第 15 分钟执行</span></span><br><span class="line">01 * * * * root run-parts /etc/cron.hourly</span><br><span class="line"><span class="comment"># 每小时执行 / etc/cron.hourly 目录内的脚本</span></span><br></pre></td></tr></table></figure>
+<p><strong> 注意：当程序在你所指定的时间执行后，系统会寄一封邮件给你，显示该程序执行的内容，若你不希望收到这样的信，请在每一行空一格之后加上 <code>&gt; /dev/null 2&gt;&amp;1</code>，否则会产生不必要的浪费。</strong></p>
+<p>参考文章及更多内容：<br><a href="https://blog.csdn.net/bsf5521/article/details/76522222" target="_blank" rel="noopener">crontab 定时写法整理</a><br><a href="https://www.cnblogs.com/xingzc/p/5969777.html" target="_blank" rel="noopener">crontab 命令</a><br><a href="http://www.opsers.org/base/crontab-linux-system-tasks-and-examples-of-projects.html" target="_blank" rel="noopener">Linux 系统的计划任务 Crontab 及实例</a></p>
 </div>
 <div>
 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -280,7 +280,7 @@ top: initial;
 <strong>本文作者： </strong>张书樵</li>
 <li class="post-copyright-link">
 <strong>本文链接：</strong>
-<a href="https://zhangshuqiao.org/2018-05/Crontab定时写法整理/" title="Crontab定时写法整理">https://zhangshuqiao.org/2018-05/Crontab定时写法整理/</a>
+<a href="https://zhangshuqiao.org/2018-05/Crontab定时写法整理/" title="Crontab 定时写法整理">https://zhangshuqiao.org/2018-05/Crontab定时写法整理/</a>
 </li>
 <li class="post-copyright-license">
 <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -288,19 +288,19 @@ top: initial;
 </div>
 <footer class="post-footer">
 <div class="post-tags">
-<a href="/tags/Linux/" rel="tag"># Linux</a>
 <a href="/tags/Mac/" rel="tag"># Mac</a>
+<a href="/tags/Linux/" rel="tag"># Linux</a>
 </div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
-<a href="/2018-05/博客迁移至Hexo/" rel="next" title="博客迁移至Hexo">
-<i class="fa fa-chevron-left"></i> 博客迁移至Hexo
+<a href="/2018-05/博客迁移至Hexo/" rel="next" title="博客迁移至 Hexo">
+<i class="fa fa-chevron-left"></i> 博客迁移至 Hexo
 </a>
 </div>
 <span class="post-nav-divider"></span>
 <div class="post-nav-prev post-nav-item">
-<a href="/2018-06/一些CSS的小技巧/" rel="prev" title="一些CSS的小技巧">
-一些CSS的小技巧 <i class="fa fa-chevron-right"></i>
+<a href="/2018-06/一些CSS的小技巧/" rel="prev" title="一些 CSS 的小技巧">
+一些 CSS 的小技巧 <i class="fa fa-chevron-right"></i>
 </a>
 </div>
 </div>
@@ -339,7 +339,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">88</span>
+<span class="site-state-item-count">89</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -378,7 +378,7 @@ RSS
 <!--noindex-->
 <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
 <div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Crontab使用方式"><span class="nav-number">1.</span> <span class="nav-text">Crontab使用方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Crontab文件格式"><span class="nav-number">2.</span> <span class="nav-text">Crontab文件格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Crontab文件样例"><span class="nav-number">3.</span> <span class="nav-text">Crontab文件样例</span></a></li></ol></div>
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Crontab-使用方式"><span class="nav-number">1.</span> <span class="nav-text">Crontab 使用方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Crontab-文件格式"><span class="nav-number">2.</span> <span class="nav-text">Crontab 文件格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Crontab-文件样例"><span class="nav-number">3.</span> <span class="nav-text">Crontab 文件样例</span></a></li></ol></div>
 </div>
 </div>
 <!--/noindex-->
@@ -443,7 +443,7 @@ window.Promise = null;
 <script>
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function(item) {
+guest = guest.split(',').filter(function (item) {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({

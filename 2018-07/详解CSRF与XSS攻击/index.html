@@ -36,18 +36,18 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
-<meta name="description" content="在之前的一篇文章中，提到了WordPress的插件审核机制，其中对于代码安全性的要求，主要就是对CSRF与XSS攻击的防范。官方邮件中这样写道：  Not using Nonces and/or checking permissionsPlease add a nonce to your POST calls to prevent unauthorized access.Keep in mind,">
+<meta name="description" content="在 之前的一篇文章 中，提到了 WordPress 的插件审核机制，其中对于代码安全性的要求，主要就是对 CSRF 与 XSS 攻击的防范。官方邮件中这样写道：  Not using Nonces and/or checking permissionsPlease add a nonce to your POST calls to prevent unauthorized access.Keep">
 <meta name="keywords" content="HTML">
 <meta property="og:type" content="article">
-<meta property="og:title" content="详解CSRF与XSS攻击">
+<meta property="og:title" content="详解 CSRF 与 XSS 攻击">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-07/详解CSRF与XSS攻击/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="在之前的一篇文章中，提到了WordPress的插件审核机制，其中对于代码安全性的要求，主要就是对CSRF与XSS攻击的防范。官方邮件中这样写道：  Not using Nonces and/or checking permissionsPlease add a nonce to your POST calls to prevent unauthorized access.Keep in mind,">
+<meta property="og:description" content="在 之前的一篇文章 中，提到了 WordPress 的插件审核机制，其中对于代码安全性的要求，主要就是对 CSRF 与 XSS 攻击的防范。官方邮件中这样写道：  Not using Nonces and/or checking permissionsPlease add a nonce to your POST calls to prevent unauthorized access.Keep">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-12-25T08:39:50.536Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="详解CSRF与XSS攻击">
-<meta name="twitter:description" content="在之前的一篇文章中，提到了WordPress的插件审核机制，其中对于代码安全性的要求，主要就是对CSRF与XSS攻击的防范。官方邮件中这样写道：  Not using Nonces and/or checking permissionsPlease add a nonce to your POST calls to prevent unauthorized access.Keep in mind,">
+<meta name="twitter:title" content="详解 CSRF 与 XSS 攻击">
+<meta name="twitter:description" content="在 之前的一篇文章 中，提到了 WordPress 的插件审核机制，其中对于代码安全性的要求，主要就是对 CSRF 与 XSS 攻击的防范。官方邮件中这样写道：  Not using Nonces and/or checking permissionsPlease add a nonce to your POST calls to prevent unauthorized access.Keep">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2018-07/详解CSRF与XSS攻击/">
 <script id="page.configurations">
@@ -55,7 +55,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
-<title>详解CSRF与XSS攻击 | 米米的博客</title>
+<title>详解 CSRF 与 XSS 攻击 | 米米的博客</title>
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -166,7 +166,7 @@ top: initial;
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
-<h1 class="post-title" itemprop="name headline">详解CSRF与XSS攻击
+<h1 class="post-title" itemprop="name headline">详解 CSRF 与 XSS 攻击
 </h1>
 <div class="post-meta">
 <span class="post-time">
@@ -195,7 +195,7 @@ top: initial;
 </span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-file"></i>
+<i class="fa fa-file"></i>
 阅读次数：
 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
@@ -204,7 +204,7 @@ top: initial;
 <i class="far fa-file-word"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">5.3k</span>
+<span title="本文字数">5.4k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
 <i class="far fa-clock"></i>
@@ -215,43 +215,43 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>在<a href="/2018-07/WordPress中文验证码/">之前的一篇文章</a>中，提到了WordPress的插件审核机制，其中对于代码安全性的要求，主要就是对CSRF与XSS攻击的防范。官方邮件中这样写道：</p>
+<p>在 <a href="/2018-07/WordPress 中文验证码 /">之前的一篇文章</a> 中，提到了 WordPress 的插件审核机制，其中对于代码安全性的要求，主要就是对 CSRF 与 XSS 攻击的防范。官方邮件中这样写道：</p>
 <blockquote>
 <h2 id="Not-using-Nonces-and-or-checking-permissions"><a href="#Not-using-Nonces-and-or-checking-permissions" class="headerlink" title="Not using Nonces and/or checking permissions"></a>Not using Nonces and/or checking permissions</h2><p>Please add a nonce to your POST calls to prevent unauthorized access.<br>Keep in mind, check_admin_referer alone is NOT bulletproof security. Do not rely on nonces for authorization purposes. Use current_user_can() in order to prevent users without the right permissions from accessing things.</p>
 </blockquote>
 <blockquote>
-<h2 id="Please-sanitize-escape-and-validate-your-POST-calls"><a href="#Please-sanitize-escape-and-validate-your-POST-calls" class="headerlink" title="Please sanitize, escape, and validate your POST calls"></a>Please sanitize, escape, and validate your POST calls</h2><p>When you include POST/GET/REQUEST/FILE calls in your plugin, it’s important to sanitize, validate, and escape them. The goal here is to prevent a user from accidentally sending trash data through the system, as well as protecting them from potential security issues.<br>SANITIZE: Data that is input (either by a user or automatically) must be sanitized. This lessens the possibility of XSS vulnerabilities and MITM attacks where posted data is subverted.<br>VALIDATE: All data should be validated as much as possible. Even when you sanitize, remember that you don’t want someone putting in ‘dog’ when the only valid values are numbers.<br>ESCAPE: Data that is output must be escaped properly, so it can’t hijack admin screens. There are many esc_*() functions you can use to make sure you don’t show people the wrong data.<br>To help you with this, WordPress comes with a number of sanitization and escaping functions. You can read about those here: <a href="https://developer.wordpress.org/plugins/security/securing-input/" target="_blank" rel="noopener">https://developer.wordpress.org/plugins/security/securing-input/</a><br>Remember: You must use the MOST appropriate functions for the context. If you’re sanitizing email, use sanitize_email(), if you’re outputting HTML, use esc_html(), and so on.<br>Clean everything, check everything, escape everything, and never trust the users to always have input sane data.</p>
+<h2 id="Please-sanitize-escape-and-validate-your-POST-calls"><a href="#Please-sanitize-escape-and-validate-your-POST-calls" class="headerlink" title="Please sanitize, escape, and validate your POST calls"></a>Please sanitize, escape, and validate your POST calls</h2><p>When you include POST/GET/REQUEST/FILE calls in your plugin, it’s important to sanitize, validate, and escape them. The goal here is to prevent a user from accidentally sending trash data through the system, as well as protecting them from potential security issues.<br>SANITIZE: Data that is input (either by a user or automatically) must be sanitized. This lessens the possibility of XSS vulnerabilities and MITM attacks where posted data is subverted.<br>VALIDATE: All data should be validated as much as possible. Even when you sanitize, remember that you don’t want someone putting in’dog’ when the only valid values are numbers.<br>ESCAPE: Data that is output must be escaped properly, so it can’t hijack admin screens. There are many esc_*() functions you can use to make sure you don’t show people the wrong data.<br>To help you with this, WordPress comes with a number of sanitization and escaping functions. You can read about those here: <a href="https://developer.wordpress.org/plugins/security/securing-input/" target="_blank" rel="noopener">https://developer.wordpress.org/plugins/security/securing-input/</a><br>Remember: You must use the MOST appropriate functions for the context. If you’re sanitizing email, use sanitize_email(), if you’re outputting HTML, use esc_html(), and so on.<br>Clean everything, check everything, escape everything, and never trust the users to always have input sane data.</p>
 </blockquote>
-<p>下面通过维基百科的内容介绍CSRF与XSS攻击的具体形式。</p>
+<p>下面通过维基百科的内容介绍 CSRF 与 XSS 攻击的具体形式。</p>
 <a id="more"></a>
-<h1 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h1><p>跨站请求伪造（英语：Cross-site request forgery），也被称为one-click attack或者session riding，通常缩写为CSRF或者XSRF，是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法。跟跨网站脚本（XSS）相比，XSS利用的是用户对指定网站的信任，CSRF利用的是网站对用户网页浏览器的信任。</p>
-<h2 id="攻击的细节"><a href="#攻击的细节" class="headerlink" title="攻击的细节"></a>攻击的细节</h2><p>跨站请求攻击，简单地说，是攻击者通过一些技术手段欺骗用户的浏览器去访问一个自己曾经认证过的网站并执行一些操作（如发邮件，发消息，甚至财产操作如转账和购买商品）。由于浏览器曾经认证过，所以被访问的网站会认为是真正的用户操作而去执行。这利用了web中用户身份验证的一个漏洞：<strong>简单的身份验证只能保证请求发自某个用户的浏览器，却不能保证请求本身是用户自愿发出的</strong>。</p>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>假如一家银行用以执行转账操作的URL地址为<code>http://www.examplebank.com/withdraw?account=AccoutName&amp;amount=1000&amp;for=PayeeName</code>，那么，一个恶意攻击者可以在另一个网站上放置如下代码：<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">&lt;img src="&lt;http://www.examplebank.com/withdraw?account=Alice<span class="variable">&amp;amount</span>=<span class="number">1000</span><span class="variable">&amp;for</span>=Badman&gt;</span><span class="string">"&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>如果有账户名为Alice的用户访问了恶意站点，而她之前刚访问过银行不久，登录信息尚未过期，那么她就会损失1000资金。<br>这种恶意的网址可以有很多种形式，藏身于网页中的许多地方。此外，攻击者也不需要控制放置恶意网址的网站。例如他可以将这种地址藏在论坛，博客等任何用户生成内容的网站中。这意味着<strong>如果服务器端没有合适的防御措施的话，用户即使访问熟悉的可信网站也有受攻击的危险</strong>。<br>透过例子能够看出，攻击者并不能通过CSRF攻击来直接获取用户的账户控制权，也不能直接窃取用户的任何信息。他们能做到的，是<strong>欺骗用户浏览器，让其以用户的名义执行操作</strong>。</p>
-<h2 id="防御措施"><a href="#防御措施" class="headerlink" title="防御措施"></a>防御措施</h2><h3 id="检查Referer字段"><a href="#检查Referer字段" class="headerlink" title="检查Referer字段"></a>检查Referer字段</h3><p>HTTP头中有一个Referer字段，这个字段用以标明请求来源于哪个地址。在处理敏感数据请求时，通常来说，Referer字段应和请求的地址位于同一域名下。以上文银行操作为例，Referer字段地址通常应该是转账按钮所在的网页地址，应该也位于<code>www.examplebank.com</code>之下。而如果是CSRF攻击传来的请求，Referer字段会是包含恶意网址的地址，不会位于<code>www.examplebank.com</code>之下，这时候服务器就能识别出恶意的访问。<br>这种办法简单易行，工作量低，仅需要在关键访问处增加一步校验。但这种办法也有其局限性，因其完全依赖浏览器发送正确的Referer字段。虽然http协议对此字段的内容有明确的规定，但并无法保证来访的浏览器的具体实现，亦无法保证浏览器没有安全漏洞影响到此字段。并且也存在攻击者攻击某些浏览器，篡改其Referer字段的可能。</p>
-<h3 id="添加校验token"><a href="#添加校验token" class="headerlink" title="添加校验token"></a>添加校验token</h3><p>由于CSRF的本质在于攻击者欺骗用户去访问自己设置的地址，所以如果要求在访问敏感数据请求时，要求用户浏览器提供不保存在cookie中，并且攻击者无法伪造的数据作为校验，那么攻击者就无法再执行CSRF攻击。这种数据通常是表单中的一个数据项。服务器将其生成并附加在表单中，其内容是一个伪乱数。当客户端通过表单提交请求时，这个伪乱数也一并提交上去以供校验。正常的访问时，客户端浏览器能够正确得到并传回这个伪乱数，而通过CSRF传来的欺骗性攻击中，攻击者无从事先得知这个伪乱数的值，服务器端就会因为校验token的值为空或者错误，拒绝这个可疑请求。</p>
-<h1 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h1><p>跨站脚本（英语：Cross-site scripting，通常简称为：XSS）是一种网站应用程序的安全漏洞攻击，是代码注入的一种。它允许恶意用户将代码注入到网页上，其他用户在观看网页时就会受到影响。这类攻击通常包含了HTML以及用户端脚本语言。<br>XSS攻击通常指的是通过利用网页开发时留下的漏洞，通过巧妙的方法注入恶意指令代码到网页，使用户加载并执行攻击者恶意制造的网页程序。这些恶意网页程序通常是JavaScript，但实际上也可以包括Java，VBScript，ActiveX，Flash或者甚至是普通的HTML。攻击成功后，攻击者可能得到更高的权限（如执行一些操作）、私密网页内容、会话和cookie等各种内容。</p>
-<h2 id="背景和现状"><a href="#背景和现状" class="headerlink" title="背景和现状"></a>背景和现状</h2><p>当网景（Netscape）最初推出JavaScript语言时，他们也察觉到准许网页服务器发送可执行的代码给一个浏览器的安全风险（即使仅是在一个浏览器的沙盒里）。它所造成的一个关键的问题在于用户同时打开多个浏览器视窗时，在某些例子里，网页里的片断代码被允许从另一个网页或对象取出数据，而因为恶意的网站可以用这个方法来尝试窃取机密信息，所以在某些情形，这应是完全被禁止的。为了解决这个问题，浏览器采用了同源决策——仅允许来自相同域名系统和使用相同协议的对象与网页之间的任何交互。这样一来，恶意的网站便无法借由JavaScript在另一个浏览器窃取机密数据。此后，为了保护用户免受恶意的危害，其他的浏览器与服务端指令语言采用了类似的访问控制决策。<br>XSS漏洞可以追溯到1990年代。大量的网站曾遭受XSS漏洞攻击或被发现此类漏洞，如Twitter，Facebook，MySpace，Orkut，新浪微博和百度贴吧。研究表明，最近几年XSS已经超过缓冲区溢出成为最流行的攻击方式，有68%的网站可能遭受此类攻击。根据开放网页应用安全计划（Open Web Application Security Project）公布的2010年统计数据，在Web安全威胁前10位中，XSS排名第2，仅次于代码注入（Injection）。</p>
-<h2 id="攻击手段和目的"><a href="#攻击手段和目的" class="headerlink" title="攻击手段和目的"></a>攻击手段和目的</h2><p>攻击者使被攻击者在浏览器中执行脚本后，如果需要收集来自被攻击者的数据（如cookie或其他敏感信息），可以自行架设一个网站，让被攻击者通过JavaScript等方式把收集好的数据作为参数提交，随后以数据库等形式记录在攻击者自己的服务器上。<br>常用的XSS攻击手段和目的有：</p>
+<h1 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h1><p>跨站请求伪造（英语：Cross-site request forgery），也被称为 one-click attack 或者 session riding，通常缩写为 CSRF 或者 XSRF，是一种挟制用户在当前已登录的 Web 应用程序上执行非本意的操作的攻击方法。跟跨网站脚本（XSS）相比，XSS 利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。</p>
+<h2 id="攻击的细节"><a href="#攻击的细节" class="headerlink" title="攻击的细节"></a>攻击的细节</h2><p>跨站请求攻击，简单地说，是攻击者通过一些技术手段欺骗用户的浏览器去访问一个自己曾经认证过的网站并执行一些操作（如发邮件，发消息，甚至财产操作如转账和购买商品）。由于浏览器曾经认证过，所以被访问的网站会认为是真正的用户操作而去执行。这利用了 web 中用户身份验证的一个漏洞：<strong> 简单的身份验证只能保证请求发自某个用户的浏览器，却不能保证请求本身是用户自愿发出的 </strong>。</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>假如一家银行用以执行转账操作的 URL 地址为 <code>http://www.examplebank.com/withdraw?account=AccoutName&amp;amount=1000&amp;for=PayeeName</code>，那么，一个恶意攻击者可以在另一个网站上放置如下代码：<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">&lt;img src="&lt;http://www.examplebank.com/withdraw?account=Alice<span class="variable">&amp;amount</span>=<span class="number">1000</span><span class="variable">&amp;for</span>=Badman&gt;</span><span class="string">"&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>如果有账户名为 Alice 的用户访问了恶意站点，而她之前刚访问过银行不久，登录信息尚未过期，那么她就会损失 1000 资金。<br>这种恶意的网址可以有很多种形式，藏身于网页中的许多地方。此外，攻击者也不需要控制放置恶意网址的网站。例如他可以将这种地址藏在论坛，博客等任何用户生成内容的网站中。这意味着 <strong> 如果服务器端没有合适的防御措施的话，用户即使访问熟悉的可信网站也有受攻击的危险 </strong>。<br>透过例子能够看出，攻击者并不能通过 CSRF 攻击来直接获取用户的账户控制权，也不能直接窃取用户的任何信息。他们能做到的，是 <strong> 欺骗用户浏览器，让其以用户的名义执行操作 </strong>。</p>
+<h2 id="防御措施"><a href="#防御措施" class="headerlink" title="防御措施"></a>防御措施</h2><h3 id="检查-Referer-字段"><a href="#检查-Referer-字段" class="headerlink" title="检查 Referer 字段"></a>检查 Referer 字段</h3><p>HTTP 头中有一个 Referer 字段，这个字段用以标明请求来源于哪个地址。在处理敏感数据请求时，通常来说，Referer 字段应和请求的地址位于同一域名下。以上文银行操作为例，Referer 字段地址通常应该是转账按钮所在的网页地址，应该也位于 <code>www.examplebank.com</code> 之下。而如果是 CSRF 攻击传来的请求，Referer 字段会是包含恶意网址的地址，不会位于 <code>www.examplebank.com</code> 之下，这时候服务器就能识别出恶意的访问。<br>这种办法简单易行，工作量低，仅需要在关键访问处增加一步校验。但这种办法也有其局限性，因其完全依赖浏览器发送正确的 Referer 字段。虽然 http 协议对此字段的内容有明确的规定，但并无法保证来访的浏览器的具体实现，亦无法保证浏览器没有安全漏洞影响到此字段。并且也存在攻击者攻击某些浏览器，篡改其 Referer 字段的可能。</p>
+<h3 id="添加校验-token"><a href="#添加校验-token" class="headerlink" title="添加校验 token"></a>添加校验 token</h3><p>由于 CSRF 的本质在于攻击者欺骗用户去访问自己设置的地址，所以如果要求在访问敏感数据请求时，要求用户浏览器提供不保存在 cookie 中，并且攻击者无法伪造的数据作为校验，那么攻击者就无法再执行 CSRF 攻击。这种数据通常是表单中的一个数据项。服务器将其生成并附加在表单中，其内容是一个伪乱数。当客户端通过表单提交请求时，这个伪乱数也一并提交上去以供校验。正常的访问时，客户端浏览器能够正确得到并传回这个伪乱数，而通过 CSRF 传来的欺骗性攻击中，攻击者无从事先得知这个伪乱数的值，服务器端就会因为校验 token 的值为空或者错误，拒绝这个可疑请求。</p>
+<h1 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h1><p>跨站脚本（英语：Cross-site scripting，通常简称为：XSS）是一种网站应用程序的安全漏洞攻击，是代码注入的一种。它允许恶意用户将代码注入到网页上，其他用户在观看网页时就会受到影响。这类攻击通常包含了 HTML 以及用户端脚本语言。<br>XSS 攻击通常指的是通过利用网页开发时留下的漏洞，通过巧妙的方法注入恶意指令代码到网页，使用户加载并执行攻击者恶意制造的网页程序。这些恶意网页程序通常是 JavaScript，但实际上也可以包括 Java，VBScript，ActiveX，Flash 或者甚至是普通的 HTML。攻击成功后，攻击者可能得到更高的权限（如执行一些操作）、私密网页内容、会话和 cookie 等各种内容。</p>
+<h2 id="背景和现状"><a href="#背景和现状" class="headerlink" title="背景和现状"></a>背景和现状</h2><p>当网景（Netscape）最初推出 JavaScript 语言时，他们也察觉到准许网页服务器发送可执行的代码给一个浏览器的安全风险（即使仅是在一个浏览器的沙盒里）。它所造成的一个关键的问题在于用户同时打开多个浏览器视窗时，在某些例子里，网页里的片断代码被允许从另一个网页或对象取出数据，而因为恶意的网站可以用这个方法来尝试窃取机密信息，所以在某些情形，这应是完全被禁止的。为了解决这个问题，浏览器采用了同源决策——仅允许来自相同域名系统和使用相同协议的对象与网页之间的任何交互。这样一来，恶意的网站便无法借由 JavaScript 在另一个浏览器窃取机密数据。此后，为了保护用户免受恶意的危害，其他的浏览器与服务端指令语言采用了类似的访问控制决策。<br>XSS 漏洞可以追溯到 1990 年代。大量的网站曾遭受 XSS 漏洞攻击或被发现此类漏洞，如 Twitter，Facebook，MySpace，Orkut，新浪微博和百度贴吧。研究表明，最近几年 XSS 已经超过缓冲区溢出成为最流行的攻击方式，有 68% 的网站可能遭受此类攻击。根据开放网页应用安全计划（Open Web Application Security Project）公布的 2010 年统计数据，在 Web 安全威胁前 10 位中，XSS 排名第 2，仅次于代码注入（Injection）。</p>
+<h2 id="攻击手段和目的"><a href="#攻击手段和目的" class="headerlink" title="攻击手段和目的"></a>攻击手段和目的</h2><p>攻击者使被攻击者在浏览器中执行脚本后，如果需要收集来自被攻击者的数据（如 cookie 或其他敏感信息），可以自行架设一个网站，让被攻击者通过 JavaScript 等方式把收集好的数据作为参数提交，随后以数据库等形式记录在攻击者自己的服务器上。<br>常用的 XSS 攻击手段和目的有：</p>
 <ul>
-<li>盗用cookie，获取敏感信息。</li>
-<li>利用植入Flash，通过crossdomain权限设置进一步获取更高权限；或者利用Java等得到类似的操作。</li>
-<li>利用iframe、frame、XMLHttpRequest或上述Flash等方式，以（被攻击）用户的身份执行一些管理动作，或执行一些一般的如发微博、加好友、发私信等操作。</li>
+<li>盗用 cookie，获取敏感信息。</li>
+<li>利用植入 Flash，通过 crossdomain 权限设置进一步获取更高权限；或者利用 Java 等得到类似的操作。</li>
+<li>利用 iframe、frame、XMLHttpRequest 或上述 Flash 等方式，以（被攻击）用户的身份执行一些管理动作，或执行一些一般的如发微博、加好友、发私信等操作。</li>
 <li>利用可被攻击的域受到其他域信任的特点，以受信任来源的身份请求一些平时不允许的操作，如进行不当的投票活动。</li>
-<li>在访问量极大的一些页面上的XSS可以攻击一些小型网站，实现DDoS攻击的效果。</li>
+<li>在访问量极大的一些页面上的 XSS 可以攻击一些小型网站，实现 DDoS 攻击的效果。</li>
 </ul>
-<h2 id="漏洞的防御和利用"><a href="#漏洞的防御和利用" class="headerlink" title="漏洞的防御和利用"></a>漏洞的防御和利用</h2><h3 id="过滤特殊字符"><a href="#过滤特殊字符" class="headerlink" title="过滤特殊字符"></a>过滤特殊字符</h3><p>避免XSS的方法之一主要是将用户所提供的内容进行过滤，许多语言都有提供对HTML的过滤：</p>
+<h2 id="漏洞的防御和利用"><a href="#漏洞的防御和利用" class="headerlink" title="漏洞的防御和利用"></a>漏洞的防御和利用</h2><h3 id="过滤特殊字符"><a href="#过滤特殊字符" class="headerlink" title="过滤特殊字符"></a>过滤特殊字符</h3><p>避免 XSS 的方法之一主要是将用户所提供的内容进行过滤，许多语言都有提供对 HTML 的过滤：</p>
 <ul>
-<li>PHP的<code>htmlentities()</code>或是<code>htmlspecialchars()</code>。</li>
-<li>Python的<code>cgi.escape()</code>。</li>
-<li>ASP的<code>Server.HTMLEncode()</code>。</li>
-<li>ASP.NET的<code>Server.HtmlEncode()</code>或功能更强的Microsoft Anti-Cross Site Scripting Library。</li>
-<li>Java的xssprotect(Open Source Library)。</li>
-<li>Node.js的node-validator。</li>
+<li>PHP 的 <code>htmlentities()</code> 或是 <code>htmlspecialchars()</code>。</li>
+<li>Python 的 <code>cgi.escape()</code>。</li>
+<li>ASP 的 <code>Server.HTMLEncode()</code>。</li>
+<li>ASP.NET 的 <code>Server.HtmlEncode()</code> 或功能更强的 Microsoft Anti-Cross Site Scripting Library。</li>
+<li>Java 的 xssprotect(Open Source Library)。</li>
+<li>Node.js 的 node-validator。</li>
 </ul>
-<h3 id="使用HTTP头指定类型"><a href="#使用HTTP头指定类型" class="headerlink" title="使用HTTP头指定类型"></a>使用HTTP头指定类型</h3><p>很多时候可以使用HTTP头指定内容的类型，使得输出的内容避免被作为HTML解析。如在PHP语言中使用以下代码：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    header(<span class="string">'Content-Type: text/javascript; charset=utf-8'</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>即可强行指定输出内容为文本/JavaScript脚本（顺便指定了内容编码），而非可以引发攻击的HTML。</p>
-<h3 id="用户方面"><a href="#用户方面" class="headerlink" title="用户方面"></a>用户方面</h3><p>包括Internet Explorer、Mozilla Firefox在内的大多数浏览器皆有关闭JavaScript的选项，但关闭功能并非是最好的方法，因为许多网站都需要使用JavaScript语言才能正常运作。通常来说，一个经常有安全更新推出的浏览器，在使用上会比很久都没有更新的浏览器更为安全。</p>
+<h3 id="使用-HTTP-头指定类型"><a href="#使用-HTTP-头指定类型" class="headerlink" title="使用 HTTP 头指定类型"></a>使用 HTTP 头指定类型</h3><p>很多时候可以使用 HTTP 头指定内容的类型，使得输出的内容避免被作为 HTML 解析。如在 PHP 语言中使用以下代码：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    header(<span class="string">'Content-Type: text/javascript; charset=utf-8'</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>即可强行指定输出内容为文本 / JavaScript 脚本（顺便指定了内容编码），而非可以引发攻击的 HTML。</p>
+<h3 id="用户方面"><a href="#用户方面" class="headerlink" title="用户方面"></a>用户方面</h3><p>包括 Internet Explorer、Mozilla Firefox 在内的大多数浏览器皆有关闭 JavaScript 的选项，但关闭功能并非是最好的方法，因为许多网站都需要使用 JavaScript 语言才能正常运作。通常来说，一个经常有安全更新推出的浏览器，在使用上会比很久都没有更新的浏览器更为安全。</p>
 <p>参考文章：<br><a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery" target="_blank" rel="noopener">跨站请求伪造</a><br><a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="noopener">跨站脚本</a><br><a href="https://codex.wordpress.org/WordPress_Nonces" target="_blank" rel="noopener">WordPress Nonces</a><br><a href="https://developer.wordpress.org/plugins/security/securing-input" target="_blank" rel="noopener">Securing Input</a></p>
 </div>
 <div>
@@ -282,7 +282,7 @@ top: initial;
 <strong>本文作者： </strong>张书樵</li>
 <li class="post-copyright-link">
 <strong>本文链接：</strong>
-<a href="https://zhangshuqiao.org/2018-07/详解CSRF与XSS攻击/" title="详解CSRF与XSS攻击">https://zhangshuqiao.org/2018-07/详解CSRF与XSS攻击/</a>
+<a href="https://zhangshuqiao.org/2018-07/详解CSRF与XSS攻击/" title="详解 CSRF 与 XSS 攻击">https://zhangshuqiao.org/2018-07/详解CSRF与XSS攻击/</a>
 </li>
 <li class="post-copyright-license">
 <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -294,14 +294,14 @@ top: initial;
 </div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
-<a href="/2018-07/Hexo内容压缩/" rel="next" title="Hexo内容压缩">
-<i class="fa fa-chevron-left"></i> Hexo内容压缩
+<a href="/2018-07/Hexo内容压缩/" rel="next" title="Hexo 内容压缩">
+<i class="fa fa-chevron-left"></i> Hexo 内容压缩
 </a>
 </div>
 <span class="post-nav-divider"></span>
 <div class="post-nav-prev post-nav-item">
-<a href="/2018-07/改变世界的17个公式/" rel="prev" title="改变世界的17个公式">
-改变世界的17个公式 <i class="fa fa-chevron-right"></i>
+<a href="/2018-07/改变世界的17个公式/" rel="prev" title="改变世界的 17 个公式">
+改变世界的 17 个公式 <i class="fa fa-chevron-right"></i>
 </a>
 </div>
 </div>
@@ -340,7 +340,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">88</span>
+<span class="site-state-item-count">89</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -379,7 +379,7 @@ RSS
 <!--noindex-->
 <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
 <div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Not-using-Nonces-and-or-checking-permissions"><span class="nav-number">1.</span> <span class="nav-text">Not using Nonces and/or checking permissions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Please-sanitize-escape-and-validate-your-POST-calls"><span class="nav-number">2.</span> <span class="nav-text">Please sanitize, escape, and validate your POST calls</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#CSRF"><span class="nav-number"></span> <span class="nav-text">CSRF</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#攻击的细节"><span class="nav-number">1.</span> <span class="nav-text">攻击的细节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">1.1.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防御措施"><span class="nav-number">2.</span> <span class="nav-text">防御措施</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#检查Referer字段"><span class="nav-number">2.1.</span> <span class="nav-text">检查Referer字段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加校验token"><span class="nav-number">2.2.</span> <span class="nav-text">添加校验token</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#XSS"><span class="nav-number"></span> <span class="nav-text">XSS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景和现状"><span class="nav-number">1.</span> <span class="nav-text">背景和现状</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#攻击手段和目的"><span class="nav-number">2.</span> <span class="nav-text">攻击手段和目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#漏洞的防御和利用"><span class="nav-number">3.</span> <span class="nav-text">漏洞的防御和利用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤特殊字符"><span class="nav-number">3.1.</span> <span class="nav-text">过滤特殊字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用HTTP头指定类型"><span class="nav-number">3.2.</span> <span class="nav-text">使用HTTP头指定类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户方面"><span class="nav-number">3.3.</span> <span class="nav-text">用户方面</span></a></li></ol></li></ol></li></div>
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Not-using-Nonces-and-or-checking-permissions"><span class="nav-number">1.</span> <span class="nav-text">Not using Nonces and/or checking permissions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Please-sanitize-escape-and-validate-your-POST-calls"><span class="nav-number">2.</span> <span class="nav-text">Please sanitize, escape, and validate your POST calls</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#CSRF"><span class="nav-number"></span> <span class="nav-text">CSRF</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#攻击的细节"><span class="nav-number">1.</span> <span class="nav-text">攻击的细节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">1.1.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防御措施"><span class="nav-number">2.</span> <span class="nav-text">防御措施</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#检查-Referer-字段"><span class="nav-number">2.1.</span> <span class="nav-text">检查 Referer 字段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加校验-token"><span class="nav-number">2.2.</span> <span class="nav-text">添加校验 token</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#XSS"><span class="nav-number"></span> <span class="nav-text">XSS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景和现状"><span class="nav-number">1.</span> <span class="nav-text">背景和现状</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#攻击手段和目的"><span class="nav-number">2.</span> <span class="nav-text">攻击手段和目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#漏洞的防御和利用"><span class="nav-number">3.</span> <span class="nav-text">漏洞的防御和利用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤特殊字符"><span class="nav-number">3.1.</span> <span class="nav-text">过滤特殊字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-HTTP-头指定类型"><span class="nav-number">3.2.</span> <span class="nav-text">使用 HTTP 头指定类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户方面"><span class="nav-number">3.3.</span> <span class="nav-text">用户方面</span></a></li></ol></li></ol></li></div>
 </div>
 </div>
 <!--/noindex-->
@@ -444,7 +444,7 @@ window.Promise = null;
 <script>
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function(item) {
+guest = guest.split(',').filter(function (item) {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({

@@ -36,18 +36,18 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
-<meta name="description" content="能够输出自身的代码被称为Quine，以哲学家Willard van Orman Quine（1908-2000）而命名。Quine在图灵完备的语言中都是可行的。在可计算性理论（computability theory）中，图灵等价指的是：对于两个计算机A和B，如果A可以模拟B，B可以模拟A，就称他们是图灵等价的。根据『丘奇-图灵』理论，图灵机是表达能力最强大的计算系统，对现实世界中的任何计算机，都">
+<meta name="description" content="能够输出自身的代码被称为 Quine，以哲学家 Willard van Orman Quine（1908-2000）而命名。Quine 在图灵完备的语言中都是可行的。在可计算性理论（computability theory）中，图灵等价指的是：对于两个计算机 A 和 B，如果 A 可以模拟 B，B 可以模拟 A，就称他们是图灵等价的。根据『丘奇 - 图灵』理论，图灵机是表达能力最强大的计算系统，对">
 <meta name="keywords" content="个人博客,张书樵,物理,技术,计算机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Quine——输出自身的程序">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-03/Quine——输出自身的程序/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="能够输出自身的代码被称为Quine，以哲学家Willard van Orman Quine（1908-2000）而命名。Quine在图灵完备的语言中都是可行的。在可计算性理论（computability theory）中，图灵等价指的是：对于两个计算机A和B，如果A可以模拟B，B可以模拟A，就称他们是图灵等价的。根据『丘奇-图灵』理论，图灵机是表达能力最强大的计算系统，对现实世界中的任何计算机，都">
+<meta property="og:description" content="能够输出自身的代码被称为 Quine，以哲学家 Willard van Orman Quine（1908-2000）而命名。Quine 在图灵完备的语言中都是可行的。在可计算性理论（computability theory）中，图灵等价指的是：对于两个计算机 A 和 B，如果 A 可以模拟 B，B 可以模拟 A，就称他们是图灵等价的。根据『丘奇 - 图灵』理论，图灵机是表达能力最强大的计算系统，对">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-12-25T08:47:01.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Quine——输出自身的程序">
-<meta name="twitter:description" content="能够输出自身的代码被称为Quine，以哲学家Willard van Orman Quine（1908-2000）而命名。Quine在图灵完备的语言中都是可行的。在可计算性理论（computability theory）中，图灵等价指的是：对于两个计算机A和B，如果A可以模拟B，B可以模拟A，就称他们是图灵等价的。根据『丘奇-图灵』理论，图灵机是表达能力最强大的计算系统，对现实世界中的任何计算机，都">
+<meta name="twitter:description" content="能够输出自身的代码被称为 Quine，以哲学家 Willard van Orman Quine（1908-2000）而命名。Quine 在图灵完备的语言中都是可行的。在可计算性理论（computability theory）中，图灵等价指的是：对于两个计算机 A 和 B，如果 A 可以模拟 B，B 可以模拟 A，就称他们是图灵等价的。根据『丘奇 - 图灵』理论，图灵机是表达能力最强大的计算系统，对">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2018-03/Quine——输出自身的程序/">
 <script id="page.configurations">
@@ -195,7 +195,7 @@ top: initial;
 </span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-file"></i>
+<i class="fa fa-file"></i>
 阅读次数：
 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
@@ -215,8 +215,8 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>能够输出自身的代码被称为Quine，以哲学家Willard van Orman Quine（1908-2000）而命名。<br>Quine在图灵完备的语言中都是可行的。在可计算性理论（computability theory）中，图灵等价指的是：对于两个计算机A和B，如果A可以模拟B，B可以模拟A，就称他们是图灵等价的。根据『丘奇-图灵』理论，图灵机是表达能力最强大的计算系统，对现实世界中的任何计算机，都可以用图灵机来模拟它。<br>套用上面的定义，如果一个编程语言可以完全模拟图灵机，那么它就是图灵完备的。大部分编程语言都是图灵完备的，因为他们需要解决各种问题的通用能力，而这正是图灵机所具备的。不过也存在一些语言不是图灵完备的，他们通常是被设计用来解决某些特殊的问题，比如SQL以及正则表达式。</p>
-<p>Shell<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">z=\<span class="string">' a='</span>z=\\<span class="variable">$z</span> a=<span class="variable">$z</span><span class="variable">$a</span><span class="variable">$z</span>\; <span class="built_in">eval</span> <span class="built_in">echo</span> \<span class="variable">$a</span><span class="string">'; eval echo $a</span></span><br></pre></td></tr></table></figure></p>
+<p>能够输出自身的代码被称为 Quine，以哲学家 Willard van Orman Quine（1908-2000）而命名。<br>Quine 在图灵完备的语言中都是可行的。在可计算性理论（computability theory）中，图灵等价指的是：对于两个计算机 A 和 B，如果 A 可以模拟 B，B 可以模拟 A，就称他们是图灵等价的。根据『丘奇 - 图灵』理论，图灵机是表达能力最强大的计算系统，对现实世界中的任何计算机，都可以用图灵机来模拟它。<br>套用上面的定义，如果一个编程语言可以完全模拟图灵机，那么它就是图灵完备的。大部分编程语言都是图灵完备的，因为他们需要解决各种问题的通用能力，而这正是图灵机所具备的。不过也存在一些语言不是图灵完备的，他们通常是被设计用来解决某些特殊的问题，比如 SQL 以及正则表达式。</p>
+<p>Shell<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">z=\<span class="string">'a='</span>z=\\<span class="variable">$z</span> a=<span class="variable">$z</span><span class="variable">$a</span><span class="variable">$z</span>\; <span class="built_in">eval</span> <span class="built_in">echo</span> \<span class="variable">$a</span><span class="string">'; eval echo $a</span></span><br></pre></td></tr></table></figure></p>
 <p>PHP<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> file_get_content(<span class="keyword">__FILE__</span>);</span><br></pre></td></tr></table></figure></p>
 <p>JavaScript<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span> $(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="string">'!'</span>+$+<span class="string">'()'</span>)&#125;()</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">'var%20s%20%3D%20%27__%27%3B%20console.log%28unescape%28s%29.replace%28%27__%27%2C%20s%29%29'</span>; <span class="built_in">console</span>.log(<span class="built_in">unescape</span>(s).replace(<span class="string">'__'</span>, s))</span><br></pre></td></tr></table></figure>
@@ -270,14 +270,14 @@ top: initial;
 <footer class="post-footer">
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
-<a href="/2018-03/使用Electron构建桌面应用/" rel="next" title="使用Electron构建桌面应用">
-<i class="fa fa-chevron-left"></i> 使用Electron构建桌面应用
+<a href="/2018-03/使用Electron构建桌面应用/" rel="next" title="使用 Electron 构建桌面应用">
+<i class="fa fa-chevron-left"></i> 使用 Electron 构建桌面应用
 </a>
 </div>
 <span class="post-nav-divider"></span>
 <div class="post-nav-prev post-nav-item">
-<a href="/2018-03/Bilibili弹幕文件的解析/" rel="prev" title="Bilibili弹幕文件的解析">
-Bilibili弹幕文件的解析 <i class="fa fa-chevron-right"></i>
+<a href="/2018-03/Bilibili弹幕文件的解析/" rel="prev" title="Bilibili 弹幕文件的解析">
+Bilibili 弹幕文件的解析 <i class="fa fa-chevron-right"></i>
 </a>
 </div>
 </div>
@@ -308,7 +308,7 @@ Bilibili弹幕文件的解析 <i class="fa fa-chevron-right"></i>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">88</span>
+<span class="site-state-item-count">89</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -405,7 +405,7 @@ window.Promise = null;
 <script>
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function(item) {
+guest = guest.split(',').filter(function (item) {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({

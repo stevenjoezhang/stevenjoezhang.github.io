@@ -156,6 +156,77 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/CentOS 7启动bbr教程/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-02/CentOS 7启动bbr教程/" class="post-title-link" itemprop="url">CentOS 7 启动 bbr 教程</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="far fa-calendar"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-02-19 13:22:49" itemprop="dateCreated datePublished" datetime="2018-02-19T13:22:49+08:00">2018-02-19</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="far fa-folder"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="far fa-file-word"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">2.2k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="far fa-clock"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">2 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>自 Google 于 2016 年 9 月宣布将 BBR 开源起，世界各国的极客们就开始研究了，对于常年受制于特殊网络环境下的我国民众，长期都在寻找各种提速的方法。之前流行的锐速（后开始收费）以及 FinalSpeed 等都曾备受大家的爱戴。对于 bbr 而言，通俗来讲就是对 Linux 内核 TCP 协议的优化从而达到提速的目的。</p>
+<h2 id="yum-系统更新"><a href="#yum-系统更新" class="headerlink" title="yum 系统更新"></a>yum 系统更新</h2><p>将 CentOS 系统版本更新到 7.3 或更高：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br><span class="line">yum upgrade</span><br></pre></td></tr></table></figure></p>
+<p>查看系统版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/redhat-release</span><br></pre></td></tr></table></figure></p>
+<p>输出如下，则表示已升级到 7.3<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CentOS Linux release 7.3.1611 (Core)</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装-elrepo-并升级内核"><a href="#安装-elrepo-并升级内核" class="headerlink" title="安装 elrepo 并升级内核"></a>安装 elrepo 并升级内核</h2><p>执行 <code>uname -r</code> 查看内核版本，例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4.9.0-1.el7.elrepo.x86_64</span><br></pre></td></tr></table></figure></p>
+<p>如果内核版本低于 4.9，需要升级内核；否则可以跳过这一步，直接到『开启 bbr』部分。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line">rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span><br></pre></td></tr></table></figure></p>
+<p>这时，执行 <code>yum repolist all</code> 可以看到所有安装的源，可以启用 <code>elrepo-kernal</code>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager --<span class="built_in">enable</span> elrepo-kernel</span><br><span class="line">yum install kernel-ml -y</span><br></pre></td></tr></table></figure></p>
+<p>如果只是执行一次，也可以使用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum --enablerepo=elrepo-kernel install kernel-ml -y</span><br></pre></td></tr></table></figure></p>
+<p>正常情况下将输出如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Transaction Summary</span><br><span class="line">================================================================================</span><br><span class="line">Install  1 Package</span><br><span class="line"></span><br><span class="line">Total download size: 39 M</span><br><span class="line">Installed size: 169 M</span><br><span class="line">Downloading packages:</span><br><span class="line">kernel-ml-4.9.0-1.el7.elrepo.x86_64.rpm                    |  39 MB   00:00</span><br><span class="line">Running transaction check</span><br><span class="line">Running transaction <span class="built_in">test</span></span><br><span class="line">Transaction <span class="built_in">test</span> succeeded</span><br><span class="line">Running transaction</span><br><span class="line">Warning: RPMDB altered outside of yum.</span><br><span class="line">  Installing : kernel-ml-4.9.0-1.el7.elrepo.x86_64                          1/1</span><br><span class="line">  Verifying  : kernel-ml-4.9.0-1.el7.elrepo.x86_64                          1/1</span><br><span class="line"></span><br><span class="line">Installed:</span><br><span class="line">  kernel-ml.x86_64 0:4.9.0-1.el7.elrepo</span><br><span class="line"></span><br><span class="line">Complete!</span><br></pre></td></tr></table></figure></p>
+<p>随后更新 grub 文件并重启，来启动最新内核：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \<span class="string">'</span></span><br><span class="line"><span class="string"># 所有可用的内核会被输出，记下新内核所在的行数，第一行为 0，第二行为 1</span></span><br><span class="line"><span class="string">grub2-set-default 0</span></span><br><span class="line"><span class="string"># 把 0 替换成新内核所在的行数</span></span><br><span class="line"><span class="string">reboot</span></span><br></pre></td></tr></table></figure></p>
+<p>重启后，ssh 会断开，稍等一会儿重新连接。可以再次查看内核版本，检查更新是否成功。下一步就是启动 bbr 了。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-02/CentOS 7启动bbr教程/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/米米直播平台正式上线/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -190,7 +261,7 @@ page-home">
 <i class="far fa-file-word"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">444</span>
+<span title="本文字数">478</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
 <i class="far fa-clock"></i>
@@ -201,7 +272,7 @@ page-home">
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>经过为期半个月的测试，米米直播平台成功实现了多线路及多种播放方式的直播：<br>线路一是无需Flash支持的HLS直播，对移动端支持极为友好，只是由于原理所限，延时约为45秒；线路一的播放方式有原生HLS和Video.js解码的HLS，能够覆盖大部分设备。<br>线路二是基于Bilibili开源的<a href="https://github.com/Bilibili/flv.js" target="_blank" rel="noopener">flv.js</a>的HTTP FLV直播，同样无须Flash，且延时仅有3秒；该播放方式兼容大部分桌面浏览器，但由于需要<a href="https://w3c.github.io/media-source" target="_blank" rel="noopener">Media Source Extensions</a> API支持，对移动端不友好；该线路各项直播数据已经可以媲美各大主流直播平台。<br>线路三为基于video.js和Flash的RTMP直播流，延时亦为3秒左右；不过考虑到Flash的种种弊端，线路三只是作为备用线路。原生HTML5直播在性能上明显优于Flash。</p>
+<p>经过为期半个月的测试，米米直播平台成功实现了多线路及多种播放方式的直播：<br>线路一是无需 Flash 支持的 HLS 直播，对移动端支持极为友好，只是由于原理所限，延时约为 45 秒；线路一的播放方式有原生 HLS 和 Video.js 解码的 HLS，能够覆盖大部分设备。<br>线路二是基于 Bilibili 开源的 <a href="https://github.com/Bilibili/flv.js" target="_blank" rel="noopener">flv.js</a> 的 HTTP FLV 直播，同样无须 Flash，且延时仅有 3 秒；该播放方式兼容大部分桌面浏览器，但由于需要<a href="https://w3c.github.io/media-source" target="_blank" rel="noopener">Media Source Extensions</a> API 支持，对移动端不友好；该线路各项直播数据已经可以媲美各大主流直播平台。<br>线路三为基于 video.js 和 Flash 的 RTMP 直播流，延时亦为 3 秒左右；不过考虑到 Flash 的种种弊端，线路三只是作为备用线路。原生 HTML5 直播在性能上明显优于 Flash。</p>
 <p><img src="/images/2018-02/mimilive.png" alt=""></p>
 <p>根据最新规划，米米视频将专注于视频点播功能，点播的视频大部分为原创作品；而米米直播目前已开放了一个<a href="https://galaxymimi.com/live/?room=mimi&amp;player=1" target="_blank" rel="noopener">测试频道</a>，未来将进行拓展。关于推流码验证的相关功能正在完善。附上链接：<br><a href="https://galaxymimi.com/player/" target="_blank" rel="noopener">米米视频</a><br><a href="https://galaxymimi.com/live/" target="_blank" rel="noopener">米米直播</a></p>
 </div>
@@ -223,7 +294,7 @@ page-home">
 </span>
 <header class="post-header">
 <h1 class="post-title" itemprop="name headline">
-<a href="/2018-02/制造MD5碰撞/" class="post-title-link" itemprop="url">制造MD5碰撞</a>
+<a href="/2018-02/制造MD5碰撞/" class="post-title-link" itemprop="url">制造 MD5 碰撞</a>
 </h1>
 <div class="post-meta">
 <span class="post-time">
@@ -246,7 +317,7 @@ page-home">
 <i class="far fa-file-word"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">568</span>
+<span title="本文字数">577</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
 <i class="far fa-clock"></i>
@@ -257,7 +328,7 @@ page-home">
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>下面这两张图片拥有相同的MD5值<code>253dd04e87492e4fc3471de5e776bc3d</code>：</p>
+<p>下面这两张图片拥有相同的 MD5 值 <code>253dd04e87492e4fc3471de5e776bc3d</code>：</p>
 <p><img src="/images/2018-02/plane.jpg" alt=""><br><img src="/images/2018-02/ship.jpg" alt=""></p>
 <!--noindex-->
 <div class="post-button text-center">
@@ -285,7 +356,7 @@ page-home">
 </span>
 <header class="post-header">
 <h1 class="post-title" itemprop="name headline">
-<a href="/2018-01/基于Nginx搭建视频直播服务器/" class="post-title-link" itemprop="url">基于Nginx搭建视频直播服务器</a>
+<a href="/2018-01/基于Nginx搭建视频直播服务器/" class="post-title-link" itemprop="url">基于 Nginx 搭建视频直播服务器</a>
 </h1>
 <div class="post-meta">
 <span class="post-time">
@@ -308,26 +379,26 @@ page-home">
 <i class="far fa-file-word"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">6k</span>
+<span title="本文字数">6.3k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
 <i class="far fa-clock"></i>
 </span>
 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">5 分钟</span>
+<span title="阅读时长">6 分钟</span>
 </div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>最近几年，网络视频直播处于蓬勃的发展期，各大直播平台的竞争也趋于白热化。在游戏直播领域，就有许多电子竞技的前职业选手，退役后转行游戏主播，收入不菲。当然，网络直播的用处不仅仅是娱乐行业，诸如实时视频监控等应用方向，同样潜力无限。如果没有太高的并发播放需求，完全可以自行搭建直播服务器。借助于Nginx和一些拓展模块，你就可以轻松地运行一个小型的直播平台。<br>博主在参看了大量教程后，成功地在VPS上搭建了这样的视频直播服务器，而且在昨晚经过测试，能够正常地使用OBS Studio推流，在浏览器上实现HTML5播放。下面附上具体步骤，请将所有<code>yourdomain.com</code>替换为你的域名或者服务器IP。</p>
-<h2 id="Nginx环境搭建"><a href="#Nginx环境搭建" class="headerlink" title="Nginx环境搭建"></a>Nginx环境搭建</h2><p>首先，需要下载可编译的Nginx源代码，以及必要的拓展库。如果你是萌新，请按照👇教程安装搭建lnmp环境！<br><a href="https://lnmp.org/install.html" target="_blank" rel="noopener">lnmp环境一键安装脚本</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下载并安装lnmp环境，将1.4替换为最新版本</span></span><br><span class="line">wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz</span><br><span class="line">tar -xzvf lnmp1.4.tar.gz</span><br><span class="line"><span class="built_in">cd</span> lnmp1.4</span><br><span class="line">./install.sh lnmp</span><br></pre></td></tr></table></figure>
+<p>最近几年，网络视频直播处于蓬勃的发展期，各大直播平台的竞争也趋于白热化。在游戏直播领域，就有许多电子竞技的前职业选手，退役后转行游戏主播，收入不菲。当然，网络直播的用处不仅仅是娱乐行业，诸如实时视频监控等应用方向，同样潜力无限。如果没有太高的并发播放需求，完全可以自行搭建直播服务器。借助于 Nginx 和一些拓展模块，你就可以轻松地运行一个小型的直播平台。<br>博主在参看了大量教程后，成功地在 VPS 上搭建了这样的视频直播服务器，而且在昨晚经过测试，能够正常地使用 OBS Studio 推流，在浏览器上实现 HTML5 播放。下面附上具体步骤，请将所有 <code>yourdomain.com</code> 替换为你的域名或者服务器 IP。</p>
+<h2 id="Nginx-环境搭建"><a href="#Nginx-环境搭建" class="headerlink" title="Nginx 环境搭建"></a>Nginx 环境搭建</h2><p>首先，需要下载可编译的 Nginx 源代码，以及必要的拓展库。如果你是萌新，请按照👇教程安装搭建 lnmp 环境！<br><a href="https://lnmp.org/install.html" target="_blank" rel="noopener">lnmp 环境一键安装脚本</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载并安装 lnmp 环境，将 1.4 替换为最新版本</span></span><br><span class="line">wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz</span><br><span class="line">tar -xzvf lnmp1.4.tar.gz</span><br><span class="line"><span class="built_in">cd</span> lnmp1.4</span><br><span class="line">./install.sh lnmp</span><br></pre></td></tr></table></figure>
 <p>请按照脚本的提示选择你要安装的各个组件版本，若不确定，选择默认选项即可。安装完成后，命令行输出：</p>
 <p><img src="/images/2018-01/1774338-dc544ac657937d0d.png" alt=""></p>
 <p>此时访问服务器地址会出现如下界面：</p>
 <p><img src="/images/2018-01/1774338-b0eb1df8603e632d.png" alt=""></p>
-<p><strong>注意：安装时生成的解压文件夹lnmp1.4先别删除！</strong></p>
-<p>如果你对在Linux上安装配置Nginx有所了解，可以直接使用源码安装，不必通过lnmp。Nginx源码<a href="https://nginx.org/en/download.html" target="_blank" rel="noopener">在此处下载</a>，configure的参数后文会讲到，可以参考。</p>
+<p><strong> 注意：安装时生成的解压文件夹 lnmp1.4 先别删除！</strong></p>
+<p>如果你对在 Linux 上安装配置 Nginx 有所了解，可以直接使用源码安装，不必通过 lnmp。Nginx 源码<a href="https://nginx.org/en/download.html" target="_blank" rel="noopener">在此处下载</a>，configure 的参数后文会讲到，可以参考。</p>
 <!--noindex-->
 <div class="post-button text-center">
 <a class="btn" href="/2018-01/基于Nginx搭建视频直播服务器/#more" rel="contents">
@@ -354,7 +425,7 @@ page-home">
 </span>
 <header class="post-header">
 <h1 class="post-title" itemprop="name headline">
-<a href="/2018-01/JavaScript常用简写技术与扩展运算符/" class="post-title-link" itemprop="url">JavaScript常用简写技术与扩展运算符</a>
+<a href="/2018-01/JavaScript常用简写技术与扩展运算符/" class="post-title-link" itemprop="url">JavaScript 常用简写技术与扩展运算符</a>
 </h1>
 <div class="post-meta">
 <span class="post-time">
@@ -377,7 +448,7 @@ page-home">
 <i class="far fa-file-word"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">7.6k</span>
+<span title="本文字数">7.7k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
 <i class="far fa-clock"></i>
@@ -388,9 +459,9 @@ page-home">
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<h2 id="三元操作符"><a href="#三元操作符" class="headerlink" title="三元操作符"></a>三元操作符</h2><p>当想写<code>if...else</code>语句时，使用三元操作符来代替。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">let</span> answer;</span><br><span class="line"><span class="keyword">if</span> (x &gt; <span class="number">10</span>) &#123;</span><br><span class="line">    answer = <span class="string">'is greater'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    answer = <span class="string">'is lesser'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>简写：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> answer = x &gt; <span class="number">10</span> ? <span class="string">'is greater'</span> : <span class="string">'is lesser'</span>;</span><br><span class="line"></span><br><span class="line">也可以嵌套<span class="keyword">if</span>语句：</span><br><span class="line"><span class="string">``</span><span class="string">`javascript</span></span><br><span class="line"><span class="string">const big = x &gt; 10 ? " greater 10" : x</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="短路求值简写方式"><a href="#短路求值简写方式" class="headerlink" title="短路求值简写方式"></a>短路求值简写方式</h2><p>当给一个变量分配另一个值时，想确定源始值不是<code>null</code>，<code>undefined</code>或空值。可以写撰写一个多重条件的if语句。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (variable1 !== <span class="literal">null</span> || variable1 !== <span class="literal">undefined</span> || variable1 !== <span class="string">''</span>) &#123;</span><br><span class="line">     <span class="keyword">let</span> variable2 = variable1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="三元操作符"><a href="#三元操作符" class="headerlink" title="三元操作符"></a>三元操作符</h2><p>当想写 <code>if...else</code> 语句时，使用三元操作符来代替。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">let</span> answer;</span><br><span class="line"><span class="keyword">if</span> (x &gt; <span class="number">10</span>) &#123;</span><br><span class="line">    answer = <span class="string">'is greater'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    answer = <span class="string">'is lesser'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>简写：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> answer = x &gt; <span class="number">10</span> ? <span class="string">'is greater'</span> : <span class="string">'is lesser'</span>;</span><br><span class="line"></span><br><span class="line">也可以嵌套 < span class="keyword">if</span> 语句：<br><span class="line"><span class="string">``</span><span class="string">`javascript</span></span><br><span class="line"><span class="string">const big = x &gt; 10 ? "greater 10" : x</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="短路求值简写方式"><a href="#短路求值简写方式" class="headerlink" title="短路求值简写方式"></a>短路求值简写方式</h2><p>当给一个变量分配另一个值时，想确定源始值不是 <code>null</code>，<code>undefined</code> 或空值。可以写撰写一个多重条件的 if 语句。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (variable1 !== <span class="literal">null</span> || variable1 !== <span class="literal">undefined</span> || variable1 !== <span class="string">''</span>) &#123;</span><br><span class="line">     <span class="keyword">let</span> variable2 = variable1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>或者可以使用短路求值方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> variable2 = variable1  || <span class="string">'new'</span>;</span><br></pre></td></tr></table></figure></p>
 <h2 id="声明变量简写方法"><a href="#声明变量简写方法" class="headerlink" title="声明变量简写方法"></a>声明变量简写方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x;</span><br><span class="line"><span class="keyword">let</span> y;</span><br><span class="line"><span class="keyword">let</span> z = <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
 <p>简写方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x, y, z=<span class="number">3</span>;</span><br></pre></td></tr></table></figure></p>
@@ -420,7 +491,7 @@ page-home">
 </span>
 <header class="post-header">
 <h1 class="post-title" itemprop="name headline">
-<a href="/2018-01/MCPE地图的正确使用方式/" class="post-title-link" itemprop="url">MCPE地图的正确使用方式</a>
+<a href="/2018-01/MCPE地图的正确使用方式/" class="post-title-link" itemprop="url">MCPE 地图的正确使用方式</a>
 </h1>
 <div class="post-meta">
 <span class="post-time">
@@ -463,61 +534,6 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-01/为了联盟/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-01/为了联盟/" class="post-title-link" itemprop="url">为了联盟</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-01-17 11:27:55" itemprop="dateCreated datePublished" datetime="2018-01-17T11:27:55+08:00">2018-01-17</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">7</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">1 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>为了荣耀！</p>
-<p><img src="/images/2018-01/IMG_4186.jpg" alt=""></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -543,7 +559,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">88</span>
+<span class="site-state-item-count">89</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -638,7 +654,7 @@ window.Promise = null;
 <script>
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function(item) {
+guest = guest.split(',').filter(function (item) {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({

@@ -36,13 +36,13 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
-<meta name="description" content="2018年CUPT的第一题：  Invent YourselfConstruct a simple seismograph that amplifies a local disturbance by mechanical, optical or electrical methods. Determine the typical response curve of your device and i">
-<meta name="keywords" content="Python,Arduino">
+<meta name="description" content="2018 年 CUPT 的第一题：  Invent YourselfConstruct a simple seismograph that amplifies a local disturbance by mechanical, optical or electrical methods. Determine the typical response curve of your device an">
+<meta name="keywords" content="Arduino,Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CUPT地震仪的实现">
+<meta property="og:title" content="CUPT 地震仪的实现">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-05/CUPT地震仪的实现/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="2018年CUPT的第一题：  Invent YourselfConstruct a simple seismograph that amplifies a local disturbance by mechanical, optical or electrical methods. Determine the typical response curve of your device and i">
+<meta property="og:description" content="2018 年 CUPT 的第一题：  Invent YourselfConstruct a simple seismograph that amplifies a local disturbance by mechanical, optical or electrical methods. Determine the typical response curve of your device an">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-05/1.jpg">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-05/2.png">
@@ -52,8 +52,8 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-05/6.jpg">
 <meta property="og:updated_time" content="2018-12-25T08:47:19.816Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CUPT地震仪的实现">
-<meta name="twitter:description" content="2018年CUPT的第一题：  Invent YourselfConstruct a simple seismograph that amplifies a local disturbance by mechanical, optical or electrical methods. Determine the typical response curve of your device and i">
+<meta name="twitter:title" content="CUPT 地震仪的实现">
+<meta name="twitter:description" content="2018 年 CUPT 的第一题：  Invent YourselfConstruct a simple seismograph that amplifies a local disturbance by mechanical, optical or electrical methods. Determine the typical response curve of your device an">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-05/1.jpg">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2018-05/CUPT地震仪的实现/">
@@ -62,7 +62,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
-<title>CUPT地震仪的实现 | 米米的博客</title>
+<title>CUPT 地震仪的实现 | 米米的博客</title>
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -173,7 +173,7 @@ top: initial;
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
-<h1 class="post-title" itemprop="name headline">CUPT地震仪的实现
+<h1 class="post-title" itemprop="name headline">CUPT 地震仪的实现
 </h1>
 <div class="post-meta">
 <span class="post-time">
@@ -202,7 +202,7 @@ top: initial;
 </span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-file"></i>
+<i class="fa fa-file"></i>
 阅读次数：
 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
@@ -211,7 +211,7 @@ top: initial;
 <i class="far fa-file-word"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">844</span>
+<span title="本文字数">869</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
 <i class="far fa-clock"></i>
@@ -222,24 +222,24 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>2018年CUPT的第一题：</p>
+<p>2018 年 CUPT 的第一题：</p>
 <blockquote>
-<p><strong>Invent Yourself</strong><br>Construct a simple seismograph that amplifies a local disturbance by mechanical, optical or electrical methods. Determine the typical response curve of your device and investigate the parameters of the damping constant. What is the maximum amplification that you can achieve?<br><strong>自主发明</strong><br>建造一个可以通过力学、光学或电学方法放大局部扰动的简单地震仪。确定你装置的标准响应曲线并且研究阻尼常数的参量。你能达到的最大放大率是多少？</p>
+<p><strong>Invent Yourself</strong><br>Construct a simple seismograph that amplifies a local disturbance by mechanical, optical or electrical methods. Determine the typical response curve of your device and investigate the parameters of the damping constant. What is the maximum amplification that you can achieve?<br><strong> 自主发明 </strong><br>建造一个可以通过力学、光学或电学方法放大局部扰动的简单地震仪。确定你装置的标准响应曲线并且研究阻尼常数的参量。你能达到的最大放大率是多少？</p>
 </blockquote>
-<p>此题的关键便是将地震仪的反应谱通过可观测量进行表示。实现的思路有很多，力学、光学或电学方法都是可行的。综合考虑了实现难度和测量精度后，决定采用以下方案：通过力学方法放大震动，然后利用霍尔片和磁铁将力学量转换为电学量，借助Arduino单片机的模数转换，通过串口将信号输入到电脑，电脑用Python监听串口，将获得的数据保存并实时分析、绘图。</p>
+<p>此题的关键便是将地震仪的反应谱通过可观测量进行表示。实现的思路有很多，力学、光学或电学方法都是可行的。综合考虑了实现难度和测量精度后，决定采用以下方案：通过力学方法放大震动，然后利用霍尔片和磁铁将力学量转换为电学量，借助 Arduino 单片机的模数转换，通过串口将信号输入到电脑，电脑用 Python 监听串口，将获得的数据保存并实时分析、绘图。</p>
 <p>仪器的整体构造如图：</p>
 <p><img src="/images/2018-05/1.jpg" alt=""></p>
 <a id="more"></a>
 <p>磁铁与霍尔片的细节：</p>
 <p><img src="/images/2018-05/2.png" alt=""></p>
-<p>Arduino的连接：</p>
+<p>Arduino 的连接：</p>
 <p><img src="/images/2018-05/3.png" alt=""></p>
 <p>仪器的工作状态：</p>
 <p><img src="/images/2018-05/4.png" alt=""><br><img src="/images/2018-05/5.jpg" alt=""></p>
 <p>测得的『地震』波（由敲击桌子和将小物件扔到桌子上产生）：</p>
 <p><img src="/images/2018-05/6.jpg" alt=""></p>
-<p>具体的代码包括Arduino读取模拟信号和串口输出部分（需要使用Arduino IDE编译上传至设备），以及Python监听串口、保存数据、绘图部分。<br>所有代码已开源：<a href="https://github.com/stevenjoezhang/CUPT-Seismograph" target="_blank" rel="noopener">CUPT-Seismograph</a></p>
-<p>本文更新于2018年10月31日：<br>其实电脑上还有一个更好的采样方式——声卡。通过Python直接读取声卡的模拟输入，也可以达到效果，并且采样率和精度可以做得更高。<code>pyaudio</code>库可以提供相关功能，有兴趣的话可以按这个思路实现。</p>
+<p>具体的代码包括 Arduino 读取模拟信号和串口输出部分（需要使用 Arduino IDE 编译上传至设备），以及 Python 监听串口、保存数据、绘图部分。<br>所有代码已开源：<a href="https://github.com/stevenjoezhang/CUPT-Seismograph" target="_blank" rel="noopener">CUPT-Seismograph</a></p>
+<p>本文更新于 2018 年 10 月 31 日：<br>其实电脑上还有一个更好的采样方式——声卡。通过 Python 直接读取声卡的模拟输入，也可以达到效果，并且采样率和精度可以做得更高。<code>pyaudio</code> 库可以提供相关功能，有兴趣的话可以按这个思路实现。</p>
 </div>
 <div>
 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -269,7 +269,7 @@ top: initial;
 <strong>本文作者： </strong>张书樵</li>
 <li class="post-copyright-link">
 <strong>本文链接：</strong>
-<a href="https://zhangshuqiao.org/2018-05/CUPT地震仪的实现/" title="CUPT地震仪的实现">https://zhangshuqiao.org/2018-05/CUPT地震仪的实现/</a>
+<a href="https://zhangshuqiao.org/2018-05/CUPT地震仪的实现/" title="CUPT 地震仪的实现">https://zhangshuqiao.org/2018-05/CUPT地震仪的实现/</a>
 </li>
 <li class="post-copyright-license">
 <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -277,8 +277,8 @@ top: initial;
 </div>
 <footer class="post-footer">
 <div class="post-tags">
-<a href="/tags/Python/" rel="tag"># Python</a>
 <a href="/tags/Arduino/" rel="tag"># Arduino</a>
+<a href="/tags/Python/" rel="tag"># Python</a>
 </div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
@@ -288,8 +288,8 @@ top: initial;
 </div>
 <span class="post-nav-divider"></span>
 <div class="post-nav-prev post-nav-item">
-<a href="/2018-05/在GitHub热点图上绘画/" rel="prev" title="在GitHub热点图上绘画">
-在GitHub热点图上绘画 <i class="fa fa-chevron-right"></i>
+<a href="/2018-05/在GitHub热点图上绘画/" rel="prev" title="在 GitHub 热点图上绘画">
+在 GitHub 热点图上绘画 <i class="fa fa-chevron-right"></i>
 </a>
 </div>
 </div>
@@ -320,7 +320,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">88</span>
+<span class="site-state-item-count">89</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -417,7 +417,7 @@ window.Promise = null;
 <script>
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function(item) {
+guest = guest.split(',').filter(function (item) {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({

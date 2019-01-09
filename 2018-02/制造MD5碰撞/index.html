@@ -36,20 +36,20 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
-<meta name="description" content="下面这两张图片拥有相同的MD5值253dd04e87492e4fc3471de5e776bc3d：">
+<meta name="description" content="下面这两张图片拥有相同的 MD5 值 253dd04e87492e4fc3471de5e776bc3d：">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="制造MD5碰撞">
+<meta property="og:title" content="制造 MD5 碰撞">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-02/制造MD5碰撞/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="下面这两张图片拥有相同的MD5值253dd04e87492e4fc3471de5e776bc3d：">
+<meta property="og:description" content="下面这两张图片拥有相同的 MD5 值 253dd04e87492e4fc3471de5e776bc3d：">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-02/plane.jpg">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-02/ship.jpg">
 <meta property="og:updated_time" content="2018-12-22T18:09:16.860Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="制造MD5碰撞">
-<meta name="twitter:description" content="下面这两张图片拥有相同的MD5值253dd04e87492e4fc3471de5e776bc3d：">
+<meta name="twitter:title" content="制造 MD5 碰撞">
+<meta name="twitter:description" content="下面这两张图片拥有相同的 MD5 值 253dd04e87492e4fc3471de5e776bc3d：">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-02/plane.jpg">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2018-02/制造MD5碰撞/">
@@ -58,7 +58,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
-<title>制造MD5碰撞 | 米米的博客</title>
+<title>制造 MD5 碰撞 | 米米的博客</title>
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -169,7 +169,7 @@ top: initial;
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
-<h1 class="post-title" itemprop="name headline">制造MD5碰撞
+<h1 class="post-title" itemprop="name headline">制造 MD5 碰撞
 </h1>
 <div class="post-meta">
 <span class="post-time">
@@ -198,7 +198,7 @@ top: initial;
 </span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-file"></i>
+<i class="fa fa-file"></i>
 阅读次数：
 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
@@ -207,7 +207,7 @@ top: initial;
 <i class="far fa-file-word"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">568</span>
+<span title="本文字数">577</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
 <i class="far fa-clock"></i>
@@ -218,11 +218,11 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>下面这两张图片拥有相同的MD5值<code>253dd04e87492e4fc3471de5e776bc3d</code>：</p>
+<p>下面这两张图片拥有相同的 MD5 值 <code>253dd04e87492e4fc3471de5e776bc3d</code>：</p>
 <p><img src="/images/2018-02/plane.jpg" alt=""><br><img src="/images/2018-02/ship.jpg" alt=""></p>
 <a id="more"></a>
-<p>使用Python计算文件MD5值的脚本：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GetFileMd5</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isfile(filename):</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    myhash = hashlib.md5()</span><br><span class="line">    f = file(filename, <span class="string">'rb'</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        b = f.read(<span class="number">8192</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> b:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        myhash.update(b)</span><br><span class="line">    f.close()</span><br><span class="line">    <span class="keyword">return</span> myhash.hexdigest()</span><br><span class="line"></span><br><span class="line">filepath = raw_input(<span class="string">'请输入文件路径：'</span>)</span><br><span class="line"><span class="keyword">print</span> GetFileMd5(filepath)</span><br></pre></td></tr></table></figure></p>
-<p>拓展阅读：<br><a href="https://www.zhihu.com/question/265534528/answer/300135154" target="_blank" rel="noopener">至今有没有发现哪几个字符串的MD5相同?</a><br><a href="https://natmchugh.blogspot.de/2015/02/create-your-own-md5-collisions.html" target="_blank" rel="noopener">Create your own MD5 collisions</a></p>
+<p>使用 Python 计算文件 MD5 值的脚本：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GetFileMd5</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isfile(filename):</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    myhash = hashlib.md5()</span><br><span class="line">    f = file(filename, <span class="string">'rb'</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        b = f.read(<span class="number">8192</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> b:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        myhash.update(b)</span><br><span class="line">    f.close()</span><br><span class="line">    <span class="keyword">return</span> myhash.hexdigest()</span><br><span class="line"></span><br><span class="line">filepath = raw_input(<span class="string">'请输入文件路径：'</span>)</span><br><span class="line"><span class="keyword">print</span> GetFileMd5(filepath)</span><br></pre></td></tr></table></figure></p>
+<p>拓展阅读：<br><a href="https://www.zhihu.com/question/265534528/answer/300135154" target="_blank" rel="noopener">至今有没有发现哪几个字符串的 MD5 相同?</a><br><a href="https://natmchugh.blogspot.de/2015/02/create-your-own-md5-collisions.html" target="_blank" rel="noopener">Create your own MD5 collisions</a></p>
 </div>
 <div>
 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -252,7 +252,7 @@ top: initial;
 <strong>本文作者： </strong>张书樵</li>
 <li class="post-copyright-link">
 <strong>本文链接：</strong>
-<a href="https://zhangshuqiao.org/2018-02/制造MD5碰撞/" title="制造MD5碰撞">https://zhangshuqiao.org/2018-02/制造MD5碰撞/</a>
+<a href="https://zhangshuqiao.org/2018-02/制造MD5碰撞/" title="制造 MD5 碰撞">https://zhangshuqiao.org/2018-02/制造MD5碰撞/</a>
 </li>
 <li class="post-copyright-license">
 <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -264,8 +264,8 @@ top: initial;
 </div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
-<a href="/2018-01/基于Nginx搭建视频直播服务器/" rel="next" title="基于Nginx搭建视频直播服务器">
-<i class="fa fa-chevron-left"></i> 基于Nginx搭建视频直播服务器
+<a href="/2018-01/基于Nginx搭建视频直播服务器/" rel="next" title="基于 Nginx 搭建视频直播服务器">
+<i class="fa fa-chevron-left"></i> 基于 Nginx 搭建视频直播服务器
 </a>
 </div>
 <span class="post-nav-divider"></span>
@@ -302,7 +302,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">88</span>
+<span class="site-state-item-count">89</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -399,7 +399,7 @@ window.Promise = null;
 <script>
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function(item) {
+guest = guest.split(',').filter(function (item) {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({

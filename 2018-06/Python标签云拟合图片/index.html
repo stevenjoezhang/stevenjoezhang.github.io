@@ -36,20 +36,20 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
-<meta name="description" content="借助Python，可以轻松地用标签云拼出一副图片，就像上图这样。让我们一起看看具体的步骤吧。 环境需要安装的包：  python3 pip3（即python3 -m pip）  需要使用pip安装的模块：  matplotlib numpy  wordcloud模块也是需要的，但使用pip3 install wordcloud大概率会报错。正确的安装方式是：1234git clone https">
+<meta name="description" content="借助 Python，可以轻松地用标签云拼出一副图片，就像上图这样。让我们一起看看具体的步骤吧。 环境需要安装的包：  python3 pip3（即 python3 -m pip）  需要使用 pip 安装的模块：  matplotlib numpy  wordcloud 模块也是需要的，但使用 pip3 install wordcloud 大概率会报错。正确的安装方式是：1234git clon">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python标签云拟合图片">
+<meta property="og:title" content="Python 标签云拟合图片">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-06/Python标签云拟合图片/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="借助Python，可以轻松地用标签云拼出一副图片，就像上图这样。让我们一起看看具体的步骤吧。 环境需要安装的包：  python3 pip3（即python3 -m pip）  需要使用pip安装的模块：  matplotlib numpy  wordcloud模块也是需要的，但使用pip3 install wordcloud大概率会报错。正确的安装方式是：1234git clone https">
+<meta property="og:description" content="借助 Python，可以轻松地用标签云拼出一副图片，就像上图这样。让我们一起看看具体的步骤吧。 环境需要安装的包：  python3 pip3（即 python3 -m pip）  需要使用 pip 安装的模块：  matplotlib numpy  wordcloud 模块也是需要的，但使用 pip3 install wordcloud 大概率会报错。正确的安装方式是：1234git clon">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-06/tux_after.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-06/tux.png">
 <meta property="og:updated_time" content="2018-12-25T14:08:20.783Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python标签云拟合图片">
-<meta name="twitter:description" content="借助Python，可以轻松地用标签云拼出一副图片，就像上图这样。让我们一起看看具体的步骤吧。 环境需要安装的包：  python3 pip3（即python3 -m pip）  需要使用pip安装的模块：  matplotlib numpy  wordcloud模块也是需要的，但使用pip3 install wordcloud大概率会报错。正确的安装方式是：1234git clone https">
+<meta name="twitter:title" content="Python 标签云拟合图片">
+<meta name="twitter:description" content="借助 Python，可以轻松地用标签云拼出一副图片，就像上图这样。让我们一起看看具体的步骤吧。 环境需要安装的包：  python3 pip3（即 python3 -m pip）  需要使用 pip 安装的模块：  matplotlib numpy  wordcloud 模块也是需要的，但使用 pip3 install wordcloud 大概率会报错。正确的安装方式是：1234git clon">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-06/tux_after.png">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2018-06/Python标签云拟合图片/">
@@ -58,7 +58,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
-<title>Python标签云拟合图片 | 米米的博客</title>
+<title>Python 标签云拟合图片 | 米米的博客</title>
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -169,7 +169,7 @@ top: initial;
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
-<h1 class="post-title" itemprop="name headline">Python标签云拟合图片
+<h1 class="post-title" itemprop="name headline">Python 标签云拟合图片
 </h1>
 <div class="post-meta">
 <span class="post-time">
@@ -198,7 +198,7 @@ top: initial;
 </span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-file"></i>
+<i class="fa fa-file"></i>
 阅读次数：
 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
@@ -219,24 +219,24 @@ top: initial;
 </header>
 <div class="post-body" itemprop="articleBody">
 <p><img src="/images/2018-06/tux_after.png" alt=""></p>
-<p>借助Python，可以轻松地用标签云拼出一副图片，就像上图这样。让我们一起看看具体的步骤吧。</p>
+<p>借助 Python，可以轻松地用标签云拼出一副图片，就像上图这样。让我们一起看看具体的步骤吧。</p>
 <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>需要安装的包：</p>
 <ul>
 <li>python3</li>
-<li>pip3（即<code>python3 -m pip</code>）</li>
+<li>pip3（即 <code>python3 -m pip</code>）</li>
 </ul>
-<p>需要使用pip安装的模块：</p>
+<p>需要使用 pip 安装的模块：</p>
 <ul>
 <li>matplotlib</li>
 <li>numpy</li>
 </ul>
-<p>wordcloud模块也是需要的，但使用<code>pip3 install wordcloud</code>大概率会报错。正确的安装方式是：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/amueller/word_cloud.git</span><br><span class="line"><span class="built_in">cd</span> word_cloud-master</span><br><span class="line">sudo pip install -r requirements.txt</span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure></p>
+<p>wordcloud 模块也是需要的，但使用 <code>pip3 install wordcloud</code> 大概率会报错。正确的安装方式是：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/amueller/word_cloud.git</span><br><span class="line"><span class="built_in">cd</span> word_cloud-master</span><br><span class="line">sudo pip install -r requirements.txt</span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure></p>
 <p>这样就完成安装了。</p>
 <a id="more"></a>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> time, re, json</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud, ImageColorGenerator</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">pic = np.array(Image.open(<span class="string">"path/to/your/image.png"</span>))</span><br><span class="line">jsondict = &#123;</span><br><span class="line">	<span class="string">"Unix"</span>: <span class="number">9</span>,</span><br><span class="line">	<span class="string">"Linus Torvalds"</span>: <span class="number">8</span>,</span><br><span class="line">	<span class="string">"Richard Stallman"</span>: <span class="number">8</span>,</span><br><span class="line">	<span class="string">"open source"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Gentoo"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Archlinux"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Void Linux"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Guix"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"free software"</span>: <span class="number">8</span>,</span><br><span class="line">	<span class="string">"RadHat"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"php"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"SUSE"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Ruby"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Python"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Go"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Mandriva"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"root"</span>: <span class="number">5</span>,</span><br><span class="line">	<span class="string">"android"</span>: <span class="number">4</span>,</span><br><span class="line">	<span class="string">"Lisp"</span>: <span class="number">6</span>,</span><br><span class="line">	<span class="string">"C"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Haskell"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"XMonad"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"javascript"</span>: <span class="number">6</span>,</span><br><span class="line">	<span class="string">"clojure"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"bash"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"vim"</span>: <span class="number">4</span>,</span><br><span class="line">	<span class="string">"emacs"</span>: <span class="number">4</span>,</span><br><span class="line">	<span class="string">"vis"</span>: <span class="number">4</span>,</span><br><span class="line">	<span class="string">"ls"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"cd"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"grep"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"sed"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"awk"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"pascal"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"GNU"</span>: <span class="number">9</span>,</span><br><span class="line">	<span class="string">"irc"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"inkscape"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"github"</span>: <span class="number">5</span>,</span><br><span class="line">	<span class="string">"gitlab"</span>: <span class="number">4</span>,</span><br><span class="line">	<span class="string">"FOSDEM"</span>: <span class="number">5</span>,</span><br><span class="line">	<span class="string">"GPL"</span>: <span class="number">4</span>,</span><br><span class="line">	<span class="string">"Free as in Freedom"</span>: <span class="number">5</span>,</span><br><span class="line">	<span class="string">"FOSS"</span>: <span class="number">4</span>,</span><br><span class="line">	<span class="string">"Mozilla"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Busybox"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"qemu"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"gnome"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"android"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Fedora"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"R"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"xelatex"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"mupdf"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"chromium"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"riot"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"pidgin"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"vlc"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"deadbeef"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"xarchiver"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"calibre"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"s6"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"json"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"chez scheme"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"GIMP"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"gcc"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"debian"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"printf(\"Linux\")"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"echo Linux"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"(println \"Linux\")"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"console.log \"Linux\""</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"(format t \"Linux\")"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"writeln(\"Linux\")"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"PRINT \"Linux\""</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"(insert \"Linux\")"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"fmt.Println(\"Linux\")"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"main = putStrLn \"Linux\""</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"(display \"Linux\")"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"System.out.println(\"Linux\");"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"document.write(\"Linux\")"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"type [Linux]"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"disp('Linux')"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"&lt;?php\necho \"Linux\"\n?&gt;"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Ubuntu"</span>: <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line">image_colors = ImageColorGenerator(pic, [<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>])</span><br><span class="line">wc = WordCloud(background_color = <span class="string">"white"</span>, mask = pic)</span><br><span class="line">wc.generate_from_frequencies(jsondict)</span><br><span class="line"></span><br><span class="line">plt.imshow(wc.recolor(color_func = image_colors), interpolation = <span class="string">"bilinear"</span>)</span><br><span class="line">plt.axis(<span class="string">"off"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p>将<code>path/to/your/image.png</code>换为你要制作的图片，例如下面这张：</p>
+<p>将 <code>path/to/your/image.png</code> 换为你要制作的图片，例如下面这张：</p>
 <p><img src="/images/2018-06/tux.png" alt=""></p>
-<p>当然也可以替换为自己的图片，支持多种格式，但为了保证效果，非主体部分应填充白色。<br>jsondict是标签云中文字的内容和权重（大小），自行修改即可。<br>保存后使用python3执行以上代码，即可得到拟合出的图片。</p>
+<p>当然也可以替换为自己的图片，支持多种格式，但为了保证效果，非主体部分应填充白色。<br>jsondict 是标签云中文字的内容和权重（大小），自行修改即可。<br>保存后使用 python3 执行以上代码，即可得到拟合出的图片。</p>
 </div>
 <div>
 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -266,7 +266,7 @@ top: initial;
 <strong>本文作者： </strong>张书樵</li>
 <li class="post-copyright-link">
 <strong>本文链接：</strong>
-<a href="https://zhangshuqiao.org/2018-06/Python标签云拟合图片/" title="Python标签云拟合图片">https://zhangshuqiao.org/2018-06/Python标签云拟合图片/</a>
+<a href="https://zhangshuqiao.org/2018-06/Python标签云拟合图片/" title="Python 标签云拟合图片">https://zhangshuqiao.org/2018-06/Python标签云拟合图片/</a>
 </li>
 <li class="post-copyright-license">
 <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -278,8 +278,8 @@ top: initial;
 </div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
-<a href="/2018-06/Linux下增加、删除Swap文件/" rel="next" title="Linux下增加、删除Swap文件">
-<i class="fa fa-chevron-left"></i> Linux下增加、删除Swap文件
+<a href="/2018-06/Linux下增加、删除Swap文件/" rel="next" title="Linux 下增加、删除 Swap 文件">
+<i class="fa fa-chevron-left"></i> Linux 下增加、删除 Swap 文件
 </a>
 </div>
 <span class="post-nav-divider"></span>
@@ -324,7 +324,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">88</span>
+<span class="site-state-item-count">89</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -428,7 +428,7 @@ window.Promise = null;
 <script>
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function(item) {
+guest = guest.split(',').filter(function (item) {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({

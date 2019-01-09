@@ -36,18 +36,18 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
-<meta name="description" content="B站的每个视频都有aid和cid两个参数，在已知视频aid（即AV号）的情况下，可以通过链接https://www.bilibili.com/widget/getPageList?aid=10492获取cid（将10492替换为你要查询的视频的aid）。视频的更多信息则可以通过https://api.bilibili.com/view?type=jsonp&amp;amp;appkey=8e9fc618f">
+<meta name="description" content="B 站的每个视频都有 aid 和 cid 两个参数，在已知视频 aid（即 AV 号）的情况下，可以通过链接 https://www.bilibili.com/widget/getPageList?aid=10492 获取 cid（将 10492 替换为你要查询的视频的 aid）。视频的更多信息则可以通过 https://api.bilibili.com/view?type=jsonp&amp;amp;a">
 <meta name="keywords" content="个人博客,张书樵,物理,技术,计算机">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Bilibili弹幕文件的解析">
+<meta property="og:title" content="Bilibili 弹幕文件的解析">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-03/Bilibili弹幕文件的解析/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="B站的每个视频都有aid和cid两个参数，在已知视频aid（即AV号）的情况下，可以通过链接https://www.bilibili.com/widget/getPageList?aid=10492获取cid（将10492替换为你要查询的视频的aid）。视频的更多信息则可以通过https://api.bilibili.com/view?type=jsonp&amp;amp;appkey=8e9fc618f">
+<meta property="og:description" content="B 站的每个视频都有 aid 和 cid 两个参数，在已知视频 aid（即 AV 号）的情况下，可以通过链接 https://www.bilibili.com/widget/getPageList?aid=10492 获取 cid（将 10492 替换为你要查询的视频的 aid）。视频的更多信息则可以通过 https://api.bilibili.com/view?type=jsonp&amp;amp;a">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-02T09:16:58.855Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bilibili弹幕文件的解析">
-<meta name="twitter:description" content="B站的每个视频都有aid和cid两个参数，在已知视频aid（即AV号）的情况下，可以通过链接https://www.bilibili.com/widget/getPageList?aid=10492获取cid（将10492替换为你要查询的视频的aid）。视频的更多信息则可以通过https://api.bilibili.com/view?type=jsonp&amp;amp;appkey=8e9fc618f">
+<meta name="twitter:title" content="Bilibili 弹幕文件的解析">
+<meta name="twitter:description" content="B 站的每个视频都有 aid 和 cid 两个参数，在已知视频 aid（即 AV 号）的情况下，可以通过链接 https://www.bilibili.com/widget/getPageList?aid=10492 获取 cid（将 10492 替换为你要查询的视频的 aid）。视频的更多信息则可以通过 https://api.bilibili.com/view?type=jsonp&amp;amp;a">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2018-03/Bilibili弹幕文件的解析/">
 <script id="page.configurations">
@@ -55,7 +55,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
-<title>Bilibili弹幕文件的解析 | 米米的博客</title>
+<title>Bilibili 弹幕文件的解析 | 米米的博客</title>
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -166,7 +166,7 @@ top: initial;
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
-<h1 class="post-title" itemprop="name headline">Bilibili弹幕文件的解析
+<h1 class="post-title" itemprop="name headline">Bilibili 弹幕文件的解析
 </h1>
 <div class="post-meta">
 <span class="post-time">
@@ -195,7 +195,7 @@ top: initial;
 </span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-file"></i>
+<i class="fa fa-file"></i>
 阅读次数：
 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
@@ -204,7 +204,7 @@ top: initial;
 <i class="far fa-file-word"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">936</span>
+<span title="本文字数">1k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
 <i class="far fa-clock"></i>
@@ -215,21 +215,21 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>B站的每个视频都有aid和cid两个参数，在已知视频aid（即AV号）的情况下，可以通过链接<code>https://www.bilibili.com/widget/getPageList?aid=10492</code>获取cid（将10492替换为你要查询的视频的aid）。<br>视频的更多信息则可以通过<code>https://api.bilibili.com/view?type=jsonp&amp;appkey=8e9fc618fbd41e28&amp;id=10492</code>获取。<br>视频的弹幕文件采用xml格式存储，地址与其cid有关，为<code>https://comment.bilibili.com/$cid.xml</code>（将$cid替换为视频的cid）。<br>对于有许多分P的视频，它们的aid（AV号）相同，每个分P则对应一个不同的cid。而在同一个页面下的番剧、影视等内容，每一分集的cid也是唯一的。<br>弹幕内容的存储方式为：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">d</span> <span class="attr">p</span>=<span class="string">"0,1,25,16777215,1312863760,0,eff85771,42759017"</span>&gt;</span>前排占位置<span class="tag">&lt;/<span class="name">d</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>B 站的每个视频都有 aid 和 cid 两个参数，在已知视频 aid（即 AV 号）的情况下，可以通过链接 <code>https://www.bilibili.com/widget/getPageList?aid=10492</code> 获取 cid（将 10492 替换为你要查询的视频的 aid）。<br>视频的更多信息则可以通过 <code>https://api.bilibili.com/view?type=jsonp&amp;appkey=8e9fc618fbd41e28&amp;id=10492</code> 获取。<br>视频的弹幕文件采用 xml 格式存储，地址与其 cid 有关，为 <code>https://comment.bilibili.com/$cid.xml</code>（将 $cid 替换为视频的 cid）。<br>对于有许多分 P 的视频，它们的 aid（AV 号）相同，每个分 P 则对应一个不同的 cid。而在同一个页面下的番剧、影视等内容，每一分集的 cid 也是唯一的。<br>弹幕内容的存储方式为：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">d</span> <span class="attr">p</span>=<span class="string">"0,1,25,16777215,1312863760,0,eff85771,42759017"</span>&gt;</span> 前排占位置 < span class="tag">&lt;/<span class="name">d</span>&gt;</span><br></pre></td></tr></table></figure></p>
 <p>这个元素中的各个参数由逗号分割，其意义分别为：</p>
 <ul>
 <li>弹幕出现的时间，以秒为单位</li>
-<li>弹幕的模式：1～3滚动弹幕 4底端弹幕 5顶端弹幕 6逆向弹幕 7精准定位 8高级弹幕</li>
-<li>字号：12非常小 16特小 18小 25中 36大 45很大 64特别大</li>
-<li>字体的颜色：将HTML六位十六进制颜色转为十进制表示，例如#FFFFFF会被存储为16777215，因为$(FFFFFF)_{16}=(16777215)_{10}$</li>
-<li>Unix时间戳，以毫秒为单位，基准时间为1970-1-1 08:00:00</li>
-<li>弹幕池：0普通池 1字幕池 2特殊池（注：目前特殊池为高级弹幕专用）</li>
-<li>发送者的ID，用于『屏蔽此弹幕的发送者』功能</li>
-<li>弹幕在弹幕数据库中rowID，用于『历史弹幕』功能</li>
+<li>弹幕的模式：1～3 滚动弹幕 4 底端弹幕 5 顶端弹幕 6 逆向弹幕 7 精准定位 8 高级弹幕</li>
+<li>字号：12 非常小 16 特小 18 小 25 中 36 大 45 很大 64 特别大</li>
+<li>字体的颜色：将 HTML 六位十六进制颜色转为十进制表示，例如 #FFFFFF 会被存储为 16777215，因为 $(FFFFFF)_{16}=(16777215)_{10}$</li>
+<li>Unix 时间戳，以毫秒为单位，基准时间为 1970-1-1 08:00:00</li>
+<li>弹幕池：0 普通池 1 字幕池 2 特殊池（注：目前特殊池为高级弹幕专用）</li>
+<li>发送者的 ID，用于『屏蔽此弹幕的发送者』功能</li>
+<li>弹幕在弹幕数据库中 rowID，用于『历史弹幕』功能</li>
 </ul>
-<p>将Bilibili弹幕的xml文件转为ass字幕，可以使用以下脚本：<br><a href="http://tiansh.github.io/us-danmaku/bilibili" target="_blank" rel="noopener">bilibili ASS 弹幕在线转换</a><br><a href="https://github.com/tiansh/us-danmaku" target="_blank" rel="noopener">us-danmaku</a></p>
-<p>关于ass字幕格式可以参考以下文章：<a href="https://www.douban.com/note/658520175" target="_blank" rel="noopener">ASS字幕格式规范</a></p>
-<p>拓展阅读：<br><a href="https://zhuanlan.zhihu.com/p/24599052" target="_blank" rel="noopener">Bilibili视频播放页面接口整理（不定期更新）</a><br><a href="https://www.jianshu.com/p/f628679883e3" target="_blank" rel="noopener">Bilibili爬取视频信息进行数据分析</a></p>
+<p>将 Bilibili 弹幕的 xml 文件转为 ass 字幕，可以使用以下脚本：<br><a href="http://tiansh.github.io/us-danmaku/bilibili" target="_blank" rel="noopener">bilibili ASS 弹幕在线转换</a><br><a href="https://github.com/tiansh/us-danmaku" target="_blank" rel="noopener">us-danmaku</a></p>
+<p>关于 ass 字幕格式可以参考以下文章：<a href="https://www.douban.com/note/658520175" target="_blank" rel="noopener">ASS 字幕格式规范</a></p>
+<p>拓展阅读：<br><a href="https://zhuanlan.zhihu.com/p/24599052" target="_blank" rel="noopener">Bilibili 视频播放页面接口整理（不定期更新）</a><br><a href="https://www.jianshu.com/p/f628679883e3" target="_blank" rel="noopener">Bilibili 爬取视频信息进行数据分析</a></p>
 </div>
 <div>
 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -259,7 +259,7 @@ top: initial;
 <strong>本文作者： </strong>张书樵</li>
 <li class="post-copyright-link">
 <strong>本文链接：</strong>
-<a href="https://zhangshuqiao.org/2018-03/Bilibili弹幕文件的解析/" title="Bilibili弹幕文件的解析">https://zhangshuqiao.org/2018-03/Bilibili弹幕文件的解析/</a>
+<a href="https://zhangshuqiao.org/2018-03/Bilibili弹幕文件的解析/" title="Bilibili 弹幕文件的解析">https://zhangshuqiao.org/2018-03/Bilibili弹幕文件的解析/</a>
 </li>
 <li class="post-copyright-license">
 <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -306,7 +306,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">88</span>
+<span class="site-state-item-count">89</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -403,7 +403,7 @@ window.Promise = null;
 <script>
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function(item) {
+guest = guest.split(',').filter(function (item) {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({

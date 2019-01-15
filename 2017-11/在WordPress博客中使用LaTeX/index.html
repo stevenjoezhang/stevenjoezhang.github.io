@@ -37,7 +37,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 </script>
 <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
 <meta name="description" content="上帝说，要有\begin{eqnarray*}\nabla\cdot\vec{E}&amp;amp;=&amp;amp;\frac{\rho}{\epsilon_0}\\\nabla\cdot\vec{B}&amp;amp;=&amp;amp;0\\\nabla\times\vec{E}&amp;amp;=&amp;amp;-\frac{\partial B}{\partial t}\\\nabla\times\vec{B}&amp;amp;=&amp;amp">
-<meta name="keywords" content="LaTeX,WordPress">
+<meta name="keywords" content="WordPress,LaTeX">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在 WordPress 博客中使用 LaTeX">
 <meta property="og:url" content="https://zhangshuqiao.org/2017-11/在WordPress博客中使用LaTeX/index.html">
@@ -258,8 +258,8 @@ top: initial;
 </div>
 <footer class="post-footer">
 <div class="post-tags">
-<a href="/tags/LaTeX/" rel="tag"># LaTeX</a>
 <a href="/tags/WordPress/" rel="tag"># WordPress</a>
+<a href="/tags/LaTeX/" rel="tag"># LaTeX</a>
 </div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
@@ -398,7 +398,7 @@ window.Promise = null;
 <script>
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function (item) {
+guest = guest.split(',').filter(function(item) {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({
@@ -786,11 +786,11 @@ position: relative;
 }
 </style>
 <script>
-$('.highlight').each(function (i, e) {
+$('.highlight').each(function(i, e) {
 var $wrap = $('<div>').addClass('highlight-wrap');
 $(e).after($wrap);
-$wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+$wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
 return $(e).text();
 }).toArray().join('\n');
 var ta = document.createElement('textarea');
@@ -814,9 +814,9 @@ if (result) $(this).text('复制成功');
 else $(this).text('复制失败');
 ta.blur(); //For iOS
 $(this).blur();
-})).on('mouseleave', function (e) {
+})).on('mouseleave', function(e) {
 var $b = $(this).find('.copy-btn');
-setTimeout(function () {
+setTimeout(function() {
 $b.text('复制');
 }, 300);
 }).append(e);

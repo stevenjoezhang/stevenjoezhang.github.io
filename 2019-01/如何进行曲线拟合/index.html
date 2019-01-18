@@ -36,29 +36,28 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
-<meta name="description" content="前言国际单位制以一组基本单位为基础，所有其他单位都是用基本单位建立起来的。麦克斯韦最初提出一致单位制的概念时，列出了三个可用的基本单位：质量、长度及时间单位。之后，吉奥尔吉提倡加入电的基本单位。理论上，电流、电势、电阻、电荷等物理量的单位都可以做基本单位，当选定其中一个做基本单位后，其余的电单位都可以通过物理定律从基本单位推导得出；国际单位制最终选择了使用电流。后期又加入了三个分别量度物质的量、温">
+<meta name="description" content="考完了计算物理（Numerical Analysis），用一张图表达一下心情。感觉像是考了一次高等代数，加一点点统计学。计划寒假里把所有作业的代码整理并开源，敬请期待。  来源：Curve-Fitting">
 <meta name="keywords" content="个人博客,张书樵,物理,技术,计算机">
 <meta property="og:type" content="article">
-<meta property="og:title" content="国际单位制基本单位的重新定义">
-<meta property="og:url" content="https://zhangshuqiao.org/2018-11/国际单位制基本单位的重新定义/index.html">
+<meta property="og:title" content="如何进行曲线拟合">
+<meta property="og:url" content="https://zhangshuqiao.org/2019-01/如何进行曲线拟合/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="前言国际单位制以一组基本单位为基础，所有其他单位都是用基本单位建立起来的。麦克斯韦最初提出一致单位制的概念时，列出了三个可用的基本单位：质量、长度及时间单位。之后，吉奥尔吉提倡加入电的基本单位。理论上，电流、电势、电阻、电荷等物理量的单位都可以做基本单位，当选定其中一个做基本单位后，其余的电单位都可以通过物理定律从基本单位推导得出；国际单位制最终选择了使用电流。后期又加入了三个分别量度物质的量、温">
+<meta property="og:description" content="考完了计算物理（Numerical Analysis），用一张图表达一下心情。感觉像是考了一次高等代数，加一点点统计学。计划寒假里把所有作业的代码整理并开源，敬请期待。  来源：Curve-Fitting">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-11/Unit_relations_in_the_old_SI.svg">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-11/Unit_relations_in_the_new_SI.svg">
-<meta property="og:updated_time" content="2019-01-12T18:05:39.004Z">
+<meta property="og:image" content="https://zhangshuqiao.org/images/2019-01/curve_fitting.png">
+<meta property="og:updated_time" content="2019-01-15T12:42:00.324Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="国际单位制基本单位的重新定义">
-<meta name="twitter:description" content="前言国际单位制以一组基本单位为基础，所有其他单位都是用基本单位建立起来的。麦克斯韦最初提出一致单位制的概念时，列出了三个可用的基本单位：质量、长度及时间单位。之后，吉奥尔吉提倡加入电的基本单位。理论上，电流、电势、电阻、电荷等物理量的单位都可以做基本单位，当选定其中一个做基本单位后，其余的电单位都可以通过物理定律从基本单位推导得出；国际单位制最终选择了使用电流。后期又加入了三个分别量度物质的量、温">
-<meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-11/Unit_relations_in_the_old_SI.svg">
+<meta name="twitter:title" content="如何进行曲线拟合">
+<meta name="twitter:description" content="考完了计算物理（Numerical Analysis），用一张图表达一下心情。感觉像是考了一次高等代数，加一点点统计学。计划寒假里把所有作业的代码整理并开源，敬请期待。  来源：Curve-Fitting">
+<meta name="twitter:image" content="https://zhangshuqiao.org/images/2019-01/curve_fitting.png">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
-<link rel="canonical" href="https://zhangshuqiao.org/2018-11/国际单位制基本单位的重新定义/">
+<link rel="canonical" href="https://zhangshuqiao.org/2019-01/如何进行曲线拟合/">
 <script id="page.configurations">
 CONFIG.page = {
 sidebar: "",
 };
 </script>
-<title>国际单位制基本单位的重新定义 | 米米的博客</title>
+<title>如何进行曲线拟合 | 米米的博客</title>
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -159,7 +158,7 @@ top: initial;
 <div id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/国际单位制基本单位的重新定义/">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-01/如何进行曲线拟合/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
@@ -169,7 +168,7 @@ top: initial;
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
-<h1 class="post-title" itemprop="name headline">国际单位制基本单位的重新定义
+<h1 class="post-title" itemprop="name headline">如何进行曲线拟合
 </h1>
 <div class="post-meta">
 <span class="post-time">
@@ -177,7 +176,7 @@ top: initial;
 <i class="far fa-calendar"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-11-22 09:58:01" itemprop="dateCreated datePublished" datetime="2018-11-22T09:58:01+08:00">2018-11-22</time>
+<time title="创建时间：2019-01-15 22:19:06" itemprop="dateCreated datePublished" datetime="2019-01-15T22:19:06+08:00">2019-01-15</time>
 </span>
 <span class="post-category">
 <span class="post-meta-divider">|</span>
@@ -185,15 +184,15 @@ top: initial;
 <i class="far fa-folder"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
 </span>
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
 <i class="far fa-comment"></i>
 </span>
-<a href="/2018-11/国际单位制基本单位的重新定义/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-11/国际单位制基本单位的重新定义/" itemprop="commentCount"></span>
+<a href="/2019-01/如何进行曲线拟合/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019-01/如何进行曲线拟合/" itemprop="commentCount"></span>
 </a>
 </span>
 <span class="post-meta-divider">|</span>
@@ -207,280 +206,20 @@ top: initial;
 <i class="far fa-file-word"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">7.3k</span>
+<span title="本文字数">103</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
 <i class="far fa-clock"></i>
 </span>
 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">7 分钟</span>
+<span title="阅读时长">1 分钟</span>
 </div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>国际单位制以一组基本单位为基础，所有其他单位都是用基本单位建立起来的。麦克斯韦最初提出一致单位制的概念时，列出了三个可用的基本单位：质量、长度及时间单位。之后，吉奥尔吉提倡加入电的基本单位。理论上，电流、电势、电阻、电荷等物理量的单位都可以做基本单位，当选定其中一个做基本单位后，其余的电单位都可以通过物理定律从基本单位推导得出；国际单位制最终选择了使用电流。后期又加入了三个分别量度物质的量、温度及发光强度的基本单位。<br>国际单位制希望其单位定义的基准是源自于对自然的测量。但此单位制于 1799 在法国被引入时，由当时技术上的限制，因此利用了米原器与千克原器做为米与千克的定义。<br>1960 年，米的定义被改写为由特定光源所发出的光波长（后又改为根据真空光速定义），因此米定义的基准也成为了对自然测量的结果。现今，只留下了千克还是以人造的物品做为定义的基准。<br><strong>2018 年 11 月 16 日，第 26 届国际计量大会一致通过了新国际单位制基本单位定义的提案。新的定义将于 2019 年 5 月 20 日生效。</strong><br>国际度量衡局提案，除了光速以外，下列所示的四个自然常数也应被定义为确定的数值：</p>
-<ul>
-<li>普朗克常数 $h=6.62607015\times10^{−34}(J\cdot s)$</li>
-<li>基本电荷 $e=1.602176634\times10^{−19}(C)$</li>
-<li>玻尔兹曼常数 $k=1.380649\times10^{−23}(J\cdot K^{−1})$</li>
-<li>阿伏伽德罗常量 $N_A=6.02214076\times10^{23}(mol^{−1})$</li>
-</ul>
-<p>这些常数在 2006 年版的 SI 指南就已经出现，但在此版本中后三个常数被定义为『由实验所得的常数』，而不是直接的『定义常数』。<br>国际度量衡局也提案，以下这些自然常数的数值应继续保持不变。</p>
-<ul>
-<li>光速 $c=299,792,458(m\cdot s^{-1})$</li>
-<li>铯 133 原子基态超精细能级分裂频率 $\Delta\nu(^{133}Cs)_{hfs}=9,192,631,770(Hz)$</li>
-<li>频率为 $540\times10^{12}Hz$ 辐射的发光效率 $K_{cd}=683(lm\cdot W^{-1})$</li>
-</ul>
-<p>这是以上七个定义改写为以基本单位表示的形式：</p>
-<ul>
-<li>$\Delta\nu(^{133}Cs)_{hfs}=9,192,631,770(s^{−1})$</li>
-<li>$c=299,792,458(m\cdot s^{−1})$</li>
-<li>$h=6.62607015\times10^{−34}(kg\cdot m^2\cdot s^{−1})$</li>
-<li>$e=1.602176634\times10^{−19}(A\cdot s)$</li>
-<li>$k=1.380649\times10^{−23}(kg\cdot m^2\cdot K^{−1}\cdot s^{−2})$</li>
-<li>$N_A=6.02214076\times1023(mol^{−1})$</li>
-<li>$K_{cd}=683(cd\cdot sr\cdot s^3\cdot kg^{−1}\cdot m^{−2})$</li>
-</ul>
-<p>此外国际度量衡局也要求：</p>
-<ul>
-<li>目前千克的定义应废除并使国际千克原器退休</li>
-<li>目前安培的定义应废除</li>
-<li>目前开尔文的定义应废除</li>
-<li>目前摩尔的定义应修改</li>
-</ul>
-<p>这些改变会影响到基本单位的定义，但对于导出单位的表达形式则不会有所影响。</p>
-<a id="more"></a>
-<h2 id="改变历史"><a href="#改变历史" class="headerlink" title="改变历史"></a>改变历史</h2><p>我们可以回顾国际单位制基本单位定义的改变历史。</p>
-<h3 id="米"><a href="#米" class="headerlink" title="米"></a>米</h3><p>最初（1793 年）：从北极至赤道经过巴黎的子午线长度的一千万分之一。（法国政府）<br>过渡（1799 年）：国际米原器的长度。<br>过渡（1960 年）：氪 - 86 原子在 $2p^{10}$ 和 $5d^5$ 量子能级之间跃迁所发出的电磁波在真空中的波长的 1,650,763.73 倍。<br>目前（1983 年）：光在 $\frac{1}{299,792,458}$ 秒内在真空中行进的距离。</p>
-<h3 id="千克"><a href="#千克" class="headerlink" title="千克"></a>千克</h3><p>最初（1793 年）：最初法文名为 grave，定义为在冰点下体积为一立方分米的纯水的重量（质量）。（法国政府）<br>目前（1889 年）：国际千克原器的质量。<br>未来（2019 年）：由精确的普朗克常数 $h=6.62607015\times10^{−34}(kg\cdot m^2\cdot s^{−1})$、米和秒所定义。</p>
-<h3 id="秒"><a href="#秒" class="headerlink" title="秒"></a>秒</h3><p>最初（中世纪）：一天时长的 86,400 分之一。<br>过渡（1956 年）：1900 年 1 月 0 日历书时 12 时算起的回归年时长的 $\frac{1}{31,556,925.9747}$。<br>目前（1967 年）：铯 - 133 原子基态的两个超精细能级之间跃迁所对应的辐射周期时长的 9,192,631,770 倍。</p>
-<h3 id="安培"><a href="#安培" class="headerlink" title="安培"></a>安培</h3><p>最初（1881 年）：CGS 电磁单位制中电流单位的十分之一。CGS 电流单位的定义是，在半径为 1 厘米、长度为 1 厘米的圆弧上流通，并在圆心产生 1 奥斯特电场的电流。（国际电工委员会）<br>目前（1946 年）：在真空中相距 1 米的两根横截面为圆形、粗度可忽略不计的无限长平行直导线，各通上相等的恒定电流，当两根导线之间每米长度所受力为 $2\times10^{−7}$ 牛顿时，各导线上的电流定义为 1 安培。<br>未来（2019 年）：由新的元电荷 $e=1.602176634\times10^{−19}(A\cdot s)$ 和秒所定义。</p>
-<h3 id="开尔文"><a href="#开尔文" class="headerlink" title="开尔文"></a>开尔文</h3><p>最初（1743 年）：摄氏温标将 0°C 和 100°C 分别定义为水的熔点和沸点。<br>过渡（1954 年）：273.16K 定义为水的三相点（0.01°C）。<br>目前（1967 年）：水的三相点热力学温度的 $\frac{1}{273.16}$。<br>未来（2019 年）：由新的玻尔兹曼常数 $k=1.380649\times10^{−23}(kg\cdot m^2\cdot K^{−1}\cdot s^{−2})$、千克、米和秒所定义。</p>
-<h3 id="摩尔"><a href="#摩尔" class="headerlink" title="摩尔"></a>摩尔</h3><p>最初（1900 年）：物质的克数等于其分子量时的数量。（国际原子量委员会）<br>目前（1967 年）：物质所含的粒子数量相等于 0.012 千克碳 - 12 所含的原子数量。<br>未来（2019 年）：1 摩尔包含 $6.02214076×10^{23}$ 个基本实体，这一数字是新的阿伏伽德罗常数。</p>
-<h3 id="坎德拉"><a href="#坎德拉" class="headerlink" title="坎德拉"></a>坎德拉</h3><p>最初（1946 年）：整个辐射体在铂凝固温度下的亮度，定义为 60 新坎德拉每平方厘米。<br>目前（1979 年）：频率为 $5.4×10^{14}$ 赫兹的单色光源在特定方向辐射强度为 $\frac{1}{683}W/sr$ 时的发光强度。</p>
-<h2 id="依赖关系"><a href="#依赖关系" class="headerlink" title="依赖关系"></a>依赖关系</h2><p>由于定义的变化，这些单位之间的依赖关系也发生了改变。</p>
-<p><img src="/images/2018-11/Unit_relations_in_the_old_SI.svg" alt=""><br><img src="/images/2018-11/Unit_relations_in_the_new_SI.svg" alt=""></p>
-<h2 id="不确定度"><a href="#不确定度" class="headerlink" title="不确定度"></a>不确定度</h2><p>同样，由于定义的变化，一些物理量的不确定度也发生了改变。例如，真空磁导率 $\mu_0$ 将不再具有定义值 $4\pi\times10^{-7}m\cdot kg\cdot s^{-2}\cdot A^{-2}$，水的三相点温度也不再严格地等于 273.16K。下表给出了它们在改动后的影响：</p>
-<div style="overflow-x: scroll !important; white-space: nowrap;">
-<table>
-<thead>
-<tr>
-<th>Constant</th>
-<th>Symbol</th>
-<th>Relation to directly measured and fixed constants (Previous)</th>
-<th>Significant factor(s) in uncertainty (Previous)</th>
-<th>Relative uncertainty (Previous)</th>
-<th>Relation to directly measured and fixed constants (2019)</th>
-<th>Significant factor(s) in uncertainty (2019)</th>
-<th>Relative uncertainty (2019)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Mass of IPK</td>
-<td>$m(\mathcal{K})$</td>
-<td>1&nbsp;kg</td>
-<td>None</td>
-<td>Exact</td>
-<td>$m(\mathcal{K})$</td>
-<td>$m(\mathcal{K})$</td>
-<td>$1.2 \times 10^{-8} = u_\text{r}(m(\mathcal{K}))$</td>
-</tr>
-<tr>
-<td>Planck constant</td>
-<td>$h$</td>
-<td>$\frac{8 \alpha}{c \mu_0 K_\text{J}^2}$</td>
-<td>$K_\text{J}^2$</td>
-<td>$1.2 \times 10^{-8} \approx 2 u_\text{r}(K_\text{J})$</td>
-<td>$6.62607015\times10^{-34} kg\cdot m^2\cdot s^{−1}$</td>
-<td>None</td>
-<td>Exact</td>
-</tr>
-<tr>
-<td>Josephson constant</td>
-<td>$K_\text{J}$</td>
-<td>$K_\text{J}$</td>
-<td>$K_\text{J}$</td>
-<td>$6.1 \times 10^{-9} = u_\text{r}(K_\text{J})$</td>
-<td>$\frac{2 e}{h}$</td>
-<td>None</td>
-<td>Exact</td>
-</tr>
-<tr>
-<td>Von Klitzing constant</td>
-<td>$R_\text{K}$</td>
-<td>$\frac{c \mu_0}{2 \alpha}$</td>
-<td>$\alpha$</td>
-<td>$2.3 \times 10^{-10} = u_\text{r}(\alpha)$</td>
-<td>$\frac{h}{e^2}$</td>
-<td>None</td>
-<td>Exact</td>
-</tr>
-<tr>
-<td>Elementary charge</td>
-<td>$e$</td>
-<td>$\frac{4 \alpha}{c \mu_0 K_\text{J}}$</td>
-<td>$K_\text{J}$</td>
-<td>$6.1 \times 10^{-9} \approx u_\text{r}(K_\text{J})$</td>
-<td>$1.602176634\times10^{-19} A\cdot s$</td>
-<td>None</td>
-<td>Exact</td>
-</tr>
-<tr>
-<td>Magnetic constant</td>
-<td>$\mu_0$</td>
-<td>$4\pi\times10^{-7} m\cdot kg\cdot s^{−2}\cdot A^{−2} $</td>
-<td>None</td>
-<td>Exact</td>
-<td>$\frac{2 h \alpha}{c e^2}$</td>
-<td>$\alpha$</td>
-<td>$2.3 \times 10^{-10} = u_\text{r}(\alpha)$</td>
-</tr>
-<tr>
-<td>Vacuum permittivity</td>
-<td>$\varepsilon_0$</td>
-<td>$\frac{1}{c^2 \mu_0}$</td>
-<td>None</td>
-<td>Exact</td>
-<td>$\frac{e^2}{2 h c \alpha}$</td>
-<td>$\alpha$</td>
-<td>$2.3 \times 10^{-10} = u_\text{r}(\alpha)$</td>
-</tr>
-<tr>
-<td>Impedance of free space</td>
-<td>$Z_0$</td>
-<td>$c \mu_0$</td>
-<td>None</td>
-<td>Exact</td>
-<td>$\frac{2 h \alpha}{e^2}$</td>
-<td>$\alpha$</td>
-<td>$2.3 \times 10^{-10} = u_\text{r}(\alpha)$</td>
-</tr>
-<tr>
-<td>Electron mass</td>
-<td>$m_\text{e}$</td>
-<td>$\frac{16 R_{\infty}}{c^2 \alpha \mu_0 K_\text{J}^2}$</td>
-<td>$K_\text{J}^2$</td>
-<td>$1.2 \times 10^{-8} \approx 2 u_\text{r}(K_\text{J})$</td>
-<td>$\frac{2 h R_{\infty}}{c \alpha^2}$</td>
-<td>$\alpha^2$</td>
-<td>$4.7 \times 10^{-10} \approx 2 u_\text{r}(\alpha)$</td>
-</tr>
-<tr>
-<td>Electron molar mass</td>
-<td>$M(\text{e})$</td>
-<td>$A_\text{r}(\text{e}) M_\text{u}$</td>
-<td>$A_\text{r}(\text{e})$</td>
-<td>$2.9 \times 10^{-11} = u_\text{r}(A_\text{r}(\text{e}))$</td>
-<td>$\frac{2 h R_{\infty} N_\text{A}}{c \alpha^2}$</td>
-<td>$\alpha^2$</td>
-<td>$4.7 \times 10^{-10} \approx 2 u_\text{r}(\alpha)$</td>
-</tr>
-<tr>
-<td>Unified atomic mass unit or dalton</td>
-<td>\begin{align*}m_u &amp; = 1u \\ &amp; = 1Da\end{align*}</td>
-<td>$\frac{16 R_{\infty}}{c^2 \alpha \mu_0 K_\text{J}^2 A_\text{r}(\text{e})}$</td>
-<td>$K_\text{J}^2$</td>
-<td>$1.2 \times 10^{-8} \approx 2 u_\text{r}(K_\text{J})$</td>
-<td>$\frac{2 h R_{\infty}}{c \alpha^2 A_\text{r}(\text{e})}$</td>
-<td>$\alpha^2$</td>
-<td>$4.7 \times 10^{-10} \approx 2 u_\text{r}(\alpha)$</td>
-</tr>
-<tr>
-<td>Molar mass constant</td>
-<td>$M_\text{u}$</td>
-<td>$0.001kg\cdot mol^{−1}$</td>
-<td>None</td>
-<td>Exact</td>
-<td>$\frac{2 h R_{\infty} N_\text{A}}{c \alpha^2 A_\text{r}(\text{e})}$</td>
-<td>$\alpha^2$</td>
-<td>$4.7 \times 10^{-10} \approx 2 u_\text{r}(\alpha)$</td>
-</tr>
-<tr>
-<td>Avogadro constant</td>
-<td>$N_\text{A}$</td>
-<td>$\frac{c^2 \alpha \mu_0 K_\text{J}^2 A_\text{r}(\text{e}) M_\text{u}}{16 R_{\infty}}$</td>
-<td>$K_\text{J}^2$</td>
-<td>$1.2 \times 10^{-8} \approx 2 u_\text{r}(K_\text{J})$</td>
-<td>$6.02214076\times10^{23} mol^{−1}$</td>
-<td>None</td>
-<td>Exact</td>
-</tr>
-<tr>
-<td>Atomic mass of carbon-12</td>
-<td>$m(^{12}\text{C})$</td>
-<td>$\frac{192 R_{\infty}}{c^2 \alpha \mu_0 K_\text{J}^2 A_\text{r}(\text{e})}$</td>
-<td>$K_\text{J}^2$</td>
-<td>$1.2 \times 10^{-8} \approx 2 u_\text{r}(K_\text{J})$</td>
-<td>$\frac{24 h R_{\infty}}{c \alpha^2 A_\text{r}(\text{e})}$</td>
-<td>$\alpha^2$</td>
-<td>$4.7 \times 10^{-10} \approx 2 u_\text{r}(\alpha)$</td>
-</tr>
-<tr>
-<td>Molar mass of carbon-12</td>
-<td>$M(^{12}\text{C})$</td>
-<td>$0.012kg\cdot mol^{−1}$</td>
-<td>None</td>
-<td>Exact</td>
-<td>$\frac{24 h R_{\infty} N_\text{A}}{c \alpha^2 A_\text{r}(\text{e})}$</td>
-<td>$\alpha^2$</td>
-<td>$4.7 \times 10^{-10} \approx 2 u_\text{r}(\alpha)$</td>
-</tr>
-<tr>
-<td>Faraday constant</td>
-<td>$F$</td>
-<td>$\frac{c \alpha^2 K_\text{J} A_\text{r}(\text{e}) M_\text{u}}{4 R_{\infty}}$</td>
-<td>$K_\text{J}, \alpha^2$</td>
-<td>$6.2 \times 10^{-9} \approx u_\text{r}(K_\text{J})$</td>
-<td>$e N_\text{A}$</td>
-<td>None</td>
-<td>Exact</td>
-</tr>
-<tr>
-<td>Temperature of triple point of water</td>
-<td>$T_\text{TPW}$</td>
-<td>273.16 K</td>
-<td>None</td>
-<td>Exact</td>
-<td>$T_\text{TPW}$</td>
-<td>$T_\text{TPW}$</td>
-<td>$5.7 \times 10^{-7} = u_\text{r}(T_\text{TPW})$</td>
-</tr>
-<tr>
-<td>Molar gas constant</td>
-<td>$R$</td>
-<td>$R$</td>
-<td>$R$</td>
-<td>$5.7 \times 10^{-7} = u_\text{r}(R)$</td>
-<td>$k N_\text{A}$</td>
-<td>None</td>
-<td>Exact</td>
-</tr>
-<tr>
-<td>Boltzmann constant</td>
-<td>$k$</td>
-<td>$\frac{16 R R_{\infty}}{c^2 \alpha \mu_0 K_\text{J}^2 A_\text{r}(\text{e}) M_\text{u}}$</td>
-<td>$R$</td>
-<td>$5.7 \times 10^{-7} \approx u_\text{r}(R)$</td>
-<td>$1.380649\times10^{-23} kg\cdot m^2\cdot K^{−1} \cdot s^{−2}$</td>
-<td>None</td>
-<td>Exact</td>
-</tr>
-<tr>
-<td>Stefan–Boltzmann constant</td>
-<td>$\sigma$</td>
-<td>$\frac{256 \pi^5 R^4 R_{\infty}^4}{15 c^7 \alpha^7 \mu_0 K_\text{J}^2 A_\text{r}(\text{e})^4 M_\text{u}^4}$</td>
-<td>$R^4$</td>
-<td>$2.3 \times 10^{-6} \approx 4 u_\text{r}(R)$</td>
-<td>$\frac{2 \pi^5 k^4}{15 h^3 c^2}$</td>
-<td>None</td>
-<td>Exact</td>
-</tr>
-</tbody>
-</table>
-<p></p></div><br>注：其中，$c$ 为光速（speed of light），$\alpha$ 为精细结构常数（fine-structure constant），$R_\infty$ 为里德伯常量（Rydberg constant）。<p></p>
-<p>参考文章：<br><a href="https://en.wikipedia.org/wiki/2019_redefinition_of_SI_base_units" target="_blank" rel="noopener">Redefinition of SI base units</a><br><a href="https://en.wikipedia.org/wiki/International_System_of_Units" target="_blank" rel="noopener">国际单位制</a></p>
-<p>拓展阅读：<br><a href="https://mp.weixin.qq.com/s/bYIHtP3B33rPAHYWIvNatQ" target="_blank" rel="noopener">刚刚，『千克』被重新定义！大 K 从此成为历史</a></p>
+<p>考完了计算物理（Numerical Analysis），用一张图表达一下心情。感觉像是考了一次高等代数，加一点点统计学。<br>计划寒假里把所有作业的代码整理并开源，敬请期待。</p>
+<p><img src="/images/2019-01/curve_fitting.png" alt=""></p>
+<p>来源：<a href="https://www.xkcd.com/2048" target="_blank" rel="noopener">Curve-Fitting</a></p>
 </div>
 <div>
 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -510,7 +249,7 @@ top: initial;
 <strong>本文作者： </strong>张书樵</li>
 <li class="post-copyright-link">
 <strong>本文链接：</strong>
-<a href="https://zhangshuqiao.org/2018-11/国际单位制基本单位的重新定义/" title="国际单位制基本单位的重新定义">https://zhangshuqiao.org/2018-11/国际单位制基本单位的重新定义/</a>
+<a href="https://zhangshuqiao.org/2019-01/如何进行曲线拟合/" title="如何进行曲线拟合">https://zhangshuqiao.org/2019-01/如何进行曲线拟合/</a>
 </li>
 <li class="post-copyright-license">
 <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -519,15 +258,12 @@ top: initial;
 <footer class="post-footer">
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
-<a href="/2018-11/在网页上实现3D Touch效果/" rel="next" title="在网页上实现 3D Touch 效果">
-<i class="fa fa-chevron-left"></i> 在网页上实现 3D Touch 效果
+<a href="/2019-01/什么是CAT等级？/" rel="next" title="什么是 CAT 等级？">
+<i class="fa fa-chevron-left"></i> 什么是 CAT 等级？
 </a>
 </div>
 <span class="post-nav-divider"></span>
 <div class="post-nav-prev post-nav-item">
-<a href="/2018-11/Safari顶栏彩虹效果/" rel="prev" title="Safari 顶栏彩虹效果">
-Safari 顶栏彩虹效果 <i class="fa fa-chevron-right"></i>
-</a>
 </div>
 </div>
 </footer>
@@ -547,15 +283,7 @@ Safari 顶栏彩虹效果 <i class="fa fa-chevron-right"></i>
 </div>
 <aside id="sidebar" class="sidebar">
 <div class="sidebar-inner">
-<ul class="sidebar-nav motion-element">
-<li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-文章目录
-</li>
-<li class="sidebar-nav-overview" data-target="site-overview-wrap">
-站点概览
-</li>
-</ul>
-<div class="site-overview-wrap sidebar-panel">
+<div class="site-overview-wrap sidebar-panel sidebar-panel-active">
 <div class="site-overview">
 <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
@@ -601,13 +329,6 @@ RSS
 </div>
 </div>
 </div>
-<!--noindex-->
-<div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-<div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改变历史"><span class="nav-number">2.</span> <span class="nav-text">改变历史</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#米"><span class="nav-number">2.1.</span> <span class="nav-text">米</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#千克"><span class="nav-number">2.2.</span> <span class="nav-text">千克</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#秒"><span class="nav-number">2.3.</span> <span class="nav-text">秒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安培"><span class="nav-number">2.4.</span> <span class="nav-text">安培</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开尔文"><span class="nav-number">2.5.</span> <span class="nav-text">开尔文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#摩尔"><span class="nav-number">2.6.</span> <span class="nav-text">摩尔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坎德拉"><span class="nav-number">2.7.</span> <span class="nav-text">坎德拉</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖关系"><span class="nav-number">3.</span> <span class="nav-text">依赖关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不确定度"><span class="nav-number">4.</span> <span class="nav-text">不确定度</span></a></li></ol></div>
-</div>
-</div>
-<!--/noindex-->
 </div>
 </aside>
 </div>
@@ -984,44 +705,6 @@ onPopupClose();
 }
 });
 </script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-processEscapes: true,
-skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-},
-TeX: {
-equationNumbers: {
-autoNumber: "AMS"
-}
-},
-"HTML-CSS": {
-linebreaks: { automatic: true },
-EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-},
-SVG: {
-linebreaks: { automatic: true },
-EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-},
-PreviewHTML: { linebreaks: { automatic: true } },
-CommonHTML: { linebreaks: { automatic: true } }
-});
-</script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Queue(function() {
-var all = MathJax.Hub.getAllJax(), i;
-for (i = 0; i < all.length; i += 1) {
-all[i].SourceElement().parentNode.className += ' has-jax';
-}
-});
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
-<style>
-.MathJax_Display {
-overflow: auto hidden;
-}
-</style>
 <style>
 .copy-btn {
 display: inline-block;

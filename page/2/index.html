@@ -156,6 +156,68 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-12/历史上的今天/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-12/历史上的今天/" class="post-title-link" itemprop="url">历史上的今天</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="far fa-calendar"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-12-06 18:38:36" itemprop="dateCreated datePublished" datetime="2018-12-06T18:38:36+08:00">2018-12-06</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="far fa-folder"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="far fa-file-word"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">4.5k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="far fa-clock"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">4 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>如果要在网页上显示一些随机的语句，获得一些人生的经验，你会选择什么？<br>也许，<a href="https://hitokoto.cn" target="_blank" rel="noopener">一言</a>是一个很好的选择，它可以提供一些动漫中的台词，或是网络上的各种小段子。<br>在前面的文章 <a href="/2018-05 / 有趣的 Linux 命令行工具">有趣的 Linux 命令行工具</a> 中提到的 <code>fortune</code> 命令或许也可以满足需求，<code>pure-ftpd</code> 就可以设置在连接成功时显示随机的来自 <code>fortune</code> 的语句。<br>那除此之外呢？历史上的今天是一个不错的方案。当你访问一些门户网站的首页，有时会看到这样的栏目。它也是一些百科全书网站，比如维基百科的传统。事实上，在 Mac 上就自带了一个小型的『历史上的今天』数据库，执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /usr/share/calendar/calendar.history</span><br></pre></td></tr></table></figure></p>
+<p>就可以看到。<br>这篇文章将介绍如何搭建一个提供『历史上的今天』信息的 API。</p>
+<h2 id="建立数据库"><a href="#建立数据库" class="headerlink" title="建立数据库"></a>建立数据库</h2><p>首先，建立 MySQL 数据库，用于存储爬取的信息。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> dbname;</span><br><span class="line"># 建立数据库，dbname 保持一致即可</span><br><span class="line"><span class="keyword">USE</span> dbname;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">event</span> (</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">UNSIGNED</span> PRIMARY <span class="keyword">KEY</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="keyword">type</span> <span class="built_in">int</span>(<span class="number">1</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="keyword">year</span> <span class="built_in">varchar</span>(<span class="number">6</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="built_in">date</span> <span class="built_in">varchar</span>(<span class="number">6</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  info <span class="built_in">varchar</span>(<span class="number">300</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span></span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br><span class="line">QUIT;</span><br></pre></td></tr></table></figure></p>
+<h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><p>数据来源是维基百科，使用 Python 爬取数据，并存入数据库中。代码中的 <code>username</code>、<code>password</code> 和 <code>dbname</code> 分别是你的登录用户名、密码和数据库名。数据表名默认是 event，也可以自行修改。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">typeList = [<span class="string">"大事记"</span>, <span class="string">"出生"</span>, <span class="string">"逝世"</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">savedb</span><span class="params">(data)</span>:</span></span><br><span class="line">    conn = pymysql.connect(host = <span class="string">"127.0.0.1"</span>, user = <span class="string">"username"</span>, password = <span class="string">"password"</span>, db = <span class="string">"dbname"</span>, charset = <span class="string">"utf8"</span>)</span><br><span class="line">    print(conn)</span><br><span class="line">    cur = conn.cursor()</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        cur.execute(<span class="string">"insert into event values(null,%s,%s,%s,%s)"</span>, data)</span><br><span class="line">    <span class="keyword">except</span> pymysql.err.InternalError:</span><br><span class="line">        print(<span class="string">"\033[31mERROR: Incorrect string value.\033[0m"</span>, data)</span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">"failed.txt"</span>, <span class="string">"a"</span>) <span class="keyword">as</span> myfile:</span><br><span class="line">            myfile.write(str(data) + <span class="string">"\n"</span>)</span><br><span class="line">    <span class="keyword">except</span> pymysql.err.DataError:</span><br><span class="line">        print(<span class="string">"\033[31mERROR: Data too long.\033[0m"</span>, data)</span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">"failed.txt"</span>, <span class="string">"a"</span>) <span class="keyword">as</span> myfile:</span><br><span class="line">            myfile.write(str(data) + <span class="string">"\n"</span>)</span><br><span class="line">    cur.connection.commit()</span><br><span class="line">    cur.close()</span><br><span class="line">    conn.close()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getDateList</span><span class="params">()</span>:</span></span><br><span class="line">    list = []</span><br><span class="line">    date = datetime.date(<span class="number">2016</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">366</span>):</span><br><span class="line">        date_str = str(date.month) + <span class="string">"月"</span> + str(date.day) + <span class="string">"日"</span></span><br><span class="line">        list.append(date_str)</span><br><span class="line">        date += datetime.timedelta(days = <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> list</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getInfo</span><span class="params">(html, type, date)</span>:</span></span><br><span class="line">    flag = re.compile(<span class="string">"(&lt;h2&gt;&lt;span id=.*&lt;span class=\"mw-headline\"id=.*?"</span> + typeList[type] + <span class="string">"[\s\S]*?&lt;/ul&gt;\s*?)&lt;h2&gt;"</span>).search(html)</span><br><span class="line">    <span class="keyword">if</span> flag:</span><br><span class="line">        bsObj = BeautifulSoup(flag.group(<span class="number">1</span>), <span class="string">"html.parser"</span>).findAll(<span class="string">"li"</span>)</span><br><span class="line">        <span class="keyword">for</span> li <span class="keyword">in</span> bsObj:</span><br><span class="line">            match = re.compile(<span class="string">"((^ 前 |^)\d&#123;1,4&#125; 年)：([\s\S]*$)"</span>).match(li.get_text())</span><br><span class="line">            <span class="keyword">if</span> match:</span><br><span class="line">                year = match.group(<span class="number">1</span>)</span><br><span class="line">                info = re.sub(<span class="string">"\[\d&#123;1,&#125;\]"</span>, <span class="string">""</span>, match.group(<span class="number">3</span>).strip())</span><br><span class="line">                data = (type, year, date, info)</span><br><span class="line">                print(data)</span><br><span class="line">                savedb(data)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    list = getDateList()</span><br><span class="line">    <span class="keyword">for</span> date <span class="keyword">in</span> list:</span><br><span class="line">        print(date)</span><br><span class="line">        url = <span class="string">"https://zh.wikipedia.org/zh-cn/%s"</span> % date</span><br><span class="line">        <span class="comment">#url ="https://api.galaxymimi.com/proxy/?url=https://zh.wikipedia.org/zh-cn/%s"% date</span></span><br><span class="line">        r = requests.get(url)</span><br><span class="line">        getInfo(r.text, <span class="number">0</span>, date)  <span class="comment"># 大事记</span></span><br><span class="line">        getInfo(r.text, <span class="number">1</span>, date)  <span class="comment"># 出生</span></span><br><span class="line">        getInfo(r.text, <span class="number">2</span>, date)  <span class="comment"># 逝世</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure></p>
+<p>这里的两个 <code>except</code> 分别处理的是特殊字符（非 UTF-8 范围）和内容长度超出的问题。</p>
+<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><p>比较简单的方式是按照 json 格式进行输出，这里给出一种使用 PHP 的方案。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    $mysqli = <span class="keyword">new</span> mysqli(<span class="string">"localhost"</span>, <span class="string">"username"</span>, <span class="string">"password"</span>, <span class="string">"dbname"</span>);</span><br><span class="line">    <span class="comment">/* 检查连接 */</span></span><br><span class="line">    <span class="keyword">if</span> (mysqli_connect_errno()) &#123;</span><br><span class="line">        printf(<span class="string">"Connect failed: %s\n"</span>, mysqli_connect_error());</span><br><span class="line">        <span class="keyword">exit</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    $date = $_GET[<span class="string">'date'</span>] ? $mysqli-&gt;real_escape_string($_GET[<span class="string">'date'</span>]) : date(<span class="string">"m 月 d 日"</span>);</span><br><span class="line">    $type = $_GET[<span class="string">'type'</span>] ? (int)$mysqli-&gt;real_escape_string($_GET[<span class="string">'type'</span>]) : <span class="number">0</span>;</span><br><span class="line">    $count = $_GET[<span class="string">'count'</span>] ? (int)$mysqli-&gt;real_escape_string($_GET[<span class="string">'count'</span>]) : <span class="number">1</span>;</span><br><span class="line">    $result = <span class="keyword">array</span>();</span><br><span class="line">    <span class="comment">/* 创建一个预编译 SQL 语句 */</span></span><br><span class="line">    <span class="keyword">if</span> ($stmt = $mysqli-&gt;prepare(<span class="string">"select * from `event` where `date` = ? and `type` = ? order by RAND() limit ?"</span>)) &#123;</span><br><span class="line">        <span class="comment">/* 对于参数占位符进行参数值绑定 */</span></span><br><span class="line">        $stmt-&gt;bind_param(<span class="string">"dii"</span>, $date, $type, $count);</span><br><span class="line">        <span class="comment">/* 执行查询 */</span></span><br><span class="line">        $stmt-&gt;execute();</span><br><span class="line">        <span class="comment">/* 将查询结果绑定到变量 */</span></span><br><span class="line">        $stmt-&gt;bind_result($id, $type, $year, $date, $info);</span><br><span class="line">        <span class="comment">/* 获取查询结果值 */</span></span><br><span class="line">        <span class="keyword">while</span> ($stmt-&gt;fetch()) &#123;</span><br><span class="line">            $arr = <span class="keyword">array</span>(<span class="string">'year'</span> =&gt; $year, <span class="string">'info'</span> =&gt; $info);</span><br><span class="line">            $result[] = $arr;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">echo</span> json_encode($result, JSON_UNESCAPED_UNICODE);</span><br><span class="line">        <span class="comment">/* 关闭语句句柄 */</span></span><br><span class="line">        $stmt-&gt;close();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* 关闭连接 */</span></span><br><span class="line">    $mysqli-&gt;close();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>同样将 <code>username</code>、<code>password</code> 和 <code>dbname</code> 根据情况替换，就可以访问了。</p>
+<p>项目地址：<a href="https://github.com/stevenjoezhang/TodayInHistory-Crawler" target="_blank" rel="noopener">TodayInHistory-Crawler</a>，可以打包下载所有文件。</p>
+<p>博主搭建的 API：<a href="https://api.galaxymimi.com/today/?type=0" target="_blank" rel="noopener">历史上的今天</a></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-12/十二月天象/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -512,69 +574,6 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/用Telnet观看Nyancat动画/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-11/用Telnet观看Nyancat动画/" class="post-title-link" itemprop="url">用 Telnet 观看 Nyancat 动画</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-11-08 22:36:23" itemprop="dateCreated datePublished" datetime="2018-11-08T22:36:23+08:00">2018-11-08</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">1.4k</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">1 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在知乎上看到一个关于 VPS 有趣的用途的问题，<a href="https://www.zhihu.com/question/24284566/answer/27291403" target="_blank" rel="noopener">其中一个回答</a>提到了可以搭建 Telnet 服务器，成功运行后别人用 Telnet 连接你的主机将会看到 Nyancat 动画。大致效果如图所示：</p>
-<p><img src="/images/2018-11/nyancat.png" alt=""></p>
-<p>然而，回答中给出的 Demo 已经失效，<code>telnet nyancat.dakko.us</code> 会返回一个 <code>Connection refused</code> 错误。不过值得庆幸的是，这个项目的官方网站 <a href="http://nyancat.dakko.us" target="_blank" rel="noopener">Nyan Cat Telnet Server</a> 和<a href="https://github.com/klange/nyancat" target="_blank" rel="noopener">GitHub 项目地址</a>都还可以正常访问，因此可以尝试重新把它搭起来。你可以查看博主建立的镜像：<code>telnet zsq.im 8081</code>，这是按以下方法搭建好的结果。</p>
-<h2 id="下载编译"><a href="#下载编译" class="headerlink" title="下载编译"></a>下载编译</h2><p>在命令行执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/klange/nyancat.git</span><br><span class="line"><span class="built_in">cd</span> nyancat</span><br><span class="line">make &amp;&amp; <span class="built_in">cd</span> src</span><br><span class="line">mv nyancat usr/<span class="built_in">local</span>/bin <span class="comment">#or make install</span></span><br></pre></td></tr></table></figure></p>
-<p>这时，通过 <code>nyancat</code> 或 <code>nyancat -t</code> 命令就可以查看效果。接下来把 Telnet 配置好就行了。</p>
-<h2 id="配置-Telnet"><a href="#配置-Telnet" class="headerlink" title="配置 Telnet"></a>配置 Telnet</h2><p>使用包管理工具安装 <code>xinetd</code>，例如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install xinetd</span><br></pre></td></tr></table></figure></p>
-<p>然后在 <code>/etc/xinetd.d</code> 目录下新建文件 <code>nyancat</code>，内容为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">service telnet</span><br><span class="line">&#123;</span><br><span class="line">    flags          = REUSE</span><br><span class="line">    socket_type    = stream</span><br><span class="line">    <span class="built_in">wait</span>           = no</span><br><span class="line">    user           = root</span><br><span class="line">    group          = root</span><br><span class="line">    server         = /usr/<span class="built_in">local</span>/bin/nyancat</span><br><span class="line">    server_args    = -t</span><br><span class="line">    log_on_failure += USERID</span><br><span class="line">    <span class="built_in">disable</span>        = no</span><br><span class="line">    instances      = 10</span><br><span class="line">    per_source     = 2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>其中 <code>instances</code> 和 <code>per_source</code> 限制了总的连接数和单个 IP 的连接数，以防止资源滥用（其实并没有什么用，DDOS 攻击该来还是会来）。<br>接下来，重启 <code>xinetd</code> 服务：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart xinetd</span><br></pre></td></tr></table></figure></p>
-<p>这时，你就可以通过 <code>telnet localhost</code> 查看是否一切正常。如果没有问题，配置防火墙开放 23 端口，就可以从公网访问了。试试用 Telnet 连接你的主机，效果是不是非常酷炫？<br>不过，博主在实践中发现，开放 telnet 的 23 端口可能会产生大量异常流量。解决方法是修改 telnet 的端口号，编辑 <code>/etc/services</code>，找到 telnet，将 23 改为一个你喜欢的数字（比如 8081）；或者直接关闭这个服务，在 <code>nyancat</code> 中设置 <code>disable: yes</code> 即可。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>俗话说，有光的地方就有 Bad Apple!!。很久以前的一篇文章 <a href="/2017-12 / 近期完成的数个游戏及应用 /">近期完成的数个游戏及应用</a> 中，就提到博主成功使用 HTML 页面播放 Bad Apple!! 字符画。目前，博主正在尝试搭建一个可以播放 Bad Apple!! 的 Telnet 服务器，敬请期待。</p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -600,7 +599,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">89</span>
+<span class="site-state-item-count">90</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>

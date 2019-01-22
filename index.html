@@ -35,7 +35,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 }
 };
 </script>
-<link href="/lib/waifu/waifu.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <meta name="description" content="力电声光热，涵尽学海无涯">
 <meta name="keywords" content="个人博客,张书樵,物理,技术,计算机">
 <meta property="og:type" content="website">
@@ -154,6 +154,96 @@ page-home">
 <div class="content-wrap">
 <div id="content" class="content">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-01/树莓派使用RFID RC522芯片/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2019-01/树莓派使用RFID RC522芯片/" class="post-title-link" itemprop="url">树莓派使用 RFID RC522 芯片</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="far fa-calendar"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2019-01-21 12:06:22" itemprop="dateCreated datePublished" datetime="2019-01-21T12:06:22+08:00">2019-01-21</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="far fa-folder"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="far fa-file-word"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">23k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="far fa-clock"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">21 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>实用教程：树莓派使用 RFID RC522 芯片进行数据的读写</p>
+<p><img src="/images/2019-01/raspberry-pi-RFID-Reader.jpg" alt=""></p>
+<p>在这个 Raspberry Pi RFID RC522 教程中，我将介绍如何设置和连接 Raspberry Pi 和 RFID RC522 芯片。这是一个很实用的教程，以便于你之后各种不同的项目，例如使用它作为考勤系统、使用它来打开一个锁。<br>In this Raspberry Pi RFID RC522 tutorial, I will be walking you through the steps on how to set up and wire the RFID RC522 chip with your Raspberry Pi. This project is a cool circuit to play around with and opens you up to quite a wide variety of different projects from using it as an attendance system to using it to open a lock.</p>
+<p>RFID RC522 是基于 MFRC522 微控制器的非常低成本的 RFID（射频识别）读写器。该微控制器通过 SPI 协议提供数据，并通过创建一个 13.56MHz 的电磁场来工作，该电磁场用于与 RFID 卡片进行通信。<br>The RFID RC522 is a very low-cost RFID (Radio-frequency identification) reader and writer that is based on the MFRC522 microcontroller. This microcontroller provides its data through the SPI protocol and works by creating a 13.56MHz electromagnetic field that it uses to communicate with the RFID tags.</p>
+<p>确保你的 RFID RC522 购买的卡片在 13.56MHz 的频率上运行，否则将无法读取。<br>Make sure that the tags you purchase for your RFID RC522 operate on the 13.56MHz frequency otherwise we will fail to read them.</p>
+<p>本教程将示范如何连接 RC522 以及编写 Python 脚本以与芯片进行交互，以便读取和写入 RFID 卡片。如果你想展示一些数据信息，你可以使用像 <a href="https://pimylifeup.com/raspberry-pi-lcd-16x2" target="_blank" rel="noopener">16×2 液晶显示器</a> 扩展这个教程。<br>We will be showing you how to wire up the RC522 as well as showing you how to write Python scripts to interact with the chip so you can both read and write your RFID Tags. You can extend this tutorial to use something like a <a href="https://pimylifeup.com/raspberry-pi-lcd-16x2" target="_blank" rel="noopener">16×2 LCD for the Raspberry Pi</a>, handy if you want to show some information.</p>
+<h2 id="设备清单"><a href="#设备清单" class="headerlink" title="设备清单"></a>设备清单</h2><p>Equipment List</p>
+<p>下面列出的是我在这个教程中使用的东西。<br>Below are all the bits and pieces that I used for this Raspberry Pi RFID RC522 tutorial.</p>
+<p>推荐：<br>Recommended:</p>
+<ul>
+<li><p>树莓派 2 或 3<br>Raspberry Pi 2 or 3</p>
+</li>
+<li><p>Micro SD 卡<br>Micro SD Card</p>
+</li>
+<li><p>电源供应<br>Power Supply</p>
+</li>
+<li><p>RC522 RFID 读卡器<br>RC522 RFID Reader</p>
+</li>
+<li><p>面包板<br>Breadboard</p>
+</li>
+<li><p>面包板接线<br>Breadboard Wire</p>
+</li>
+</ul>
+<p>可选：<br>Optional:</p>
+<ul>
+<li><p>树莓派外壳<br>Raspberry Pi Case</p>
+</li>
+<li><p>以太网或 Wifi 适配（树莓派 3 自带了）<br>Ethernet Network Connection or Wifi dongle (The Pi 3 has WiFi inbuilt)</p>
+</li>
+</ul>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2019-01/树莓派使用RFID RC522芯片/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-01/如何进行曲线拟合/">
@@ -491,251 +581,9 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-12/Base64编码的原理与实现/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-12/Base64编码的原理与实现/" class="post-title-link" itemprop="url">Base64 编码的原理与实现</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-12-12 13:21:01" itemprop="dateCreated datePublished" datetime="2018-12-12T13:21:01+08:00">2018-12-12</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">5k</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">5 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>在数据传输的时候，并不是所有的字符都可以受到支持，很多时候只能传输可见字符，对于不可见字符的传输需要经过特殊处理，这就是 Base64 产生的原因。Base64 编码是一种基于 64 个可打印字符来表示二进制数据的表示方法。由于 $2^6=64$，所以每 6 个比特为一个单元，对应某个可打印字符。3 个字节有 24 个比特，对应于 4 个 Base64 单元，即 3 个字节可由 4 个可打印字符来表示。在 Base64 中的可打印字符包括字母 A-Z、a-z、数字 0-9，这样共有 62 个字符，此外两个可打印符号在不同的系统中而不同。一些如 uuencode 的其他编码方法，和之后 BinHex 的版本使用不同的 64 字符集来代表 6 个二进制数字，但是不被称为 Base64。<br>Base64 常用于在通常处理文本数据的场合，表示、传输、存储一些二进制数据，包括 MIME 的电子邮件及 XML 的一些复杂数据。用 Base64 编码图片也是互联网上常见的做法。</p>
-<p>Base64 的字符索引如下表所示：</p>
-<table>
-<thead>
-<tr>
-<th>数值</th>
-<th>字符</th>
-<th>数值</th>
-<th>字符</th>
-<th>数值</th>
-<th>字符</th>
-<th>数值</th>
-<th>字符</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>A</td>
-<td>16</td>
-<td>Q</td>
-<td>32</td>
-<td>g</td>
-<td>48</td>
-<td>w</td>
-</tr>
-<tr>
-<td>1</td>
-<td>B</td>
-<td>17</td>
-<td>R</td>
-<td>33</td>
-<td>h</td>
-<td>49</td>
-<td>x</td>
-</tr>
-<tr>
-<td>2</td>
-<td>C</td>
-<td>18</td>
-<td>S</td>
-<td>34</td>
-<td>i</td>
-<td>50</td>
-<td>y</td>
-</tr>
-<tr>
-<td>3</td>
-<td>D</td>
-<td>19</td>
-<td>T</td>
-<td>35</td>
-<td>j</td>
-<td>51</td>
-<td>z</td>
-</tr>
-<tr>
-<td>4</td>
-<td>E</td>
-<td>20</td>
-<td>U</td>
-<td>36</td>
-<td>k</td>
-<td>52</td>
-<td>0</td>
-</tr>
-<tr>
-<td>5</td>
-<td>F</td>
-<td>21</td>
-<td>V</td>
-<td>37</td>
-<td>l</td>
-<td>53</td>
-<td>1</td>
-</tr>
-<tr>
-<td>6</td>
-<td>G</td>
-<td>22</td>
-<td>W</td>
-<td>38</td>
-<td>m</td>
-<td>54</td>
-<td>2</td>
-</tr>
-<tr>
-<td>7</td>
-<td>H</td>
-<td>23</td>
-<td>X</td>
-<td>39</td>
-<td>n</td>
-<td>55</td>
-<td>3</td>
-</tr>
-<tr>
-<td>8</td>
-<td>I</td>
-<td>24</td>
-<td>Y</td>
-<td>40</td>
-<td>o</td>
-<td>56</td>
-<td>4</td>
-</tr>
-<tr>
-<td>9</td>
-<td>J</td>
-<td>25</td>
-<td>Z</td>
-<td>41</td>
-<td>p</td>
-<td>57</td>
-<td>5</td>
-</tr>
-<tr>
-<td>10</td>
-<td>K</td>
-<td>26</td>
-<td>a</td>
-<td>42</td>
-<td>q</td>
-<td>58</td>
-<td>6</td>
-</tr>
-<tr>
-<td>11</td>
-<td>L</td>
-<td>27</td>
-<td>b</td>
-<td>43</td>
-<td>r</td>
-<td>59</td>
-<td>7</td>
-</tr>
-<tr>
-<td>12</td>
-<td>M</td>
-<td>28</td>
-<td>c</td>
-<td>44</td>
-<td>s</td>
-<td>60</td>
-<td>8</td>
-</tr>
-<tr>
-<td>13</td>
-<td>N</td>
-<td>29</td>
-<td>d</td>
-<td>45</td>
-<td>t</td>
-<td>61</td>
-<td>9</td>
-</tr>
-<tr>
-<td>14</td>
-<td>O</td>
-<td>30</td>
-<td>e</td>
-<td>46</td>
-<td>u</td>
-<td>62</td>
-<td>+</td>
-</tr>
-<tr>
-<td>15</td>
-<td>P</td>
-<td>31</td>
-<td>f</td>
-<td>47</td>
-<td>v</td>
-<td>63</td>
-<td>/</td>
-</tr>
-</tbody>
-</table>
-<p>这是一个根据上表进行编码的例子：</p>
-<p><img src="/images/2018-12/1.png" alt=""></p>
-<p>如果要编码的字节数不能被 3 整除，最后会多出 1 个或 2 个字节，那么可以使用下面的方法进行处理：先使用 0 字节值在末尾补足，使其能够被 3 整除，然后再进行 Base64 的编码。在编码后的 Base64 文本后加上一个或两个 = 号，代表补足的字节数。也就是说，当最后剩余两个八位字节（2 个 byte）时，最后一个 6 位的 Base64 字节块有四位是 0 值，最后附加上两个等号；如果最后剩余一个八位字节（1 个 byte）时，最后一个 6 位的 Base 字节块有两位是 0 值，最后附加一个等号。可以参考下面的例子：</p>
-<p><img src="/images/2018-12/2.png" alt=""></p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-12/Base64编码的原理与实现/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
-<span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+<span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
 </nav>
 </div>
 </div>
@@ -758,7 +606,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">90</span>
+<span class="site-state-item-count">91</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -1168,44 +1016,6 @@ onPopupClose();
 }
 });
 </script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-processEscapes: true,
-skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-},
-TeX: {
-equationNumbers: {
-autoNumber: "AMS"
-}
-},
-"HTML-CSS": {
-linebreaks: { automatic: true },
-EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-},
-SVG: {
-linebreaks: { automatic: true },
-EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-},
-PreviewHTML: { linebreaks: { automatic: true } },
-CommonHTML: { linebreaks: { automatic: true } }
-});
-</script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Queue(function() {
-var all = MathJax.Hub.getAllJax(), i;
-for (i = 0; i < all.length; i += 1) {
-all[i].SourceElement().parentNode.className += ' has-jax';
-}
-});
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
-<style>
-.MathJax_Display {
-overflow: auto hidden;
-}
-</style>
 <style>
 .copy-btn {
 display: inline-block;

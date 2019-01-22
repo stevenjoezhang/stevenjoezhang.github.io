@@ -224,7 +224,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 20px 0 0px;
+  margin: 20px 0 15px;
 }
 h1 {
   font-size: 22px;
@@ -2017,7 +2017,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #30eeff;
+  background: #ff3eee;
 }
 .links-of-blogroll {
   font-size: 13px;

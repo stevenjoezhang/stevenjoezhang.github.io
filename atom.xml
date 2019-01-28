@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangshuqiao.org/"/>
-  <updated>2019-01-22T13:59:43.894Z</updated>
+  <updated>2019-01-28T08:55:01.019Z</updated>
   <id>https://zhangshuqiao.org/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>鱼眼镜头与小行星特效</title>
+    <link href="https://zhangshuqiao.org/2019-01/%E9%B1%BC%E7%9C%BC%E9%95%9C%E5%A4%B4%E4%B8%8E%E5%B0%8F%E8%A1%8C%E6%98%9F%E7%89%B9%E6%95%88/"/>
+    <id>https://zhangshuqiao.org/2019-01/鱼眼镜头与小行星特效/</id>
+    <published>2019-01-28T06:18:34.000Z</published>
+    <updated>2019-01-28T08:55:01.019Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/2019-01/EclipsePrince_Vetter_1500.jpg" alt=""></p><p>摄影师 <a href="https://www.facebook.com/stephane.vetter.nuitsacrees" target="_blank" rel="noopener">Stephane Vetter</a> 在 8 月 21 日的日食时，于俄勒冈州马格纳湖的同一地点融合了白天和黑夜的景象，完成了这个精美渲染的『小行星』图像。拍摄需要大量的精心策划，这里是他通过 <a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener">Astronomy Picture of the Day</a> 解释他是如何做到的：<br>In this beautifully rendered “little planet” image, photographer <a href="https://www.facebook.com/stephane.vetter.nuitsacrees" target="_blank" rel="noopener">Stephane Vetter</a> fuses both night and day captured from a single location at Magone Lake in Oregon during the August 21st solar eclipse. The shot required tons of careful planning, and here’s an explanation of how he did it via <a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener">Astronomy Picture of the Day</a>:</p><blockquote><p>这是一个小行星、全天空、双时延、数字融合的复合材料，从一个地方在夜间和白天捕获天体运动。在这个 360×180 全景图中，北部和南部分别位于图像的底部和顶部，而东部和西部分别位于左右边缘。在日食前一个晚上的四个小时内，当地球旋转时，在北天极（底部）环绕着星轨。在日全食期间，从日出到日落（上图）每隔十五分钟拍摄一次太阳，有时是偏食。然后将所有这些图像数字合并到在日全食期间拍摄的单个图像上。然后，可以看到太阳的明亮日冕在黑暗的新月（左上）周围闪烁，而金星同时变得容易看见（顶部）。中间的树，在相机下面，是道格拉斯冷杉。<br>This featured little-planet, all-sky, double time-lapse, digitally-fused composite captured celestial action during both night and day from a single location. In this 360×180 panorama, north and south are at the image bottom and top, while east and west are at the left and right edges, respectively. During four hours the night before the eclipse, star trails were captured circling the north celestial pole (bottom) as the Earth spun. During the day of the total eclipse, the Sun was captured every fifteen minutes from sunrise to sunset (top), sometimes in partial eclipse. All of these images were then digitally merged onto a single image taken exactly during the total solar eclipse. Then, the Sun’s bright corona could be seen flaring around the dark new Moon (upper left), while Venus simultaneously became easily visible (top). The tree in the middle, below the camera, is a Douglas fir.</p></blockquote><p>所以，这就是典型的日全食、小行星、全天空、双时延照片，借助一棵冷杉拍摄，仅此而已。你可以在 Vetter 的 <a href="http://nuitsacrees.fr" target="_blank" rel="noopener">网站</a> 上看到更多他的摄影作品。<br>So, just your typical full eclipse, little-planet, all-sky, double time-lapse photo by a fir tree, really. You can see more of Vetter’s photography on his <a href="http://nuitsacrees.fr" target="_blank" rel="noopener">website</a>.</p><p>本文翻译自：<a href="https://www.thisiscolossal.com/2017/08/a-panoramic-eclipse-composite-with-star-trails-captured-by-stephane-vetter/" target="_blank" rel="noopener">A Panoramic Full Eclipse Composite with Star Trails Captured by Stephane Vetter</a></p><p>这样的『小行星』图像虽然具有鱼眼镜头的扭曲效果，但是并不一定需要使用鱼眼镜头拍摄。通过强大的图像后期处理技术，只要拍摄多个角度的照片，也可以合成出这样的效果。</p><p>拓展阅读：<a href="https://www.zhihu.com/question/27440901" target="_blank" rel="noopener">360 度球状全景的照片是怎样拍出来的？</a></p><p>更多小行星特效：<br><a href="http://720.jum8.com/quanjing/xx/" target="_blank" rel="noopener">小行星转场 + 车内全景</a><br><a href="https://720yun.com/t/eeb24mf59tn?scene_id=487241" target="_blank" rel="noopener">天使眼中的天堂——华中师大一附中</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/images/2019-01/EclipsePrince_Vetter_1500.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;摄影师 &lt;a href=&quot;https://www.facebook.com/stephane.vetter.nuitsacrees
+      
+    
+    </summary>
+    
+      <category term="Web开发" scheme="https://zhangshuqiao.org/categories/Web%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Hexo" scheme="https://zhangshuqiao.org/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>树莓派使用 RFID RC522 芯片</title>
@@ -758,49 +784,6 @@
     
     
       <category term="数学" scheme="https://zhangshuqiao.org/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>月下独酌</title>
-    <link href="https://zhangshuqiao.org/2018-09/%E6%9C%88%E4%B8%8B%E7%8B%AC%E9%85%8C/"/>
-    <id>https://zhangshuqiao.org/2018-09/月下独酌/</id>
-    <published>2018-09-24T10:15:20.000Z</published>
-    <updated>2018-11-03T07:48:33.841Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong> 月下独酌 </strong></p><ul><li>李白 *<br>花间一壶酒，独酌无相亲。<br>举杯邀明月，对影成三人。<br>月既不解饮，影徒随我身。<br>暂伴月将影，行乐须及春。<br>我歌月徘徊，我舞影零乱。<br>醒时同交欢，醉后各分散。<br>永结无情游，相期邈云汉。</li></ul><p><strong> 八月十五夜月 </strong></p><ul><li>杜甫 *<br>满月飞明镜，归心折大刀。<br>转蓬行地远，攀桂仰天高。<br>水路疑霜雪，林栖见羽毛。<br>此时瞻白兔，直欲数秋毫。</li></ul><p><strong> 十五夜望月 </strong></p><ul><li>王建 *<br>中庭地白树栖鸦，冷露无声湿桂花。<br>今夜月明人尽望，不知秋思落谁家！</li></ul><p><strong> 南斋玩月 </strong></p><ul><li>王昌龄 *<br>高卧南斋时，开帷月初吐。<br>清辉澹水木，演漾在窗户。<br>荏苒几盈虚，澄澄变今古。<br>美人清江畔，是夜越吟苦。<br>千里共如何，微风吹兰杜。</li></ul><p><strong> 中秋月 </strong></p><ul><li>苏轼 *<br>暮云收尽溢清寒，银汉无声转玉盘。<br>此生此夜不长好，明月明年何处看。</li></ul><p><strong> 中秋月 </strong></p><ul><li>齐已 *<br>空碧无云露湿衣，众星光外涌清规。<br>东林莫碍渐高势，四海正看当路时。<br>还许分明吟皓魄，肯教幽暗取丹枝。<br>可怜关夜婵娟影，正对五候残酒卮。</li></ul><a id="more"></a><p><strong> 关山月 </strong></p><ul><li>李白 *<br>明月出天山，苍茫云海间。<br>长风几万里，吹度玉门关。<br>汉下白登道，胡窥青海湾。<br>由来征战地，不见有人还。<br>戍客望边色，思归多苦颜。<br>高楼当此夜，叹息未应闲。</li></ul><p><strong> 静夜思 </strong></p><ul><li>李白 *<br>床前明月光，疑是地上霜。<br>举头望明月，低头思故乡。</li></ul><p><strong> 月夜 </strong></p><ul><li>刘方平 *<br>更深月色半人家，北斗阑干南斗斜。<br>今夜偏知春气暖，虫声新透绿窗纱。</li></ul><p><strong> 嫦娥 </strong></p><ul><li>李商隐 *<br>云母屏风烛影深，长河渐落晓星沈。<br>嫦娥应悔偷灵药，碧海青天夜夜心。</li></ul><p><strong> 月夜忆舍弟 </strong></p><ul><li>杜甫 *<br>戍鼓断人行，秋边一雁声。<br>露从今夜白，月是故乡明。<br>有弟皆分散，无家问死生。<br>寄书长不达，况乃未休兵。</li></ul><p><strong> 望月怀远 </strong></p><ul><li>张九龄 *<br>海上生明月，天涯共此时。<br>情人怨遥夜，竟夕起相思！<br>灭烛怜光满，披衣觉露滋。<br>不堪盈手赠，还寝梦佳期。</li></ul><p><strong> 霜月 </strong></p><ul><li>李商隐 *<br>初闻征雁已无蝉，百尺楼高水接天。<br>青女素娥俱耐冷，月中霜里斗婵娟</li></ul><p><strong> 秋宵月下有怀 </strong></p><ul><li>孟浩然 *<br>秋空明月悬，光彩露沾湿。<br>惊鹊栖未定，飞萤卷帘入。<br>庭槐寒影疏，邻杵夜声急。<br>佳期旷何许！望望空伫立。</li></ul><p><strong> 中秋待月 </strong></p><ul><li>陆龟蒙 *<br>转缺霜输上转迟，好风偏似送佳期。<br>帘斜树隔情无限，烛暗香残坐不辞。<br>最爱笙调闻北里，渐看星潆失南箕。<br>何人为校清凉力，欲减初圆及午时。</li></ul><p><strong> 倪庄中秋 </strong></p><ul><li>元好问 *<br>强饭日逾瘦，狭衣秋已寒。<br>儿童漫相忆，行路岂知难。<br>露气入茅屋，溪声喧石滩。<br>山中夜来月，到晓不曾看。</li></ul><p><strong> 八月十五夜桃源玩月 </strong></p><ul><li>刘禹锡 *<br>尘中见月心亦闲，况是清秋仙府间。<br>凝光悠悠寒露坠，此时立在最高山。<br>碧虚无云风不起，山上长松山下水。<br>群动悠然一顾中，天高地平千万里。<br>少君引我升玉坛，礼空遥请真仙官。<br>云軿欲下星斗动，天乐一声肌骨寒。<br>金霞昕昕渐东上，轮欹影促犹频望。<br>绝景良时难再并，他年此日应惆怅。</li></ul><p><strong> 中秋月 </strong></p><ul><li>晏殊 *<br>十轮霜影转庭梧，此夕羁人独向隅。<br>未必素娥无怅恨，玉蟾清冷桂花孤。</li></ul><p><strong> 中秋月 </strong></p><ul><li>苏轼 *<br>暮云收尽溢清寒，银汉无声转玉盘。<br>此生此夜不长好，明月明年何处看。</li></ul><p><strong> 八月十五日夜湓亭望月 </strong></p><ul><li>白居易 *<br>昔年八月十五夜，曲江池畔杏园边。<br>今年八月十五夜，湓浦沙头水馆前。<br>西北望乡何处是，东南见月几回圆。<br>昨风一吹无人会，今夜清光似往年。</li></ul><p><strong> 天竺寺八月十五日夜桂子 </strong></p><ul><li>皮日休 *<br>玉颗珊珊下月轮，殿前拾得露华新。<br>至今不会天中事，应是嫦娥掷与人。</li></ul><p><strong> 中秋见月和子由 </strong></p><ul><li>苏轼 *<br>明月未出群山高，瑞光千丈生白毫。<br>一杯未尽银阙涌，乱云脱坏如崩涛。<br>谁为天公洗眸子，应费明河千斛水。<br>遂令冷看世间人，照我湛然心不起。<br>西南火星如弹丸，角尾奕奕苍龙蟠。<br>今宵注眼看不见，更许萤火争清寒。<br>何人舣舟昨古汴，千灯夜作鱼龙变。<br>曲折无心逐浪花，低昂赴节随歌板。<br>青荧灭没转山前，浪飐风回岂复坚。<br>明月易低人易散，归来呼酒更重看。<br>堂前月色愈清好，咽咽寒螀鸣露草。<br>卷帘推户寂无人，窗下咿哑唯楚老。<br>南都从事莫羞贫，对月题诗有几人。<br>明朝人事随日出，恍然一梦瑶台客。</li></ul><p><strong> 中秋登楼望月 </strong></p><ul><li>米芾 *<br>目穷淮海满如银，万道虹光育蚌珍。<br>天上若无修月户，桂枝撑损向西轮。</li></ul><p><strong> 明月何皎皎 </strong></p><ul><li>佚名 *<br>明月何皎皎，照我罗床帏。<br>夜愁不能寐，揽衣起徘徊。<br>客行虽云乐，不如早旋归。<br>出户独彷徨，愁思当告谁！<br>引领还入房，泪下沾裳衣。</li></ul><p><strong> 水调歌头 </strong></p><ul><li>苏轼 *<br>明月几时有，把酒问青天。<br>不知天上宫阙，今夕是何年。<br>我欲乘风归去，惟恐琼楼玉宇，高处不胜寒。<br>起舞弄清影，何似在人间。<br>转朱阁，低绮户，照无眠。<br>不应有恨，何事长向别时圆。<br>人有悲欢离合，月有阴晴圆缺，此事古难全。<br>但愿人长久，千里共婵娟。</li></ul><p><strong> 西江月 </strong></p><ul><li>苏轼 *<br>顷在黄州，春夜行蕲水中。过酒家饮酒，醉。乘月至一溪桥上，解鞍曲肱，醉卧少休。及觉已晓。乱山攒拥，流水铿然，疑非人世也。书此语桥柱上。<br>照野弥弥浅浪，横空隐隐层霄。障泥未解玉骢骄，我欲醉眠芳草。<br>可惜一溪风月，莫教踏碎琼瑶。解鞍欹枕绿杨桥，杜宇一声春晓。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt; 月下独酌 &lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;李白 *&lt;br&gt;花间一壶酒，独酌无相亲。&lt;br&gt;举杯邀明月，对影成三人。&lt;br&gt;月既不解饮，影徒随我身。&lt;br&gt;暂伴月将影，行乐须及春。&lt;br&gt;我歌月徘徊，我舞影零乱。&lt;br&gt;醒时同交欢，醉后各分散。&lt;br&gt;永结无情游，相期邈云汉。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt; 八月十五夜月 &lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;杜甫 *&lt;br&gt;满月飞明镜，归心折大刀。&lt;br&gt;转蓬行地远，攀桂仰天高。&lt;br&gt;水路疑霜雪，林栖见羽毛。&lt;br&gt;此时瞻白兔，直欲数秋毫。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt; 十五夜望月 &lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;王建 *&lt;br&gt;中庭地白树栖鸦，冷露无声湿桂花。&lt;br&gt;今夜月明人尽望，不知秋思落谁家！&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt; 南斋玩月 &lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;王昌龄 *&lt;br&gt;高卧南斋时，开帷月初吐。&lt;br&gt;清辉澹水木，演漾在窗户。&lt;br&gt;荏苒几盈虚，澄澄变今古。&lt;br&gt;美人清江畔，是夜越吟苦。&lt;br&gt;千里共如何，微风吹兰杜。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt; 中秋月 &lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;苏轼 *&lt;br&gt;暮云收尽溢清寒，银汉无声转玉盘。&lt;br&gt;此生此夜不长好，明月明年何处看。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt; 中秋月 &lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;齐已 *&lt;br&gt;空碧无云露湿衣，众星光外涌清规。&lt;br&gt;东林莫碍渐高势，四海正看当路时。&lt;br&gt;还许分明吟皓魄，肯教幽暗取丹枝。&lt;br&gt;可怜关夜婵娟影，正对五候残酒卮。&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="https://zhangshuqiao.org/categories/%E5%85%B6%E4%BB%96/"/>
-    
     
   </entry>
   

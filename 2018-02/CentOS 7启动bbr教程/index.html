@@ -8,18 +8,18 @@
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-<link rel="stylesheet" href="/css/main.css?v=6.7.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
-<link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/main.css?v=7.0.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '6.7.0',
+version: '7.0.0',
 sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
 fancybox: true,
 fastclick: true,
@@ -36,18 +36,18 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
-<meta name="description" content="自 Google 于 2016 年 9 月宣布将 BBR 开源起，世界各国的极客们就开始研究了，对于常年受制于特殊网络环境下的我国民众，长期都在寻找各种提速的方法。之前流行的锐速（后开始收费）以及 FinalSpeed 等都曾备受大家的爱戴。对于 bbr 而言，通俗来讲就是对 Linux 内核 TCP 协议的优化从而达到提速的目的。 yum 系统更新将 CentOS 系统版本更新到 7.3 或更高">
+<meta name="description" content="自Google于2016年9月宣布将BBR开源起，世界各国的极客们就开始研究了，对于常年受制于特殊网络环境下的我国民众，长期都在寻找各种提速的方法。之前流行的锐速（后开始收费）以及FinalSpeed等都曾备受大家的爱戴。对于bbr而言，通俗来讲就是对Linux内核TCP协议的优化从而达到提速的目的。 yum系统更新将CentOS系统版本更新到7.3或更高：12yum updateyum upgr">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS 7 启动 bbr 教程">
+<meta property="og:title" content="CentOS 7启动bbr教程">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-02/CentOS 7启动bbr教程/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="自 Google 于 2016 年 9 月宣布将 BBR 开源起，世界各国的极客们就开始研究了，对于常年受制于特殊网络环境下的我国民众，长期都在寻找各种提速的方法。之前流行的锐速（后开始收费）以及 FinalSpeed 等都曾备受大家的爱戴。对于 bbr 而言，通俗来讲就是对 Linux 内核 TCP 协议的优化从而达到提速的目的。 yum 系统更新将 CentOS 系统版本更新到 7.3 或更高">
+<meta property="og:description" content="自Google于2016年9月宣布将BBR开源起，世界各国的极客们就开始研究了，对于常年受制于特殊网络环境下的我国民众，长期都在寻找各种提速的方法。之前流行的锐速（后开始收费）以及FinalSpeed等都曾备受大家的爱戴。对于bbr而言，通俗来讲就是对Linux内核TCP协议的优化从而达到提速的目的。 yum系统更新将CentOS系统版本更新到7.3或更高：12yum updateyum upgr">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-27T11:58:08.016Z">
+<meta property="og:updated_time" content="2019-02-06T08:16:40.412Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS 7 启动 bbr 教程">
-<meta name="twitter:description" content="自 Google 于 2016 年 9 月宣布将 BBR 开源起，世界各国的极客们就开始研究了，对于常年受制于特殊网络环境下的我国民众，长期都在寻找各种提速的方法。之前流行的锐速（后开始收费）以及 FinalSpeed 等都曾备受大家的爱戴。对于 bbr 而言，通俗来讲就是对 Linux 内核 TCP 协议的优化从而达到提速的目的。 yum 系统更新将 CentOS 系统版本更新到 7.3 或更高">
+<meta name="twitter:title" content="CentOS 7启动bbr教程">
+<meta name="twitter:description" content="自Google于2016年9月宣布将BBR开源起，世界各国的极客们就开始研究了，对于常年受制于特殊网络环境下的我国民众，长期都在寻找各种提速的方法。之前流行的锐速（后开始收费）以及FinalSpeed等都曾备受大家的爱戴。对于bbr而言，通俗来讲就是对Linux内核TCP协议的优化从而达到提速的目的。 yum系统更新将CentOS系统版本更新到7.3或更高：12yum updateyum upgr">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2018-02/CentOS 7启动bbr教程/">
 <script id="page.configurations">
@@ -55,7 +55,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
-<title>CentOS 7 启动 bbr 教程 | 米米的博客</title>
+<title>CentOS 7启动bbr教程 | 米米的博客</title>
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -120,7 +120,7 @@ top: initial;
 <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-friends">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe-asia"></i> <br>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-lab">
 <a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
@@ -166,12 +166,12 @@ top: initial;
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
-<h1 class="post-title" itemprop="name headline">CentOS 7 启动 bbr 教程
+<h1 class="post-title" itemprop="name headline">CentOS 7启动bbr教程
 </h1>
 <div class="post-meta">
 <span class="post-time">
 <span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
+<i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-02-19 13:22:49" itemprop="dateCreated datePublished" datetime="2018-02-19T13:22:49+08:00">2018-02-19</time>
@@ -179,7 +179,7 @@ top: initial;
 <span class="post-category">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
+<i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
@@ -187,10 +187,11 @@ top: initial;
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
+<i class="fa fa-comment-o"></i>
 </span>
+<span class="post-meta-item-text">评论数：</span>
 <a href="/2018-02/CentOS 7启动bbr教程/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-02/CentOS 7启动bbr教程/" itemprop="commentCount"></span>
+<span class="post-comments-count valine-comment-count" data-xid="/2018-02/CentOS 7启动bbr教程/" itemprop="commentCount"></span>
 </a>
 </span>
 <span class="post-meta-divider">|</span>
@@ -201,13 +202,13 @@ top: initial;
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
+<i class="fa fa-file-word-o"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
 <span title="本文字数">2.2k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
+<i class="fa fa-clock-o"></i>
 </span>
 <span class="post-meta-item-text">阅读时长 &asymp;</span>
 <span title="阅读时长">2 分钟</span>
@@ -215,34 +216,36 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>自 Google 于 2016 年 9 月宣布将 BBR 开源起，世界各国的极客们就开始研究了，对于常年受制于特殊网络环境下的我国民众，长期都在寻找各种提速的方法。之前流行的锐速（后开始收费）以及 FinalSpeed 等都曾备受大家的爱戴。对于 bbr 而言，通俗来讲就是对 Linux 内核 TCP 协议的优化从而达到提速的目的。</p>
-<h2 id="yum-系统更新"><a href="#yum-系统更新" class="headerlink" title="yum 系统更新"></a>yum 系统更新</h2><p>将 CentOS 系统版本更新到 7.3 或更高：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br><span class="line">yum upgrade</span><br></pre></td></tr></table></figure></p>
+<p>自Google于2016年9月宣布将BBR开源起，世界各国的极客们就开始研究了，对于常年受制于特殊网络环境下的我国民众，长期都在寻找各种提速的方法。之前流行的锐速（后开始收费）以及FinalSpeed等都曾备受大家的爱戴。对于bbr而言，通俗来讲就是对Linux内核TCP协议的优化从而达到提速的目的。</p>
+<h2 id="yum系统更新"><a href="#yum系统更新" class="headerlink" title="yum系统更新"></a>yum系统更新</h2><p>将CentOS系统版本更新到7.3或更高：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br><span class="line">yum upgrade</span><br></pre></td></tr></table></figure></p>
 <p>查看系统版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/redhat-release</span><br></pre></td></tr></table></figure></p>
-<p>输出如下，则表示已升级到 7.3<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CentOS Linux release 7.3.1611 (Core)</span><br></pre></td></tr></table></figure></p>
-<h2 id="安装-elrepo-并升级内核"><a href="#安装-elrepo-并升级内核" class="headerlink" title="安装 elrepo 并升级内核"></a>安装 elrepo 并升级内核</h2><p>执行 <code>uname -r</code> 查看内核版本，例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4.9.0-1.el7.elrepo.x86_64</span><br></pre></td></tr></table></figure></p>
-<p>如果内核版本低于 4.9，需要升级内核；否则可以跳过这一步，直接到『开启 bbr』部分。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line">rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span><br></pre></td></tr></table></figure></p>
-<p>这时，执行 <code>yum repolist all</code> 可以看到所有安装的源，可以启用 <code>elrepo-kernal</code>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager --<span class="built_in">enable</span> elrepo-kernel</span><br><span class="line">yum install kernel-ml -y</span><br></pre></td></tr></table></figure></p>
+<p>输出如下，则表示已升级到7.3<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CentOS Linux release 7.3.1611 (Core)</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装elrepo并升级内核"><a href="#安装elrepo并升级内核" class="headerlink" title="安装elrepo并升级内核"></a>安装elrepo并升级内核</h2><p>执行<code>uname -r</code>查看内核版本，例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4.9.0-1.el7.elrepo.x86_64</span><br></pre></td></tr></table></figure></p>
+<p>如果内核版本低于4.9，需要升级内核；否则可以跳过这一步，直接到『开启bbr』部分。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line">rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span><br></pre></td></tr></table></figure></p>
+<p>这时，执行<code>yum repolist all</code>可以看到所有安装的源，可以启用<code>elrepo-kernal</code>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager --<span class="built_in">enable</span> elrepo-kernel</span><br><span class="line">yum install kernel-ml -y</span><br></pre></td></tr></table></figure></p>
 <p>如果只是执行一次，也可以使用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum --enablerepo=elrepo-kernel install kernel-ml -y</span><br></pre></td></tr></table></figure></p>
 <p>正常情况下将输出如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Transaction Summary</span><br><span class="line">================================================================================</span><br><span class="line">Install  1 Package</span><br><span class="line"></span><br><span class="line">Total download size: 39 M</span><br><span class="line">Installed size: 169 M</span><br><span class="line">Downloading packages:</span><br><span class="line">kernel-ml-4.9.0-1.el7.elrepo.x86_64.rpm                    |  39 MB   00:00</span><br><span class="line">Running transaction check</span><br><span class="line">Running transaction <span class="built_in">test</span></span><br><span class="line">Transaction <span class="built_in">test</span> succeeded</span><br><span class="line">Running transaction</span><br><span class="line">Warning: RPMDB altered outside of yum.</span><br><span class="line">  Installing : kernel-ml-4.9.0-1.el7.elrepo.x86_64                          1/1</span><br><span class="line">  Verifying  : kernel-ml-4.9.0-1.el7.elrepo.x86_64                          1/1</span><br><span class="line"></span><br><span class="line">Installed:</span><br><span class="line">  kernel-ml.x86_64 0:4.9.0-1.el7.elrepo</span><br><span class="line"></span><br><span class="line">Complete!</span><br></pre></td></tr></table></figure></p>
-<p>随后更新 grub 文件并重启，来启动最新内核：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \<span class="string">'</span></span><br><span class="line"><span class="string"># 所有可用的内核会被输出，记下新内核所在的行数，第一行为 0，第二行为 1</span></span><br><span class="line"><span class="string">grub2-set-default 0</span></span><br><span class="line"><span class="string"># 把 0 替换成新内核所在的行数</span></span><br><span class="line"><span class="string">reboot</span></span><br></pre></td></tr></table></figure></p>
-<p>重启后，ssh 会断开，稍等一会儿重新连接。可以再次查看内核版本，检查更新是否成功。下一步就是启动 bbr 了。</p>
+<p>随后更新grub文件并重启。执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \<span class="string">'</span></span><br></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F\<span class="string">' '</span><span class="variable">$1</span>==<span class="string">"menuentry "</span> &#123;<span class="built_in">print</span> i++ <span class="string">" : "</span> <span class="variable">$2</span>&#125;<span class="string">' /etc/grub2.cfg</span></span><br></pre></td></tr></table></figure></p>
+<p>这时，所有可用的内核会被输出。记下新内核所在的行数，第一行为0，第二行为1，以此类推。<br>执行以下命令来启用最新内核，需要把0替换成上一步得到的新内核所在的行数：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grub2-set-default 0</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure></p>
+<p>重启后，ssh会断开，稍等一会儿重新连接。可以再次查看内核版本，检查更新是否成功。如果一切顺利，下一步就是启动bbr了。</p>
 <a id="more"></a>
-<h2 id="开启-bbr"><a href="#开启-bbr" class="headerlink" title="开启 bbr"></a>开启 bbr</h2><p>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysctl.conf</span><br></pre></td></tr></table></figure></p>
+<h2 id="开启bbr"><a href="#开启bbr" class="headerlink" title="开启bbr"></a>开启bbr</h2><p>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysctl.conf</span><br></pre></td></tr></table></figure></p>
 <p>添加如下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net.core.default_qdisc = fq</span><br><span class="line">net.ipv4.tcp_congestion_control = bbr</span><br></pre></td></tr></table></figure></p>
 <p>加载系统参数（正常情况下会输出我们之前加入的内容）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -p</span><br></pre></td></tr></table></figure></p>
-<h2 id="确定-bbr-已经开启"><a href="#确定-bbr-已经开启" class="headerlink" title="确定 bbr 已经开启"></a>确定 bbr 已经开启</h2><h3 id="查看-sysctl"><a href="#查看-sysctl" class="headerlink" title="查看 sysctl"></a>查看 sysctl</h3><p>若执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl net.ipv4.tcp_available_congestion_control</span><br></pre></td></tr></table></figure></p>
+<h2 id="确定bbr已经开启"><a href="#确定bbr已经开启" class="headerlink" title="确定bbr已经开启"></a>确定bbr已经开启</h2><h3 id="查看sysctl"><a href="#查看sysctl" class="headerlink" title="查看sysctl"></a>查看sysctl</h3><p>若执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl net.ipv4.tcp_available_congestion_control</span><br></pre></td></tr></table></figure></p>
 <p>输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net.ipv4.tcp_available_congestion_control = bbr cubic reno</span><br></pre></td></tr></table></figure></p>
-<p>则表明成功。<br><strong> 注：如果提示未找到命令，请确保 SELinux 已关闭，方法是编辑 <code>/etc/selinux/config</code>。</strong></p>
-<h3 id="查看-lsmod"><a href="#查看-lsmod" class="headerlink" title="查看 lsmod"></a>查看 lsmod</h3><p>若执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsmod | grep bbr</span><br></pre></td></tr></table></figure></p>
+<p>则表明成功。<br><strong>注：如果提示未找到命令，请确保SELinux已关闭，方法是编辑<code>/etc/selinux/config</code>。</strong></p>
+<h3 id="查看lsmod"><a href="#查看lsmod" class="headerlink" title="查看lsmod"></a>查看lsmod</h3><p>若执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsmod | grep bbr</span><br></pre></td></tr></table></figure></p>
 <p>返回形如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcp_bbr                16384  1</span><br></pre></td></tr></table></figure></p>
 <p>则表明成功。</p>
-<p>本文转载自：<a href="https://www.vmvps.com/speed-up-your-vps-with-installing-bbr-to-centos-7.html" target="_blank" rel="noopener"># 为 VPS 加速度# CentOS 7 安装 bbr 教程</a></p>
-<p>本文更新于 2018 年 6 月：<br>bbr 的效果是非常显著的，只要带宽足够，流畅播放 YouTube 上 4320p 的视频毫无压力。可以通过 <a href="https://www.youtube.com/channel/UCqOecsBLULnuUtls0tISTCw" target="_blank" rel="noopener">Timestorm Films</a> 发布的超高分辨率视频测试效果～</p>
+<p>本文转载自：<a href="https://www.vmvps.com/speed-up-your-vps-with-installing-bbr-to-centos-7.html" target="_blank" rel="noopener">#为VPS加速度# CentOS 7安装bbr教程</a></p>
+<p>本文更新于2018年6月：<br>bbr的效果是非常显著的，只要带宽足够，流畅播放YouTube上4320p的视频毫无压力。可以通过<a href="https://www.youtube.com/channel/UCqOecsBLULnuUtls0tISTCw" target="_blank" rel="noopener">Timestorm Films</a>发布的超高分辨率视频测试效果～</p>
 </div>
 <div>
 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
 <div>🍭支持一根棒棒糖！</div>
-<button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+<button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
 <span>打赏</span>
 </button>
 <div id="QR" style="display: none;">
@@ -267,10 +270,10 @@ top: initial;
 <strong>本文作者： </strong>张书樵</li>
 <li class="post-copyright-link">
 <strong>本文链接：</strong>
-<a href="https://zhangshuqiao.org/2018-02/CentOS 7启动bbr教程/" title="CentOS 7 启动 bbr 教程">https://zhangshuqiao.org/2018-02/CentOS 7启动bbr教程/</a>
+<a href="https://zhangshuqiao.org/2018-02/CentOS 7启动bbr教程/" title="CentOS 7启动bbr教程">https://zhangshuqiao.org/2018-02/CentOS 7启动bbr教程/</a>
 </li>
 <li class="post-copyright-license">
-<strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+<strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
 </div>
 <footer class="post-footer">
@@ -364,7 +367,7 @@ RSS
 <!--noindex-->
 <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
 <div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#yum-系统更新"><span class="nav-number">1.</span> <span class="nav-text">yum 系统更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-elrepo-并升级内核"><span class="nav-number">2.</span> <span class="nav-text">安装 elrepo 并升级内核</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-bbr"><span class="nav-number">3.</span> <span class="nav-text">开启 bbr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#确定-bbr-已经开启"><span class="nav-number">4.</span> <span class="nav-text">确定 bbr 已经开启</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看-sysctl"><span class="nav-number">4.1.</span> <span class="nav-text">查看 sysctl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看-lsmod"><span class="nav-number">4.2.</span> <span class="nav-text">查看 lsmod</span></a></li></ol></li></ol></div>
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#yum系统更新"><span class="nav-number">1.</span> <span class="nav-text">yum系统更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装elrepo并升级内核"><span class="nav-number">2.</span> <span class="nav-text">安装elrepo并升级内核</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启bbr"><span class="nav-number">3.</span> <span class="nav-text">开启bbr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#确定bbr已经开启"><span class="nav-number">4.</span> <span class="nav-text">确定bbr已经开启</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看sysctl"><span class="nav-number">4.1.</span> <span class="nav-text">查看sysctl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看lsmod"><span class="nav-number">4.2.</span> <span class="nav-text">查看lsmod</span></a></li></ol></li></ol></div>
 </div>
 </div>
 <!--/noindex-->
@@ -417,13 +420,13 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/src/utils.js?v=6.7.0"></script>
-<script src="/js/src/motion.js?v=6.7.0"></script>
-<script src="/js/src/affix.js?v=6.7.0"></script>
-<script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
-<script src="/js/src/scrollspy.js?v=6.7.0"></script>
-<script src="/js/src/post-details.js?v=6.7.0"></script>
-<script src="/js/src/bootstrap.js?v=6.7.0"></script>
+<script src="/js/src/utils.js?v=7.0.0"></script>
+<script src="/js/src/motion.js?v=7.0.0"></script>
+<script src="/js/src/affix.js?v=7.0.0"></script>
+<script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+<script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+<script src="/js/src/bootstrap.js?v=7.0.0"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
@@ -744,6 +747,8 @@ onPopupClose();
 }
 });
 </script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script>pangu.spacingPage();</script>
 <style>
 .copy-btn {
 display: inline-block;

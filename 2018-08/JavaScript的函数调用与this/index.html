@@ -8,18 +8,18 @@
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-<link rel="stylesheet" href="/css/main.css?v=6.7.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
-<link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/main.css?v=7.0.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '6.7.0',
+version: '7.0.0',
 sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
 fancybox: true,
 fastclick: true,
@@ -36,18 +36,18 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
-<meta name="description" content="JavaScript 函数有 4 种调用方式。每种方式的不同方式在于 this 的初始化。对 this 关键字有解释： 一般而言，在 JavaScript 中，this 指向函数执行时的当前对象。 注意 this 是保留关键字，你不能修改 this 的值。 作为一个函数调用先看一个最简单的实例，在浏览器中：1234function myFunction() &amp;#123;    return thi">
+<meta name="description" content="JavaScript函数有4种调用方式。每种方式的不同方式在于this的初始化。对this关键字有解释：一般而言，在JavaScript中，this指向函数执行时的当前对象。注意this是保留关键字，你不能修改this的值。 作为一个函数调用先看一个最简单的实例，在浏览器中：1234function myFunction() &amp;#123;    return this;&amp;#125;alert(my">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript 的函数调用与 this">
+<meta property="og:title" content="JavaScript的函数调用与this">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-08/JavaScript的函数调用与this/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="JavaScript 函数有 4 种调用方式。每种方式的不同方式在于 this 的初始化。对 this 关键字有解释： 一般而言，在 JavaScript 中，this 指向函数执行时的当前对象。 注意 this 是保留关键字，你不能修改 this 的值。 作为一个函数调用先看一个最简单的实例，在浏览器中：1234function myFunction() &amp;#123;    return thi">
+<meta property="og:description" content="JavaScript函数有4种调用方式。每种方式的不同方式在于this的初始化。对this关键字有解释：一般而言，在JavaScript中，this指向函数执行时的当前对象。注意this是保留关键字，你不能修改this的值。 作为一个函数调用先看一个最简单的实例，在浏览器中：1234function myFunction() &amp;#123;    return this;&amp;#125;alert(my">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-11-18T09:10:26.062Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript 的函数调用与 this">
-<meta name="twitter:description" content="JavaScript 函数有 4 种调用方式。每种方式的不同方式在于 this 的初始化。对 this 关键字有解释： 一般而言，在 JavaScript 中，this 指向函数执行时的当前对象。 注意 this 是保留关键字，你不能修改 this 的值。 作为一个函数调用先看一个最简单的实例，在浏览器中：1234function myFunction() &amp;#123;    return thi">
+<meta name="twitter:title" content="JavaScript的函数调用与this">
+<meta name="twitter:description" content="JavaScript函数有4种调用方式。每种方式的不同方式在于this的初始化。对this关键字有解释：一般而言，在JavaScript中，this指向函数执行时的当前对象。注意this是保留关键字，你不能修改this的值。 作为一个函数调用先看一个最简单的实例，在浏览器中：1234function myFunction() &amp;#123;    return this;&amp;#125;alert(my">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2018-08/JavaScript的函数调用与this/">
 <script id="page.configurations">
@@ -55,7 +55,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
-<title>JavaScript 的函数调用与 this | 米米的博客</title>
+<title>JavaScript的函数调用与this | 米米的博客</title>
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -120,7 +120,7 @@ top: initial;
 <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-friends">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe-asia"></i> <br>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-lab">
 <a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
@@ -166,12 +166,12 @@ top: initial;
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
-<h1 class="post-title" itemprop="name headline">JavaScript 的函数调用与 this
+<h1 class="post-title" itemprop="name headline">JavaScript的函数调用与this
 </h1>
 <div class="post-meta">
 <span class="post-time">
 <span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
+<i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-08-25 11:54:18" itemprop="dateCreated datePublished" datetime="2018-08-25T11:54:18+08:00">2018-08-25</time>
@@ -179,7 +179,7 @@ top: initial;
 <span class="post-category">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
+<i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
@@ -187,10 +187,11 @@ top: initial;
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
+<i class="fa fa-comment-o"></i>
 </span>
+<span class="post-meta-item-text">评论数：</span>
 <a href="/2018-08/JavaScript的函数调用与this/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-08/JavaScript的函数调用与this/" itemprop="commentCount"></span>
+<span class="post-comments-count valine-comment-count" data-xid="/2018-08/JavaScript的函数调用与this/" itemprop="commentCount"></span>
 </a>
 </span>
 <span class="post-meta-divider">|</span>
@@ -201,13 +202,13 @@ top: initial;
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
+<i class="fa fa-file-word-o"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">4.4k</span>
+<span title="本文字数">4.2k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
+<i class="fa fa-clock-o"></i>
 </span>
 <span class="post-meta-item-text">阅读时长 &asymp;</span>
 <span title="阅读时长">4 分钟</span>
@@ -215,38 +216,38 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>JavaScript 函数有 4 种调用方式。每种方式的不同方式在于 this 的初始化。对 this 关键字有解释：<em> 一般而言，在 JavaScript 中，this 指向函数执行时的当前对象。</em> 注意 this 是保留关键字，你不能修改 this 的值。</p>
+<p>JavaScript函数有4种调用方式。每种方式的不同方式在于this的初始化。对this关键字有解释：<em>一般而言，在JavaScript中，this指向函数执行时的当前对象。</em>注意this是保留关键字，你不能修改this的值。</p>
 <h2 id="作为一个函数调用"><a href="#作为一个函数调用" class="headerlink" title="作为一个函数调用"></a>作为一个函数调用</h2><p>先看一个最简单的实例，在浏览器中：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line">alert(myFunction()); <span class="comment">// [object Window]</span></span><br></pre></td></tr></table></figure></p>
-<p>而当函数没有被自身的对象调用时，this 的值就会变成全局对象。在 Web 浏览器中全局对象是浏览器窗口（window 对象）。该实例返回 this 的值是 window 对象。也就是此函数即为 window 对象的函数，<code>myFunction()</code> 等同于 <code>window.myFunction()</code>。但是此处在使用内部函数时存在一个 this 指向的问题，看下面的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意此处在 node 环境和浏览器环境下值不同,</span></span><br><span class="line"><span class="comment">// node 环境下必须去掉 var 使 value 成为全局变量。</span></span><br><span class="line">value = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    value: <span class="number">1</span>,</span><br><span class="line">    double: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//var that = this;</span></span><br><span class="line">        <span class="keyword">var</span> helper = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.value = add(<span class="keyword">this</span>.value, <span class="keyword">this</span>.value);</span><br><span class="line">        &#125;;</span><br><span class="line">        helper();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">myObject.double();</span><br><span class="line">alert(value); <span class="comment">// 8</span></span><br><span class="line">alert(myObject.value); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
-<p>在这里的 myObject 对象中，我们在 double 这个函数中使用了内部函数并赋值给 helper，<strong> 但是此处的 this.value 的 this 指向了全局对象 </strong>，所以在执行这个函数后全局变量 value 的值变了但 Object 中的 value 属性值仍然是 1，这不是我们想要的结果。《js 语言精粹》中指出这里是语言设计上的一个错误，this 应该仍然绑定到外部函数的 this 变量中。这个设计错误的后果就是方法不能利用内部函数来帮助它工作，因为内部函数的 this 被绑定了错误的值，所以不能共享该方法对对象的访问权。但是我们可以有一个很容易的解决方案去解决这个问题，对 myObject 进行修改：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    value: <span class="number">1</span>,</span><br><span class="line">    double: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">var</span> helper = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            that.value = add(that.value, that.value);</span><br><span class="line">        &#125;;</span><br><span class="line">        helper();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">myObject.double();</span><br><span class="line">alert(value); <span class="comment">// 4</span></span><br><span class="line">alert(myObject.value); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
-<p>这里使用了一个 that 变量来指向 double 方法中 this 的值即 myObject 本身，这样就可以对 myObject 对象的属性 value 进行修改。</p>
-<h2 id="函数作为方法调用"><a href="#函数作为方法调用" class="headerlink" title="函数作为方法调用"></a>函数作为方法调用</h2><p>这种方式即为，一个函数被保存为一个对象的属性，在此时此函数被成为一个方法。调用时 this 关键字被绑定到该对象，即：<strong> 函数作为对象方法调用，会使得 this 的值成为对象本身。</strong> 实例如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    firstName: <span class="string">"John"</span>,</span><br><span class="line">    lastName: <span class="string">"Doe"</span>,</span><br><span class="line">    fullName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">""</span> + <span class="keyword">this</span>.lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">myObject.fullName(); <span class="comment">// 返回"John Doe"</span></span><br></pre></td></tr></table></figure></p>
+<p>而当函数没有被自身的对象调用时，this的值就会变成全局对象。在Web浏览器中全局对象是浏览器窗口（window 对象）。该实例返回this的值是window对象。也就是此函数即为window对象的函数，<code>myFunction()</code>等同于<code>window.myFunction()</code>。但是此处在使用内部函数时存在一个this指向的问题，看下面的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意此处在node环境和浏览器环境下值不同,</span></span><br><span class="line"><span class="comment">// node环境下必须去掉var使value成为全局变量。</span></span><br><span class="line">value = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    value: <span class="number">1</span>,</span><br><span class="line">    double: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//var that = this;</span></span><br><span class="line">        <span class="keyword">var</span> helper = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.value = add(<span class="keyword">this</span>.value, <span class="keyword">this</span>.value);</span><br><span class="line">        &#125;;</span><br><span class="line">        helper();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">myObject.double();</span><br><span class="line">alert(value); <span class="comment">// 8</span></span><br><span class="line">alert(myObject.value); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
+<p>在这里的myObject对象中，我们在double这个函数中使用了内部函数并赋值给helper，<strong>但是此处的this.value的this指向了全局对象</strong>，所以在执行这个函数后全局变量value的值变了但Object中的value属性值仍然是1，这不是我们想要的结果。《js语言精粹》中指出这里是语言设计上的一个错误，this应该仍然绑定到外部函数的this变量中。这个设计错误的后果就是方法不能利用内部函数来帮助它工作，因为内部函数的this被绑定了错误的值，所以不能共享该方法对对象的访问权。但是我们可以有一个很容易的解决方案去解决这个问题，对myObject进行修改：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    value: <span class="number">1</span>,</span><br><span class="line">    double: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">var</span> helper = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            that.value = add(that.value, that.value);</span><br><span class="line">        &#125;;</span><br><span class="line">        helper();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">myObject.double();</span><br><span class="line">alert(value); <span class="comment">// 4</span></span><br><span class="line">alert(myObject.value); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
+<p>这里使用了一个that变量来指向double方法中this的值即myObject本身，这样就可以对myObject对象的属性value进行修改。</p>
+<h2 id="函数作为方法调用"><a href="#函数作为方法调用" class="headerlink" title="函数作为方法调用"></a>函数作为方法调用</h2><p>这种方式即为，一个函数被保存为一个对象的属性，在此时此函数被成为一个方法。调用时this关键字被绑定到该对象，即：<strong>函数作为对象方法调用，会使得this的值成为对象本身。</strong>实例如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    firstName: <span class="string">"John"</span>,</span><br><span class="line">    lastName: <span class="string">"Doe"</span>,</span><br><span class="line">    fullName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">" "</span> + <span class="keyword">this</span>.lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">myObject.fullName(); <span class="comment">//返回 "John Doe"</span></span><br></pre></td></tr></table></figure></p>
 <p>另一个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    value: <span class="number">0</span>,</span><br><span class="line">    increment: <span class="function"><span class="keyword">function</span> (<span class="params">inc</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.value += <span class="keyword">typeof</span> inc === <span class="string">'number'</span> ? inc : <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">myObject.increment();</span><br><span class="line"><span class="built_in">console</span>.log(myObject.value); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">myObject.increment(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(myObject.value); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure></p>
-<p>在此例中，increment 方法对 myObject 对象中的 value 属性进行增加操作，increment 函数中的 this 即指向 myObject 对象本身。</p>
+<p>在此例中，increment方法对myObject对象中的value属性进行增加操作，increment函数中的this即指向myObject对象本身。</p>
 <a id="more"></a>
-<h2 id="构造器调用模式"><a href="#构造器调用模式" class="headerlink" title="构造器调用模式"></a>构造器调用模式</h2><p>如果函数调用前使用了 new 关键字，则是调用了构造函数。这看起来就像创建了新的函数，但实际上 JavaScript 函数是重新创建的对象：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">arg1, arg2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.firstName = arg1;</span><br><span class="line">    <span class="keyword">this</span>.lastName = arg2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// This creates a new object</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="keyword">new</span> myFunction(<span class="string">"John"</span>, <span class="string">"Doe"</span>);</span><br><span class="line">x.firstName; <span class="comment">// 返回 "John"</span></span><br></pre></td></tr></table></figure></p>
-<p>构造函数的调用会创建一个新的对象。新对象会继承构造函数的属性和方法。<br>构造函数中 this 关键字没有任何的值。this 的值在函数调用时实例化对象 (new object) 时创建。</p>
+<h2 id="构造器调用模式"><a href="#构造器调用模式" class="headerlink" title="构造器调用模式"></a>构造器调用模式</h2><p>如果函数调用前使用了new关键字，则是调用了构造函数。这看起来就像创建了新的函数，但实际上JavaScript函数是重新创建的对象：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">arg1, arg2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.firstName = arg1;</span><br><span class="line">    <span class="keyword">this</span>.lastName = arg2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// This creates a new object</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="keyword">new</span> myFunction(<span class="string">"John"</span>, <span class="string">"Doe"</span>);</span><br><span class="line">x.firstName; <span class="comment">//返回 "John"</span></span><br></pre></td></tr></table></figure></p>
+<p>构造函数的调用会创建一个新的对象。新对象会继承构造函数的属性和方法。<br>构造函数中this关键字没有任何的值。this的值在函数调用时实例化对象(new object)时创建。</p>
 <p>看另一个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Quo = <span class="function"><span class="keyword">function</span> (<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.status = string;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Quo.prototype.get_status = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.status;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myQuo = <span class="keyword">new</span> Quo(<span class="string">"confused"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(myQuo.get_status()); <span class="comment">// confused</span></span><br></pre></td></tr></table></figure></p>
-<p>输出结果为 confused。在这里使用 new 来调用时，会创建一个连接到该函数的 prototype 成员的新对象，同时 this 会被绑定到这个新对象上。即此时我们创建了 myQuo 对象，其连接到了 Quo 的 prototype，且创建时的 <code>this.status = string;</code> 中的 this 指向这个创建的新对象，status 为新对象 myQuo 的属性，而不是 Quo 函数 prototype 的属性，可以做如下验证：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(myQuo.hasOwnProperty(<span class="string">"status"</span>)); <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
-<p>作为对比，我们对 Quo 函数增加一个属性 id：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Quo = <span class="function"><span class="keyword">function</span> (<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.status = string;</span><br><span class="line">&#125;;</span><br><span class="line">Quo.prototype.id = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
-<p>id 为 Quo 构造器函数 prototype 对象的一个属性，然后再次进行测试：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myQuo = <span class="keyword">new</span> Quo(<span class="string">"confused"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(myQuo.id); <span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(myQuo.hasOwnProperty(<span class="string">"get_status"</span>)); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(myQuo.hasOwnProperty(<span class="string">"id"</span>)); <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
-<p>这里可以看到在创建新对象 myQuo 时没有 id 属性和 get_status 函数，而这里 myQuo 继承了 Quo 的 id 属性，就通过原型链找到了 Quo.prototype.id 的值。</p>
-<h2 id="Apply-调用模式"><a href="#Apply-调用模式" class="headerlink" title="Apply 调用模式"></a>Apply 调用模式</h2><p>在 JavaScript 中，函数是对象。JavaScript 函数有它的属性和方法，<code>call()</code> 和 <code>apply()</code> 就是预定义的函数方法。这两个方法可用于调用函数。<br>对于 <code>apply</code>：</p>
+<p>输出结果为confused。在这里使用new来调用时，会创建一个连接到该函数的prototype成员的新对象，同时this会被绑定到这个新对象上。即此时我们创建了myQuo对象，其连接到了Quo的prototype，且创建时的<code>this.status = string;</code>中的this指向这个创建的新对象，status为新对象myQuo的属性，而不是Quo函数prototype的属性，可以做如下验证：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(myQuo.hasOwnProperty(<span class="string">"status"</span>)); <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<p>作为对比，我们对Quo函数增加一个属性id：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Quo = <span class="function"><span class="keyword">function</span> (<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.status = string;</span><br><span class="line">&#125;;</span><br><span class="line">Quo.prototype.id = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
+<p>id为Quo构造器函数prototype对象的一个属性，然后再次进行测试：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myQuo = <span class="keyword">new</span> Quo(<span class="string">"confused"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(myQuo.id); <span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(myQuo.hasOwnProperty(<span class="string">"get_status"</span>)); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(myQuo.hasOwnProperty(<span class="string">"id"</span>)); <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
+<p>这里可以看到在创建新对象myQuo时没有id属性和get_status函数，而这里myQuo继承了Quo的id属性，就通过原型链找到了Quo.prototype.id的值。</p>
+<h2 id="Apply调用模式"><a href="#Apply调用模式" class="headerlink" title="Apply调用模式"></a>Apply调用模式</h2><p>在JavaScript中，函数是对象。JavaScript函数有它的属性和方法，<code>call()</code>和<code>apply()</code>就是预定义的函数方法。这两个方法可用于调用函数。<br>对于<code>apply</code>：</p>
 <ul>
-<li>在 JavaScript 严格模式 (strict mode) 下，在调用函数时第一个参数会成为 this 的值，即使该参数不是一个对象。</li>
-<li>在 JavaScript 非严格模式 (non-strict mode) 下，如果第一个参数的值是 null 或 undefined，它将使用全局对象替代。</li>
+<li>在JavaScript严格模式(strict mode)下，在调用函数时第一个参数会成为this的值，即使该参数不是一个对象。</li>
+<li>在JavaScript非严格模式(non-strict mode)下，如果第一个参数的值是null或undefined，它将使用全局对象替代。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br><span class="line">myFunction.call(myFunction, <span class="number">10</span>, <span class="number">2</span>); <span class="comment">// 返回 20</span></span><br><span class="line"></span><br><span class="line">myArray = [<span class="number">10</span>,<span class="number">3</span>];</span><br><span class="line">myFunction.apply(<span class="literal">null</span>, myArray); <span class="comment">// 返回 30</span></span><br></pre></td></tr></table></figure>
-<p>可见两者的区别在于第二个参数：apply 传入的是一个参数数组，也就是将多个参数组合成为一个数组传入，而 call 则作为 call 的参数传入（从第二个参数开始）。<br>另外一个结合前面定义的 Quo 构造器调用模式使用的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> statusObject = &#123;</span><br><span class="line">    status: <span class="string">'A-OK'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> status = Quo.prototype.get_status.apply(statusObject);</span><br><span class="line"><span class="built_in">console</span>.log(status); <span class="comment">// A-OK</span></span><br></pre></td></tr></table></figure></p>
-<p>在这里即使用了 apply 并将 statusObject 作为 get_status 的 this，结果即为 A-OK。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br><span class="line">myFunction.call(myFunction, <span class="number">10</span>, <span class="number">2</span>); <span class="comment">//返回20</span></span><br><span class="line"></span><br><span class="line">myArray = [<span class="number">10</span>,<span class="number">3</span>];</span><br><span class="line">myFunction.apply(<span class="literal">null</span>, myArray); <span class="comment">//返回30</span></span><br></pre></td></tr></table></figure>
+<p>可见两者的区别在于第二个参数：apply传入的是一个参数数组，也就是将多个参数组合成为一个数组传入，而call则作为call的参数传入（从第二个参数开始）。<br>另外一个结合前面定义的Quo构造器调用模式使用的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> statusObject = &#123;</span><br><span class="line">    status: <span class="string">'A-OK'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> status = Quo.prototype.get_status.apply(statusObject);</span><br><span class="line"><span class="built_in">console</span>.log(status); <span class="comment">// A-OK</span></span><br></pre></td></tr></table></figure></p>
+<p>在这里即使用了apply并将statusObject作为get_status的this，结果即为A-OK。</p>
 <p>以上即为四种函数的调用方法。</p>
-<p>参考文章：<br><a href="https://juejin.im/post/5a17c21bf265da43346f997e" target="_blank" rel="noopener">Javascript 的函数调用与 this</a><br><a href="https://www.runoob.com/js/js-function-invocation.html" target="_blank" rel="noopener">JavaScript 函数调用</a></p>
+<p>参考文章：<br><a href="https://juejin.im/post/5a17c21bf265da43346f997e" target="_blank" rel="noopener">Javascript的函数调用与this</a><br><a href="https://www.runoob.com/js/js-function-invocation.html" target="_blank" rel="noopener">JavaScript 函数调用</a></p>
 <p>拓展阅读：<br>闭包深入：<a href="https://www.cnblogs.com/onepixel/p/5062456.html" target="_blank" rel="noopener">让你分分钟理解 JavaScript 闭包</a></p>
 </div>
 <div>
 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
 <div>🍭支持一根棒棒糖！</div>
-<button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+<button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
 <span>打赏</span>
 </button>
 <div id="QR" style="display: none;">
@@ -271,10 +272,10 @@ top: initial;
 <strong>本文作者： </strong>张书樵</li>
 <li class="post-copyright-link">
 <strong>本文链接：</strong>
-<a href="https://zhangshuqiao.org/2018-08/JavaScript的函数调用与this/" title="JavaScript 的函数调用与 this">https://zhangshuqiao.org/2018-08/JavaScript的函数调用与this/</a>
+<a href="https://zhangshuqiao.org/2018-08/JavaScript的函数调用与this/" title="JavaScript的函数调用与this">https://zhangshuqiao.org/2018-08/JavaScript的函数调用与this/</a>
 </li>
 <li class="post-copyright-license">
-<strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+<strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
 </div>
 <footer class="post-footer">
@@ -289,8 +290,8 @@ top: initial;
 </div>
 <span class="post-nav-divider"></span>
 <div class="post-nav-prev post-nav-item">
-<a href="/2018-09/手机淘宝的flexible方案/" rel="prev" title="手机淘宝的 flexible 方案">
-手机淘宝的 flexible 方案 <i class="fa fa-chevron-right"></i>
+<a href="/2018-09/手机淘宝的flexible方案/" rel="prev" title="手机淘宝的flexible方案">
+手机淘宝的flexible方案 <i class="fa fa-chevron-right"></i>
 </a>
 </div>
 </div>
@@ -368,7 +369,7 @@ RSS
 <!--noindex-->
 <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
 <div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#作为一个函数调用"><span class="nav-number">1.</span> <span class="nav-text">作为一个函数调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数作为方法调用"><span class="nav-number">2.</span> <span class="nav-text">函数作为方法调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造器调用模式"><span class="nav-number">3.</span> <span class="nav-text">构造器调用模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apply-调用模式"><span class="nav-number">4.</span> <span class="nav-text">Apply 调用模式</span></a></li></ol></div>
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#作为一个函数调用"><span class="nav-number">1.</span> <span class="nav-text">作为一个函数调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数作为方法调用"><span class="nav-number">2.</span> <span class="nav-text">函数作为方法调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造器调用模式"><span class="nav-number">3.</span> <span class="nav-text">构造器调用模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apply调用模式"><span class="nav-number">4.</span> <span class="nav-text">Apply调用模式</span></a></li></ol></div>
 </div>
 </div>
 <!--/noindex-->
@@ -421,13 +422,13 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/src/utils.js?v=6.7.0"></script>
-<script src="/js/src/motion.js?v=6.7.0"></script>
-<script src="/js/src/affix.js?v=6.7.0"></script>
-<script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
-<script src="/js/src/scrollspy.js?v=6.7.0"></script>
-<script src="/js/src/post-details.js?v=6.7.0"></script>
-<script src="/js/src/bootstrap.js?v=6.7.0"></script>
+<script src="/js/src/utils.js?v=7.0.0"></script>
+<script src="/js/src/motion.js?v=7.0.0"></script>
+<script src="/js/src/affix.js?v=7.0.0"></script>
+<script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+<script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+<script src="/js/src/bootstrap.js?v=7.0.0"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
@@ -748,6 +749,8 @@ onPopupClose();
 }
 });
 </script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script>pangu.spacingPage();</script>
 <style>
 .copy-btn {
 display: inline-block;

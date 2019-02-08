@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/main.css?v=7.0.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
+<script id="hexo.configurations">
+var NexT = window.NexT || {};
+var CONFIG = {
+root: '/',
+scheme: 'Gemini',
+version: '7.0.0',
+sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+fancybox: true,
+fastclick: true,
+lazyload: false,
+tabs: true,
+motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+algolia: {
+applicationID: '',
+apiKey: '',
+indexName: '',
+hits: {"per_page":10},
+labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+}
+};
+</script>
+<link rel="stylesheet" href="/lib/waifu/waifu.css">
+<meta name="description" content="力电声光热，涵尽学海无涯">
+<meta name="keywords" content="个人博客,张书樵,物理,技术,计算机">
+<meta property="og:type" content="website">
+<meta property="og:title" content="米米的博客">
+<meta property="og:url" content="https://zhangshuqiao.org/page/17/index.html">
+<meta property="og:site_name" content="米米的博客">
+<meta property="og:description" content="力电声光热，涵尽学海无涯">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="米米的博客">
+<meta name="twitter:description" content="力电声光热，涵尽学海无涯">
+<link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
+<link rel="canonical" href="https://zhangshuqiao.org/page/17/">
+<script id="page.configurations">
+CONFIG.page = {
+sidebar: "",
+};
+</script>
+<title>米米的博客</title>
+<noscript>
+<style>
+.use-motion .motion-element,
+.use-motion .brand,
+.use-motion .menu-item,
+.sidebar-inner,
+.use-motion .post-block,
+.use-motion .pagination,
+.use-motion .comments,
+.use-motion .post-header,
+.use-motion .post-body,
+.use-motion .collection-title { opacity: initial; }
+.use-motion .logo,
+.use-motion .site-title,
+.use-motion .site-subtitle {
+opacity: initial;
+top: initial;
+}
+.use-motion .logo-line-before i { left: initial; }
+.use-motion .logo-line-after i { right: initial; }
+</style>
+</noscript>
+</head>
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<div class="container sidebar-position-left
+page-home">
+<div class="headband"></div>
+<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<div class="header-inner"><div class="site-brand-wrapper">
+<div class="site-meta">
+<div class="custom-logo-site-title">
+<a href="/" class="brand" rel="start">
+<span class="logo-line-before"><i></i></span>
+<span class="site-title">米米的博客</span>
+<span class="logo-line-after"><i></i></span>
+</a>
+</div>
+<p class="site-subtitle">做了一点微小的工作</p>
+</div>
+<div class="site-nav-toggle">
+<button aria-label="切换导航栏">
+<span class="btn-bar"></span>
+<span class="btn-bar"></span>
+<span class="btn-bar"></span>
+</button>
+</div>
+</div>
+<nav class="site-nav">
+<ul id="menu" class="menu">
+<li class="menu-item menu-item-home">
+<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+</li>
+<li class="menu-item menu-item-about">
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
+</li>
+<li class="menu-item menu-item-tags">
+<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+</li>
+<li class="menu-item menu-item-categories">
+<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+</li>
+<li class="menu-item menu-item-archives">
+<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+</li>
+<li class="menu-item menu-item-friends">
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
+</li>
+<li class="menu-item menu-item-lab">
+<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href="javascript:;" class="popup-trigger">
+<i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+</li>
+</ul>
+<div class="site-search">
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class="search-icon">
+<i class="fa fa-search"></i>
+</span>
+<span class="popup-btn-close">
+<i class="fa fa-times-circle"></i>
+</span>
+<div class="local-search-input-wrapper">
+<input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+</div>
+</div>
+<div id="local-search-result"></div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main id="main" class="main">
+<div class="main-inner">
+<div class="content-wrap">
+<div id="content" class="content">
+<section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/开源软件授权协议详解/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2017-11/开源软件授权协议详解/" class="post-title-link" itemprop="url">开源软件授权协议详解</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2017-11-18 19:19:47" itemprop="dateCreated datePublished" datetime="2017-11-18T19:19:47+08:00">2017-11-18</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">3.8k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">3 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>开源在今天的软件业已经很普遍，但开源是否意味着使用者可以对开源后的代码为所欲为呢?<br>答案当然是否定的。开源运动同样有自己的游戏规则和道德准则。不遵行这些规则不但损害开源运动的健康发展，也会对违规者造成名誉和市场上的损失，更可能陷入法律纠纷和赔偿。现今存在的开源协议很多，而经过<a href="https://www.opensource.org/licenses/alphabetical" target="_blank" rel="noopener">Open Source Initiative</a>组织通过批准的开源协议目前有58种。我们在常见的开源协议如BSD，GPL，LGPL，MIT等都是OSI批准的协议。如果要开源自己的代码，最好也是选择这些被批准的开源协议。首先借用一张相当直观清晰的图来划分各种协议：</p>
+<p><img src="/images/2017-11/free_software_licenses.png" alt=""></p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2017-11/开源软件授权协议详解/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/细思恐极/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2017-11/细思恐极/" class="post-title-link" itemprop="url">细思恐极</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2017-11-14 19:51:42" itemprop="dateCreated datePublished" datetime="2017-11-14T19:51:42+08:00">2017-11-14</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">1</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">1 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p><img src="/images/2017-11/IMG_4263.jpg" alt=""><br><img src="/images/2017-11/6592b5f47ee61115f25057554223beb3.jpg" alt=""></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/WordPress 3.x版本中的彩蛋/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2017-11/WordPress 3.x版本中的彩蛋/" class="post-title-link" itemprop="url">WordPress 3.x版本中的彩蛋</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2017-11-10 12:44:27" itemprop="dateCreated datePublished" datetime="2017-11-10T12:44:27+08:00">2017-11-10</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">1.4k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">1 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>今天博主在进行WordPress博客考古活动时，得知了一个彩蛋。来源见：<a href="http://www.kaisir.com/2010/02/the-egg-wordpress.html" target="_blank" rel="noopener">WordPress的彩蛋</a>。<br>在WordPress文章中使用Compare Revisions功能，如果两个相比较的文章ID一致，就会触发彩蛋。其效果是显示文字：</p>
+<blockquote>
+<p>Wake up XXX… The matrix has you. Follow the white rabbit. Don’t let this happen again.</p>
+</blockquote>
+<p>这是一个致敬The Matrix的彩蛋。经过对<a href="https://cn.wordpress.org/releases" target="_blank" rel="noopener">WordPress历史版本</a>的分析，发现该彩蛋已在4.x版本移除。通过分析3.0.2版本的文件，找到了该版本的revision.php和revision-js.php文件，并大致研究出了其实现方法。在revision.php中有这样一串代码：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// If we're comparing a revision to itself, redirect to the 'view' page for that revision or the edit page for that post</span></span><br><span class="line"><span class="keyword">if</span> ( $left_revision-&gt;ID == $right_revision-&gt;ID ) &#123;</span><br><span class="line">    $redirect = get_edit_post_link( $left_revision-&gt;ID );</span><br><span class="line">    <span class="keyword">include</span>( <span class="string">'./js/revisions-js.php'</span> );</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>而在revision-js.php中，有一串经过了eval混淆的代码，用于向用户输出彩蛋内容。 目前博主正在尝试反混淆代码，并复现这个彩蛋。如果你有兴趣，也可以下载revision-js.php进行研究。</p>
+<p>本文更新于2017年11月11日：<br>由于博主并不准备搭建旧版本WordPress的运行环境，于是决定从代码入手，分析这个彩蛋。<br>在revisions-js.php中定义的函数dvortr()作用是使用一对一的替换来加密字符串，该文件中有两次调用此函数：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dvortr( <span class="string">"Erb-y n.y ydco dall.b aiacbv Wa ce]-irxajt- dp.u]-$-VIr XajtWzaVv"</span> )</span><br></pre></td></tr></table></figure></p>
+<p>和<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dvortr( <span class="string">'Eabi.p!'</span> )</span><br></pre></td></tr></table></figure></p>
+<p>经过解密，其输出分别为<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Don't let this happen again. <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">'goback'</span> <span class="attr">href</span>=<span class="string">'$'</span>&gt;</span>Go Back<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>和<code>Danger!</code>。<br>而定义的变量<code>$j</code>作用是包含jQuery库，<code>$n</code>是获取的当前用户名，<code>$d</code>是noscript时的输出。通过替换掉一些WordPress中定义的函数，博主成功地使部分解码后的php文件在本地Apache服务器成功运行。并且，博主还重新制作了这个彩蛋，现在它已经可以在本站以某种方式触发～<br>下面附上整个解密过程中所用到的文件。其中revision.php和revisions-js.php是原文件，decode.php是部分解密后的文件，decode.js是浏览器获取的匿名js文件，decoder.html是根据原文件的加密算法编写的加密、解密脚本。<br><a href="/files/WordPressEasterEgg.zip">WordPressEasterEgg</a></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/在WordPress博客中使用LaTeX/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2017-11/在WordPress博客中使用LaTeX/" class="post-title-link" itemprop="url">在WordPress博客中使用LaTeX</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2017-11-06 13:43:27" itemprop="dateCreated datePublished" datetime="2017-11-06T13:43:27+08:00">2017-11-06</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">1.8k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">2 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>上帝说，要有<br>\begin{eqnarray*}<br>\nabla\cdot\vec{E}&amp;=&amp;\frac{\rho}{\epsilon_0}\\<br>\nabla\cdot\vec{B}&amp;=&amp;0\\<br>\nabla\times\vec{E}&amp;=&amp;-\frac{\partial B}{\partial t}\\<br>\nabla\times\vec{B}&amp;=&amp;\mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t}\right)\\<br>\end{eqnarray*}<br>于是就有了光。<br><strong>注：以上文字旨在测试$\LaTeX$兼容情况。</strong><br>使用方法：在HTML页面中，通过<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--config后的参数可以根据需求自定义，默认为?config=default--&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>即可加载MathJax，该脚本将会把所有$\LaTeX$公式正确显示出来。尽情的按照$\LaTeX$语法插入公式就好啦！<br>如果要在WordPress中使用，可以通过在编辑文章界面，选择『文本』（如果使用『可视化』，字符将被转义，导致脚本无法加载），输入以上内容达到相同效果。<br>使用时请注意：<br>The default math delimiters are <code>$$...$$</code> and <code>\[...\]</code> for displayed mathematics, and <code>\(...\)</code> for in-line mathematics. Note in particular that the <code>$...$</code> in-line delimiters are <strong>not</strong> used by default.<br>也就是说，行内公式的<code>$</code>符号默认不会被识别。你可以在HTML页面中加入以下配置以启用之：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">MathJax.Hub.Config(&#123;</span></span><br><span class="line"><span class="undefined">    tex2jax: &#123;</span></span><br><span class="line"><span class="undefined">        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],</span></span><br><span class="line"><span class="undefined">        processEscapes: true,</span></span><br><span class="line"><span class="undefined">        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    TeX: &#123;equationNumbers: &#123; autoNumber: "AMS" &#125;&#125;,</span></span><br><span class="line"><span class="undefined">    "HTML-CSS": &#123; linebreaks: &#123; automatic: true &#125;, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) &#125;,</span></span><br><span class="line"><span class="undefined">    SVG: &#123; linebreaks: &#123; automatic: true &#125;&#125;</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>其中<code>linebreaks</code>项会在屏幕宽度较小时自动使公式换行，而<code>inlineMath</code>项则启用了<code>$</code>符号标记的行内公式。</p>
+<p>更多信息可以访问官方网站：<a href="https://www.mathjax.org" target="_blank" rel="noopener">MathJax</a></p>
+<p>本文更新于2018年5月20日：<br>在Hexo中，如果使用了NexT主题，可以通过配置主题目录下的_config.yml简单地使用MathJax。在_config.yml中找到mathjax，将其子选项改为<code>enable: true</code>，并在需要加载MathJax的文章头添加<code>mathjax: true</code>即可。</p>
+<p>本文更新于2018年10月3日：<br>还有一种解决方案是调用知乎的API：<code>https://www.zhihu.com/equation?tex=</code>，通过GET请求，就可以将你的$\LaTeX$表达式转换为公式的图片。</p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/在Mac上通过Sublime、Skim编辑LaTeX/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2017-11/在Mac上通过Sublime、Skim编辑LaTeX/" class="post-title-link" itemprop="url">在Mac上通过Sublime、Skim编辑LaTeX</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2017-11-02 21:33:56" itemprop="dateCreated datePublished" datetime="2017-11-02T21:33:56+08:00">2017-11-02</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">2.1k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">2 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>Sublime Text是一款非常优秀的编辑器：速度快，界面简洁，插件众多；并且能够跨平台使用，在Mac和Windows上都发挥完美。虽然是一款付费软件，但作者很厚道地给了无限期的试用期限。这一切正如其官网广告词说的那样：The text editor you’ll fall in love with.<br>Skim是一款免费轻量的PDF阅读、标注工具，布局贴心友好，与OS X自带的Previewer相比，Skim能更好的注释PDF文件。<br>$\LaTeX$是一款权威的科技论文排版系统，不仅可以写论文，也可以处理日常的各种文档工作，甚至是做幻灯片。相比于Microsoft Word，$\LaTeX$最大的优势是对于复杂公式的编辑与排版非常漂亮，并且用简单的命令就可以生成脚注、索引、目录和参考文献等复杂的结构。这一切优点都使得世界上众多的科学家们不再需要身兼作者与排版工两职，从而将更多的精力集中于文章内容本身。<br>本文的目的是将上述三种软件综合部署在Mac上。完成之后，你将可以在Sublime Text里面进行$\LaTeX$代码编辑，用Skim预览生成的PDF文件。更重要的是，让你觉得，写论文也可以是一件很优美的事。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2017-11/在Mac上通过Sublime、Skim编辑LaTeX/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+</section>
+<nav class="pagination">
+<a class="extend prev" rel="prev" href="/page/16/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/18/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+</nav>
+</div>
+</div>
+<div class="sidebar-toggle">
+<div class="sidebar-toggle-line-wrap">
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id="sidebar" class="sidebar">
+<div class="sidebar-inner">
+<div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+<div class="site-overview">
+<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
+<p class="site-author-name" itemprop="name">张书樵</p>
+<p class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href="/archives/">
+<span class="site-state-item-count">92</span>
+<span class="site-state-item-name">日志</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href="/categories/index.html">
+<span class="site-state-item-count">7</span>
+<span class="site-state-item-name">分类</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href="/tags/index.html">
+<span class="site-state-item-count">23</span>
+<span class="site-state-item-name">标签</span>
+</a>
+</div>
+</nav>
+<div class="feed-link motion-element">
+<a href="/atom.xml" rel="alternate">
+<i class="fa fa-rss"></i>
+RSS
+</a>
+</div>
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+<i class="fa  fa-fw fa-university"></i>
+主站
+</div>
+<ul class="links-of-blogroll-list">
+<li class="links-of-blogroll-item">
+<a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<footer id="footer" class="footer">
+<div class="footer-inner">
+<div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+<span class="with-love" id="animate">
+<i class="fa fa-heart"></i>
+</span>
+<span class="author" itemprop="copyrightHolder">张书樵</span>
+</div>
+<div class="busuanzi-count">
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span class="post-meta-item-icon">
+<i class="fa fa-user"></i>
+</span>
+<span class="site-uv" title="总访客量">
+<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-eye"></i>
+</span>
+<span class="site-pv" title="总访问量">
+<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+</div>
+</footer>
+<div class="back-to-top">
+<i class="fa fa-arrow-up"></i>
+<span id="scrollpercent"><span>0</span>%</span>
+</div>
+</div>
+<script>
+if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+window.Promise = null;
+}
+</script>
+<script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/fastclick/lib/fastclick.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
+<script src="/js/src/utils.js?v=7.0.0"></script>
+<script src="/js/src/motion.js?v=7.0.0"></script>
+<script src="/js/src/affix.js?v=7.0.0"></script>
+<script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+<script src="/js/src/bootstrap.js?v=7.0.0"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src="/lib/Valine.min.js"></script>
+<script>
+var GUEST = ['nick', 'mail', 'link'];
+var guest = 'nick,mail,link';
+guest = guest.split(',').filter(function(item) {
+return GUEST.indexOf(item) > -1;
+});
+new Valine({
+el: '#comments',
+verify: true,
+notify: false,
+appId: '2L2N30Kyi18K1DjU0qxMGALD-gzGzoHsz',
+appKey: 'Bwrec8XDJon2rocQ5ScFcFWl',
+placeholder: '您可以在这里输入评论哟～',
+avatar: 'mm',
+meta: guest,
+pageSize: '12' || 10,
+visitor: false
+});
+</script>
+<script>
+// Popup Window;
+var isfetched = false;
+var isXml = true;
+// Search DB path;
+var search_path = "search.xml";
+if (search_path.length === 0) {
+search_path = "search.xml";
+} else if (/json$/i.test(search_path)) {
+isXml = false;
+}
+var path = "/" + search_path;
+// monitor main search box;
+var onPopupClose = function (e) {
+$('.popup').hide();
+$('#local-search-input').val('');
+$('.search-result-list').remove();
+$('#no-result').remove();
+$(".local-search-pop-overlay").remove();
+$('body').css('overflow', '');
+}
+function proceedsearch() {
+$("body")
+.append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+.css('overflow', 'hidden');
+$('.search-popup-overlay').click(onPopupClose);
+$('.popup').toggle();
+var $localSearchInput = $('#local-search-input');
+$localSearchInput.attr("autocapitalize", "none");
+$localSearchInput.attr("autocorrect", "off");
+$localSearchInput.focus();
+}
+// search function;
+var searchFunc = function(path, search_id, content_id) {
+'use strict';
+// start loading animation
+$("body")
+.append('<div class="search-popup-overlay local-search-pop-overlay">' +
+'<div id="search-loading-icon">' +
+'<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+'</div>' +
+'</div>')
+.css('overflow', 'hidden');
+$("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+// ref: https://github.com/ForbesLindesay/unescape-html
+var unescapeHtml = function(html) {
+return String(html)
+.replace(/&quot;/g, '"')
+.replace(/&#39;/g, '\'')
+.replace(/&#x3A;/g, ':')
+// replace all the other &#x; chars
+.replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+.replace(/&lt;/g, '<')
+.replace(/&gt;/g, '>')
+.replace(/&amp;/g, '&');
+};
+$.ajax({
+url: path,
+dataType: isXml ? "xml" : "json",
+async: true,
+success: function(res) {
+// get the contents from search data
+isfetched = true;
+$('.popup').detach().appendTo('.header-inner');
+var datas = isXml ? $("entry", res).map(function() {
+return {
+title: $("title", this).text(),
+content: $("content",this).text(),
+url: $("url" , this).text()
+};
+}).get() : res;
+var input = document.getElementById(search_id);
+var resultContent = document.getElementById(content_id);
+var inputEventFunction = function() {
+var searchText = input.value.trim().toLowerCase();
+var keywords = searchText.split(/[\s\-]+/);
+if (keywords.length > 1) {
+keywords.push(searchText);
+}
+var resultItems = [];
+if (searchText.length > 0) {
+// perform local searching
+datas.forEach(function(data) {
+var isMatch = false;
+var hitCount = 0;
+var searchTextCount = 0;
+var title = data.title.trim();
+var titleInLowerCase = title.toLowerCase();
+var content = data.content.trim().replace(/<[^>]+>/g,"");
+content = unescapeHtml(content);
+var contentInLowerCase = content.toLowerCase();
+var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+var indexOfTitle = [];
+var indexOfContent = [];
+// only match articles with not empty titles
+if(title != '') {
+keywords.forEach(function(keyword) {
+function getIndexByWord(word, text, caseSensitive) {
+var wordLen = word.length;
+if (wordLen === 0) {
+return [];
+}
+var startPosition = 0, position = [], index = [];
+if (!caseSensitive) {
+text = text.toLowerCase();
+word = word.toLowerCase();
+}
+while ((position = text.indexOf(word, startPosition)) > -1) {
+index.push({position: position, word: word});
+startPosition = position + wordLen;
+}
+return index;
+}
+indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+});
+if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+isMatch = true;
+hitCount = indexOfTitle.length + indexOfContent.length;
+}
+}
+// show search results
+if (isMatch) {
+// sort index by position of keyword
+[indexOfTitle, indexOfContent].forEach(function (index) {
+index.sort(function (itemLeft, itemRight) {
+if (itemRight.position !== itemLeft.position) {
+return itemRight.position - itemLeft.position;
+} else {
+return itemLeft.word.length - itemRight.word.length;
+}
+});
+});
+// merge hits into slices
+function mergeIntoSlice(text, start, end, index) {
+var item = index[index.length - 1];
+var position = item.position;
+var word = item.word;
+var hits = [];
+var searchTextCountInSlice = 0;
+while (position + word.length <= end && index.length != 0) {
+if (word === searchText) {
+searchTextCountInSlice++;
+}
+hits.push({position: position, length: word.length});
+var wordEnd = position + word.length;
+// move to next position of hit
+index.pop();
+while (index.length != 0) {
+item = index[index.length - 1];
+position = item.position;
+word = item.word;
+if (wordEnd > position) {
+index.pop();
+} else {
+break;
+}
+}
+}
+searchTextCount += searchTextCountInSlice;
+return {
+hits: hits,
+start: start,
+end: end,
+searchTextCount: searchTextCountInSlice
+};
+}
+var slicesOfTitle = [];
+if (indexOfTitle.length != 0) {
+slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+}
+var slicesOfContent = [];
+while (indexOfContent.length != 0) {
+var item = indexOfContent[indexOfContent.length - 1];
+var position = item.position;
+var word = item.word;
+// cut out 100 characters
+var start = position - 20;
+var end = position + 80;
+if(start < 0){
+start = 0;
+}
+if (end < position + word.length) {
+end = position + word.length;
+}
+if(end > content.length){
+end = content.length;
+}
+slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+}
+// sort slices in content by search text's count and hits' count
+slicesOfContent.sort(function (sliceLeft, sliceRight) {
+if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+} else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+return sliceRight.hits.length - sliceLeft.hits.length;
+} else {
+return sliceLeft.start - sliceRight.start;
+}
+});
+// select top N slices in content
+var upperBound = parseInt('1');
+if (upperBound >= 0) {
+slicesOfContent = slicesOfContent.slice(0, upperBound);
+}
+// highlight title and content
+function highlightKeyword(text, slice) {
+var result = '';
+var prevEnd = slice.start;
+slice.hits.forEach(function (hit) {
+result += text.substring(prevEnd, hit.position);
+var end = hit.position + hit.length;
+result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+prevEnd = end;
+});
+result += text.substring(prevEnd, slice.end);
+return result;
+}
+var resultItem = '';
+if (slicesOfTitle.length != 0) {
+resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+} else {
+resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+}
+slicesOfContent.forEach(function (slice) {
+resultItem += "<a href='" + articleUrl + "'>" +
+"<p class=\"search-result\">" + highlightKeyword(content, slice) +
+"...</p>" + "</a>";
+});
+resultItem += "</li>";
+resultItems.push({
+item: resultItem,
+searchTextCount: searchTextCount,
+hitCount: hitCount,
+id: resultItems.length
+});
+}
+})
+};
+if (keywords.length === 1 && keywords[0] === "") {
+resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+} else if (resultItems.length === 0) {
+resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+} else {
+resultItems.sort(function (resultLeft, resultRight) {
+if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+return resultRight.searchTextCount - resultLeft.searchTextCount;
+} else if (resultLeft.hitCount !== resultRight.hitCount) {
+return resultRight.hitCount - resultLeft.hitCount;
+} else {
+return resultRight.id - resultLeft.id;
+}
+});
+var searchResultList = '<ul class=\"search-result-list\">';
+resultItems.forEach(function (result) {
+searchResultList += result.item;
+})
+searchResultList += "</ul>";
+resultContent.innerHTML = searchResultList;
+}
+}
+if ('auto' === 'auto') {
+input.addEventListener('input', inputEventFunction);
+} else {
+$('.search-icon').click(inputEventFunction);
+input.addEventListener('keypress', function (event) {
+if (event.keyCode === 13) {
+inputEventFunction();
+}
+});
+}
+// remove loading animation
+$(".local-search-pop-overlay").remove();
+$('body').css('overflow', '');
+proceedsearch();
+}
+});
+}
+// handle and trigger popup window;
+$('.popup-trigger').click(function(e) {
+e.stopPropagation();
+if (isfetched === false) {
+searchFunc(path, 'local-search-input', 'local-search-result');
+} else {
+proceedsearch();
+};
+});
+$('.popup-btn-close').click(onPopupClose);
+$('.popup').click(function(e){
+e.stopPropagation();
+});
+$(document).on('keyup', function (event) {
+var shouldDismissSearchPopup = event.which === 27 &&
+$('.search-popup').is(':visible');
+if (shouldDismissSearchPopup) {
+onPopupClose();
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+processEscapes: true,
+skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+},
+TeX: {
+equationNumbers: {
+autoNumber: "AMS"
+}
+}
+});
+MathJax.Hub.Register.StartupHook("TeX Jax Ready", function() {
+MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+if (data.display) {
+var next = data.script.nextSibling;
+while (next && next.nodeName.toLowerCase() === "#text") { next = next.nextSibling }
+if (next && next.nodeName.toLowerCase() === "br") { next.parentNode.removeChild(next) }
+}
+});
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+var all = MathJax.Hub.getAllJax(), i;
+for (i = 0; i < all.length; i += 1) {
+all[i].SourceElement().parentNode.className += ' has-jax';
+}
+});
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+<style>
+.MathJax_Display {
+overflow: auto hidden;
+}
+</style>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script>pangu.spacingPage();</script>
+<style>
+.copy-btn {
+display: inline-block;
+padding: 6px 12px;
+font-size: 13px;
+font-weight: 700;
+line-height: 20px;
+color: #333;
+white-space: nowrap;
+vertical-align: middle;
+cursor: pointer;
+background-color: #eee;
+background-image: linear-gradient(#fcfcfc, #eee);
+border: 1px solid #d5d5d5;
+border-radius: 3px;
+user-select: none;
+outline: 0;
+}
+.highlight-wrap .copy-btn {
+transition: opacity .3s ease-in-out;
+opacity: 0;
+padding: 2px 6px;
+position: absolute;
+right: 4px;
+top: 8px;
+}
+.highlight-wrap:hover .copy-btn,
+.highlight-wrap .copy-btn:focus {
+opacity: 1
+}
+.highlight-wrap {
+position: relative;
+}
+</style>
+<script>
+$('.highlight').each(function(i, e) {
+var $wrap = $('<div>').addClass('highlight-wrap');
+$(e).after($wrap);
+$wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+return $(e).text();
+}).toArray().join('\n');
+var ta = document.createElement('textarea');
+var range = document.createRange(); //For Chrome
+var sel = window.getSelection(); //For Chrome
+var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+ta.style.top = yPosition + 'px'; //Prevent page scroll
+ta.style.position = 'absolute';
+ta.style.opacity = '0';
+ta.value = code;
+ta.textContent = code; //For FireFox
+ta.contentEditable = true;
+ta.readOnly = false;
+document.body.appendChild(ta);
+range.selectNode(ta);
+sel.removeAllRanges();
+sel.addRange(range);
+ta.setSelectionRange(0, code.length);
+var result = document.execCommand('copy');
+if (result) $(this).text('复制成功');
+else $(this).text('复制失败');
+ta.blur(); //For iOS
+$(this).blur();
+})).on('mouseleave', function(e) {
+var $b = $(this).find('.copy-btn');
+setTimeout(function() {
+$b.text('复制');
+}, 300);
+}).append(e);
+})
+</script>
+</body>
+</html>

@@ -8,18 +8,18 @@
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-<link rel="stylesheet" href="/css/main.css?v=6.7.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
-<link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/main.css?v=7.0.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '6.7.0',
+version: '7.0.0',
 sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
 fancybox: true,
 fastclick: true,
@@ -120,7 +120,7 @@ page-home">
 <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-friends">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe-asia"></i> <br>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-lab">
 <a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
@@ -156,7 +156,7 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/Bilibili弹幕文件的解析/">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/Linux命令行常用快捷键/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
@@ -167,33 +167,33 @@ page-home">
 </span>
 <header class="post-header">
 <h1 class="post-title" itemprop="name headline">
-<a href="/2018-03/Bilibili弹幕文件的解析/" class="post-title-link" itemprop="url">Bilibili 弹幕文件的解析</a>
+<a href="/2018-05/Linux命令行常用快捷键/" class="post-title-link" itemprop="url">Linux命令行常用快捷键</a>
 </h1>
 <div class="post-meta">
 <span class="post-time">
 <span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
+<i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-03-30 00:07:56" itemprop="dateCreated datePublished" datetime="2018-03-30T00:07:56+08:00">2018-03-30</time>
+<time title="创建时间：2018-05-11 00:17:14" itemprop="dateCreated datePublished" datetime="2018-05-11T00:17:14+08:00">2018-05-11</time>
 </span>
 <span class="post-category">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
+<i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
+<i class="fa fa-file-word-o"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">1k</span>
+<span title="本文字数">1.5k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
+<i class="fa fa-clock-o"></i>
 </span>
 <span class="post-meta-item-text">阅读时长 &asymp;</span>
 <span title="阅读时长">1 分钟</span>
@@ -201,84 +201,42 @@ page-home">
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>B 站的每个视频都有 aid 和 cid 两个参数，在已知视频 aid（即 AV 号）的情况下，可以通过链接 <code>https://www.bilibili.com/widget/getPageList?aid=10492</code> 获取 cid（将 10492 替换为你要查询的视频的 aid）。<br>视频的更多信息则可以通过 <code>https://api.bilibili.com/view?type=jsonp&amp;appkey=8e9fc618fbd41e28&amp;id=10492</code> 获取。<br>视频的弹幕文件采用 xml 格式存储，地址与其 cid 有关，为 <code>https://comment.bilibili.com/$cid.xml</code>（将 $cid 替换为视频的 cid）。<br>对于有许多分 P 的视频，它们的 aid（AV 号）相同，每个分 P 则对应一个不同的 cid。而在同一个页面下的番剧、影视等内容，每一分集的 cid 也是唯一的。<br>弹幕内容的存储方式为：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">d</span> <span class="attr">p</span>=<span class="string">"0,1,25,16777215,1312863760,0,eff85771,42759017"</span>&gt;</span> 前排占位置 < span class="tag">&lt;/<span class="name">d</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<p>这个元素中的各个参数由逗号分割，其意义分别为：</p>
-<ul>
-<li>弹幕出现的时间，以秒为单位</li>
-<li>弹幕的模式：1～3 滚动弹幕 4 底端弹幕 5 顶端弹幕 6 逆向弹幕 7 精准定位 8 高级弹幕</li>
-<li>字号：12 非常小 16 特小 18 小 25 中 36 大 45 很大 64 特别大</li>
-<li>字体的颜色：将 HTML 六位十六进制颜色转为十进制表示，例如 #FFFFFF 会被存储为 16777215，因为 $(FFFFFF)_{16}=(16777215)_{10}$</li>
-<li>Unix 时间戳，以毫秒为单位，基准时间为 1970-1-1 08:00:00</li>
-<li>弹幕池：0 普通池 1 字幕池 2 特殊池（注：目前特殊池为高级弹幕专用）</li>
-<li>发送者的 ID，用于『屏蔽此弹幕的发送者』功能</li>
-<li>弹幕在弹幕数据库中 rowID，用于『历史弹幕』功能</li>
+<p>通过快捷键，可以方便地在Linux命令行下快速移动光标、编辑命令、编辑后执行历史命令、Bang(!)命令、控制命令等，有效提高工作效率。</p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
+<li><code>Ctrl - k</code>: 先按住 Ctrl 键，然后再按 k 键</li>
+<li><code>Ctrl - kl</code>: 先按住 Ctrl 键，然后再按 k 键，然后松开 k 键，再按 l 键</li>
+<li><code>Alt - k</code>: 先按住 Alt 键，然后再按 k 键</li>
+<li><code>M - k</code>: 先单击 Meta(Esc) 键，然后再按 k 键</li>
 </ul>
-<p>将 Bilibili 弹幕的 xml 文件转为 ass 字幕，可以使用以下脚本：<br><a href="http://tiansh.github.io/us-danmaku/bilibili" target="_blank" rel="noopener">bilibili ASS 弹幕在线转换</a><br><a href="https://github.com/tiansh/us-danmaku" target="_blank" rel="noopener">us-danmaku</a></p>
-<p>关于 ass 字幕格式可以参考以下文章：<a href="https://www.douban.com/note/658520175" target="_blank" rel="noopener">ASS 字幕格式规范</a></p>
-<p>拓展阅读：<br><a href="https://zhuanlan.zhihu.com/p/24599052" target="_blank" rel="noopener">Bilibili 视频播放页面接口整理（不定期更新）</a><br><a href="https://www.jianshu.com/p/f628679883e3" target="_blank" rel="noopener">Bilibili 爬取视频信息进行数据分析</a></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/Quine——输出自身的程序/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-03/Quine——输出自身的程序/" class="post-title-link" itemprop="url">Quine——输出自身的程序</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-03-28 09:48:33" itemprop="dateCreated datePublished" datetime="2018-03-28T09:48:33+08:00">2018-03-28</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">3.4k</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">3 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>能够输出自身的代码被称为 Quine，以哲学家 Willard van Orman Quine（1908-2000）而命名。<br>Quine 在图灵完备的语言中都是可行的。在可计算性理论（computability theory）中，图灵等价指的是：对于两个计算机 A 和 B，如果 A 可以模拟 B，B 可以模拟 A，就称他们是图灵等价的。根据『丘奇 - 图灵』理论，图灵机是表达能力最强大的计算系统，对现实世界中的任何计算机，都可以用图灵机来模拟它。<br>套用上面的定义，如果一个编程语言可以完全模拟图灵机，那么它就是图灵完备的。大部分编程语言都是图灵完备的，因为他们需要解决各种问题的通用能力，而这正是图灵机所具备的。不过也存在一些语言不是图灵完备的，他们通常是被设计用来解决某些特殊的问题，比如 SQL 以及正则表达式。</p>
-<p>Shell<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">z=\<span class="string">'a='</span>z=\\<span class="variable">$z</span> a=<span class="variable">$z</span><span class="variable">$a</span><span class="variable">$z</span>\; <span class="built_in">eval</span> <span class="built_in">echo</span> \<span class="variable">$a</span><span class="string">'; eval echo $a</span></span><br></pre></td></tr></table></figure></p>
-<p>PHP<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> file_get_content(<span class="keyword">__FILE__</span>);</span><br></pre></td></tr></table></figure></p>
-<p>JavaScript<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span> $(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="string">'!'</span>+$+<span class="string">'()'</span>)&#125;()</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">'var%20s%20%3D%20%27__%27%3B%20console.log%28unescape%28s%29.replace%28%27__%27%2C%20s%29%29'</span>; <span class="built_in">console</span>.log(<span class="built_in">unescape</span>(s).replace(<span class="string">'__'</span>, s))</span><br></pre></td></tr></table></figure>
-<p>Python<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r=<span class="string">'r=%r;print r%%r'</span>;<span class="keyword">print</span> r%r</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x=<span class="string">'y="x="+`x`+"\\n"\nprint y+x'</span></span><br><span class="line">y=<span class="string">"x="</span>+`x`+<span class="string">"\n"</span></span><br><span class="line"><span class="keyword">print</span> y+x</span><br></pre></td></tr></table></figure>
+<h2 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h2><ul>
+<li><code>Ctrl - 左右键</code>: 在单词之间跳转</li>
+<li><code>Ctrl - a</code>: 移到行首</li>
+<li><code>Ctrl - e</code>: 移到行尾</li>
+<li><code>Ctrl - b</code>: 往回(左)移动一个字符</li>
+<li><code>Ctrl - f</code>: 往后(右)移动一个字符</li>
+<li><code>Ctrl - xx</code>: 在命令行尾和光标之间移动</li>
+<li><code>Alt - b</code>: 往回(左)移动一个单词</li>
+<li><code>Alt - f</code>: 往后(右)移动一个单词</li>
+<li><code>M - b</code>: 往回(左)移动一个单词</li>
+<li><code>M - f</code>: 往后(右)移动一个单词</li>
+</ul>
+<h2 id="编辑命令"><a href="#编辑命令" class="headerlink" title="编辑命令"></a>编辑命令</h2><ul>
+<li><code>Ctrl - h</code>: 删除光标左方位置的字符</li>
+<li><code>Ctrl - d</code>: 删除光标右方位置的字符（注意：<code>Ctrl - d</code>也代表EOF，当前命令行没有任何字符时，会注销系统或结束终端）</li>
+<li><code>Ctrl - w</code>: 由光标位置开始，往左删除单词(往行首删)</li>
+<li><code>Alt - d</code>: 由光标位置开始，往右删除单词(往行尾删)</li>
+<li><code>M - d</code>: 由光标位置开始，删除单词，直到该单词结束</li>
+<li><code>Ctrl - u</code>: 由光标所在位置开始，删除左方所有的字符，直到该行开始</li>
+<li><code>Ctrl - k</code>: 由光标所在位置开始，删除右方所有的字符，直到该行结束</li>
+<li><code>Ctrl - y</code>: 粘贴<code>Ctrl - u</code>或<code>Ctrl - k</code>剪切的内容到光标后</li>
+<li><code>Ctrl - t</code>: 交换光标处和之前两个字符的位置</li>
+<li><code>Alt - .</code>: 使用上一条命令的最后一个参数</li>
+<li><code>Ctrl - _</code>: 回复之前的状态，撤销操作</li>
+</ul>
+<p>另外，<code>Ctrl - ak</code>或<code>Ctrl - eu</code>或<code>Ctrl - ku</code>组合可删除整行。</p>
 <!--noindex-->
 <div class="post-button text-center">
-<a class="btn" href="/2018-03/Quine——输出自身的程序/#more" rel="contents">
+<a class="btn" href="/2018-05/Linux命令行常用快捷键/#more" rel="contents">
 阅读全文 &raquo;
 </a>
 </div>
@@ -291,7 +249,7 @@ page-home">
 </article>
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/使用Electron构建桌面应用/">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/在GitHub热点图上绘画/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
@@ -302,150 +260,33 @@ page-home">
 </span>
 <header class="post-header">
 <h1 class="post-title" itemprop="name headline">
-<a href="/2018-03/使用Electron构建桌面应用/" class="post-title-link" itemprop="url">使用 Electron 构建桌面应用</a>
+<a href="/2018-05/在GitHub热点图上绘画/" class="post-title-link" itemprop="url">在GitHub热点图上绘画</a>
 </h1>
 <div class="post-meta">
 <span class="post-time">
 <span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
+<i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-03-25 23:41:04" itemprop="dateCreated datePublished" datetime="2018-03-25T23:41:04+08:00">2018-03-25</time>
+<time title="创建时间：2018-05-04 07:00:35" itemprop="dateCreated datePublished" datetime="2018-05-04T07:00:35+08:00">2018-05-04</time>
 </span>
 <span class="post-category">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
+<i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
+<i class="fa fa-file-word-o"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">3k</span>
+<span title="本文字数">208</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">3 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>Electron 是基于 Node.js 的桌面应用开发框架，所有代码均在 Chrome『外壳』下运行，因而可以调用所有 Node.js 和浏览器的 API，并且具有跨平台的特性。下面介绍如何使用 Electron 构建简单的桌面应用。你可以参照官方给出的入门程序：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/electron/electron-quick-start.git</span><br></pre></td></tr></table></figure></p>
-<p>一个 Electron 应用应包含以下内容：</p>
-<h2 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h2><p>当你使用 npm start 启动 Electron 程序时，这是最先被执行的脚本。在 main.js 中可以创建窗口对象以构建图形界面。一个典型的 main.js 如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> electron = <span class="built_in">require</span>(<span class="string">'electron'</span>)</span><br><span class="line"><span class="keyword">const</span> app = electron.app</span><br><span class="line"><span class="keyword">const</span> BrowserWindow = electron.BrowserWindow</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>)</span><br><span class="line"><span class="keyword">let</span> mainWindow</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createWindow</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    mainWindow = <span class="keyword">new</span> BrowserWindow(&#123;<span class="attr">width</span>: <span class="number">800</span>, <span class="attr">height</span>: <span class="number">600</span>&#125;)</span><br><span class="line">    mainWindow.loadURL(url.format(&#123;</span><br><span class="line">        pathname: path.join(__dirname, <span class="string">'index.html'</span>),</span><br><span class="line">        protocol: <span class="string">'file:'</span>,</span><br><span class="line">        slashes: <span class="literal">true</span></span><br><span class="line">    &#125;))</span><br><span class="line">    mainWindow.on(<span class="string">'closed'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        mainWindow = <span class="literal">null</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">app.on(<span class="string">'ready'</span>, createWindow)</span><br><span class="line">app.on(<span class="string">'window-all-closed'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (process.platform !== <span class="string">'darwin'</span>) &#123;</span><br><span class="line">        app.quit()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">app.on(<span class="string">'activate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (mainWindow === <span class="literal">null</span>) &#123;</span><br><span class="line">        createWindow()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-03/使用Electron构建桌面应用/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/开源项目elder-jiang/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-03/开源项目elder-jiang/" class="post-title-link" itemprop="url">开源项目 elder-jiang</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-03-19 12:08:50" itemprop="dateCreated datePublished" datetime="2018-03-19T12:08:50+08:00">2018-03-19</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">5.4k</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">5 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>这是一个简单的 C 语言项目，但却能产生无与伦比的效果。<br>请注意：目前仅支持类 UNIX 系统，Windows 版本正在开发中。<br>你们一定要问我对这个项目资瓷不资瓷，它现在是开源的，我们怎么能不资瓷开源的？<br>项目地址：<a href="https://github.com/stevenjoezhang/elder-jiang" target="_blank" rel="noopener">elder-jiang</a><br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''</span>;</span><br><span class="line"><span class="string">''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''</span>;</span><br><span class="line"><span class="string">''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''</span>;</span><br><span class="line"><span class="string">''''''''''''''''''''''''''''''''''''''''''''';;;'</span>;;;;;<span class="string">''';;;;;'</span>;;;;;;;;;;;;;;;;;;;;;;;;;;<span class="string">';;;;;;;;;;;;;;;;;;;</span></span><br><span class="line"><span class="string">'''''''''''''''''''''''''</span>;;;;;;;;;;;;;;;;;;;;;;;<span class="string">''</span>;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span><br><span class="line"><span class="string">''''''''''';;;;;;;;;;;;;;;;;;;;;;;;;;;'</span>#############################<span class="string">';;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span></span><br><span class="line"><span class="string">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;'</span>+###############+###+##+#+#++++##++######<span class="string">';;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span></span><br><span class="line"><span class="string">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;##@#######+####++++'</span>+++<span class="string">''</span>+<span class="string">'+++''+'</span>++++#++<span class="string">'++#+#+'</span>;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span><br><span class="line">;;;;;;;;;;;;;;;;;;;;;;;;;;;;###########+++++<span class="string">''''''</span>;;;:;;;;;;:;:;;;<span class="string">';'''''</span>+++++<span class="string">'++;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span></span><br><span class="line"><span class="string">;;;;;;;;;;;;;;;;;;;;;;;;;;########++++'''';;;;;;;::::::::::::::::::::::;;;''++'</span>+###;;;;;;;;;;;;;;;;;;;;;;;;;;</span><br><span class="line">;;;;;;;;;;;;;;;;;;;;;;;;@@@@####+++<span class="string">''''''</span>;;;;;;::::::::::::::,,,,::::::::::;<span class="string">'++''+#@;::;;;;;;;::;;;;;;;;;;;;:</span></span><br><span class="line"><span class="string">;;;;;;;;;;;;;;;;;;;;;:+@@@@@###++'''</span>+<span class="string">''';;;;;;;;::::::::,:,:,,,,,,,,,,,,::::;'''</span>+####::::::::::::::::::::::::</span><br><span class="line">;;;;;::::::::::::::::;@@@@@@####+<span class="string">''</span>++++<span class="string">''</span>;;;;;;;::::::::,:,,,,,,,,,,,,,,,::::;;<span class="string">'#####'</span>:::::::::::::::::::::::</span><br><span class="line">:::::::::::::::::::::#@@@@@@###++<span class="string">'+++++'';;;;;::::::,,:,,::::::,,,,,,,,,:::::;;'</span>+###@::::::::::::::::::::::::</span><br><span class="line">:::::::::::::::::::::<span class="string">'@@@@@@###+#+++++++'''''</span>;;;::::,:,::,,::::,,,,,,::,:::::;<span class="string">''</span>###@@::::::::::::::::::::::::</span><br><span class="line">::::::::::::::::::::::+@@@@@##+#++++#@@#<span class="string">''';;:;;'</span>###;::;:,,;;;;+######+<span class="string">';;;:::''+###+::::::::::::::::::::::::</span></span><br><span class="line"><span class="string">:::::::::::::::::::::::;###@@##@@+#@++++++++'''':'</span>;;:;@#<span class="string">'+@@'''';:::;:::::::##;###@'</span>::,,,,,:,,::::::::::::::,</span><br><span class="line">:::::::::::::::::,,,,,,<span class="string">'+++##+++++@+++++++'''</span>;:::<span class="string">'#+'</span>+@@@#@:;<span class="string">''''''</span>;;;;+::::;@@<span class="string">''</span>++:,,,,,,,,,,,,,,,,,,,,,,,,,</span><br><span class="line">:::::,,,,,,,,,,,,,,,,,,,++++++++++@<span class="string">''''''';;;;;;;;''#@#;,,:@;:;'</span>;;;::::::::::##::;;,,,,,,,,,,,,,,,,,,,,,,,,,,</span><br><span class="line">,,,,,,,,,,,,,,,,,,,,,,,,<span class="string">'++++++++++#'''';;;::::::;###'</span>;:,,,:@;;;;::::::,::::,:;::;:,,,,,,,,,,,,,,,,,,,,,,,,,,</span><br><span class="line">,,,,,,,,,,,,,,,,,,,,,,,,,+++++++++++++<span class="string">'++########+''++;::,,::'</span>+#;;;;;:::,+#:;::::,,,,,,,,,,,,,,,,,,,,,,,,,,,,</span><br><span class="line">,,,,,,,,,,,,,,,,,,,,,,,,,<span class="string">'++++++++++++'</span>;;;;:::<span class="string">'+++@@@@#+'</span>;;@@<span class="string">';,:;:::::::::::::,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,</span></span><br><span class="line"><span class="string">,,,,,,,,,,,,,,,,,,,,,,,,,,+'</span>++++++++++++<span class="string">''''''''''''''':::,,,,,,,,,:'';;;;;:::,,,.......,,,..,,,,..,.,,.,,...</span></span><br><span class="line"><span class="string">,,,,,,,,,,,,,,,,,...,.....,.++++++++++'''</span>+<span class="string">'++'''';;;;::::,,,,,:,:::;;;;;:::::::..............................</span></span><br><span class="line"><span class="string">,...........................:++++++++++'</span>;;++#+#######+++++<span class="string">'++++'</span>,;;;:::::::::................................</span><br><span class="line">.............................+++++++++++<span class="string">''';'''''</span>;;;;;;;::::,,:,,:::::::::;;.................................</span><br><span class="line">.............................@++++++++++++<span class="string">';'</span>+<span class="string">''';;;'</span>;;;;;::::::::::;;;;;;;..................................</span><br><span class="line">............................#@@#+++++++++#++<span class="string">';'';;;::::::,,,,,:,:::;;;;;:....................................</span></span><br><span class="line"><span class="string">.........................#@@@@@@@;#++++++####+++'''';;;;;;;::;;;;'</span>;<span class="string">''</span>;:,````````````````````.................</span><br><span class="line">.........````````.#@@@@@@@@@@@@@@@@+;;+#++++####++++++++++++++<span class="string">''';;;;::.`````````````````````````............</span></span><br><span class="line"><span class="string">`````````````+##@@@@@@@@@@@@@@@@@@@@@+;;;;+++++++++++++++++'''''';;:.+###########.````````````````````.......</span></span><br><span class="line"><span class="string">````````;#########@@@@@@@@@@@@@@@@@@@@@@;;::::::;+++++'</span>++<span class="string">''</span>::::::  ``+##################+````````````````....</span><br><span class="line">:####################@@@@@@@@@@@@@@@@@@@@#;:::,,.``` .<span class="string">''</span>+<span class="string">''</span>;:.   ````@##########################;``````````..</span><br><span class="line">########################@@##@##@@@@@@@@@@###:,,,..```++<span class="string">'+;;'</span>+++<span class="string">'` ```##################################,````,</span></span><br><span class="line"><span class="string">########################@@@##################'</span>...,######+<span class="string">'+:+++##'</span>:``++#####################################;</span><br><span class="line">########################@@@@###################+`<span class="string">'''+######+++#,''''`.+######################################</span></span><br><span class="line"><span class="string">########################@@@######################..'';::####+++``````'</span>;######################################</span><br><span class="line">########################@@@########################`.++<span class="string">'####+++#`````''+#####################################</span></span><br><span class="line"><span class="string">##########################@@@@@@@@@@#################:+##+##++''+``..'''</span>#####################################</span><br><span class="line">@@##############################@@#########################<span class="string">'+++++++.''''####################################+</span></span><br><span class="line"><span class="string">@@@############################@########################@###++'</span>+++<span class="string">':###'</span>#####################################</span><br><span class="line">#@@@@########################@@#############################+::++<span class="string">':+:###@###################################+</span></span><br><span class="line"><span class="string">###@@@@######################@@@@###########################'</span>+++<span class="string">'++;+########################################</span></span><br><span class="line"><span class="string">@###@@@@######################@@@@###########################+'</span>+++++++@#+####################################</span><br><span class="line">@@@@#@@@@@######################@@@@@##########################<span class="string">''</span>++++#@#<span class="string">'###################################+</span></span><br><span class="line"><span class="string">####@@@@@@@@######################@@@@##########################+;'</span>+<span class="string">'#@@#####################################</span></span><br><span class="line"><span class="string">######@@@@@@@#######################@@@@@########################+++'</span>@@@@@###################################</span><br><span class="line">######@@@@@@@@@#######################@@@@@########################+#@@@@@##################################+</span><br></pre></td></tr></table></figure></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/Mac反编译apk程序/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-03/Mac反编译apk程序/" class="post-title-link" itemprop="url">Mac 反编译 apk 程序</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-03-17 12:20:17" itemprop="dateCreated datePublished" datetime="2018-03-17T12:20:17+08:00">2018-03-17</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">1.6k</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
+<i class="fa fa-clock-o"></i>
 </span>
 <span class="post-meta-item-text">阅读时长 &asymp;</span>
 <span title="阅读时长">1 分钟</span>
@@ -453,15 +294,72 @@ page-home">
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>本教程以 macOS 10.13 为例。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载最新的-JDK"><a href="#下载最新的-JDK" class="headerlink" title="下载最新的 JDK"></a>下载最新的 JDK</h3><p>前往 <a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE 官网</a>，在底部找到 <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Download Java for Developers</a>，点击该链接，在打开的页面中找到 JDK，选择 Download，然后下载对应的版本即可。</p>
-<p><img src="/images/2018-03/jdk.png" alt=""></p>
-<h3 id="配置-JDK"><a href="#配置-JDK" class="headerlink" title="配置 JDK"></a>配置 JDK</h3><p>下载完成后，打开 dmg 镜像进行安装。JDK 会被安装到 <code>/Library/Java/JavaVirtualMachines</code> 目录下。为了能在终端正确运行最新的 JDK，需要配置环境变量。在 <code>~/.bash_profile</code> 中增加以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home</span><br><span class="line">PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span>:.</span><br><span class="line">CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:.</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME</span><br><span class="line"><span class="built_in">export</span> PATH</span><br><span class="line"><span class="built_in">export</span> CLASSPATH</span><br></pre></td></tr></table></figure></p>
-<p>其中，将 <code>jdk1.8.0_40.jdk</code> 换成你所安装的 JDK 对应的版本和目录。修改完成后，重开终端或使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
-<p>使环境变量生效。</p>
+<p>借助这个项目，你可以在GitHub热点图（动态图）上绘制图案，并由此生成shell脚本；在空项目中执行该脚本，便能创造过去的commit记录；而将该项目push到GitHub上，你的热点图就变得和绘制的图案完全相同。</p>
+<p><img src="/images/2018-05/gitdraw.png" alt=""></p>
+<p>项目地址：<a href="https://github.com/stevenjoezhang/git-draw" target="_blank" rel="noopener">git-draw</a><br>原项目是一个Chrome插件，由于长期没有维护，且GitHub改变了页面结构，导致插件不可用。新项目重写了部分JavaScript代码，使得其能够正常运行。快来试试吧！</p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/CUPT地震仪的实现/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-05/CUPT地震仪的实现/" class="post-title-link" itemprop="url">CUPT地震仪的实现</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-05-02 10:22:49" itemprop="dateCreated datePublished" datetime="2018-05-02T10:22:49+08:00">2018-05-02</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">844</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">1 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>2018年CUPT的第一题：</p>
+<blockquote>
+<p><strong>Invent Yourself</strong><br>Construct a simple seismograph that amplifies a local disturbance by mechanical, optical or electrical methods. Determine the typical response curve of your device and investigate the parameters of the damping constant. What is the maximum amplification that you can achieve?<br><strong>自主发明</strong><br>建造一个可以通过力学、光学或电学方法放大局部扰动的简单地震仪。确定你装置的标准响应曲线并且研究阻尼常数的参量。你能达到的最大放大率是多少？</p>
+</blockquote>
+<p>此题的关键便是将地震仪的反应谱通过可观测量进行表示。实现的思路有很多，力学、光学或电学方法都是可行的。综合考虑了实现难度和测量精度后，决定采用以下方案：通过力学方法放大震动，然后利用霍尔片和磁铁将力学量转换为电学量，借助Arduino单片机的模数转换，通过串口将信号输入到电脑，电脑用Python监听串口，将获得的数据保存并实时分析、绘图。</p>
+<p>仪器的整体构造如图：</p>
+<p><img src="/images/2018-05/1.jpg" alt=""></p>
 <!--noindex-->
 <div class="post-button text-center">
-<a class="btn" href="/2018-03/Mac反编译apk程序/#more" rel="contents">
+<a class="btn" href="/2018-05/CUPT地震仪的实现/#more" rel="contents">
 阅读全文 &raquo;
 </a>
 </div>
@@ -474,7 +372,7 @@ page-home">
 </article>
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/数学笑话/">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/文艺的代码/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
@@ -485,49 +383,113 @@ page-home">
 </span>
 <header class="post-header">
 <h1 class="post-title" itemprop="name headline">
-<a href="/2018-03/数学笑话/" class="post-title-link" itemprop="url">数学笑话</a>
+<a href="/2018-04/文艺的代码/" class="post-title-link" itemprop="url">文艺的代码</a>
 </h1>
 <div class="post-meta">
 <span class="post-time">
 <span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
+<i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-03-14 19:40:14" itemprop="dateCreated datePublished" datetime="2018-03-14T19:40:14+08:00">2018-03-14</time>
+<time title="创建时间：2018-04-25 17:20:39" itemprop="dateCreated datePublished" datetime="2018-04-25T17:20:39+08:00">2018-04-25</time>
 </span>
 <span class="post-category">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
+<i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
+<i class="fa fa-file-word-o"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">2.1k</span>
+<span title="本文字数">3.2k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
+<i class="fa fa-clock-o"></i>
 </span>
 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">2 分钟</span>
+<span title="阅读时长">3 分钟</span>
 </div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>A point walks into A bar. $\bar{A}$ says, “We’re closed.”$e^{x}$ is walking down the street when it sees $\pi$ running towards him.”Help!”, $\pi$ shouts, There’s a differential operator coming my way, and if it catches me, I’ll be reduced to nothing! $e^{x}$ confidently says”Stand beside me, $\pi$! Together, we’ll be safe from any differential operators we come across!” Suddenly, the differential operator appears and asks “Who are you?” They respond “We are $\pi e^{x}$. Who are you?” It smiles and says “$\frac{\partial}{\partial{y}}$”.</p>
-<p><img src="/images/2018-03/calczilla.png" alt=""></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> world;</span><br><span class="line"><span class="keyword">unsigned</span> letter;</span><br><span class="line"><span class="keyword">short</span> stay;</span><br><span class="line"><span class="keyword">long</span> memories;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ago;</span><br><span class="line"><span class="keyword">float</span> cloud;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"I miss you.\n"</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (everynight <span class="keyword">in</span> mydreams) &#123;</span><br><span class="line">    i.see(you);</span><br><span class="line">    i.feel(you);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> world <span class="keyword">where</span> someone <span class="keyword">like</span> <span class="string">'%you%'</span>;</span><br></pre></td></tr></table></figure>
+<p>Nothing is absolute.<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">* &#123; <span class="attribute">position</span>: relative; &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>物是人非事事休，欲语泪先流。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(item &amp;&amp; !people) everything = <span class="keyword">false</span>;</span><br><span class="line"><span class="keyword">if</span> (tears.setFlowing()) <span class="keyword">try</span> &#123;</span><br><span class="line">    Speaker skr = <span class="keyword">new</span> Speaker();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> &#123;</span><br><span class="line">    IOException e;</span><br><span class="line">&#125; ()</span><br></pre></td></tr></table></figure></p>
+<p>先天下之忧而忧，后天下之乐而乐。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (others.rejoice() == <span class="literal">true</span>) &#123;</span><br><span class="line">    self.rejoice();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    self.worry();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <!--noindex-->
 <div class="post-button text-center">
-<a class="btn" href="/2018-03/数学笑话/#more" rel="contents">
+<a class="btn" href="/2018-04/文艺的代码/#more" rel="contents">
 阅读全文 &raquo;
 </a>
 </div>
 <!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/搭建MCPE服务器/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-04/搭建MCPE服务器/" class="post-title-link" itemprop="url">搭建MCPE服务器</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-04-23 16:19:36" itemprop="dateCreated datePublished" datetime="2018-04-23T16:19:36+08:00">2018-04-23</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">1.1k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">1 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>目前搭建MCPE服务器的方法主要有两种：<a href="https://github.com/pmmp/PocketMine-MP" target="_blank" rel="noopener">PocketMine-MP</a>和<a href="https://github.com/NukkitX/Nukkit" target="_blank" rel="noopener">Nukkit</a>。前者基于PHP，而后者基于Java。<br>无论选择哪一种方法，都要确保游戏客户端和服务器端均是最新版本。如果版本不匹配，可能造成无法连接等问题。</p>
+<h2 id="PocketMine-MP"><a href="#PocketMine-MP" class="headerlink" title="PocketMine-MP"></a>PocketMine-MP</h2><p>运行PocketMine-MP需要php7环境和大量的拓展库，例如php-leveldb和yaml等。即使你已经通过brew、yum等包管理工具安装了php，也可能无法正确启动服务器——它们一般是不会自带这些拓展库的。为了免去手动编译安装拓展的麻烦，比较简单的解决方法是使用<a href="https://github.com/pmmp/php-build-scripts" target="_blank" rel="noopener">php-build-scripts</a>。它会编译出带有所有必要的拓展库的php，供PocketMine-MP使用，并且不会与系统原有的php环境冲突。比如在Mac下，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/pmmp/php-build-scripts.git</span><br><span class="line"><span class="built_in">cd</span> php-build-scripts</span><br><span class="line">bash compile.sh -t mac64 -l -j4 -f</span><br></pre></td></tr></table></figure></p>
+<p>即可编译安装php（Linux将参数对应改为<code>-t linux64</code>即可）。<br>完成后，再执行<code>bash installer.sh</code>，就会自动下载<code>PocketMine-MP.phar</code>等必要程序。最后，执行<code>bash start.sh</code>就可以运行了，接下来根据提示进行配置即可。这种方式非常方便，只要记得使用<code>screen</code>，然后等上几分钟就行。更多配置可以参考其官方文档。</p>
+<h2 id="Nukkit"><a href="#Nukkit" class="headerlink" title="Nukkit"></a>Nukkit</h2><p>Nukkit的原版似乎已经失去维护，其官方网站<a href="https://nukkit.io" target="_blank" rel="noopener">Nukkit.io</a>也无法打开。这里介绍的是一个fork出的分支。<br>Nukkit需要Java8环境，如果没有安装，可以前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>下载。运行方式也很简单，克隆这个仓库后，依次执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git submodule update --init</span><br><span class="line">mvn clean package</span><br><span class="line">java -jar Nukkit.jar</span><br></pre></td></tr></table></figure></p>
+<p>当然，在其新维护者的官网上也有发布的版本，无需自行编译Jar文件，可以前往<a href="https://nukkitx.com" target="_blank" rel="noopener">NukkitX</a>查看。<br>Nukkit的主要问题是不支持leveldb，也就是无法打开较新的MCPE存档，只支持MC存档和上古的MCPE存档，因此建议使用第一种方法。</p>
+<h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>PocketMine-MP和Nukkit启动后默认都会监听19132端口，配置服务器时填写局域网或公网IP/域名即可。更多的设置项可以参考它们的文档。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>转换存档的格式可以用这个脚本：<a href="https://github.com/ljyloo/LevelDb2Avnil" target="_blank" rel="noopener">LevelDb2Avnil</a>，不过看上去兼容性仍存在问题，请谨慎使用。</p>
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -536,7 +498,7 @@ page-home">
 </article>
 </section>
 <nav class="pagination">
-<a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+<a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
 </nav>
 </div>
 </div>
@@ -644,11 +606,11 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/src/utils.js?v=6.7.0"></script>
-<script src="/js/src/motion.js?v=6.7.0"></script>
-<script src="/js/src/affix.js?v=6.7.0"></script>
-<script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
-<script src="/js/src/bootstrap.js?v=6.7.0"></script>
+<script src="/js/src/utils.js?v=7.0.0"></script>
+<script src="/js/src/motion.js?v=7.0.0"></script>
+<script src="/js/src/affix.js?v=7.0.0"></script>
+<script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+<script src="/js/src/bootstrap.js?v=7.0.0"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
@@ -969,44 +931,8 @@ onPopupClose();
 }
 });
 </script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-processEscapes: true,
-skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-},
-TeX: {
-equationNumbers: {
-autoNumber: "AMS"
-}
-},
-"HTML-CSS": {
-linebreaks: { automatic: true },
-EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-},
-SVG: {
-linebreaks: { automatic: true },
-EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-},
-PreviewHTML: { linebreaks: { automatic: true } },
-CommonHTML: { linebreaks: { automatic: true } }
-});
-</script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Queue(function() {
-var all = MathJax.Hub.getAllJax(), i;
-for (i = 0; i < all.length; i += 1) {
-all[i].SourceElement().parentNode.className += ' has-jax';
-}
-});
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
-<style>
-.MathJax_Display {
-overflow: auto hidden;
-}
-</style>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script>pangu.spacingPage();</script>
 <style>
 .copy-btn {
 display: inline-block;

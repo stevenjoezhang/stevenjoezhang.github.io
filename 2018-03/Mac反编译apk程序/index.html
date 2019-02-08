@@ -8,18 +8,18 @@
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-<link rel="stylesheet" href="/css/main.css?v=6.7.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
-<link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/main.css?v=7.0.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '6.7.0',
+version: '7.0.0',
 sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
 fancybox: true,
 fastclick: true,
@@ -36,19 +36,19 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
-<meta name="description" content="本教程以 macOS 10.13 为例。 准备工作下载最新的 JDK前往 ORACLE 官网，在底部找到 Download Java for Developers，点击该链接，在打开的页面中找到 JDK，选择 Download，然后下载对应的版本即可。  配置 JDK下载完成后，打开 dmg 镜像进行安装。JDK 会被安装到 /Library/Java/JavaVirtualMachines 目录">
+<meta name="description" content="本教程以macOS 10.13为例。 准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。  配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了能在终端正确运行最新">
 <meta name="keywords" content="Mac">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac 反编译 apk 程序">
+<meta property="og:title" content="Mac反编译apk程序">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-03/Mac反编译apk程序/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="本教程以 macOS 10.13 为例。 准备工作下载最新的 JDK前往 ORACLE 官网，在底部找到 Download Java for Developers，点击该链接，在打开的页面中找到 JDK，选择 Download，然后下载对应的版本即可。  配置 JDK下载完成后，打开 dmg 镜像进行安装。JDK 会被安装到 /Library/Java/JavaVirtualMachines 目录">
+<meta property="og:description" content="本教程以macOS 10.13为例。 准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。  配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了能在终端正确运行最新">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-03/jdk.png">
-<meta property="og:updated_time" content="2018-12-22T18:09:34.400Z">
+<meta property="og:updated_time" content="2019-02-05T10:32:30.776Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac 反编译 apk 程序">
-<meta name="twitter:description" content="本教程以 macOS 10.13 为例。 准备工作下载最新的 JDK前往 ORACLE 官网，在底部找到 Download Java for Developers，点击该链接，在打开的页面中找到 JDK，选择 Download，然后下载对应的版本即可。  配置 JDK下载完成后，打开 dmg 镜像进行安装。JDK 会被安装到 /Library/Java/JavaVirtualMachines 目录">
+<meta name="twitter:title" content="Mac反编译apk程序">
+<meta name="twitter:description" content="本教程以macOS 10.13为例。 准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。  配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了能在终端正确运行最新">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-03/jdk.png">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2018-03/Mac反编译apk程序/">
@@ -57,7 +57,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
-<title>Mac 反编译 apk 程序 | 米米的博客</title>
+<title>Mac反编译apk程序 | 米米的博客</title>
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -122,7 +122,7 @@ top: initial;
 <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-friends">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe-asia"></i> <br>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-lab">
 <a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
@@ -168,12 +168,12 @@ top: initial;
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
-<h1 class="post-title" itemprop="name headline">Mac 反编译 apk 程序
+<h1 class="post-title" itemprop="name headline">Mac反编译apk程序
 </h1>
 <div class="post-meta">
 <span class="post-time">
 <span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
+<i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-03-17 12:20:17" itemprop="dateCreated datePublished" datetime="2018-03-17T12:20:17+08:00">2018-03-17</time>
@@ -181,7 +181,7 @@ top: initial;
 <span class="post-category">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
+<i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
@@ -189,10 +189,11 @@ top: initial;
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
+<i class="fa fa-comment-o"></i>
 </span>
+<span class="post-meta-item-text">评论数：</span>
 <a href="/2018-03/Mac反编译apk程序/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-03/Mac反编译apk程序/" itemprop="commentCount"></span>
+<span class="post-comments-count valine-comment-count" data-xid="/2018-03/Mac反编译apk程序/" itemprop="commentCount"></span>
 </a>
 </span>
 <span class="post-meta-divider">|</span>
@@ -203,13 +204,13 @@ top: initial;
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
+<i class="fa fa-file-word-o"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">1.6k</span>
+<span title="本文字数">1.5k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
+<i class="fa fa-clock-o"></i>
 </span>
 <span class="post-meta-item-text">阅读时长 &asymp;</span>
 <span title="阅读时长">1 分钟</span>
@@ -217,33 +218,33 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>本教程以 macOS 10.13 为例。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载最新的-JDK"><a href="#下载最新的-JDK" class="headerlink" title="下载最新的 JDK"></a>下载最新的 JDK</h3><p>前往 <a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE 官网</a>，在底部找到 <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Download Java for Developers</a>，点击该链接，在打开的页面中找到 JDK，选择 Download，然后下载对应的版本即可。</p>
+<p>本教程以macOS 10.13为例。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载最新的JDK"><a href="#下载最新的JDK" class="headerlink" title="下载最新的JDK"></a>下载最新的JDK</h3><p>前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>，在底部找到<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Download Java for Developers</a>，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。</p>
 <p><img src="/images/2018-03/jdk.png" alt=""></p>
-<h3 id="配置-JDK"><a href="#配置-JDK" class="headerlink" title="配置 JDK"></a>配置 JDK</h3><p>下载完成后，打开 dmg 镜像进行安装。JDK 会被安装到 <code>/Library/Java/JavaVirtualMachines</code> 目录下。为了能在终端正确运行最新的 JDK，需要配置环境变量。在 <code>~/.bash_profile</code> 中增加以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home</span><br><span class="line">PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span>:.</span><br><span class="line">CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:.</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME</span><br><span class="line"><span class="built_in">export</span> PATH</span><br><span class="line"><span class="built_in">export</span> CLASSPATH</span><br></pre></td></tr></table></figure></p>
-<p>其中，将 <code>jdk1.8.0_40.jdk</code> 换成你所安装的 JDK 对应的版本和目录。修改完成后，重开终端或使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
+<h3 id="配置JDK"><a href="#配置JDK" class="headerlink" title="配置JDK"></a>配置JDK</h3><p>下载完成后，打开dmg镜像进行安装。JDK会被安装到<code>/Library/Java/JavaVirtualMachines</code>目录下。为了能在终端正确运行最新的JDK，需要配置环境变量。在<code>~/.bash_profile</code>中增加以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home</span><br><span class="line">PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span>:.</span><br><span class="line">CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:.</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME</span><br><span class="line"><span class="built_in">export</span> PATH</span><br><span class="line"><span class="built_in">export</span> CLASSPATH</span><br></pre></td></tr></table></figure></p>
+<p>其中，将<code>jdk1.8.0_40.jdk</code>换成你所安装的JDK对应的版本和目录。修改完成后，重开终端或使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
 <p>使环境变量生效。</p>
 <a id="more"></a>
-<h3 id="下载-apk-反编译组件"><a href="#下载-apk-反编译组件" class="headerlink" title="下载 apk 反编译组件"></a>下载 apk 反编译组件</h3><p>需要下载的程序包括：</p>
+<h3 id="下载apk反编译组件"><a href="#下载apk反编译组件" class="headerlink" title="下载apk反编译组件"></a>下载apk反编译组件</h3><p>需要下载的程序包括：</p>
 <ul>
 <li><a href="https://ibotpeaches.github.io/Apktool/install" target="_blank" rel="noopener">Apktool</a></li>
 <li><a href="https://github.com/pxb1988/dex2jar/releases" target="_blank" rel="noopener">dex2jar</a></li>
 <li><a href="http://jd.benow.ca" target="_blank" rel="noopener">JD-GUI</a></li>
 </ul>
-<h2 id="进行反编译"><a href="#进行反编译" class="headerlink" title="进行反编译"></a>进行反编译</h2><h3 id="运行-Apktool"><a href="#运行-Apktool" class="headerlink" title="运行 Apktool"></a>运行 Apktool</h3><p>按照官网上的教程，将下载 Apktool 后得到的 shell 脚本和 <code>apktool.jar</code> 移动到 <code>/usr/local/bin</code>，然后在终端执行 <code>apktool -h</code>，如果能正确显示帮助信息，则安装正常。<br>将需要反编译的 apk 文件（例如 <code>example.apk</code>）放入任意目录中，cd 进入该目录，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apktool d example.apk</span><br></pre></td></tr></table></figure></p>
-<p>即可进行反编译，这时会生成一个名为 example 的目录，用于存储反编译出的文件。如果要回编译，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apktool b example</span><br></pre></td></tr></table></figure></p>
-<p>同样，直接解压 <code>example.apk</code> 也可以得到一部分信息，如 <code>classes.dex</code> 等。</p>
-<h3 id="用-dex2jar-将-apk-转成-jar-文件"><a href="#用-dex2jar-将-apk-转成-jar-文件" class="headerlink" title="用 dex2jar 将 apk 转成 jar 文件"></a>用 dex2jar 将 apk 转成 jar 文件</h3><p>下载 dex2jar 的 releases 版本后，解压进入文件夹，然后运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./d2j-dex2jar.sh path/to/example.apk</span><br></pre></td></tr></table></figure></p>
-<p>在 dex2jar 目录下将得到 example-dex2jar.jar 文件</p>
-<h3 id="查看源代码"><a href="#查看源代码" class="headerlink" title="查看源代码"></a>查看源代码</h3><p>打开 <code>JD-GUI.app</code>，将 <code>example-dex2jar.jar</code> 拖进去就能看到源码了。<br>需要注意的是，如果你使用了 JAVA9，打开 JD-GUI 时可能会出现问题，解决方法是修改 <code>JD-GUI.app/Contents/Info.plist</code>，找到<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>VMOptions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>-Xms512m<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="进行反编译"><a href="#进行反编译" class="headerlink" title="进行反编译"></a>进行反编译</h2><h3 id="运行Apktool"><a href="#运行Apktool" class="headerlink" title="运行Apktool"></a>运行Apktool</h3><p>按照官网上的教程，将下载Apktool后得到的shell脚本和<code>apktool.jar</code>移动到<code>/usr/local/bin</code>，然后在终端执行<code>apktool -h</code>，如果能正确显示帮助信息，则安装正常。<br>将需要反编译的apk文件（例如<code>example.apk</code>）放入任意目录中，cd进入该目录，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apktool d example.apk</span><br></pre></td></tr></table></figure></p>
+<p>即可进行反编译，这时会生成一个名为example的目录，用于存储反编译出的文件。如果要回编译，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apktool b example</span><br></pre></td></tr></table></figure></p>
+<p>同样，直接解压<code>example.apk</code>也可以得到一部分信息，如<code>classes.dex</code>等。</p>
+<h3 id="用dex2jar将apk转成jar文件"><a href="#用dex2jar将apk转成jar文件" class="headerlink" title="用dex2jar将apk转成jar文件"></a>用dex2jar将apk转成jar文件</h3><p>下载dex2jar的releases版本后，解压进入文件夹，然后运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./d2j-dex2jar.sh path/to/example.apk</span><br></pre></td></tr></table></figure></p>
+<p>在dex2jar目录下将得到example-dex2jar.jar文件</p>
+<h3 id="查看源代码"><a href="#查看源代码" class="headerlink" title="查看源代码"></a>查看源代码</h3><p>打开<code>JD-GUI.app</code>，将<code>example-dex2jar.jar</code>拖进去就能看到源码了。<br>需要注意的是，如果你使用了JAVA9，打开JD-GUI时可能会出现问题，解决方法是修改<code>JD-GUI.app/Contents/Info.plist</code>，找到<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>VMOptions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>-Xms512m<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>改为<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>VMOptions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>-Xms512m --add-opens java.base/jdk.internal.loader=ALL-UNNAMED --add-opens jdk.zipfs/jdk.nio.zipfs=ALL-UNNAMED<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>即可正常启动。<br>通过看 java 源码对比 smali 文件，修改后回编译就 ok 了！</p>
-<p>参考文章：<br><a href="https://blog.csdn.net/vvv_110/article/details/72897142" target="_blank" rel="noopener">MAC 安装 JDK 及环境变量配置</a><br><a href="https://blog.csdn.net/yanzi1225627/article/details/48215549" target="_blank" rel="noopener">MAC 上反编译 android apk—apktool, dex2jar, jd-jui 安装使用 (含手动签名)</a><br><a href="https://blog.csdn.net/wh_19910525/article/details/7915738" target="_blank" rel="noopener">apk 反编译获取完整源码 及 apk 反编译后的处理</a><br><a href="https://github.com/java-decompiler/jd-gui/issues/187" target="_blank" rel="noopener">Java 9 Compatibility</a></p>
+<p>即可正常启动。<br>通过看java源码对比smali文件，修改后回编译就ok了！</p>
+<p>参考文章：<br><a href="https://blog.csdn.net/vvv_110/article/details/72897142" target="_blank" rel="noopener">MAC安装JDK及环境变量配置</a><br><a href="https://blog.csdn.net/yanzi1225627/article/details/48215549" target="_blank" rel="noopener">MAC上反编译android apk—apktool, dex2jar, jd-jui安装使用(含手动签名)</a><br><a href="https://blog.csdn.net/wh_19910525/article/details/7915738" target="_blank" rel="noopener">apk反编译获取完整源码 及 apk反编译后的处理</a><br><a href="https://github.com/java-decompiler/jd-gui/issues/187" target="_blank" rel="noopener">Java 9 Compatibility</a></p>
 </div>
 <div>
 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
 <div>🍭支持一根棒棒糖！</div>
-<button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+<button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
 <span>打赏</span>
 </button>
 <div id="QR" style="display: none;">
@@ -268,10 +269,10 @@ top: initial;
 <strong>本文作者： </strong>张书樵</li>
 <li class="post-copyright-link">
 <strong>本文链接：</strong>
-<a href="https://zhangshuqiao.org/2018-03/Mac反编译apk程序/" title="Mac 反编译 apk 程序">https://zhangshuqiao.org/2018-03/Mac反编译apk程序/</a>
+<a href="https://zhangshuqiao.org/2018-03/Mac反编译apk程序/" title="Mac反编译apk程序">https://zhangshuqiao.org/2018-03/Mac反编译apk程序/</a>
 </li>
 <li class="post-copyright-license">
-<strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+<strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
 </div>
 <footer class="post-footer">
@@ -286,8 +287,8 @@ top: initial;
 </div>
 <span class="post-nav-divider"></span>
 <div class="post-nav-prev post-nav-item">
-<a href="/2018-03/开源项目elder-jiang/" rel="prev" title="开源项目 elder-jiang">
-开源项目 elder-jiang <i class="fa fa-chevron-right"></i>
+<a href="/2018-03/开源项目elder-jiang/" rel="prev" title="开源项目elder-jiang">
+开源项目elder-jiang <i class="fa fa-chevron-right"></i>
 </a>
 </div>
 </div>
@@ -365,7 +366,7 @@ RSS
 <!--noindex-->
 <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
 <div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载最新的-JDK"><span class="nav-number">1.1.</span> <span class="nav-text">下载最新的 JDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-JDK"><span class="nav-number">1.2.</span> <span class="nav-text">配置 JDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载-apk-反编译组件"><span class="nav-number">1.3.</span> <span class="nav-text">下载 apk 反编译组件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进行反编译"><span class="nav-number">2.</span> <span class="nav-text">进行反编译</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#运行-Apktool"><span class="nav-number">2.1.</span> <span class="nav-text">运行 Apktool</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用-dex2jar-将-apk-转成-jar-文件"><span class="nav-number">2.2.</span> <span class="nav-text">用 dex2jar 将 apk 转成 jar 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看源代码"><span class="nav-number">2.3.</span> <span class="nav-text">查看源代码</span></a></li></ol></li></ol></div>
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载最新的JDK"><span class="nav-number">1.1.</span> <span class="nav-text">下载最新的JDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置JDK"><span class="nav-number">1.2.</span> <span class="nav-text">配置JDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载apk反编译组件"><span class="nav-number">1.3.</span> <span class="nav-text">下载apk反编译组件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进行反编译"><span class="nav-number">2.</span> <span class="nav-text">进行反编译</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#运行Apktool"><span class="nav-number">2.1.</span> <span class="nav-text">运行Apktool</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用dex2jar将apk转成jar文件"><span class="nav-number">2.2.</span> <span class="nav-text">用dex2jar将apk转成jar文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看源代码"><span class="nav-number">2.3.</span> <span class="nav-text">查看源代码</span></a></li></ol></li></ol></div>
 </div>
 </div>
 <!--/noindex-->
@@ -418,13 +419,13 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/src/utils.js?v=6.7.0"></script>
-<script src="/js/src/motion.js?v=6.7.0"></script>
-<script src="/js/src/affix.js?v=6.7.0"></script>
-<script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
-<script src="/js/src/scrollspy.js?v=6.7.0"></script>
-<script src="/js/src/post-details.js?v=6.7.0"></script>
-<script src="/js/src/bootstrap.js?v=6.7.0"></script>
+<script src="/js/src/utils.js?v=7.0.0"></script>
+<script src="/js/src/motion.js?v=7.0.0"></script>
+<script src="/js/src/affix.js?v=7.0.0"></script>
+<script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+<script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+<script src="/js/src/bootstrap.js?v=7.0.0"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
@@ -745,6 +746,8 @@ onPopupClose();
 }
 });
 </script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script>pangu.spacingPage();</script>
 <style>
 .copy-btn {
 display: inline-block;

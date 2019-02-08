@@ -8,18 +8,18 @@
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-<link rel="stylesheet" href="/css/main.css?v=6.7.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
-<link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/main.css?v=7.0.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '6.7.0',
+version: '7.0.0',
 sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
 fancybox: true,
 fastclick: true,
@@ -36,18 +36,18 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
-<meta name="description" content="Electron 是基于 Node.js 的桌面应用开发框架，所有代码均在 Chrome『外壳』下运行，因而可以调用所有 Node.js 和浏览器的 API，并且具有跨平台的特性。下面介绍如何使用 Electron 构建简单的桌面应用。你可以参照官方给出的入门程序：1git clone https://github.com/electron/electron-quick-start.git 一个">
+<meta name="description" content="Electron是基于Node.js的桌面应用开发框架，所有代码均在Chrome『外壳』下运行，因而可以调用所有Node.js和浏览器的API，并且具有跨平台的特性。下面介绍如何使用Electron构建简单的桌面应用。你可以参照官方给出的入门程序：1git clone https://github.com/electron/electron-quick-start.git 一个Electron应用">
 <meta name="keywords" content="JavaScript,GitHub">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用 Electron 构建桌面应用">
+<meta property="og:title" content="使用Electron构建桌面应用">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-03/使用Electron构建桌面应用/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="Electron 是基于 Node.js 的桌面应用开发框架，所有代码均在 Chrome『外壳』下运行，因而可以调用所有 Node.js 和浏览器的 API，并且具有跨平台的特性。下面介绍如何使用 Electron 构建简单的桌面应用。你可以参照官方给出的入门程序：1git clone https://github.com/electron/electron-quick-start.git 一个">
+<meta property="og:description" content="Electron是基于Node.js的桌面应用开发框架，所有代码均在Chrome『外壳』下运行，因而可以调用所有Node.js和浏览器的API，并且具有跨平台的特性。下面介绍如何使用Electron构建简单的桌面应用。你可以参照官方给出的入门程序：1git clone https://github.com/electron/electron-quick-start.git 一个Electron应用">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-12-25T08:47:07.744Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用 Electron 构建桌面应用">
-<meta name="twitter:description" content="Electron 是基于 Node.js 的桌面应用开发框架，所有代码均在 Chrome『外壳』下运行，因而可以调用所有 Node.js 和浏览器的 API，并且具有跨平台的特性。下面介绍如何使用 Electron 构建简单的桌面应用。你可以参照官方给出的入门程序：1git clone https://github.com/electron/electron-quick-start.git 一个">
+<meta name="twitter:title" content="使用Electron构建桌面应用">
+<meta name="twitter:description" content="Electron是基于Node.js的桌面应用开发框架，所有代码均在Chrome『外壳』下运行，因而可以调用所有Node.js和浏览器的API，并且具有跨平台的特性。下面介绍如何使用Electron构建简单的桌面应用。你可以参照官方给出的入门程序：1git clone https://github.com/electron/electron-quick-start.git 一个Electron应用">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2018-03/使用Electron构建桌面应用/">
 <script id="page.configurations">
@@ -55,7 +55,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
-<title>使用 Electron 构建桌面应用 | 米米的博客</title>
+<title>使用Electron构建桌面应用 | 米米的博客</title>
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -120,7 +120,7 @@ top: initial;
 <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-friends">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe-asia"></i> <br>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-lab">
 <a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
@@ -166,12 +166,12 @@ top: initial;
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
-<h1 class="post-title" itemprop="name headline">使用 Electron 构建桌面应用
+<h1 class="post-title" itemprop="name headline">使用Electron构建桌面应用
 </h1>
 <div class="post-meta">
 <span class="post-time">
 <span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
+<i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-03-25 23:41:04" itemprop="dateCreated datePublished" datetime="2018-03-25T23:41:04+08:00">2018-03-25</time>
@@ -179,7 +179,7 @@ top: initial;
 <span class="post-category">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
+<i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
@@ -187,10 +187,11 @@ top: initial;
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-comment"></i>
+<i class="fa fa-comment-o"></i>
 </span>
+<span class="post-meta-item-text">评论数：</span>
 <a href="/2018-03/使用Electron构建桌面应用/#comments" itemprop="discussionUrl">
-<span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018-03/使用Electron构建桌面应用/" itemprop="commentCount"></span>
+<span class="post-comments-count valine-comment-count" data-xid="/2018-03/使用Electron构建桌面应用/" itemprop="commentCount"></span>
 </a>
 </span>
 <span class="post-meta-divider">|</span>
@@ -201,13 +202,13 @@ top: initial;
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
+<i class="fa fa-file-word-o"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">3k</span>
+<span title="本文字数">2.9k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
+<i class="fa fa-clock-o"></i>
 </span>
 <span class="post-meta-item-text">阅读时长 &asymp;</span>
 <span title="阅读时长">3 分钟</span>
@@ -215,28 +216,28 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>Electron 是基于 Node.js 的桌面应用开发框架，所有代码均在 Chrome『外壳』下运行，因而可以调用所有 Node.js 和浏览器的 API，并且具有跨平台的特性。下面介绍如何使用 Electron 构建简单的桌面应用。你可以参照官方给出的入门程序：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/electron/electron-quick-start.git</span><br></pre></td></tr></table></figure></p>
-<p>一个 Electron 应用应包含以下内容：</p>
-<h2 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h2><p>当你使用 npm start 启动 Electron 程序时，这是最先被执行的脚本。在 main.js 中可以创建窗口对象以构建图形界面。一个典型的 main.js 如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> electron = <span class="built_in">require</span>(<span class="string">'electron'</span>)</span><br><span class="line"><span class="keyword">const</span> app = electron.app</span><br><span class="line"><span class="keyword">const</span> BrowserWindow = electron.BrowserWindow</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>)</span><br><span class="line"><span class="keyword">let</span> mainWindow</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createWindow</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    mainWindow = <span class="keyword">new</span> BrowserWindow(&#123;<span class="attr">width</span>: <span class="number">800</span>, <span class="attr">height</span>: <span class="number">600</span>&#125;)</span><br><span class="line">    mainWindow.loadURL(url.format(&#123;</span><br><span class="line">        pathname: path.join(__dirname, <span class="string">'index.html'</span>),</span><br><span class="line">        protocol: <span class="string">'file:'</span>,</span><br><span class="line">        slashes: <span class="literal">true</span></span><br><span class="line">    &#125;))</span><br><span class="line">    mainWindow.on(<span class="string">'closed'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        mainWindow = <span class="literal">null</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">app.on(<span class="string">'ready'</span>, createWindow)</span><br><span class="line">app.on(<span class="string">'window-all-closed'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (process.platform !== <span class="string">'darwin'</span>) &#123;</span><br><span class="line">        app.quit()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">app.on(<span class="string">'activate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (mainWindow === <span class="literal">null</span>) &#123;</span><br><span class="line">        createWindow()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>Electron是基于Node.js的桌面应用开发框架，所有代码均在Chrome『外壳』下运行，因而可以调用所有Node.js和浏览器的API，并且具有跨平台的特性。下面介绍如何使用Electron构建简单的桌面应用。你可以参照官方给出的入门程序：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/electron/electron-quick-start.git</span><br></pre></td></tr></table></figure></p>
+<p>一个Electron应用应包含以下内容：</p>
+<h2 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h2><p>当你使用npm start启动Electron程序时，这是最先被执行的脚本。在main.js中可以创建窗口对象以构建图形界面。一个典型的main.js如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> electron = <span class="built_in">require</span>(<span class="string">'electron'</span>)</span><br><span class="line"><span class="keyword">const</span> app = electron.app</span><br><span class="line"><span class="keyword">const</span> BrowserWindow = electron.BrowserWindow</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>)</span><br><span class="line"><span class="keyword">let</span> mainWindow</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createWindow</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    mainWindow = <span class="keyword">new</span> BrowserWindow(&#123;<span class="attr">width</span>: <span class="number">800</span>, <span class="attr">height</span>: <span class="number">600</span>&#125;)</span><br><span class="line">    mainWindow.loadURL(url.format(&#123;</span><br><span class="line">        pathname: path.join(__dirname, <span class="string">'index.html'</span>),</span><br><span class="line">        protocol: <span class="string">'file:'</span>,</span><br><span class="line">        slashes: <span class="literal">true</span></span><br><span class="line">    &#125;))</span><br><span class="line">    mainWindow.on(<span class="string">'closed'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        mainWindow = <span class="literal">null</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">app.on(<span class="string">'ready'</span>, createWindow)</span><br><span class="line">app.on(<span class="string">'window-all-closed'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (process.platform !== <span class="string">'darwin'</span>) &#123;</span><br><span class="line">        app.quit()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">app.on(<span class="string">'activate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (mainWindow === <span class="literal">null</span>) &#123;</span><br><span class="line">        createWindow()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<p>mainWindow 即为 BrowserWindow 窗口对象。mainWindow 有很多参数可以设置，例如，可以将默认的 <code>width: 800, height: 600</code> 替换为<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">width: electron.screen.getPrimaryDisplay().workAreaSize.width,</span><br><span class="line">height: electron.screen.getPrimaryDisplay().workAreaSize.height</span><br></pre></td></tr></table></figure></p>
+<p>mainWindow即为BrowserWindow窗口对象。mainWindow有很多参数可以设置，例如，可以将默认的<code>width: 800, height: 600</code>替换为<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">width: electron.screen.getPrimaryDisplay().workAreaSize.width,</span><br><span class="line">height: electron.screen.getPrimaryDisplay().workAreaSize.height</span><br></pre></td></tr></table></figure></p>
 <p>来实现全屏。在创建了窗口对象后，可以使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mainWindow.setAlwaysOnTop(<span class="literal">true</span>, <span class="string">""</span>)</span><br></pre></td></tr></table></figure></p>
-<p>来使应用置顶（在 macOS 下，第二个参数将决定置顶的级别，例如，第二个参数取 “floating” 会使窗口置于大部分应用之前，但会被 KeyNote 等权限更高的应用挡住；而取 “main-menu” 则即使在演示 KeyNote 该窗口也能置于顶层）。 如果窗口设置了全屏置顶，就需要配合以下代码使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mainWindow.setIgnoreMouseEvents(<span class="literal">true</span>)</span><br></pre></td></tr></table></figure></p>
-<p>这样可以使窗口忽略鼠标事件，否则就不能正常操作其他窗口了。 接下来，使用 mainWindow.loadURL() 来加载页面内容。loadURL 中 index.html 可以替换为任何自定义页面。<code>process.platform !== &#39;darwin&#39;</code> 的作用是，在 macOS 上，关闭所有窗口并不意味着退出程序——你可以点击 Dock 中的程序图标唤醒它（即触发 <code>activate</code> 事件）；而在 Windows 中，关闭所有窗口的默认行为是直接退出程序。</p>
-<h2 id="index-html"><a href="#index-html" class="headerlink" title="index.html"></a>index.html</h2><p>这是窗口的 HTML 文件。前面讲到的 main.js 中 pathname 应指向它。在创建窗口后，index.html 会在 Chrome 环境下执行，接下来的工作就是进行前端设计，来构建桌面应用的页面——你甚至可以使用 jQuery，react.js 或 vue.js 等框架。不过需要注意的是，如果使用 jQuery，需要在页面中增加以下内容：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">module</span> === <span class="string">"object"</span>) &#123;<span class="built_in">window</span>.jQuery = <span class="built_in">window</span>.$ = <span class="built_in">module</span>.exports&#125;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>否则无法正确运行。还要注意的是，全屏状态下使用 <code>alert()</code> 会导致问题，应该使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;dialog&#125; = <span class="built_in">require</span>(<span class="string">"electron"</span>).remote</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showMessage</span>(<span class="params">msg</span>) </span>&#123;</span><br><span class="line">    dialog.showMessageBox(&#123;<span class="attr">message</span> : msg&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>然后用 <code>showMessage()</code> 函数显示消息。 Electron 提供了在不同页面间进行通讯的 API，在父页面使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mainWindow.webContents.send(channel, messageContent)</span><br></pre></td></tr></table></figure></p>
-<p>发送消息，其中 channel 是任意字符串，表示通信频道，messageContent 是消息内容。在子页面使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ipcRender = <span class="built_in">require</span>(<span class="string">"electron"</span>).ipcRenderer</span><br><span class="line">ipcRender.on(channel, <span class="function"><span class="keyword">function</span>(<span class="params">event, message</span>) </span>&#123;</span><br><span class="line">    alert(messgae)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>来使应用置顶（在macOS下，第二个参数将决定置顶的级别，例如，第二个参数取”floating”会使窗口置于大部分应用之前，但会被KeyNote等权限更高的应用挡住；而取”main-menu”则即使在演示KeyNote该窗口也能置于顶层）。 如果窗口设置了全屏置顶，就需要配合以下代码使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mainWindow.setIgnoreMouseEvents(<span class="literal">true</span>)</span><br></pre></td></tr></table></figure></p>
+<p>这样可以使窗口忽略鼠标事件，否则就不能正常操作其他窗口了。 接下来，使用mainWindow.loadURL()来加载页面内容。loadURL中index.html可以替换为任何自定义页面。<code>process.platform !== &#39;darwin&#39;</code>的作用是，在macOS上，关闭所有窗口并不意味着退出程序——你可以点击Dock中的程序图标唤醒它（即触发<code>activate</code>事件）；而在Windows中，关闭所有窗口的默认行为是直接退出程序。</p>
+<h2 id="index-html"><a href="#index-html" class="headerlink" title="index.html"></a>index.html</h2><p>这是窗口的HTML文件。前面讲到的main.js中pathname应指向它。在创建窗口后，index.html会在Chrome环境下执行，接下来的工作就是进行前端设计，来构建桌面应用的页面——你甚至可以使用jQuery，react.js或vue.js等框架。不过需要注意的是，如果使用jQuery，需要在页面中增加以下内容：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">module</span> === <span class="string">"object"</span>) &#123;<span class="built_in">window</span>.jQuery = <span class="built_in">window</span>.$ = <span class="built_in">module</span>.exports&#125;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>否则无法正确运行。还要注意的是，全屏状态下使用<code>alert()</code>会导致问题，应该使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;dialog&#125; = <span class="built_in">require</span>(<span class="string">"electron"</span>).remote</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showMessage</span>(<span class="params">msg</span>) </span>&#123;</span><br><span class="line">    dialog.showMessageBox(&#123;<span class="attr">message</span> : msg&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后用<code>showMessage()</code>函数显示消息。 Electron提供了在不同页面间进行通讯的API，在父页面使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mainWindow.webContents.send(channel, messageContent)</span><br></pre></td></tr></table></figure></p>
+<p>发送消息，其中channel是任意字符串，表示通信频道，messageContent是消息内容。在子页面使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ipcRender = <span class="built_in">require</span>(<span class="string">"electron"</span>).ipcRenderer</span><br><span class="line">ipcRender.on(channel, <span class="function"><span class="keyword">function</span>(<span class="params">event, message</span>) </span>&#123;</span><br><span class="line">    alert(messgae)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>监听消息即可。</p>
-<h2 id="renderer-js"><a href="#renderer-js" class="headerlink" title="renderer.js"></a>renderer.js</h2><p>默认里面就一堆注释，用来放业务相关 JS 的，和网页 JS 的区别在于，这里的 JS 不仅可以访问 DOM，还能使用 Node.js 所有的 API。能前能后，想怎么玩都行。</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>如果你需要更多的页面，可以创建 HTML 文件并使用 <code>new BrowserWindow()</code> 加载这些页面。在设计完成后，使用命令 <code>npm start</code> 即可运行。如果需要将应用打包，可以使用 electron-packager（用 npm 安装），在 Windows 系统下就会打包成. exe 格式，macOS 则为. app。 发挥你的想象力，便能使用 Electron 构建功能丰富的跨平台应用啦！</p>
-<p>参考文章：<a href="http://www.zhangxinxu.com/wordpress/2017/05/electron-node-js-desktop-application-experience" target="_blank" rel="noopener">使用 electron 构建跨平台 Node.js 桌面应用经验分享</a></p>
+<h2 id="renderer-js"><a href="#renderer-js" class="headerlink" title="renderer.js"></a>renderer.js</h2><p>默认里面就一堆注释，用来放业务相关JS的，和网页JS的区别在于，这里的JS不仅可以访问DOM，还能使用Node.js所有的API。能前能后，想怎么玩都行。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>如果你需要更多的页面，可以创建HTML文件并使用<code>new BrowserWindow()</code>加载这些页面。在设计完成后，使用命令<code>npm start</code>即可运行。如果需要将应用打包，可以使用electron-packager（用npm安装），在Windows系统下就会打包成.exe格式，macOS则为.app。 发挥你的想象力，便能使用Electron构建功能丰富的跨平台应用啦！</p>
+<p>参考文章：<a href="http://www.zhangxinxu.com/wordpress/2017/05/electron-node-js-desktop-application-experience" target="_blank" rel="noopener">使用electron构建跨平台Node.js桌面应用经验分享</a></p>
 <p>官方文档：<a href="https://electronjs.org/docs" target="_blank" rel="noopener">Electron 文档</a></p>
 </div>
 <div>
 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
 <div>🍭支持一根棒棒糖！</div>
-<button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+<button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
 <span>打赏</span>
 </button>
 <div id="QR" style="display: none;">
@@ -261,10 +262,10 @@ top: initial;
 <strong>本文作者： </strong>张书樵</li>
 <li class="post-copyright-link">
 <strong>本文链接：</strong>
-<a href="https://zhangshuqiao.org/2018-03/使用Electron构建桌面应用/" title="使用 Electron 构建桌面应用">https://zhangshuqiao.org/2018-03/使用Electron构建桌面应用/</a>
+<a href="https://zhangshuqiao.org/2018-03/使用Electron构建桌面应用/" title="使用Electron构建桌面应用">https://zhangshuqiao.org/2018-03/使用Electron构建桌面应用/</a>
 </li>
 <li class="post-copyright-license">
-<strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+<strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
 </div>
 <footer class="post-footer">
@@ -274,8 +275,8 @@ top: initial;
 </div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
-<a href="/2018-03/开源项目elder-jiang/" rel="next" title="开源项目 elder-jiang">
-<i class="fa fa-chevron-left"></i> 开源项目 elder-jiang
+<a href="/2018-03/开源项目elder-jiang/" rel="next" title="开源项目elder-jiang">
+<i class="fa fa-chevron-left"></i> 开源项目elder-jiang
 </a>
 </div>
 <span class="post-nav-divider"></span>
@@ -412,13 +413,13 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/src/utils.js?v=6.7.0"></script>
-<script src="/js/src/motion.js?v=6.7.0"></script>
-<script src="/js/src/affix.js?v=6.7.0"></script>
-<script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
-<script src="/js/src/scrollspy.js?v=6.7.0"></script>
-<script src="/js/src/post-details.js?v=6.7.0"></script>
-<script src="/js/src/bootstrap.js?v=6.7.0"></script>
+<script src="/js/src/utils.js?v=7.0.0"></script>
+<script src="/js/src/motion.js?v=7.0.0"></script>
+<script src="/js/src/affix.js?v=7.0.0"></script>
+<script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+<script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+<script src="/js/src/bootstrap.js?v=7.0.0"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
@@ -739,6 +740,8 @@ onPopupClose();
 }
 });
 </script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script>pangu.spacingPage();</script>
 <style>
 .copy-btn {
 display: inline-block;

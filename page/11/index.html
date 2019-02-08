@@ -8,18 +8,18 @@
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-<link rel="stylesheet" href="/css/main.css?v=6.7.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
-<link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/main.css?v=7.0.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '6.7.0',
+version: '7.0.0',
 sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
 fancybox: true,
 fastclick: true,
@@ -120,7 +120,7 @@ page-home">
 <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-friends">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe-asia"></i> <br>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-lab">
 <a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
@@ -156,7 +156,7 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/MySQL 8.0的安装和使用/">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/Mac启动Apache服务器/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
@@ -167,214 +167,33 @@ page-home">
 </span>
 <header class="post-header">
 <h1 class="post-title" itemprop="name headline">
-<a href="/2018-03/MySQL 8.0的安装和使用/" class="post-title-link" itemprop="url">MySQL 8.0 的安装和使用</a>
+<a href="/2018-04/Mac启动Apache服务器/" class="post-title-link" itemprop="url">Mac启动Apache服务器</a>
 </h1>
 <div class="post-meta">
 <span class="post-time">
 <span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
+<i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-03-09 10:16:24" itemprop="dateCreated datePublished" datetime="2018-03-09T10:16:24+08:00">2018-03-09</time>
+<time title="创建时间：2018-04-18 15:00:35" itemprop="dateCreated datePublished" datetime="2018-04-18T15:00:35+08:00">2018-04-18</time>
 </span>
 <span class="post-category">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">4.9k</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">4 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<h2 id="MySQL-的安装"><a href="#MySQL-的安装" class="headerlink" title="MySQL 的安装"></a>MySQL 的安装</h2><p>在 MySQL 官网的 <a href="https://dev.mysql.com/downloads" target="_blank" rel="noopener">下载页</a> 上，提供了各种系统和环境的安装方法。你可以选择通过包管理工具的软件源安装，也可以通过源码编译安装。不过编译是非常吃内存的（至少需要 4GiB 内存），并且还很耗时（毕竟是 C++ 写的），因此不推荐。具体来说，你可以：</p>
-<h3 id="使用包管理工具"><a href="#使用包管理工具" class="headerlink" title="使用包管理工具"></a>使用包管理工具</h3><p>以 yum 为例，首先增加并启用 MySQL 软件源，在 <a href="https://dev.mysql.com/downloads/repo/yum" target="_blank" rel="noopener">这个页面</a> 找到适合你的版本，然后下载并启用之：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm <span class="comment"># 换成适合你的版本</span></span><br><span class="line">rpm -ivh mysql80-community-release-el7-1.noarch.rpm</span><br><span class="line">yum-config-manager --<span class="built_in">enable</span> mysql80-community</span><br></pre></td></tr></table></figure></p>
-<p>这样，就可以直接通过 yum 安装 MySQL 服务器了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install mysql-community-server</span><br></pre></td></tr></table></figure></p>
-<p>安装完成后，会在 <code>/usr/sbin/</code> 和 <code>/usr/bin/</code> 目录下出现 MySQL 的可执行文件，而 <code>mysqld.service</code> 会自动加载好。MySQL 的配置文件则是 <code>/etc/my.cnf</code>。</p>
-<h3 id="使用源码编译安装"><a href="#使用源码编译安装" class="headerlink" title="使用源码编译安装"></a>使用源码编译安装</h3><p>再次提醒：源码编译安装方式非常麻烦，如果可以的话请使用包管理工具安装。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget wget https://cdn.mysql.com//Downloads/MySQL-8.0/mysql-boost-8.0.13.tar.gz</span><br><span class="line">tar -xzvf mysql-boost-8.0.13.tar.gz</span><br><span class="line"><span class="built_in">cd</span> mysql-boost-8.0.13</span><br><span class="line">cmake . -DCMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span>/mysql -DMYSQL_DATADIR=/data/mysql -DDOWNLOAD_BOOST=1 -DWITH_BOOST=boost -DSYSCONFDIR=/etc -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_PARTITION_STORAGE_ENGINE=1 -DWITH_FEDERATED_STORAGE_ENGINE=1 -DWITH_BLACKHOLE_STORAGE_ENGINE=1 -DWITH_MYISAM_STORAGE_ENGINE=1 -DWITH_EMBEDDED_SERVER=1 -DENABLE_DTRACE=0 -DENABLED_LOCAL_INFILE=1 -DDEFAULT_CHARSET=utf8mb4 -DEXTRA_CHARSETS=all</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure></p>
-<p>这里的 <code>-DCMAKE_INSTALL_PREFIX</code> 和 <code>-DMYSQL_DATADIR</code> 参数指定了 MySQL 的安装目录和数据文件存储目录。</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-03/MySQL 8.0的安装和使用/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/一行代码为网站添加访客地图/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-02/一行代码为网站添加访客地图/" class="post-title-link" itemprop="url">一行代码为网站添加访客地图</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-02-26 16:47:32" itemprop="dateCreated datePublished" datetime="2018-02-26T16:47:32+08:00">2018-02-26</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
+<i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
+<i class="fa fa-file-word-o"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">549</span>
+<span title="本文字数">1.9k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">1 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>Revolver Maps 是一个交互式的网站访客地图。每一个浏览者的位置都会实时在由 Canvas 渲染的地球上标记出来。在它的 <a href="https://www.revolvermaps.com/?target=gallery" target="_blank" rel="noopener">官方网站</a> 上，可以轻松地选择地图样式，并生成用于插入 HTML 页面的 script 标签。</p>
-<p><img src="/images/2018-02/revolvermaps-1.png" alt=""></p>
-<p>其中，RevolverMaps Standard GL 样式是响应式的，会自适应父元素大小，非常适合作为访客地图使用。点击『Get this Widget!』按钮，在新的页面中调整参数，可以自定义颜色、缩放、旋转等等。完成后，将生成的 script 标签复制下来，并放在你想要生成地图的地方即可。例如：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"//ra.revolvermaps.com/0/0/8.js?i=0pdvpgzth5r&amp;amp;m=7&amp;amp;c=ff0000&amp;amp;cr1=ffffff&amp;amp;f=arial&amp;amp;l=33&amp;amp;v0=20&amp;amp;z=11"</span> <span class="attr">async</span>=<span class="string">"async"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>类似地，你也可以把它放到 WordPress 博客的侧边小工具栏中，像下图这样：</p>
-<p><img src="/images/2018-02/revolvermaps-2.png" alt=""></p>
-<p>访问站点时，访客地图就会自动显示了。</p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/米米弹幕系统正式上线/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-02/米米弹幕系统正式上线/" class="post-title-link" itemprop="url">米米弹幕系统正式上线</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-02-21 23:09:38" itemprop="dateCreated datePublished" datetime="2018-02-21T23:09:38+08:00">2018-02-21</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">235</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">1 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p><img src="/images/2018-02/danmaku.png" alt=""></p>
-<p>经过数天的调试，全新的米米弹幕系统已经可以正常使用了。经过重制的弹幕系统，使用 WebSocket 代替了原先效率极低的 Ajax 轮询，实现了消息即时收发、自定义弹幕颜色、大小等功能。下一步我们将把弹幕系统整合到直播中。附上链接：<br><a href="https://galaxymimi.com/danmaku/" target="_blank" rel="noopener">米米弹幕</a><br>同时还开放了一个随机生成用户名（来自魔兽世界）的 API：<br><a href="https://api.galaxymimi.com/name/" target="_blank" rel="noopener">随机用户名</a></p>
-<p>本文更新于 2018 年 5 月 18 日：<br>zsq.im 和 galaxymimi.com 即日起全站支持 https 访问，ws 连接也升级为了 wss。</p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/CentOS 7启动bbr教程/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-02/CentOS 7启动bbr教程/" class="post-title-link" itemprop="url">CentOS 7 启动 bbr 教程</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-02-19 13:22:49" itemprop="dateCreated datePublished" datetime="2018-02-19T13:22:49+08:00">2018-02-19</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">2.2k</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
+<i class="fa fa-clock-o"></i>
 </span>
 <span class="post-meta-item-text">阅读时长 &asymp;</span>
 <span title="阅读时长">2 分钟</span>
@@ -382,20 +201,141 @@ page-home">
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>自 Google 于 2016 年 9 月宣布将 BBR 开源起，世界各国的极客们就开始研究了，对于常年受制于特殊网络环境下的我国民众，长期都在寻找各种提速的方法。之前流行的锐速（后开始收费）以及 FinalSpeed 等都曾备受大家的爱戴。对于 bbr 而言，通俗来讲就是对 Linux 内核 TCP 协议的优化从而达到提速的目的。</p>
-<h2 id="yum-系统更新"><a href="#yum-系统更新" class="headerlink" title="yum 系统更新"></a>yum 系统更新</h2><p>将 CentOS 系统版本更新到 7.3 或更高：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br><span class="line">yum upgrade</span><br></pre></td></tr></table></figure></p>
-<p>查看系统版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/redhat-release</span><br></pre></td></tr></table></figure></p>
-<p>输出如下，则表示已升级到 7.3<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CentOS Linux release 7.3.1611 (Core)</span><br></pre></td></tr></table></figure></p>
-<h2 id="安装-elrepo-并升级内核"><a href="#安装-elrepo-并升级内核" class="headerlink" title="安装 elrepo 并升级内核"></a>安装 elrepo 并升级内核</h2><p>执行 <code>uname -r</code> 查看内核版本，例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4.9.0-1.el7.elrepo.x86_64</span><br></pre></td></tr></table></figure></p>
-<p>如果内核版本低于 4.9，需要升级内核；否则可以跳过这一步，直接到『开启 bbr』部分。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line">rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span><br></pre></td></tr></table></figure></p>
-<p>这时，执行 <code>yum repolist all</code> 可以看到所有安装的源，可以启用 <code>elrepo-kernal</code>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager --<span class="built_in">enable</span> elrepo-kernel</span><br><span class="line">yum install kernel-ml -y</span><br></pre></td></tr></table></figure></p>
-<p>如果只是执行一次，也可以使用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum --enablerepo=elrepo-kernel install kernel-ml -y</span><br></pre></td></tr></table></figure></p>
-<p>正常情况下将输出如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Transaction Summary</span><br><span class="line">================================================================================</span><br><span class="line">Install  1 Package</span><br><span class="line"></span><br><span class="line">Total download size: 39 M</span><br><span class="line">Installed size: 169 M</span><br><span class="line">Downloading packages:</span><br><span class="line">kernel-ml-4.9.0-1.el7.elrepo.x86_64.rpm                    |  39 MB   00:00</span><br><span class="line">Running transaction check</span><br><span class="line">Running transaction <span class="built_in">test</span></span><br><span class="line">Transaction <span class="built_in">test</span> succeeded</span><br><span class="line">Running transaction</span><br><span class="line">Warning: RPMDB altered outside of yum.</span><br><span class="line">  Installing : kernel-ml-4.9.0-1.el7.elrepo.x86_64                          1/1</span><br><span class="line">  Verifying  : kernel-ml-4.9.0-1.el7.elrepo.x86_64                          1/1</span><br><span class="line"></span><br><span class="line">Installed:</span><br><span class="line">  kernel-ml.x86_64 0:4.9.0-1.el7.elrepo</span><br><span class="line"></span><br><span class="line">Complete!</span><br></pre></td></tr></table></figure></p>
-<p>随后更新 grub 文件并重启，来启动最新内核：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \<span class="string">'</span></span><br><span class="line"><span class="string"># 所有可用的内核会被输出，记下新内核所在的行数，第一行为 0，第二行为 1</span></span><br><span class="line"><span class="string">grub2-set-default 0</span></span><br><span class="line"><span class="string"># 把 0 替换成新内核所在的行数</span></span><br><span class="line"><span class="string">reboot</span></span><br></pre></td></tr></table></figure></p>
-<p>重启后，ssh 会断开，稍等一会儿重新连接。可以再次查看内核版本，检查更新是否成功。下一步就是启动 bbr 了。</p>
+<p>macOS自带了Apache服务器和php环境，还包括大量动态拓展。只需要简单的配置，就可以让它运行起来。<br>你可以通过<code>apachectl -version</code>查看Apache的版本；通过<code>php -v</code>可以查看php版本，<code>php -m</code>可以查看所有拓展。</p>
+<h2 id="启动Apache"><a href="#启动Apache" class="headerlink" title="启动Apache"></a>启动Apache</h2><p>在终端输入<code>sudo apachectl start</code>，即可启动Apache服务器。用浏览器打开<code>http://localhost</code>，若显示『It works!』，说明服务器启动成功。<br>关闭和重启服务器的命令分别是<code>sudo apachectl stop</code>和<code>sudo apachectl restart</code>。<br>如果需要开机启动服务器，可以编辑<code>/System/Library/LaunchDaemons/org.apache.httpd.plist</code>，将<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>Disabled<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">true</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>改为<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>Disabled<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">false</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>即可。</p>
+<h2 id="配置服务器"><a href="#配置服务器" class="headerlink" title="配置服务器"></a>配置服务器</h2><p>Apache的配置文件为<code>/etc/apache2/httpd.conf</code>，为防止出现问题，请将其备份后进行编辑。如果更新了Mac系统，可能需要重新进行配置。<br>Apache默认的根目录在<code>/Library/WebServer/Documents/</code>下，你可以通过编辑配置文件中的<code>DocumentRoot</code>属性来修改它。<br>你也可以配置启用PHP等模块。在httpd.conf中，找到<br><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LoadModule php7_module libexec/apache2/libphp7.so</span><br></pre></td></tr></table></figure></p>
+<p>将其行首用于注释的<code>#</code>去掉，即可启用PHP。<br>如果你使用brew或通过源码编译安装了其他版本的PHP，将<code>libphp7.so</code>的路径替换为对应的文件即可，例如<code>/usr/local/opt/php/lib/httpd/modules/libphp7.so</code>。具体的安装方法将在后文介绍。<br><code>httpd.conf</code>还可以设置很多其它的内容，可以自行寻找教程，此处不再赘述。<br>还有一件事情是，要确保运行Apache的用户（默认为<code>_www</code>）对其根目录有读写权限，可以通过右键点击<code>Documents</code>文件夹，选择『显示简介』来修改权限，或通过<code>chmod</code>和<code>chown</code>命令递归的修改之。</p>
+<h2 id="关于PHP"><a href="#关于PHP" class="headerlink" title="关于PHP"></a>关于PHP</h2><p>系统自带的PHP版本较旧，可以自行安装新版本。如果使用brew安装，执行<code>brew install php</code>即可安装最新版本；如果要安装特定版本，先执行<code>brew search php</code>查看可用的版本，然后再选择一个自己需要的版本安装，例如<code>brew install php@7.1</code>。<br>如果要通过源码编译PHP，可以<a href="https://secure.php.net/downloads.php" target="_blank" rel="noopener">在此处下载</a>源码。需要注意的是，编译PHP时要指定<code>make ZEND_EXTRA_LIBS=&#39;-liconv&#39;</code>，否则可能会出现<code>undefined reference to &#39;libiconv&#39;</code>的错误。<br>安装完成后，仍然可以通过<code>php -v</code>和<code>php -m</code>检查环境是否正确。</p>
+<h2 id="PHP拓展"><a href="#PHP拓展" class="headerlink" title="PHP拓展"></a>PHP拓展</h2><p>很多PHP应用都需要拓展模块的支持，例如搭建Minecraft服务器的PocketMine-MP需要leveldb支持，而生成图片验证码需要gd2支持，一些应用可能还需要redis等。PHP支持动态拓展，编译安装后可以通过<code>php.ini</code>进行配置。以安装phpredis为例，具体步骤为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/your/phpredis</span><br><span class="line">phpize</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></p>
+<p>拓展编译完成后，在<code>php.ini</code>中加入<code>extension=redis.so</code>，重启服务后即可启用拓展模块。Mac系统自带的PHP配置文件为<code>/private/etc/php.ini</code>（把该目录下的<code>php.ini.default</code>复制一份），用brew安装的则是<code>/usr/local/etc/php/7.2/php.ini</code>。如果你的软件包安装较为混乱，找不到<code>php.ini</code>，那么可以通过<code>php -i | grep &quot;/php.ini&quot;</code>获得它所在的目录。更多方法可以参考：<a href="https://blog.flxxyz.com/technology/2018/find-php-ini.html" target="_blank" rel="noopener">PHP 查找php.ini</a>。</p>
+<h2 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h2><p>如果使用<code>sudo apachectl start</code>命令启动Apache服务器，是不会显示错误信息的。因此，如果启动失败，还需要使用<code>sudo /usr/sbin/httpd -k start</code>查看报错信息。如果是httpd.conf配置出现问题，请对照报错的行数进行修改。如果是找不到目录等问题，检查相应的目录或权限即可。</p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/真正的红黑树/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-04/真正的红黑树/" class="post-title-link" itemprop="url">真正的红黑树</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-04-15 12:58:28" itemprop="dateCreated datePublished" datetime="2018-04-15T12:58:28+08:00">2018-04-15</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">1</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">1 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p><img src="/images/2018-04/IMG_4171.jpg" alt=""></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/Shell中数学运算总结/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-04/Shell中数学运算总结/" class="post-title-link" itemprop="url">Shell中数学运算总结</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-04-11 20:23:03" itemprop="dateCreated datePublished" datetime="2018-04-11T20:23:03+08:00">2018-04-11</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">1.3k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">1 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>shell中的赋值和操作默认都是字符串处理，在此记下shell中进行数学运算的几个特殊方法。</p>
+<h2 id="错误方法"><a href="#错误方法" class="headerlink" title="错误方法"></a>错误方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var=1+1</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br></pre></td></tr></table></figure>
+<p>输出的结果是1+1<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var=1</span><br><span class="line">var=<span class="variable">$var</span>+1</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br></pre></td></tr></table></figure></p>
+<p>输出结果是1+1</p>
+<h2 id="正确方法"><a href="#正确方法" class="headerlink" title="正确方法"></a>正确方法</h2><h3 id="使用let"><a href="#使用let" class="headerlink" title="使用let"></a>使用let</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var=1</span><br><span class="line"><span class="built_in">let</span> <span class="string">"var+=1"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br></pre></td></tr></table></figure>
+<p>输出结果为2<br>注意：</p>
+<ul>
+<li>经测试，let几乎支持所有的运算符，包括自加、自减以及括号等，且不同运算的优先级都得到了很好的支持</li>
+<li>方幂运算应使用<code>**</code>，如<code>2**10</code></li>
+<li>参数在表达式中直接访问，不必加$</li>
+<li>一般情况下算数表达式可以不加双引号，但是若表达式中有bash中的关键字则需加上</li>
+<li>let后的表达式只能进行整数运算</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用(())"></a>使用(())</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var=1</span><br><span class="line">((var+=1))</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br></pre></td></tr></table></figure>
+<p>输出结果为2<br>注意：<br>(())的使用方法与let完全相同</p>
 <!--noindex-->
 <div class="post-button text-center">
-<a class="btn" href="/2018-02/CentOS 7启动bbr教程/#more" rel="contents">
+<a class="btn" href="/2018-04/Shell中数学运算总结/#more" rel="contents">
 阅读全文 &raquo;
 </a>
 </div>
@@ -408,7 +348,7 @@ page-home">
 </article>
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/米米直播平台正式上线/">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/你的使用说明书/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
@@ -419,33 +359,33 @@ page-home">
 </span>
 <header class="post-header">
 <h1 class="post-title" itemprop="name headline">
-<a href="/2018-02/米米直播平台正式上线/" class="post-title-link" itemprop="url">米米直播平台正式上线</a>
+<a href="/2018-04/你的使用说明书/" class="post-title-link" itemprop="url">你的使用说明书</a>
 </h1>
 <div class="post-meta">
 <span class="post-time">
 <span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
+<i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-02-10 18:03:14" itemprop="dateCreated datePublished" datetime="2018-02-10T18:03:14+08:00">2018-02-10</time>
+<time title="创建时间：2018-04-05 00:18:06" itemprop="dateCreated datePublished" datetime="2018-04-05T00:18:06+08:00">2018-04-05</time>
 </span>
 <span class="post-category">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
+<i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
+<i class="fa fa-file-word-o"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">478</span>
+<span title="本文字数">1.6k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
+<i class="fa fa-clock-o"></i>
 </span>
 <span class="post-meta-item-text">阅读时长 &asymp;</span>
 <span title="阅读时长">1 分钟</span>
@@ -453,9 +393,14 @@ page-home">
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>经过为期半个月的测试，米米直播平台成功实现了多线路及多种播放方式的直播：<br>线路一是无需 Flash 支持的 HLS 直播，对移动端支持极为友好，只是由于原理所限，延时约为 45 秒；线路一的播放方式有原生 HLS 和 Video.js 解码的 HLS，能够覆盖大部分设备。<br>线路二是基于 Bilibili 开源的 <a href="https://github.com/Bilibili/flv.js" target="_blank" rel="noopener">flv.js</a> 的 HTTP FLV 直播，同样无须 Flash，且延时仅有 3 秒；该播放方式兼容大部分桌面浏览器，但由于需要<a href="https://w3c.github.io/media-source" target="_blank" rel="noopener">Media Source Extensions</a> API 支持，对移动端不友好；该线路各项直播数据已经可以媲美各大主流直播平台。<br>线路三为基于 video.js 和 Flash 的 RTMP 直播流，延时亦为 3 秒左右；不过考虑到 Flash 的种种弊端，线路三只是作为备用线路。原生 HTML5 直播在性能上明显优于 Flash。</p>
-<p><img src="/images/2018-02/mimilive.png" alt=""></p>
-<p>根据最新规划，米米视频将专注于视频点播功能，点播的视频大部分为原创作品；而米米直播目前已开放了一个<a href="https://galaxymimi.com/live/?room=mimi&amp;player=1" target="_blank" rel="noopener">测试频道</a>，未来将进行拓展。关于推流码验证的相关功能正在完善。附上链接：<br><a href="https://galaxymimi.com/player/" target="_blank" rel="noopener">米米视频</a><br><a href="https://galaxymimi.com/live/" target="_blank" rel="noopener">米米直播</a></p>
+<p>____擅于发现美的事物，并从中吸收能量，变得越来越好看。<br>____笑起来像个孩子，把他带在身边，能带来青春永驻的效果。<br>请多给予____一点睡眠时间。<br>____偶尔也有像天使一样温柔的时候。<br>____喜欢自由，适合经常带出去放养。<br>肚子饿了就会心情不好，带____一起去吃美味的食物吧！<br>____常常给身边的人带来好运。<br>____因为太可爱了，会令人陷入沉迷，属于正常现象。<br>____遇到香喷喷的东西就会变圆。<br>可能因为材质特殊，____对外界的攻击有折射能力。<br>____虽然经过多次更新迭代，但依然有颗纯真的心。<br>____发光的时候，可能会使对象产生短时眩晕，使用时请注意。<br>____拥有迷之运气，中乐透的实力异于常人。<br>只要缘分到了，____自己就会瘦下来。<br>____拥有高性能大脑，可快速运转，但过度工作（学习）容易发热。<br>____买买买时会释放出强大气场，胆子也会变大。<br>____常常因为无法体验人类的乐趣而神伤。<br>____是能带来元气和灵感的谜之吉祥物。<br>____心心念念的梦，会在某个不经意的时候实现。<br>____的光芒太耀眼，但也不至于会刺瞎别人。<br>____历经严苛质检品控，是市面上难得一遇的珍品。<br>只要对____倾注感情，他就能成为最可靠的伙伴，遇到危机可无限次召唤。<br>____的出厂设定就是温暖的守护者，也是周围人快乐和活力的源泉。<br>____有极为罕见的感官知觉，对他说谎可不是明智之举。<br>____装备了精准的探测仪，能发觉并把握住人生中真正的机会。<br>____能通过每次挑战完成升级，获得更高的智慧和运气。<br>____具备安全与稳定性，是居家、旅行必备的小能手。<br>____能快速拆卸烦恼，重新制作出充满乐趣和创造力的产物。<br>变态（萌）是____的常态。<br>保温杯和泡脚桶，可延长____的使用寿命。<br>____偶尔会孤单，但也能享受孤单，是一款自由的产品。<br>____对时间的感知力弱，所以不知不觉又加班了。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-04/你的使用说明书/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -464,7 +409,7 @@ page-home">
 </article>
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/制造MD5碰撞/">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/Bilibili弹幕文件的解析/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
@@ -475,33 +420,33 @@ page-home">
 </span>
 <header class="post-header">
 <h1 class="post-title" itemprop="name headline">
-<a href="/2018-02/制造MD5碰撞/" class="post-title-link" itemprop="url">制造 MD5 碰撞</a>
+<a href="/2018-03/Bilibili弹幕文件的解析/" class="post-title-link" itemprop="url">Bilibili弹幕文件的解析</a>
 </h1>
 <div class="post-meta">
 <span class="post-time">
 <span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
+<i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-02-05 18:09:35" itemprop="dateCreated datePublished" datetime="2018-02-05T18:09:35+08:00">2018-02-05</time>
+<time title="创建时间：2018-03-30 00:07:56" itemprop="dateCreated datePublished" datetime="2018-03-30T00:07:56+08:00">2018-03-30</time>
 </span>
 <span class="post-category">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
+<i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
+<i class="fa fa-file-word-o"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">577</span>
+<span title="本文字数">936</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
+<i class="fa fa-clock-o"></i>
 </span>
 <span class="post-meta-item-text">阅读时长 &asymp;</span>
 <span title="阅读时长">1 分钟</span>
@@ -509,15 +454,21 @@ page-home">
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>下面这两张图片拥有相同的 MD5 值 <code>253dd04e87492e4fc3471de5e776bc3d</code>：</p>
-<p><img src="/images/2018-02/plane.jpg" alt=""><br><img src="/images/2018-02/ship.jpg" alt=""></p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-02/制造MD5碰撞/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
+<p>B站的每个视频都有aid和cid两个参数，在已知视频aid（即AV号）的情况下，可以通过链接<code>https://www.bilibili.com/widget/getPageList?aid=10492</code>获取cid（将10492替换为你要查询的视频的aid）。<br>视频的更多信息则可以通过<code>https://api.bilibili.com/view?type=jsonp&amp;appkey=8e9fc618fbd41e28&amp;id=10492</code>获取。<br>视频的弹幕文件采用xml格式存储，地址与其cid有关，为<code>https://comment.bilibili.com/$cid.xml</code>（将$cid替换为视频的cid）。<br>对于有许多分P的视频，它们的aid（AV号）相同，每个分P则对应一个不同的cid。而在同一个页面下的番剧、影视等内容，每一分集的cid也是唯一的。<br>弹幕内容的存储方式为：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">d</span> <span class="attr">p</span>=<span class="string">"0,1,25,16777215,1312863760,0,eff85771,42759017"</span>&gt;</span>前排占位置<span class="tag">&lt;/<span class="name">d</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这个元素中的各个参数由逗号分割，其意义分别为：</p>
+<ul>
+<li>弹幕出现的时间，以秒为单位</li>
+<li>弹幕的模式：1～3滚动弹幕 4底端弹幕 5顶端弹幕 6逆向弹幕 7精准定位 8高级弹幕</li>
+<li>字号：12非常小 16特小 18小 25中 36大 45很大 64特别大</li>
+<li>字体的颜色：将HTML六位十六进制颜色转为十进制表示，例如#FFFFFF会被存储为16777215，因为$(FFFFFF)_{16}=(16777215)_{10}$</li>
+<li>Unix时间戳，以毫秒为单位，基准时间为1970-1-1 08:00:00</li>
+<li>弹幕池：0普通池 1字幕池 2特殊池（注：目前特殊池为高级弹幕专用）</li>
+<li>发送者的ID，用于『屏蔽此弹幕的发送者』功能</li>
+<li>弹幕在弹幕数据库中rowID，用于『历史弹幕』功能</li>
+</ul>
+<p>将Bilibili弹幕的xml文件转为ass字幕，可以使用以下脚本：<br><a href="http://tiansh.github.io/us-danmaku/bilibili" target="_blank" rel="noopener">bilibili ASS 弹幕在线转换</a><br><a href="https://github.com/tiansh/us-danmaku" target="_blank" rel="noopener">us-danmaku</a></p>
+<p>关于ass字幕格式可以参考以下文章：<a href="https://www.douban.com/note/658520175" target="_blank" rel="noopener">ASS字幕格式规范</a></p>
+<p>拓展阅读：<br><a href="https://zhuanlan.zhihu.com/p/24599052" target="_blank" rel="noopener">Bilibili视频播放页面接口整理（不定期更新）</a><br><a href="https://www.jianshu.com/p/f628679883e3" target="_blank" rel="noopener">Bilibili爬取视频信息进行数据分析</a></p>
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -526,7 +477,7 @@ page-home">
 </article>
 </section>
 <nav class="pagination">
-<a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+<a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
 </nav>
 </div>
 </div>
@@ -634,11 +585,11 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/src/utils.js?v=6.7.0"></script>
-<script src="/js/src/motion.js?v=6.7.0"></script>
-<script src="/js/src/affix.js?v=6.7.0"></script>
-<script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
-<script src="/js/src/bootstrap.js?v=6.7.0"></script>
+<script src="/js/src/utils.js?v=7.0.0"></script>
+<script src="/js/src/motion.js?v=7.0.0"></script>
+<script src="/js/src/affix.js?v=7.0.0"></script>
+<script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+<script src="/js/src/bootstrap.js?v=7.0.0"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
@@ -959,6 +910,45 @@ onPopupClose();
 }
 });
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+processEscapes: true,
+skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+},
+TeX: {
+equationNumbers: {
+autoNumber: "AMS"
+}
+}
+});
+MathJax.Hub.Register.StartupHook("TeX Jax Ready", function() {
+MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+if (data.display) {
+var next = data.script.nextSibling;
+while (next && next.nodeName.toLowerCase() === "#text") { next = next.nextSibling }
+if (next && next.nodeName.toLowerCase() === "br") { next.parentNode.removeChild(next) }
+}
+});
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+var all = MathJax.Hub.getAllJax(), i;
+for (i = 0; i < all.length; i += 1) {
+all[i].SourceElement().parentNode.className += ' has-jax';
+}
+});
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+<style>
+.MathJax_Display {
+overflow: auto hidden;
+}
+</style>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script>pangu.spacingPage();</script>
 <style>
 .copy-btn {
 display: inline-block;

@@ -8,18 +8,18 @@
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-<link rel="stylesheet" href="/css/main.css?v=6.7.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
-<link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/main.css?v=7.0.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '6.7.0',
+version: '7.0.0',
 sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
 fancybox: true,
 fastclick: true,
@@ -120,7 +120,7 @@ page-home">
 <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-friends">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe-asia"></i> <br>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-lab">
 <a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
@@ -156,7 +156,7 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/在Mac上通过Sublime、Skim编辑LaTeX/">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-01/将电键变为鼠标和键盘——实现篇/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
@@ -167,238 +167,46 @@ page-home">
 </span>
 <header class="post-header">
 <h1 class="post-title" itemprop="name headline">
-<a href="/2017-11/在Mac上通过Sublime、Skim编辑LaTeX/" class="post-title-link" itemprop="url">在 Mac 上通过 Sublime、Skim 编辑 LaTeX</a>
+<a href="/2018-01/将电键变为鼠标和键盘——实现篇/" class="post-title-link" itemprop="url">将电键变为鼠标和键盘——实现篇</a>
 </h1>
 <div class="post-meta">
 <span class="post-time">
 <span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
+<i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2017-11-02 21:33:56" itemprop="dateCreated datePublished" datetime="2017-11-02T21:33:56+08:00">2017-11-02</time>
+<time title="创建时间：2018-01-12 16:10:20" itemprop="dateCreated datePublished" datetime="2018-01-12T16:10:20+08:00">2018-01-12</time>
 </span>
 <span class="post-category">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">2.3k</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">2 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>Sublime Text 是一款非常优秀的编辑器：速度快，界面简洁，插件众多；并且能够跨平台使用，在 Mac 和 Windows 上都发挥完美。虽然是一款付费软件，但作者很厚道地给了无限期的试用期限。这一切正如其官网广告词说的那样：The text editor you’ll fall in love with.<br>Skim 是一款免费轻量的 PDF 阅读、标注工具，布局贴心友好，与 OS X 自带的 Previewer 相比，Skim 能更好的注释 PDF 文件。<br>$\LaTeX$ 是一款权威的科技论文排版系统，不仅可以写论文，也可以处理日常的各种文档工作，甚至是做幻灯片。相比于 Microsoft Word，$\LaTeX$ 最大的优势是对于复杂公式的编辑与排版非常漂亮，并且用简单的命令就可以生成脚注、索引、目录和参考文献等复杂的结构。这一切优点都使得世界上众多的科学家们不再需要身兼作者与排版工两职，从而将更多的精力集中于文章内容本身。<br>本文的目的是将上述三种软件综合部署在 Mac 上。完成之后，你将可以在 Sublime Text 里面进行 $\LaTeX$ 代码编辑，用 Skim 预览生成的 PDF 文件。更重要的是，让你觉得，写论文也可以是一件很优美的事。</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2017-11/在Mac上通过Sublime、Skim编辑LaTeX/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-10/一些HTML与JS的小技巧/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2017-10/一些HTML与JS的小技巧/" class="post-title-link" itemprop="url">一些 HTML 与 JS 的小技巧</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2017-10-28 19:53:13" itemprop="dateCreated datePublished" datetime="2017-10-28T19:53:13+08:00">2017-10-28</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">8.7k</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">8 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。</p>
-<h2 id="document-write"><a href="#document-write" class="headerlink" title="document.write"></a>document.write</h2><p>这个函数可以直接向 HTML 文档写入任何内容。比如，你需要根据屏幕宽度来加载不同 js 时，如果希望写入的内容是 <code>&lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;</code>，那么只要这样就可以了：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="handlebars"><span class="xml"> if (screen.width &gt;= 1200) document.write('<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"main.js"</span>&gt;</span><span class="handlebars"><span class="xml"><span class="tag">&lt;<span class="name">\</span>/<span class="attr">script</span>&gt;</span>'); </span></span></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>JavaScript 的字符串可以使用单引号或双引号表示，但是由于要写入的内容里有双引号，使用 document.write 时应该用单引号括起来，否则需要将双引号转义为 <code>\&quot;</code>，避免造成错误。如果有多层引号，应将最内层的引号改为 HTML 转义字符 <code>&amp;quot;</code>。而对于这里出现的 <code>/</code>，将其改写为了 <code>\/</code>，原因是浏览器会认为 <code>&lt;/script&gt;</code> 是闭合标签，造成代码解析错误。<br>通过 <code>document.write</code> 可以实现根据不同的条件向 HTML 写入不同的内容，但是要注意，如果这个时候页面已经加载完毕，<code>document.write</code> 会导致页面的内容被清空。实际使用时一定要注意。</p>
-<h2 id="use-strict"><a href="#use-strict" class="headerlink" title="use strict"></a>use strict</h2><p>在一些脚本中，你或许会在最前面看到单独的一行 <code>&quot;use strict&quot;</code>，这是严格模式的声明。<br>严格模式对正常的 JavaScript 语义做了一些更改：</p>
-<ul>
-<li>严格模式通过抛出错误来消除了一些原有静默错误。</li>
-<li>严格模式修复了一些导致 JavaScript 引擎难以执行优化的缺陷：有时候，相同的代码，严格模式可以比非严格模式下运行得更快。</li>
-<li>严格模式禁用了在 ECMAScript 的未来版本中可能会定义的一些语法。</li>
-</ul>
-<h2 id="JavaScript-传递参数"><a href="#JavaScript-传递参数" class="headerlink" title="JavaScript 传递参数"></a>JavaScript 传递参数</h2><p>这是一种向外部 JS 文件传入参数的方法。在 HTML 中写入<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">tag1</span>=<span class="string">"1"</span> <span class="attr">src</span>=<span class="string">"example.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>在 <code>example.js</code> 中写入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scripts = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"script"</span>),</span><br><span class="line">    script_len = scripts.length,</span><br><span class="line">    script = scripts[script_len - <span class="number">1</span>],</span><br><span class="line">    tag1 = script.getAttribute(<span class="string">"tag1"</span>);</span><br></pre></td></tr></table></figure></p>
-<p>这样即可获取 tag1 的值，可以说是非常的巧妙了。</p>
-<h2 id="noscript-标签"><a href="#noscript-标签" class="headerlink" title="noscript 标签"></a>noscript 标签</h2><p>对于某些不支持 js 的上古浏览器，以及对于停用了 js 的用户，noscript 标签可能非常有用。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">noscript</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #5C5C5C; position: fixed; bottom: 50px; left: 80px; opacity: 0.95; border-radius: 15px; color: #FFFFFF;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"margin: 15px; max-width: 400px;"</span>&gt;</span> 系统检测到您的浏览器禁用了或不支持 JavaScript。为了保障您的浏览体验，请启用 JavaScript 或 < span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">href</span>=<span class="string">"http://browsehappy.com"</span> <span class="attr">class</span>=<span class="string">"a"</span> <span class="attr">style</span>=<span class="string">"color: rgba(239,178,75,1)"</span>&gt;</span> 升级浏览器 < span class="tag">&lt;/<span class="name">a</span>&gt;<span class="tag">&lt;/<span class="name">p</span>&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="IE-条件注释"><a href="#IE-条件注释" class="headerlink" title="IE 条件注释"></a>IE 条件注释</h2><p>以下类型的注释会被 IE9 及更早的版本读取，而被其他浏览器忽略：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Since Conditional Comments have been deprecated since Internet Explorer 10, the following script will be ignored, so only Internet Explorer 9 (and below) users will be redirected to a page asking to upgrade their browsers. --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE]&gt;</span></span><br><span class="line"><span class="comment">    &lt;script type="text/javascript" src="./js/upgrade_your_fucking_browser.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>或者<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">    &lt;div class="notice chromeframe"&gt; 您的浏览器版本 & lt;strong&gt; 很旧很旧 & lt;/strong&gt;，为了正常地访问网站，请升级您的浏览器 & lt;a target="_blank" href="http://browsehappy.com"&gt; 立即升级 & lt;/a&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>在『现代』浏览器占主导的今天，这种条件注释的一个用处是提醒 IE 用户升级浏览器。不过，IE10 及更新的 IE 不会读取这些条件注释。如果想要所有 IE 都看到提醒，可能还要靠别的办法，比如用 js 判断 User Agent。</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2017-10/一些HTML与JS的小技巧/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-10/伟安生，不玩蛇/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2017-10/伟安生，不玩蛇/" class="post-title-link" itemprop="url">伟安生，不玩蛇</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2017-10-19 10:07:35" itemprop="dateCreated datePublished" datetime="2017-10-19T10:07:35+08:00">2017-10-19</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">14</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">1 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>安德罗妮：这不是我说的。</p>
-<p><img src="/images/2017-10/SNAKE.jpg" alt=""></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-10/MacBook使用一块移动硬盘做Win To Go及Time Machine备份/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2017-10/MacBook使用一块移动硬盘做Win To Go及Time Machine备份/" class="post-title-link" itemprop="url">MacBook 使用一块移动硬盘做 Win To Go 及 Time Machine 备份</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2017-10-15 12:35:38" itemprop="dateCreated datePublished" datetime="2017-10-15T12:35:38+08:00">2017-10-15</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
+<i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
+<i class="fa fa-file-word-o"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">3.8k</span>
+<span title="本文字数">1.4k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
+<i class="fa fa-clock-o"></i>
 </span>
 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">3 分钟</span>
+<span title="阅读时长">1 分钟</span>
 </div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p><img src="/images/2017-10/macbookair.png" alt=""></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>博主使用的 MacBook Air，256G 闪存，可用空间约 251G，曾经的分区表为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/dev/disk0 (internal, physical):</span><br><span class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></span><br><span class="line">   0:      GUID_partition_scheme                        *251.0 GB   disk0</span><br><span class="line">   1:                        EFI EFI                     209.7 MB   disk0s1</span><br><span class="line">   2:                 Apple_APFS Container disk1         215.4 GB   disk0s2</span><br><span class="line">   3:                   Bootcamp                         35.2 GB    disk0s3</span><br><span class="line">   4:            Winows Recovery                         212.4 MB   disk0s3</span><br><span class="line"></span><br><span class="line">/dev/disk1 (synthesized):</span><br><span class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></span><br><span class="line">   0:      APFS Container Scheme –                      +215.4 GB   disk1</span><br><span class="line">                                 Physical Store disk0s2</span><br><span class="line">   1:                APFS Volume Macintosh HD            152.3 GB   disk1s1</span><br><span class="line">   2:                APFS Volume Preboot                 20.1 MB    disk1s2</span><br><span class="line">   3:                APFS Volume Recovery                520.0 MB   disk1s3</span><br><span class="line">   4:                APFS Volume VM                      3.2 GB     disk1s4</span><br></pre></td></tr></table></figure></p>
-<p>（这是使用 <code>diskutil list</code> 命令输出的结果）</p>
+<p><a href="/2018-01/将摩尔斯电键改造为USB键盘/">上一篇文章</a>介绍了使用Teensy 3.2将摩尔斯电键变为键盘的方法。经过研究，博主决定使用Arduino Leonardo实现之。相比Teensy 3.2，Arduino Leonardo成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。</p>
+<p><img src="/images/2018-01/IMG_4488.jpg" alt=""></p>
+<p>Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入/输出引脚（在写入程序时可以定义各个引脚的作用，其中最多有7个可用于PWM输出、12个可用于模拟输入），一个16 MHz的晶体振荡器，一个Micro USB接口，一个DC接口，一个ICSP接口，一个复位按钮。它包含了支持微控制器所需的一切，你可以简单地通过把它连接到计算机的USB接口来驱动它。<br>Leonardo不同于之前所有的Arduino控制器，他直接使用了ATmega32U4的USB通信功能，取消了USB转UART芯片。这使得Leonardo不仅可以作为一个虚拟的（CDC）串行/COM端口，还可以作为鼠标或者键盘连接到计算机。更多内容可以<a href="https://store.arduino.cc/usa/arduino-leonardo-with-headers" target="_blank" rel="noopener">参考文档</a>（在DOCUMENTATION选单中包含完整电路图）。</p>
 <!--noindex-->
 <div class="post-button text-center">
-<a class="btn" href="/2017-10/MacBook使用一块移动硬盘做Win To Go及Time Machine备份/#more" rel="contents">
+<a class="btn" href="/2018-01/将电键变为鼠标和键盘——实现篇/#more" rel="contents">
 阅读全文 &raquo;
 </a>
 </div>
@@ -411,7 +219,7 @@ page-home">
 </article>
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-10/C语言控制台程序清除输入缓冲区/">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-01/将摩尔斯电键改造为USB键盘/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
@@ -422,51 +230,46 @@ page-home">
 </span>
 <header class="post-header">
 <h1 class="post-title" itemprop="name headline">
-<a href="/2017-10/C语言控制台程序清除输入缓冲区/" class="post-title-link" itemprop="url">C 语言控制台程序清除输入缓冲区</a>
+<a href="/2018-01/将摩尔斯电键改造为USB键盘/" class="post-title-link" itemprop="url">将摩尔斯电键改造为USB键盘</a>
 </h1>
 <div class="post-meta">
 <span class="post-time">
 <span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
+<i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2017-10-09 10:07:57" itemprop="dateCreated datePublished" datetime="2017-10-09T10:07:57+08:00">2017-10-09</time>
+<time title="创建时间：2018-01-08 11:02:35" itemprop="dateCreated datePublished" datetime="2018-01-08T11:02:35+08:00">2018-01-08</time>
 </span>
 <span class="post-category">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
+<i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
+<i class="fa fa-file-word-o"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">984</span>
+<span title="本文字数">5.9k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
+<i class="fa fa-clock-o"></i>
 </span>
 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">1 分钟</span>
+<span title="阅读时长">5 分钟</span>
 </div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>编写 C 语言控制台程序时，如果使用 <code>scanf()</code> 函数作为输入，往往需要解决非法输入的问题。比如以下情况：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"输入一个 0~9 的整数 a\n"</span>);</span><br><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a);</span><br></pre></td></tr></table></figure></p>
-<p>此时可能出现如下几种典型的非法输入：</p>
-<ul>
-<li>123</li>
-<li>123xyz</li>
-<li>xyz123</li>
-</ul>
-<p>对于第一种，使用 if 判断 a 的范围是否满足要求即可。第二种和第三种则较为复杂，因为其中涉及到了字符的输入。第二种情况，<code>scanf()</code> 会将 123 存入 a，而 xyz 留在了输入缓冲区；第三种情况，<code>scanf()</code> 不会读取任何数据，xyz123 都留在了输入缓冲区。<br>如果只是判断这一次输入的合法性，可以利用 <code>scanf()</code> 的返回值。如果输入有效，<code>scanf()</code> 会返回 1，否则返回 0。由此可以排除 <code>scanf()</code> 无法读取的输入。</p>
+<p><img src="/images/2018-01/Vi93ahx.jpg" alt=""></p>
+<p>The finished Morse key sitting happily on my laptop. Full project details below.<br>最终完成的莫尔斯键盘与笔记本电脑的合影～整个项目的细节如下：</p>
+<p>Background: I can just about remember growing up around beautifully designed analogue devices like rotary dial phones, typewriters, and record players. I’ve always like the idea of converting these largely defunct objects into digital devices, and my Dad’s old Morse key seemed like a simple project to get started on.<br>背景：打从记事以来，我就生活在设计精美的模拟设备的环境中，比如旋转式拨号电话，打字机和唱片机。我一直有把这些大部分现在不常用的东西转换成数字设备的想法，而这其中，老爸的旧莫尔斯电键看起来像是一个简单的项目。</p>
 <!--noindex-->
 <div class="post-button text-center">
-<a class="btn" href="/2017-10/C语言控制台程序清除输入缓冲区/#more" rel="contents">
+<a class="btn" href="/2018-01/将摩尔斯电键改造为USB键盘/#more" rel="contents">
 阅读全文 &raquo;
 </a>
 </div>
@@ -479,7 +282,7 @@ page-home">
 </article>
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-10/Minecraft存档Galaxy City地铁图（前瞻版）/">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-12/2017——生命中的一年/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
@@ -490,33 +293,33 @@ page-home">
 </span>
 <header class="post-header">
 <h1 class="post-title" itemprop="name headline">
-<a href="/2017-10/Minecraft存档Galaxy City地铁图（前瞻版）/" class="post-title-link" itemprop="url">Minecraft 存档 Galaxy City 地铁图（前瞻版）</a>
+<a href="/2017-12/2017——生命中的一年/" class="post-title-link" itemprop="url">2017——生命中的一年</a>
 </h1>
 <div class="post-meta">
 <span class="post-time">
 <span class="post-meta-item-icon">
-<i class="far fa-calendar"></i>
+<i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2017-10-07 09:06:41" itemprop="dateCreated datePublished" datetime="2017-10-07T09:06:41+08:00">2017-10-07</time>
+<time title="创建时间：2017-12-31 00:47:19" itemprop="dateCreated datePublished" datetime="2017-12-31T00:47:19+08:00">2017-12-31</time>
 </span>
 <span class="post-category">
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-folder"></i>
+<i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
-<i class="far fa-file-word"></i>
+<i class="fa fa-file-word-o"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">1</span>
+<span title="本文字数">1.6k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
-<i class="far fa-clock"></i>
+<i class="fa fa-clock-o"></i>
 </span>
 <span class="post-meta-item-text">阅读时长 &asymp;</span>
 <span title="阅读时长">1 分钟</span>
@@ -524,7 +327,203 @@ page-home">
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p><img src="/images/2017-10/GalaxyCity.svg" alt=""></p>
+<blockquote>
+<p>标题来自纪录片《J.K.罗琳——生命中的一年》。</p>
+</blockquote>
+<p>不知不觉就到了2017年的最后一天。由于没有写日记的习惯，总感觉还是需要做些什么，以免一些事情太快被遗忘。于是决定写篇文章，记录一下这一年里的经历（实际上只是些流水账）。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2017-12/2017——生命中的一年/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-12/下载70年代美帝拍摄的卫星图/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2017-12/下载70年代美帝拍摄的卫星图/" class="post-title-link" itemprop="url">下载70年代美帝拍摄的卫星图</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2017-12-30 15:00:23" itemprop="dateCreated datePublished" datetime="2017-12-30T15:00:23+08:00">2017-12-30</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">1.5k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">1 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p><img src="/images/2017-12/kh1.jpg" alt=""></p>
+<p>这是1972年5月29日美国间谍卫星拍摄的北京大学。这张照片来自美国地质调查局（USGS）图片数据库。美国于90年代以及21世纪初分几批解密了冷战时期美国间谍卫星拍摄的照片。作为冷战时期的敌国，间谍卫星记录下了当时几乎中国全境的高清卫星照片，这里分享一下照片下载的具体方法。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2017-12/下载70年代美帝拍摄的卫星图/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-12/JavaScript运算符/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2017-12/JavaScript运算符/" class="post-title-link" itemprop="url">JavaScript运算符</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2017-12-12 16:57:05" itemprop="dateCreated datePublished" datetime="2017-12-12T16:57:05+08:00">2017-12-12</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">386</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">1 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>按优先级排列：</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>. [] ()</td>
+<td>字段访问、数组下标、函数调用以及表达式分组</td>
+</tr>
+<tr>
+<td>++ – - ~ ! delete new typeof void</td>
+<td>一元运算符、返回数据类型、对象创建、未定义值</td>
+</tr>
+<tr>
+<td>* / %</td>
+<td>乘法、除法、取模</td>
+</tr>
+<tr>
+<td>+ - +</td>
+<td>加法、减法、字符串连接</td>
+</tr>
+<tr>
+<td>&lt;&lt; &gt;&gt; &gt;&gt;&gt;</td>
+<td>移位</td>
+</tr>
+<tr>
+<td>&lt; &lt;= &gt; &gt;= instanceof</td>
+<td>小于、小于等于、大于、大于等于、instanceof</td>
+</tr>
+<tr>
+<td>== != === !==</td>
+<td>等于、不等于、严格相等、非严格相等</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>按位与</td>
+</tr>
+<tr>
+<td>^</td>
+<td>按位异或</td>
+</tr>
+<tr>
+<td>&#124;</td>
+<td>按位或</td>
+</tr>
+<tr>
+<td>&amp;&amp;</td>
+<td>逻辑与</td>
+</tr>
+<tr>
+<td>&#124;&#124;</td>
+<td>逻辑或</td>
+</tr>
+<tr>
+<td>?:</td>
+<td>条件</td>
+</tr>
+<tr>
+<td>= oP=</td>
+<td>赋值、运算赋值</td>
+</tr>
+<tr>
+<td>,</td>
+<td>多重求值</td>
+</tr>
+</tbody>
+</table>
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -533,7 +532,7 @@ page-home">
 </article>
 </section>
 <nav class="pagination">
-<a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+<a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
 </nav>
 </div>
 </div>
@@ -641,11 +640,11 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/src/utils.js?v=6.7.0"></script>
-<script src="/js/src/motion.js?v=6.7.0"></script>
-<script src="/js/src/affix.js?v=6.7.0"></script>
-<script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
-<script src="/js/src/bootstrap.js?v=6.7.0"></script>
+<script src="/js/src/utils.js?v=7.0.0"></script>
+<script src="/js/src/motion.js?v=7.0.0"></script>
+<script src="/js/src/affix.js?v=7.0.0"></script>
+<script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+<script src="/js/src/bootstrap.js?v=7.0.0"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
@@ -966,44 +965,8 @@ onPopupClose();
 }
 });
 </script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-processEscapes: true,
-skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-},
-TeX: {
-equationNumbers: {
-autoNumber: "AMS"
-}
-},
-"HTML-CSS": {
-linebreaks: { automatic: true },
-EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-},
-SVG: {
-linebreaks: { automatic: true },
-EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-},
-PreviewHTML: { linebreaks: { automatic: true } },
-CommonHTML: { linebreaks: { automatic: true } }
-});
-</script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Queue(function() {
-var all = MathJax.Hub.getAllJax(), i;
-for (i = 0; i < all.length; i += 1) {
-all[i].SourceElement().parentNode.className += ' has-jax';
-}
-});
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
-<style>
-.MathJax_Display {
-overflow: auto hidden;
-}
-</style>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script>pangu.spacingPage();</script>
 <style>
 .copy-btn {
 display: inline-block;

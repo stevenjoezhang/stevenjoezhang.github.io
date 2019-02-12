@@ -440,14 +440,16 @@ kbd {
 .use-motion .motion-element {
   opacity: 0;
 }
-table {
+.table-container {
   margin: 20px 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+table {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px solid #ddd;
   font-size: 14px;
-  word-break: break-all;
 }
 table>tbody>tr:nth-of-type(odd) {
   background-color: #f9f9f9;
@@ -465,8 +467,8 @@ td {
 }
 th,
 td {
+  border: 1px solid #ddd;
   border-bottom: 3px solid #ddd;
-  border-right: 1px solid #eee;
 }
 th {
   padding-bottom: 10px;
@@ -1374,20 +1376,14 @@ pre .javascript .function {
 .posts-expand .post-body h6:hover .header-anchor {
   visibility: visible;
 }
-.posts-expand .post-body ul li {
+.posts-expand .post-body ul > li {
   list-style: circle;
 }
 .posts-expand .post-body img {
   box-sizing: border-box;
-  margin: auto;
+  margin: 0 auto 25px;
   padding: 3px;
   border: 1px solid #ddd;
-}
-.posts-expand .post-body .fancybox img {
-  margin: 0 auto 25px;
-}
-.posts-expand .post-body img {
-  margin: 0 auto 25px;
 }
 @media (max-width: 767px) {
   .posts-collapse {
@@ -2017,7 +2013,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4e937a;
+  background: #6245ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3301,6 +3297,13 @@ ul.breadcrumb li+li:last-child {
 }
 body {
   overflow-x: hidden;
+  overscroll-behavior: none;
+}
+video {
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .links-of-blogroll {
   margin-top: 5px;

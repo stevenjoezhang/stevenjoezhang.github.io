@@ -46,7 +46,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-11/Unit_relations_in_the_old_SI.svg">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-11/Unit_relations_in_the_new_SI.svg">
-<meta property="og:updated_time" content="2019-02-05T10:32:30.851Z">
+<meta property="og:updated_time" content="2019-02-10T14:29:18.145Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="国际单位制基本单位的重新定义">
 <meta name="twitter:description" content="前言国际单位制以一组基本单位为基础，所有其他单位都是用基本单位建立起来的。麦克斯韦最初提出一致单位制的概念时，列出了三个可用的基本单位：质量、长度及时间单位。之后，吉奥尔吉提倡加入电的基本单位。理论上，电流、电势、电阻、电荷等物理量的单位都可以做基本单位，当选定其中一个做基本单位后，其余的电单位都可以通过物理定律从基本单位推导得出；国际单位制最终选择了使用电流。后期又加入了三个分别量度物质的量、温">
@@ -262,7 +262,6 @@ top: initial;
 <h2 id="依赖关系"><a href="#依赖关系" class="headerlink" title="依赖关系"></a>依赖关系</h2><p>由于定义的变化，这些单位之间的依赖关系也发生了改变。</p>
 <p><img src="/images/2018-11/Unit_relations_in_the_old_SI.svg" alt=""><br><img src="/images/2018-11/Unit_relations_in_the_new_SI.svg" alt=""></p>
 <h2 id="不确定度"><a href="#不确定度" class="headerlink" title="不确定度"></a>不确定度</h2><p>同样，由于定义的变化，一些物理量的不确定度也发生了改变。例如，真空磁导率$\mu_0$将不再具有定义值$4\pi\times10^{-7}m\cdot kg\cdot s^{-2}\cdot A^{-2}$，水的三相点温度也不再严格地等于273.16K。下表给出了它们在改动后的影响：</p>
-<div style="overflow-x: scroll !important; white-space: nowrap;">
 <table>
 <thead>
 <tr>
@@ -479,7 +478,7 @@ top: initial;
 </tr>
 </tbody>
 </table>
-<p></p></div><br>注：其中，$c$为光速（speed of light），$\alpha$为精细结构常数（fine-structure constant），$R_\infty$为里德伯常量（Rydberg constant）。<p></p>
+<p>注：其中，$c$为光速（speed of light），$\alpha$为精细结构常数（fine-structure constant），$R_\infty$为里德伯常量（Rydberg constant）。</p>
 <p>参考文章：<br><a href="https://en.wikipedia.org/wiki/2019_redefinition_of_SI_base_units" target="_blank" rel="noopener">Redefinition of SI base units</a><br><a href="https://en.wikipedia.org/wiki/International_System_of_Units" target="_blank" rel="noopener">国际单位制</a></p>
 <p>拓展阅读：<br><a href="https://mp.weixin.qq.com/s/bYIHtP3B33rPAHYWIvNatQ" target="_blank" rel="noopener">刚刚，『千克』被重新定义！大K从此成为历史</a></p>
 </div>
@@ -566,7 +565,7 @@ Safari顶栏彩虹效果 <i class="fa fa-chevron-right"></i>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">92</span>
+<span class="site-state-item-count">94</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -988,22 +987,22 @@ onPopupClose();
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
 tex2jax: {
-inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
 processEscapes: true,
 skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
 },
 TeX: {
 equationNumbers: {
-autoNumber: "AMS"
+autoNumber: 'AMS'
 }
 }
 });
-MathJax.Hub.Register.StartupHook("TeX Jax Ready", function() {
+MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
 MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
 if (data.display) {
 var next = data.script.nextSibling;
-while (next && next.nodeName.toLowerCase() === "#text") { next = next.nextSibling }
-if (next && next.nodeName.toLowerCase() === "br") { next.parentNode.removeChild(next) }
+while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
 }
 });
 });
@@ -1019,7 +1018,8 @@ all[i].SourceElement().parentNode.className += ' has-jax';
 <script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
 <style>
 .MathJax_Display {
-overflow: auto hidden;
+overflow-x: scroll;
+overflow-y: hidden;
 }
 </style>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>

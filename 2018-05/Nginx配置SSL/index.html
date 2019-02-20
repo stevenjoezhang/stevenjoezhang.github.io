@@ -44,7 +44,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="安装CertBot首先，克隆Certbot在GitHub上的仓库到本地：1git clone https://github.com/certbot/certbot.git 在certbot文件夹下，有一个shell脚本，名为certbot-auto。你可以将其软链接为certbot，方便进行接下来的步骤。具体操作是，在你的家目录~下的.bashrc或.bash_profile文件中追加以下内容：1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-29T16:51:57.828Z">
+<meta property="og:updated_time" content="2019-02-12T03:39:35.530Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx配置SSL">
 <meta name="twitter:description" content="安装CertBot首先，克隆Certbot在GitHub上的仓库到本地：1git clone https://github.com/certbot/certbot.git 在certbot文件夹下，有一个shell脚本，名为certbot-auto。你可以将其软链接为certbot，方便进行接下来的步骤。具体操作是，在你的家目录~下的.bashrc或.bash_profile文件中追加以下内容：1">
@@ -251,6 +251,7 @@ top: initial;
 </ul>
 <p>所以，一个典型满足HSTS preload list的响应头部为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Strict-Transport-Security: max-age=31536000; includeSubDomains; preload;</span><br></pre></td></tr></table></figure></p>
 <p>通过配置Nginx，利用<code>add_header</code>加上这个响应头，然后就可以在HSTS preload list的<a href="https://hstspreload.org" target="_blank" rel="noopener">官方网站</a>上进行申请了。从申请到审核通过，时间在几天到几周不等。申请后，你可以随时查询最新的状态，也可以在Chrome浏览器的地址框中输入<code>chrome://net-internals/#hsts</code>查看。从审核通过到正式加入到Chrome的stable release版本中还需要一段时间，因为还要经过canary、dev、beta以及stable progression等步骤。</p>
+<hr>
 <p>参考文章：<br><a href="https://blog.csdn.net/p793049488/article/details/53483381" target="_blank" rel="noopener">nginx+ssl配置http和https共存</a><br><a href="https://segmentfault.com/a/1190000005797776" target="_blank" rel="noopener">手把手教你在Nginx上使用CertBot</a></p>
 <p>本文更新于2018年7月28日：<br>在较新版本中，<code>ssl on</code>不再被使用，否则会报错：[warn] the “ssl” directive is deprecated, use the “listen … ssl” directive instead；将推荐的CertBot安装方式由包管理工具改为Git项目。</p>
 </div>
@@ -366,11 +367,14 @@ RSS
 <div class="links-of-blogroll motion-element links-of-blogroll-block">
 <div class="links-of-blogroll-title">
 <i class="fa  fa-fw fa-university"></i>
-主站
+链接
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
 <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+</li>
+<li class="links-of-blogroll-item">
+<a href="http://www.three-body.org" title="http://www.three-body.org" rel="noopener" target="_blank">Three Body</a>
 </li>
 </ul>
 </div>
@@ -385,6 +389,7 @@ RSS
 <!--/noindex-->
 </div>
 </aside>
+<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">

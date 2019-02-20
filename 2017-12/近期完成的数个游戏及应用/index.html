@@ -44,7 +44,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="最近这段时间，博主沉迷编程，除了课内的作业需要肝DDL之外，也做了一些娱乐项目。下面一一道来。 生命游戏康威生命游戏（Conway’s Game of Life）是英国数学家约翰·何顿·康威在1970年发明的细胞自动机。它最初于1970年10月在《科学美国人》杂志上马丁·葛登能的『数学游戏』专栏出现。 概述生命游戏是一个零玩家游戏。它包括一个二维矩形世界，这个世界中的每个方格居住着一个活着的或死了">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-25T08:46:20.637Z">
+<meta property="og:updated_time" content="2019-02-13T02:04:25.586Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="近期完成的数个游戏及应用">
 <meta name="twitter:description" content="最近这段时间，博主沉迷编程，除了课内的作业需要肝DDL之外，也做了一些娱乐项目。下面一一道来。 生命游戏康威生命游戏（Conway’s Game of Life）是英国数学家约翰·何顿·康威在1970年发明的细胞自动机。它最初于1970年10月在《科学美国人》杂志上马丁·葛登能的『数学游戏』专栏出现。 概述生命游戏是一个零玩家游戏。它包括一个二维矩形世界，这个世界中的每个方格居住着一个活着的或死了">
@@ -227,11 +227,12 @@ top: initial;
 <li>当前细胞为存活状态时，当周围有3个以上的存活细胞时，该细胞变成死亡状态。（模拟生命数量过多）</li>
 <li>当前细胞为死亡状态时，当周围有3个存活细胞时，该细胞变成存活状态。（模拟繁殖）</li>
 </ul>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>可以把最初的细胞结构定义为种子，当所有在种子中的细胞同时被以上规则处理后，可以得到第一代细胞图。按规则继续处理当前的细胞图，可以得到下一代的细胞图，周而复始。<br>在这个游戏中，还可以设定一些更加复杂的规则，例如当前方格的状况不仅由父一代决定，而且还考虑祖父一代的情况。玩家还可以作为这个世界的『上帝』，随意设定某个方格细胞的死活，以观察对世界的影响。<br>在游戏的进行中，杂乱无序的细胞会逐渐演化出各种精致、有形的结构；这些结构往往有很好的对称性，而且每一代都在变化形状。一些形状已经锁定，不会逐代变化。有时，一些已经成形的结构会因为一些无序细胞的『入侵』而被破坏。但是形状和秩序经常能从杂乱中产生出来。<br>这个游戏被许多计算机程序实现了。Unix世界中的许多黑客喜欢玩这个游戏，他们用字符代表一个细胞，在一个计算机屏幕上进行演化。比较著名的例子是，GNU Emacs编辑器中就包括这样一个小游戏。<br>查看更多信息：<a href="http://www.conwaylife.com" target="_blank" rel="noopener">ConwayLife.com</a><br>多平台元胞自动机模拟软件Golly，下载地址：<a href="https://sourceforge.net/projects/golly" target="_blank" rel="noopener">Golly - sourceforge</a><br>访问地址：<a href="https://galaxymimi.com/app/life.html" target="_blank" rel="noopener">主站&gt;应用&gt;小游戏&gt;Life</a></p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>可以把最初的细胞结构定义为种子，当所有在种子中的细胞同时被以上规则处理后，可以得到第一代细胞图。按规则继续处理当前的细胞图，可以得到下一代的细胞图，周而复始。<br>在这个游戏中，还可以设定一些更加复杂的规则，例如当前方格的状况不仅由父一代决定，而且还考虑祖父一代的情况。玩家还可以作为这个世界的『上帝』，随意设定某个方格细胞的死活，以观察对世界的影响。<br>在游戏的进行中，杂乱无序的细胞会逐渐演化出各种精致、有形的结构；这些结构往往有很好的对称性，而且每一代都在变化形状。一些形状已经锁定，不会逐代变化。有时，一些已经成形的结构会因为一些无序细胞的『入侵』而被破坏。但是形状和秩序经常能从杂乱中产生出来。<br>这个游戏被许多计算机程序实现了。Unix世界中的许多黑客喜欢玩这个游戏，他们用字符代表一个细胞，在一个计算机屏幕上进行演化。比较著名的例子是，GNU Emacs编辑器中就包括这样一个小游戏。<br>查看更多信息：<a href="http://www.conwaylife.com" target="_blank" rel="noopener">ConwayLife.com</a><br>多平台元胞自动机模拟软件Golly，下载地址：<a href="https://sourceforge.net/projects/golly" target="_blank" rel="noopener">Golly - sourceforge</a><br>访问地址：<a href="https://galaxymimi.com/app/life.html" target="_blank" rel="noopener">Galaxy Mimi&gt;应用&gt;小游戏&gt;Life</a></p>
 <a id="more"></a>
-<h2 id="Bad-Apple"><a href="#Bad-Apple" class="headerlink" title="Bad Apple!!"></a>Bad Apple!!</h2><p>这是一个二次开发的项目，能够在HTML页面中播放Bad Apple!!字符画。实现方式比较naive，通过Ajax请求不断地获取新画面，然后播放出来，并与音轨保持同步。可以改进的地方有很多，比如请求的文件含有大量相同符号，可以进行压缩来增加缓冲效率。<br>访问地址：<a href="https://galaxymimi.com/app/life.html" target="_blank" rel="noopener">主站&gt;应用&gt;魔改项目&gt;BadApple</a></p>
-<h2 id="Play-Coins"><a href="#Play-Coins" class="headerlink" title="Play Coins!"></a>Play Coins!</h2><p>这个弹硬币的游戏来自于高中时在教室里进行的娱乐活动。本项目于2017年11月23日晚开始构思，11月24日完成了框架，包括物理引擎的相关计算，11月25日完成了跨平台适配，11月26日加入了背景音乐，修复了大量bug，11月27日加入了欢呼音效和音频的跨浏览器适配。现在，它已经可以流畅地在全平台运行了。<br>访问地址：<a href="https://galaxymimi.com/app/coin/" target="_blank" rel="noopener">主站&gt;应用&gt;原创游戏&gt;Coin</a></p>
+<h2 id="Bad-Apple"><a href="#Bad-Apple" class="headerlink" title="Bad Apple!!"></a>Bad Apple!!</h2><p>这是一个二次开发的项目，能够在HTML页面中播放Bad Apple!!字符画。实现方式比较naive，通过Ajax请求不断地获取新画面，然后播放出来，并与音轨保持同步。可以改进的地方有很多，比如请求的文件含有大量相同符号，可以进行压缩来增加缓冲效率。<br>访问地址：<a href="https://galaxymimi.com/app/life.html" target="_blank" rel="noopener">Galaxy Mimi&gt;应用&gt;魔改项目&gt;BadApple</a></p>
+<h2 id="Play-Coins"><a href="#Play-Coins" class="headerlink" title="Play Coins!"></a>Play Coins!</h2><p>这个弹硬币的游戏来自于高中时在教室里进行的娱乐活动。本项目于2017年11月23日晚开始构思，11月24日完成了框架，包括物理引擎的相关计算，11月25日完成了跨平台适配，11月26日加入了背景音乐，修复了大量bug，11月27日加入了欢呼音效和音频的跨浏览器适配。现在，它已经可以流畅地在全平台运行了。<br>访问地址：<a href="https://galaxymimi.com/app/coin/" target="_blank" rel="noopener">Galaxy Mimi&gt;应用&gt;原创游戏&gt;Coin</a></p>
 <h2 id="任意位整数计算器"><a href="#任意位整数计算器" class="headerlink" title="任意位整数计算器"></a>任意位整数计算器</h2><p>这个项目被命名为MHC - MHC Hyper Calculator，是一个用C语言编写的计算器，作为本学期计算概论课程大作业的成果。该计算器支持任意大数字的加减乘除求余乘方阶乘运算，拓展功能则是RSA加密和中文输出。<br>虽然在这个项目上耗费了不少时间，算是摸清楚了RSA算法的门道，但由于只是完成作业，就不把项目源代码贴出来献丑了。这种重复造轮子的工作，还是应该以提升自己的水平为主要目的。</p>
+<hr>
 <p>拓展阅读：<br><a href="https://www.guokr.com/article/439770" target="_blank" rel="noopener">【果壳网专访】斯蒂芬·沃尔夫勒姆：宇宙的本质是计算</a><br><a href="https://blog.csdn.net/qmickecs/article/details/39676655" target="_blank" rel="noopener">RSA算法之实现篇</a></p>
 </div>
 <div>
@@ -346,11 +347,14 @@ RSS
 <div class="links-of-blogroll motion-element links-of-blogroll-block">
 <div class="links-of-blogroll-title">
 <i class="fa  fa-fw fa-university"></i>
-主站
+链接
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
 <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+</li>
+<li class="links-of-blogroll-item">
+<a href="http://www.three-body.org" title="http://www.three-body.org" rel="noopener" target="_blank">Three Body</a>
 </li>
 </ul>
 </div>
@@ -365,6 +369,7 @@ RSS
 <!--/noindex-->
 </div>
 </aside>
+<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">

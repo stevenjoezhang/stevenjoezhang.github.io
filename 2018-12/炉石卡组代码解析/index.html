@@ -45,7 +45,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:description" content="在前面的文章Base64编码的原理与实现中，讲到了Base64编码的诸多用处，例如编码图片以嵌入HTML代码。如果你对此有所了解，同时还是一个炉石玩家，就不难发现，暴雪推出的卡组代码功能，本质上就是用一个Base64编码的字符串来存储卡组信息。毕竟，你有时会见到以=或者==结尾的卡组代码，这正是Base64编码的典型特征。 注释当把卡组代码粘贴到炉石传说时，客户端将忽略以#字符开头的任何行，这就提">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-12/tyrande.png">
-<meta property="og:updated_time" content="2019-02-05T10:32:30.869Z">
+<meta property="og:updated_time" content="2019-02-13T23:50:32.965Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="炉石卡组代码解析">
 <meta name="twitter:description" content="在前面的文章Base64编码的原理与实现中，讲到了Base64编码的诸多用处，例如编码图片以嵌入HTML代码。如果你对此有所了解，同时还是一个炉石玩家，就不难发现，暴雪推出的卡组代码功能，本质上就是用一个Base64编码的字符串来存储卡组信息。毕竟，你有时会见到以=或者==结尾的卡组代码，这正是Base64编码的典型特征。 注释当把卡组代码粘贴到炉石传说时，客户端将忽略以#字符开头的任何行，这就提">
@@ -248,7 +248,8 @@ top: initial;
 <p>所谓『卡组中存在n张的卡』，指的是卡组中的所有其他卡牌。此数组是一个varint对组成的列表，每一对的第一个元素表示DBF ID，第二个元素是该卡牌在卡组中出现的次数。它<strong>应该</strong>只包含在牌组中至少出现三次的牌，因而意味着它（在这种情况下）对于构筑卡组应当是空的（毕竟一张卡至多只能带两张）；但理论上它也可以包含有一张的卡和有两张的卡。</p>
 <p>尽管最终排序无关紧要，但卡牌仍会在各自所在的数组中，按DBF ID的升序进行排序，以便始终为相同的卡组生成相同的卡组代码。我们称所有按照这种方式排列卡牌列表（包括英雄）的卡组代码为规范的卡组代码。下面的参考实现应该已经可以生成规范的卡组代码。</p>
 <h2 id="一种实现"><a href="#一种实现" class="headerlink" title="一种实现"></a>一种实现</h2><p>看代码可能比文字描述更加直观。下面的<code>parse_deck()</code>函数就会按照前面介绍的方法，依次读取元数据块和卡牌块的信息。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parse_deck</span><span class="params">($data)</span> </span>&#123;</span><br><span class="line">    $reserve = read_varint($data);</span><br><span class="line">    <span class="keyword">if</span> ($reserve != <span class="number">0</span>) &#123;</span><br><span class="line">        printf(<span class="string">"Invalid deckstring"</span>);</span><br><span class="line">        <span class="keyword">die</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    $version = read_varint($data);</span><br><span class="line">    <span class="keyword">if</span> ($version != <span class="number">1</span>) &#123;</span><br><span class="line">        printf(<span class="string">"Unsupported deckstring version %s"</span>, $version);</span><br><span class="line">        <span class="keyword">die</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    $format = read_varint($data);</span><br><span class="line">    $heroes = [];</span><br><span class="line">    $num_heroes = read_varint($data);</span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $num_heroes; $i++) &#123;</span><br><span class="line">        $heroes[] = read_varint($data);</span><br><span class="line">    &#125;</span><br><span class="line">    $cards = [];</span><br><span class="line">    $num_cards_x1 = read_varint($data);</span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $num_cards_x1; $i++) &#123;</span><br><span class="line">        $card_id = read_varint($data);</span><br><span class="line">        $cards[] = [$card_id, <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    $num_cards_x2 = read_varint($data);</span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $num_cards_x2; $i++) &#123;</span><br><span class="line">        $card_id = read_varint($data);</span><br><span class="line">        $cards[] = [$card_id, <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    $num_cards_xn = read_varint($data);</span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $num_cards_xn; $i++) &#123;</span><br><span class="line">        $card_id = read_varint($data);</span><br><span class="line">        $count = read_varint($data);</span><br><span class="line">        $cards[] = [$card_id, $count];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> [$cards, $heroes, $format];</span><br><span class="line">&#125;</span><br><span class="line">parse_deck($arr);</span><br></pre></td></tr></table></figure></p>
-<p>这时，再通过建立DBF ID与卡牌对应关系的数据库，就能够实现在游戏外导入、导出和编辑卡组的功能了。不论是官方的<a href="https://hs.blizzard.cn/cards" target="_blank" rel="noopener">卡牌工具</a>，还是第三方平台（如旅法师营地）的<a href="https://www.iyingdi.com/web/tools/hearthstone/decks" target="_blank" rel="noopener">套牌编辑</a>功能，原理都是相似的。<br>所有代码已开源：<a href="https://github.com/stevenjoezhang/Hearthstone-Deck" target="_blank" rel="noopener">Hearthstone-Deck</a><br>其他语言的实现方式可以在<a href="https://github.com/HearthSim" target="_blank" rel="noopener">HearthSim</a>的官方GitHub账户下找到。</p>
+<p>这时，再通过建立DBF ID与卡牌对应关系的数据库，就能够实现在游戏外导入、导出和编辑卡组的功能了。不论是官方的<a href="https://hs.blizzard.cn/cards" target="_blank" rel="noopener">卡牌工具</a>，还是第三方平台（如旅法师营地）的<a href="https://www.iyingdi.com/web/tools/hearthstone/decks" target="_blank" rel="noopener">套牌编辑</a>功能，原理都是相似的。<br>所有代码已开源：<a href="https://github.com/stevenjoezhang/hearthstone-deck" target="_blank" rel="noopener">Hearthstone-Deck</a><br>其他语言的实现方式可以在<a href="https://github.com/HearthSim" target="_blank" rel="noopener">HearthSim</a>的官方GitHub账户下找到。</p>
+<hr>
 <p>博主搭建的API：<a href="https://api.galaxymimi.com/deck/" target="_blank" rel="noopener">炉石传说卡组</a></p>
 <p>拓展阅读：<br><a href="https://2heng.xin/2018/12/12/embed-hearthstone-deck-with-iframe" target="_blank" rel="noopener">在网页上展示你的炉石卡组吧</a><br><a href="https://www.darkerror.com/2018/05/hearth-stone-deck-string-decoding" target="_blank" rel="noopener">炉石传说卡组代码生成机制</a><br><a href="https://hearthsim.info/docs/deckstrings" target="_blank" rel="noopener">Hearthstone Deckstrings</a></p>
 </div>
@@ -364,11 +365,14 @@ RSS
 <div class="links-of-blogroll motion-element links-of-blogroll-block">
 <div class="links-of-blogroll-title">
 <i class="fa  fa-fw fa-university"></i>
-主站
+链接
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
 <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+</li>
+<li class="links-of-blogroll-item">
+<a href="http://www.three-body.org" title="http://www.three-body.org" rel="noopener" target="_blank">Three Body</a>
 </li>
 </ul>
 </div>
@@ -383,6 +387,7 @@ RSS
 <!--/noindex-->
 </div>
 </aside>
+<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">

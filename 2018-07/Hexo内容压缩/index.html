@@ -44,7 +44,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="Hexo生成的博客静态页面可能存在一个问题：由于主题模版的关系，生成的页面中会有大量空白行。虽然这对浏览器的渲染影响微乎其微，但是让强迫症极为难受。一种解决方法是使用Python对页面进行处理。可以在博客的根目录下（与public文件夹同级）新建以下Python脚本：123456789101112131415161718192021222324#!/usr/bin/env python3impor">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-07T08:53:16.342Z">
+<meta property="og:updated_time" content="2019-02-12T03:40:25.151Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo内容压缩">
 <meta name="twitter:description" content="Hexo生成的博客静态页面可能存在一个问题：由于主题模版的关系，生成的页面中会有大量空白行。虽然这对浏览器的渲染影响微乎其微，但是让强迫症极为难受。一种解决方法是使用Python对页面进行处理。可以在博客的根目录下（与public文件夹同级）新建以下Python脚本：123456789101112131415161718192021222324#!/usr/bin/env python3impor">
@@ -221,6 +221,7 @@ top: initial;
 <a id="more"></a>
 <p>如果Hexo博客托管在GitHub Pages等第三方平台上，为了减少页面的加载时间，对图片等内容进行CDN加速是一个不错的方法。当然，还有一个更为直接的方法，那就是通过降低分辨率来减少图片大小。这是压缩图片的脚本：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compress_image</span><span class="params">(srcPath, dstPath)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(srcPath):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(dstPath):</span><br><span class="line">            os.makedirs(dstPath)</span><br><span class="line"></span><br><span class="line">        srcFile = os.path.join(srcPath, filename)</span><br><span class="line">        dstFile = os.path.join(dstPath, filename)</span><br><span class="line">        <span class="keyword">if</span> os.path.isfile(srcFile):</span><br><span class="line">            <span class="keyword">if</span> os.path.isfile(dstFile) <span class="keyword">or</span> (<span class="keyword">not</span> srcFile.endswith(<span class="string">".jpg"</span>) <span class="keyword">and</span> <span class="keyword">not</span> srcFile.endswith(<span class="string">".png"</span>)):</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> os.path.getsize(srcFile) &lt;= <span class="number">300000</span>:</span><br><span class="line">                shutil.copyfile(srcFile, dstFile)</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            sImg = Image.open(srcFile)</span><br><span class="line">            w, h = sImg.size</span><br><span class="line">            dImg = sImg.resize((w * <span class="number">2</span> / <span class="number">3</span>, h * <span class="number">2</span> / <span class="number">3</span>), Image.ANTIALIAS)</span><br><span class="line">            dImg.save(dstFile)</span><br><span class="line">            print(<span class="string">"\033[32mINFO\033[0m  Minified: \033[35m%s\033[0m"</span> % dstFile)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">elif</span> os.path.isdir(srcFile):</span><br><span class="line">            compress_image(srcFile, dstFile)</span><br><span class="line"></span><br><span class="line">compress_image(<span class="string">"images"</span>, <span class="string">"source/images"</span>)</span><br></pre></td></tr></table></figure></p>
 <p>在每次执行<code>hexo g</code>之前，在博客的主目录下执行该脚本，就可以将images目录下的高分辨率图片，压缩并存储到source/images目录下。如果要在Markdown文件中插入图片，使用<code>![](//images/2018-07/path/to/your/image)</code>即可。<br>这里用了递归的写法，有兴趣的话，你也可以使用<code>os.walk()</code>方法改写以上脚本，这可能会更加简洁。</p>
+<hr>
 <p>参考文章：<br><a href="https://blog.jiangjiaolong.com/hexo-next-theme-minify.html" target="_blank" rel="noopener">hexo next主题大量空白行问题</a><br><a href="https://blog.csdn.net/u012234115/article/details/50248409" target="_blank" rel="noopener">python脚本编程：批量压缩图片大小</a></p>
 <p>本文更新于2018年11月15日：<br>也可以使用官方的插件：<a href="https://github.com/hexojs/hexo-html-minifier" target="_blank" rel="noopener">hexo-html-minifier</a><br>不过这个插件的去除注释功能不太智能，会把<code>&lt;!-- more --&gt;</code>也一并去除，导致Read More功能失效。</p>
 <p>本文更新于2018年11月20日：<br>博主发现了一个不错的工具，涵盖了以上功能：<a href="https://github.com/chenzhutian/hexo-all-minifier" target="_blank" rel="noopener">hexo-all-minifier</a></p>
@@ -330,11 +331,14 @@ RSS
 <div class="links-of-blogroll motion-element links-of-blogroll-block">
 <div class="links-of-blogroll-title">
 <i class="fa  fa-fw fa-university"></i>
-主站
+链接
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
 <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+</li>
+<li class="links-of-blogroll-item">
+<a href="http://www.three-body.org" title="http://www.three-body.org" rel="noopener" target="_blank">Three Body</a>
 </li>
 </ul>
 </div>
@@ -342,6 +346,7 @@ RSS
 </div>
 </div>
 </aside>
+<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">

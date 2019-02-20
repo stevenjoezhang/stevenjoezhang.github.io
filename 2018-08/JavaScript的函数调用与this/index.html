@@ -44,7 +44,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="JavaScript函数有4种调用方式。每种方式的不同方式在于this的初始化。对this关键字有解释：一般而言，在JavaScript中，this指向函数执行时的当前对象。注意this是保留关键字，你不能修改this的值。 作为一个函数调用先看一个最简单的实例，在浏览器中：1234function myFunction() &amp;#123;    return this;&amp;#125;alert(my">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-18T09:10:26.062Z">
+<meta property="og:updated_time" content="2019-02-12T03:40:52.900Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript的函数调用与this">
 <meta name="twitter:description" content="JavaScript函数有4种调用方式。每种方式的不同方式在于this的初始化。对this关键字有解释：一般而言，在JavaScript中，this指向函数执行时的当前对象。注意this是保留关键字，你不能修改this的值。 作为一个函数调用先看一个最简单的实例，在浏览器中：1234function myFunction() &amp;#123;    return this;&amp;#125;alert(my">
@@ -241,6 +241,7 @@ top: initial;
 <p>可见两者的区别在于第二个参数：apply传入的是一个参数数组，也就是将多个参数组合成为一个数组传入，而call则作为call的参数传入（从第二个参数开始）。<br>另外一个结合前面定义的Quo构造器调用模式使用的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> statusObject = &#123;</span><br><span class="line">    status: <span class="string">'A-OK'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> status = Quo.prototype.get_status.apply(statusObject);</span><br><span class="line"><span class="built_in">console</span>.log(status); <span class="comment">// A-OK</span></span><br></pre></td></tr></table></figure></p>
 <p>在这里即使用了apply并将statusObject作为get_status的this，结果即为A-OK。</p>
 <p>以上即为四种函数的调用方法。</p>
+<hr>
 <p>参考文章：<br><a href="https://juejin.im/post/5a17c21bf265da43346f997e" target="_blank" rel="noopener">Javascript的函数调用与this</a><br><a href="https://www.runoob.com/js/js-function-invocation.html" target="_blank" rel="noopener">JavaScript 函数调用</a></p>
 <p>拓展阅读：<br>闭包深入：<a href="https://www.cnblogs.com/onepixel/p/5062456.html" target="_blank" rel="noopener">让你分分钟理解 JavaScript 闭包</a></p>
 </div>
@@ -356,11 +357,14 @@ RSS
 <div class="links-of-blogroll motion-element links-of-blogroll-block">
 <div class="links-of-blogroll-title">
 <i class="fa  fa-fw fa-university"></i>
-主站
+链接
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
 <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+</li>
+<li class="links-of-blogroll-item">
+<a href="http://www.three-body.org" title="http://www.three-body.org" rel="noopener" target="_blank">Three Body</a>
 </li>
 </ul>
 </div>
@@ -375,6 +379,7 @@ RSS
 <!--/noindex-->
 </div>
 </aside>
+<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">

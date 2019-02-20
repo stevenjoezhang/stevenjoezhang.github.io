@@ -37,14 +37,14 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
 <meta name="description" content="如果要在网页上显示一些随机的语句，获得一些人生的经验，你会选择什么？也许，一言是一个很好的选择，它可以提供一些动漫中的台词，或是网络上的各种小段子。在前面的文章有趣的Linux命令行工具中提到的fortune命令或许也可以满足需求，pure-ftpd就可以设置在连接成功时显示随机的来自fortune的语句。那除此之外呢？历史上的今天是一个不错的方案。当你访问一些门户网站的首页，有时会看到这样的栏目">
-<meta name="keywords" content="Python,MySQL,PHP">
+<meta name="keywords" content="MySQL,Python,PHP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="历史上的今天">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-12/历史上的今天/index.html">
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="如果要在网页上显示一些随机的语句，获得一些人生的经验，你会选择什么？也许，一言是一个很好的选择，它可以提供一些动漫中的台词，或是网络上的各种小段子。在前面的文章有趣的Linux命令行工具中提到的fortune命令或许也可以满足需求，pure-ftpd就可以设置在连接成功时显示随机的来自fortune的语句。那除此之外呢？历史上的今天是一个不错的方案。当你访问一些门户网站的首页，有时会看到这样的栏目">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-31T09:49:58.139Z">
+<meta property="og:updated_time" content="2019-02-12T03:44:44.812Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="历史上的今天">
 <meta name="twitter:description" content="如果要在网页上显示一些随机的语句，获得一些人生的经验，你会选择什么？也许，一言是一个很好的选择，它可以提供一些动漫中的台词，或是网络上的各种小段子。在前面的文章有趣的Linux命令行工具中提到的fortune命令或许也可以满足需求，pure-ftpd就可以设置在连接成功时显示随机的来自fortune的语句。那除此之外呢？历史上的今天是一个不错的方案。当你访问一些门户网站的首页，有时会看到这样的栏目">
@@ -223,6 +223,7 @@ top: initial;
 <p>这里的两个<code>except</code>分别处理的是特殊字符（非UTF-8范围）和内容长度超出的问题。</p>
 <h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><p>比较简单的方式是按照json格式进行输出，这里给出一种使用PHP的方案。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    $mysqli = <span class="keyword">new</span> mysqli(<span class="string">"localhost"</span>, <span class="string">"username"</span>, <span class="string">"password"</span>, <span class="string">"dbname"</span>);</span><br><span class="line">    <span class="comment">/* 检查连接 */</span></span><br><span class="line">    <span class="keyword">if</span> (mysqli_connect_errno()) &#123;</span><br><span class="line">        printf(<span class="string">"Connect failed: %s\n"</span>, mysqli_connect_error());</span><br><span class="line">        <span class="keyword">exit</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    $date = $_GET[<span class="string">'date'</span>] ? $mysqli-&gt;real_escape_string($_GET[<span class="string">'date'</span>]) : date(<span class="string">"m月d日"</span>);</span><br><span class="line">    $type = $_GET[<span class="string">'type'</span>] ? (int)$mysqli-&gt;real_escape_string($_GET[<span class="string">'type'</span>]) : <span class="number">0</span>;</span><br><span class="line">    $count = $_GET[<span class="string">'count'</span>] ? (int)$mysqli-&gt;real_escape_string($_GET[<span class="string">'count'</span>]) : <span class="number">1</span>;</span><br><span class="line">    $result = <span class="keyword">array</span>();</span><br><span class="line">    <span class="comment">/* 创建一个预编译 SQL 语句 */</span></span><br><span class="line">    <span class="keyword">if</span> ($stmt = $mysqli-&gt;prepare(<span class="string">"select * from `event` where `date` = ? and `type` = ? order by RAND() limit ?"</span>)) &#123;</span><br><span class="line">        <span class="comment">/* 对于参数占位符进行参数值绑定 */</span></span><br><span class="line">        $stmt-&gt;bind_param(<span class="string">"dii"</span>, $date, $type, $count);</span><br><span class="line">        <span class="comment">/* 执行查询 */</span></span><br><span class="line">        $stmt-&gt;execute();</span><br><span class="line">        <span class="comment">/* 将查询结果绑定到变量 */</span></span><br><span class="line">        $stmt-&gt;bind_result($id, $type, $year, $date, $info);</span><br><span class="line">        <span class="comment">/* 获取查询结果值 */</span></span><br><span class="line">        <span class="keyword">while</span> ($stmt-&gt;fetch()) &#123;</span><br><span class="line">            $arr = <span class="keyword">array</span>(<span class="string">'year'</span> =&gt; $year, <span class="string">'info'</span> =&gt; $info);</span><br><span class="line">            $result[] = $arr;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">echo</span> json_encode($result, JSON_UNESCAPED_UNICODE);</span><br><span class="line">        <span class="comment">/* 关闭语句句柄 */</span></span><br><span class="line">        $stmt-&gt;close();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* 关闭连接 */</span></span><br><span class="line">    $mysqli-&gt;close();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>同样将<code>username</code>、<code>password</code>和<code>dbname</code>根据情况替换，就可以访问了。</p>
+<hr>
 <p>项目地址：<a href="https://github.com/stevenjoezhang/TodayInHistory-Crawler" target="_blank" rel="noopener">TodayInHistory-Crawler</a>，可以打包下载所有文件。</p>
 <p>博主搭建的API：<a href="https://api.galaxymimi.com/today/?type=0" target="_blank" rel="noopener">历史上的今天</a></p>
 </div>
@@ -262,8 +263,8 @@ top: initial;
 </div>
 <footer class="post-footer">
 <div class="post-tags">
-<a href="/tags/Python/" rel="tag"># Python</a>
 <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+<a href="/tags/Python/" rel="tag"># Python</a>
 <a href="/tags/PHP/" rel="tag"># PHP</a>
 </div>
 <div class="post-nav">
@@ -340,11 +341,14 @@ RSS
 <div class="links-of-blogroll motion-element links-of-blogroll-block">
 <div class="links-of-blogroll-title">
 <i class="fa  fa-fw fa-university"></i>
-主站
+链接
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
 <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+</li>
+<li class="links-of-blogroll-item">
+<a href="http://www.three-body.org" title="http://www.three-body.org" rel="noopener" target="_blank">Three Body</a>
 </li>
 </ul>
 </div>
@@ -359,6 +363,7 @@ RSS
 <!--/noindex-->
 </div>
 </aside>
+<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">

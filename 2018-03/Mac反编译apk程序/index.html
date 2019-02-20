@@ -45,7 +45,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:description" content="本教程以macOS 10.13为例。 准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。  配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了能在终端正确运行最新">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-03/jdk.png">
-<meta property="og:updated_time" content="2019-02-05T10:32:30.776Z">
+<meta property="og:updated_time" content="2019-02-12T03:38:21.684Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac反编译apk程序">
 <meta name="twitter:description" content="本教程以macOS 10.13为例。 准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。  配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了能在终端正确运行最新">
@@ -239,6 +239,7 @@ top: initial;
 <h3 id="查看源代码"><a href="#查看源代码" class="headerlink" title="查看源代码"></a>查看源代码</h3><p>打开<code>JD-GUI.app</code>，将<code>example-dex2jar.jar</code>拖进去就能看到源码了。<br>需要注意的是，如果你使用了JAVA9，打开JD-GUI时可能会出现问题，解决方法是修改<code>JD-GUI.app/Contents/Info.plist</code>，找到<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>VMOptions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>-Xms512m<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>改为<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>VMOptions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>-Xms512m --add-opens java.base/jdk.internal.loader=ALL-UNNAMED --add-opens jdk.zipfs/jdk.nio.zipfs=ALL-UNNAMED<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>即可正常启动。<br>通过看java源码对比smali文件，修改后回编译就ok了！</p>
+<hr>
 <p>参考文章：<br><a href="https://blog.csdn.net/vvv_110/article/details/72897142" target="_blank" rel="noopener">MAC安装JDK及环境变量配置</a><br><a href="https://blog.csdn.net/yanzi1225627/article/details/48215549" target="_blank" rel="noopener">MAC上反编译android apk—apktool, dex2jar, jd-jui安装使用(含手动签名)</a><br><a href="https://blog.csdn.net/wh_19910525/article/details/7915738" target="_blank" rel="noopener">apk反编译获取完整源码 及 apk反编译后的处理</a><br><a href="https://github.com/java-decompiler/jd-gui/issues/187" target="_blank" rel="noopener">Java 9 Compatibility</a></p>
 </div>
 <div>
@@ -353,11 +354,14 @@ RSS
 <div class="links-of-blogroll motion-element links-of-blogroll-block">
 <div class="links-of-blogroll-title">
 <i class="fa  fa-fw fa-university"></i>
-主站
+链接
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
 <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+</li>
+<li class="links-of-blogroll-item">
+<a href="http://www.three-body.org" title="http://www.three-body.org" rel="noopener" target="_blank">Three Body</a>
 </li>
 </ul>
 </div>
@@ -372,6 +376,7 @@ RSS
 <!--/noindex-->
 </div>
 </aside>
+<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">

@@ -47,7 +47,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/macbookair.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/4500.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/diskutillist.png">
-<meta property="og:updated_time" content="2019-02-05T10:32:30.719Z">
+<meta property="og:updated_time" content="2019-02-12T03:32:33.251Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacBook使用一块移动硬盘做Win To Go及Time Machine备份">
 <meta name="twitter:description" content="前言博主使用的MacBook Air，256G闪存，可用空间约251G，曾经的分区表为：12345678910111213141516/dev/disk0 (internal, physical):   #:                       TYPE NAME                    SIZE       IDENTIFIER   0:      GUID_partit">
@@ -256,6 +256,7 @@ top: initial;
 <p>将<code>mount_ntfs</code>重命名为<code>mount_ntfs_orig</code>，然后再新建一个<code>mount_ntfs</code>，输入以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">/sbin/mount_ntfs_orig -o rw,nobrowse <span class="string">"<span class="variable">$@</span>"</span></span><br></pre></td></tr></table></figure></p>
 <p>这样就可以欺骗系统，运行带有额外参数的指令。这里的<code>nobrowse</code>是为了避免挂载上来的还是只读模式，但是它同时会导致磁盘不可见，也就是挂在后不会在桌面和Finder中显示，需要手动到<code>/Volumes</code>下打开。如果这样不爽的话，你可以尝试<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">/sbin/mount_ntfs_orig -o rw <span class="string">"<span class="variable">$@</span>"</span></span><br></pre></td></tr></table></figure></p>
 <p>将磁盘推出再挂载，如果一切正常的话，就可以愉快的使用了。</p>
+<hr>
 <p>参考文章：<a href="https://www.jianshu.com/p/d4073acbb218" target="_blank" rel="noopener">OS X 原生可读写挂载NTFS分区</a></p>
 <p>本文更新于2018年5月</p>
 </div>
@@ -371,11 +372,14 @@ RSS
 <div class="links-of-blogroll motion-element links-of-blogroll-block">
 <div class="links-of-blogroll-title">
 <i class="fa  fa-fw fa-university"></i>
-主站
+链接
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
 <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+</li>
+<li class="links-of-blogroll-item">
+<a href="http://www.three-body.org" title="http://www.three-body.org" rel="noopener" target="_blank">Three Body</a>
 </li>
 </ul>
 </div>
@@ -390,6 +394,7 @@ RSS
 <!--/noindex-->
 </div>
 </aside>
+<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">

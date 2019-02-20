@@ -44,7 +44,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="前言手机淘宝从2014年中开始，全面推行flexible设计。什么叫flexible呢？其实flexible就是responsive的低端形态和基础。对我们来说，最直观的感受就是，在超宽屏幕上，网页显示不会两边留白。以前pc时代大家经常讲的流体布局，其实就是一种flexible design。只不过，流体的表述角度是实现，flexible的表述角度是结果，为了跟高大上的responsive保持一致">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-18T08:49:51.241Z">
+<meta property="og:updated_time" content="2019-02-12T03:41:26.434Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手机淘宝的flexible方案">
 <meta name="twitter:description" content="前言手机淘宝从2014年中开始，全面推行flexible设计。什么叫flexible呢？其实flexible就是responsive的低端形态和基础。对我们来说，最直观的感受就是，在超宽屏幕上，网页显示不会两边留白。以前pc时代大家经常讲的流体布局，其实就是一种flexible design。只不过，流体的表述角度是实现，flexible的表述角度是结果，为了跟高大上的responsive保持一致">
@@ -234,6 +234,7 @@ top: initial;
 <h2 id="DPR匹配"><a href="#DPR匹配" class="headerlink" title="DPR匹配"></a>DPR匹配</h2><p>一个区块，设计稿上有1像素边框，当你面对不同的屏幕时你希望它的行为是怎样的？<br>这个场景，需求很简单，设计师希望在任何屏幕上这条线都是1物理像素。<br>好吧，当然这个问题的答案不是写1px那么简单。在retina屏下面，如果你写了这样的meta：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>你将永远无法写出1px宽度的东西，除此之外，inline的SVG等元素，也会按照逻辑像素来渲染，整个页面的清晰度会打折。<br>所以，手机淘宝用JS来动态写meta标签，代码类似这样：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> metaEl = <span class="built_in">document</span>.createElement(<span class="string">'meta'</span>);</span><br><span class="line"><span class="keyword">var</span> scale = isRetina ? <span class="number">0.5</span> : <span class="number">1</span>;</span><br><span class="line">metaEl.setAttribute(<span class="string">'name'</span>, <span class="string">'viewport'</span>);</span><br><span class="line">metaEl.setAttribute(<span class="string">'content'</span>, <span class="string">'initial-scale='</span> + scale + <span class="string">', maximum-scale='</span> + scale + <span class="string">', minimum-scale='</span> + scale + <span class="string">', user-scalable=no'</span>);</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.documentElement.firstElementChild) &#123;</span><br><span class="line">    <span class="built_in">document</span>.documentElement.firstElementChild.appendChild(metaEl);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> wrap = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">    wrap.appendChild(metaEl);</span><br><span class="line">    <span class="built_in">document</span>.write(wrap.innerHTML);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>总的来说，手机淘宝的flexible方案是综合运用rem和px两种单位+js设置scale和html字体。<br>这些JS的内容，可以在我们开源的库<a href="https://github.com/amfe/ml" target="_blank" rel="noopener">ml</a>中找到，也可以参考<a href="https://github.com/amfe/lib-flexible" target="_blank" rel="noopener">lib-flexible</a>。</p>
+<hr>
 <p>参考文章：<br><a href="http://www.html-js.com/article/2402" target="_blank" rel="noopener">手机淘宝的flexible设计与实现</a><br><a href="http://www.html-js.com/article/2400" target="_blank" rel="noopener">关于webapp中的文字单位的一些捣腾</a></p>
 </div>
 <div>
@@ -349,11 +350,14 @@ RSS
 <div class="links-of-blogroll motion-element links-of-blogroll-block">
 <div class="links-of-blogroll-title">
 <i class="fa  fa-fw fa-university"></i>
-主站
+链接
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
 <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+</li>
+<li class="links-of-blogroll-item">
+<a href="http://www.three-body.org" title="http://www.three-body.org" rel="noopener" target="_blank">Three Body</a>
 </li>
 </ul>
 </div>
@@ -368,6 +372,7 @@ RSS
 <!--/noindex-->
 </div>
 </aside>
+<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">

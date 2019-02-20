@@ -37,7 +37,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
 <meta name="description" content="『表情包』是一种利用图片来表示感情的方式。在各种社交软件的带动下，『表情包』已经形成了一种流行文化。互联网上，基本人人都会发表情；很多实时通讯软件中，『斗图』成为了一种活跃气氛的常见方式。不知你是否曾有过找不到表情包去应对别人的时候？今天博主分享用Python开发个人专属的表情包网站的方法，想用什么表情包搜一下就有了！目标：获取海量表情包，存入数据库，然后搭建简单网站，通过输入关键字获取对应的的表">
-<meta name="keywords" content="Python,MySQL">
+<meta name="keywords" content="MySQL,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python开发表情包网站">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-06/Python开发表情包网站/index.html">
@@ -46,7 +46,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-06/1.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-06/2.png">
-<meta property="og:updated_time" content="2019-02-05T10:32:30.799Z">
+<meta property="og:updated_time" content="2019-02-12T03:40:02.234Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python开发表情包网站">
 <meta name="twitter:description" content="『表情包』是一种利用图片来表示感情的方式。在各种社交软件的带动下，『表情包』已经形成了一种流行文化。互联网上，基本人人都会发表情；很多实时通讯软件中，『斗图』成为了一种活跃气氛的常见方式。不知你是否曾有过找不到表情包去应对别人的时候？今天博主分享用Python开发个人专属的表情包网站的方法，想用什么表情包搜一下就有了！目标：获取海量表情包，存入数据库，然后搭建简单网站，通过输入关键字获取对应的的表">
@@ -220,6 +220,7 @@ top: initial;
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>『表情包』是一种利用图片来表示感情的方式。在各种社交软件的带动下，『表情包』已经形成了一种流行文化。互联网上，基本人人都会发表情；很多实时通讯软件中，『斗图』成为了一种活跃气氛的常见方式。不知你是否曾有过找不到表情包去应对别人的时候？<br>今天博主分享用Python开发个人专属的表情包网站的方法，想用什么表情包搜一下就有了！<br><strong>目标：获取海量表情包，存入数据库，然后搭建简单网站，通过输入关键字获取对应的的表情包。</strong></p>
+<hr>
 <h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p>首先，我们要从这个网站爬取表情包：<a href="http://www.doutula.com/photo/list/?page=0" target="_blank" rel="noopener">斗图啦</a>。<br>我们先来分析一下这个网页的源代码：</p>
 <p><img src="/images/2018-06/1.png" alt=""></p>
 <p>通过源码，我们可以发现需要获取的内容包括每个img标签的data-original和alt属性。通过爬虫获取网页，用正则表达式提取内容，然后存入数据库即可。<br>首先，安装mysql，如果你在使用macOS，并配置好了Homebrew：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure></p>
@@ -234,6 +235,7 @@ top: initial;
 <p>完成后，回到上一目录，在命令行执行<code>python3 index.py</code>，然后访问<code>localhost:5000</code>即可开始斗图了！</p>
 <p><img src="/images/2018-06/2.png" alt=""></p>
 <p>其他设备获取本机IP后，通过5000端口也可以正常浏览。</p>
+<hr>
 <p>参考文章：<br><a href="https://blog.csdn.net/three_co/article/details/78575634" target="_blank" rel="noopener">关于Python爬虫之获取海量表情包+存入数据库+搭建网站通过关键字查询表情包</a><br><a href="https://mp.weixin.qq.com/s/dpJOMSdDzkONzV79z7RgYQ" target="_blank" rel="noopener">Python开发个人专属表情包网站，表情在手，天下我有</a></p>
 </div>
 <div>
@@ -272,8 +274,8 @@ top: initial;
 </div>
 <footer class="post-footer">
 <div class="post-tags">
-<a href="/tags/Python/" rel="tag"># Python</a>
 <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+<a href="/tags/Python/" rel="tag"># Python</a>
 </div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
@@ -349,11 +351,14 @@ RSS
 <div class="links-of-blogroll motion-element links-of-blogroll-block">
 <div class="links-of-blogroll-title">
 <i class="fa  fa-fw fa-university"></i>
-主站
+链接
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
 <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+</li>
+<li class="links-of-blogroll-item">
+<a href="http://www.three-body.org" title="http://www.three-body.org" rel="noopener" target="_blank">Three Body</a>
 </li>
 </ul>
 </div>
@@ -368,6 +373,7 @@ RSS
 <!--/noindex-->
 </div>
 </aside>
+<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">

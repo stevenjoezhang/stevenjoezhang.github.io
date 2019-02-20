@@ -45,7 +45,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:description" content="前言最近在知乎上看到一个关于VPS有趣的用途的问题，其中一个回答提到了可以搭建Telnet服务器，成功运行后别人用Telnet连接你的主机将会看到Nyancat动画。大致效果如图所示：  然而，回答中给出的Demo已经失效，telnet nyancat.dakko.us会返回一个Connection refused错误。不过值得庆幸的是，这个项目的官方网站Nyan Cat Telnet Serve">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-11/nyancat.png">
-<meta property="og:updated_time" content="2019-02-10T06:49:31.863Z">
+<meta property="og:updated_time" content="2019-02-19T14:47:35.536Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用Telnet观看Nyancat动画">
 <meta name="twitter:description" content="前言最近在知乎上看到一个关于VPS有趣的用途的问题，其中一个回答提到了可以搭建Telnet服务器，成功运行后别人用Telnet连接你的主机将会看到Nyancat动画。大致效果如图所示：  然而，回答中给出的Demo已经失效，telnet nyancat.dakko.us会返回一个Connection refused错误。不过值得庆幸的是，这个项目的官方网站Nyan Cat Telnet Serve">
@@ -220,14 +220,16 @@ top: initial;
 <div class="post-body" itemprop="articleBody">
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在知乎上看到一个关于VPS有趣的用途的问题，<a href="https://www.zhihu.com/question/24284566/answer/27291403" target="_blank" rel="noopener">其中一个回答</a>提到了可以搭建Telnet服务器，成功运行后别人用Telnet连接你的主机将会看到Nyancat动画。大致效果如图所示：</p>
 <p><img src="/images/2018-11/nyancat.png" alt=""></p>
-<p>然而，回答中给出的Demo已经失效，<code>telnet nyancat.dakko.us</code>会返回一个<code>Connection refused</code>错误。不过值得庆幸的是，这个项目的官方网站<a href="http://nyancat.dakko.us" target="_blank" rel="noopener">Nyan Cat Telnet Server</a>和<a href="https://github.com/klange/nyancat" target="_blank" rel="noopener">GitHub Repo</a>都还可以正常访问，因此可以尝试重新把它搭起来。你可以查看博主建立的镜像：<code>telnet zsq.im 8082</code>，这是按以下方法搭建好的结果。</p>
-<h2 id="下载编译"><a href="#下载编译" class="headerlink" title="下载编译"></a>下载编译</h2><p>在命令行执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/klange/nyancat.git</span><br><span class="line"><span class="built_in">cd</span> nyancat</span><br><span class="line">make &amp;&amp; <span class="built_in">cd</span> src</span><br><span class="line">mv nyancat /usr/<span class="built_in">local</span>/bin <span class="comment">#or make install</span></span><br></pre></td></tr></table></figure></p>
+<p>然而，回答中给出的Demo已经失效，<code>telnet nyancat.dakko.us</code>会返回一个<code>Connection refused</code>错误。不过值得庆幸的是，这个项目的官方网站<a href="http://nyancat.dakko.us" target="_blank" rel="noopener">Nyan Cat Telnet Server</a>和<a href="https://github.com/klange/nyancat" target="_blank" rel="noopener">GitHub Repo</a>都还可以正常访问，因此可以尝试重新把它搭起来。不用着急，这个过程并不复杂，请按照以下方法操作即可。</p>
+<h2 id="下载编译"><a href="#下载编译" class="headerlink" title="下载编译"></a>下载编译</h2><p>在命令行执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/klange/nyancat.git</span><br><span class="line"><span class="built_in">cd</span> nyancat</span><br><span class="line">make</span><br><span class="line">mv src/nyancat /usr/bin <span class="comment">#or make install</span></span><br></pre></td></tr></table></figure></p>
 <p>这时，通过<code>nyancat</code>或<code>nyancat -t</code>命令就可以查看效果。接下来把Telnet配置好就行了。</p>
 <h2 id="配置Telnet"><a href="#配置Telnet" class="headerlink" title="配置Telnet"></a>配置Telnet</h2><p>使用包管理工具安装<code>xinetd</code>，例如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install xinetd</span><br></pre></td></tr></table></figure></p>
-<p>然后在<code>/etc/xinetd.d</code>目录下新建文件<code>nyancat</code>，内容为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">service telnet</span><br><span class="line">&#123;</span><br><span class="line">    flags          = REUSE</span><br><span class="line">    socket_type    = stream</span><br><span class="line">    <span class="built_in">wait</span>           = no</span><br><span class="line">    user           = root</span><br><span class="line">    group          = root</span><br><span class="line">    server         = /usr/<span class="built_in">local</span>/bin/nyancat</span><br><span class="line">    server_args    = -t</span><br><span class="line">    log_on_failure += USERID</span><br><span class="line">    <span class="built_in">disable</span>        = no</span><br><span class="line">    instances      = 10</span><br><span class="line">    per_source     = 2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>其中<code>instances</code>和<code>per_source</code>限制了总的连接数和单个IP的连接数，以防止资源滥用（其实并没有什么用，DDOS攻击该来还是会来）。<br>接下来，重启<code>xinetd</code>服务：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart xinetd</span><br></pre></td></tr></table></figure></p>
-<p>这时，你就可以通过<code>telnet localhost</code>查看是否一切正常。如果没有问题，配置防火墙开放23端口，就可以从公网访问了。试试用Telnet连接你的主机，效果是不是非常酷炫？<br>不过，博主在实践中发现，开放telnet的23端口可能会产生大量异常流量。解决方法是修改telnet的端口号，编辑<code>/etc/services</code>，找到telnet，将23改为一个你喜欢的数字（比如8082）；或者直接关闭这个服务，在<code>nyancat</code>中设置<code>disable: yes</code>即可。</p>
+<p>然后在<code>/etc/xinetd.d</code>目录下新建文件<code>nyancat</code>，内容为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">service telnet</span><br><span class="line">&#123;</span><br><span class="line">    flags          = REUSE</span><br><span class="line">    socket_type    = stream</span><br><span class="line">    <span class="built_in">wait</span>           = no</span><br><span class="line">    user           = root</span><br><span class="line">    group          = root</span><br><span class="line">    server         = /usr/bin/nyancat</span><br><span class="line">    server_args    = -t</span><br><span class="line">    log_on_failure += USERID</span><br><span class="line">    <span class="built_in">disable</span>        = no</span><br><span class="line">    instances      = 10</span><br><span class="line">    per_source     = 2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其中<code>instances</code>和<code>per_source</code>限制了总的连接数和单个IP的连接数。<br>接下来，重启<code>xinetd</code>服务：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart xinetd</span><br></pre></td></tr></table></figure></p>
+<p>这时，你就可以通过<code>telnet localhost</code>查看是否一切正常。如果没有问题，配置防火墙开放23端口，就可以从公网访问了。试试用Telnet连接你的主机，效果是不是非常酷炫？<br>不过，博主在实践中发现，开放telnet的23端口可能会产生大量异常流量。解决方法是修改telnet的端口号，编辑<code>/etc/services</code>，找到telnet，将23改为一个你喜欢的数字（比如8082）。或者，可以在不需要使用时直接关闭这个服务，在<code>nyancat</code>中设置<code>disable: yes</code>即可。</p>
 <h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>俗话说，有光的地方就有Bad Apple!!。很久以前的一篇文章<a href="/2017-12/近期完成的数个游戏及应用/">近期完成的数个游戏及应用</a>中，就提到博主成功使用HTML页面播放Bad Apple!!字符画。目前，博主正在尝试搭建一个可以播放Bad Apple!!的Telnet服务器，敬请期待。</p>
+<hr>
+<p>本文更新于2019年2月14日：<br>博主通过魔改Nyancat的代码，成功地实现了可以播放Bad Apple!!的Telnet服务器。可以阅读文章<a href="/2019-02/用Telnet观看Bad Apple!!/">用Telnet观看Bad Apple!!</a>查看。</p>
 </div>
 <div>
 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -341,11 +343,14 @@ RSS
 <div class="links-of-blogroll motion-element links-of-blogroll-block">
 <div class="links-of-blogroll-title">
 <i class="fa  fa-fw fa-university"></i>
-主站
+链接
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
 <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+</li>
+<li class="links-of-blogroll-item">
+<a href="http://www.three-body.org" title="http://www.three-body.org" rel="noopener" target="_blank">Three Body</a>
 </li>
 </ul>
 </div>
@@ -360,6 +365,7 @@ RSS
 <!--/noindex-->
 </div>
 </aside>
+<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">

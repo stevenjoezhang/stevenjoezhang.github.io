@@ -205,6 +205,7 @@ page-home">
 <p>即可加载MathJax，该脚本将会把所有$\LaTeX$公式正确显示出来。尽情的按照$\LaTeX$语法插入公式就好啦！<br>如果要在WordPress中使用，可以通过在编辑文章界面，选择『文本』（如果使用『可视化』，字符将被转义，导致脚本无法加载），输入以上内容达到相同效果。<br>使用时请注意：<br>The default math delimiters are <code>$$...$$</code> and <code>\[...\]</code> for displayed mathematics, and <code>\(...\)</code> for in-line mathematics. Note in particular that the <code>$...$</code> in-line delimiters are <strong>not</strong> used by default.<br>也就是说，行内公式的<code>$</code>符号默认不会被识别。你可以在HTML页面中加入以下配置以启用之：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">MathJax.Hub.Config(&#123;</span></span><br><span class="line"><span class="undefined">    tex2jax: &#123;</span></span><br><span class="line"><span class="undefined">        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],</span></span><br><span class="line"><span class="undefined">        processEscapes: true,</span></span><br><span class="line"><span class="undefined">        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    TeX: &#123;equationNumbers: &#123; autoNumber: "AMS" &#125;&#125;,</span></span><br><span class="line"><span class="undefined">    "HTML-CSS": &#123; linebreaks: &#123; automatic: true &#125;, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) &#125;,</span></span><br><span class="line"><span class="undefined">    SVG: &#123; linebreaks: &#123; automatic: true &#125;&#125;</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>其中<code>linebreaks</code>项会在屏幕宽度较小时自动使公式换行，而<code>inlineMath</code>项则启用了<code>$</code>符号标记的行内公式。</p>
 <p>更多信息可以访问官方网站：<a href="https://www.mathjax.org" target="_blank" rel="noopener">MathJax</a></p>
+<hr>
 <p>本文更新于2018年5月20日：<br>在Hexo中，如果使用了NexT主题，可以通过配置主题目录下的_config.yml简单地使用MathJax。在_config.yml中找到mathjax，将其子选项改为<code>enable: true</code>，并在需要加载MathJax的文章头添加<code>mathjax: true</code>即可。</p>
 <p>本文更新于2018年10月3日：<br>还有一种解决方案是调用知乎的API：<code>https://www.zhihu.com/equation?tex=</code>，通过GET请求，就可以将你的$\LaTeX$表达式转换为公式的图片。</p>
 </div>
@@ -310,7 +311,7 @@ page-home">
 <i class="fa fa-file-word-o"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">8.5k</span>
+<span title="本文字数">8.7k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
 <i class="fa fa-clock-o"></i>
@@ -519,11 +520,14 @@ RSS
 <div class="links-of-blogroll motion-element links-of-blogroll-block">
 <div class="links-of-blogroll-title">
 <i class="fa  fa-fw fa-university"></i>
-主站
+链接
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
 <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+</li>
+<li class="links-of-blogroll-item">
+<a href="http://www.three-body.org" title="http://www.three-body.org" rel="noopener" target="_blank">Three Body</a>
 </li>
 </ul>
 </div>
@@ -531,6 +535,7 @@ RSS
 </div>
 </div>
 </aside>
+<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">

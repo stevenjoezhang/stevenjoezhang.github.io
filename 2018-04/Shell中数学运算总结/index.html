@@ -44,7 +44,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="shell中的赋值和操作默认都是字符串处理，在此记下shell中进行数学运算的几个特殊方法。 错误方法12var=1+1echo $var 输出的结果是1+1123var=1var=$var+1echo $var 输出结果是1+1 正确方法使用let123var=1let &quot;var+=1&quot;echo $var 输出结果为2注意：  经测试，let几乎支持所有的运算符，包括自加、自减以及括号等，且不同">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-25T08:30:17.394Z">
+<meta property="og:updated_time" content="2019-02-12T03:39:06.168Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell中数学运算总结">
 <meta name="twitter:description" content="shell中的赋值和操作默认都是字符串处理，在此记下shell中进行数学运算的几个特殊方法。 错误方法12var=1+1echo $var 输出的结果是1+1123var=1var=$var+1echo $var 输出结果是1+1 正确方法使用let123var=1let &quot;var+=1&quot;echo $var 输出结果为2注意：  经测试，let几乎支持所有的运算符，包括自加、自减以及括号等，且不同">
@@ -258,6 +258,7 @@ top: initial;
 </ul>
 <p>浮点数计算实例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var=3.14</span><br><span class="line">var=`<span class="built_in">echo</span> <span class="string">"<span class="variable">$var</span> 2"</span>|awk <span class="string">'&#123;printf("%g",sin($1/$2))&#125;'</span>`</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br></pre></td></tr></table></figure></p>
 <p>输出结果为1</p>
+<hr>
 <p>本文转载自：<a href="https://www.cnblogs.com/liujiahi/archive/2011/03/30/2196400.html" target="_blank" rel="noopener">shell 中数学计算总结</a></p>
 </div>
 <div>
@@ -373,11 +374,14 @@ RSS
 <div class="links-of-blogroll motion-element links-of-blogroll-block">
 <div class="links-of-blogroll-title">
 <i class="fa  fa-fw fa-university"></i>
-主站
+链接
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
 <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+</li>
+<li class="links-of-blogroll-item">
+<a href="http://www.three-body.org" title="http://www.three-body.org" rel="noopener" target="_blank">Three Body</a>
 </li>
 </ul>
 </div>
@@ -392,6 +396,7 @@ RSS
 <!--/noindex-->
 </div>
 </aside>
+<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">

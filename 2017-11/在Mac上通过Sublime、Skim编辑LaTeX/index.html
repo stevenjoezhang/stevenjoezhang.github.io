@@ -20,7 +20,7 @@ var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.0.0',
-sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false,"dimmer":false},
 fancybox: true,
 fastclick: true,
 lazyload: false,
@@ -37,17 +37,19 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
 <meta name="description" content="Sublime Text是一款非常优秀的编辑器：速度快，界面简洁，插件众多；并且能够跨平台使用，在Mac和Windows上都发挥完美。虽然是一款付费软件，但作者很厚道地给了无限期的试用期限。这一切正如其官网广告词说的那样：The text editor you’ll fall in love with.Skim是一款免费轻量的PDF阅读、标注工具，布局贴心友好，与OS X自带的Previewer相">
-<meta name="keywords" content="LaTeX,Mac">
+<meta name="keywords" content="Mac,LaTeX">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Mac上通过Sublime、Skim编辑LaTeX">
 <meta property="og:url" content="https://zhangshuqiao.org/2017-11/在Mac上通过Sublime、Skim编辑LaTeX/index.html">
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="Sublime Text是一款非常优秀的编辑器：速度快，界面简洁，插件众多；并且能够跨平台使用，在Mac和Windows上都发挥完美。虽然是一款付费软件，但作者很厚道地给了无限期的试用期限。这一切正如其官网广告词说的那样：The text editor you’ll fall in love with.Skim是一款免费轻量的PDF阅读、标注工具，布局贴心友好，与OS X自带的Previewer相">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-12T03:33:56.270Z">
+<meta property="og:image" content="https://zhangshuqiao.org/images/2017-11/tex.png">
+<meta property="og:updated_time" content="2019-02-26T08:54:04.366Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Mac上通过Sublime、Skim编辑LaTeX">
 <meta name="twitter:description" content="Sublime Text是一款非常优秀的编辑器：速度快，界面简洁，插件众多；并且能够跨平台使用，在Mac和Windows上都发挥完美。虽然是一款付费软件，但作者很厚道地给了无限期的试用期限。这一切正如其官网广告词说的那样：The text editor you’ll fall in love with.Skim是一款免费轻量的PDF阅读、标注工具，布局贴心友好，与OS X自带的Previewer相">
+<meta name="twitter:image" content="https://zhangshuqiao.org/images/2017-11/tex.png">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2017-11/在Mac上通过Sublime、Skim编辑LaTeX/">
 <script id="page.configurations">
@@ -205,13 +207,13 @@ top: initial;
 <i class="fa fa-file-word-o"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">2.1k</span>
+<span title="本文字数">3.2k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
 <i class="fa fa-clock-o"></i>
 </span>
 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">2 分钟</span>
+<span title="阅读时长">3 分钟</span>
 </div>
 </div>
 </header>
@@ -233,17 +235,21 @@ top: initial;
 </ul>
 <h2 id="在Sublime-Text中安装Package-Control"><a href="#在Sublime-Text中安装Package-Control" class="headerlink" title="在Sublime Text中安装Package Control"></a>在Sublime Text中安装Package Control</h2><p>我们需要在Sublime Text中下载插件以便能够很好地操作与$\LaTeX$有关的文件。而插件是通过Package Control下载的。</p>
 <ul>
-<li>进入<a href="https://packagecontrol.io/installation" target="_blank" rel="noopener">Package Control官网</a>复制灰色区块的代码。</li>
+<li>进入<a href="https://packagecontrol.io/installation" target="_blank" rel="noopener">Package Control官网</a>，复制灰色区块的代码（或者直接复制下面的代码）。<br>对于Sublime Text 3：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request,os,hashlib; h = <span class="string">'6f4c264a24d933ce70df5dedcf1dcaee'</span> + <span class="string">'ebe013ee18cced0ef93d5f746d80ef60'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> open(os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>对于Sublime Text 2：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib2,os,hashlib; h = <span class="string">'6f4c264a24d933ce70df5dedcf1dcaee'</span> + <span class="string">'ebe013ee18cced0ef93d5f746d80ef60'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(ipp) <span class="keyword">else</span> <span class="keyword">None</span>; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by) <span class="keyword">if</span> dh == h <span class="keyword">else</span> <span class="keyword">None</span>; print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h) <span class="keyword">if</span> dh != h <span class="keyword">else</span> <span class="string">'Please restart Sublime Text to finish installation'</span>)</span><br></pre></td></tr></table></figure></p>
+<ul>
 <li>打开Sublime Text。</li>
-<li>使用快捷键<code>control+~</code>打开控制面板Console。你会在Sublime Text的底部看到弹出一个白色窗口。</li>
+<li>使用快捷键<code>control+~</code>打开控制台（Console）。你会在Sublime Text的底部看到弹出一个白色窗口。</li>
 <li>将刚才复制的代码粘贴到控制面板。</li>
 <li>按下<code>Enter</code>回车键，等待安装。</li>
 <li>安装完成后，退出并重启Sublime Text。</li>
 </ul>
-<h2 id="安装LaTeX-Tools"><a href="#安装LaTeX-Tools" class="headerlink" title="安装LaTeX Tools"></a>安装LaTeX Tools</h2><ul>
-<li>Sublime Text重启后，按下<code>Command+Shift+P</code>打开命令托盘Command pallet，这一步也可以通过Tools下拉菜单完成。</li>
+<h2 id="安装LaTeXBox"><a href="#安装LaTeXBox" class="headerlink" title="安装LaTeXBox"></a>安装LaTeXBox</h2><ul>
+<li>Sublime Text重启后，按下<code>Command+Shift+P</code>打开命令托盘（Command pallet），这一步也可以通过点击Tools下拉菜单完成。</li>
 <li>在命令托盘里输入<code>Install Package</code>，按下<code>Enter</code>回车建。</li>
-<li>完成之后，输入<code>LaTeX Tools</code>，找到这一项并回车安装。</li>
+<li>完成之后，输入<code>LaTeXBox</code>，找到这一项并回车安装。</li>
 <li>退出并重启Sublime Text。</li>
 </ul>
 <h2 id="安装Skim"><a href="#安装Skim" class="headerlink" title="安装Skim"></a>安装Skim</h2><ul>
@@ -252,12 +258,8 @@ top: initial;
 <li>在预设菜单中选择<code>Sublime Text</code>。</li>
 <li>关闭上面这个窗口。</li>
 </ul>
-<h2 id="修改编译和中文环境"><a href="#修改编译和中文环境" class="headerlink" title="修改编译和中文环境"></a>修改编译和中文环境</h2><p>点击Browse Package，然后打开编辑<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/Library/Application\ Support/Sublime\ Text/Packages/Users/LaTeX.sublime-settings</span><br></pre></td></tr></table></figure></p>
-<p>将其中builder条目改为：<code>builder: simple</code><br>接着打开编辑<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/Library/Application\ Support/Sublime\ Text/Packages/LaTeXTools/builders/simpleBuilder.py</span><br></pre></td></tr></table></figure></p>
-<p>找到其中大概第41行<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pdflatex = [<span class="string">"pdflatex"</span>, <span class="string">"-interaction=nonstopmode"</span>, <span class="string">"-synctex=1"</span>]</span><br></pre></td></tr></table></figure></p>
-<p>修改为<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pdflatex = [<span class="string">"xelatex"</span>, <span class="string">"-interaction=nonstopmode"</span>, <span class="string">"-synctex=1"</span>]</span><br></pre></td></tr></table></figure></p>
-<p>保存后关闭，重新编译一下，中文正常啦！</p>
-<p>现在，我们已经做完了所有的步骤✌️，可以打开Sublime Text，<code>Command+N</code>新建文件并在里面编写$\LaTeX$代码了，完成编辑之后，<code>Command+S</code>保存文件，<code>Command+B</code>编译并运行，这时就可以在Skim里面看到PDF预览了。<br>如果使用LaTeX Tools编译出现问题，可以尝试在命令行中直接进行编译：在第一步完成后，打开终端，cd到tex所在到文件夹，使用<code>xelatex *.tex</code>，编译tex文件为pdf。如果成功，你可见将它添加到Sublime Text的Build System中，也可以实现一键编译。除此之外，还可以使用Pandoc等命令行工具将tex转为其他格式的文档。<br>在Windows上可以通过安装TexLive的方法配置TeX环境，过程是类似的。需要注意的是，tex文件应采用UTF-8编码。</p>
+<h2 id="修改编译和中文环境"><a href="#修改编译和中文环境" class="headerlink" title="修改编译和中文环境"></a>修改编译和中文环境</h2><p>现在，我们已经做完了所有的步骤✌️，可以打开Sublime Text，<code>Command+N</code>新建文件并在里面编写$\LaTeX$代码了，完成编辑之后，<code>Command+S</code>保存文件，<code>Command+B</code>编译并运行，这时就可以在Skim里面看到PDF预览了。<br>如果你使用了ctex，使用默认的编译配置可能会出现中文不正常的问题，这时需要进行手动设置。如图所示打开：<br><img src="/images/2017-11/tex.png" alt=""><br>然后输入以下内容：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"bring_forward_on_success"</span>: <span class="literal">true</span>,</span><br><span class="line">	<span class="attr">"cmd"</span>: [</span><br><span class="line">		<span class="string">"latexmk"</span>, <span class="string">"-quiet"</span>, <span class="string">"-pdf"</span>, <span class="string">"-e"</span>,</span><br><span class="line">		<span class="string">"$pdflatex='xelatex -synctex=1 --shell-escape %O %S'"</span></span><br><span class="line">	],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果使用LaTeXBox编译出现了其它问题，可以尝试在命令行中直接进行编译：在第一步完成后，打开终端，进入到tex所在到文件夹，使用<code>xelatex *.tex</code>，编译tex文件为pdf。如果成功，你可以将它添加到Sublime Text的Build System中，或者通过设置LaTeXBox的编译引擎，也可以实现一键编译。除此之外，还可以使用Pandoc等命令行工具将tex转为其他格式的文档。<br>在Windows上可以通过安装TexLive的方法配置TeX环境，过程是类似的。需要注意的是，tex文件应采用UTF-8编码。</p>
 <hr>
 <p>参考文章：<a href="https://blog.csdn.net/songrotek/article/details/46457571" target="_blank" rel="noopener">在Mac OS X下搭建Latex编辑环境</a></p>
 <p>本文更新于2018年5月</p>
@@ -298,8 +300,8 @@ top: initial;
 </div>
 <footer class="post-footer">
 <div class="post-tags">
-<a href="/tags/LaTeX/" rel="tag"># LaTeX</a>
 <a href="/tags/Mac/" rel="tag"># Mac</a>
+<a href="/tags/LaTeX/" rel="tag"># LaTeX</a>
 </div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
@@ -349,7 +351,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">94</span>
+<span class="site-state-item-count">93</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -382,7 +384,7 @@ RSS
 <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
 </li>
 <li class="links-of-blogroll-item">
-<a href="http://www.three-body.org" title="http://www.three-body.org" rel="noopener" target="_blank">Three Body</a>
+<a href="https://three-body.org" title="https://three-body.org" rel="noopener" target="_blank">Three Body</a>
 </li>
 </ul>
 </div>
@@ -391,13 +393,12 @@ RSS
 <!--noindex-->
 <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
 <div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装MacTeX"><span class="nav-number">2.</span> <span class="nav-text">安装MacTeX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Sublime-Text"><span class="nav-number">3.</span> <span class="nav-text">安装Sublime Text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在Sublime-Text中安装Package-Control"><span class="nav-number">4.</span> <span class="nav-text">在Sublime Text中安装Package Control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装LaTeX-Tools"><span class="nav-number">5.</span> <span class="nav-text">安装LaTeX Tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Skim"><span class="nav-number">6.</span> <span class="nav-text">安装Skim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改编译和中文环境"><span class="nav-number">7.</span> <span class="nav-text">修改编译和中文环境</span></a></li></ol></div>
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装MacTeX"><span class="nav-number">2.</span> <span class="nav-text">安装MacTeX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Sublime-Text"><span class="nav-number">3.</span> <span class="nav-text">安装Sublime Text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在Sublime-Text中安装Package-Control"><span class="nav-number">4.</span> <span class="nav-text">在Sublime Text中安装Package Control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装LaTeXBox"><span class="nav-number">5.</span> <span class="nav-text">安装LaTeXBox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Skim"><span class="nav-number">6.</span> <span class="nav-text">安装Skim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改编译和中文环境"><span class="nav-number">7.</span> <span class="nav-text">修改编译和中文环境</span></a></li></ol></div>
 </div>
 </div>
 <!--/noindex-->
 </div>
 </aside>
-<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">

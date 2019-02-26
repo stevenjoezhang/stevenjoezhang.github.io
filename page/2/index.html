@@ -20,7 +20,7 @@ var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.0.0',
-sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false,"dimmer":false},
 fancybox: true,
 fastclick: true,
 lazyload: false,
@@ -154,6 +154,96 @@ page-home">
 <div class="content-wrap">
 <div id="content" class="content">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-01/树莓派使用RFID RC522芯片/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2019-01/树莓派使用RFID RC522芯片/" class="post-title-link" itemprop="url">树莓派使用RFID RC522芯片</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2019-01-21 12:06:22" itemprop="dateCreated datePublished" datetime="2019-01-21T12:06:22+08:00">2019-01-21</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">23k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">21 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>实用教程：树莓派使用RFID RC522芯片进行数据的读写</p>
+<p><img src="/images/2019-01/raspberry-pi-RFID-Reader.jpg" alt=""></p>
+<p>In this Raspberry Pi RFID RC522 tutorial, I will be walking you through the steps on how to set up and wire the RFID RC522 chip with your Raspberry Pi. This project is a cool circuit to play around with and opens you up to quite a wide variety of different projects from using it as an attendance system to using it to open a lock.<br>在这个Raspberry Pi RFID RC522教程中，我将介绍如何设置和连接Raspberry Pi和RFID RC522芯片。这是一个很实用的教程，以便于你之后各种不同的项目，例如使用它作为考勤系统、使用它来打开一个锁。</p>
+<p>The RFID RC522 is a very low-cost RFID (Radio-frequency identification) reader and writer that is based on the MFRC522 microcontroller. This microcontroller provides its data through the SPI protocol and works by creating a 13.56MHz electromagnetic field that it uses to communicate with the RFID tags.<br>RFID RC522是基于MFRC522微控制器的非常低成本的RFID（射频识别）读写器。该微控制器通过SPI协议提供数据，并通过创建一个13.56MHz的电磁场来工作，该电磁场用于与RFID卡片进行通信。</p>
+<p>Make sure that the tags you purchase for your RFID RC522 operate on the 13.56MHz frequency otherwise we will fail to read them.<br>确保你的RFID RC522购买的卡片在13.56MHz的频率上运行，否则将无法读取。</p>
+<p>We will be showing you how to wire up the RC522 as well as showing you how to write Python scripts to interact with the chip so you can both read and write your RFID Tags. You can extend this tutorial to use something like a <a href="https://pimylifeup.com/raspberry-pi-lcd-16x2" target="_blank" rel="noopener">16×2 LCD for the Raspberry Pi</a>, handy if you want to show some information.<br>本教程将示范如何连接RC522以及编写Python脚本以与芯片进行交互，以便读取和写入RFID卡片。如果你想展示一些数据信息，你可以使用像<a href="https://pimylifeup.com/raspberry-pi-lcd-16x2" target="_blank" rel="noopener">16×2液晶显示器</a>扩展这个教程。</p>
+<h2 id="Equipment-List"><a href="#Equipment-List" class="headerlink" title="Equipment List"></a>Equipment List</h2><p>设备清单</p>
+<p>Below are all the bits and pieces that I used for this Raspberry Pi RFID RC522 tutorial.<br>下面列出的是我在这个教程中使用的东西。</p>
+<p>Recommended:<br>推荐：</p>
+<ul>
+<li><p>Raspberry Pi 2 or 3<br>树莓派2或3</p>
+</li>
+<li><p>Micro SD Card<br>Micro SD卡</p>
+</li>
+<li><p>Power Supply<br>电源供应</p>
+</li>
+<li><p>RC522 RFID Reader<br>RC522 RFID读卡器</p>
+</li>
+<li><p>Breadboard<br>面包板</p>
+</li>
+<li><p>Breadboard Wire<br>面包板接线</p>
+</li>
+</ul>
+<p>Optional:<br>可选：</p>
+<ul>
+<li><p>Raspberry Pi Case<br>树莓派外壳</p>
+</li>
+<li><p>Ethernet Network Connection or Wifi dongle (The Pi 3 has WiFi inbuilt)<br>以太网或Wifi适配（树莓派3自带了）</p>
+</li>
+</ul>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2019-01/树莓派使用RFID RC522芯片/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-01/如何进行曲线拟合/">
@@ -437,61 +527,6 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-12/Command Line Russian Roulette/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-12/Command Line Russian Roulette/" class="post-title-link" itemprop="url">Command Line Russian Roulette</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-12-16 16:58:38" itemprop="dateCreated datePublished" datetime="2018-12-16T16:58:38+08:00">2018-12-16</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="fa fa-file-word-o"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">23</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-clock-o"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">1 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p><img src="/images/2018-12/Strip-Roulette-russe-650-finalenglish.jpg" alt=""></p>
-<p>图片来源：<a href="http://www.commitstrip.com/en/2014/05/16/russian-roulette" target="_blank" rel="noopener">Russian roulette</a></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -517,7 +552,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">94</span>
+<span class="site-state-item-count">93</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -550,7 +585,7 @@ RSS
 <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
 </li>
 <li class="links-of-blogroll-item">
-<a href="http://www.three-body.org" title="http://www.three-body.org" rel="noopener" target="_blank">Three Body</a>
+<a href="https://three-body.org" title="https://three-body.org" rel="noopener" target="_blank">Three Body</a>
 </li>
 </ul>
 </div>
@@ -558,7 +593,6 @@ RSS
 </div>
 </div>
 </aside>
-<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">

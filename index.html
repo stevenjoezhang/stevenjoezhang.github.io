@@ -20,7 +20,7 @@ var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.0.0',
-sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false,"dimmer":false},
 fancybox: true,
 fastclick: true,
 lazyload: false,
@@ -154,6 +154,78 @@ page-home">
 <div class="content-wrap">
 <div id="content" class="content">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-02/macOS Mojave动态壁纸/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2019-02/macOS Mojave动态壁纸/" class="post-title-link" itemprop="url">macOS Mojave动态壁纸</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2019-02-26 08:33:12" itemprop="dateCreated datePublished" datetime="2019-02-26T08:33:12+08:00">2019-02-26</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">22k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">20 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p><img src="/images/2019-02/1_qjVGv0IMNTeKFIcks41ohA.png" alt=""></p>
+<p>How Apple built dynamic wallpapers? And is it possible to create your own dynamic wallpaper for macOS? I spent some time because I would like to answer to the both above questions.<br>Apple如何构建动态壁纸？是否可以为macOS创建自己的动态壁纸？我花了一些时间，因为我想回答上述两个问题。</p>
+<hr>
+<p>In Mojave we can choose new type of wallpaper: dynamic.<br>在Mojave，我们可以选择新型壁纸：动态。</p>
+<p><img src="/images/2019-02/1_4a3SZs7wS3g3AtO8E2RNvw.png" alt=""></p>
+<p>Depending on day time, system displays different wallpaper. At night it is picture of Mojave at night, during day it’s picture of Mojave taken during day. So at night we have dark wallpaper at day we have light wallpaper.<br>根据时间，系统会显示不同的壁纸。晚上显示Mojave晚上的照片，白天则是在白天拍摄的Mojave的照片。所以晚上我们有暗色的壁纸，白天则是明亮的壁纸。</p>
+<p>All built in wallpapers in macOS we can find in folder: <code>/Library/Desktop Pictures</code>. Also here we can find dynamic wallpaper.<br>我们可以在文件夹<code>/Library/Desktop Pictures</code>中找到所有macOS内置的壁纸。在这里我们也可以找到动态壁纸。</p>
+<p><img src="/images/2019-02/1_lRpwIxzeyEoXMbz97ZfG5Q.png" alt=""></p>
+<p>Dynamic wallpaper is saved as a HEIC file (<code>Mojave (Dynamic).heic</code>). More information about this type of file you can find on <a href="https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format" target="_blank" rel="noopener">Wikipedia</a>. Generally this is type of file which Apple uses in iOS devices. Photos in iOS (also live photos) are stored as a HEIC file. That kind of file can contains multiple images/thumbnails and metadata in a single file.<br>动态壁纸保存为HEIC文件（<code>Mojave (Dynamic).heic</code>）。有关此类文件的更多信息，请访问<a href="https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format" target="_blank" rel="noopener">Wikipedia</a>。通常，这是Apple在iOS设备中使用的文件类型。iOS中的照片（也包括实时照片）会存储为HEIC文件。这种文件可以在单个文件中包含多个图像/缩略图和元数据。</p>
+<p>There is really good online tool where we can check content of Mojave wallpaper file: <a href="https://strukturag.github.io/libheif/" target="_blank" rel="noopener">https://strukturag.github.io/libheif/</a>. You can upload <code>Mojave (Dynamic).heic</code> file and you will see that in this single file there is 16 separate pictures taken in different day phase.<br>有一个很好的在线工具，让我们可以检查Mojave壁纸文件的内容：<a href="https://strukturag.github.io/libheif/" target="_blank" rel="noopener">https://strukturag.github.io/libheif/</a> 。你可以上传<code>Mojave (Dynamic).heic</code>文件，然后你会发现在这个单独的文件中有16张不同时间拍摄的单独照片。</p>
+<p><img src="/images/2019-02/1_ESDAv949YKQIEocL-qDcGA.png" alt=""></p>
+<p>So maybe it’s enough to create new HEIC file with 16 separate images and macOS will show them properly. Let’s try it!<br>所以也许它足以创建具有16个单独图像的新HEIC文件，macOS将正确显示它们。我们来试试吧！</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2019-02/macOS Mojave动态壁纸/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-02/十五的月亮十五圆/">
@@ -319,7 +391,7 @@ page-home">
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>新年快乐！值此新春佳节之际，米米影视的新版片头正式推出了。借助于Final Cut Pro，新片头成功地融合了理想与现实、传统与现代，让你体会到无与伦比的、直击心灵的震撼。</p>
-<video src="/files/intro.mp4" preload="metadata" controls playsinline="" poster=""><br>Sorry, your browser does not support the video tag.<br></video>
+<video src="/files/intro.mp4" preload="metadata" controls playsinline="" poster="">Sorry, your browser does not support the video tag.</video>
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -374,106 +446,16 @@ page-home">
 </header>
 <div class="post-body" itemprop="articleBody">
 <p><img src="/images/2019-01/EclipsePrince_Vetter_1500.jpg" alt=""></p>
-<p>摄影师<a href="https://www.facebook.com/stephane.vetter.nuitsacrees" target="_blank" rel="noopener">Stephane Vetter</a>在8月21日的日食时，于俄勒冈州马格纳湖的同一地点融合了白天和黑夜的景象，完成了这个精美渲染的『小行星』图像。拍摄需要大量的精心策划，这里是他通过<a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener">Astronomy Picture of the Day</a>解释他是如何做到的：<br>In this beautifully rendered “little planet” image, photographer <a href="https://www.facebook.com/stephane.vetter.nuitsacrees" target="_blank" rel="noopener">Stephane Vetter</a> fuses both night and day captured from a single location at Magone Lake in Oregon during the August 21st solar eclipse. The shot required tons of careful planning, and here’s an explanation of how he did it via <a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener">Astronomy Picture of the Day</a>:</p>
+<p>In this beautifully rendered “little planet” image, photographer <a href="https://www.facebook.com/stephane.vetter.nuitsacrees" target="_blank" rel="noopener">Stephane Vetter</a> fuses both night and day captured from a single location at Magone Lake in Oregon during the August 21st solar eclipse. The shot required tons of careful planning, and here’s an explanation of how he did it via <a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener">Astronomy Picture of the Day</a>:<br>在8月21日的日食期间，摄影师<a href="https://www.facebook.com/stephane.vetter.nuitsacrees" target="_blank" rel="noopener">Stephane Vetter</a>于俄勒冈州马格纳湖的同一地点，融合了白天和黑夜的景象，完成了这个精美渲染的『小行星』图像。拍摄需要大量的精心策划，这里是他通过<a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener">Astronomy Picture of the Day</a>解释他是如何做到的：</p>
 <blockquote>
-<p>这是一个小行星、全天空、双时延、数字融合的复合材料，从一个地方在夜间和白天捕获天体运动。在这个360×180全景图中，北部和南部分别位于图像的底部和顶部，而东部和西部分别位于左右边缘。在日食前一个晚上的四个小时内，当地球旋转时，在北天极（底部）环绕着星轨。在日全食期间，从日出到日落（上图）每隔十五分钟拍摄一次太阳，有时是偏食。然后将所有这些图像数字合并到在日全食期间拍摄的单个图像上。然后，可以看到太阳的明亮日冕在黑暗的新月（左上）周围闪烁，而金星同时变得容易看见（顶部）。中间的树，在相机下面，是道格拉斯冷杉。<br>This featured little-planet, all-sky, double time-lapse, digitally-fused composite captured celestial action during both night and day from a single location. In this 360×180 panorama, north and south are at the image bottom and top, while east and west are at the left and right edges, respectively. During four hours the night before the eclipse, star trails were captured circling the north celestial pole (bottom) as the Earth spun. During the day of the total eclipse, the Sun was captured every fifteen minutes from sunrise to sunset (top), sometimes in partial eclipse. All of these images were then digitally merged onto a single image taken exactly during the total solar eclipse. Then, the Sun’s bright corona could be seen flaring around the dark new Moon (upper left), while Venus simultaneously became easily visible (top). The tree in the middle, below the camera, is a Douglas fir.</p>
+<p>This featured little-planet, all-sky, double time-lapse, digitally-fused composite captured celestial action during both night and day from a single location. In this 360×180 panorama, north and south are at the image bottom and top, while east and west are at the left and right edges, respectively. During four hours the night before the eclipse, star trails were captured circling the north celestial pole (bottom) as the Earth spun. During the day of the total eclipse, the Sun was captured every fifteen minutes from sunrise to sunset (top), sometimes in partial eclipse. All of these images were then digitally merged onto a single image taken exactly during the total solar eclipse. Then, the Sun’s bright corona could be seen flaring around the dark new Moon (upper left), while Venus simultaneously became easily visible (top). The tree in the middle, below the camera, is a Douglas fir.<br>这是一个小行星、全天空、双时延、数字融合的复合材料，在同一个地方，从夜间到白天持续捕获天体运动。在这个360×180全景图中，北部和南部分别位于图像的底部和顶部，而东部和西部分别位于左右边缘。在日食前一个晚上的四个小时内，当地球旋转时，在北天极（底部）环绕着星轨。在日全食期间，从日出到日落（上图）每隔十五分钟拍摄一次太阳，有时是偏食。然后将所有这些图像数字合并到在日全食期间拍摄的单个图像上。然后，可以看到太阳的明亮日冕在黑暗的新月（左上）周围闪烁，而金星同时变得容易看见（顶部）。中间的树，在相机下面，是道格拉斯冷杉。</p>
 </blockquote>
-<p>所以，这就是典型的日全食、小行星、全天空、双时延照片，借助一棵冷杉拍摄，仅此而已。你可以在Vetter的<a href="http://nuitsacrees.fr" target="_blank" rel="noopener">网站</a>上看到更多他的摄影作品。<br>So, just your typical full eclipse, little-planet, all-sky, double time-lapse photo by a fir tree, really. You can see more of Vetter’s photography on his <a href="http://nuitsacrees.fr" target="_blank" rel="noopener">website</a>.</p>
+<p>So, just your typical full eclipse, little-planet, all-sky, double time-lapse photo by a fir tree, really. You can see more of Vetter’s photography on his <a href="http://nuitsacrees.fr" target="_blank" rel="noopener">website</a>.<br>所以，这就是典型的日全食、小行星、全天空、双时延照片，借助一棵冷杉拍摄，仅此而已。你可以在Vetter的<a href="http://nuitsacrees.fr" target="_blank" rel="noopener">网站</a>上看到更多他的摄影作品。</p>
 <hr>
 <p>本文翻译自：<a href="https://www.thisiscolossal.com/2017/08/a-panoramic-eclipse-composite-with-star-trails-captured-by-stephane-vetter/" target="_blank" rel="noopener">A Panoramic Full Eclipse Composite with Star Trails Captured by Stephane Vetter</a></p>
 <p>这样的『小行星』图像虽然具有鱼眼镜头的扭曲效果，但是并不一定需要使用鱼眼镜头拍摄。通过强大的图像后期处理技术，只要拍摄多个角度的照片，也可以合成出这样的效果。</p>
 <p>拓展阅读：<a href="https://www.zhihu.com/question/27440901" target="_blank" rel="noopener">360度球状全景的照片是怎样拍出来的？</a></p>
 <p>更多小行星特效：<br><a href="http://720.jum8.com/quanjing/xx/" target="_blank" rel="noopener">小行星转场+车内全景</a><br><a href="https://720yun.com/t/eeb24mf59tn?scene_id=487241" target="_blank" rel="noopener">天使眼中的天堂——华中师大一附中</a></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-01/树莓派使用RFID RC522芯片/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2019-01/树莓派使用RFID RC522芯片/" class="post-title-link" itemprop="url">树莓派使用RFID RC522芯片</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2019-01-21 12:06:22" itemprop="dateCreated datePublished" datetime="2019-01-21T12:06:22+08:00">2019-01-21</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="fa fa-file-word-o"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">23k</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-clock-o"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">21 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>实用教程：树莓派使用RFID RC522芯片进行数据的读写</p>
-<p><img src="/images/2019-01/raspberry-pi-RFID-Reader.jpg" alt=""></p>
-<p>在这个Raspberry Pi RFID RC522教程中，我将介绍如何设置和连接Raspberry Pi和RFID RC522芯片。这是一个很实用的教程，以便于你之后各种不同的项目，例如使用它作为考勤系统、使用它来打开一个锁。<br>In this Raspberry Pi RFID RC522 tutorial, I will be walking you through the steps on how to set up and wire the RFID RC522 chip with your Raspberry Pi. This project is a cool circuit to play around with and opens you up to quite a wide variety of different projects from using it as an attendance system to using it to open a lock.</p>
-<p>RFID RC522是基于MFRC522微控制器的非常低成本的RFID（射频识别）读写器。该微控制器通过SPI协议提供数据，并通过创建一个13.56MHz的电磁场来工作，该电磁场用于与RFID卡片进行通信。<br>The RFID RC522 is a very low-cost RFID (Radio-frequency identification) reader and writer that is based on the MFRC522 microcontroller. This microcontroller provides its data through the SPI protocol and works by creating a 13.56MHz electromagnetic field that it uses to communicate with the RFID tags.</p>
-<p>确保你的RFID RC522购买的卡片在13.56MHz的频率上运行，否则将无法读取。<br>Make sure that the tags you purchase for your RFID RC522 operate on the 13.56MHz frequency otherwise we will fail to read them.</p>
-<p>本教程将示范如何连接RC522以及编写Python脚本以与芯片进行交互，以便读取和写入RFID卡片。如果你想展示一些数据信息，你可以使用像<a href="https://pimylifeup.com/raspberry-pi-lcd-16x2" target="_blank" rel="noopener">16×2液晶显示器</a>扩展这个教程。<br>We will be showing you how to wire up the RC522 as well as showing you how to write Python scripts to interact with the chip so you can both read and write your RFID Tags. You can extend this tutorial to use something like a <a href="https://pimylifeup.com/raspberry-pi-lcd-16x2" target="_blank" rel="noopener">16×2 LCD for the Raspberry Pi</a>, handy if you want to show some information.</p>
-<h2 id="设备清单"><a href="#设备清单" class="headerlink" title="设备清单"></a>设备清单</h2><p>Equipment List</p>
-<p>下面列出的是我在这个教程中使用的东西。<br>Below are all the bits and pieces that I used for this Raspberry Pi RFID RC522 tutorial.</p>
-<p>推荐：<br>Recommended:</p>
-<ul>
-<li><p>树莓派2或3<br>Raspberry Pi 2 or 3</p>
-</li>
-<li><p>Micro SD卡<br>Micro SD Card</p>
-</li>
-<li><p>电源供应<br>Power Supply</p>
-</li>
-<li><p>RC522 RFID读卡器<br>RC522 RFID Reader</p>
-</li>
-<li><p>面包板<br>Breadboard</p>
-</li>
-<li><p>面包板接线<br>Breadboard Wire</p>
-</li>
-</ul>
-<p>可选：<br>Optional:</p>
-<ul>
-<li><p>树莓派外壳<br>Raspberry Pi Case</p>
-</li>
-<li><p>以太网或Wifi适配（树莓派3自带了）<br>Ethernet Network Connection or Wifi dongle (The Pi 3 has WiFi inbuilt)</p>
-</li>
-</ul>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2019-01/树莓派使用RFID RC522芯片/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -505,7 +487,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">94</span>
+<span class="site-state-item-count">93</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -538,7 +520,7 @@ RSS
 <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
 </li>
 <li class="links-of-blogroll-item">
-<a href="http://www.three-body.org" title="http://www.three-body.org" rel="noopener" target="_blank">Three Body</a>
+<a href="https://three-body.org" title="https://three-body.org" rel="noopener" target="_blank">Three Body</a>
 </li>
 </ul>
 </div>
@@ -546,7 +528,6 @@ RSS
 </div>
 </div>
 </aside>
-<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">

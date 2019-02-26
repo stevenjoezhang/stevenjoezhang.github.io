@@ -44,11 +44,7 @@
 	text-overflow: ellipsis;
 	overflow: hidden;
 	position: absolute;
-	animation-delay: 5s;
-	animation-duration: 50s;
-	animation-iteration-count: infinite;
-	animation-name: shake;
-	animation-timing-function: ease-in-out;
+	animation: shake 50s ease-in-out 5s infinite;
 }
 #waifu #live2d {
 	position: relative;

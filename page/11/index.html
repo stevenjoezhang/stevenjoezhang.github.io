@@ -20,7 +20,7 @@ var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.0.0',
-sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false,"dimmer":false},
 fancybox: true,
 fastclick: true,
 lazyload: false,
@@ -242,7 +242,7 @@ page-home">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-04-25 17:20:39" itemprop="dateCreated datePublished" datetime="2018-04-25T17:20:39+08:00">2018-04-25</time>
+<time title="创建时间：2018-04-27 17:20:39" itemprop="dateCreated datePublished" datetime="2018-04-27T17:20:39+08:00">2018-04-27</time>
 </span>
 <span class="post-category">
 <span class="post-meta-divider">|</span>
@@ -412,7 +412,7 @@ page-home">
 </article>
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/真正的红黑树/">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/Linux命令行常用快捷键/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
@@ -423,7 +423,7 @@ page-home">
 </span>
 <header class="post-header">
 <h1 class="post-title" itemprop="name headline">
-<a href="/2018-04/真正的红黑树/" class="post-title-link" itemprop="url">真正的红黑树</a>
+<a href="/2018-04/Linux命令行常用快捷键/" class="post-title-link" itemprop="url">Linux命令行常用快捷键</a>
 </h1>
 <div class="post-meta">
 <span class="post-time">
@@ -439,14 +439,14 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
 <div class="post-symbolscount">
 <span class="post-meta-item-icon">
 <i class="fa fa-file-word-o"></i>
 </span>
 <span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">1</span>
+<span title="本文字数">1.3k</span>
 <span class="post-meta-divider">|</span>
 <span class="post-meta-item-icon">
 <i class="fa fa-clock-o"></i>
@@ -457,7 +457,46 @@ page-home">
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p><img src="/images/2018-04/IMG_4171.jpg" alt=""></p>
+<p>通过快捷键，可以方便地在Linux命令行下快速移动光标、编辑命令、编辑后执行历史命令、<code>Bang(!)</code>命令、控制命令等，有效提高工作效率。</p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
+<li><kbd>Ctrl</kbd>+<kbd>K</kbd>：先按住<kbd>CTRL</kbd>键，然后再按<kbd>K</kbd>键</li>
+<li><kbd>Ctrl</kbd>+<kbd>KL</kbd>：先按住<kbd>CTRL</kbd>键，然后再按<kbd>K</kbd>键，然后松开<kbd>K</kbd>键，再按<kbd>L</kbd>键</li>
+<li><kbd>Alt</kbd>+<kbd>K</kbd>：先按住<kbd>ALT</kbd>键，然后再按<kbd>K</kbd>键</li>
+<li><kbd>Meta</kbd>+<kbd>K</kbd>：先单击<kbd>Meta</kbd>（Esc）键，然后再按<kbd>K</kbd>键</li>
+</ul>
+<h2 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h2><ul>
+<li><kbd>Ctrl</kbd>+<code>左右键</code>：在单词之间跳转</li>
+<li><kbd>Ctrl</kbd>+<kbd>A</kbd>：移到行首</li>
+<li><kbd>Ctrl</kbd>+<kbd>E</kbd>：移到行尾</li>
+<li><kbd>Ctrl</kbd>+<kbd>B</kbd>：往回（左）移动一个字符</li>
+<li><kbd>Ctrl</kbd>+<kbd>F</kbd>：往后（右）移动一个字符</li>
+<li><kbd>Ctrl</kbd>+<kbd>XX</kbd>：在命令行尾和光标之间移动</li>
+<li><kbd>Alt</kbd>+<kbd>B</kbd>：往回（左）移动一个单词</li>
+<li><kbd>Alt</kbd>+<kbd>F</kbd>：往后（右）移动一个单词</li>
+<li><kbd>Meta</kbd>+<kbd>B</kbd>：往回（左）移动一个单词</li>
+<li><kbd>Meta</kbd>+<kbd>F</kbd>：往后（右）移动一个单词</li>
+</ul>
+<h2 id="编辑命令"><a href="#编辑命令" class="headerlink" title="编辑命令"></a>编辑命令</h2><ul>
+<li><kbd>Ctrl</kbd>+<kbd>H</kbd>：删除光标左方位置的字符</li>
+<li><kbd>Ctrl</kbd>+<kbd>D</kbd>：删除光标右方位置的字符（注意：<kbd>Ctrl</kbd>+<kbd>D</kbd>也代表EOF，当前命令行没有任何字符时，会注销系统或结束终端）</li>
+<li><kbd>Ctrl</kbd>+<kbd>W</kbd>：由光标位置开始，往左删除单词（往行首删）</li>
+<li><kbd>Alt</kbd>+<kbd>D</kbd>：由光标位置开始，往右删除单词（往行尾删）</li>
+<li><kbd>Meta</kbd>+<kbd>D</kbd>：由光标位置开始，删除单词，直到该单词结束</li>
+<li><kbd>Ctrl</kbd>+<kbd>U</kbd>：由光标所在位置开始，删除左方所有的字符，直到该行开始</li>
+<li><kbd>Ctrl</kbd>+<kbd>K</kbd>：由光标所在位置开始，删除右方所有的字符，直到该行结束</li>
+<li><kbd>Ctrl</kbd>+<kbd>Y</kbd>：粘贴<kbd>Ctrl</kbd>+<kbd>U</kbd>或<kbd>Ctrl</kbd>+<kbd>K</kbd>剪切的内容到光标后</li>
+<li><kbd>Ctrl</kbd>+<kbd>T</kbd>：交换光标处和之前两个字符的位置</li>
+<li><kbd>Alt</kbd>+<kbd>.</kbd>：使用上一条命令的最后一个参数</li>
+<li><kbd>Ctrl</kbd>+<kbd>_</kbd>：回复之前的状态，撤销操作</li>
+</ul>
+<p>另外，<kbd>Ctrl</kbd>+<kbd>AK</kbd>或<kbd>Ctrl</kbd>+<kbd>EU</kbd>或<kbd>Ctrl</kbd>+<kbd>KU</kbd>组合可删除整行。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-04/Linux命令行常用快捷键/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -489,7 +528,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">94</span>
+<span class="site-state-item-count">93</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -522,7 +561,7 @@ RSS
 <a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
 </li>
 <li class="links-of-blogroll-item">
-<a href="http://www.three-body.org" title="http://www.three-body.org" rel="noopener" target="_blank">Three Body</a>
+<a href="https://three-body.org" title="https://three-body.org" rel="noopener" target="_blank">Three Body</a>
 </li>
 </ul>
 </div>
@@ -530,7 +569,6 @@ RSS
 </div>
 </div>
 </aside>
-<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">

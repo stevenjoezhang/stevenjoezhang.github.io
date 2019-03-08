@@ -329,9 +329,11 @@ span.exturl:hover {
   color: #0684bd;
   border-bottom-color: #0684bd;
 }
-blockquote {
-  margin: 0;
-  padding: 0;
+video {
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 img {
   display: block;
@@ -347,6 +349,7 @@ hr {
   background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 8px);
 }
 blockquote {
+  margin: 0;
   padding: 0 15px;
   color: #666;
   border-left: 4px solid #ddd;
@@ -536,7 +539,7 @@ pre,
   overflow: auto;
   margin: 20px 0;
   padding: 0;
-  font-size: 16px;
+  font-size: 14px;
   color: #4d4d4c;
   background: #f7f7f7;
   line-height: 1.6;
@@ -552,7 +555,7 @@ code {
   color: #555;
   background: #eee;
   border-radius: 3px;
-  font-size: 16px;
+  font-size: 14px;
 }
 pre {
   padding: 10px;
@@ -788,6 +791,29 @@ pre .javascript .function {
   max-width: 150px;
   max-height: 150px;
 }
+.post-body .label {
+  display: inline;
+  padding: 0 2px;
+  white-space: nowrap;
+}
+.post-body .label.default {
+  background-color: #f0f0f0;
+}
+.post-body .label.primary {
+  background-color: #efe6f7;
+}
+.post-body .label.info {
+  background-color: #e5f2f8;
+}
+.post-body .label.success {
+  background-color: #e7f4e9;
+}
+.post-body .label.warning {
+  background-color: #fcf6e1;
+}
+.post-body .label.danger {
+  background-color: #fae8eb;
+}
 .post-body .note {
   position: relative;
   padding: 15px;
@@ -881,29 +907,6 @@ pre .javascript .function {
 .post-body .note.danger h5,
 .post-body .note.danger h6 {
   color: #d9534f;
-}
-.post-body .label {
-  display: inline;
-  padding: 0 2px;
-  white-space: nowrap;
-}
-.post-body .label.default {
-  background-color: #f0f0f0;
-}
-.post-body .label.primary {
-  background-color: #efe6f7;
-}
-.post-body .label.info {
-  background-color: #e5f2f8;
-}
-.post-body .label.success {
-  background-color: #e7f4e9;
-}
-.post-body .label.warning {
-  background-color: #fcf6e1;
-}
-.post-body .label.danger {
-  background-color: #fae8eb;
 }
 .post-body .tabs {
   position: relative;
@@ -1948,6 +1951,7 @@ pre .javascript .function {
   line-height: 1.4;
   white-space: nowrap;
   text-align: center;
+  margin-top: 10px;
 }
 .site-state-item {
   display: inline-block;
@@ -1972,7 +1976,7 @@ pre .javascript .function {
   color: #999;
 }
 .feed-link {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .feed-link a {
   display: inline-block;
@@ -2013,7 +2017,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff18;
+  background: #ed59ab;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3078,9 +3082,8 @@ ul.breadcrumb li+li:last-child {
 }
 .links-of-blogroll {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 5px;
   padding: 3px 0 0;
-  border-top: 1px dotted #ccc;
 }
 .links-of-blogroll-title {
   margin-top: 0;
@@ -3299,18 +3302,8 @@ body {
   overflow-x: hidden;
   overscroll-behavior: none;
 }
-video {
-  max-width: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 blockquote p {
   font-family: STKaiti, KaiTi, 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-}
-.links-of-blogroll {
-  margin-top: 5px;
-  border-top: none;
 }
 .busuanzi-value {
   margin: 0px;

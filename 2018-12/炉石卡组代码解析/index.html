@@ -7,20 +7,22 @@
 <meta name="theme-color" content="#222">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
-<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|16:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.0.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+<link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.0.0',
-sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false,"dimmer":false},
+version: '7.0.1',
+sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+back2top: true,
+back2top_sidebar: false,
 fancybox: true,
 fastclick: true,
 lazyload: false,
@@ -112,14 +114,14 @@ top: initial;
 <li class="menu-item menu-item-about">
 <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
 </li>
-<li class="menu-item menu-item-tags">
-<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+<li class="menu-item menu-item-archives">
+<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-categories">
 <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 </li>
-<li class="menu-item menu-item-archives">
-<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+<li class="menu-item menu-item-tags">
+<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 </li>
 <li class="menu-item menu-item-friends">
 <a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
@@ -202,19 +204,6 @@ top: initial;
 阅读次数：
 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="fa fa-file-word-o"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">4k</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-clock-o"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">4 分钟</span>
-</div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -334,23 +323,23 @@ top: initial;
 <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
-<p class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</p>
+<div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
 </div>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">93</span>
+<span class="site-state-item-count">94</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
-<a href="/categories/index.html">
+<a href="/categories/">
 <span class="site-state-item-count">7</span>
 <span class="site-state-item-name">分类</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
-<a href="/tags/index.html">
+<a href="/tags/">
 <span class="site-state-item-count">23</span>
 <span class="site-state-item-name">标签</span>
 </a>
@@ -434,13 +423,13 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/src/utils.js?v=7.0.0"></script>
-<script src="/js/src/motion.js?v=7.0.0"></script>
-<script src="/js/src/affix.js?v=7.0.0"></script>
-<script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
-<script src="/js/src/scrollspy.js?v=7.0.0"></script>
-<script src="/js/src/post-details.js?v=7.0.0"></script>
-<script src="/js/src/bootstrap.js?v=7.0.0"></script>
+<script src="/js/src/utils.js?v=7.0.1"></script>
+<script src="/js/src/motion.js?v=7.0.1"></script>
+<script src="/js/src/affix.js?v=7.0.1"></script>
+<script src="/js/src/schemes/pisces.js?v=7.0.1"></script>
+<script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+<script src="/js/src/next-boot.js?v=7.0.1"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
@@ -761,6 +750,38 @@ onPopupClose();
 }
 });
 </script>
+<style>
+.pdfobject-container {
+position: relative;
+overflow: auto;
+width: 100%;
+}
+</style>
+<script>
+if ($('body').find('div.pdf').length) {
+$.ajax({
+type: 'GET',
+url: '//cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js',
+dataType: 'script',
+cache: true,
+success: function() {
+$('body').find('div.pdf').each(function(i, o) {
+PDFObject.embed($(o).attr('target'), $(o), {
+pdfOpenParams: {
+navpanes: 0,
+toolbar: 0,
+statusbar: 0,
+pagemode: 'thumbs',
+view: 'FitH'
+},
+PDFJS_URL: '/lib/pdf/web/viewer.html',
+height: $(o).attr('height') || '500px'
+});
+});
+},
+});
+}
+</script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script>pangu.spacingPage();</script>
 <style>
@@ -791,7 +812,7 @@ top: 8px;
 }
 .highlight-wrap:hover .copy-btn,
 .highlight-wrap .copy-btn:focus {
-opacity: 1
+opacity: 1;
 }
 .highlight-wrap {
 position: relative;
@@ -806,25 +827,20 @@ var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
 return $(e).text();
 }).toArray().join('\n');
 var ta = document.createElement('textarea');
-var range = document.createRange(); //For Chrome
-var sel = window.getSelection(); //For Chrome
 var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-ta.style.top = yPosition + 'px'; //Prevent page scroll
+ta.style.top = yPosition + 'px'; // Prevent page scroll
 ta.style.position = 'absolute';
 ta.style.opacity = '0';
+ta.readOnly = true;
 ta.value = code;
-ta.textContent = code; //For FireFox
-ta.contentEditable = true;
-ta.readOnly = false;
 document.body.appendChild(ta);
-range.selectNode(ta);
-sel.removeAllRanges();
-sel.addRange(range);
+ta.select();
 ta.setSelectionRange(0, code.length);
+ta.readOnly = false;
 var result = document.execCommand('copy');
 if (result) $(this).text('复制成功');
 else $(this).text('复制失败');
-ta.blur(); //For iOS
+ta.blur(); // For iOS
 $(this).blur();
 })).on('mouseleave', function(e) {
 var $b = $(this).find('.copy-btn');

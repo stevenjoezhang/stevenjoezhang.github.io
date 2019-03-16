@@ -47,7 +47,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:description" content="本站的官方域名是zhangshuqiao.org（墙内访问）和mi.js.org（备用/墙外访问），除此之外的镜像站点均不被认可，请注意辨别。由于本站的代码采用了一些新标准，可能不被部分版本较旧的浏览器所支持，因此为了保障您的浏览体验，请务必升级您的系统和浏览器至最新版本。如果您想要反馈本站中存在的任何问题，包括但不限于版权问题、文章错误、信息过时、链接失效等，敬请在评论区留言，或发送邮件至zsq">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/release.jpg">
-<meta property="og:updated_time" content="2019-03-01T04:40:56.805Z">
+<meta property="og:updated_time" content="2019-03-13T16:02:28.367Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于">
 <meta name="twitter:description" content="本站的官方域名是zhangshuqiao.org（墙内访问）和mi.js.org（备用/墙外访问），除此之外的镜像站点均不被认可，请注意辨别。由于本站的代码采用了一些新标准，可能不被部分版本较旧的浏览器所支持，因此为了保障您的浏览体验，请务必升级您的系统和浏览器至最新版本。如果您想要反馈本站中存在的任何问题，包括但不限于版权问题、文章错误、信息过时、链接失效等，敬请在评论区留言，或发送邮件至zsq">
@@ -169,7 +169,8 @@ top: initial;
 <p>本站的官方域名是<a href="https://zhangshuqiao.org">zhangshuqiao.org</a>（墙内访问）和<a href="https://mi.js.org" target="_blank" rel="noopener">mi.js.org</a>（备用/墙外访问），除此之外的镜像站点均不被认可，请注意辨别。<br>由于本站的代码采用了一些新标准，可能不被部分版本较旧的浏览器所支持，因此为了保障您的浏览体验，请务必升级您的系统和浏览器至最新版本。<br>如果您想要反馈本站中存在的任何问题，包括但不限于版权问题、文章错误、信息过时、链接失效等，敬请在评论区留言，或发送邮件至zsq(at)zsq.im联系博主；亦可在GitHub上<a href="https://github.com/stevenjoezhang/stevenjoezhang.github.io/issues" target="_blank" rel="noopener">提交ISSUE</a>。<br><strong>感谢您的关注与支持！</strong></p>
 <p>本站是张书樵的官方博客网站。张书樵是：</p>
 <ul>
-<li>Bilibili炉石传说区不知名娱乐UP主</li>
+<li>Bilibili不知名娱乐UP主</li>
+<li>Panda TV炉石传说区大主播</li>
 <li>灵魂P图手，鬼畜混音师，视频制作人</li>
 <li>并不熟练的Adobe全家桶用户</li>
 <li>重度强迫症患者，究极完美主义者</li>
@@ -233,7 +234,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">94</span>
+<span class="site-state-item-count">95</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -346,7 +347,8 @@ placeholder: '您可以在这里输入评论哟～',
 avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
-visitor: false
+visitor: false,
+lang: '' || 'zh-cn'
 });
 </script>
 <script>
@@ -648,18 +650,11 @@ onPopupClose();
 }
 });
 </script>
-<style>
-.pdfobject-container {
-position: relative;
-overflow: auto;
-width: 100%;
-}
-</style>
 <script>
 if ($('body').find('div.pdf').length) {
 $.ajax({
 type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js',
+url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
 dataType: 'script',
 cache: true,
 success: function() {
@@ -682,40 +677,6 @@ height: $(o).attr('height') || '500px'
 </script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script>pangu.spacingPage();</script>
-<style>
-.copy-btn {
-display: inline-block;
-padding: 6px 12px;
-font-size: 13px;
-font-weight: 700;
-line-height: 20px;
-color: #333;
-white-space: nowrap;
-vertical-align: middle;
-cursor: pointer;
-background-color: #eee;
-background-image: linear-gradient(#fcfcfc, #eee);
-border: 1px solid #d5d5d5;
-border-radius: 3px;
-user-select: none;
-outline: 0;
-}
-.highlight-wrap .copy-btn {
-transition: opacity .3s ease-in-out;
-opacity: 0;
-padding: 2px 6px;
-position: absolute;
-right: 4px;
-top: 8px;
-}
-.highlight-wrap:hover .copy-btn,
-.highlight-wrap .copy-btn:focus {
-opacity: 1;
-}
-.highlight-wrap {
-position: relative;
-}
-</style>
 <script>
 $('.highlight').each(function(i, e) {
 var $wrap = $('<div>').addClass('highlight-wrap');

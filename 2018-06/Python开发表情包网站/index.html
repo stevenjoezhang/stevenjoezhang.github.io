@@ -314,7 +314,7 @@ PS制作科幻电路板 <i class="fa fa-chevron-right"></i>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">94</span>
+<span class="site-state-item-count">95</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -434,7 +434,8 @@ placeholder: '您可以在这里输入评论哟～',
 avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
-visitor: false
+visitor: false,
+lang: '' || 'zh-cn'
 });
 </script>
 <script>
@@ -736,18 +737,11 @@ onPopupClose();
 }
 });
 </script>
-<style>
-.pdfobject-container {
-position: relative;
-overflow: auto;
-width: 100%;
-}
-</style>
 <script>
 if ($('body').find('div.pdf').length) {
 $.ajax({
 type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js',
+url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
 dataType: 'script',
 cache: true,
 success: function() {
@@ -770,40 +764,6 @@ height: $(o).attr('height') || '500px'
 </script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script>pangu.spacingPage();</script>
-<style>
-.copy-btn {
-display: inline-block;
-padding: 6px 12px;
-font-size: 13px;
-font-weight: 700;
-line-height: 20px;
-color: #333;
-white-space: nowrap;
-vertical-align: middle;
-cursor: pointer;
-background-color: #eee;
-background-image: linear-gradient(#fcfcfc, #eee);
-border: 1px solid #d5d5d5;
-border-radius: 3px;
-user-select: none;
-outline: 0;
-}
-.highlight-wrap .copy-btn {
-transition: opacity .3s ease-in-out;
-opacity: 0;
-padding: 2px 6px;
-position: absolute;
-right: 4px;
-top: 8px;
-}
-.highlight-wrap:hover .copy-btn,
-.highlight-wrap .copy-btn:focus {
-opacity: 1;
-}
-.highlight-wrap {
-position: relative;
-}
-</style>
 <script>
 $('.highlight').each(function(i, e) {
 var $wrap = $('<div>').addClass('highlight-wrap');

@@ -158,6 +158,56 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/WordPress 3.x版本中的彩蛋/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2017-11/WordPress 3.x版本中的彩蛋/" class="post-title-link" itemprop="url">WordPress 3.x版本中的彩蛋</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2017-11-10 12:44:27" itemprop="dateCreated datePublished" datetime="2017-11-10T12:44:27+08:00">2017-11-10</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>今天博主在进行WordPress博客考古活动时，得知了一个彩蛋。来源见：<a href="http://www.kaisir.com/2010/02/the-egg-wordpress.html" target="_blank" rel="noopener">WordPress的彩蛋</a>。<br>在WordPress文章中使用Compare Revisions功能，如果两个相比较的文章ID一致，就会触发彩蛋。其效果是显示文字：</p>
+<blockquote>
+<p>Wake up XXX… The matrix has you. Follow the white rabbit. Don’t let this happen again.</p>
+</blockquote>
+<p>这是一个致敬The Matrix的彩蛋。经过对<a href="https://cn.wordpress.org/releases" target="_blank" rel="noopener">WordPress历史版本</a>的分析，发现该彩蛋已在4.x版本移除。通过分析3.0.2版本的文件，找到了该版本的revision.php和revision-js.php文件，并大致研究出了其实现方法。在revision.php中有这样一串代码：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// If we're comparing a revision to itself, redirect to the 'view' page for that revision or the edit page for that post</span></span><br><span class="line"><span class="keyword">if</span> ( $left_revision-&gt;ID == $right_revision-&gt;ID ) &#123;</span><br><span class="line">    $redirect = get_edit_post_link( $left_revision-&gt;ID );</span><br><span class="line">    <span class="keyword">include</span>( <span class="string">'./js/revisions-js.php'</span> );</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>而在revision-js.php中，有一串经过了eval混淆的代码，用于向用户输出彩蛋内容。 目前博主正在尝试反混淆代码，并复现这个彩蛋。如果你有兴趣，也可以下载revision-js.php进行研究。</p>
+<p>本文更新于2017年11月11日：<br>由于博主并不准备搭建旧版本WordPress的运行环境，于是决定从代码入手，分析这个彩蛋。<br>在revisions-js.php中定义的函数dvortr()作用是使用一对一的替换来加密字符串，该文件中有两次调用此函数：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dvortr( <span class="string">"Erb-y n.y ydco dall.b aiacbv Wa ce]-irxajt- dp.u]-$-VIr XajtWzaVv"</span> )</span><br></pre></td></tr></table></figure></p>
+<p>和<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dvortr( <span class="string">'Eabi.p!'</span> )</span><br></pre></td></tr></table></figure></p>
+<p>经过解密，其输出分别为<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Don't let this happen again. <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">'goback'</span> <span class="attr">href</span>=<span class="string">'$'</span>&gt;</span>Go Back<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>和<code>Danger!</code>。<br>而定义的变量<code>$j</code>作用是包含jQuery库，<code>$n</code>是获取的当前用户名，<code>$d</code>是noscript时的输出。通过替换掉一些WordPress中定义的函数，博主成功地使部分解码后的php文件在本地Apache服务器成功运行。并且，博主还重新制作了这个彩蛋，现在它已经可以在<a href="https://galaxymimi.com" target="_blank" rel="noopener">Galaxy Mimi</a>以某种方式触发～<br>下面附上整个解密过程中所用到的文件。其中revision.php和revisions-js.php是原文件，decode.php是部分解密后的文件，decode.js是浏览器获取的匿名js文件，decoder.html是根据原文件的加密算法编写的加密、解密脚本。<br><a href="/files/WordPressEasterEgg.zip">WordPressEasterEgg</a></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/在WordPress博客中使用LaTeX/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -356,56 +406,6 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-10/MacBook使用一块移动硬盘做Win To Go及Time Machine备份/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2017-10/MacBook使用一块移动硬盘做Win To Go及Time Machine备份/" class="post-title-link" itemprop="url">MacBook使用一块移动硬盘做Win To Go及Time Machine备份</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2017-10-15 12:35:38" itemprop="dateCreated datePublished" datetime="2017-10-15T12:35:38+08:00">2017-10-15</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p><img src="/images/2017-10/macbookair.png" alt=""></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>博主使用的MacBook Air，256G闪存，可用空间约251G，曾经的分区表为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/dev/disk0 (internal, physical):</span><br><span class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></span><br><span class="line">   0:      GUID_partition_scheme                        *251.0 GB   disk0</span><br><span class="line">   1:                        EFI EFI                     209.7 MB   disk0s1</span><br><span class="line">   2:                 Apple_APFS Container disk1         215.4 GB   disk0s2</span><br><span class="line">   3:                   Bootcamp                         35.2 GB    disk0s3</span><br><span class="line">   4:            Winows Recovery                         212.4 MB   disk0s3</span><br><span class="line"></span><br><span class="line">/dev/disk1 (synthesized):</span><br><span class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></span><br><span class="line">   0:      APFS Container Scheme –                      +215.4 GB   disk1</span><br><span class="line">                                 Physical Store disk0s2</span><br><span class="line">   1:                APFS Volume Macintosh HD            152.3 GB   disk1s1</span><br><span class="line">   2:                APFS Volume Preboot                 20.1 MB    disk1s2</span><br><span class="line">   3:                APFS Volume Recovery                520.0 MB   disk1s3</span><br><span class="line">   4:                APFS Volume VM                      3.2 GB     disk1s4</span><br></pre></td></tr></table></figure></p>
-<p>（这是使用<code>diskutil list</code>命令输出的结果）</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2017-10/MacBook使用一块移动硬盘做Win To Go及Time Machine备份/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -431,7 +431,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">94</span>
+<span class="site-state-item-count">95</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -542,7 +542,8 @@ placeholder: '您可以在这里输入评论哟～',
 avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
-visitor: false
+visitor: false,
+lang: '' || 'zh-cn'
 });
 </script>
 <script>
@@ -871,29 +872,16 @@ if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(
 MathJax.Hub.Queue(function() {
 var all = MathJax.Hub.getAllJax(), i;
 for (i = 0; i < all.length; i += 1) {
-all[i].SourceElement().parentNode.className += ' has-jax';
+document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
 }
 });
 </script>
 <script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
-<style>
-.MathJax_Display {
-overflow-x: scroll;
-overflow-y: hidden;
-}
-</style>
-<style>
-.pdfobject-container {
-position: relative;
-overflow: auto;
-width: 100%;
-}
-</style>
 <script>
 if ($('body').find('div.pdf').length) {
 $.ajax({
 type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js',
+url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
 dataType: 'script',
 cache: true,
 success: function() {
@@ -916,40 +904,6 @@ height: $(o).attr('height') || '500px'
 </script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script>pangu.spacingPage();</script>
-<style>
-.copy-btn {
-display: inline-block;
-padding: 6px 12px;
-font-size: 13px;
-font-weight: 700;
-line-height: 20px;
-color: #333;
-white-space: nowrap;
-vertical-align: middle;
-cursor: pointer;
-background-color: #eee;
-background-image: linear-gradient(#fcfcfc, #eee);
-border: 1px solid #d5d5d5;
-border-radius: 3px;
-user-select: none;
-outline: 0;
-}
-.highlight-wrap .copy-btn {
-transition: opacity .3s ease-in-out;
-opacity: 0;
-padding: 2px 6px;
-position: absolute;
-right: 4px;
-top: 8px;
-}
-.highlight-wrap:hover .copy-btn,
-.highlight-wrap .copy-btn:focus {
-opacity: 1;
-}
-.highlight-wrap {
-position: relative;
-}
-</style>
 <script>
 $('.highlight').each(function(i, e) {
 var $wrap = $('<div>').addClass('highlight-wrap');

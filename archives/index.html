@@ -158,11 +158,25 @@ top: initial;
 <div id="posts" class="posts-collapse">
 <span class="archive-move-on"></span>
 <span class="archive-page-counter">
-很好! 目前共计 94 篇日志。 继续努力。
+很好! 目前共计 95 篇日志。 继续努力。
 </span>
 <div class="collection-title">
 <h1 class="archive-year" id="archive-year-2019">2019</h1>
 </div>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<header class="post-header">
+<h2 class="post-title">
+<a class="post-title-link" href="/2019-03/神奇的求圆周率代码/" itemprop="url">
+<span itemprop="name">神奇的求圆周率代码</span>
+</a>
+</h2>
+<div class="post-meta">
+<time class="post-time" itemprop="dateCreated" datetime="2019-03-14T15:09:26+08:00" content="2019-03-14">
+03-14
+</time>
+</div>
+</header>
+</article>
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <header class="post-header">
 <h2 class="post-title">
@@ -362,20 +376,6 @@ top: initial;
 </div>
 </header>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<header class="post-header">
-<h2 class="post-title">
-<a class="post-title-link" href="/2018-12/十二月天象/" itemprop="url">
-<span itemprop="name">十二月天象</span>
-</a>
-</h2>
-<div class="post-meta">
-<time class="post-time" itemprop="dateCreated" datetime="2018-12-02T20:11:36+08:00" content="2018-12-02">
-12-02
-</time>
-</div>
-</header>
-</article>
 </div>
 </div>
 <nav class="pagination">
@@ -402,7 +402,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">94</span>
+<span class="site-state-item-count">95</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -513,7 +513,8 @@ placeholder: '您可以在这里输入评论哟～',
 avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
-visitor: false
+visitor: false,
+lang: '' || 'zh-cn'
 });
 </script>
 <script>
@@ -815,18 +816,11 @@ onPopupClose();
 }
 });
 </script>
-<style>
-.pdfobject-container {
-position: relative;
-overflow: auto;
-width: 100%;
-}
-</style>
 <script>
 if ($('body').find('div.pdf').length) {
 $.ajax({
 type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js',
+url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
 dataType: 'script',
 cache: true,
 success: function() {
@@ -849,40 +843,6 @@ height: $(o).attr('height') || '500px'
 </script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script>pangu.spacingPage();</script>
-<style>
-.copy-btn {
-display: inline-block;
-padding: 6px 12px;
-font-size: 13px;
-font-weight: 700;
-line-height: 20px;
-color: #333;
-white-space: nowrap;
-vertical-align: middle;
-cursor: pointer;
-background-color: #eee;
-background-image: linear-gradient(#fcfcfc, #eee);
-border: 1px solid #d5d5d5;
-border-radius: 3px;
-user-select: none;
-outline: 0;
-}
-.highlight-wrap .copy-btn {
-transition: opacity .3s ease-in-out;
-opacity: 0;
-padding: 2px 6px;
-position: absolute;
-right: 4px;
-top: 8px;
-}
-.highlight-wrap:hover .copy-btn,
-.highlight-wrap .copy-btn:focus {
-opacity: 1;
-}
-.highlight-wrap {
-position: relative;
-}
-</style>
 <script>
 $('.highlight').each(function(i, e) {
 var $wrap = $('<div>').addClass('highlight-wrap');

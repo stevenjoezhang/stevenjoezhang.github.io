@@ -48,8 +48,9 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/macbookair.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/4500.png">
+<meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/FlipFlopWheel.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/diskutillist.png">
-<meta property="og:updated_time" content="2019-02-25T02:33:05.474Z">
+<meta property="og:updated_time" content="2019-03-09T03:50:06.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacBook使用一块移动硬盘做Win To Go及Time Machine备份">
 <meta name="twitter:description" content="前言博主使用的MacBook Air，256G闪存，可用空间约251G，曾经的分区表为：12345678910111213141516/dev/disk0 (internal, physical):   #:                       TYPE NAME                    SIZE       IDENTIFIER   0:      GUID_partit">
@@ -236,7 +237,8 @@ top: initial;
 <h3 id="创建Win-To-Go"><a href="#创建Win-To-Go" class="headerlink" title="创建Win To Go"></a>创建Win To Go</h3><p>使用系统自带工具或下载第三方软件，将Windows镜像装载到虚拟光驱。将移动硬盘连接到PC上。在PC上打开Win To Go安装工具，如图所示（目前已更新到4.8.0.0）。</p>
 <p><img src="/images/2017-10/4500.png" alt=""></p>
 <p>点击『浏览』，在虚拟光驱中找到install.wim文件并选中；在下方选择目标磁盘，即需要安装的移动硬盘。右侧高级选项中，『常用』栏下选择VHD，以及UEFI+GPT，『分区』栏下手动输入第二个分区的大小，单位为MB；程序会自动调整第一个分区的大小；第三个分区若无需要，填0即可。第一个分区即作为Win To Go分区，第二个分区作为Time Machine备份分区。请再次确认移动硬盘上所有分区的文件都已备份。接下来点击『创建』，就将进行全盘格式化，并建立引导，创建Win To Go相关文件。</p>
-<h3 id="配置Windows"><a href="#配置Windows" class="headerlink" title="配置Windows"></a>配置Windows</h3><p>完成上一步后，将移动硬盘接入Mac。重新启动系统，按住<kbd>Option</kbd>/<kbd>alt</kbd>键，进入引导磁盘选项。选择EFI分区，启动后按照提示完成Windows系统的配置即可。配置完Windows系统后，安装Bootcamp驱动。重新启动后即可应用更改。<br>注：在macOS与Windows下，触控板滚动方向是相反的，这一点可能会使用户感到不适，解决方案是修改注册表：<br>在Windos下通过Win+R打开『运行』，输入regedit，在打开的注册表编辑器中，依次选择<code>\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\HID</code>，即可查看所有可用的键盘、鼠标。对于每个输入设备，点开下级目录，查看其Device Parameters下是否具有属性FlipFlopWheel，若有，将其数据值由0改为1即可。</p>
+<h3 id="配置Windows"><a href="#配置Windows" class="headerlink" title="配置Windows"></a>配置Windows</h3><p>完成上一步后，将移动硬盘接入Mac。重新启动系统，按住<kbd>Option</kbd>/<kbd>alt</kbd>键，进入引导磁盘选项。选择EFI分区，启动后按照提示完成Windows系统的配置即可。配置完Windows系统后，安装Bootcamp驱动。重新启动后即可应用更改。<br>注：在macOS与Windows下，触控板滚动方向是相反的，这一点可能会使用户感到不适，解决方案是修改注册表：<br>在Windos下通过<kbd>Win</kbd>+<kbd>R</kbd>打开『运行』，输入regedit，在打开的注册表编辑器中，依次选择<code>\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\HID</code>，即可查看所有可用的键盘、鼠标。对于每个输入设备，点开下级目录，查看其Device Parameters下是否具有属性<code>FlipFlopWheel</code>和<code>FlipFlopHScroll</code>，若有，将其数据值由0改为1即可。</p>
+<p><img src="/images/2017-10/FlipFlopWheel.png" alt=""></p>
 <h3 id="配置Time-Machine"><a href="#配置Time-Machine" class="headerlink" title="配置Time Machine"></a>配置Time Machine</h3><p>此时再进入macOS系统，使用磁盘工具（在应用程序-实用工具目录中），选择移动硬盘，将其第二个分区（如果显示了EFI引导分区，则是第三个分区）格式化为macOS日志式。如果已经开启了Time Machine，系统将会提示你将此硬盘作为Time Machine备份硬盘。接下来打开Time Machine进行初次备份即可。<br>完成这些操作后，便成功地使一块移动硬盘成为Win To Go启动盘及Time Machine备份盘。</p>
 <p>附现在的分区表：</p>
 <p><img src="/images/2017-10/diskutillist.png" alt=""></p>
@@ -335,7 +337,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">94</span>
+<span class="site-state-item-count">95</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -455,7 +457,8 @@ placeholder: '您可以在这里输入评论哟～',
 avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
-visitor: false
+visitor: false,
+lang: '' || 'zh-cn'
 });
 </script>
 <script>
@@ -757,18 +760,11 @@ onPopupClose();
 }
 });
 </script>
-<style>
-.pdfobject-container {
-position: relative;
-overflow: auto;
-width: 100%;
-}
-</style>
 <script>
 if ($('body').find('div.pdf').length) {
 $.ajax({
 type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js',
+url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
 dataType: 'script',
 cache: true,
 success: function() {
@@ -791,40 +787,6 @@ height: $(o).attr('height') || '500px'
 </script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script>pangu.spacingPage();</script>
-<style>
-.copy-btn {
-display: inline-block;
-padding: 6px 12px;
-font-size: 13px;
-font-weight: 700;
-line-height: 20px;
-color: #333;
-white-space: nowrap;
-vertical-align: middle;
-cursor: pointer;
-background-color: #eee;
-background-image: linear-gradient(#fcfcfc, #eee);
-border: 1px solid #d5d5d5;
-border-radius: 3px;
-user-select: none;
-outline: 0;
-}
-.highlight-wrap .copy-btn {
-transition: opacity .3s ease-in-out;
-opacity: 0;
-padding: 2px 6px;
-position: absolute;
-right: 4px;
-top: 8px;
-}
-.highlight-wrap:hover .copy-btn,
-.highlight-wrap .copy-btn:focus {
-opacity: 1;
-}
-.highlight-wrap {
-position: relative;
-}
-</style>
 <script>
 $('.highlight').each(function(i, e) {
 var $wrap = $('<div>').addClass('highlight-wrap');

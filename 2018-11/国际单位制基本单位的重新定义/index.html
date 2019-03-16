@@ -48,7 +48,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-11/Unit_relations_in_the_old_SI.svg">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-11/Unit_relations_in_the_new_SI.svg">
-<meta property="og:updated_time" content="2019-02-12T03:44:04.722Z">
+<meta property="og:updated_time" content="2019-03-13T15:59:15.181Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="国际单位制基本单位的重新定义">
 <meta name="twitter:description" content="前言国际单位制以一组基本单位为基础，所有其他单位都是用基本单位建立起来的。麦克斯韦最初提出一致单位制的概念时，列出了三个可用的基本单位：质量、长度及时间单位。之后，吉奥尔吉提倡加入电的基本单位。理论上，电流、电势、电阻、电荷等物理量的单位都可以做基本单位，当选定其中一个做基本单位后，其余的电单位都可以通过物理定律从基本单位推导得出；国际单位制最终选择了使用电流。后期又加入了三个分别量度物质的量、温">
@@ -469,7 +469,7 @@ top: initial;
 </table>
 <p>注：其中，$c$为光速（speed of light），$\alpha$为精细结构常数（fine-structure constant），$R_\infty$为里德伯常量（Rydberg constant）。</p>
 <hr>
-<p>参考文章：<br><a href="https://en.wikipedia.org/wiki/2019_redefinition_of_SI_base_units" target="_blank" rel="noopener">Redefinition of SI base units</a><br><a href="https://en.wikipedia.org/wiki/International_System_of_Units" target="_blank" rel="noopener">国际单位制</a></p>
+<p>参考文章：<br><a href="https://en.wikipedia.org/wiki/2019_redefinition_of_SI_base_units" target="_blank" rel="noopener">Redefinition of SI base units - 维基百科</a><br><a href="https://en.wikipedia.org/wiki/International_System_of_Units" target="_blank" rel="noopener">国际单位制 - 维基百科</a></p>
 <p>拓展阅读：<br><a href="https://mp.weixin.qq.com/s/bYIHtP3B33rPAHYWIvNatQ" target="_blank" rel="noopener">刚刚，『千克』被重新定义！大K从此成为历史</a></p>
 </div>
 <div>
@@ -555,7 +555,7 @@ Safari顶栏彩虹效果 <i class="fa fa-chevron-right"></i>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">94</span>
+<span class="site-state-item-count">95</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -675,7 +675,8 @@ placeholder: '您可以在这里输入评论哟～',
 avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
-visitor: false
+visitor: false,
+lang: '' || 'zh-cn'
 });
 </script>
 <script>
@@ -1004,29 +1005,16 @@ if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(
 MathJax.Hub.Queue(function() {
 var all = MathJax.Hub.getAllJax(), i;
 for (i = 0; i < all.length; i += 1) {
-all[i].SourceElement().parentNode.className += ' has-jax';
+document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
 }
 });
 </script>
 <script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
-<style>
-.MathJax_Display {
-overflow-x: scroll;
-overflow-y: hidden;
-}
-</style>
-<style>
-.pdfobject-container {
-position: relative;
-overflow: auto;
-width: 100%;
-}
-</style>
 <script>
 if ($('body').find('div.pdf').length) {
 $.ajax({
 type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js',
+url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
 dataType: 'script',
 cache: true,
 success: function() {
@@ -1049,40 +1037,6 @@ height: $(o).attr('height') || '500px'
 </script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script>pangu.spacingPage();</script>
-<style>
-.copy-btn {
-display: inline-block;
-padding: 6px 12px;
-font-size: 13px;
-font-weight: 700;
-line-height: 20px;
-color: #333;
-white-space: nowrap;
-vertical-align: middle;
-cursor: pointer;
-background-color: #eee;
-background-image: linear-gradient(#fcfcfc, #eee);
-border: 1px solid #d5d5d5;
-border-radius: 3px;
-user-select: none;
-outline: 0;
-}
-.highlight-wrap .copy-btn {
-transition: opacity .3s ease-in-out;
-opacity: 0;
-padding: 2px 6px;
-position: absolute;
-right: 4px;
-top: 8px;
-}
-.highlight-wrap:hover .copy-btn,
-.highlight-wrap .copy-btn:focus {
-opacity: 1;
-}
-.highlight-wrap {
-position: relative;
-}
-</style>
 <script>
 $('.highlight').each(function(i, e) {
 var $wrap = $('<div>').addClass('highlight-wrap');

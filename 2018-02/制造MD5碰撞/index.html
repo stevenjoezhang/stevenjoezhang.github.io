@@ -48,7 +48,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-02/plane.jpg">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-02/ship.jpg">
-<meta property="og:updated_time" content="2019-02-05T10:32:30.767Z">
+<meta property="og:updated_time" content="2019-03-13T16:00:09.359Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="制造MD5碰撞">
 <meta name="twitter:description" content="下面这两张图片拥有相同的MD5值253dd04e87492e4fc3471de5e776bc3d：">
@@ -213,7 +213,7 @@ top: initial;
 <a id="more"></a>
 <p>使用Python计算文件MD5值的脚本：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">md5sum</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isfile(filename):</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    myhash = hashlib.md5()</span><br><span class="line">    f = file(filename, <span class="string">"rb"</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        b = f.read(<span class="number">8192</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> b:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        myhash.update(b)</span><br><span class="line">    f.close()</span><br><span class="line">    <span class="keyword">return</span> myhash.hexdigest()</span><br><span class="line"></span><br><span class="line">filepath = raw_input(<span class="string">"请输入文件路径："</span>)</span><br><span class="line">print(md5sum(filepath))</span><br></pre></td></tr></table></figure></p>
 <p>还有Python3的版本：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> partial</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">md5sum</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(filename, mode = <span class="string">"rb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">        myhash = hashlib.md5()</span><br><span class="line">        <span class="keyword">for</span> buf <span class="keyword">in</span> iter(partial(f.read, <span class="number">128</span>), <span class="string">b""</span>):</span><br><span class="line">            myhash.update(buf)</span><br><span class="line">    <span class="keyword">return</span> myhash.hexdigest()</span><br><span class="line"></span><br><span class="line">print(md5sum(input(<span class="string">"请输入文件路径："</span>)))</span><br></pre></td></tr></table></figure></p>
-<p>拓展阅读：<br><a href="https://www.zhihu.com/question/265534528/answer/300135154" target="_blank" rel="noopener">至今有没有发现哪几个字符串的MD5相同?</a><br><a href="https://natmchugh.blogspot.de/2015/02/create-your-own-md5-collisions.html" target="_blank" rel="noopener">Create your own MD5 collisions</a></p>
+<p>拓展阅读：<br><a href="https://www.zhihu.com/question/265534528/answer/300135154" target="_blank" rel="noopener">至今有没有发现哪几个字符串的MD5相同? - 知乎</a><br><a href="https://natmchugh.blogspot.de/2015/02/create-your-own-md5-collisions.html" target="_blank" rel="noopener">Create your own MD5 collisions</a></p>
 </div>
 <div>
 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -293,7 +293,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">94</span>
+<span class="site-state-item-count">95</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -406,7 +406,8 @@ placeholder: '您可以在这里输入评论哟～',
 avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
-visitor: false
+visitor: false,
+lang: '' || 'zh-cn'
 });
 </script>
 <script>
@@ -708,18 +709,11 @@ onPopupClose();
 }
 });
 </script>
-<style>
-.pdfobject-container {
-position: relative;
-overflow: auto;
-width: 100%;
-}
-</style>
 <script>
 if ($('body').find('div.pdf').length) {
 $.ajax({
 type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js',
+url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
 dataType: 'script',
 cache: true,
 success: function() {
@@ -742,40 +736,6 @@ height: $(o).attr('height') || '500px'
 </script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script>pangu.spacingPage();</script>
-<style>
-.copy-btn {
-display: inline-block;
-padding: 6px 12px;
-font-size: 13px;
-font-weight: 700;
-line-height: 20px;
-color: #333;
-white-space: nowrap;
-vertical-align: middle;
-cursor: pointer;
-background-color: #eee;
-background-image: linear-gradient(#fcfcfc, #eee);
-border: 1px solid #d5d5d5;
-border-radius: 3px;
-user-select: none;
-outline: 0;
-}
-.highlight-wrap .copy-btn {
-transition: opacity .3s ease-in-out;
-opacity: 0;
-padding: 2px 6px;
-position: absolute;
-right: 4px;
-top: 8px;
-}
-.highlight-wrap:hover .copy-btn,
-.highlight-wrap .copy-btn:focus {
-opacity: 1;
-}
-.highlight-wrap {
-position: relative;
-}
-</style>
 <script>
 $('.highlight').each(function(i, e) {
 var $wrap = $('<div>').addClass('highlight-wrap');

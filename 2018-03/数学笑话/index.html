@@ -47,7 +47,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:description" content="A point walks into A bar. $\bar{A}$ says, “We’re closed.”$e^{x}$ is walking down the street when it sees $\pi$ running towards him. “Help!”, $\pi$ shouts, There’s a differential operator coming my way">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-03/calczilla.png">
-<meta property="og:updated_time" content="2019-02-12T03:38:56.871Z">
+<meta property="og:updated_time" content="2019-03-13T16:00:44.267Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数学笑话">
 <meta name="twitter:description" content="A point walks into A bar. $\bar{A}$ says, “We’re closed.”$e^{x}$ is walking down the street when it sees $\pi$ running towards him. “Help!”, $\pi$ shouts, There’s a differential operator coming my way">
@@ -219,7 +219,7 @@ top: initial;
 <p>Theory is when you know everything but nothing works. Practice is when everything works but no one knows why. In our lab, theory and practice are combined: nothing works and nobody knows why.</p>
 <p>西江月·证明<br>即得易见平凡，仿照上例显然。留作习题答案略，读者自证不难。<br>反之亦然同理，推论自然成立。略去过程Q.E.D.，由上可知证毕。</p>
 <hr>
-<p>参考文章：<br><a href="https://abstrusegoose.com/26" target="_blank" rel="noopener">Abstruse Goose - Calc-zilla</a><br><a href="https://www.zhihu.com/question/22212241" target="_blank" rel="noopener">数学领域有哪些经典的笑话？</a></p>
+<p>参考文章：<br><a href="https://abstrusegoose.com/26" target="_blank" rel="noopener">Abstruse Goose - Calc-zilla</a><br><a href="https://www.zhihu.com/question/22212241" target="_blank" rel="noopener">数学领域有哪些经典的笑话？ - 知乎</a></p>
 </div>
 <div>
 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -299,7 +299,7 @@ Mac反编译apk程序 <i class="fa fa-chevron-right"></i>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">94</span>
+<span class="site-state-item-count">95</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -412,7 +412,8 @@ placeholder: '您可以在这里输入评论哟～',
 avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
-visitor: false
+visitor: false,
+lang: '' || 'zh-cn'
 });
 </script>
 <script>
@@ -741,29 +742,16 @@ if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(
 MathJax.Hub.Queue(function() {
 var all = MathJax.Hub.getAllJax(), i;
 for (i = 0; i < all.length; i += 1) {
-all[i].SourceElement().parentNode.className += ' has-jax';
+document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
 }
 });
 </script>
 <script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
-<style>
-.MathJax_Display {
-overflow-x: scroll;
-overflow-y: hidden;
-}
-</style>
-<style>
-.pdfobject-container {
-position: relative;
-overflow: auto;
-width: 100%;
-}
-</style>
 <script>
 if ($('body').find('div.pdf').length) {
 $.ajax({
 type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js',
+url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
 dataType: 'script',
 cache: true,
 success: function() {
@@ -786,40 +774,6 @@ height: $(o).attr('height') || '500px'
 </script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script>pangu.spacingPage();</script>
-<style>
-.copy-btn {
-display: inline-block;
-padding: 6px 12px;
-font-size: 13px;
-font-weight: 700;
-line-height: 20px;
-color: #333;
-white-space: nowrap;
-vertical-align: middle;
-cursor: pointer;
-background-color: #eee;
-background-image: linear-gradient(#fcfcfc, #eee);
-border: 1px solid #d5d5d5;
-border-radius: 3px;
-user-select: none;
-outline: 0;
-}
-.highlight-wrap .copy-btn {
-transition: opacity .3s ease-in-out;
-opacity: 0;
-padding: 2px 6px;
-position: absolute;
-right: 4px;
-top: 8px;
-}
-.highlight-wrap:hover .copy-btn,
-.highlight-wrap .copy-btn:focus {
-opacity: 1;
-}
-.highlight-wrap {
-position: relative;
-}
-</style>
 <script>
 $('.highlight').each(function(i, e) {
 var $wrap = $('<div>').addClass('highlight-wrap');

@@ -158,6 +158,61 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/JavaScript的函数调用与this/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-08/JavaScript的函数调用与this/" class="post-title-link" itemprop="url">JavaScript的函数调用与this</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-08-25 11:54:18" itemprop="dateCreated datePublished" datetime="2018-08-25T11:54:18+08:00">2018-08-25</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>JavaScript函数有4种调用方式。每种方式的不同方式在于this的初始化。对this关键字有解释：<em>一般而言，在JavaScript中，this指向函数执行时的当前对象。</em>注意this是保留关键字，你不能修改this的值。</p>
+<h2 id="作为一个函数调用"><a href="#作为一个函数调用" class="headerlink" title="作为一个函数调用"></a>作为一个函数调用</h2><p>先看一个最简单的实例，在浏览器中：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line">alert(myFunction()); <span class="comment">// [object Window]</span></span><br></pre></td></tr></table></figure></p>
+<p>而当函数没有被自身的对象调用时，this的值就会变成全局对象。在Web浏览器中全局对象是浏览器窗口（window 对象）。该实例返回this的值是window对象。也就是此函数即为window对象的函数，<code>myFunction()</code>等同于<code>window.myFunction()</code>。但是此处在使用内部函数时存在一个this指向的问题，看下面的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意此处在node环境和浏览器环境下值不同,</span></span><br><span class="line"><span class="comment">// node环境下必须去掉var使value成为全局变量。</span></span><br><span class="line">value = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    value: <span class="number">1</span>,</span><br><span class="line">    double: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//var that = this;</span></span><br><span class="line">        <span class="keyword">var</span> helper = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.value = add(<span class="keyword">this</span>.value, <span class="keyword">this</span>.value);</span><br><span class="line">        &#125;;</span><br><span class="line">        helper();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">myObject.double();</span><br><span class="line">alert(value); <span class="comment">// 8</span></span><br><span class="line">alert(myObject.value); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
+<p>在这里的myObject对象中，我们在double这个函数中使用了内部函数并赋值给helper，<strong>但是此处的this.value的this指向了全局对象</strong>，所以在执行这个函数后全局变量value的值变了但Object中的value属性值仍然是1，这不是我们想要的结果。《js语言精粹》中指出这里是语言设计上的一个错误，this应该仍然绑定到外部函数的this变量中。这个设计错误的后果就是方法不能利用内部函数来帮助它工作，因为内部函数的this被绑定了错误的值，所以不能共享该方法对对象的访问权。但是我们可以有一个很容易的解决方案去解决这个问题，对myObject进行修改：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    value: <span class="number">1</span>,</span><br><span class="line">    double: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">var</span> helper = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            that.value = add(that.value, that.value);</span><br><span class="line">        &#125;;</span><br><span class="line">        helper();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">myObject.double();</span><br><span class="line">alert(value); <span class="comment">// 4</span></span><br><span class="line">alert(myObject.value); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
+<p>这里使用了一个that变量来指向double方法中this的值即myObject本身，这样就可以对myObject对象的属性value进行修改。</p>
+<h2 id="函数作为方法调用"><a href="#函数作为方法调用" class="headerlink" title="函数作为方法调用"></a>函数作为方法调用</h2><p>这种方式即为，一个函数被保存为一个对象的属性，在此时此函数被成为一个方法。调用时this关键字被绑定到该对象，即：<strong>函数作为对象方法调用，会使得this的值成为对象本身。</strong>实例如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    firstName: <span class="string">"John"</span>,</span><br><span class="line">    lastName: <span class="string">"Doe"</span>,</span><br><span class="line">    fullName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">" "</span> + <span class="keyword">this</span>.lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">myObject.fullName(); <span class="comment">//返回 "John Doe"</span></span><br></pre></td></tr></table></figure></p>
+<p>另一个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    value: <span class="number">0</span>,</span><br><span class="line">    increment: <span class="function"><span class="keyword">function</span> (<span class="params">inc</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.value += <span class="keyword">typeof</span> inc === <span class="string">'number'</span> ? inc : <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">myObject.increment();</span><br><span class="line"><span class="built_in">console</span>.log(myObject.value); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">myObject.increment(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(myObject.value); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure></p>
+<p>在此例中，increment方法对myObject对象中的value属性进行增加操作，increment函数中的this即指向myObject对象本身。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-08/JavaScript的函数调用与this/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/入手信达小黑天文望远镜/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -359,70 +414,9 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/Unicode字符与颜文字表情/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-07/Unicode字符与颜文字表情/" class="post-title-link" itemprop="url">Unicode字符与颜文字表情</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-07-25 14:10:27" itemprop="dateCreated datePublished" datetime="2018-07-25T14:10:27+08:00">2018-07-25</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>编码，是每个程序员绕不开的话题。对于前端工程师而言，字符更是会直观地展示在界面上。<br>提起文字，大部分人的脑中，都会定式为规整排列的字符。但是林子大了什么鸟都有，世界上可是存在着6800+种文字，难免会飞出来一些诡异的鸟…<br>而号称『万国码』的Unicode，在实现编码与展示的时候，也会不会遇到一些奇葩的事情呢？<br>事实上，可能你早已见识过了：</p>
-<hr>
-<p>x̙͈̝͍͕̙̄͛̽̆͌́̕͟g̘̣̠̝̟̤̥̼̼̽͑͋̈̑̒͟͞q̛̤̦̝̘͎͋̔̋͌͒̆̋̚͡f̵̢̙͇̮̠̋̀͌̅̉̃̔͜͜͠͡r̢̜̩͙̭̲͓͈̈̀͑̆͋̚͢͜m̷̛͙̝̣̲̭͍͉̊̓̾̈̋̿̚͢͟͠s̷̡̩͔̮͈̜̊̽͂̆̈́̃̓͋̏</p>
-<p>热҈的҈字҈都҈出҈汗҈了҈</p>
-<p>你的屏幕被蓝翔挖掘机给挖坏了不信你看;̷̸̨̀͒̏̃ͦ̈́̾̀́̎͢҉̵̶͚̼͉͖̺̥͔͇̰̹̮͙͉̻̼̭̻͕̮͇ͨͬͪ͗̇̑̽͋̀̋̊͌ͧͨͭ̓̅͐ͥ̂̔̊ͧ͊҉̶̵̷̞̩̦̳̺̳̬̬̩̣̫͇̯̥͖͍͕̠̦̼̗ͯ̽͌̔ͪͯ́́͋̍ͨ̿̿̎͒ͤ̓̅̀͂ͧ͋̏ͫͣ̔͘͜͠͏̶̵̸̧̧̥̺͓̘̺͎̜̥͕͈̝̫͎̺̮̱̤̠̠͖̳̻̥̣̪͍͕͇̮͙̹̪ͮͧͫ͂͒ͤͣ̌̽ͨͪ͒̄̄̉̒̊ͩ̅͆͘̚͘͘̚͟͟͝ͅ</p>
-<hr>
-<p>今天我们就来探讨一下这些奇怪的字符。</p>
-<h2 id="文字可以戴帽子和穿鞋子"><a href="#文字可以戴帽子和穿鞋子" class="headerlink" title="文字可以戴帽子和穿鞋子"></a>文字可以戴帽子和穿鞋子</h2><p>提起泰文，很多朋友都会立即想到：<strong>萨瓦迪卡（你好）</strong>。<br>但这句话是怎么写的呢？<br>其实这句你好，男生和女生之间还有差异，男生写法是：<code>สวัสดีครับ</code>，女生则是：<code>สวัสดีค่ะ</code>。<br>不过这并不重要，重要的是，我们发现某些字的上面，还带了特殊的符号。就好像是戴上了帽子。<br>事实上，泰文字符不仅会『戴帽子』，偶尔还会『穿鞋子』，比如这三个字符：<code>ผ ผู ผู้</code>。<br>如果脑洞再大一点，有人就会想，那是不是还可以戴多顶帽子呢？<br>的确如此…泰文允许你穿一双鞋子，并且戴两顶帽子。完整的形式是这样的：</p>
-<p><img src="/images/2018-07/FqLq54KAJkoSVA-7_jdJpSRI3fcI.png" alt=""></p>
-<p>所以，平时看惯了中英文的我们，需要改变一下思路了。<br>世界上的文字，并不全是规规整整横向排列的格子，也存在像泰文这种变形金刚<strong>组合式</strong>的文字。<br>虽然标准的泰文里，『帽子』和『鞋子』的数量是有限制的，但由于国际码的迷之设计（先卖个关子），在计算机里显示的泰文字符，却可以拥有无数的帽子和鞋子。也就是说，它变成了一款可以在Y轴无限拓展的文字！<br>并且，咱不光可以往上喷，还可以有一定角度…</p>
-<p><img src="/images/2018-07/Fr8cS9UX21MEgBtmOU_CDhreGqlO.jpeg" alt=""><br><img src="/images/2018-07/Fr-rlbbriydg4cUmoU_Zs6VQSbpU.jpeg" alt=""></p>
-<p>还可以</p>
-<p><img src="/images/2018-07/Fk0kXSTymPxute84rceAkzGd5PKA.jpeg" alt=""></p>
-<p>简直是不讲道理。<br>（由于一些系统会崩溃，这里使用截图）</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-07/Unicode字符与颜文字表情/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
-<a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+<a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
 </nav>
 </div>
 </div>
@@ -445,7 +439,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">95</span>
+<span class="site-state-item-count">96</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>

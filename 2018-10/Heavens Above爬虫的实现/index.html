@@ -213,22 +213,22 @@ top: initial;
 <p>项目地址：<a href="https://github.com/stevenjoezhang/heavens-above" target="_blank" rel="noopener">heavens-above</a></p>
 </div>
 <div>
-<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+<div id="reward-container">
 <div>🍭支持一根棒棒糖！</div>
-<button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-<span>打赏</span>
+<button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+打赏
 </button>
-<div id="QR" style="display: none;">
-<div id="wechat" style="display: inline-block">
-<img id="wechat_qr" src="/images/wechatpay.png" alt="张书樵 微信支付">
+<div id="qr" style="display: none;">
+<div style="display: inline-block">
+<img src="/images/wechatpay.png" alt="张书樵 微信支付">
 <p>微信支付</p>
 </div>
-<div id="alipay" style="display: inline-block">
-<img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝">
+<div style="display: inline-block">
+<img src="/images/alipay.png" alt="张书樵 支付宝">
 <p>支付宝</p>
 </div>
-<div id="bitcoin" style="display: inline-block">
-<img id="bitcoin_qr" src="/images/bitcoin.png" alt="张书樵 比特币">
+<div style="display: inline-block">
+<img src="/images/bitcoin.png" alt="张书樵 比特币">
 <p>比特币</p>
 </div>
 </div>
@@ -243,7 +243,7 @@ top: initial;
 <a href="https://zhangshuqiao.org/2018-10/Heavens Above爬虫的实现/" title="Heavens Above爬虫的实现">https://zhangshuqiao.org/2018-10/Heavens Above爬虫的实现/</a>
 </li>
 <li class="post-copyright-license">
-<strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+<strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
 </div>
 <footer class="post-footer">
@@ -291,7 +291,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">95</span>
+<span class="site-state-item-count">96</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>

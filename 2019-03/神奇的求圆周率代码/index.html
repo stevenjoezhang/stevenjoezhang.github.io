@@ -46,7 +46,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="今天是圆周率日，我们就来讲一讲关于圆周率的故事吧。很久以前，博主看到了一段惊为天人的代码，可以求出圆周率的前800位（修改参数可以实现任意精度）：123int a=10000,b,c=2800,d,e,f[2801],g;main()&amp;#123;for(;b-c;)f[b++]=a/5;for(;d=0,g=c*2;c-=14,printf(&quot;%.4d&quot;,e+d/a),e=d%a)for(b=c;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-16T03:23:45.450Z">
+<meta property="og:updated_time" content="2019-03-20T02:28:16.036Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="神奇的求圆周率代码">
 <meta name="twitter:description" content="今天是圆周率日，我们就来讲一讲关于圆周率的故事吧。很久以前，博主看到了一段惊为天人的代码，可以求出圆周率的前800位（修改参数可以实现任意精度）：123int a=10000,b,c=2800,d,e,f[2801],g;main()&amp;#123;for(;b-c;)f[b++]=a/5;for(;d=0,g=c*2;c-=14,printf(&quot;%.4d&quot;,e+d/a),e=d%a)for(b=c;">
@@ -220,22 +220,22 @@ top: initial;
 <p>拓展阅读：<br><a href="https://blog.csdn.net/s170262941/article/details/11123945" target="_blank" rel="noopener">编程计算Pi的N种方法</a><br><a href="http://numbers.computation.free.fr/Constants/TinyPrograms/tinycodes.html" target="_blank" rel="noopener">Tiny programs for constants computation</a><br><a href="https://zh.wikipedia.org/wiki/圓周率" target="_blank" rel="noopener">圓周率 - 维基百科</a><br><a href="https://zh.wikipedia.org/wiki/圆周率近似值" target="_blank" rel="noopener">圆周率近似值 - 维基百科</a><br><a href="https://zh.wikipedia.org/wiki/梅欽類公式" target="_blank" rel="noopener">梅欽類公式 - 维基百科</a><br><a href="http://www.angio.net/pi/" target="_blank" rel="noopener">The Pi-Search Page</a></p>
 </div>
 <div>
-<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+<div id="reward-container">
 <div>🍭支持一根棒棒糖！</div>
-<button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-<span>打赏</span>
+<button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+打赏
 </button>
-<div id="QR" style="display: none;">
-<div id="wechat" style="display: inline-block">
-<img id="wechat_qr" src="/images/wechatpay.png" alt="张书樵 微信支付">
+<div id="qr" style="display: none;">
+<div style="display: inline-block">
+<img src="/images/wechatpay.png" alt="张书樵 微信支付">
 <p>微信支付</p>
 </div>
-<div id="alipay" style="display: inline-block">
-<img id="alipay_qr" src="/images/alipay.png" alt="张书樵 支付宝">
+<div style="display: inline-block">
+<img src="/images/alipay.png" alt="张书樵 支付宝">
 <p>支付宝</p>
 </div>
-<div id="bitcoin" style="display: inline-block">
-<img id="bitcoin_qr" src="/images/bitcoin.png" alt="张书樵 比特币">
+<div style="display: inline-block">
+<img src="/images/bitcoin.png" alt="张书樵 比特币">
 <p>比特币</p>
 </div>
 </div>
@@ -250,7 +250,7 @@ top: initial;
 <a href="https://zhangshuqiao.org/2019-03/神奇的求圆周率代码/" title="神奇的求圆周率代码">https://zhangshuqiao.org/2019-03/神奇的求圆周率代码/</a>
 </li>
 <li class="post-copyright-license">
-<strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+<strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
 </div>
 <footer class="post-footer">
@@ -266,6 +266,9 @@ top: initial;
 </div>
 <span class="post-nav-divider"></span>
 <div class="post-nav-prev post-nav-item">
+<a href="/2019-03/Test-driven Development/" rel="prev" title="Test-driven Development">
+Test-driven Development <i class="fa fa-chevron-right"></i>
+</a>
 </div>
 </div>
 </footer>
@@ -295,7 +298,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">95</span>
+<span class="site-state-item-count">96</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>

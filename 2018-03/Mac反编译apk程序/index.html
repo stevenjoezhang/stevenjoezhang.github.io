@@ -5,21 +5,23 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.0.1">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
-<link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.0.1',
+version: '7.1.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
 back2top: true,
 back2top_sidebar: false,
@@ -38,19 +40,19 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
-<meta name="description" content="准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。  配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了能在终端正确运行最新的JDK，需要配置环境变量。在~/.b">
+<meta name="description" content="APK，即Android应用程序包（Android application package），是Android操作系统使用的一种应用程序包文件格式，用于分发和安装移动应用及中间件。一个Android应用程序的代码想要在Android设备上运行，必须先进行编译，然后被打包成为一个被Android系统所能识别的文件才可以被运行，而这种能被Android系统识别并运行的文件格式便是APK。一个APK文件">
 <meta name="keywords" content="Mac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac反编译apk程序">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-03/Mac反编译apk程序/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。  配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了能在终端正确运行最新的JDK，需要配置环境变量。在~/.b">
+<meta property="og:description" content="APK，即Android应用程序包（Android application package），是Android操作系统使用的一种应用程序包文件格式，用于分发和安装移动应用及中间件。一个Android应用程序的代码想要在Android设备上运行，必须先进行编译，然后被打包成为一个被Android系统所能识别的文件才可以被运行，而这种能被Android系统识别并运行的文件格式便是APK。一个APK文件">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-03/jdk.png">
-<meta property="og:updated_time" content="2019-02-23T11:47:36.124Z">
+<meta property="og:updated_time" content="2019-03-31T04:24:58.981Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac反编译apk程序">
-<meta name="twitter:description" content="准备工作下载最新的JDK前往ORACLE官网，在底部找到Download Java for Developers，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。  配置JDK下载完成后，打开dmg镜像进行安装。JDK会被安装到/Library/Java/JavaVirtualMachines目录下。为了能在终端正确运行最新的JDK，需要配置环境变量。在~/.b">
+<meta name="twitter:description" content="APK，即Android应用程序包（Android application package），是Android操作系统使用的一种应用程序包文件格式，用于分发和安装移动应用及中间件。一个Android应用程序的代码想要在Android设备上运行，必须先进行编译，然后被打包成为一个被Android系统所能识别的文件才可以被运行，而这种能被Android系统识别并运行的文件格式便是APK。一个APK文件">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-03/jdk.png">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2018-03/Mac反编译apk程序/">
@@ -207,6 +209,8 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
+<p>APK，即Android应用程序包（Android application package），是Android操作系统使用的一种应用程序包文件格式，用于分发和安装移动应用及中间件。一个Android应用程序的代码想要在Android设备上运行，必须先进行编译，然后被打包成为一个被Android系统所能识别的文件才可以被运行，而这种能被Android系统识别并运行的文件格式便是APK。一个APK文件内包含被编译的代码文件(.dex 文件)，文件资源（resources）， assets，证书（certificates），和清单文件（manifest file）。</p>
+<p>APK文件基于ZIP文件格式，它与JAR文件的构造方式相似。因而，直接解压APK文件可以得到一部分信息，如<code>classes.dex</code>等。如果要进行更详尽的分析，就需要用到反编译的工具了。</p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载最新的JDK"><a href="#下载最新的JDK" class="headerlink" title="下载最新的JDK"></a>下载最新的JDK</h3><p>前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>，在底部找到<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Download Java for Developers</a>，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。</p>
 <p><img src="/images/2018-03/jdk.png" alt=""></p>
 <h3 id="配置JDK"><a href="#配置JDK" class="headerlink" title="配置JDK"></a>配置JDK</h3><p>下载完成后，打开dmg镜像进行安装。JDK会被安装到<code>/Library/Java/JavaVirtualMachines</code>目录下。为了能在终端正确运行最新的JDK，需要配置环境变量。在<code>~/.bash_profile</code>中增加以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home</span><br><span class="line">PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span>:.</span><br><span class="line">CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:.</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME</span><br><span class="line"><span class="built_in">export</span> PATH</span><br><span class="line"><span class="built_in">export</span> CLASSPATH</span><br></pre></td></tr></table></figure></p>
@@ -216,13 +220,14 @@ top: initial;
 <ul>
 <li><a href="https://ibotpeaches.github.io/Apktool/install" target="_blank" rel="noopener">Apktool</a></li>
 <li><a href="https://github.com/pxb1988/dex2jar/releases" target="_blank" rel="noopener">dex2jar</a></li>
-<li><a href="http://jd.benow.ca" target="_blank" rel="noopener">JD-GUI</a></li>
+<li><a href="http://java-decompiler.github.io" target="_blank" rel="noopener">JD-GUI</a></li>
 </ul>
 <p>一些论坛里会把它们称为『apk反编译三件套』。</p>
 <a id="more"></a>
-<h2 id="进行反编译"><a href="#进行反编译" class="headerlink" title="进行反编译"></a>进行反编译</h2><h3 id="运行Apktool"><a href="#运行Apktool" class="headerlink" title="运行Apktool"></a>运行Apktool</h3><p>按照官网上的教程，将下载Apktool后得到的shell脚本和<code>apktool.jar</code>移动到<code>/usr/local/bin</code>，然后在终端执行<code>apktool -h</code>，如果能正确显示帮助信息，则安装正常。<br>将需要反编译的apk文件（例如<code>example.apk</code>）放入任意目录中，cd进入该目录，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apktool d example.apk</span><br></pre></td></tr></table></figure></p>
-<p>即可进行反编译，这时会生成一个名为example的目录，用于存储反编译出的文件。如果要回编译，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apktool b example</span><br></pre></td></tr></table></figure></p>
-<p>同样，直接解压<code>example.apk</code>也可以得到一部分信息，如<code>classes.dex</code>等。</p>
+<h2 id="进行反编译"><a href="#进行反编译" class="headerlink" title="进行反编译"></a>进行反编译</h2><h3 id="运行Apktool"><a href="#运行Apktool" class="headerlink" title="运行Apktool"></a>运行Apktool</h3><p>按照官网上的教程，将下载Apktool后得到的shell脚本和<code>apktool.jar</code>移动到<code>/usr/local/bin</code>，然后在终端执行<code>apktool -h</code>，如果能正确显示帮助信息，则安装正常。<br>Apktool的使用方法也很简单，准备好需要反编译的apk文件（例如<code>example.apk</code>），执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apktool d path/to/example.apk</span><br></pre></td></tr></table></figure></p>
+<p>即可进行反编译，这时会生成一个名为example的目录，用于存储反编译出的文件。如果要回编译，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apktool b path/to/example</span><br></pre></td></tr></table></figure></p>
+<p>当然，仅通过回编译得到的apk是没有签名的。如果要在安卓手机上安装，还需要进行签名。步骤如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">keytool -genkey -<span class="built_in">alias</span> tmp.keystore -keyalg RSA -validity 20000 -keystore tmp.keystore</span><br><span class="line">jarsigner -verbose -keystore tmp.keystore -signedjar path/to/example.apk path/to/example_signed.apk tmp.keystore</span><br></pre></td></tr></table></figure></p>
+<p>这会生成一个签名文件<code>tmp.keystore</code>和可供安装的<code>example_signed.apk</code>。</p>
 <h3 id="用dex2jar将apk转成jar文件"><a href="#用dex2jar将apk转成jar文件" class="headerlink" title="用dex2jar将apk转成jar文件"></a>用dex2jar将apk转成jar文件</h3><p>下载dex2jar的releases版本后，解压进入文件夹，然后运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./d2j-dex2jar.sh path/to/example.apk</span><br></pre></td></tr></table></figure></p>
 <p>在dex2jar目录下将得到example-dex2jar.jar文件</p>
 <h3 id="查看源代码"><a href="#查看源代码" class="headerlink" title="查看源代码"></a>查看源代码</h3><p>打开<code>JD-GUI.app</code>，将<code>example-dex2jar.jar</code>拖进去就能看到源码了。<br>需要注意的是，如果你使用了JAVA9，打开JD-GUI时可能会出现问题，解决方法是修改<code>JD-GUI.app/Contents/Info.plist</code>，找到<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>VMOptions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>-Xms512m<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
@@ -413,13 +418,13 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/src/utils.js?v=7.0.1"></script>
-<script src="/js/src/motion.js?v=7.0.1"></script>
-<script src="/js/src/affix.js?v=7.0.1"></script>
-<script src="/js/src/schemes/pisces.js?v=7.0.1"></script>
-<script src="/js/src/scrollspy.js?v=7.0.1"></script>
-<script src="/js/src/post-details.js?v=7.0.1"></script>
-<script src="/js/src/next-boot.js?v=7.0.1"></script>
+<script src="/js/utils.js?v=7.1.0"></script>
+<script src="/js/motion.js?v=7.1.0"></script>
+<script src="/js/affix.js?v=7.1.0"></script>
+<script src="/js/schemes/pisces.js?v=7.1.0"></script>
+<script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+<script src="/js/next-boot.js?v=7.1.0"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>

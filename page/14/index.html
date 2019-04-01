@@ -5,21 +5,23 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.0.1">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
-<link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.0.1',
+version: '7.1.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
 back2top: true,
 back2top_sidebar: false,
@@ -291,10 +293,12 @@ page-home">
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
+<p>在学院的新年晚会上，主办方使用了一个基于微信小程序的弹幕系统，让全场观众通过大屏幕发送弹幕互动。比较坑的是，该弹幕系统存在『高级弹幕』选项，以此向用户收费。考虑到这一系统的逻辑实际上并不复杂，博主决定自己实现一个。它被命名为『米米弹幕系统』（Mimi Danmaku），其初代版本基于Ajax轮询实现。这是客户端的样子：</p>
 <p><img src="/images/2018-02/danmaku.png" alt=""></p>
-<p>经过数天的调试，全新的米米弹幕系统已经可以正常使用了。经过重制的弹幕系统，使用WebSocket代替了原先效率极低的Ajax轮询，实现了消息即时收发、自定义弹幕颜色、大小等功能。下一步我们将把弹幕系统整合到直播中。附上链接：<br><a href="https://galaxymimi.com/danmaku/" target="_blank" rel="noopener">米米弹幕</a><br>同时还开放了一个随机生成用户名（来自魔兽世界）的API：<br><a href="https://api.galaxymimi.com/name/" target="_blank" rel="noopener">随机用户名</a></p>
+<p>当然，由于博主是第一次接触实时通讯，程序上还存在不少缺陷。在进行调研后，博主决定使用WebSocket代替原先效率极低的轮询，并重构一部分逻辑。经过数天的调试，现在全新的米米弹幕系统已经可以正常使用了。这个重制后的版本，成功实现了消息即时收发、自定义弹幕颜色、大小等功能。下一步博主将把弹幕系统整合到直播中。附上链接：<br><a href="https://mimichat.herokuapp.com/danmaku/" target="_blank" rel="noopener">米米弹幕</a><br>同时还开放了一个随机生成用户名（来自魔兽世界）的API：<br><a href="https://api.galaxymimi.com/name/" target="_blank" rel="noopener">随机用户名</a></p>
 <hr>
 <p>本文更新于2018年5月18日：<br>zsq.im和galaxymimi.com即日起全站支持https访问，ws连接也升级为了wss。</p>
+<p>本文更新于2019年3月27日：<br>博主决定使用Heroku部署弹幕服务，又重写了不少代码。可以在此处查看：<br><a href="https://github.com/stevenjoezhang/mimi-chat" target="_blank" rel="noopener">mimi-chat</a><br><a href="https://github.com/stevenjoezhang/mimi-danmaku" target="_blank" rel="noopener">mimi-danmaku</a></p>
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -518,11 +522,11 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/src/utils.js?v=7.0.1"></script>
-<script src="/js/src/motion.js?v=7.0.1"></script>
-<script src="/js/src/affix.js?v=7.0.1"></script>
-<script src="/js/src/schemes/pisces.js?v=7.0.1"></script>
-<script src="/js/src/next-boot.js?v=7.0.1"></script>
+<script src="/js/utils.js?v=7.1.0"></script>
+<script src="/js/motion.js?v=7.1.0"></script>
+<script src="/js/affix.js?v=7.1.0"></script>
+<script src="/js/schemes/pisces.js?v=7.1.0"></script>
+<script src="/js/next-boot.js?v=7.1.0"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>

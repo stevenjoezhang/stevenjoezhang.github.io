@@ -160,6 +160,81 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/在网页上实现3D Touch效果/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-11/在网页上实现3D Touch效果/" class="post-title-link" itemprop="url">在网页上实现3D Touch效果</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-11-18 20:52:12" itemprop="dateCreated datePublished" datetime="2018-11-18T20:52:12+08:00">2018-11-18</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p><img src="/images/2018-11/3d_touch_cover_.jpg" alt=""></p>
+<p>2016年9月14日凌晨，iOS 10正式版开始向用户推送更新，而iOS 10搭载的Safari10亦带来了不少新特性，其中就有3D Touch事件的支持（官方文档<a href="https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html" target="_blank" rel="noopener">《What’s New in Safari 10》</a>）。</p>
+<h2 id="Force-Touch与3D-Touch"><a href="#Force-Touch与3D-Touch" class="headerlink" title="Force Touch与3D Touch"></a>Force Touch与3D Touch</h2><p>说到3D Touch不能不提与之相似的Force Touch。Force Touch是苹果公司在2014年9月公布的一项压力敏感屏幕技术，最早用于Apple Watch，可识别轻点、轻按两种操作。随后Force Touch于2015年9月在iPhone 6S上得到改进并更名为3D Touch，提供了更高灵敏度的触控力度识别、及更强的触感反馈，支持轻点、轻按及重按三个维度。</p>
+<p>支持3D Touch的设备，目前有iPhone 6S、iPhone 6S Plus、iPhone 7以及iPhone 7 Plus（注：截止2018年，还要加上iPhone 8和iPhone X等）。这是后文的硬件要求。</p>
+<h2 id="感受3D-Touch"><a href="#感受3D-Touch" class="headerlink" title="感受3D Touch"></a>感受3D Touch</h2><p>3D Touch最为典型的交互有Quick Actions和Peek and Pop两种。在APP图标上重按呼出一组快捷操作菜单，这即是典型的Quick Actions：</p>
+<p><img src="/images/2018-11/quick_actions.jpg" alt=""></p>
+<p>而使用Peek and Pop则可以快速地对内容进行预览，以及后续的其他操作：</p>
+<p><img src="/images/2018-11/peek_and_pop.jpg" alt=""></p>
+<p>如上图所示，在系统的邮件APP中，以一定的力度按压邮件列表中的某一项，会触发Peek弹出一个内容预览窗口（在Peek状态下上滑还能触发Quick Actions调出一些快捷操作项哦），如果继续加大按压力度，则会触发Pop进入邮件内容界面，这整个过程就称之为Peek and Pop。</p>
+<p>除了邮件APP以外，信息、照片等多个系统APP以及一些第三方APP（如微信、Facebook、Twitter等）也都很好的支持了Peek and Pop这种3D Touch交互形式。</p>
+<h2 id="网页中的3D-Touch"><a href="#网页中的3D-Touch" class="headerlink" title="网页中的3D Touch"></a>网页中的3D Touch</h2><p>要在网页中实现3D Touch，需要用到以下两个知识点：</p>
+<ul>
+<li><p>touch.force<br>在touch对象中包含有一个名为<code>force</code>的只读属性，它的取值从0到1，表示的是触碰点的按压力度，0表示没有检测到压力，而1则是设备能识别出的最大压力。</p>
+</li>
+<li><p>touchforcechange<br><code>touchforcechange</code>是Safari 10新增的事件，该事件会在按压力度改变时被触发。</p>
+</li>
+</ul>
+<p>（注：在MacOS Safari上也有与之对应的<code>webkitmouseforcechanged</code>事件，该事件会在支持Force Touch的Trackpad上反应出按压力度值force的变化，但本文仅讨论手机设备的情况）</p>
+<h2 id="实现3D-Touch效果"><a href="#实现3D-Touch效果" class="headerlink" title="实现3D Touch效果"></a>实现3D Touch效果</h2><p>要实现3D Touch效果，关键在于实时地获取touch.force的值。而由于网页上的3D Touch很大程度上受限于设备及浏览器的支持情况，因此我们划分以下3种情况，分别来看看要如何实现：</p>
+<ul>
+<li><p>支持3D Touch且升级到了iOS 10的设备<br>在这种最为理想的情况下，只需要监听touchforcechange事件即可获取到force的当前值，将force值的变化以适当的形式反馈在界面上以实现3D Touch效果。</p>
+</li>
+<li><p>支持3D Touch但系统版本低于iOS 10的设备<br>这种情况虽然无法监听touchforcechange事件，但Touch对象的force属性仍然可以反应出正确的按压力度，可以巧妙地设置一个定时器，以轮询的方式获取force的当前值。</p>
+</li>
+<li><p>不支持3D Touch的设备<br>这种情况下touch.force的取值始终为0，虽然可以用长按的交互形式来代替，但建议还是以优雅降级的方式，索性就不处理了吧。</p>
+</li>
+</ul>
+<h2 id="一个3D-Touch的例子"><a href="#一个3D-Touch的例子" class="headerlink" title="一个3D Touch的例子"></a>一个3D Touch的例子</h2><p>看到这里你肯定想说”Shut up and show me the code…”。好的，那我们来看一个例子，在这个示例页面，用支持3D Touch的设备按压蓝色按钮可以将树懒兄逗笑哦，嘿嘿嘿～</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-11/在网页上实现3D Touch效果/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/使用示波器播放Bad Apple!!/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -337,50 +412,6 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-10/使用OpenCV进行星轨的后期处理/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-10/使用OpenCV进行星轨的后期处理/" class="post-title-link" itemprop="url">使用OpenCV进行星轨的后期处理</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-10-10 19:33:26" itemprop="dateCreated datePublished" datetime="2018-10-10T19:33:26+08:00">2018-10-10</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>贴上部分代码，择日填坑。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">addImage</span><span class="params">(img_orig, img_path, alpha = <span class="number">0.5</span>)</span>:</span></span><br><span class="line">    img = cv2.imread(img_path)</span><br><span class="line">    h, w, _ = img_orig.shape</span><br><span class="line">    beta = <span class="number">1</span> - alpha</span><br><span class="line">    gamma = <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> cv2.addWeighted(img_orig, alpha, img, beta, gamma)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    img_root = <span class="string">""</span> <span class="comment">#这里写你的文件夹路径，比如：/home/youname/data/img/ 注意最后一个文件夹要有斜杠</span></span><br><span class="line">    fps = <span class="number">24</span> <span class="comment">#保存视频的FPS，可以适当调整</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#可以用(*"DVIX")或(*"X264")，如果都不行先装ffmepg: sudo apt install ffmepg</span></span><br><span class="line">    fourcc = cv2.VideoWriter_fourcc(*<span class="string">"MJPG"</span>)</span><br><span class="line">    videoWriter = cv2.VideoWriter(<span class="string">"saveVideo.mp4v"</span>, fourcc, fps, (<span class="number">3168</span>, <span class="number">4752</span>)) <span class="comment">#最后一个是保存图片的尺寸</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">99</span>):</span><br><span class="line">        <span class="comment">#frame = cv2.imread(img_root+str(i+1)+".jpg")</span></span><br><span class="line">        frame = addImage(<span class="string">"IMG_3866.jpg"</span>, <span class="string">"IMG_3869.jpg"</span>)</span><br><span class="line">        videoWriter.write(frame)</span><br><span class="line">    videoWriter.release()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    folder = input(<span class="string">"请输入照片所在文件夹"</span>) <span class="keyword">or</span> <span class="string">"."</span></span><br><span class="line">    prefix = input(<span class="string">"请输入照片前缀"</span>) <span class="keyword">or</span> <span class="string">"IMG_"</span></span><br><span class="line">    suffix = input(<span class="string">"请输入照片后缀"</span>) <span class="keyword">or</span> <span class="string">"jpg"</span></span><br><span class="line">    digits = int(input(<span class="string">"请输入照片序号位数"</span>) <span class="keyword">or</span> <span class="number">4</span>)</span><br><span class="line">    start = int(input(<span class="string">"请输入第一张照片序号"</span>) <span class="keyword">or</span> <span class="number">0</span>)</span><br><span class="line">    end = int(input(<span class="string">"请输入最后一张照片序号"</span>) <span class="keyword">or</span> <span class="number">1</span>)</span><br><span class="line">    fps = int(input(<span class="string">"请输入视频帧率"</span>) <span class="keyword">or</span> <span class="number">24</span>)</span><br><span class="line">    fpp = int(input(<span class="string">"请输入每张照片持续的帧数"</span>) <span class="keyword">or</span> <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    imgArray = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(start, end + <span class="number">1</span>):</span><br><span class="line">        imgPath = folder + <span class="string">"/"</span> + prefix + i + <span class="string">"."</span> + suffix</span><br><span class="line">        <span class="keyword">if</span> os.path.exists(imgPath):</span><br><span class="line">            imgArray.append(imgPath)</span><br><span class="line"></span><br><span class="line">    frame = cv2.imread(imgArray[<span class="number">0</span>])</span><br><span class="line">    h, w, _ = frame.shape</span><br><span class="line">    fourcc = cv2.VideoWriter_fourcc(*<span class="string">"MJPG"</span>)</span><br><span class="line">    videoWriter = cv2.VideoWriter(<span class="string">"saveVideo.mp4v"</span>, fourcc, fps, (w, h))</span><br><span class="line">    <span class="comment">#videoWriter.write(frame)</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(imgArray)):</span><br><span class="line">        <span class="comment">#frame = cv2.imread(img_root+str(i+1)+".jpg")</span></span><br><span class="line">        frame = addImage(frame, imgArray[i], i / (i + <span class="number">1</span>))</span><br><span class="line">        videoWriter.write(frame)</span><br><span class="line">        print(i + <span class="string">"/"</span> + (i + <span class="number">1</span>))</span><br><span class="line">    videoWriter.release()</span><br></pre></td></tr></table></figure></p>
-<hr>
-<p>参考文章：<br><a href="https://blog.csdn.net/zh_jessica/article/details/77992578" target="_blank" rel="noopener">Python-OpenCV 图像叠加or图像混合加权</a><br><a href="https://blog.csdn.net/aa846555831/article/details/53070314" target="_blank" rel="noopener">python + opencv 将图片保存为视频</a></p>
-<p>拓展阅读：<a href="http://www.imgzone.cn/article-377-1.html" target="_blank" rel="noopener">叠加法星轨的拍摄及后期方法</a></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -406,7 +437,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">96</span>
+<span class="site-state-item-count">97</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -429,7 +460,7 @@ page-home">
 RSS
 </a>
 </div>
-<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll motion-element links-of-blogroll-inline">
 <div class="links-of-blogroll-title">
 <i class="fa  fa-fw fa-university"></i>
 链接

@@ -160,6 +160,235 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-12/Base64编码的原理与实现/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-12/Base64编码的原理与实现/" class="post-title-link" itemprop="url">Base64编码的原理与实现</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-12-12 13:21:01" itemprop="dateCreated datePublished" datetime="2018-12-12T13:21:01+08:00">2018-12-12</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>在数据传输的时候，并不是所有的字符都可以受到支持，很多时候只能传输可见字符，对于不可见字符的传输需要经过特殊处理，这就是Base64产生的原因。Base64编码是一种基于64个可打印字符来表示二进制数据的表示方法。由于$2^6=64$，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。在Base64中的可打印字符包括字母A-Z、a-z、数字0-9，这样共有62个字符，此外两个可打印符号在不同的系统中而不同。一些如uuencode的其他编码方法，和之后BinHex的版本使用不同的64字符集来代表6个二进制数字，但是不被称为Base64。<br>Base64常用于在通常处理文本数据的场合，表示、传输、存储一些二进制数据，包括MIME的电子邮件及XML的一些复杂数据。用Base64编码图片也是互联网上常见的做法。</p>
+<p>Base64的字符索引如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>数值</th>
+<th>字符</th>
+<th>数值</th>
+<th>字符</th>
+<th>数值</th>
+<th>字符</th>
+<th>数值</th>
+<th>字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>A</td>
+<td>16</td>
+<td>Q</td>
+<td>32</td>
+<td>g</td>
+<td>48</td>
+<td>w</td>
+</tr>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>17</td>
+<td>R</td>
+<td>33</td>
+<td>h</td>
+<td>49</td>
+<td>x</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C</td>
+<td>18</td>
+<td>S</td>
+<td>34</td>
+<td>i</td>
+<td>50</td>
+<td>y</td>
+</tr>
+<tr>
+<td>3</td>
+<td>D</td>
+<td>19</td>
+<td>T</td>
+<td>35</td>
+<td>j</td>
+<td>51</td>
+<td>z</td>
+</tr>
+<tr>
+<td>4</td>
+<td>E</td>
+<td>20</td>
+<td>U</td>
+<td>36</td>
+<td>k</td>
+<td>52</td>
+<td>0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>F</td>
+<td>21</td>
+<td>V</td>
+<td>37</td>
+<td>l</td>
+<td>53</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>G</td>
+<td>22</td>
+<td>W</td>
+<td>38</td>
+<td>m</td>
+<td>54</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>H</td>
+<td>23</td>
+<td>X</td>
+<td>39</td>
+<td>n</td>
+<td>55</td>
+<td>3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>I</td>
+<td>24</td>
+<td>Y</td>
+<td>40</td>
+<td>o</td>
+<td>56</td>
+<td>4</td>
+</tr>
+<tr>
+<td>9</td>
+<td>J</td>
+<td>25</td>
+<td>Z</td>
+<td>41</td>
+<td>p</td>
+<td>57</td>
+<td>5</td>
+</tr>
+<tr>
+<td>10</td>
+<td>K</td>
+<td>26</td>
+<td>a</td>
+<td>42</td>
+<td>q</td>
+<td>58</td>
+<td>6</td>
+</tr>
+<tr>
+<td>11</td>
+<td>L</td>
+<td>27</td>
+<td>b</td>
+<td>43</td>
+<td>r</td>
+<td>59</td>
+<td>7</td>
+</tr>
+<tr>
+<td>12</td>
+<td>M</td>
+<td>28</td>
+<td>c</td>
+<td>44</td>
+<td>s</td>
+<td>60</td>
+<td>8</td>
+</tr>
+<tr>
+<td>13</td>
+<td>N</td>
+<td>29</td>
+<td>d</td>
+<td>45</td>
+<td>t</td>
+<td>61</td>
+<td>9</td>
+</tr>
+<tr>
+<td>14</td>
+<td>O</td>
+<td>30</td>
+<td>e</td>
+<td>46</td>
+<td>u</td>
+<td>62</td>
+<td>+</td>
+</tr>
+<tr>
+<td>15</td>
+<td>P</td>
+<td>31</td>
+<td>f</td>
+<td>47</td>
+<td>v</td>
+<td>63</td>
+<td>/</td>
+</tr>
+</tbody>
+</table>
+<p>这是一个根据上表进行编码的例子：</p>
+<p><img src="/images/2018-12/1.png" alt=""></p>
+<p>如果要编码的字节数不能被3整除，最后会多出1个或2个字节，那么可以使用下面的方法进行处理：先使用0字节值在末尾补足，使其能够被3整除，然后再进行Base64的编码。在编码后的Base64文本后加上一个或两个=号，代表补足的字节数。也就是说，当最后剩余两个八位字节（2个byte）时，最后一个6位的Base64字节块有四位是0值，最后附加上两个等号；如果最后剩余一个八位字节（1个byte）时，最后一个6位的Base字节块有两位是0值，最后附加一个等号。可以参考下面的例子：</p>
+<p><img src="/images/2018-12/2.png" alt=""></p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-12/Base64编码的原理与实现/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-12/历史上的今天/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -195,14 +424,17 @@ page-home">
 <p>如果要在网页上显示一些随机的语句，获得一些人生的经验，你会选择什么？<br>也许，<a href="https://hitokoto.cn" target="_blank" rel="noopener">一言</a>是一个很好的选择，它可以提供一些动漫中的台词，或是网络上的各种小段子。<br>在前面的文章<a href="/2018-05/有趣的Linux命令行工具">有趣的Linux命令行工具</a>中提到的<code>fortune</code>命令或许也可以满足需求，<code>pure-ftpd</code>就可以设置在连接成功时显示随机的来自<code>fortune</code>的语句。<br>那除此之外呢？历史上的今天是一个不错的方案。当你访问一些门户网站的首页，有时会看到这样的栏目。它也是一些百科全书网站，比如维基百科的传统。事实上，在Mac上就自带了一个小型的『历史上的今天』数据库，执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /usr/share/calendar/calendar.history</span><br></pre></td></tr></table></figure></p>
 <p>就可以看到。<br>这篇文章将介绍如何搭建一个提供『历史上的今天』信息的API。</p>
 <h2 id="建立数据库"><a href="#建立数据库" class="headerlink" title="建立数据库"></a>建立数据库</h2><p>首先，建立MySQL数据库，用于存储爬取的信息。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> dbname;</span><br><span class="line">#建立数据库，dbname保持一致即可</span><br><span class="line"><span class="keyword">USE</span> dbname;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">event</span> (</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">UNSIGNED</span> PRIMARY <span class="keyword">KEY</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="keyword">type</span> <span class="built_in">int</span>(<span class="number">1</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="keyword">year</span> <span class="built_in">varchar</span>(<span class="number">6</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="built_in">date</span> <span class="built_in">varchar</span>(<span class="number">6</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  info <span class="built_in">varchar</span>(<span class="number">300</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span></span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br><span class="line">QUIT;</span><br></pre></td></tr></table></figure></p>
-<h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><p>数据来源是维基百科，使用Python爬取数据，并存入数据库中。代码中的<code>username</code>、<code>password</code>和<code>dbname</code>分别是你的登录用户名、密码和数据库名。数据表名默认是event，也可以自行修改。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">typeList = [<span class="string">"大事记"</span>, <span class="string">"出生"</span>, <span class="string">"逝世"</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">savedb</span><span class="params">(data)</span>:</span></span><br><span class="line">    conn = pymysql.connect(host = <span class="string">"127.0.0.1"</span>, user = <span class="string">"username"</span>, password = <span class="string">"password"</span>, db = <span class="string">"dbname"</span>, charset = <span class="string">"utf8"</span>)</span><br><span class="line">    print(conn)</span><br><span class="line">    cur = conn.cursor()</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        cur.execute(<span class="string">"insert into event values(null,%s,%s,%s,%s)"</span>, data)</span><br><span class="line">    <span class="keyword">except</span> pymysql.err.InternalError:</span><br><span class="line">        print(<span class="string">"\033[31mERROR: Incorrect string value.\033[0m"</span>, data)</span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">"failed.txt"</span>, <span class="string">"a"</span>) <span class="keyword">as</span> myfile:</span><br><span class="line">            myfile.write(str(data) + <span class="string">"\n"</span>)</span><br><span class="line">    <span class="keyword">except</span> pymysql.err.DataError:</span><br><span class="line">        print(<span class="string">"\033[31mERROR: Data too long.\033[0m"</span>, data)</span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">"failed.txt"</span>, <span class="string">"a"</span>) <span class="keyword">as</span> myfile:</span><br><span class="line">            myfile.write(str(data) + <span class="string">"\n"</span>)</span><br><span class="line">    cur.connection.commit()</span><br><span class="line">    cur.close()</span><br><span class="line">    conn.close()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getDateList</span><span class="params">()</span>:</span></span><br><span class="line">    list = []</span><br><span class="line">    date = datetime.date(<span class="number">2016</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">366</span>):</span><br><span class="line">        date_str = str(date.month) + <span class="string">"月"</span> + str(date.day) + <span class="string">"日"</span></span><br><span class="line">        list.append(date_str)</span><br><span class="line">        date += datetime.timedelta(days = <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> list</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getInfo</span><span class="params">(html, type, date)</span>:</span></span><br><span class="line">    flag = re.compile(<span class="string">"(&lt;h2&gt;&lt;span id=.*&lt;span class=\"mw-headline\" id=.*?"</span> + typeList[type] + <span class="string">"[\s\S]*?&lt;/ul&gt;\s*?)&lt;h2&gt;"</span>).search(html)</span><br><span class="line">    <span class="keyword">if</span> flag:</span><br><span class="line">        bsObj = BeautifulSoup(flag.group(<span class="number">1</span>), <span class="string">"html.parser"</span>).findAll(<span class="string">"li"</span>)</span><br><span class="line">        <span class="keyword">for</span> li <span class="keyword">in</span> bsObj:</span><br><span class="line">            match = re.compile(<span class="string">"((^前|^)\d&#123;1,4&#125;年)：([\s\S]*$)"</span>).match(li.get_text())</span><br><span class="line">            <span class="keyword">if</span> match:</span><br><span class="line">                year = match.group(<span class="number">1</span>)</span><br><span class="line">                info = re.sub(<span class="string">"\[\d&#123;1,&#125;\]"</span>, <span class="string">""</span>, match.group(<span class="number">3</span>).strip())</span><br><span class="line">                data = (type, year, date, info)</span><br><span class="line">                print(data)</span><br><span class="line">                savedb(data)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    list = getDateList()</span><br><span class="line">    <span class="keyword">for</span> date <span class="keyword">in</span> list:</span><br><span class="line">        print(date)</span><br><span class="line">        url = <span class="string">"https://zh.wikipedia.org/zh-cn/%s"</span> % date</span><br><span class="line">        <span class="comment">#url = "https://api.galaxymimi.com/proxy/?url=https://zh.wikipedia.org/zh-cn/%s" % date</span></span><br><span class="line">        r = requests.get(url)</span><br><span class="line">        getInfo(r.text, <span class="number">0</span>, date)  <span class="comment"># 大事记</span></span><br><span class="line">        getInfo(r.text, <span class="number">1</span>, date)  <span class="comment"># 出生</span></span><br><span class="line">        getInfo(r.text, <span class="number">2</span>, date)  <span class="comment"># 逝世</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure></p>
+<h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><p>数据来源是维基百科，使用Python爬取数据，并存入数据库中。代码中的<code>username</code>、<code>password</code>和<code>dbname</code>分别是你的登录用户名、密码和数据库名。数据表名默认是event，也可以自行修改。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line">username = <span class="string">"username"</span></span><br><span class="line">password = <span class="string">"password"</span></span><br><span class="line">dbname = <span class="string">"dbname"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">typeList = [<span class="string">"大事记"</span>, <span class="string">"出生"</span>, <span class="string">"逝世"</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">savedb</span><span class="params">(data)</span>:</span></span><br><span class="line">    conn = pymysql.connect(host = <span class="string">"127.0.0.1"</span>, user = username, password = password, db = dbname, charset = <span class="string">"utf8"</span>)</span><br><span class="line">    print(conn)</span><br><span class="line">    cur = conn.cursor()</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        cur.execute(<span class="string">"insert into event values(null,%s,%s,%s,%s)"</span>, data)</span><br><span class="line">    <span class="keyword">except</span> pymysql.err.InternalError:</span><br><span class="line">        print(<span class="string">"\033[31mERROR: Incorrect string value.\033[0m"</span>, data)</span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">"failed.txt"</span>, <span class="string">"a"</span>) <span class="keyword">as</span> myfile:</span><br><span class="line">            myfile.write(str(data) + <span class="string">"\n"</span>)</span><br><span class="line">    <span class="keyword">except</span> pymysql.err.DataError:</span><br><span class="line">        print(<span class="string">"\033[31mERROR: Data too long.\033[0m"</span>, data)</span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">"failed.txt"</span>, <span class="string">"a"</span>) <span class="keyword">as</span> myfile:</span><br><span class="line">            myfile.write(str(data) + <span class="string">"\n"</span>)</span><br><span class="line">    cur.connection.commit()</span><br><span class="line">    cur.close()</span><br><span class="line">    conn.close()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getDateList</span><span class="params">()</span>:</span></span><br><span class="line">    list = []</span><br><span class="line">    date = datetime.date(<span class="number">2016</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">366</span>):</span><br><span class="line">        date_str = str(date.month) + <span class="string">"月"</span> + str(date.day) + <span class="string">"日"</span></span><br><span class="line">        list.append(date_str)</span><br><span class="line">        date += datetime.timedelta(days = <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> list</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getInfo</span><span class="params">(html, type, date)</span>:</span></span><br><span class="line">    flag = re.compile(<span class="string">"(&lt;h2&gt;&lt;span id=.*&lt;span class=\"mw-headline\" id=.*?"</span> + typeList[type] + <span class="string">"[\s\S]*?&lt;/ul&gt;\s*?)&lt;h2&gt;"</span>).search(html)</span><br><span class="line">    <span class="keyword">if</span> flag:</span><br><span class="line">        bsObj = BeautifulSoup(flag.group(<span class="number">1</span>), <span class="string">"html.parser"</span>).findAll(<span class="string">"li"</span>)</span><br><span class="line">        <span class="keyword">for</span> li <span class="keyword">in</span> bsObj:</span><br><span class="line">            match = re.compile(<span class="string">"((^前|^)\d&#123;1,4&#125;年)：([\s\S]*$)"</span>).match(li.get_text())</span><br><span class="line">            <span class="keyword">if</span> match:</span><br><span class="line">                year = match.group(<span class="number">1</span>)</span><br><span class="line">                info = re.sub(<span class="string">"\[\d&#123;1,&#125;\]"</span>, <span class="string">""</span>, match.group(<span class="number">3</span>).strip())</span><br><span class="line">                data = (type, year, date, info)</span><br><span class="line">                print(data)</span><br><span class="line">                savedb(data)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    list = getDateList()</span><br><span class="line">    <span class="keyword">for</span> date <span class="keyword">in</span> list:</span><br><span class="line">        print(date)</span><br><span class="line">        url = <span class="string">"https://zh.wikipedia.org/zh-cn/%s"</span> % date</span><br><span class="line">        <span class="comment">#若无法访问，请走代理</span></span><br><span class="line">        r = requests.get(url)</span><br><span class="line">        getInfo(r.text, <span class="number">0</span>, date) <span class="comment"># 大事记</span></span><br><span class="line">        getInfo(r.text, <span class="number">1</span>, date) <span class="comment"># 出生</span></span><br><span class="line">        getInfo(r.text, <span class="number">2</span>, date) <span class="comment"># 逝世</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure></p>
 <p>这里的两个<code>except</code>分别处理的是特殊字符（非UTF-8范围）和内容长度超出的问题。</p>
-<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><p>比较简单的方式是按照json格式进行输出，这里给出一种使用PHP的方案。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    $mysqli = <span class="keyword">new</span> mysqli(<span class="string">"localhost"</span>, <span class="string">"username"</span>, <span class="string">"password"</span>, <span class="string">"dbname"</span>);</span><br><span class="line">    <span class="comment">/* 检查连接 */</span></span><br><span class="line">    <span class="keyword">if</span> (mysqli_connect_errno()) &#123;</span><br><span class="line">        printf(<span class="string">"Connect failed: %s\n"</span>, mysqli_connect_error());</span><br><span class="line">        <span class="keyword">exit</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    $date = $_GET[<span class="string">'date'</span>] ? $mysqli-&gt;real_escape_string($_GET[<span class="string">'date'</span>]) : date(<span class="string">"m月d日"</span>);</span><br><span class="line">    $type = $_GET[<span class="string">'type'</span>] ? (int)$mysqli-&gt;real_escape_string($_GET[<span class="string">'type'</span>]) : <span class="number">0</span>;</span><br><span class="line">    $count = $_GET[<span class="string">'count'</span>] ? (int)$mysqli-&gt;real_escape_string($_GET[<span class="string">'count'</span>]) : <span class="number">1</span>;</span><br><span class="line">    $result = <span class="keyword">array</span>();</span><br><span class="line">    <span class="comment">/* 创建一个预编译 SQL 语句 */</span></span><br><span class="line">    <span class="keyword">if</span> ($stmt = $mysqli-&gt;prepare(<span class="string">"select * from `event` where `date` = ? and `type` = ? order by RAND() limit ?"</span>)) &#123;</span><br><span class="line">        <span class="comment">/* 对于参数占位符进行参数值绑定 */</span></span><br><span class="line">        $stmt-&gt;bind_param(<span class="string">"dii"</span>, $date, $type, $count);</span><br><span class="line">        <span class="comment">/* 执行查询 */</span></span><br><span class="line">        $stmt-&gt;execute();</span><br><span class="line">        <span class="comment">/* 将查询结果绑定到变量 */</span></span><br><span class="line">        $stmt-&gt;bind_result($id, $type, $year, $date, $info);</span><br><span class="line">        <span class="comment">/* 获取查询结果值 */</span></span><br><span class="line">        <span class="keyword">while</span> ($stmt-&gt;fetch()) &#123;</span><br><span class="line">            $arr = <span class="keyword">array</span>(<span class="string">'year'</span> =&gt; $year, <span class="string">'info'</span> =&gt; $info);</span><br><span class="line">            $result[] = $arr;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">echo</span> json_encode($result, JSON_UNESCAPED_UNICODE);</span><br><span class="line">        <span class="comment">/* 关闭语句句柄 */</span></span><br><span class="line">        $stmt-&gt;close();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* 关闭连接 */</span></span><br><span class="line">    $mysqli-&gt;close();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>同样将<code>username</code>、<code>password</code>和<code>dbname</code>根据情况替换，就可以访问了。</p>
-<hr>
-<p>项目地址：<a href="https://github.com/stevenjoezhang/TodayInHistory-Crawler" target="_blank" rel="noopener">TodayInHistory-Crawler</a>，可以打包下载所有文件。</p>
-<p>博主搭建的API：<a href="https://api.galaxymimi.com/today/?type=0" target="_blank" rel="noopener">历史上的今天</a></p>
+<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><p>比较简单的方式是按照json格式进行输出，这里给出一种使用Python的方案。<br>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-12/历史上的今天/#more" rel="contents">
+阅读全文 &raquo;
+</a>
 </div>
+<!--/noindex-->
+</p></div>
 <footer class="post-footer">
 <div class="post-eof"></div>
 </footer>
@@ -385,81 +617,6 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/在网页上实现3D Touch效果/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-11/在网页上实现3D Touch效果/" class="post-title-link" itemprop="url">在网页上实现3D Touch效果</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-11-18 20:52:12" itemprop="dateCreated datePublished" datetime="2018-11-18T20:52:12+08:00">2018-11-18</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p><img src="/images/2018-11/3d_touch_cover_.jpg" alt=""></p>
-<p>2016年9月14日凌晨，iOS 10正式版开始向用户推送更新，而iOS 10搭载的Safari10亦带来了不少新特性，其中就有3D Touch事件的支持（官方文档<a href="https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html" target="_blank" rel="noopener">《What’s New in Safari 10》</a>）。</p>
-<h2 id="Force-Touch与3D-Touch"><a href="#Force-Touch与3D-Touch" class="headerlink" title="Force Touch与3D Touch"></a>Force Touch与3D Touch</h2><p>说到3D Touch不能不提与之相似的Force Touch。Force Touch是苹果公司在2014年9月公布的一项压力敏感屏幕技术，最早用于Apple Watch，可识别轻点、轻按两种操作。随后Force Touch于2015年9月在iPhone 6S上得到改进并更名为3D Touch，提供了更高灵敏度的触控力度识别、及更强的触感反馈，支持轻点、轻按及重按三个维度。</p>
-<p>支持3D Touch的设备，目前有iPhone 6S、iPhone 6S Plus、iPhone 7以及iPhone 7 Plus（注：截止2018年，还要加上iPhone 8和iPhone X等）。这是后文的硬件要求。</p>
-<h2 id="感受3D-Touch"><a href="#感受3D-Touch" class="headerlink" title="感受3D Touch"></a>感受3D Touch</h2><p>3D Touch最为典型的交互有Quick Actions和Peek and Pop两种。在APP图标上重按呼出一组快捷操作菜单，这即是典型的Quick Actions：</p>
-<p><img src="/images/2018-11/quick_actions.jpg" alt=""></p>
-<p>而使用Peek and Pop则可以快速地对内容进行预览，以及后续的其他操作：</p>
-<p><img src="/images/2018-11/peek_and_pop.jpg" alt=""></p>
-<p>如上图所示，在系统的邮件APP中，以一定的力度按压邮件列表中的某一项，会触发Peek弹出一个内容预览窗口（在Peek状态下上滑还能触发Quick Actions调出一些快捷操作项哦），如果继续加大按压力度，则会触发Pop进入邮件内容界面，这整个过程就称之为Peek and Pop。</p>
-<p>除了邮件APP以外，信息、照片等多个系统APP以及一些第三方APP（如微信、Facebook、Twitter等）也都很好的支持了Peek and Pop这种3D Touch交互形式。</p>
-<h2 id="网页中的3D-Touch"><a href="#网页中的3D-Touch" class="headerlink" title="网页中的3D Touch"></a>网页中的3D Touch</h2><p>要在网页中实现3D Touch，需要用到以下两个知识点：</p>
-<ul>
-<li><p>touch.force<br>在touch对象中包含有一个名为<code>force</code>的只读属性，它的取值从0到1，表示的是触碰点的按压力度，0表示没有检测到压力，而1则是设备能识别出的最大压力。</p>
-</li>
-<li><p>touchforcechange<br><code>touchforcechange</code>是Safari 10新增的事件，该事件会在按压力度改变时被触发。</p>
-</li>
-</ul>
-<p>（注：在MacOS Safari上也有与之对应的<code>webkitmouseforcechanged</code>事件，该事件会在支持Force Touch的Trackpad上反应出按压力度值force的变化，但本文仅讨论手机设备的情况）</p>
-<h2 id="实现3D-Touch效果"><a href="#实现3D-Touch效果" class="headerlink" title="实现3D Touch效果"></a>实现3D Touch效果</h2><p>要实现3D Touch效果，关键在于实时地获取touch.force的值。而由于网页上的3D Touch很大程度上受限于设备及浏览器的支持情况，因此我们划分以下3种情况，分别来看看要如何实现：</p>
-<ul>
-<li><p>支持3D Touch且升级到了iOS 10的设备<br>在这种最为理想的情况下，只需要监听touchforcechange事件即可获取到force的当前值，将force值的变化以适当的形式反馈在界面上以实现3D Touch效果。</p>
-</li>
-<li><p>支持3D Touch但系统版本低于iOS 10的设备<br>这种情况虽然无法监听touchforcechange事件，但Touch对象的force属性仍然可以反应出正确的按压力度，可以巧妙地设置一个定时器，以轮询的方式获取force的当前值。</p>
-</li>
-<li><p>不支持3D Touch的设备<br>这种情况下touch.force的取值始终为0，虽然可以用长按的交互形式来代替，但建议还是以优雅降级的方式，索性就不处理了吧。</p>
-</li>
-</ul>
-<h2 id="一个3D-Touch的例子"><a href="#一个3D-Touch的例子" class="headerlink" title="一个3D Touch的例子"></a>一个3D Touch的例子</h2><p>看到这里你肯定想说”Shut up and show me the code…”。好的，那我们来看一个例子，在这个示例页面，用支持3D Touch的设备按压蓝色按钮可以将树懒兄逗笑哦，嘿嘿嘿～</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-11/在网页上实现3D Touch效果/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -485,7 +642,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">96</span>
+<span class="site-state-item-count">97</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -508,7 +665,7 @@ page-home">
 RSS
 </a>
 </div>
-<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll motion-element links-of-blogroll-inline">
 <div class="links-of-blogroll-title">
 <i class="fa  fa-fw fa-university"></i>
 链接

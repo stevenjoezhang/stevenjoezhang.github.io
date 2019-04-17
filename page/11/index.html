@@ -160,6 +160,63 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/博客迁移至Hexo/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-05/博客迁移至Hexo/" class="post-title-link" itemprop="url">博客迁移至Hexo</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-05-20 16:44:30" itemprop="dateCreated datePublished" datetime="2018-05-20T16:44:30+08:00">2018-05-20</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>由于之前使用的WordPress博客在更新后出现未知错误（最后证实是主机商的问题），同时考虑到WordPress存在的一些弊端，例如：</p>
+<ul>
+<li>较为臃肿的PHP后端</li>
+<li>除了官方主题外，难以找到适合博客写作的主题，大多只适合做展示站</li>
+<li>在不安装插件的情况下，只能用自带的编辑器手写HTML，而无法使用Markdown来编辑文章</li>
+<li>静态文件的管理也让人头痛，『媒体库』的设计初衷很好，但实际上严重影响效率</li>
+</ul>
+<p>可见，用WordPress写文章，特别是长文，是一件非常麻烦的事情——你很难专注于写作。虽然它也有不少优点：</p>
+<ul>
+<li>丰富的插件库，可以拓展大量的功能</li>
+<li>完善的评论系统，无需依赖第三方服务</li>
+<li>更新非常方便</li>
+</ul>
+<p>这些特点是静态博客所不具有的，但最终喜欢折腾的博主还是决定将所有内容导出，转而使用Hexo进行渲染，并部署到GitHub Pages上。借助于<code>hexo-migrator-wordpress</code>，这一工作进行的非常顺利。当然，除了Hexo，也有很多其他的解决方案可以考虑，常见的包括Typecho或Hugo等。<br>迁移后的新站点使用了zhangshuqiao.org的域名，目前已可以通过https正常访问。旧的WordPress博客仍会保留，但不再更新，未来可能更多的用于进行插件的测试。<br>Galaxy Mimi站点近期也实装了全新LOGO（使用Monodraw制作）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">     ___           ___           ___       ___           ___           ___      </span><br><span class="line">    /\  \         /\  \         /\__\     /\  \         |\__\         |\__\     </span><br><span class="line">   /::\  \       /::\  \       /:/  /    /::\  \        |:|  |        |:|  |    </span><br><span class="line">  /:/\:\  \     /:/\:\  \     /:/  /    /:/\:\  \       |:|  |        |:|  |    </span><br><span class="line"> /:/  \:\  \   /::\~\:\  \   /:/  /    /::\~\:\  \      |:|__|__      |:|__|__  </span><br><span class="line">/:/__/_\:\__\ /:/\:\ \:\__\ /:/__/    /:/\:\ \:\__\ ____/::::\__\     /::::\__\ </span><br><span class="line">\:\  /\ \/__/ \/__\:\/:/  / \:\  \    \/__\:\/:/  / \::::/~~/~       /:/~~/~    </span><br><span class="line"> \:\ \:\__\        \::/  /   \:\  \        \::/  /   ~~|:|~~|       /:/  /      </span><br><span class="line">  \:\/:/  /        /:/  /     \:\  \       /:/  /      |:|  |       \/__/       </span><br><span class="line">   \::/  /        /:/  /       \:\__\     /:/  /       |:|  |                   </span><br><span class="line">    \/__/         \/__/         \/__/     \/__/         \|__|                   </span><br><span class="line">                   ___                       ___                                </span><br><span class="line">                  /\__\          ___        /\__\          ___                  </span><br><span class="line">                 /::|  |        /\  \      /::|  |        /\  \                 </span><br><span class="line">                /:|:|  |        \:\  \    /:|:|  |        \:\  \                </span><br><span class="line">               /:/|:|__|__      /::\__\  /:/|:|__|__      /::\__\               </span><br><span class="line">              /:/ |::::\__\  __/:/\/__/ /:/ |::::\__\  __/:/\/__/               </span><br><span class="line">              \/__/~~/:/  / /\/:/  /    \/__/~~/:/  / /\/:/  /                  </span><br><span class="line">                    /:/  /  \::/__/           /:/  /  \::/__/                   </span><br><span class="line">                   /:/  /    \:\__\          /:/  /    \:\__\                   </span><br><span class="line">                  /:/  /      \/__/         /:/  /      \/__/                   </span><br><span class="line">                  \/__/                     \/__/</span><br></pre></td></tr></table></figure></p>
+<p>同时博主计划于下半年将原来Galaxy Mimi站点的所有静态页面进行一次大型的改进，敬请期待。</p>
+<hr>
+<p>本文更新于2018年7月8日：<br>由于在国内GitHub Pages加载速度不稳定，且由于GitHub政策不利于SEO，博主已将所有托管在GitHub Pages上的页面迁移至另一台独立服务器。<br>目前全站已支持HTTPS访问，并启用了HSTS，未来时机成熟时将开启HTTP/2访问。</p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/Nginx配置SSL/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -369,59 +426,6 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/文艺的代码/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-04/文艺的代码/" class="post-title-link" itemprop="url">文艺的代码</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-04-27 17:20:39" itemprop="dateCreated datePublished" datetime="2018-04-27T17:20:39+08:00">2018-04-27</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> world;</span><br><span class="line"><span class="keyword">unsigned</span> letter;</span><br><span class="line"><span class="keyword">short</span> stay;</span><br><span class="line"><span class="keyword">long</span> memories;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ago;</span><br><span class="line"><span class="keyword">float</span> cloud;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"I miss you.\n"</span>);</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (everynight <span class="keyword">in</span> mydreams) &#123;</span><br><span class="line">    i.see(you);</span><br><span class="line">    i.feel(you);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> world <span class="keyword">where</span> someone <span class="keyword">like</span> <span class="string">'%you%'</span>;</span><br></pre></td></tr></table></figure>
-<p>Nothing is absolute.<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">* &#123; <span class="attribute">position</span>: relative; &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>物是人非事事休，欲语泪先流。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(item &amp;&amp; !people) everything = <span class="keyword">false</span>;</span><br><span class="line"><span class="keyword">if</span> (tears.setFlowing()) <span class="keyword">try</span> &#123;</span><br><span class="line">    Speaker skr = <span class="keyword">new</span> Speaker();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> &#123;</span><br><span class="line">    IOException e;</span><br><span class="line">&#125; ()</span><br></pre></td></tr></table></figure></p>
-<p>先天下之忧而忧，后天下之乐而乐。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (others.rejoice() == <span class="literal">true</span>) &#123;</span><br><span class="line">    self.rejoice();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    self.worry();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-04/文艺的代码/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -447,7 +451,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">96</span>
+<span class="site-state-item-count">97</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -470,7 +474,7 @@ page-home">
 RSS
 </a>
 </div>
-<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll motion-element links-of-blogroll-inline">
 <div class="links-of-blogroll-title">
 <i class="fa  fa-fw fa-university"></i>
 链接

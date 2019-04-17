@@ -55,7 +55,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/Fk4jy-lOTJvqGmGul8nZfz8r9B7p.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/Fn9DaIzvbgkExdrsLhSdCvJjCqX1.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/IMG_0151.png">
-<meta property="og:updated_time" content="2019-03-01T04:25:39.000Z">
+<meta property="og:updated_time" content="2019-04-07T10:38:45.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unicode字符与颜文字表情">
 <meta name="twitter:description" content="前言编码，是每个程序员绕不开的话题。对于前端工程师而言，字符更是会直观地展示在界面上。提起文字，大部分人的脑中，都会定式为规整排列的字符。但是林子大了什么鸟都有，世界上可是存在着6800+种文字，难免会飞出来一些诡异的鸟…而号称『万国码』的Unicode，在实现编码与展示的时候，也会不会遇到一些奇葩的事情呢？事实上，可能你早已见识过了：  x̙͈̝͍͕̙̄͛̽̆͌́̕͟g̘̣̠̝̟̤̽͑͋̈̑̒͞">
@@ -224,11 +224,12 @@ top: initial;
 <p>今天我们就来探讨一下这些奇怪的字符。</p>
 <h2 id="文字可以戴帽子和穿鞋子"><a href="#文字可以戴帽子和穿鞋子" class="headerlink" title="文字可以戴帽子和穿鞋子"></a>文字可以戴帽子和穿鞋子</h2><p>提起泰文，很多朋友都会立即想到：<strong>萨瓦迪卡（你好）</strong>。<br>但这句话是怎么写的呢？<br>其实这句你好，男生和女生之间还有差异，男生写法是：<code>สวัสดีครับ</code>，女生则是：<code>สวัสดีค่ะ</code>。<br>不过这并不重要，重要的是，我们发现某些字的上面，还带了特殊的符号。就好像是戴上了帽子。<br>事实上，泰文字符不仅会『戴帽子』，偶尔还会『穿鞋子』，比如这三个字符：<code>ผ ผู ผู้</code>。<br>如果脑洞再大一点，有人就会想，那是不是还可以戴多顶帽子呢？<br>的确如此…泰文允许你穿一双鞋子，并且戴两顶帽子。完整的形式是这样的：</p>
 <p><img src="/images/2018-07/FqLq54KAJkoSVA-7_jdJpSRI3fcI.png" alt=""></p>
-<p>所以，平时看惯了中英文的我们，需要改变一下思路了。<br>世界上的文字，并不全是规规整整横向排列的格子，也存在像泰文这种变形金刚<strong>组合式</strong>的文字。<br>虽然标准的泰文里，『帽子』和『鞋子』的数量是有限制的，但由于国际码的迷之设计（先卖个关子），在计算机里显示的泰文字符，却可以拥有无数的帽子和鞋子。也就是说，它变成了一款可以在Y轴无限拓展的文字！<br>并且，咱不光可以往上喷，还可以有一定角度…</p>
+<p>所以，平时看惯了中英文的我们，需要改变一下思路了。<br>世界上的文字，并不全是规规整整横向排列的格子，也存在像泰文这种变形金刚<strong>组合式</strong>的文字。<br>虽然标准的泰文里，『帽子』和『鞋子』的数量是有限制的，但由于国际码的迷之设计（先卖个关子），在计算机里显示的泰文字符，却可以拥有无数的帽子和鞋子。也就是说，它变成了一款可以在Y轴无限拓展的文字！<br>并且，咱不光可以往上喷，还可以有一定角度…<br><em>（由于一些系统会崩溃，这里使用截图）</em></p>
 <p><img src="/images/2018-07/Fr8cS9UX21MEgBtmOU_CDhreGqlO.jpeg" alt=""><br><img src="/images/2018-07/Fr-rlbbriydg4cUmoU_Zs6VQSbpU.jpeg" alt=""></p>
 <p>还可以</p>
 <p><img src="/images/2018-07/Fk0kXSTymPxute84rceAkzGd5PKA.jpeg" alt=""></p>
-<p>简直是不讲道理。<br>（由于一些系统会崩溃，这里使用截图）</p>
+<p>简直是不讲道理。</p>
+<h2 id="文字还能倒过来"><a href="#文字还能倒过来" class="headerlink" title="文字还能倒过来"></a>文字还能倒过来</h2><p>这里还介绍一个神奇的Unicode字符：<code>\u202e</code>，它的作用是让它之后的字符从右到左显示。博主最早是在微信中发现这个小技巧的，如果昵称中包含这个字符，可以产生奇妙的效果。例如用户：<br><code>米米‮</code><br>看上去没有什么问题，但实际上是<br><code>米米\u202e</code><br>发送一个表情，就会显示为<br><code>米米‮：[动画表情]</code><br>如果用在文件名中，还可以起到欺骗的效果，例如：<br><code>sample_\u202ecod.exe</code><br>就会显示为<br><code>sample_‮cod.exe</code></p>
 <a id="more"></a>
 <h2 id="人与机器的矛盾"><a href="#人与机器的矛盾" class="headerlink" title="人与机器的矛盾"></a>人与机器的矛盾</h2><p>然后我们会质问Unicode，你为何不讲道理？<br>如此的设计，近乎是一个bug；但即使是bug，也应该早就修复了呀。<br>事实上，这样的设计，是为了解决一个问题：人与机器的矛盾。<br>首先是存储的矛盾。<br>如果把每个组合好的泰文用一个编码来表示，那么至少需要<strong>44×21×4=3696</strong>个编码（实际上可能要比这还多）。用如此多的编码来处理基本元素只有<strong>69</strong>个的文字是非常浪费的，因此电脑采用一套称为复杂文字编排（CTL）的设计来解决矛盾。<br>简单的说，泰文的每个基本字符对应一个编码，用户在输入法里依次输入多个基本字符进行拼合，最后敲一个特殊的<strong>『结束字符』</strong>；这时前面输入的基本字符，就拼合成了一个<strong>单独</strong>的泰文字符，在屏幕中显示。<br>这样就解决了存储的空间浪费问题。<br>但这样就带来了第二个矛盾，识别的问题。<br>人可以轻松地识别一个泰文合字是否拼写正确、有意义；但机器在显示时却很难进行判断，即使可以也会带来相应的性能问题。<br>如何解决呢？如今会在输入法上做一些文章，比如打一个声调符号后就不能再输入了。不过，由于泰文这种基于结束标志合成字符的本质，你还是没法避免艺术家们使用复制粘贴、手工撰改字符位置等方式去进行创造，只能起到一些限制作用。<br>其次，在比较新版本的Webkit里，在显示上会阻止这种往上下冒的字符，这样至少不影响排版。所以有部分字符已经不会出现上下叠加的情形了，你可以在不同浏览器，观察一下这个字符的显示：ส็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็็</p>
 <h2 id="萌即正义的颜文字-ง-•̀-•́-ง"><a href="#萌即正义的颜文字-ง-•̀-•́-ง" class="headerlink" title="萌即正义的颜文字 (ง •̀_•́)ง"></a>萌即正义的颜文字 (ง •̀_•́)ง</h2><p>也许你觉得泰文奇葩，但它的声调就在文字里，看到就能准确地读出来。这样更容易传播，是不是也没了你读文言文要查字典的烦恼呢？所以文字的设计各有优劣。<br>这样的设计不止泰文，它只是一个典型的例子。除此之外常见的还有老挝文、藏文。<br>脑洞大开的艺术家们，又会想到另外一个好玩的事情：我能不能拿老挝文的『帽子』，组合藏文的『鞋子』，合成一个独立的字符呢？<br>他们赢了。不久，颜文字开始流行。<br>比如，这个表情：(;´༎ຶД༎ຶ`)<br>里面有眼睛流泪的一个字符：<code>༎ຶ</code><br>它是什么语言呢？<br>事实上，它并不属于世界上任何一种语言！眼睛部分是<strong>老挝文</strong>，泪水部分属于<strong>藏文</strong>。<br>但是，你在复制它的时候，可以发现它却是一个<strong>单独</strong>的字符，这就非常的神奇。原因我们在第二部分已经讲过了。<br>我是如何知道的呢？当然我并不是个语言学家，我们可以转码一下，发现<code>༎ຶ</code>对应的编码是<code>\u0f0e\u0eb6</code>，再到<a href="https://unicode-table.com/cn/#tibetan" target="_blank" rel="noopener">unicode-table</a>里去查看就清楚了。<br>除此之外——</p>
@@ -239,8 +240,8 @@ top: initial;
 <li>(ง •̀_•́ )ง中ง是泰文</li>
 <li>罒д罒中罒是中文（同网），д是俄语西里尔字母</li>
 </ul>
-<p>看来如果你会发颜文字，就是名副其实的会十八国语言了呢 (๑✦ˑ̫✦)✧<br>这里有B站评论区自带的颜文字表情：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(=・ω・=)    (〜￣△￣)〜    o(￣ヘ￣o＃)    ⌇●﹏●⌇    (○･｀Д´･ ○)</span><br><span class="line">(･∀･)    (°∀°)ﾉ    (￣3￣)    ╮(￣▽￣)╭    (´_ゝ｀)    ヾ(^▽^*)))</span><br><span class="line">←_←    →_→    (&lt;_&lt;)    (&gt;_&gt;)    (;¬_¬)    (｀・ω・´)    (/TДT)/</span><br><span class="line">(⌒▽⌒)    (￣▽￣)    (ﾟДﾟ≡ﾟдﾟ)!?    Σ(ﾟдﾟ;)    (&quot;▔□▔)/    (ó﹏ò｡)</span><br><span class="line">(^・ω・^)    (｡･ω･｡)    (●￣(ｴ)￣●)    ε=ε=(ノ≧∇≦)ノ    (￣ε(#￣)Σ</span><br><span class="line">(-_-#)    (￣へ￣)    (ฅ´ω`ฅ)    ヽ(`Д´)ﾉ    (´･_･`)    (´；ω；`)</span><br><span class="line">(#-_-)┯━┯    _(:3」∠)_    (╯°口°)╯(┴—┴    (´▽｀)ノ♪    Σ(￣□￣||)</span><br></pre></td></tr></table></figure></p>
-<p>Unicode的转码可以在这里完成：<a href="https://galaxymimi.com/app/textoolbox.html" target="_blank" rel="noopener">Galaxy Mimi&gt;应用&gt;实用工具&gt;TexToolBox</a></p>
+<p>看来如果你会发颜文字，就是名副其实的会十八国语言了呢 (๑✦ˑ̫✦)✧<br>这里有B站评论区自带的颜文字表情：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(=・ω・=)    (〜￣△￣)〜    o(￣ヘ￣o＃)    (○･｀Д´･ ○)</span><br><span class="line">(･∀･)    (°∀°)ﾉ    (￣3￣)    ╮(￣▽￣)╭    (´_ゝ｀)</span><br><span class="line">←_←    →_→    (&lt;_&lt;)    (&gt;_&gt;)    (￣ε(#￣)Σ    ヾ(o◕∀◕)ﾉ</span><br><span class="line">(⌒▽⌒)    (￣▽￣)    (ﾟДﾟ≡ﾟдﾟ)!?    Σ(ﾟдﾟ;)    (&quot;▔□▔)/</span><br><span class="line">(^・ω・^)    (｡･ω･｡)    (●￣(ｴ)￣●)    ε=ε=(ノ≧∇≦)ノ</span><br><span class="line">(-_-#)    (￣へ￣)    (ฅ´ω`ฅ)    ヽ(`Д´)ﾉ    (´･_･`)</span><br><span class="line">(#-_-)┯━┯    _(:3」∠)_    (╯°口°)╯(┴—┴    (´▽｀)ノ♪</span><br><span class="line">ヘ(_ _ヘ)    (｀・ω・´)    Σ(￣□￣||)    (´；ω；`)</span><br><span class="line">⌇●﹏●⌇    ヾ(^▽^*)))    (/TДT)/    (ó﹏ò｡)    (;¬_¬)</span><br></pre></td></tr></table></figure></p>
+<p>Unicode的转码可以在这里完成：<a href="https://galaxymimi.com/tool/strtool.html" target="_blank" rel="noopener">Galaxy Mimi&gt;应用&gt;实用工具&gt;TexToolBox</a></p>
 <h2 id="字体的错位"><a href="#字体的错位" class="headerlink" title="字体的错位"></a>字体的错位</h2><p>前面我们一直在谈字符的本质，但字符在屏幕中的展示，还有一个关键的因素：字体。<br>相同的字符，使用了不同的字体，它们的显示也会有差别。<br>一行中文，你设置黑体或草书，它大体来看还是规整的；但如果你设置一行英文为草书，可能就会有问题。<br>在浏览器里，如果对应编码在字体文件里为空，一般会展示成一个方格，起码不会影响其他正常字符的排版。但我们知道，Unicode的林子实在太大了…<br>在某些字体里，就会对一些特殊的字符产生错误的排版。<br>比如：热҈的҈字҈都҈出҈汗҈了҈<br>把它转义一下，就得到编码是：<br><code>\u70ed\u0488\u7684\u0488\u5b57\u0488\u90fd\u0488\u51fa\u0488\u6c57\u0488\u4e86\u0488</code><br>其中<code>\u0488</code>就是<code>҈</code>这个字符的编码，它是一个组合用的<a href="https://unicode-table.com/cn/0488" target="_blank" rel="noopener">西里尔文百千符号</a>。<br>它在大部分常用字体里，都有错位问题；而其他一些字体，比如Courier New字体，则是分开的展示：</p>
 <p><img src="/images/2018-07/Fk4jy-lOTJvqGmGul8nZfz8r9B7p.png" alt=""></p>
 <p>那么，这两种展示哪种才是正常的呢？其实都不正常。<br>我们查看<a href="https://en.wikipedia.org/wiki/Cyrillic_numerals" target="_blank" rel="noopener">西里尔文计数法的wiki</a>，可以看到它只有配合西里尔数字时，才能展示正常：</p>
@@ -336,7 +337,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">96</span>
+<span class="site-state-item-count">97</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -359,7 +360,7 @@ top: initial;
 RSS
 </a>
 </div>
-<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll motion-element links-of-blogroll-inline">
 <div class="links-of-blogroll-title">
 <i class="fa  fa-fw fa-university"></i>
 链接
@@ -378,7 +379,7 @@ RSS
 <!--noindex-->
 <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
 <div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文字可以戴帽子和穿鞋子"><span class="nav-number">2.</span> <span class="nav-text">文字可以戴帽子和穿鞋子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#人与机器的矛盾"><span class="nav-number">3.</span> <span class="nav-text">人与机器的矛盾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#萌即正义的颜文字-ง-•̀-•́-ง"><span class="nav-number">4.</span> <span class="nav-text">萌即正义的颜文字 (ง •̀_•́)ง</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体的错位"><span class="nav-number">5.</span> <span class="nav-text">字体的错位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混乱与创新？"><span class="nav-number">6.</span> <span class="nav-text">混乱与创新？</span></a></li></ol></div>
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文字可以戴帽子和穿鞋子"><span class="nav-number">2.</span> <span class="nav-text">文字可以戴帽子和穿鞋子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文字还能倒过来"><span class="nav-number">3.</span> <span class="nav-text">文字还能倒过来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#人与机器的矛盾"><span class="nav-number">4.</span> <span class="nav-text">人与机器的矛盾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#萌即正义的颜文字-ง-•̀-•́-ง"><span class="nav-number">5.</span> <span class="nav-text">萌即正义的颜文字 (ง •̀_•́)ง</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体的错位"><span class="nav-number">6.</span> <span class="nav-text">字体的错位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混乱与创新？"><span class="nav-number">7.</span> <span class="nav-text">混乱与创新？</span></a></li></ol></div>
 </div>
 </div>
 <!--/noindex-->

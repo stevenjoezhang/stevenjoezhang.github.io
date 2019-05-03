@@ -11,17 +11,17 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.1.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+<link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.1.0',
+version: '7.1.1',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
 back2top: true,
 back2top_sidebar: false,
@@ -208,6 +208,19 @@ top: initial;
 阅读次数：
 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">1.9k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">5 分钟</span>
+</div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -221,6 +234,7 @@ top: initial;
 </ul>
 <p><img src="/images/2019-01/2ccd70dcb7a54444c2cfeb2fc78c23a3.png" alt=""></p>
 <h3 id="如何理解CAT等级"><a href="#如何理解CAT等级" class="headerlink" title="如何理解CAT等级"></a>如何理解CAT等级</h3><p>CAT等级有各自的工作电压和瞬时峰值电压。CAT等级的工作电压分为：50V，150V，300V，600V，1000V。工作电压越高意味着能够承受的瞬时峰值电压也越高。<br>如下表所示：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -251,6 +265,7 @@ top: initial;
 </tr>
 </tbody>
 </table>
+</div>
 <p>下图有更详细的数据：</p>
 <p><img src="/images/2019-01/5e0693d4c540a6d44ba986dc647409cd.png" alt=""></p>
 <h3 id="CAT-III-600V比CAT-II-1000V更安全"><a href="#CAT-III-600V比CAT-II-1000V更安全" class="headerlink" title="CAT III 600V比CAT II 1000V更安全"></a>CAT III 600V比CAT II 1000V更安全</h3><p>人们往往无法理解这一点，为什么只能承受600V电压的设备的比1000V更安全？<br>这里涉及到信号源阻抗的问题。信号源阻抗越大，CAT等级越低。由表1可知，CAT III等级的阻抗为2欧姆，CAT II等级的阻抗时12欧姆，即CAT II等级的源阻抗是CAT III等级阻抗的6倍。所以，虽然CAT III等级的电压虽小，但阻抗也小，电流大，从而能够承受更高能量的信号，所以说CAT III 600V比CAT II 1000V安全。<br>同一个CAT等级下，工作电压越高，其安全等级也越高（同一CAT等级的源阻抗相同）。例如：CAT III 1000V（8kV 瞬时高发）比CAT II 600V（6kV瞬时高压）更安全。<br>如果您需要测试一个电力电路，你应该会用到一个CAT III 600V或CAT IV 600V/CAT III 1000V的仪表，配套CAT IV-600V/CAT III-1000V测试线和探头。</p>
@@ -342,7 +357,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">97</span>
+<span class="site-state-item-count">98</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -437,13 +452,13 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/utils.js?v=7.1.0"></script>
-<script src="/js/motion.js?v=7.1.0"></script>
-<script src="/js/affix.js?v=7.1.0"></script>
-<script src="/js/schemes/pisces.js?v=7.1.0"></script>
-<script src="/js/scrollspy.js?v=7.1.0"></script>
-<script src="/js/post-details.js?v=7.1.0"></script>
-<script src="/js/next-boot.js?v=7.1.0"></script>
+<script src="/js/utils.js?v=7.1.1"></script>
+<script src="/js/motion.js?v=7.1.1"></script>
+<script src="/js/affix.js?v=7.1.1"></script>
+<script src="/js/schemes/pisces.js?v=7.1.1"></script>
+<script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+<script src="/js/next-boot.js?v=7.1.1"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
@@ -793,7 +808,7 @@ height: $(o).attr('height') || '500px'
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script>pangu.spacingPage();</script>
 <script>
-$('.highlight').each(function(i, e) {
+$('.highlight').not('.gist .highlight').each(function(i, e) {
 var $wrap = $('<div>').addClass('highlight-wrap');
 $(e).after($wrap);
 $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {

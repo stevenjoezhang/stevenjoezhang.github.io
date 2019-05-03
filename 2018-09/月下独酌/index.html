@@ -11,17 +11,17 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.1.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+<link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.1.0',
+version: '7.1.1',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
 back2top: true,
 back2top_sidebar: false,
@@ -204,6 +204,19 @@ top: initial;
 阅读次数：
 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">1.8k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">4 分钟</span>
+</div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -310,7 +323,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">97</span>
+<span class="site-state-item-count">98</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -398,13 +411,13 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/utils.js?v=7.1.0"></script>
-<script src="/js/motion.js?v=7.1.0"></script>
-<script src="/js/affix.js?v=7.1.0"></script>
-<script src="/js/schemes/pisces.js?v=7.1.0"></script>
-<script src="/js/scrollspy.js?v=7.1.0"></script>
-<script src="/js/post-details.js?v=7.1.0"></script>
-<script src="/js/next-boot.js?v=7.1.0"></script>
+<script src="/js/utils.js?v=7.1.1"></script>
+<script src="/js/motion.js?v=7.1.1"></script>
+<script src="/js/affix.js?v=7.1.1"></script>
+<script src="/js/schemes/pisces.js?v=7.1.1"></script>
+<script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+<script src="/js/next-boot.js?v=7.1.1"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
@@ -754,7 +767,7 @@ height: $(o).attr('height') || '500px'
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script>pangu.spacingPage();</script>
 <script>
-$('.highlight').each(function(i, e) {
+$('.highlight').not('.gist .highlight').each(function(i, e) {
 var $wrap = $('<div>').addClass('highlight-wrap');
 $(e).after($wrap);
 $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {

@@ -11,17 +11,17 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.1.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+<link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.1.0',
+version: '7.1.1',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
 back2top: true,
 back2top_sidebar: false,
@@ -207,6 +207,19 @@ top: initial;
 阅读次数：
 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">7.2k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">17 分钟</span>
+</div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -253,6 +266,7 @@ top: initial;
 <h2 id="依赖关系"><a href="#依赖关系" class="headerlink" title="依赖关系"></a>依赖关系</h2><p>由于定义的变化，这些单位之间的依赖关系也发生了改变。</p>
 <p><img src="/images/2018-11/Unit_relations_in_the_old_SI.svg" alt=""><br><img src="/images/2018-11/Unit_relations_in_the_new_SI.svg" alt=""></p>
 <h2 id="不确定度"><a href="#不确定度" class="headerlink" title="不确定度"></a>不确定度</h2><p>同样，由于定义的变化，一些物理量的不确定度也发生了改变。例如，真空磁导率$\mu_0$将不再具有定义值$4\pi\times10^{-7}m\cdot kg\cdot s^{-2}\cdot A^{-2}$，水的三相点温度也不再严格地等于273.16K。下表给出了它们在改动后的影响：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -280,9 +294,9 @@ top: initial;
 <tr>
 <td>Planck constant</td>
 <td>$h$</td>
-<td>$\frac{8 \alpha}{c \mu_0 K_\text{J}^2}$</td>
+<td>$\frac{8 \alpha}{c \mu<em>0 K</em>\text{J}^2}$</td>
 <td>$K_\text{J}^2$</td>
-<td>$1.2 \times 10^{-8} \approx 2 u_\text{r}(K_\text{J})$</td>
+<td>$1.2 \times 10^{-8} \approx 2 u<em>\text{r}(K</em>\text{J})$</td>
 <td>$6.62607015\times10^{-34} kg\cdot m^2\cdot s^{−1}$</td>
 <td>None</td>
 <td>Exact</td>
@@ -292,7 +306,7 @@ top: initial;
 <td>$K_\text{J}$</td>
 <td>$K_\text{J}$</td>
 <td>$K_\text{J}$</td>
-<td>$6.1 \times 10^{-9} = u_\text{r}(K_\text{J})$</td>
+<td>$6.1 \times 10^{-9} = u<em>\text{r}(K</em>\text{J})$</td>
 <td>$\frac{2 e}{h}$</td>
 <td>None</td>
 <td>Exact</td>
@@ -310,9 +324,9 @@ top: initial;
 <tr>
 <td>Elementary charge</td>
 <td>$e$</td>
-<td>$\frac{4 \alpha}{c \mu_0 K_\text{J}}$</td>
+<td>$\frac{4 \alpha}{c \mu<em>0 K</em>\text{J}}$</td>
 <td>$K_\text{J}$</td>
-<td>$6.1 \times 10^{-9} \approx u_\text{r}(K_\text{J})$</td>
+<td>$6.1 \times 10^{-9} \approx u<em>\text{r}(K</em>\text{J})$</td>
 <td>$1.602176634\times10^{-19} A\cdot s$</td>
 <td>None</td>
 <td>Exact</td>
@@ -350,9 +364,9 @@ top: initial;
 <tr>
 <td>Electron mass</td>
 <td>$m_\text{e}$</td>
-<td>$\frac{16 R_{\infty}}{c^2 \alpha \mu_0 K_\text{J}^2}$</td>
+<td>$\frac{16 R<em>{\infty}}{c^2 \alpha \mu_0 K</em>\text{J}^2}$</td>
 <td>$K_\text{J}^2$</td>
-<td>$1.2 \times 10^{-8} \approx 2 u_\text{r}(K_\text{J})$</td>
+<td>$1.2 \times 10^{-8} \approx 2 u<em>\text{r}(K</em>\text{J})$</td>
 <td>$\frac{2 h R_{\infty}}{c \alpha^2}$</td>
 <td>$\alpha^2$</td>
 <td>$4.7 \times 10^{-10} \approx 2 u_\text{r}(\alpha)$</td>
@@ -360,20 +374,20 @@ top: initial;
 <tr>
 <td>Electron molar mass</td>
 <td>$M(\text{e})$</td>
-<td>$A_\text{r}(\text{e}) M_\text{u}$</td>
+<td>$A<em>\text{r}(\text{e}) M</em>\text{u}$</td>
 <td>$A_\text{r}(\text{e})$</td>
-<td>$2.9 \times 10^{-11} = u_\text{r}(A_\text{r}(\text{e}))$</td>
-<td>$\frac{2 h R_{\infty} N_\text{A}}{c \alpha^2}$</td>
+<td>$2.9 \times 10^{-11} = u<em>\text{r}(A</em>\text{r}(\text{e}))$</td>
+<td>$\frac{2 h R<em>{\infty} N</em>\text{A}}{c \alpha^2}$</td>
 <td>$\alpha^2$</td>
 <td>$4.7 \times 10^{-10} \approx 2 u_\text{r}(\alpha)$</td>
 </tr>
 <tr>
 <td>Unified atomic mass unit or dalton</td>
 <td>\begin{align*}m_u &amp; = 1u \\ &amp; = 1Da\end{align*}</td>
-<td>$\frac{16 R_{\infty}}{c^2 \alpha \mu_0 K_\text{J}^2 A_\text{r}(\text{e})}$</td>
+<td>$\frac{16 R<em>{\infty}}{c^2 \alpha \mu_0 K</em>\text{J}^2 A_\text{r}(\text{e})}$</td>
 <td>$K_\text{J}^2$</td>
-<td>$1.2 \times 10^{-8} \approx 2 u_\text{r}(K_\text{J})$</td>
-<td>$\frac{2 h R_{\infty}}{c \alpha^2 A_\text{r}(\text{e})}$</td>
+<td>$1.2 \times 10^{-8} \approx 2 u<em>\text{r}(K</em>\text{J})$</td>
+<td>$\frac{2 h R<em>{\infty}}{c \alpha^2 A</em>\text{r}(\text{e})}$</td>
 <td>$\alpha^2$</td>
 <td>$4.7 \times 10^{-10} \approx 2 u_\text{r}(\alpha)$</td>
 </tr>
@@ -383,16 +397,16 @@ top: initial;
 <td>$0.001kg\cdot mol^{−1}$</td>
 <td>None</td>
 <td>Exact</td>
-<td>$\frac{2 h R_{\infty} N_\text{A}}{c \alpha^2 A_\text{r}(\text{e})}$</td>
+<td>$\frac{2 h R<em>{\infty} N</em>\text{A}}{c \alpha^2 A_\text{r}(\text{e})}$</td>
 <td>$\alpha^2$</td>
 <td>$4.7 \times 10^{-10} \approx 2 u_\text{r}(\alpha)$</td>
 </tr>
 <tr>
 <td>Avogadro constant</td>
 <td>$N_\text{A}$</td>
-<td>$\frac{c^2 \alpha \mu_0 K_\text{J}^2 A_\text{r}(\text{e}) M_\text{u}}{16 R_{\infty}}$</td>
+<td>$\frac{c^2 \alpha \mu<em>0 K</em>\text{J}^2 A<em>\text{r}(\text{e}) M</em>\text{u}}{16 R_{\infty}}$</td>
 <td>$K_\text{J}^2$</td>
-<td>$1.2 \times 10^{-8} \approx 2 u_\text{r}(K_\text{J})$</td>
+<td>$1.2 \times 10^{-8} \approx 2 u<em>\text{r}(K</em>\text{J})$</td>
 <td>$6.02214076\times10^{23} mol^{−1}$</td>
 <td>None</td>
 <td>Exact</td>
@@ -400,10 +414,10 @@ top: initial;
 <tr>
 <td>Atomic mass of carbon-12</td>
 <td>$m(^{12}\text{C})$</td>
-<td>$\frac{192 R_{\infty}}{c^2 \alpha \mu_0 K_\text{J}^2 A_\text{r}(\text{e})}$</td>
+<td>$\frac{192 R<em>{\infty}}{c^2 \alpha \mu_0 K</em>\text{J}^2 A_\text{r}(\text{e})}$</td>
 <td>$K_\text{J}^2$</td>
-<td>$1.2 \times 10^{-8} \approx 2 u_\text{r}(K_\text{J})$</td>
-<td>$\frac{24 h R_{\infty}}{c \alpha^2 A_\text{r}(\text{e})}$</td>
+<td>$1.2 \times 10^{-8} \approx 2 u<em>\text{r}(K</em>\text{J})$</td>
+<td>$\frac{24 h R<em>{\infty}}{c \alpha^2 A</em>\text{r}(\text{e})}$</td>
 <td>$\alpha^2$</td>
 <td>$4.7 \times 10^{-10} \approx 2 u_\text{r}(\alpha)$</td>
 </tr>
@@ -413,16 +427,16 @@ top: initial;
 <td>$0.012kg\cdot mol^{−1}$</td>
 <td>None</td>
 <td>Exact</td>
-<td>$\frac{24 h R_{\infty} N_\text{A}}{c \alpha^2 A_\text{r}(\text{e})}$</td>
+<td>$\frac{24 h R<em>{\infty} N</em>\text{A}}{c \alpha^2 A_\text{r}(\text{e})}$</td>
 <td>$\alpha^2$</td>
 <td>$4.7 \times 10^{-10} \approx 2 u_\text{r}(\alpha)$</td>
 </tr>
 <tr>
 <td>Faraday constant</td>
 <td>$F$</td>
-<td>$\frac{c \alpha^2 K_\text{J} A_\text{r}(\text{e}) M_\text{u}}{4 R_{\infty}}$</td>
+<td>$\frac{c \alpha^2 K<em>\text{J} A</em>\text{r}(\text{e}) M<em>\text{u}}{4 R</em>{\infty}}$</td>
 <td>$K_\text{J}, \alpha^2$</td>
-<td>$6.2 \times 10^{-9} \approx u_\text{r}(K_\text{J})$</td>
+<td>$6.2 \times 10^{-9} \approx u<em>\text{r}(K</em>\text{J})$</td>
 <td>$e N_\text{A}$</td>
 <td>None</td>
 <td>Exact</td>
@@ -435,7 +449,7 @@ top: initial;
 <td>Exact</td>
 <td>$T_\text{TPW}$</td>
 <td>$T_\text{TPW}$</td>
-<td>$5.7 \times 10^{-7} = u_\text{r}(T_\text{TPW})$</td>
+<td>$5.7 \times 10^{-7} = u<em>\text{r}(T</em>\text{TPW})$</td>
 </tr>
 <tr>
 <td>Molar gas constant</td>
@@ -450,7 +464,7 @@ top: initial;
 <tr>
 <td>Boltzmann constant</td>
 <td>$k$</td>
-<td>$\frac{16 R R_{\infty}}{c^2 \alpha \mu_0 K_\text{J}^2 A_\text{r}(\text{e}) M_\text{u}}$</td>
+<td>$\frac{16 R R<em>{\infty}}{c^2 \alpha \mu_0 K</em>\text{J}^2 A<em>\text{r}(\text{e}) M</em>\text{u}}$</td>
 <td>$R$</td>
 <td>$5.7 \times 10^{-7} \approx u_\text{r}(R)$</td>
 <td>$1.380649\times10^{-23} kg\cdot m^2\cdot K^{−1} \cdot s^{−2}$</td>
@@ -460,7 +474,7 @@ top: initial;
 <tr>
 <td>Stefan–Boltzmann constant</td>
 <td>$\sigma$</td>
-<td>$\frac{256 \pi^5 R^4 R_{\infty}^4}{15 c^7 \alpha^7 \mu_0 K_\text{J}^2 A_\text{r}(\text{e})^4 M_\text{u}^4}$</td>
+<td>$\frac{256 \pi^5 R^4 R<em>{\infty}^4}{15 c^7 \alpha^7 \mu_0 K</em>\text{J}^2 A<em>\text{r}(\text{e})^4 M</em>\text{u}^4}$</td>
 <td>$R^4$</td>
 <td>$2.3 \times 10^{-6} \approx 4 u_\text{r}(R)$</td>
 <td>$\frac{2 \pi^5 k^4}{15 h^3 c^2}$</td>
@@ -469,6 +483,7 @@ top: initial;
 </tr>
 </tbody>
 </table>
+</div>
 <p>注：其中，$c$为光速（speed of light），$\alpha$为精细结构常数（fine-structure constant），$R_\infty$为里德伯常量（Rydberg constant）。</p>
 <hr>
 <p>参考文章：<br><a href="https://en.wikipedia.org/wiki/2019_redefinition_of_SI_base_units" target="_blank" rel="noopener">Redefinition of SI base units - 维基百科</a><br><a href="https://en.wikipedia.org/wiki/International_System_of_Units" target="_blank" rel="noopener">国际单位制 - 维基百科</a></p>
@@ -557,7 +572,7 @@ Safari顶栏彩虹效果 <i class="fa fa-chevron-right"></i>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">97</span>
+<span class="site-state-item-count">98</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -652,13 +667,13 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/utils.js?v=7.1.0"></script>
-<script src="/js/motion.js?v=7.1.0"></script>
-<script src="/js/affix.js?v=7.1.0"></script>
-<script src="/js/schemes/pisces.js?v=7.1.0"></script>
-<script src="/js/scrollspy.js?v=7.1.0"></script>
-<script src="/js/post-details.js?v=7.1.0"></script>
-<script src="/js/next-boot.js?v=7.1.0"></script>
+<script src="/js/utils.js?v=7.1.1"></script>
+<script src="/js/motion.js?v=7.1.1"></script>
+<script src="/js/affix.js?v=7.1.1"></script>
+<script src="/js/schemes/pisces.js?v=7.1.1"></script>
+<script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+<script src="/js/next-boot.js?v=7.1.1"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
@@ -1040,7 +1055,7 @@ height: $(o).attr('height') || '500px'
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script>pangu.spacingPage();</script>
 <script>
-$('.highlight').each(function(i, e) {
+$('.highlight').not('.gist .highlight').each(function(i, e) {
 var $wrap = $('<div>').addClass('highlight-wrap');
 $(e).after($wrap);
 $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {

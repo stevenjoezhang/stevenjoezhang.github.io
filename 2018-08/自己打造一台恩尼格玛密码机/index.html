@@ -11,17 +11,17 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.1.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+<link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.1.0',
+version: '7.1.1',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
 back2top: true,
 back2top_sidebar: false,
@@ -250,13 +250,26 @@ top: initial;
 阅读次数：
 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">12k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">28 分钟</span>
+</div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p><img src="/images/2018-08/F5YSP9KHMF6R1PD.LARGE.jpg" alt=""></p>
 <p>在对称加密学当中，恩尼格玛机绝对是承前启后的存在。它将密码学研究从以前的语言文字学中心完全转移到了数学身上。在这里牵涉的密码并不是我们平时邮箱、银行帐号那种狭义概念，那种顶多叫做口令。这里说的密码就是通过某种映射方式，把一篇文章变得面目全非，以达到保密效果；只有特定的转换规律才能将其解密。这篇文章适于电脑控、军事控、历史控、数学控阅读，请做好烧脑准备。</p>
 <p>EDIT: This Instructable has won Second prize in the 2013 Radio Shack Microcontroller Contest. Thank You to all who voted!<br>按：这个作品是2013年无线电单片机竞赛的亚军。感谢所有支持这个作品的你们！<br>EDIT2: An Open Enigma with fake Standup Nixie Tubes like the ones pictured in this Instructable will soon be available as a Special Kickstarter edition.</p>
-<p>This is our very first Instructable and this step by step guide will show you how to build a fully functional electronic replica of the world famous German Enigma machine. This Arduino based Open Source project is able to encrypt &amp; decrypt any Enigma M4 encoded message.<br>这是我们的初号机。以下教程将手把手教你如何完美复刻史上著名的德国恩尼格玛密码机。这个基于Arduino的开源程序能够加解密任何Enigma机M4型（海军型）的信息。<br>This first ever fully functional Open Source Enigma “exact” Replica was inspired by the Kid’s Game to Arduino Enigma Machine by sketchsk3tch.<br>这个第一台全功能开源完美Enigma机复制品是根据sketchsk3tch写的《Kid’s Game to Arduino Enigma Machine（从儿童玩具到Arduino恩尼格玛机）》所作。<br>Using Multiplexing for the LEDs, this circuit with 115 light emitting diodes uses only 38 pins and the 36 push buttons use only 4 pins total thanks to properly placed resistors (and the P-Channel MOSFETs) in the keyboard loop. These 4 16-Segment displays &amp; an LED for each keyboard button would add up quickly the total number of pins required and even the Arduino Mega would have ran out of pins without the 2 methods mentioned above….<br>采用多路复用LED电路，仅用38个针脚的115个发光二极管和4个针脚的36个按键所连接的整个电路，全靠在键盘回路里准确放置的电阻以及P沟道场效应晶体管得以实现。要不然，4个16段显示器，以及每个按键上的LED将大幅增加所需针脚总量——即使用了Arduino Mega板，但如果没用上述两个方法，电路也不能如此简洁。<br>In response to the overwhelming demand, we designed the PCB and made it available through <a href="http://www.stgeotronics.com" target="_blank" rel="noopener">www.stgeotronics.com</a>. Skip to Step 10 &amp; beyond for more info. We also offer it as a complete electronics kit &amp; an assembled &amp; tested complete product.<br>面对电路的超额需求，我们在 <a href="http://www.stgeotronics.com" target="_blank" rel="noopener">http://www.stgeotronics.com</a> 设计了专用的PCB板。直接跳到第10步和以后的步骤可以找到更多信息。同时，我们也发布了测试过的完整电子组装套装。</p>
+<p>This is our very first Instructable and this step by step guide will show you how to build a fully functional electronic replica of the world famous German Enigma machine. This Arduino based Open Source project is able to encrypt &amp; decrypt any Enigma M4 encoded message.<br>这是我们的初号机。以下教程将手把手教你如何完美复刻史上著名的德国恩尼格玛密码机。这个基于Arduino的开源程序能够加解密任何Enigma机M4型（海军型）的信息。<br>This first ever fully functional Open Source Enigma “exact” Replica was inspired by the Kid’s Game to Arduino Enigma Machine by sketchsk3tch.<br>这个第一台全功能开源完美Enigma机复制品是根据sketchsk3tch写的《Kid’s Game to Arduino Enigma Machine（从儿童玩具到Arduino恩尼格玛机）》所作。<br>Using Multiplexing for the LEDs, this circuit with 115 light emitting diodes uses only 38 pins and the 36 push buttons use only 4 pins total thanks to properly placed resistors (and the P-Channel MOSFETs) in the keyboard loop. These 4 16-Segment displays &amp; an LED for each keyboard button would add up quickly the total number of pins required and even the Arduino Mega would have ran out of pins without the 2 methods mentioned above….<br>采用多路复用LED电路，仅用38个针脚的115个发光二极管和4个针脚的36个按键所连接的整个电路，全靠在键盘回路里准确放置的电阻以及P沟道场效应晶体管得以实现。要不然，4个16段显示器，以及每个按键上的LED将大幅增加所需针脚总量——即使用了Arduino Mega板，但如果没用上述两个方法，电路也不能如此简洁。<br>In response to the overwhelming demand, we designed the PCB and made it available through www.stgeotronics.com. Skip to Step 10 &amp; beyond for more info. We also offer it as a complete electronics kit &amp; an assembled &amp; tested complete product.<br>面对电路的超额需求，我们在 <a href="http://www.stgeotronics.com" target="_blank" rel="noopener">http://www.stgeotronics.com</a> 设计了专用的PCB板。直接跳到第10步和以后的步骤可以找到更多信息。同时，我们也发布了测试过的完整电子组装套装。</p>
 <h2 id="Step-1-Proof-of-Concept-on-Breadboard"><a href="#Step-1-Proof-of-Concept-on-Breadboard" class="headerlink" title="Step 1: Proof of Concept on Breadboard"></a>Step 1: Proof of Concept on Breadboard</h2><p>第一步：面包板上的论证</p>
 <p><img src="/images/2018-08/F3ULXLHHMEXSREA.LARGE.jpg" alt=""><br><img src="/images/2018-08/FQHGSW5HMF6R1XF.LARGE.jpg" alt=""></p>
 <p>Before going all out on the development of this electronic Enigma replica, we wanted to make sure we could properly drive the 16 Segment LEDs. If we can do that, than we will be able to do everything as the rest is only Math…<br>在开始制作电子Enigma机之前，我们先要确保能驱动16段LED显示。如果成功，我们就能做接下来的所有步骤——除了数学上的问题，一切都是浮云。</p>
@@ -343,7 +356,7 @@ top: initial;
 <p>In response to the popular demand, here are the two Circuit Schematics.<br>徇众要求，电路图两份在此。<br>The first one shows how our fake nixie tubes (the 4 elevated 16-Segment units) are wired in order to provide the response that the rotors provide on a real Enigma machine. They are also used in each setup mode to provide feedback on the setting up of the machine.<br>第一个是仿电子管（4个16段显示单元）如何布线，用于显示转子在Enigma机上的输出信号。同时，它们也用于每种调试模式，反馈用户机器设定信息。<br>The second one shows how each of the 26 keyboard buttons and 10 function keys, the 26 key lamps &amp; the 5 LEDS are all wired.<br>第二幅电路图显示26个字母按键及10个功能键、26个键盘灯和5个LED是如何布线的。<br>All LED resistors are 470 Ohms and all Pushbutton resistors are 1KOhm.<br>所有LED电阻都是470欧，而开关电阻则都是1千欧。<br>Stay tuned for the PCB design file…<br>印刷电路设计档仍在修正中。<br>We hope you enjoyed our first Instructable!<br>希望你享受我们第一份制作教程!<br>Thank You for your time.<br>感谢你抽出宝贵时间阅读！</p>
 <h2 id="Step-10-Prototype-Boards"><a href="#Step-10-Prototype-Boards" class="headerlink" title="Step 10: Prototype Boards"></a>Step 10: Prototype Boards</h2><p>第十步：PCB样机版</p>
 <p><img src="/images/2018-08/F7E23SFHOHYMQIY.LARGE.jpg" alt=""><br><img src="/images/2018-08/FRVNOESHOPQDW25.LARGE.jpg" alt=""></p>
-<p>Due to popular demand, we designed &amp; ordered some Printed Circuit Boards. Well, our PCBs are finally in and at first glance, they look beautiful! We have been busy populating &amp; testing one to make sure it performs as good as it looks and more importantly, as well as our proof-of-concept device.<br>徇众要求，我们设计及定制了一些印刷电路板。它们终于面世了，如此清纯可爱！我们忙于组装，并测试其中一块样品，确保它在功能上与外观一样完美无暇。更重要的是，能实现和那台原型测试机一样的功能。<br>The boards we ordered are almost perfect: they each need a little jumper wire to fix a small design flaw. This small flaw does not affect behavior or functionality and is an easy fix.<br>订购回来的底板几乎完美，只需一点引脚线去修补设计瑕疵。而这些瑕疵对功能没有影响，修理它们是小菜一碟。<br>With this jumper in place, you can now make your own Enigma Replica much easier &amp; faster than running all wires this instructable shows. So, we are now happy to report that testing is completed &amp; the new boards work just fine!<br>有了这些引脚，你能更容易制作自己的Enigma复刻机，比起教程里的布线方便多了。我们在此很高兴宣布，测试完成，新型板一样给力！<br>We are now accepting orders at <a href="http://www.stgeotronics.com" target="_blank" rel="noopener">www.stgeotronics.com</a> &amp; have started shipping.<br>Pictures of the assembly have been added as Step 11.<br>下单订购请登陆 <a href="http://www.stgeotronics.com" target="_blank" rel="noopener">http://www.stgeotronics.com</a> ，已发货热卖中。组装图片请见第十一步。<br>Thank You for your overwhelming support &amp; wonderful feedback!<br>感谢大家的不懈支持和宝贵反馈意见！</p>
+<p>Due to popular demand, we designed &amp; ordered some Printed Circuit Boards. Well, our PCBs are finally in and at first glance, they look beautiful! We have been busy populating &amp; testing one to make sure it performs as good as it looks and more importantly, as well as our proof-of-concept device.<br>徇众要求，我们设计及定制了一些印刷电路板。它们终于面世了，如此清纯可爱！我们忙于组装，并测试其中一块样品，确保它在功能上与外观一样完美无暇。更重要的是，能实现和那台原型测试机一样的功能。<br>The boards we ordered are almost perfect: they each need a little jumper wire to fix a small design flaw. This small flaw does not affect behavior or functionality and is an easy fix.<br>订购回来的底板几乎完美，只需一点引脚线去修补设计瑕疵。而这些瑕疵对功能没有影响，修理它们是小菜一碟。<br>With this jumper in place, you can now make your own Enigma Replica much easier &amp; faster than running all wires this instructable shows. So, we are now happy to report that testing is completed &amp; the new boards work just fine!<br>有了这些引脚，你能更容易制作自己的Enigma复刻机，比起教程里的布线方便多了。我们在此很高兴宣布，测试完成，新型板一样给力！<br>We are now accepting orders at www.stgeotronics.com &amp; have started shipping.<br>Pictures of the assembly have been added as Step 11.<br>下单订购请登陆 <a href="http://www.stgeotronics.com" target="_blank" rel="noopener">http://www.stgeotronics.com</a> ，已发货热卖中。组装图片请见第十一步。<br>Thank You for your overwhelming support &amp; wonderful feedback!<br>感谢大家的不懈支持和宝贵反馈意见！</p>
 <h2 id="Step-11-Assembled-Kits"><a href="#Step-11-Assembled-Kits" class="headerlink" title="Step 11: Assembled Kits"></a>Step 11: Assembled Kits</h2><p>第十一步：组装完成的作品</p>
 <p><img src="/images/2018-08/FGKWVNEHP8PLOCX.LARGE.jpg" alt=""><br><img src="/images/2018-08/FVGEWVMHP989E1R.LARGE.jpg" alt=""><br><img src="/images/2018-08/FMICFEUHP989E1T.LARGE.jpg" alt=""></p>
 <p>更多图片可以前往<a href="https://www.instructables.com/id/Make-your-own-Enigma-Replica/#step11" target="_blank" rel="noopener">原文</a>查看。<br>This assembly took one evening &amp; you can look at assembly pictures above for an overview of the process.<br>花了一晚上组装完成，全过程的概览如上图所示。<br>Thank You for the support &amp; feedback!<br>感谢你的支持与反馈！</p>
@@ -438,7 +451,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">97</span>
+<span class="site-state-item-count">98</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -533,13 +546,13 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/utils.js?v=7.1.0"></script>
-<script src="/js/motion.js?v=7.1.0"></script>
-<script src="/js/affix.js?v=7.1.0"></script>
-<script src="/js/schemes/pisces.js?v=7.1.0"></script>
-<script src="/js/scrollspy.js?v=7.1.0"></script>
-<script src="/js/post-details.js?v=7.1.0"></script>
-<script src="/js/next-boot.js?v=7.1.0"></script>
+<script src="/js/utils.js?v=7.1.1"></script>
+<script src="/js/motion.js?v=7.1.1"></script>
+<script src="/js/affix.js?v=7.1.1"></script>
+<script src="/js/schemes/pisces.js?v=7.1.1"></script>
+<script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+<script src="/js/next-boot.js?v=7.1.1"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
@@ -889,7 +902,7 @@ height: $(o).attr('height') || '500px'
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script>pangu.spacingPage();</script>
 <script>
-$('.highlight').each(function(i, e) {
+$('.highlight').not('.gist .highlight').each(function(i, e) {
 var $wrap = $('<div>').addClass('highlight-wrap');
 $(e).after($wrap);
 $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {

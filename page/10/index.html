@@ -11,17 +11,17 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.1.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+<link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.1.0',
+version: '7.1.1',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
 back2top: true,
 back2top_sidebar: false,
@@ -160,6 +160,79 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/Linux下增加、删除Swap文件/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-06/Linux下增加、删除Swap文件/" class="post-title-link" itemprop="url">Linux下增加、删除Swap文件</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-06-18 17:14:42" itemprop="dateCreated datePublished" datetime="2018-06-18T17:14:42+08:00">2018-06-18</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">830</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">2 分钟</span>
+</div>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>在使用VPS时，如果出现内存不够用的情况，可能会产生各种奇怪的问题。这个时候，增加Swap空间，就可以起到救急的作用。下面就来看看具体步骤。</p>
+<h2 id="创建Swap文件"><a href="#创建Swap文件" class="headerlink" title="创建Swap文件"></a>创建Swap文件</h2><h3 id="检查Swap空间"><a href="#检查Swap空间" class="headerlink" title="检查Swap空间"></a>检查Swap空间</h3><p>先检查一下系统里有没有既存的Swap文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon -s</span><br></pre></td></tr></table></figure></p>
+<p>如果返回的信息概要是空的，则表示Swap文件不存在。</p>
+<h3 id="计算参数"><a href="#计算参数" class="headerlink" title="计算参数"></a>计算参数</h3><p>创建Swap文件将用到dd命令，我们需要根据需求（即要分配的Swap文件的大小）来计算出参数。一种典型的做法是，每次读写1KiB，重复N次，这样可以兼顾内存消耗和读写次数。因此，如果以MiB为单位计算你要分配的Swap文件的大小，那么读写次数（拷贝的块数）就是将该值乘以1024得到结果。例如，块大小为1KiB时，64MiB的Swap文件拷贝的块数是65536，而1GiB的Swap文件则是1048576。</p>
+<h3 id="使用dd命令来创建Swap"><a href="#使用dd命令来创建Swap" class="headerlink" title="使用dd命令来创建Swap"></a>使用dd命令来创建Swap</h3><p>根据前面的计算：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd <span class="keyword">if</span>=/dev/zero of=/swapfile bs=1024 count=1048576 <span class="comment">#分配1G的Swap空间</span></span><br></pre></td></tr></table></figure></p>
+<p>参数说明：</p>
+<ul>
+<li><code>if=input file</code>：输入文件名，缺省为标准输入。即指定源文件。</li>
+<li><code>of=output file</code>：输出文件名，缺省为标准输出。即指定目的文件。</li>
+<li><code>bs=bytes</code>：同时设置读入/输出的块大小为bytes个字节，取为1024。</li>
+<li><code>count=blocks</code>：拷贝的块数，块大小等于bs指定的字节数。将前面算出的数字填入即可。</li>
+</ul>
+<p>这里的<code>if=/dev/zero</code>意味着向<code>/swapfile</code>填满空字符。你也可以尝试将它换成<code>/dev/random</code>，或许也可以正常初始化。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-06/Linux下增加、删除Swap文件/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/震惊！黄金卡包竟能出橙/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -189,6 +262,19 @@ page-home">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
 </span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">11</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">1 分钟</span>
+</div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -231,6 +317,19 @@ page-home">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">481</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">1 分钟</span>
+</div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -279,6 +378,19 @@ page-home">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
 </span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">1k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">2 分钟</span>
+</div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -335,6 +447,19 @@ page-home">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
 </span>
+<div class="post-symbolscount">
+<span class="post-meta-item-icon">
+<i class="fa fa-file-word-o"></i>
+</span>
+<span class="post-meta-item-text">本文字数：</span>
+<span title="本文字数">3.3k</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-clock-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长 &asymp;</span>
+<span title="阅读时长">8 分钟</span>
+</div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -376,83 +501,6 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/Crontab定时写法整理/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-05/Crontab定时写法整理/" class="post-title-link" itemprop="url">Crontab定时写法整理</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-05-27 17:24:22" itemprop="dateCreated datePublished" datetime="2018-05-27T17:24:22+08:00">2018-05-27</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>在前面的文章<a href="/2018-05/Nginx配置SSL/">NGINX配置SSL</a>中，提到了关于创建Crontab定时任务的内容。事实上，在使用Linux系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了Crontab的机制，并对常见的Crontab用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。</p>
-<h2 id="Crontab使用方式"><a href="#Crontab使用方式" class="headerlink" title="Crontab使用方式"></a>Crontab使用方式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab [-u user] file</span><br><span class="line">crontab [-u user] [ -e | -l | -r ]</span><br></pre></td></tr></table></figure>
-<p>各参数为：</p>
-<ul>
-<li><code>-u user</code>：用来设定某个用户的crontab服务。</li>
-<li><code>file</code>：file是命令文件的名字，表示将file做为crontab的任务列表文件并载入crontab。如果在命令行中没有指定这个文件，crontab将接受从标准输入（如键盘）中键入的命令，并将它们载入crontab任务列表。</li>
-<li><code>-e</code>：编辑某个用户的crontab文件内容。如果不指定用户，则表示编辑当前用户的crontab文件。</li>
-<li><code>-l</code>：显示某个用户的crontab文件内容。如果不指定用户，则表示显示当前用户的crontab文件内容。</li>
-<li><code>-r</code>：从<code>/var/spool/cron</code>目录中删除某个用户的crontab文件。如果不指定用户，则默认删除当前用户的crontab文件。</li>
-<li><code>-i</code>：在删除用户的crontab文件时给确认提示。</li>
-</ul>
-<h2 id="Crontab文件格式"><a href="#Crontab文件格式" class="headerlink" title="Crontab文件格式"></a>Crontab文件格式</h2><p>用户所建立的crontab文件中，每一行都代表一项任务，每行的每个字段代表一项设置，它的格式共分为六个字段，前五段是时间设定段，第六段是要执行的命令段，格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">minute hour day month week command</span><br><span class="line">分　时　日　月　周　命令</span><br></pre></td></tr></table></figure></p>
-<p>具体来说，每一列的内容分别是：</p>
-<ul>
-<li>分钟，可以是从0到59之间的任何整数。</li>
-<li>小时，可以是从0到23之间的任何整数（0表示0点）。</li>
-<li>日期，可以是从1到31之间的任何整数。</li>
-<li>月份，可以是从1到12之间的任何整数。</li>
-<li>星期几，可以是从0到7之间的任何整数，这里的0或7代表星期日。</li>
-<li>要执行的命令，可以是系统命令，也可以是自己编写的脚本文件。</li>
-</ul>
-<p><img src="/images/2018-05/crontab_thumb.png" alt=""></p>
-<p>在以上各个字段中，还可以使用以下特殊字符：</p>
-<ul>
-<li>星号（*）：代表所有可能的值，例如month字段如果是星号，则表示在满足其它字段的制约条件后每月都执行该命令操作。</li>
-<li>逗号（,）：可以用逗号隔开的值指定一个列表范围，例如<code>1,2,5,7,8,9</code>。</li>
-<li>中杠（-）：可以用整数之间的中杠表示一个整数范围，例如<code>2-6</code>表示<code>2,3,4,5,6</code>。</li>
-<li>正斜线（/）：可以用正斜线指定时间的间隔频率，例如<code>0-23/2</code>表示每两小时执行一次。</li>
-</ul>
-<p>同时正斜线可以和星号一起使用，例如<code>*/10</code>，如果用在minute字段，表示每十分钟执行一次。又如，每分钟可以用<code>*</code>或者<code>*/1</code>表示。</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-05/Crontab定时写法整理/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -478,7 +526,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">97</span>
+<span class="site-state-item-count">98</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -566,11 +614,11 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/utils.js?v=7.1.0"></script>
-<script src="/js/motion.js?v=7.1.0"></script>
-<script src="/js/affix.js?v=7.1.0"></script>
-<script src="/js/schemes/pisces.js?v=7.1.0"></script>
-<script src="/js/next-boot.js?v=7.1.0"></script>
+<script src="/js/utils.js?v=7.1.1"></script>
+<script src="/js/motion.js?v=7.1.1"></script>
+<script src="/js/affix.js?v=7.1.1"></script>
+<script src="/js/schemes/pisces.js?v=7.1.1"></script>
+<script src="/js/next-boot.js?v=7.1.1"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
@@ -920,7 +968,7 @@ height: $(o).attr('height') || '500px'
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script>pangu.spacingPage();</script>
 <script>
-$('.highlight').each(function(i, e) {
+$('.highlight').not('.gist .highlight').each(function(i, e) {
 var $wrap = $('<div>').addClass('highlight-wrap');
 $(e).after($wrap);
 $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {

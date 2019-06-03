@@ -11,17 +11,17 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.1.1">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
-<link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+<link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.1.1',
+version: '7.1.2',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
 back2top: true,
 back2top_sidebar: false,
@@ -52,7 +52,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/1774338-b0eb1df8603e632d.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/2018-07-16.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/1774338-c2443fa915f45ef1.png">
-<meta property="og:updated_time" content="2019-02-12T03:37:24.092Z">
+<meta property="og:updated_time" content="2019-05-30T02:11:40.308Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Nginx搭建视频直播服务器">
 <meta name="twitter:description" content="最近几年，网络视频直播处于蓬勃的发展期，各大直播平台的竞争也趋于白热化。在游戏直播领域，就有许多电子竞技的前职业选手，退役后转行游戏主播，收入不菲。当然，网络直播的用处不仅仅是娱乐行业，诸如实时视频监控等应用方向，同样潜力无限。如果没有太高的并发播放需求，完全可以自行搭建直播服务器。借助于Nginx和一些拓展模块，你就可以轻松地运行一个小型的直播平台。博主在参看了大量教程后，成功地在VPS上搭建了">
@@ -209,32 +209,20 @@ top: initial;
 阅读次数：
 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="fa fa-file-word-o"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">2.2k</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-clock-o"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">5 分钟</span>
-</div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>最近几年，网络视频直播处于蓬勃的发展期，各大直播平台的竞争也趋于白热化。在游戏直播领域，就有许多电子竞技的前职业选手，退役后转行游戏主播，收入不菲。当然，网络直播的用处不仅仅是娱乐行业，诸如实时视频监控等应用方向，同样潜力无限。如果没有太高的并发播放需求，完全可以自行搭建直播服务器。借助于Nginx和一些拓展模块，你就可以轻松地运行一个小型的直播平台。<br>博主在参看了大量教程后，成功地在VPS上搭建了这样的视频直播服务器，而且在昨晚经过测试，能够正常地使用OBS Studio推流，在浏览器上实现HTML5播放。下面附上具体步骤，请将所有<code>yourdomain.com</code>替换为你的域名或者服务器IP。</p>
 <hr>
-<h2 id="Nginx环境搭建"><a href="#Nginx环境搭建" class="headerlink" title="Nginx环境搭建"></a>Nginx环境搭建</h2><p>首先，需要下载可编译的Nginx源代码，以及必要的拓展库。如果你是萌新，请按照👇教程安装搭建lnmp环境！<br><a href="https://lnmp.org/install.html" target="_blank" rel="noopener">lnmp环境一键安装脚本</a></p>
+<h2 id="Nginx环境搭建"><a href="#Nginx环境搭建" class="headerlink" title="Nginx环境搭建"></a>Nginx环境搭建</h2><p>首先，需要下载可编译的Nginx源代码，以及必要的拓展库。</p>
+<p>如果你对在Linux上安装配置Nginx有所了解，可以直接使用源码安装，不必通过lnmp等工具进行安装。Nginx源码<a href="https://nginx.org/en/download.html" target="_blank" rel="noopener">在此处下载</a>，configure的参数后文会讲到，可以参考。</p>
+<p>如果你是萌新，请按照👇教程安装搭建lnmp环境！<br><a href="https://lnmp.org/install.html" target="_blank" rel="noopener">lnmp环境一键安装脚本</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下载并安装lnmp环境，将1.4替换为最新版本</span></span><br><span class="line">wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz</span><br><span class="line">tar -xzvf lnmp1.4.tar.gz</span><br><span class="line"><span class="built_in">cd</span> lnmp1.4</span><br><span class="line">./install.sh lnmp</span><br></pre></td></tr></table></figure>
 <p>请按照脚本的提示选择你要安装的各个组件版本，若不确定，选择默认选项即可。安装完成后，命令行输出：</p>
 <p><img src="/images/2018-01/1774338-dc544ac657937d0d.png" alt=""></p>
 <p>此时访问服务器地址会出现如下界面：</p>
 <p><img src="/images/2018-01/1774338-b0eb1df8603e632d.png" alt=""></p>
 <p><strong>注意：安装时生成的解压文件夹lnmp1.4先别删除！</strong></p>
-<p>如果你对在Linux上安装配置Nginx有所了解，可以直接使用源码安装，不必通过lnmp。Nginx源码<a href="https://nginx.org/en/download.html" target="_blank" rel="noopener">在此处下载</a>，configure的参数后文会讲到，可以参考。</p>
 <a id="more"></a>
 <h2 id="安装Nginx的扩展模块"><a href="#安装Nginx的扩展模块" class="headerlink" title="安装Nginx的扩展模块"></a>安装Nginx的扩展模块</h2><h3 id="下载nginx-http-flv-module"><a href="#下载nginx-http-flv-module" class="headerlink" title="下载nginx-http-flv-module"></a>下载nginx-http-flv-module</h3><p>GitHub项目地址：<a href="https://github.com/winshining/nginx-http-flv-module" target="_blank" rel="noopener">nginx-http-flv-module</a>，克隆到本地即可：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#为nginx创建扩展模块目录</span></span><br><span class="line">mkdir /usr/<span class="built_in">local</span>/nginx/extend_module</span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/nginx/extend_module</span><br><span class="line"><span class="comment">#下载扩展包到nginx扩展模块目录下</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/winshining/nginx-http-flv-module.git</span><br></pre></td></tr></table></figure></p>
 <h3 id="关闭nginx、php-fpm服务"><a href="#关闭nginx、php-fpm服务" class="headerlink" title="关闭nginx、php-fpm服务"></a>关闭nginx、php-fpm服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#关闭nginx</span></span><br><span class="line">systemctl stop nginx</span><br><span class="line"><span class="comment">#关闭php-fpm</span></span><br><span class="line">systemctl stop php-fpm</span><br></pre></td></tr></table></figure>
@@ -361,7 +349,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">98</span>
+<span class="site-state-item-count">99</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -456,13 +444,13 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/utils.js?v=7.1.1"></script>
-<script src="/js/motion.js?v=7.1.1"></script>
-<script src="/js/affix.js?v=7.1.1"></script>
-<script src="/js/schemes/pisces.js?v=7.1.1"></script>
-<script src="/js/scrollspy.js?v=7.1.1"></script>
-<script src="/js/post-details.js?v=7.1.1"></script>
-<script src="/js/next-boot.js?v=7.1.1"></script>
+<script src="/js/utils.js?v=7.1.2"></script>
+<script src="/js/motion.js?v=7.1.2"></script>
+<script src="/js/affix.js?v=7.1.2"></script>
+<script src="/js/schemes/pisces.js?v=7.1.2"></script>
+<script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+<script src="/js/next-boot.js?v=7.1.2"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
@@ -827,6 +815,8 @@ ta.style.opacity = '0';
 ta.readOnly = true;
 ta.value = code;
 document.body.appendChild(ta);
+const selection = document.getSelection();
+const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
 ta.select();
 ta.setSelectionRange(0, code.length);
 ta.readOnly = false;
@@ -835,6 +825,10 @@ if (result) $(this).text('复制成功');
 else $(this).text('复制失败');
 ta.blur(); // For iOS
 $(this).blur();
+if (selected) {
+selection.removeAllRanges();
+selection.addRange(selected);
+}
 })).on('mouseleave', function(e) {
 var $b = $(this).find('.copy-btn');
 setTimeout(function() {

@@ -11,17 +11,17 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.1.1">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
-<link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+<link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.1.1',
+version: '7.1.2',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
 back2top: true,
 back2top_sidebar: false,
@@ -41,7 +41,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
 <meta name="description" content="p标签换行CSS自动换行、强制不换行、强制断行、超出显示省略号 P标签是默认是自动换行的，因此设置好宽度之后，能够较好的实现效果，但是最近的项目中发现，使用ajax加载数据之后，p标签内的内容没有换行，导致布局错乱，于是尝试着使用换行样式，虽然解决了问题，但是并没有发现本质原因。经过研究，其本质在于，当时获取的数据是一长串的数字，浏览器应该是对数字和英文单词处理方式相近，不会截断。先给出各种方式，">
-<meta name="keywords" content="CSS,HTML">
+<meta name="keywords" content="HTML,CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一些CSS的小技巧">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-06/一些CSS的小技巧/index.html">
@@ -204,19 +204,6 @@ top: initial;
 阅读次数：
 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="fa fa-file-word-o"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">3.3k</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-clock-o"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">8 分钟</span>
-</div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -325,8 +312,8 @@ top: initial;
 </div>
 <footer class="post-footer">
 <div class="post-tags">
-<a href="/tags/CSS/" rel="tag"># CSS</a>
 <a href="/tags/HTML/" rel="tag"># HTML</a>
+<a href="/tags/CSS/" rel="tag"># CSS</a>
 </div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
@@ -376,7 +363,7 @@ Python开发表情包网站 <i class="fa fa-chevron-right"></i>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">98</span>
+<span class="site-state-item-count">99</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -471,13 +458,13 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/utils.js?v=7.1.1"></script>
-<script src="/js/motion.js?v=7.1.1"></script>
-<script src="/js/affix.js?v=7.1.1"></script>
-<script src="/js/schemes/pisces.js?v=7.1.1"></script>
-<script src="/js/scrollspy.js?v=7.1.1"></script>
-<script src="/js/post-details.js?v=7.1.1"></script>
-<script src="/js/next-boot.js?v=7.1.1"></script>
+<script src="/js/utils.js?v=7.1.2"></script>
+<script src="/js/motion.js?v=7.1.2"></script>
+<script src="/js/affix.js?v=7.1.2"></script>
+<script src="/js/schemes/pisces.js?v=7.1.2"></script>
+<script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+<script src="/js/next-boot.js?v=7.1.2"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
@@ -842,6 +829,8 @@ ta.style.opacity = '0';
 ta.readOnly = true;
 ta.value = code;
 document.body.appendChild(ta);
+const selection = document.getSelection();
+const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
 ta.select();
 ta.setSelectionRange(0, code.length);
 ta.readOnly = false;
@@ -850,6 +839,10 @@ if (result) $(this).text('复制成功');
 else $(this).text('复制失败');
 ta.blur(); // For iOS
 $(this).blur();
+if (selected) {
+selection.removeAllRanges();
+selection.addRange(selected);
+}
 })).on('mouseleave', function(e) {
 var $b = $(this).find('.copy-btn');
 setTimeout(function() {

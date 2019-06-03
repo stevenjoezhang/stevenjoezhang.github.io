@@ -11,17 +11,17 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.1.1">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
-<link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+<link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.1.1',
+version: '7.1.2',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
 back2top: true,
 back2top_sidebar: false,
@@ -162,6 +162,20 @@ top: initial;
 <h1>技术<small>分类</small>
 </h1>
 </div>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<header class="post-header">
+<h2 class="post-title">
+<a class="post-title-link" href="/2019-05/Windows安装tensorflow-gpu/" itemprop="url">
+<span itemprop="name">Windows安装tensorflow-gpu</span>
+</a>
+</h2>
+<div class="post-meta">
+<time class="post-time" itemprop="dateCreated" datetime="2019-05-19T17:28:35+08:00" content="2019-05-19">
+05-19
+</time>
+</div>
+</header>
+</article>
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <header class="post-header">
 <h2 class="post-title">
@@ -358,20 +372,6 @@ top: initial;
 </div>
 </header>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<header class="post-header">
-<h2 class="post-title">
-<a class="post-title-link" href="/2018-05/有趣的Linux命令行工具/" itemprop="url">
-<span itemprop="name">有趣的Linux命令行工具</span>
-</a>
-</h2>
-<div class="post-meta">
-<time class="post-time" itemprop="dateCreated" datetime="2018-05-13T12:57:19+08:00" content="2018-05-13">
-05-13
-</time>
-</div>
-</header>
-</article>
 </div>
 </div>
 <nav class="pagination">
@@ -398,7 +398,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">98</span>
+<span class="site-state-item-count">99</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -486,11 +486,11 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/utils.js?v=7.1.1"></script>
-<script src="/js/motion.js?v=7.1.1"></script>
-<script src="/js/affix.js?v=7.1.1"></script>
-<script src="/js/schemes/pisces.js?v=7.1.1"></script>
-<script src="/js/next-boot.js?v=7.1.1"></script>
+<script src="/js/utils.js?v=7.1.2"></script>
+<script src="/js/motion.js?v=7.1.2"></script>
+<script src="/js/affix.js?v=7.1.2"></script>
+<script src="/js/schemes/pisces.js?v=7.1.2"></script>
+<script src="/js/next-boot.js?v=7.1.2"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
@@ -855,6 +855,8 @@ ta.style.opacity = '0';
 ta.readOnly = true;
 ta.value = code;
 document.body.appendChild(ta);
+const selection = document.getSelection();
+const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
 ta.select();
 ta.setSelectionRange(0, code.length);
 ta.readOnly = false;
@@ -863,6 +865,10 @@ if (result) $(this).text('复制成功');
 else $(this).text('复制失败');
 ta.blur(); // For iOS
 $(this).blur();
+if (selected) {
+selection.removeAllRanges();
+selection.addRange(selected);
+}
 })).on('mouseleave', function(e) {
 var $b = $(this).find('.copy-btn');
 setTimeout(function() {

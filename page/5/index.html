@@ -11,17 +11,17 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.1.1">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
-<link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+<link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.1.1',
+version: '7.1.2',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
 back2top: true,
 back2top_sidebar: false,
@@ -160,6 +160,48 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/Safari顶栏彩虹效果/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-11/Safari顶栏彩虹效果/" class="post-title-link" itemprop="url">Safari顶栏彩虹效果</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-11-27 13:53:11" itemprop="dateCreated datePublished" datetime="2018-11-27T13:53:11+08:00">2018-11-27</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>从OS X Yosemite系统开始，Safari浏览器的顶部工具栏加入了类似iOS中的半透明毛玻璃效果。Safari会自动根据页面的颜色来显示工具栏的毛玻璃特效颜色，而通过CSS中的<code>body:before</code>类，我们可以对其进行定制。具体代码如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="selector-tag">body</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">        <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">        <span class="attribute">z-index</span>: <span class="number">2147483647</span>;</span><br><span class="line">        <span class="attribute">position</span>: fixed;</span><br><span class="line">        <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">        <span class="attribute">display</span>: block;</span><br><span class="line">        <span class="attribute">-webkit-transform</span>: <span class="built_in">translateY</span>(-99.99px);</span><br><span class="line">        <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(124deg,</span><br><span class="line">        #FF0000,</span><br><span class="line">        #FF7F00,</span><br><span class="line">        #FFFF00,</span><br><span class="line">        #7FFF00,</span><br><span class="line">        #00FF00,</span><br><span class="line">        #00FF7F,</span><br><span class="line">        #00FFFF,</span><br><span class="line">        #007FFF,</span><br><span class="line">        #0000FF,</span><br><span class="line">        #7F00FF,</span><br><span class="line">        #FF00FF,</span><br><span class="line">        #FF007F,</span><br><span class="line">        #FF0000);</span><br><span class="line">        <span class="attribute">animation</span>: rainbow <span class="number">15s</span> ease infinite;</span><br><span class="line">        <span class="attribute">background-size</span>: <span class="number">1000%</span> <span class="number">1000%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">keyframes</span> rainbow &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        <span class="attribute">background-position</span>: <span class="number">0%</span> <span class="number">80%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    50% &#123;</span><br><span class="line">        <span class="attribute">background-position</span>: <span class="number">100%</span> <span class="number">20%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        <span class="attribute">background-position</span>: <span class="number">0%</span> <span class="number">80%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>将它们添加到页面中的<code>&lt;style&gt;</code>标签内，并在<code>&lt;body&gt;</code>中加入适当的内容。当使用Safari浏览器打开时，<strong>略微向下滚动页面</strong>，便可以看到顶部栏出现炫酷的彩虹效果。快去试试吧！<br><strong>注意：一些老旧浏览器不能正确识别<code>transform</code>，会导致彩色条挡住<code>&lt;body&gt;</code>，<code>-webkit-min-device-pixel-ratio</code>可以防止这一问题。</strong><br>GitHub项目地址：<a href="https://github.com/koole/rainbowsafari" target="_blank" rel="noopener">rainbowsafari</a></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/国际单位制基本单位的重新定义/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -189,19 +231,6 @@ page-home">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
 </span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="fa fa-file-word-o"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">7.2k</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-clock-o"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">17 分钟</span>
-</div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -280,19 +309,6 @@ page-home">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
 </span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="fa fa-file-word-o"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">2.2k</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-clock-o"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">5 分钟</span>
-</div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -368,19 +384,6 @@ page-home">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
 </span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="fa fa-file-word-o"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">120</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-clock-o"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">1 分钟</span>
-</div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -423,19 +426,6 @@ page-home">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="fa fa-file-word-o"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">905</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-clock-o"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">2 分钟</span>
-</div>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -451,63 +441,6 @@ page-home">
 <h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>俗话说，有光的地方就有Bad Apple!!。很久以前的一篇文章<a href="/2017-12/近期完成的数个游戏及应用/">近期完成的数个游戏及应用</a>中，就提到博主成功使用HTML页面播放Bad Apple!!字符画。目前，博主正在尝试搭建一个可以播放Bad Apple!!的Telnet服务器，敬请期待。</p>
 <hr>
 <p>本文更新于2019年2月14日：<br>博主通过魔改Nyancat的代码，成功地实现了可以播放Bad Apple!!的Telnet服务器。可以阅读文章<a href="/2019-02/用Telnet观看Bad Apple!!/">用Telnet观看Bad Apple!!</a>查看。</p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-10/Heavens Above爬虫的实现/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-10/Heavens Above爬虫的实现/" class="post-title-link" itemprop="url">Heavens Above爬虫的实现</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-10-23 11:00:19" itemprop="dateCreated datePublished" datetime="2018-10-23T11:00:19+08:00">2018-10-23</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
-</span>
-<div class="post-symbolscount">
-<span class="post-meta-item-icon">
-<i class="fa fa-file-word-o"></i>
-</span>
-<span class="post-meta-item-text">本文字数：</span>
-<span title="本文字数">286</span>
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-clock-o"></i>
-</span>
-<span class="post-meta-item-text">阅读时长 &asymp;</span>
-<span title="阅读时长">1 分钟</span>
-</div>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p><a href="https://www.heavens-above.com" target="_blank" rel="noopener">Heavens Above</a>是一个天文数据库网站，可以查询到诸如卫星过境的很多信息。虽然数据很全面，但是检索方式非常繁琐，在网站上需要依次打开多个链接进行比对，难以迅速地获取需要的信息。故博主决定写一个爬虫，以直观地展现所有数据。由于Heavens Above采取了大量的反爬虫措施，例如校验Cookie、限制单个IP的访问次数等，因此必须严格地模拟浏览器请求，才能正确爬取数据。</p>
-<p><img src="/images/2018-10/iss.png" alt=""></p>
-<p>博主也参考了大量GitHub上已有的Heavens Above爬虫项目，不过它们大部分失去维护，停留在数年前，已经不再适用。具体的逻辑还是要自行测试。</p>
-<p>项目地址：<a href="https://github.com/stevenjoezhang/heavens-above" target="_blank" rel="noopener">heavens-above</a></p>
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -539,7 +472,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">98</span>
+<span class="site-state-item-count">99</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -627,11 +560,11 @@ window.Promise = null;
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script src="/js/utils.js?v=7.1.1"></script>
-<script src="/js/motion.js?v=7.1.1"></script>
-<script src="/js/affix.js?v=7.1.1"></script>
-<script src="/js/schemes/pisces.js?v=7.1.1"></script>
-<script src="/js/next-boot.js?v=7.1.1"></script>
+<script src="/js/utils.js?v=7.1.2"></script>
+<script src="/js/motion.js?v=7.1.2"></script>
+<script src="/js/affix.js?v=7.1.2"></script>
+<script src="/js/schemes/pisces.js?v=7.1.2"></script>
+<script src="/js/next-boot.js?v=7.1.2"></script>
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
@@ -1028,6 +961,8 @@ ta.style.opacity = '0';
 ta.readOnly = true;
 ta.value = code;
 document.body.appendChild(ta);
+const selection = document.getSelection();
+const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
 ta.select();
 ta.setSelectionRange(0, code.length);
 ta.readOnly = false;
@@ -1036,6 +971,10 @@ if (result) $(this).text('复制成功');
 else $(this).text('复制失败');
 ta.blur(); // For iOS
 $(this).blur();
+if (selected) {
+selection.removeAllRanges();
+selection.addRange(selected);
+}
 })).on('mouseleave', function(e) {
 var $b = $(this).find('.copy-btn');
 setTimeout(function() {

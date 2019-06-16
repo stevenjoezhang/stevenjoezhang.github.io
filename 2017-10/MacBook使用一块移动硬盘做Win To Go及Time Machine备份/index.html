@@ -52,7 +52,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/4500.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/FlipFlopWheel.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/diskutillist.png">
-<meta property="og:updated_time" content="2019-03-09T03:50:06.129Z">
+<meta property="og:updated_time" content="2019-06-16T15:16:46.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacBook使用一块移动硬盘做Win To Go及Time Machine备份">
 <meta name="twitter:description" content="前言博主使用的MacBook Air，256G闪存，可用空间约251G，曾经的分区表为：12345678910111213141516/dev/disk0 (internal, physical):   #:                       TYPE NAME                    SIZE       IDENTIFIER   0:      GUID_partit">
@@ -233,24 +233,18 @@ top: initial;
 </ul>
 <h3 id="下载必要的文件"><a href="#下载必要的文件" class="headerlink" title="下载必要的文件"></a>下载必要的文件</h3><ul>
 <li><a href="https://msdn.itellyou.cn" target="_blank" rel="noopener">Windows镜像</a>（请选择Windows 10的ISO镜像文件）</li>
-<li><a href="http://dl.luobotou.org/wtga4800.zip" target="_blank" rel="noopener">Win To Go安装工具</a></li>
+<li><a href="https://bbs.luobotou.org/thread-761-1-1.html" target="_blank" rel="noopener">Win To Go安装工具</a></li>
 <li><a href="https://pan.baidu.com/s/1jIJ0hfS" target="_blank" rel="noopener">Bootcamp驱动程序</a></li>
 </ul>
-<h3 id="创建Win-To-Go"><a href="#创建Win-To-Go" class="headerlink" title="创建Win To Go"></a>创建Win To Go</h3><p>使用系统自带工具或下载第三方软件，将Windows镜像装载到虚拟光驱。将移动硬盘连接到PC上。在PC上打开Win To Go安装工具，如图所示（目前已更新到4.8.0.0）。</p>
+<h3 id="创建Win-To-Go"><a href="#创建Win-To-Go" class="headerlink" title="创建Win To Go"></a>创建Win To Go</h3><p>使用系统自带工具或下载第三方软件，将Windows镜像装载到虚拟光驱。将移动硬盘连接到PC上。在PC上打开Win To Go安装工具，如图所示。</p>
 <p><img src="/images/2017-10/4500.png" alt=""></p>
-<p>点击『浏览』，在虚拟光驱中找到install.wim文件并选中；在下方选择目标磁盘，即需要安装的移动硬盘。右侧高级选项中，『常用』栏下选择VHD，以及UEFI+GPT，『分区』栏下手动输入第二个分区的大小，单位为MB；程序会自动调整第一个分区的大小；第三个分区若无需要，填0即可。第一个分区即作为Win To Go分区，第二个分区作为Time Machine备份分区。请再次确认移动硬盘上所有分区的文件都已备份。接下来点击『创建』，就将进行全盘格式化，并建立引导，创建Win To Go相关文件。</p>
+<p>点击『浏览』，在虚拟光驱中找到<code>install.wim</code>文件并选中；在下方选择目标磁盘，即需要安装的移动硬盘。右侧高级选项中，『常用』栏下选择VHD，以及UEFI+GPT，『分区』栏下手动输入第二个分区的大小，单位为MB；程序会自动调整第一个分区的大小；第三个分区若无需要，填0即可。第一个分区即作为Win To Go分区，第二个分区作为Time Machine备份分区。请再次确认移动硬盘上所有分区的文件都已备份。接下来点击『创建』，就将进行全盘格式化，并建立引导，创建Win To Go相关文件。</p>
 <h3 id="配置Windows"><a href="#配置Windows" class="headerlink" title="配置Windows"></a>配置Windows</h3><p>完成上一步后，将移动硬盘接入Mac。重新启动系统，按住<kbd>Option</kbd>/<kbd>alt</kbd>键，进入引导磁盘选项。选择EFI分区，启动后按照提示完成Windows系统的配置即可。配置完Windows系统后，安装Bootcamp驱动。重新启动后即可应用更改。<br>注：在macOS与Windows下，触控板滚动方向是相反的，这一点可能会使用户感到不适，解决方案是修改注册表：<br>在Windos下通过<kbd>Win</kbd>+<kbd>R</kbd>打开『运行』，输入regedit，在打开的注册表编辑器中，依次选择<code>\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\HID</code>，即可查看所有可用的键盘、鼠标。对于每个输入设备，点开下级目录，查看其Device Parameters下是否具有属性<code>FlipFlopWheel</code>和<code>FlipFlopHScroll</code>，若有，将其数据值由0改为1即可。</p>
 <p><img src="/images/2017-10/FlipFlopWheel.png" alt=""></p>
 <h3 id="配置Time-Machine"><a href="#配置Time-Machine" class="headerlink" title="配置Time Machine"></a>配置Time Machine</h3><p>此时再进入macOS系统，使用磁盘工具（在应用程序-实用工具目录中），选择移动硬盘，将其第二个分区（如果显示了EFI引导分区，则是第三个分区）格式化为macOS日志式。如果已经开启了Time Machine，系统将会提示你将此硬盘作为Time Machine备份硬盘。接下来打开Time Machine进行初次备份即可。<br>完成这些操作后，便成功地使一块移动硬盘成为Win To Go启动盘及Time Machine备份盘。</p>
 <p>附现在的分区表：</p>
 <p><img src="/images/2017-10/diskutillist.png" alt=""></p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>这里介绍一种在macOS上读写NTFS磁盘的方法，这样可以方便的在不同系统中传输文件。默认情况下，macOS是无法向NTFS磁盘写入的——这个功能由于种种原因被禁用了。我们使用一种Hack的方法将其启用即可。<br>macOS在挂载NTFS磁盘时加载的脚本为<code>/sbin/mount_ntfs</code>，参数为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount_ntfs -o nodev -o noowners -o nosuid /dev/disk2s1 /Volumes/DATA</span><br></pre></td></tr></table></figure></p>
-<p>这时，只要加上额外的参数，就可以启用对NTFS磁盘的写入。具体方法是：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo -s <span class="comment">#输入密码，获取root权限</span></span><br><span class="line"><span class="built_in">cd</span> /sbin</span><br><span class="line">mv mount_ntfs mount_ntfs_orig</span><br><span class="line">vim mount_ntfs</span><br></pre></td></tr></table></figure></p>
-<p>将<code>mount_ntfs</code>重命名为<code>mount_ntfs_orig</code>，然后再新建一个<code>mount_ntfs</code>，输入以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">/sbin/mount_ntfs_orig -o rw,nobrowse <span class="string">"<span class="variable">$@</span>"</span></span><br></pre></td></tr></table></figure></p>
-<p>这样就可以欺骗系统，运行带有额外参数的指令。这里的<code>nobrowse</code>是为了避免挂载上来的还是只读模式，但是它同时会导致磁盘不可见，也就是挂在后不会在桌面和Finder中显示，需要手动到<code>/Volumes</code>下打开。如果这样不爽的话，你可以尝试<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">/sbin/mount_ntfs_orig -o rw <span class="string">"<span class="variable">$@</span>"</span></span><br></pre></td></tr></table></figure></p>
-<p>将磁盘推出再挂载，如果一切正常的话，就可以愉快的使用了。</p>
 <hr>
-<p>参考文章：<a href="https://www.jianshu.com/p/d4073acbb218" target="_blank" rel="noopener">OS X 原生可读写挂载NTFS分区</a></p>
 <p>本文更新于2018年5月</p>
 </div>
 <div>
@@ -339,7 +333,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">99</span>
+<span class="site-state-item-count">100</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -381,7 +375,7 @@ RSS
 <!--noindex-->
 <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
 <div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装方法"><span class="nav-number">2.</span> <span class="nav-text">安装方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备必要的硬件"><span class="nav-number">2.1.</span> <span class="nav-text">准备必要的硬件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载必要的文件"><span class="nav-number">2.2.</span> <span class="nav-text">下载必要的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Win-To-Go"><span class="nav-number">2.3.</span> <span class="nav-text">创建Win To Go</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Windows"><span class="nav-number">2.4.</span> <span class="nav-text">配置Windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Time-Machine"><span class="nav-number">2.5.</span> <span class="nav-text">配置Time Machine</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多"><span class="nav-number">3.</span> <span class="nav-text">更多</span></a></li></ol></div>
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装方法"><span class="nav-number">2.</span> <span class="nav-text">安装方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备必要的硬件"><span class="nav-number">2.1.</span> <span class="nav-text">准备必要的硬件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载必要的文件"><span class="nav-number">2.2.</span> <span class="nav-text">下载必要的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Win-To-Go"><span class="nav-number">2.3.</span> <span class="nav-text">创建Win To Go</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Windows"><span class="nav-number">2.4.</span> <span class="nav-text">配置Windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Time-Machine"><span class="nav-number">2.5.</span> <span class="nav-text">配置Time Machine</span></a></li></ol></li></ol></div>
 </div>
 </div>
 <!--/noindex-->

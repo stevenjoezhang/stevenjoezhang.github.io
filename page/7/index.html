@@ -160,6 +160,62 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-09/关于黎曼猜想/">
+<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-09/关于黎曼猜想/" class="post-title-link" itemprop="url">关于黎曼猜想</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-09-25 10:48:48" itemprop="dateCreated datePublished" datetime="2018-09-25T10:48:48+08:00">2018-09-25</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>前几日关于黎曼猜想（Riemann Hypothesis）被证明的消息在网络上炒得沸沸扬扬，菲尔兹奖、阿贝尔奖双料得主Michael Francis Atiyah爵士声称他证明了这个困扰了数学界160年的问题，且其目的是为了研究精细结构常数。然而，在他公布了他的Simple Proof后，却不被学界所看好，甚至遭到了一些尖锐的批评。毕竟，这篇只有五页纸的文章，刨去介绍等内容，并没有展示太多的细节；其证明过程，又依赖于一个存疑的Todd function。如果如证明中所说，黎曼猜想真的指向了精细结构常数，这对于由第一性原理出发构建物理学体系将有极大的启发性，其结果无疑是令人激动的。但是经过计算，却发现文中所声称的极限存在问题，整个理论的正确性难以得到证实。<br>有鉴于此，博主研究该证明过程的计划搁置了（毕竟没有什么价值，大概可以用来提升读Paper的能力#捂脸），还是写篇文章介绍下黎曼猜想本身吧。</p>
+<h2 id="猜想的提出"><a href="#猜想的提出" class="headerlink" title="猜想的提出"></a>猜想的提出</h2><p>时间回到1859年，著名的德国数学家波恩哈德·黎曼（Bernhard Riemann）在他的论文《Über die Anzahl der Primzahlen unter einer gegebenen Größe》中提及了这个著名的猜想。黎曼本人在数学界颇有建树，但他却并没有试图对论文中的猜想给出证明。<br>这个猜想是关于黎曼$\zeta$函数的，该函数的定义为：</p>
+<script type="math/tex; mode=display">\zeta(s)=\frac{1}{1^s}+\frac{1}{2^s}+\frac{1}{3^s}+\frac{1}{4^s}+\cdots</script><p>注意，$\zeta$函数必须经过解析延拓，才能在全复平面上有定义，稍后将给出解析延拓的过程。<br>而黎曼猜想就是：$\zeta(s)$的所有非平凡零点的实部均为$\frac{1}{2}$。</p>
+<h2 id="zeta-函数的解析延拓"><a href="#zeta-函数的解析延拓" class="headerlink" title="$\zeta$函数的解析延拓"></a>$\zeta$函数的解析延拓</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在中学数学中，我们所接触到的函数都是实变函数，即从实数集到实数集的映射，写为$f:\mathbb{R}\rightarrow\mathbb{R}$。在接触了虚数单位i和复数后，就可以开始定义复变函数，即复数集到复数集的映射，写为$f:\mathbb{C}\rightarrow\mathbb{C}$。实变函数的定义域被限制在了实轴上，而为了表示出一个与之对应的复变函数，就需要扩充其定义域到复平面上。这样，可以定义出复数域上的各种函数：指数、对数、三角函数等。由于复数的性质，还需要根据枝点规定割线、单值分支等，来确定出函数值。而原本定义域只在复平面上某一区域的复变函数，经过严格的数学推导（例如级数展开等），也可以扩充其定义域。这时，解析延拓的办法应运而生。对于$\zeta(s)$函数而言，非常明显，当$s$取在实轴上（即作为实变函数时），若$s\le 1$，其函数值发散；而$s&gt;1$时收敛。特别的，$s=1$时为调和级数，而$s=2$时由高斯最早计算出了其函数值$\frac{\pi^2}{6}$。<br>在复数域上，可以证明，$\zeta(s)$在$Re(s)&gt;1$上解析。接下来，我们需要将其定义域扩展到全复平面；之前的级数定义将不在对$Re(s)&lt;1$的情况使用，因为它不收敛，无法采用Cauchy和。</p>
+<h3 id="梅林变换"><a href="#梅林变换" class="headerlink" title="梅林变换"></a>梅林变换</h3><p>梅林（Mellin）变换是一个积分变换，它把一个正实数域$\mathbb{R}^+$上的函数变换为一个复数域$\mathbb{C}$上的函数。设$f:\mathbb{R}^+\rightarrow\mathbb{C}$是一个函数，定义：</p>
+<script type="math/tex; mode=display">\mathcal{M}f(z)=\int_0^{+\infty}f(s)s^z\frac{ds}{s}</script><p>称$\mathcal{M}f:\mathbb{C}\rightarrow\mathbb{C}$为$f$的梅林变换。<br>取$f(s)$为$f_\lambda (s)=e^{-\lambda s}$，则有：<br>\begin{align*}<br>\mathcal{M}f(z)&amp;=\int_0^{+\infty}e^{-\lambda s}s^z\frac{ds}{s}\\<br>&amp;=\lambda^{-z}\int_0^{+\infty}e^{-s}s^{z-1}ds\\<br>&amp;=\lambda^{-z}\Gamma(z)<br>\end{align*}<br>这里的$\Gamma(z)$就是一般数理方程中会涉及到的$\Gamma$函数，其性质不再赘述。<br>记住以上结论，取$\lambda=\pi n^2$，继续构造函数：</p>
+<script type="math/tex; mode=display">f(s)=\sum_{n=1}^{\infty}f_{\pi n^2}(s)=\sum_{n=1}^{\infty}e^{-\pi n^2 s}</script><p>注意到梅林变换是线性的，这时，<br>\begin{align*}<br>\mathcal{M}f(z)&amp;=\sum<em>{n=1}^{\infty}\mathcal{M}f</em>{\pi n^2}(z)\\<br>&amp;=\sum<em>{n=1}^{\infty}(\pi n^2)^{-z}\Gamma(z)\\<br>&amp;=\pi^{-z}\sum</em>{n=1}^{\infty}n^{-2z}\Gamma(z)\\<br>&amp;=\pi^{-z}\zeta(2z)\Gamma(z)<br>\end{align*}<br>最后一个等号使用了$\zeta$函数的原始定义。考虑到：</p>
+<script type="math/tex; mode=display">\mathcal{M}f(z)=\int_0^{+\infty}(\sum_{n=1}^{\infty}e^{-\pi n^2 s})s^{z-1}ds</script><p>于是，利用$\mathcal{M}f(z)$的两个等价表达式，我们得到了一个重要结论：</p>
+<script type="math/tex; mode=display">\pi^{-z}\zeta(2z)\Gamma(z)=\int_0^{+\infty}(\sum_{n=1}^{\infty}e^{-\pi n^2 s})s^{z-1}ds</script><p>注意，这里的推导并非十分严谨，还需要证明其收敛性，才能交换积分与极限。这要求$Re(z)&gt;\frac{1}{2}$。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-09/关于黎曼猜想/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-09/月下独酌/">
 <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -386,60 +442,6 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/入手信达小黑天文望远镜/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-08/入手信达小黑天文望远镜/" class="post-title-link" itemprop="url">入手信达小黑天文望远镜</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-08-20 23:44:29" itemprop="dateCreated datePublished" datetime="2018-08-20T23:44:29+08:00">2018-08-20</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>2018年的暑期，诸多天文奇观轮番上演：火星冲日、日偏食、英仙座流星雨，这对天文爱好者来说是绝佳的观测机会。在好基友的怂恿下，博主也正式踏入了天文摄影的巨坑。<br>博主在小学时曾拥有一台700/60入门级伽利略式天文望远镜，但是其使用的经纬仪是纯手动的，调节精度较差；且望远镜本身存在明显的色差，成像效果不佳。为了满足行星摄影的要求，需要入手一台更为可靠的天文望远镜。目前市面上常见的天文望远镜，一般由三部分组成：三脚架（底座），赤道仪（经纬仪），以及望远镜镜筒。镜筒主体根据成像原理划分，有牛顿反射式、马克苏托夫-卡塞格林式和复消色差（APO）式等等。基于其他成像原理的望远镜也能在市面上买到，不过从销量和评价上来看，前文提到的这三种望远镜占主流。在查阅了大量资料，并参考了天文相关贴吧、论坛后，博主决定入手信达小黑天文望远镜。这是一款入门级牛顿反射式望远镜，其焦距750mm，口径150mm，等效光圈较大，适合摄影；赤道仪采用EQ3D，搭配双轴电跟，在通过北极星校准极轴后，即可进行长时间曝光。<br>这是望远镜组装完成的状态：</p>
-<p><img src="/images/2018-08/IMG_0272.jpg" alt=""></p>
-<p>安装EF卡口转接环，就可以连接单反相机了：</p>
-<p><img src="/images/2018-08/IMG_0199.jpg" alt=""></p>
-<p>8月11日拍摄的日偏食：</p>
-<p><img src="/images/2018-08/IMG_5639.jpg" alt=""></p>
-<p>由于望远镜自带的巴罗镜只适用于目镜，为了增加拍照的放大率，博主还购买了一个EF卡口的增倍镜。这是使用增倍镜后拍摄的月球：</p>
-<p><img src="/images/2018-08/IMG_5767.jpg" alt=""></p>
-<p>由于视宁度不佳（以及可能的对焦问题），虽然也成功拍摄了土星，但是土星环的辨识度较差：</p>
-<p><img src="/images/2018-08/IMG_5758.jpg" alt=""></p>
-<p>仙后座（以及划过天空的飞机航行灯）：</p>
-<p><img src="/images/2018-08/IMG_5680.jpg" alt=""></p>
-<hr>
-<p>本文更新于2018年9月28日：<br>与学校的青年天文爱好者协会部分（矿里有家的）前辈交流后，发现EQ3D赤道仪和双轴电跟仍有许多不足，可能并不是天文摄影的入门首选。如果有足够多的预算，可以购买NEQ6搭配GOTO，该赤道仪的稳定性与鲁棒性都更胜一筹（当然价格也略高）。</p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -465,7 +467,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">99</span>
+<span class="site-state-item-count">100</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -879,6 +881,38 @@ onPopupClose();
 }
 });
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+processEscapes: true,
+skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+},
+TeX: {
+equationNumbers: {
+autoNumber: 'AMS'
+}
+}
+});
+MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+if (data.display) {
+var next = data.script.nextSibling;
+while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+}
+});
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+var all = MathJax.Hub.getAllJax(), i;
+for (i = 0; i < all.length; i += 1) {
+document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+}
+});
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
 <script>
 if ($('body').find('div.pdf').length) {
 $.ajax({

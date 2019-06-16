@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://zhangshuqiao.org/2019-05/Windows%E5%AE%89%E8%A3%85tensorflow-gpu/</loc>
+    <loc>https://zhangshuqiao.org/2019-05/%E5%9C%A8macOS%E4%B8%8A%E8%AF%BB%E5%86%99NTFS%E7%A3%81%E7%9B%98/</loc>
     
-    <lastmod>2019-06-03T05:45:06.620Z</lastmod>
+    <lastmod>2019-06-16T15:18:26.012Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhangshuqiao.org/2017-10/MacBook%E4%BD%BF%E7%94%A8%E4%B8%80%E5%9D%97%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E5%81%9AWin%20To%20Go%E5%8F%8ATime%20Machine%E5%A4%87%E4%BB%BD/</loc>
+    
+    <lastmod>2019-06-16T15:16:46.896Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://zhangshuqiao.org/friends/index.html</loc>
     
-    <lastmod>2019-06-03T05:15:57.083Z</lastmod>
+    <lastmod>2019-06-10T06:11:45.320Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhangshuqiao.org/about/index.html</loc>
+    
+    <lastmod>2019-06-07T15:49:27.267Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhangshuqiao.org/2019-05/Windows%E5%AE%89%E8%A3%85tensorflow-gpu/</loc>
+    
+    <lastmod>2019-06-03T05:45:06.620Z</lastmod>
     
   </url>
   
@@ -26,13 +47,6 @@
     <loc>https://zhangshuqiao.org/2019-04/Minecraft%E9%85%8D%E7%BD%AESeus%E5%85%89%E5%BD%B1/</loc>
     
     <lastmod>2019-05-04T03:23:34.055Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhangshuqiao.org/about/index.html</loc>
-    
-    <lastmod>2019-04-22T17:30:48.615Z</lastmod>
     
   </url>
   
@@ -243,13 +257,6 @@
     <loc>https://zhangshuqiao.org/2018-12/Base64%E7%BC%96%E7%A0%81%E7%9A%84%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E7%8E%B0/</loc>
     
     <lastmod>2019-03-13T15:57:37.745Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhangshuqiao.org/2017-10/MacBook%E4%BD%BF%E7%94%A8%E4%B8%80%E5%9D%97%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E5%81%9AWin%20To%20Go%E5%8F%8ATime%20Machine%E5%A4%87%E4%BB%BD/</loc>
-    
-    <lastmod>2019-03-09T03:50:06.129Z</lastmod>
     
   </url>
   

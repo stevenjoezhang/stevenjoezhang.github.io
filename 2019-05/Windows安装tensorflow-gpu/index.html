@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -41,14 +41,14 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
 <meta name="description" content="准备工作下面列出了博主测试成功的环境，使用其它的版本可能出现不可预料的情况。 硬件 图形卡根据Tensorflow官网上对于GPU 支持的描述，需要CUDA® 计算能力为 3.5 或更高的 NVIDIA® GPU 卡。博主使用了一块NVIDIA GeForce RTX 2070进行测试。  其它其它硬件达到主流配置即可。   软件 Windows系统由于macOS Mojave的N卡驱动迟迟没有更">
-<meta name="keywords" content="个人博客,张书樵,物理,技术,计算机">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows安装tensorflow-gpu">
 <meta property="og:url" content="https://zhangshuqiao.org/2019-05/Windows安装tensorflow-gpu/index.html">
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="准备工作下面列出了博主测试成功的环境，使用其它的版本可能出现不可预料的情况。 硬件 图形卡根据Tensorflow官网上对于GPU 支持的描述，需要CUDA® 计算能力为 3.5 或更高的 NVIDIA® GPU 卡。博主使用了一块NVIDIA GeForce RTX 2070进行测试。  其它其它硬件达到主流配置即可。   软件 Windows系统由于macOS Mojave的N卡驱动迟迟没有更">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-03T05:45:06.620Z">
+<meta property="og:updated_time" content="2019-06-25T04:23:26.718Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows安装tensorflow-gpu">
 <meta name="twitter:description" content="准备工作下面列出了博主测试成功的环境，使用其它的版本可能出现不可预料的情况。 硬件 图形卡根据Tensorflow官网上对于GPU 支持的描述，需要CUDA® 计算能力为 3.5 或更高的 NVIDIA® GPU 卡。博主使用了一块NVIDIA GeForce RTX 2070进行测试。  其它其它硬件达到主流配置即可。   软件 Windows系统由于macOS Mojave的N卡驱动迟迟没有更">
@@ -83,10 +83,10 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left page-post-detail">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -158,15 +158,15 @@ top: initial;
 <div class="content-wrap">
 <div id="content" class="content">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-05/Windows安装tensorflow-gpu/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -186,7 +186,7 @@ top: initial;
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
@@ -230,10 +230,13 @@ top: initial;
 </ul>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h3><p>安装过程并不复杂。运行从NVIDIA官网上下载的CUDA安装程序，将其安装在默认目录下即可。如果一切正常，相关组件会出现在<code>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0</code>目录下。</p>
 <h3 id="安装cuDNN"><a href="#安装cuDNN" class="headerlink" title="安装cuDNN"></a>安装cuDNN</h3><p>解压cuDNN的安装包，会得到一个文件夹，将其打开后，可以看到名为<code>bin</code>，<code>include</code>和<code>lib</code>的子目录。而在前面所说的<code>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0</code>目录下也有这样几个子目录。因此，直接将cuDNN的相关文件复制合并进对应的目录即可。</p>
-<h3 id="安装tensorflow-gpu"><a href="#安装tensorflow-gpu" class="headerlink" title="安装tensorflow-gpu"></a>安装<code>tensorflow-gpu</code></h3><p>以PowerShell为例，将CUDA相关组件添加至环境变量：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$Env</span>:path=<span class="variable">$Env</span>:Path+<span class="string">";C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\extras\CUPTI\libx64;"</span></span><br></pre></td></tr></table></figure></p>
-<p>完成后，cd进入下载的whl文件所在目录，使用pip安装即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tensorflow_gpu-1.13.1-cp37-cp37m-win_amd64.whl</span><br></pre></td></tr></table></figure></p>
+<h3 id="安装tensorflow-gpu"><a href="#安装tensorflow-gpu" class="headerlink" title="安装tensorflow-gpu"></a>安装<code>tensorflow-gpu</code></h3><p>以PowerShell为例，将CUDA相关组件添加至环境变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$Env</span>:path=<span class="variable">$Env</span>:Path+<span class="string">";C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\extras\CUPTI\libx64;"</span></span><br></pre></td></tr></table></figure>
+<p>完成后，cd进入下载的whl文件所在目录，使用pip安装即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tensorflow_gpu-1.13.1-cp37-cp37m-win_amd64.whl</span><br></pre></td></tr></table></figure>
 <p><code>pip</code>会自动下载所需的依赖。</p>
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>如果一切顺利，打开Python，执行<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">hello = tf.constant(<span class="string">"Hello, TensorFlow!"</span>)</span><br><span class="line">sess = tf.Session()</span><br><span class="line">print(sess.run(hello))</span><br></pre></td></tr></table></figure></p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>如果一切顺利，打开Python，执行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">hello = tf.constant(<span class="string">"Hello, TensorFlow!"</span>)</span><br><span class="line">sess = tf.Session()</span><br><span class="line">print(sess.run(hello))</span><br></pre></td></tr></table></figure>
 <p>不报错的话，就安装成功了。</p>
 </div>
 <div>
@@ -271,6 +274,9 @@ top: initial;
 </ul>
 </div>
 <footer class="post-footer">
+<div class="post-tags">
+<a href="/tags/Python/" rel="tag"># Python</a>
+</div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
 <a href="/2019-04/Minecraft配置Seus光影/" rel="next" title="Minecraft配置Seus光影">
@@ -311,7 +317,7 @@ top: initial;
 </ul>
 <div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -319,7 +325,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -421,7 +427,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.1.2"></script>
 <script src="/js/post-details.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -40,18 +40,18 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
-<meta name="description" content="MySQL的安装在MySQL官网的下载页上，提供了各种系统和环境的安装方法。你可以选择通过包管理工具的软件源安装，也可以通过源码编译安装。不过编译是非常吃内存的（至少需要4GiB内存），并且还很耗时（毕竟是C++写的），因此不推荐。具体来说，你可以： 使用包管理工具以yum为例，首先增加并启用MySQL软件源，在这个页面找到适合你的版本，然后下载并启用之：123wget https://dev.m">
+<meta name="description" content="MySQL的安装在MySQL官网的下载页上，提供了各种系统和环境的安装方法。你可以选择通过包管理工具的软件源安装，也可以通过源码编译安装。不过编译是非常吃内存的（至少需要4GiB内存），并且还很耗时（毕竟是C++写的），因此不推荐。具体来说，你可以： 使用包管理工具以yum为例，首先增加并启用MySQL软件源，在这个页面找到适合你的版本，然后下载并启用之： 123wget https://dev.">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL 8.0的安装和使用">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-03/MySQL 8.0的安装和使用/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="MySQL的安装在MySQL官网的下载页上，提供了各种系统和环境的安装方法。你可以选择通过包管理工具的软件源安装，也可以通过源码编译安装。不过编译是非常吃内存的（至少需要4GiB内存），并且还很耗时（毕竟是C++写的），因此不推荐。具体来说，你可以： 使用包管理工具以yum为例，首先增加并启用MySQL软件源，在这个页面找到适合你的版本，然后下载并启用之：123wget https://dev.m">
+<meta property="og:description" content="MySQL的安装在MySQL官网的下载页上，提供了各种系统和环境的安装方法。你可以选择通过包管理工具的软件源安装，也可以通过源码编译安装。不过编译是非常吃内存的（至少需要4GiB内存），并且还很耗时（毕竟是C++写的），因此不推荐。具体来说，你可以： 使用包管理工具以yum为例，首先增加并启用MySQL软件源，在这个页面找到适合你的版本，然后下载并启用之： 123wget https://dev.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-29T16:50:44.575Z">
+<meta property="og:updated_time" content="2019-06-24T15:36:21.907Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL 8.0的安装和使用">
-<meta name="twitter:description" content="MySQL的安装在MySQL官网的下载页上，提供了各种系统和环境的安装方法。你可以选择通过包管理工具的软件源安装，也可以通过源码编译安装。不过编译是非常吃内存的（至少需要4GiB内存），并且还很耗时（毕竟是C++写的），因此不推荐。具体来说，你可以： 使用包管理工具以yum为例，首先增加并启用MySQL软件源，在这个页面找到适合你的版本，然后下载并启用之：123wget https://dev.m">
+<meta name="twitter:description" content="MySQL的安装在MySQL官网的下载页上，提供了各种系统和环境的安装方法。你可以选择通过包管理工具的软件源安装，也可以通过源码编译安装。不过编译是非常吃内存的（至少需要4GiB内存），并且还很耗时（毕竟是C++写的），因此不推荐。具体来说，你可以： 使用包管理工具以yum为例，首先增加并启用MySQL软件源，在这个页面找到适合你的版本，然后下载并启用之： 123wget https://dev.">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2018-03/MySQL 8.0的安装和使用/">
 <script id="page.configurations">
@@ -83,10 +83,10 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left page-post-detail">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -158,15 +158,15 @@ top: initial;
 <div class="content-wrap">
 <div id="content" class="content">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/MySQL 8.0的安装和使用/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -186,7 +186,7 @@ top: initial;
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
@@ -208,13 +208,17 @@ top: initial;
 </header>
 <div class="post-body" itemprop="articleBody">
 <h2 id="MySQL的安装"><a href="#MySQL的安装" class="headerlink" title="MySQL的安装"></a>MySQL的安装</h2><p>在MySQL官网的<a href="https://dev.mysql.com/downloads" target="_blank" rel="noopener">下载页</a>上，提供了各种系统和环境的安装方法。你可以选择通过包管理工具的软件源安装，也可以通过源码编译安装。不过编译是非常吃内存的（至少需要4GiB内存），并且还很耗时（毕竟是C++写的），因此不推荐。具体来说，你可以：</p>
-<h3 id="使用包管理工具"><a href="#使用包管理工具" class="headerlink" title="使用包管理工具"></a>使用包管理工具</h3><p>以yum为例，首先增加并启用MySQL软件源，在<a href="https://dev.mysql.com/downloads/repo/yum" target="_blank" rel="noopener">这个页面</a>找到适合你的版本，然后下载并启用之：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm <span class="comment">#换成适合你的版本</span></span><br><span class="line">rpm -ivh mysql80-community-release-el7-1.noarch.rpm</span><br><span class="line">yum-config-manager --<span class="built_in">enable</span> mysql80-community</span><br></pre></td></tr></table></figure></p>
-<p>这样，就可以直接通过yum安装MySQL服务器了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install mysql-community-server</span><br></pre></td></tr></table></figure></p>
+<h3 id="使用包管理工具"><a href="#使用包管理工具" class="headerlink" title="使用包管理工具"></a>使用包管理工具</h3><p>以<code>yum</code>为例，首先增加并启用MySQL软件源，在<a href="https://dev.mysql.com/downloads/repo/yum" target="_blank" rel="noopener">这个页面</a>找到适合你的版本，然后下载并启用之：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm <span class="comment">#换成适合你的版本</span></span><br><span class="line">rpm -ivh mysql80-community-release-el7-1.noarch.rpm</span><br><span class="line">yum-config-manager --<span class="built_in">enable</span> mysql80-community</span><br></pre></td></tr></table></figure>
+<p>这样，就可以直接通过yum安装MySQL服务器了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install mysql-community-server</span><br></pre></td></tr></table></figure>
 <p>安装完成后，会在<code>/usr/sbin/</code>和<code>/usr/bin/</code>目录下出现MySQL的可执行文件，而<code>mysqld.service</code>会自动加载好。MySQL的配置文件则是<code>/etc/my.cnf</code>。</p>
-<h3 id="使用源码编译安装"><a href="#使用源码编译安装" class="headerlink" title="使用源码编译安装"></a>使用源码编译安装</h3><p>再次提醒：源码编译安装方式非常麻烦，如果可以的话请使用包管理工具安装。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget wget https://cdn.mysql.com//Downloads/MySQL-8.0/mysql-boost-8.0.13.tar.gz</span><br><span class="line">tar -xzvf mysql-boost-8.0.13.tar.gz</span><br><span class="line"><span class="built_in">cd</span> mysql-boost-8.0.13</span><br><span class="line">cmake . -DCMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span>/mysql -DMYSQL_DATADIR=/data/mysql -DDOWNLOAD_BOOST=1 -DWITH_BOOST=boost -DSYSCONFDIR=/etc -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_PARTITION_STORAGE_ENGINE=1 -DWITH_FEDERATED_STORAGE_ENGINE=1 -DWITH_BLACKHOLE_STORAGE_ENGINE=1 -DWITH_MYISAM_STORAGE_ENGINE=1 -DWITH_EMBEDDED_SERVER=1 -DENABLE_DTRACE=0 -DENABLED_LOCAL_INFILE=1 -DDEFAULT_CHARSET=utf8mb4 -DEXTRA_CHARSETS=all</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure></p>
+<h3 id="使用源码编译安装"><a href="#使用源码编译安装" class="headerlink" title="使用源码编译安装"></a>使用源码编译安装</h3><p>再次提醒：源码编译安装方式非常麻烦，如果可以的话请使用包管理工具安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget wget https://cdn.mysql.com//Downloads/MySQL-8.0/mysql-boost-8.0.13.tar.gz</span><br><span class="line">tar -xzvf mysql-boost-8.0.13.tar.gz</span><br><span class="line"><span class="built_in">cd</span> mysql-boost-8.0.13</span><br><span class="line">cmake . -DCMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span>/mysql -DMYSQL_DATADIR=/data/mysql -DDOWNLOAD_BOOST=1 -DWITH_BOOST=boost -DSYSCONFDIR=/etc -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_PARTITION_STORAGE_ENGINE=1 -DWITH_FEDERATED_STORAGE_ENGINE=1 -DWITH_BLACKHOLE_STORAGE_ENGINE=1 -DWITH_MYISAM_STORAGE_ENGINE=1 -DWITH_EMBEDDED_SERVER=1 -DENABLE_DTRACE=0 -DENABLED_LOCAL_INFILE=1 -DDEFAULT_CHARSET=utf8mb4 -DEXTRA_CHARSETS=all</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 <p>这里的<code>-DCMAKE_INSTALL_PREFIX</code>和<code>-DMYSQL_DATADIR</code>参数指定了MySQL的安装目录和数据文件存储目录。</p>
 <a id="more"></a>
-<h2 id="MySQL的配置"><a href="#MySQL的配置" class="headerlink" title="MySQL的配置"></a>MySQL的配置</h2><p>为了正确地让PHP链接MySQL数据库，在<code>/etc/my.cnf</code>中，配置以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">datadir=/data/mysql</span><br><span class="line">socket=/tmp/mysql.sock</span><br><span class="line"></span><br><span class="line"><span class="built_in">log</span>-error=/var/<span class="built_in">log</span>/mysqld.log</span><br><span class="line">pid-file=/var/run/mysqld/mysqld.pid</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">socket=/tmp/mysql.sock</span><br></pre></td></tr></table></figure></p>
+<h2 id="MySQL的配置"><a href="#MySQL的配置" class="headerlink" title="MySQL的配置"></a>MySQL的配置</h2><p>为了正确地让PHP链接MySQL数据库，在<code>/etc/my.cnf</code>中，配置以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">datadir=/data/mysql</span><br><span class="line">socket=/tmp/mysql.sock</span><br><span class="line"></span><br><span class="line"><span class="built_in">log</span>-error=/var/<span class="built_in">log</span>/mysqld.log</span><br><span class="line">pid-file=/var/run/mysqld/mysqld.pid</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">socket=/tmp/mysql.sock</span><br></pre></td></tr></table></figure>
 <p>这里的datadir是数据文件存储目录，请确保用户mysql对其拥有访问权限。如果是覆盖升级安装，需要确保它与之前版本MySQL使用的目录相同。<br>而socket是UNIX套接字，使用它的地方要保持一致。具体来说，你需要保证：</p>
 <ul>
 <li><code>/etc/my.cnf</code>中，<code>[mysqld]</code>下的<code>socket</code>值</li>
@@ -222,9 +226,10 @@ top: initial;
 <li><code>php.ini</code>中，<code>[Pdo_mysql]</code>下的<code>pdo_mysql.default_socket</code>值</li>
 <li><code>php.ini</code>中，<code>[MySQLi]</code>下的<code>mysqli.default_socket</code>值</li>
 </ul>
-<p>这四个值是一致的。而之所以选择<code>/tmp/mysql.sock</code>，是因为PHP默认的MySQL套接字在这个位置，配置好<code>my.cnf</code>就行，而不用修改PHP的配置（即php.ini中的对应项留空即可，会采用默认值）；如果用了其他的目录，就需要修改<code>php.ini</code>。<br><code>php.ini</code>根据你的安装方式，可能出现在<code>/etc</code>或<code>/usr/local/php</code>下的某个位置，可以自行处理。<br>为了优化MySQL，还可以在<code>/etc/my.cnf</code>中增加如下设置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[mysql]</span><br><span class="line">no-auto-rehash</span><br><span class="line">connect_timeout=2</span><br><span class="line">prompt=<span class="string">"MySQL [\\d]&gt; "</span></span><br><span class="line"></span><br><span class="line">[mysqldump]</span><br><span class="line">quick</span><br><span class="line">max_allowed_packet = 500M</span><br></pre></td></tr></table></figure></p>
+<p>这四个值是一致的。而之所以选择<code>/tmp/mysql.sock</code>，是因为PHP默认的MySQL套接字在这个位置，配置好<code>my.cnf</code>就行，而不用修改PHP的配置（即php.ini中的对应项留空即可，会采用默认值）；如果用了其他的目录，就需要修改<code>php.ini</code>。
+<code>php.ini</code>根据你的安装方式，可能出现在<code>/etc</code>或<code>/usr/local/php</code>下的某个位置，可以自行处理。<br>为了优化MySQL，还可以在<code>/etc/my.cnf</code>中增加如下设置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[mysql]</span><br><span class="line">no-auto-rehash</span><br><span class="line">connect_timeout=2</span><br><span class="line">prompt=<span class="string">"MySQL [\\d]&gt; "</span></span><br><span class="line"></span><br><span class="line">[mysqldump]</span><br><span class="line">quick</span><br><span class="line">max_allowed_packet = 500M</span><br></pre></td></tr></table></figure>
 <p>其中，<code>[mysql]</code>下的<code>prompt</code>允许个性化设置提示符，在操作数据库时更加方便快捷。可用的参数有：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -232,8 +237,7 @@ top: initial;
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>\c</td>
 <td>A counter that increments for each statement you issue</td>
 </tr>
@@ -330,28 +334,29 @@ top: initial;
 <td>A space (a space follows the backslash)</td>
 </tr>
 <tr>
-<td>\’</td>
+<td>&#39;</td>
 <td>Single quote</td>
 </tr>
 <tr>
-<td>\”</td>
+<td>&quot;</td>
 <td>Double quote</td>
 </tr>
 <tr>
 <td>\\</td>
-<td>A literal “\” backslash character</td>
+<td>A literal “&quot; backslash character</td>
 </tr>
 <tr>
 <td>\x</td>
 <td>x, for any “x” not listed above</td>
 </tr>
-</tbody>
-</table>
-</div>
-<p>这里的配置将会显示当前的数据库名。<br>完成设置后，重新启动mysqld即可：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure></p>
-<p>如果你是初次登陆，通过以下方式查看临时root密码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'temporary password'</span> /var/<span class="built_in">log</span>/mysqld.log</span><br></pre></td></tr></table></figure></p>
+</tbody></table>
+<p>这里的配置将会显示当前的数据库名。<br>完成设置后，重新启动mysqld即可：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure>
+<p>如果你是初次登陆，通过以下方式查看临时root密码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'temporary password'</span> /var/<span class="built_in">log</span>/mysqld.log</span><br></pre></td></tr></table></figure>
 <p>然后执行<code>mysql -u root -p</code>，随后输入密码，即可登录。<br>如果是升级安装的，需要执行<code>mysql_upgrade -u root -p</code>来升级数据库。</p>
-<h2 id="MySQL命令"><a href="#MySQL命令" class="headerlink" title="MySQL命令"></a>MySQL命令</h2><p>登录的命令是<code>mysql -u username -p</code>，按回车后输入密码即可。如果要直接登录某个数据库，执行：<code>mysql -h host -u user -p dbname</code>。<br>以下所有命令均需要以<code>;</code>结尾，大小写取决于系统设置。</p>
+<h2 id="MySQL命令"><a href="#MySQL命令" class="headerlink" title="MySQL命令"></a>MySQL命令</h2><p>登录的命令是<code>mysql -u username -p</code>，按回车后输入密码即可。如果要直接登录某个数据库，执行：<code>mysql -h host -u user -p dbname</code>。
+以下所有命令均需要以<code>;</code>结尾，大小写取决于系统设置。</p>
 <ul>
 <li>显示版本：<code>SHOW VARIABLES LIKE &quot;%version%&quot;;</code></li>
 <li>查看所有的库：<code>SHOW DATABASES;</code></li>
@@ -371,11 +376,15 @@ top: initial;
 <li>刷新权限：<code>FLUSH PRIVILEGES;</code></li>
 <li>退出：<code>QUIT;</code></li>
 </ul>
-<p>MySQL 8.0的用户授权和之前有所区别，老版本的常用授权语句在8.0中会报错。<br>在执行命令时，如果数据库名、表名等包含特殊字符，例如<code>-</code>等，要避免出现语法错误。例如：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> hello-world;</span><br></pre></td></tr></table></figure></p>
-<p>直接这样输入会造成问题，正确做法是：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> <span class="string">`hello-world`</span>;</span><br></pre></td></tr></table></figure></p>
+<p>MySQL 8.0的用户授权和之前有所区别，老版本的常用授权语句在8.0中会报错。<br>在执行命令时，如果数据库名、表名等包含特殊字符，例如<code>-</code>等，要避免出现语法错误。例如：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> hello-world;</span><br></pre></td></tr></table></figure>
+<p>直接这样输入会造成问题，正确做法是：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> <span class="string">`hello-world`</span>;</span><br></pre></td></tr></table></figure>
 <p>如果对这些命令不熟悉，也可以安装phpMyAdmin之类的辅助软件。</p>
-<h3 id="AUTO-INCREMENT的重置"><a href="#AUTO-INCREMENT的重置" class="headerlink" title="AUTO_INCREMENT的重置"></a>AUTO_INCREMENT的重置</h3><p>在WordPress中，文章、用户的ID都是通过<code>AUTO_INCREMENT</code>分配的，如果要改变其值，可以在<code>wp_usermeta</code>和<code>wp_users</code>数据表中执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`wp_usermeta`</span></span><br><span class="line">  <span class="keyword">MODIFY</span> <span class="string">`umeta_id`</span> <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT, AUTO_INCREMENT=<span class="number">177</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure></p>
-<p>以及<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`wp_users`</span></span><br><span class="line">  <span class="keyword">MODIFY</span> <span class="string">`ID`</span> <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT, AUTO_INCREMENT=<span class="number">6</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="AUTO-INCREMENT的重置"><a href="#AUTO-INCREMENT的重置" class="headerlink" title="AUTO_INCREMENT的重置"></a>AUTO_INCREMENT的重置</h3><p>在WordPress中，文章、用户的ID都是通过<code>AUTO_INCREMENT</code>分配的，如果要改变其值，可以在<code>wp_usermeta</code>和<code>wp_users</code>数据表中执行：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`wp_usermeta`</span></span><br><span class="line">  <span class="keyword">MODIFY</span> <span class="string">`umeta_id`</span> <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT, AUTO_INCREMENT=<span class="number">177</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure>
+<p>以及</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`wp_users`</span></span><br><span class="line">  <span class="keyword">MODIFY</span> <span class="string">`ID`</span> <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT, AUTO_INCREMENT=<span class="number">6</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure>
 <p>将<code>AUTO_INCREMENT</code>根据你自己的情况，修改为当前的行数。<br>对于存储评论信息的<code>wp_comments</code>也是类似的。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>MySQL8.0是MySQL5.7的后继版本，这次更新带来了许多新特性，比如更好的字符集支持、降序排列的优化等。官方宣传性能提高了2倍。<br>不过版本号从5.7之间跨越到了8.0确实是一次大飞跃，PHP 6、Windows 9和iPhone 9点了个赞，Sketch和Java笑而不语。<br>当然，这样还有一个好处是，避免<a href="https://groups.google.com/forum/#!topic/nodejs/iAPl--KJhK8" target="_blank" rel="noopener">版本6.4被GFW屏蔽</a>。嗯，仿佛没有什么问题。</p>
 </div>
@@ -457,7 +466,7 @@ top: initial;
 </ul>
 <div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -465,7 +474,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -567,7 +576,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.1.2"></script>
 <script src="/js/post-details.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -40,18 +40,18 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
-<meta name="description" content="这里介绍一种在macOS上读写NTFS磁盘的方法，这样可以方便的在不同系统中传输文件。默认情况下，macOS是无法向NTFS磁盘写入的——这个功能由于种种原因被禁用了。我们使用一种Hack的方法将其启用即可。macOS在挂载NTFS磁盘时加载的脚本为/sbin/mount_ntfs，参数为：1mount_ntfs -o nodev -o noowners -o nosuid /dev/disk2s">
-<meta name="keywords" content="个人博客,张书樵,物理,技术,计算机">
+<meta name="description" content="这里介绍一种在macOS上读写NTFS磁盘的方法，这样可以方便的在不同系统中传输文件。默认情况下，macOS是无法向NTFS磁盘写入的——这个功能由于种种原因被禁用了。我们使用一种Hack的方法将其启用即可。macOS在挂载NTFS磁盘时加载的脚本为/sbin/mount_ntfs，参数为： 1mount_ntfs -o nodev -o noowners -o nosuid /dev/disk2">
+<meta name="keywords" content="Mac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在macOS上读写NTFS磁盘">
 <meta property="og:url" content="https://zhangshuqiao.org/2019-05/在macOS上读写NTFS磁盘/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="这里介绍一种在macOS上读写NTFS磁盘的方法，这样可以方便的在不同系统中传输文件。默认情况下，macOS是无法向NTFS磁盘写入的——这个功能由于种种原因被禁用了。我们使用一种Hack的方法将其启用即可。macOS在挂载NTFS磁盘时加载的脚本为/sbin/mount_ntfs，参数为：1mount_ntfs -o nodev -o noowners -o nosuid /dev/disk2s">
+<meta property="og:description" content="这里介绍一种在macOS上读写NTFS磁盘的方法，这样可以方便的在不同系统中传输文件。默认情况下，macOS是无法向NTFS磁盘写入的——这个功能由于种种原因被禁用了。我们使用一种Hack的方法将其启用即可。macOS在挂载NTFS磁盘时加载的脚本为/sbin/mount_ntfs，参数为： 1mount_ntfs -o nodev -o noowners -o nosuid /dev/disk2">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-16T15:18:26.012Z">
+<meta property="og:updated_time" content="2019-06-25T04:23:45.957Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在macOS上读写NTFS磁盘">
-<meta name="twitter:description" content="这里介绍一种在macOS上读写NTFS磁盘的方法，这样可以方便的在不同系统中传输文件。默认情况下，macOS是无法向NTFS磁盘写入的——这个功能由于种种原因被禁用了。我们使用一种Hack的方法将其启用即可。macOS在挂载NTFS磁盘时加载的脚本为/sbin/mount_ntfs，参数为：1mount_ntfs -o nodev -o noowners -o nosuid /dev/disk2s">
+<meta name="twitter:description" content="这里介绍一种在macOS上读写NTFS磁盘的方法，这样可以方便的在不同系统中传输文件。默认情况下，macOS是无法向NTFS磁盘写入的——这个功能由于种种原因被禁用了。我们使用一种Hack的方法将其启用即可。macOS在挂载NTFS磁盘时加载的脚本为/sbin/mount_ntfs，参数为： 1mount_ntfs -o nodev -o noowners -o nosuid /dev/disk2">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2019-05/在macOS上读写NTFS磁盘/">
 <script id="page.configurations">
@@ -83,10 +83,10 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left page-post-detail">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -158,15 +158,15 @@ top: initial;
 <div class="content-wrap">
 <div id="content" class="content">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-05/在macOS上读写NTFS磁盘/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -186,7 +186,7 @@ top: initial;
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
@@ -207,10 +207,14 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>这里介绍一种在macOS上读写NTFS磁盘的方法，这样可以方便的在不同系统中传输文件。默认情况下，macOS是无法向NTFS磁盘写入的——这个功能由于种种原因被禁用了。我们使用一种Hack的方法将其启用即可。<br>macOS在挂载NTFS磁盘时加载的脚本为<code>/sbin/mount_ntfs</code>，参数为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount_ntfs -o nodev -o noowners -o nosuid /dev/disk2s1 /Volumes/DATA</span><br></pre></td></tr></table></figure></p>
-<p>这时，只要加上额外的参数，就可以启用对NTFS磁盘的写入。具体方法是：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo -s <span class="comment">#输入密码，获取root权限</span></span><br><span class="line"><span class="built_in">cd</span> /sbin</span><br><span class="line">mv mount_ntfs mount_ntfs_orig</span><br><span class="line">vim mount_ntfs</span><br></pre></td></tr></table></figure></p>
-<p>将<code>mount_ntfs</code>重命名为<code>mount_ntfs_orig</code>，然后再新建一个<code>mount_ntfs</code>，输入以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">/sbin/mount_ntfs_orig -o rw,nobrowse <span class="string">"<span class="variable">$@</span>"</span></span><br></pre></td></tr></table></figure></p>
-<p>这样就可以欺骗系统，运行带有额外参数的指令。这里的<code>nobrowse</code>是为了避免挂载上来的还是只读模式，但是它同时会导致磁盘不可见，也就是挂在后不会在桌面和Finder中显示，需要手动到<code>/Volumes</code>下打开。如果这样不爽的话，你可以尝试<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">/sbin/mount_ntfs_orig -o rw <span class="string">"<span class="variable">$@</span>"</span></span><br></pre></td></tr></table></figure></p>
+<p>这里介绍一种在macOS上读写NTFS磁盘的方法，这样可以方便的在不同系统中传输文件。默认情况下，macOS是无法向NTFS磁盘写入的——这个功能由于种种原因被禁用了。我们使用一种Hack的方法将其启用即可。<br>macOS在挂载NTFS磁盘时加载的脚本为<code>/sbin/mount_ntfs</code>，参数为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount_ntfs -o nodev -o noowners -o nosuid /dev/disk2s1 /Volumes/DATA</span><br></pre></td></tr></table></figure>
+<p>这时，只要加上额外的参数，就可以启用对NTFS磁盘的写入。具体方法是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo -s <span class="comment">#输入密码，获取root权限</span></span><br><span class="line"><span class="built_in">cd</span> /sbin</span><br><span class="line">mv mount_ntfs mount_ntfs_orig</span><br><span class="line">vim mount_ntfs</span><br></pre></td></tr></table></figure>
+<p>将<code>mount_ntfs</code>重命名为<code>mount_ntfs_orig</code>，然后再新建一个<code>mount_ntfs</code>，输入以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">/sbin/mount_ntfs_orig -o rw,nobrowse <span class="string">"<span class="variable">$@</span>"</span></span><br></pre></td></tr></table></figure>
+<p>这样就可以欺骗系统，运行带有额外参数的指令。这里的<code>nobrowse</code>是为了避免挂载上来的还是只读模式，但是它同时会导致磁盘不可见，也就是挂在后不会在桌面和Finder中显示，需要手动到<code>/Volumes</code>下打开。如果这样不爽的话，你可以尝试</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">/sbin/mount_ntfs_orig -o rw <span class="string">"<span class="variable">$@</span>"</span></span><br></pre></td></tr></table></figure>
 <p>将磁盘推出再挂载，如果一切正常的话，就可以愉快的使用了。</p>
 <hr>
 <p>参考文章：<a href="https://www.jianshu.com/p/d4073acbb218" target="_blank" rel="noopener">OS X 原生可读写挂载NTFS分区</a></p>
@@ -250,6 +254,9 @@ top: initial;
 </ul>
 </div>
 <footer class="post-footer">
+<div class="post-tags">
+<a href="/tags/Mac/" rel="tag"># Mac</a>
+</div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
 <a href="/2019-05/Windows安装tensorflow-gpu/" rel="next" title="Windows安装tensorflow-gpu">
@@ -258,6 +265,9 @@ top: initial;
 </div>
 <span class="post-nav-divider"></span>
 <div class="post-nav-prev post-nav-item">
+<a href="/2019-06/PS用文字拼出照片/" rel="prev" title="PS用文字拼出照片">
+PS用文字拼出照片 <i class="fa fa-chevron-right"></i>
+</a>
 </div>
 </div>
 </footer>
@@ -279,7 +289,7 @@ top: initial;
 <div class="sidebar-inner">
 <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -287,7 +297,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -382,7 +392,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.1.2"></script>
 <script src="/js/post-details.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

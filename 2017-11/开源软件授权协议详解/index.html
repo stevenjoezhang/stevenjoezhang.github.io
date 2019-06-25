@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -85,10 +85,10 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left page-post-detail">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -160,15 +160,15 @@ top: initial;
 <div class="content-wrap">
 <div id="content" class="content">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/开源软件授权协议详解/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -188,7 +188,7 @@ top: initial;
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
 </span>
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
@@ -210,7 +210,7 @@ top: initial;
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>开源在今天的软件业已经很普遍，但开源是否意味着使用者可以对开源后的代码为所欲为呢?<br>答案当然是否定的。开源运动同样有自己的游戏规则和道德准则。不遵行这些规则不但损害开源运动的健康发展，也会对违规者造成名誉和市场上的损失，更可能陷入法律纠纷和赔偿。现今存在的开源协议很多，而经过<a href="https://www.opensource.org/licenses/alphabetical" target="_blank" rel="noopener">Open Source Initiative</a>组织通过批准的开源协议目前有58种。我们在常见的开源协议如BSD，GPL，LGPL，MIT等都是OSI批准的协议。如果要开源自己的代码，最好也是选择这些被批准的开源协议。首先借用一张相当直观清晰的图来划分各种协议：</p>
-<p><img src="/images/2017-11/free_software_licenses.png" alt=""></p>
+<p><img src="/images/2017-11/free_software_licenses.png" alt></p>
 <a id="more"></a>
 <p>以下是上述协议的简单介绍：</p>
 <h2 id="强开源约束授权"><a href="#强开源约束授权" class="headerlink" title="强开源约束授权"></a>强开源约束授权</h2><p><a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL（GNU General Public License）</a><br>我们很熟悉的Linux就是采用了GPL。GPL协议和BSD，Apache Licence等鼓励代码重用的许可很不一样。<br>GPL的出发点是代码的开源/免费使用和引用/修改/衍生代码的开源/免费使用，但不允许修改后和衍生的代码作为闭源的商业软件发布和销售。这也就是为什么我们能用免费的各种linux，包括商业公司的linux和linux上各种各样的由个人，组织，以及商业软件公司开发的免费软件了。<br>GPL协议的主要内容是只要在一个软件中使用(『使用』指类库引用，修改后的代码或者衍生代码)GPL协议的产品，则该软件产品必须也采用GPL协议，既必须也是开源和免费。这就是所谓的『传染性』。<br>GPL协议的产品作为一个单独的产品使用没有任何问题，还可以享受免费的优势。由于GPL严格要求使用了GPL类库的软件产品必须使用GPL协议，对于使用GPL协议的开源代码，商业软件或者对代码有保密要求的部门就不适合集成/采用作为类库和二次开发的基础。其它细节如再发布的时候需要伴随GPL协议等和BSD/Apache等类似。</p>
@@ -328,7 +328,7 @@ top: initial;
 </ul>
 <div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -336,7 +336,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -438,7 +438,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.1.2"></script>
 <script src="/js/post-details.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

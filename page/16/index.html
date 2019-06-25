@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -82,11 +82,11 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left
 page-home">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -158,15 +158,64 @@ page-home">
 <div class="content-wrap">
 <div id="content" class="content">
 <section id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-01/基于Nginx搭建视频直播服务器/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/制造MD5碰撞/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-02/制造MD5碰撞/" class="post-title-link" itemprop="url">制造MD5碰撞</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-02-05 18:09:35" itemprop="dateCreated datePublished" datetime="2018-02-05T18:09:35+08:00">2018-02-05</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>下面这两张图片拥有相同的MD5值<code>253dd04e87492e4fc3471de5e776bc3d</code>：</p>
+<p><img src="/images/2018-02/plane.jpg" alt><br><img src="/images/2018-02/ship.jpg" alt></p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-02/制造MD5碰撞/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-01/基于Nginx搭建视频直播服务器/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -187,7 +236,7 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
 </div>
 </header>
@@ -199,9 +248,9 @@ page-home">
 <p>如果你是萌新，请按照👇教程安装搭建lnmp环境！<br><a href="https://lnmp.org/install.html" target="_blank" rel="noopener">lnmp环境一键安装脚本</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下载并安装lnmp环境，将1.4替换为最新版本</span></span><br><span class="line">wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz</span><br><span class="line">tar -xzvf lnmp1.4.tar.gz</span><br><span class="line"><span class="built_in">cd</span> lnmp1.4</span><br><span class="line">./install.sh lnmp</span><br></pre></td></tr></table></figure>
 <p>请按照脚本的提示选择你要安装的各个组件版本，若不确定，选择默认选项即可。安装完成后，命令行输出：</p>
-<p><img src="/images/2018-01/1774338-dc544ac657937d0d.png" alt=""></p>
+<p><img src="/images/2018-01/1774338-dc544ac657937d0d.png" alt></p>
 <p>此时访问服务器地址会出现如下界面：</p>
-<p><img src="/images/2018-01/1774338-b0eb1df8603e632d.png" alt=""></p>
+<p><img src="/images/2018-01/1774338-b0eb1df8603e632d.png" alt></p>
 <p><strong>注意：安装时生成的解压文件夹lnmp1.4先别删除！</strong></p>
 <!--noindex-->
 <div class="post-button text-center">
@@ -216,15 +265,15 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-01/JavaScript常用简写技术与扩展运算符/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -245,17 +294,22 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<h2 id="三元操作符"><a href="#三元操作符" class="headerlink" title="三元操作符"></a>三元操作符</h2><p>当想写<code>if...else</code>语句时，使用三元操作符来代替。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">let</span> answer;</span><br><span class="line"><span class="keyword">if</span> (x &gt; <span class="number">10</span>) &#123;</span><br><span class="line">    answer = <span class="string">'is greater'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    answer = <span class="string">'is lesser'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>简写：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> answer = x &gt; <span class="number">10</span> ? <span class="string">'is greater'</span> : <span class="string">'is lesser'</span>;</span><br><span class="line"></span><br><span class="line">也可以嵌套<span class="keyword">if</span>语句：</span><br><span class="line"><span class="string">``</span><span class="string">`javascript</span></span><br><span class="line"><span class="string">const big = x &gt; 10 ? " greater 10" : x</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="短路求值简写方式"><a href="#短路求值简写方式" class="headerlink" title="短路求值简写方式"></a>短路求值简写方式</h2><p>当给一个变量分配另一个值时，想确定源始值不是<code>null</code>，<code>undefined</code>或空值。可以写撰写一个多重条件的if语句。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (variable1 !== <span class="literal">null</span> || variable1 !== <span class="literal">undefined</span> || variable1 !== <span class="string">''</span>) &#123;</span><br><span class="line">     <span class="keyword">let</span> variable2 = variable1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>或者可以使用短路求值方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> variable2 = variable1  || <span class="string">'new'</span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="三元操作符"><a href="#三元操作符" class="headerlink" title="三元操作符"></a>三元操作符</h2><p>当想写<code>if...else</code>语句时，使用三元操作符来代替。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">let</span> answer;</span><br><span class="line"><span class="keyword">if</span> (x &gt; <span class="number">10</span>) &#123;</span><br><span class="line">    answer = <span class="string">'is greater'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    answer = <span class="string">'is lesser'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> answer = x &gt; <span class="number">10</span> ? <span class="string">'is greater'</span> : <span class="string">'is lesser'</span>;</span><br><span class="line"></span><br><span class="line">也可以嵌套<span class="keyword">if</span>语句：</span><br><span class="line"><span class="string">``</span><span class="string">`javascript</span></span><br><span class="line"><span class="string">const big = x &gt; 10 ? " greater 10" : x</span></span><br></pre></td></tr></table></figure>
+<h2 id="短路求值简写方式"><a href="#短路求值简写方式" class="headerlink" title="短路求值简写方式"></a>短路求值简写方式</h2><p>当给一个变量分配另一个值时，想确定源始值不是<code>null</code>，<code>undefined</code>或空值。可以写撰写一个多重条件的if语句。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (variable1 !== <span class="literal">null</span> || variable1 !== <span class="literal">undefined</span> || variable1 !== <span class="string">''</span>) &#123;</span><br><span class="line">     <span class="keyword">let</span> variable2 = variable1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者可以使用短路求值方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> variable2 = variable1  || <span class="string">'new'</span>;</span><br></pre></td></tr></table></figure>
 <h2 id="声明变量简写方法"><a href="#声明变量简写方法" class="headerlink" title="声明变量简写方法"></a>声明变量简写方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x;</span><br><span class="line"><span class="keyword">let</span> y;</span><br><span class="line"><span class="keyword">let</span> z = <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
-<p>简写方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x, y, z=<span class="number">3</span>;</span><br></pre></td></tr></table></figure></p>
+<p>简写方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x, y, z=<span class="number">3</span>;</span><br></pre></td></tr></table></figure>
 <!--noindex-->
 <div class="post-button text-center">
 <a class="btn" href="/2018-01/JavaScript常用简写技术与扩展运算符/#more" rel="contents">
@@ -269,15 +323,15 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-01/MCPE地图的正确使用方式/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -298,13 +352,13 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>在我的世界中，制作不同区域的地图后，可以使用物品展示框将它们挂起来，这样便能拼出一幅巨大的高分辨率地图。这是博主对一个经营了多年的存档拍摄的『卫星图』：</p>
-<p><img src="/images/2018-01/IMG_4541.png" alt=""></p>
+<p><img src="/images/2018-01/IMG_4541.png" alt></p>
 <p>效果还是挺不错的。</p>
 </div>
 <footer class="post-footer">
@@ -312,15 +366,15 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-01/为了联盟/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -341,63 +395,13 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>为了荣耀！</p>
-<p><img src="/images/2018-01/IMG_4186.jpg" alt=""></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-01/将电键变为鼠标和键盘——实现篇/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-01/将电键变为鼠标和键盘——实现篇/" class="post-title-link" itemprop="url">将电键变为鼠标和键盘——实现篇</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-01-12 16:10:20" itemprop="dateCreated datePublished" datetime="2018-01-12T16:10:20+08:00">2018-01-12</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p><a href="/2018-01/将摩尔斯电键改造为USB键盘/">上一篇文章</a>介绍了使用Teensy 3.2将摩尔斯电键变为键盘的方法。经过研究，博主决定使用Arduino Leonardo实现之。相比Teensy 3.2，Arduino Leonardo成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。</p>
-<p><img src="/images/2018-01/IMG_4488.jpg" alt=""></p>
-<p>Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入/输出引脚（在写入程序时可以定义各个引脚的作用，其中最多有7个可用于PWM输出、12个可用于模拟输入），一个16 MHz的晶体振荡器，一个Micro USB接口，一个DC接口，一个ICSP接口，一个复位按钮。它包含了支持微控制器所需的一切，你可以简单地通过把它连接到计算机的USB接口来驱动它。<br>Leonardo不同于之前所有的Arduino控制器，他直接使用了ATmega32U4的USB通信功能，取消了USB转UART芯片。这使得Leonardo不仅可以作为一个虚拟的（CDC）串行/COM端口，还可以作为鼠标或者键盘连接到计算机。更多内容可以<a href="https://store.arduino.cc/usa/arduino-leonardo-with-headers" target="_blank" rel="noopener">参考文档</a>（在DOCUMENTATION选单中包含完整电路图）。</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-01/将电键变为鼠标和键盘——实现篇/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
+<p><img src="/images/2018-01/IMG_4186.jpg" alt></p>
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -406,7 +410,7 @@ page-home">
 </article>
 </section>
 <nav class="pagination">
-<a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+<a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
 </nav>
 </div>
 </div>
@@ -421,7 +425,7 @@ page-home">
 <div class="sidebar-inner">
 <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -429,7 +433,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -522,7 +526,6 @@ window.Promise = null;
 <script src="/js/affix.js?v=7.1.2"></script>
 <script src="/js/schemes/pisces.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

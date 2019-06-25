@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -91,10 +91,10 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left page-post-detail">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -166,15 +166,15 @@ top: initial;
 <div class="content-wrap">
 <div id="content" class="content">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-01/将电键变为鼠标和键盘——实现篇/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -194,7 +194,7 @@ top: initial;
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
@@ -216,7 +216,7 @@ top: initial;
 </header>
 <div class="post-body" itemprop="articleBody">
 <p><a href="/2018-01/将摩尔斯电键改造为USB键盘/">上一篇文章</a>介绍了使用Teensy 3.2将摩尔斯电键变为键盘的方法。经过研究，博主决定使用Arduino Leonardo实现之。相比Teensy 3.2，Arduino Leonardo成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。</p>
-<p><img src="/images/2018-01/IMG_4488.jpg" alt=""></p>
+<p><img src="/images/2018-01/IMG_4488.jpg" alt></p>
 <p>Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入/输出引脚（在写入程序时可以定义各个引脚的作用，其中最多有7个可用于PWM输出、12个可用于模拟输入），一个16 MHz的晶体振荡器，一个Micro USB接口，一个DC接口，一个ICSP接口，一个复位按钮。它包含了支持微控制器所需的一切，你可以简单地通过把它连接到计算机的USB接口来驱动它。<br>Leonardo不同于之前所有的Arduino控制器，他直接使用了ATmega32U4的USB通信功能，取消了USB转UART芯片。这使得Leonardo不仅可以作为一个虚拟的（CDC）串行/COM端口，还可以作为鼠标或者键盘连接到计算机。更多内容可以<a href="https://store.arduino.cc/usa/arduino-leonardo-with-headers" target="_blank" rel="noopener">参考文档</a>（在DOCUMENTATION选单中包含完整电路图）。</p>
 <a id="more"></a>
 <h2 id="硬件准备工作"><a href="#硬件准备工作" class="headerlink" title="硬件准备工作"></a>硬件准备工作</h2><p>需要准备</p>
@@ -235,24 +235,24 @@ top: initial;
 <h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><ul>
 <li>打开Arduino IDE，导入下载的Bounce2库。</li>
 </ul>
-<p><img src="/images/2018-01/ArduinoLeonardo1.png" alt=""></p>
+<p><img src="/images/2018-01/ArduinoLeonardo1.png" alt></p>
 <ul>
 <li>将Arduino Leonardo开发板通过USB线连接到电脑上，在Arduino IDE的『工具』菜单下设置正确的开发板和端口，如图所示。</li>
 </ul>
-<p><img src="/images/2018-01/ArduinoLeonardo3.png" alt=""><br><img src="/images/2018-01/ArduinoLeonardo4.png" alt=""></p>
+<p><img src="/images/2018-01/ArduinoLeonardo3.png" alt><br><img src="/images/2018-01/ArduinoLeonardo4.png" alt></p>
 <ul>
 <li>如果是初次使用，在『文件』菜单下选择示例，找到Blink，打开后，依次点击编译、上传。如果出现未响应、无法找到端口等现象，请点击开发板上的按钮重启。如果上传成功，并且二极管L以0.5Hz的频率闪烁，则说明配置正确。</li>
 </ul>
-<p><img src="/images/2018-01/ArduinoLeonardo2.png" alt=""></p>
+<p><img src="/images/2018-01/ArduinoLeonardo2.png" alt></p>
 <ul>
 <li>解压并打开下载的源代码文件。其中Keyboard文件能够将摩尔斯电键变为虚拟键盘，通过敲击字符的摩尔斯电码输入；Mouse文件能够将摩尔斯电键变为虚拟鼠标，按下即触发一次鼠标点击。选择你需要的文件，使用Arduino IDE打开，然后依次点击编译、上传。</li>
 <li>请使用物理方法将摩尔斯电键的两端分别连到Arduino Leonardo的GND和12端口，如图所示（当然，你可以更改源代码来使用别的端口）。如果是虚拟键盘模式，连接GND和8端口可以输入大写字母，不连接则输入小写字母。</li>
 </ul>
-<p><img src="/images/2018-01/IMG_4490.jpg" alt=""></p>
+<p><img src="/images/2018-01/IMG_4490.jpg" alt></p>
 <ul>
 <li>如果一切就绪，那么，当你按下电键或输入摩尔斯电码，电脑就会作出正确的反应。</li>
 </ul>
-<p><img src="/images/2018-01/IMG_4491.jpg" alt=""></p>
+<p><img src="/images/2018-01/IMG_4491.jpg" alt></p>
 <p>以上就是用摩尔斯电键作鼠标和键盘的教程。当然，Arduino Leonardo开发板的作用远远不止这些，如果发现更为有趣的应用，博主会继续分享出来。</p>
 </div>
 <div>
@@ -334,7 +334,7 @@ top: initial;
 </ul>
 <div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -342,7 +342,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -444,7 +444,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.1.2"></script>
 <script src="/js/post-details.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

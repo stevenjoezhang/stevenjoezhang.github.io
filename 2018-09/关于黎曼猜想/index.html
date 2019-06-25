@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -83,10 +83,10 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left page-post-detail">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -158,15 +158,15 @@ top: initial;
 <div class="content-wrap">
 <div id="content" class="content">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-09/关于黎曼猜想/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -186,7 +186,7 @@ top: initial;
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
 </span>
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
@@ -208,57 +208,33 @@ top: initial;
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>前几日关于黎曼猜想（Riemann Hypothesis）被证明的消息在网络上炒得沸沸扬扬，菲尔兹奖、阿贝尔奖双料得主Michael Francis Atiyah爵士声称他证明了这个困扰了数学界160年的问题，且其目的是为了研究精细结构常数。然而，在他公布了他的Simple Proof后，却不被学界所看好，甚至遭到了一些尖锐的批评。毕竟，这篇只有五页纸的文章，刨去介绍等内容，并没有展示太多的细节；其证明过程，又依赖于一个存疑的Todd function。如果如证明中所说，黎曼猜想真的指向了精细结构常数，这对于由第一性原理出发构建物理学体系将有极大的启发性，其结果无疑是令人激动的。但是经过计算，却发现文中所声称的极限存在问题，整个理论的正确性难以得到证实。<br>有鉴于此，博主研究该证明过程的计划搁置了（毕竟没有什么价值，大概可以用来提升读Paper的能力#捂脸），还是写篇文章介绍下黎曼猜想本身吧。</p>
-<h2 id="猜想的提出"><a href="#猜想的提出" class="headerlink" title="猜想的提出"></a>猜想的提出</h2><p>时间回到1859年，著名的德国数学家波恩哈德·黎曼（Bernhard Riemann）在他的论文《Über die Anzahl der Primzahlen unter einer gegebenen Größe》中提及了这个著名的猜想。黎曼本人在数学界颇有建树，但他却并没有试图对论文中的猜想给出证明。<br>这个猜想是关于黎曼$\zeta$函数的，该函数的定义为：</p>
-<script type="math/tex; mode=display">\zeta(s)=\frac{1}{1^s}+\frac{1}{2^s}+\frac{1}{3^s}+\frac{1}{4^s}+\cdots</script><p>注意，$\zeta$函数必须经过解析延拓，才能在全复平面上有定义，稍后将给出解析延拓的过程。<br>而黎曼猜想就是：$\zeta(s)$的所有非平凡零点的实部均为$\frac{1}{2}$。</p>
+<h2 id="猜想的提出"><a href="#猜想的提出" class="headerlink" title="猜想的提出"></a>猜想的提出</h2><p>时间回到1859年，著名的德国数学家波恩哈德·黎曼（Bernhard Riemann）在他的论文《Über die Anzahl der Primzahlen unter einer gegebenen Größe》中提及了这个著名的猜想。黎曼本人在数学界颇有建树，但他却并没有试图对论文中的猜想给出证明。<br>这个猜想是关于黎曼$\zeta$函数的，该函数的定义为：<br>$$\zeta(s)=\frac{1}{1^s}+\frac{1}{2^s}+\frac{1}{3^s}+\frac{1}{4^s}+\cdots$$<br>注意，$\zeta$函数必须经过解析延拓，才能在全复平面上有定义，稍后将给出解析延拓的过程。<br>而黎曼猜想就是：$\zeta(s)$的所有非平凡零点的实部均为$\frac{1}{2}$。</p>
 <h2 id="zeta-函数的解析延拓"><a href="#zeta-函数的解析延拓" class="headerlink" title="$\zeta$函数的解析延拓"></a>$\zeta$函数的解析延拓</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在中学数学中，我们所接触到的函数都是实变函数，即从实数集到实数集的映射，写为$f:\mathbb{R}\rightarrow\mathbb{R}$。在接触了虚数单位i和复数后，就可以开始定义复变函数，即复数集到复数集的映射，写为$f:\mathbb{C}\rightarrow\mathbb{C}$。实变函数的定义域被限制在了实轴上，而为了表示出一个与之对应的复变函数，就需要扩充其定义域到复平面上。这样，可以定义出复数域上的各种函数：指数、对数、三角函数等。由于复数的性质，还需要根据枝点规定割线、单值分支等，来确定出函数值。而原本定义域只在复平面上某一区域的复变函数，经过严格的数学推导（例如级数展开等），也可以扩充其定义域。这时，解析延拓的办法应运而生。对于$\zeta(s)$函数而言，非常明显，当$s$取在实轴上（即作为实变函数时），若$s\le 1$，其函数值发散；而$s&gt;1$时收敛。特别的，$s=1$时为调和级数，而$s=2$时由高斯最早计算出了其函数值$\frac{\pi^2}{6}$。<br>在复数域上，可以证明，$\zeta(s)$在$Re(s)&gt;1$上解析。接下来，我们需要将其定义域扩展到全复平面；之前的级数定义将不在对$Re(s)&lt;1$的情况使用，因为它不收敛，无法采用Cauchy和。</p>
-<h3 id="梅林变换"><a href="#梅林变换" class="headerlink" title="梅林变换"></a>梅林变换</h3><p>梅林（Mellin）变换是一个积分变换，它把一个正实数域$\mathbb{R}^+$上的函数变换为一个复数域$\mathbb{C}$上的函数。设$f:\mathbb{R}^+\rightarrow\mathbb{C}$是一个函数，定义：</p>
-<script type="math/tex; mode=display">\mathcal{M}f(z)=\int_0^{+\infty}f(s)s^z\frac{ds}{s}</script><p>称$\mathcal{M}f:\mathbb{C}\rightarrow\mathbb{C}$为$f$的梅林变换。<br>取$f(s)$为$f_\lambda (s)=e^{-\lambda s}$，则有：<br>\begin{align*}<br>\mathcal{M}f(z)&amp;=\int_0^{+\infty}e^{-\lambda s}s^z\frac{ds}{s}\\<br>&amp;=\lambda^{-z}\int_0^{+\infty}e^{-s}s^{z-1}ds\\<br>&amp;=\lambda^{-z}\Gamma(z)<br>\end{align*}<br>这里的$\Gamma(z)$就是一般数理方程中会涉及到的$\Gamma$函数，其性质不再赘述。<br>记住以上结论，取$\lambda=\pi n^2$，继续构造函数：</p>
-<script type="math/tex; mode=display">f(s)=\sum_{n=1}^{\infty}f_{\pi n^2}(s)=\sum_{n=1}^{\infty}e^{-\pi n^2 s}</script><p>注意到梅林变换是线性的，这时，<br>\begin{align*}<br>\mathcal{M}f(z)&amp;=\sum<em>{n=1}^{\infty}\mathcal{M}f</em>{\pi n^2}(z)\\<br>&amp;=\sum<em>{n=1}^{\infty}(\pi n^2)^{-z}\Gamma(z)\\<br>&amp;=\pi^{-z}\sum</em>{n=1}^{\infty}n^{-2z}\Gamma(z)\\<br>&amp;=\pi^{-z}\zeta(2z)\Gamma(z)<br>\end{align*}<br>最后一个等号使用了$\zeta$函数的原始定义。考虑到：</p>
-<script type="math/tex; mode=display">\mathcal{M}f(z)=\int_0^{+\infty}(\sum_{n=1}^{\infty}e^{-\pi n^2 s})s^{z-1}ds</script><p>于是，利用$\mathcal{M}f(z)$的两个等价表达式，我们得到了一个重要结论：</p>
-<script type="math/tex; mode=display">\pi^{-z}\zeta(2z)\Gamma(z)=\int_0^{+\infty}(\sum_{n=1}^{\infty}e^{-\pi n^2 s})s^{z-1}ds</script><p>注意，这里的推导并非十分严谨，还需要证明其收敛性，才能交换积分与极限。这要求$Re(z)&gt;\frac{1}{2}$。</p>
+<h3 id="梅林变换"><a href="#梅林变换" class="headerlink" title="梅林变换"></a>梅林变换</h3><p>梅林（Mellin）变换是一个积分变换，它把一个正实数域$\mathbb{R}^+$上的函数变换为一个复数域$\mathbb{C}$上的函数。设$f:\mathbb{R}^+\rightarrow\mathbb{C}$是一个函数，定义：<br>$$\mathcal{M}f(z)=\int_0^{+\infty}f(s)s^z\frac{ds}{s}$$<br>称$\mathcal{M}f:\mathbb{C}\rightarrow\mathbb{C}$为$f$的梅林变换。<br>取$f(s)$为$f_\lambda (s)=e^{-\lambda s}$，则有：<br>\begin{align*}
+\mathcal{M}f(z)&amp;=\int_0^{+\infty}e^{-\lambda s}s^z\frac{ds}{s}\\<br>&amp;=\lambda^{-z}\int_0^{+\infty}e^{-s}s^{z-1}ds\\<br>&amp;=\lambda^{-z}\Gamma(z)<br>\end{align*}
+这里的$\Gamma(z)$就是一般数理方程中会涉及到的$\Gamma$函数，其性质不再赘述。<br>记住以上结论，取$\lambda=\pi n^2$，继续构造函数：<br>$$f(s)=\sum_{n=1}^{\infty}f_{\pi n^2}(s)=\sum_{n=1}^{\infty}e^{-\pi n^2 s}$$<br>注意到梅林变换是线性的，这时，<br>\begin{align*}
+\mathcal{M}f(z)&amp;=\sum_{n=1}^{\infty}\mathcal{M}f_{\pi n^2}(z)\\<br>&amp;=\sum_{n=1}^{\infty}(\pi n^2)^{-z}\Gamma(z)\\<br>&amp;=\pi^{-z}\sum_{n=1}^{\infty}n^{-2z}\Gamma(z)\\<br>&amp;=\pi^{-z}\zeta(2z)\Gamma(z)<br>\end{align*}
+最后一个等号使用了$\zeta$函数的原始定义。考虑到：<br>$$\mathcal{M}f(z)=\int_0^{+\infty}(\sum_{n=1}^{\infty}e^{-\pi n^2 s})s^{z-1}ds$$<br>于是，利用$\mathcal{M}f(z)$的两个等价表达式，我们得到了一个重要结论：<br>$$\pi^{-z}\zeta(2z)\Gamma(z)=\int_0^{+\infty}(\sum_{n=1}^{\infty}e^{-\pi n^2 s})s^{z-1}ds$$<br>注意，这里的推导并非十分严谨，还需要证明其收敛性，才能交换积分与极限。这要求$Re(z)&gt;\frac{1}{2}$。</p>
 <a id="more"></a>
-<h3 id="泊松求和"><a href="#泊松求和" class="headerlink" title="泊松求和"></a>泊松求和</h3><p>再来看一下Fourier变换</p>
-<script type="math/tex; mode=display">\mathcal{F}f(x)=\int_{-\infty}^{+\infty}f(t)e^{ixt}dt</script><p>对于足够『好』的函数$f$，可以证明泊松（Poisson）求和公式</p>
-<script type="math/tex; mode=display">\sum_{n\in\mathbb{Z}}f(n)=\sum_{n\in\mathbb{Z}}\mathcal{F}f(n)</script><p>这部分我们就证明这个公式。<br>假设$f$足够『好』（要多好有多好），定义</p>
-<script type="math/tex; mode=display">F(t)=\sum_{n\in\mathbb{Z}}f(n+t)</script><p>则$F$是$\mathbb{R}$上周期为$1$的函数，于是可以构造$F$的Fourier级数：令</p>
-<script type="math/tex; mode=display">c_k=\int_0^1F(t)e^{-2\pi ikt}dt</script><p>是第$k$个Fourier系数，则</p>
-<script type="math/tex; mode=display">F(t)\sim\sum_{k\in\mathbb{Z}}c_ke^{2\pi ikt}</script><p>而这个系数<br>\begin{align*}<br>c<em>k&amp;=\int_0^1F(t)e^{-2\pi ikt}dt\\<br>&amp;=\int_0^1\sum</em>{n\in\mathbb{Z}}f(n+t)e^{-2\pi ik(n+t)}dt\\<br>&amp;=\int_{-\infty}^{+\infty}f(t)e^{-2\pi ikt}dt\\<br>&amp;=\mathcal{F}f(k)<br>\end{align*}<br>从而</p>
-<script type="math/tex; mode=display">\sum_{n\in\mathbb{Z}}f(n)=F(0)\sim\sum_{k\in\mathbb{Z}}c_k=\sum_{k\in\mathbb{Z}}\mathcal{F}f(k)</script><p>就得到了Poisson求和公式形式上的『证明』。<br>那么$f$究竟要满足什么条件呢？<br>如果周期函数$F\in C^2[0,1]$，就有$F(t)=\sum_{k\in\mathbb{Z}}c_ke^{2\pi ikt}$。因此，我们要求$f$二阶连续可导，并且</p>
-<script type="math/tex; mode=display">\sum_{n\in\mathbb{Z}}||f||\_{[n.n+1],\infty}+||f'||\_{[n.n+1],\infty}+||f''||\_{[n.n+1],\infty}<+\infty</script><p>使用导数一致收敛的判别法则，就得到$F\in C^2[0,1]$啦。<br>也就是说，如果$f\in C^2(\mathbb{R})$，并且满足以上条件，就有Poisson求和公式</p>
-<script type="math/tex; mode=display">\sum_{n\in\mathbb{Z}}f(n)=\sum_{n\in\mathbb{Z}}\mathcal{F}f(n)</script><h3 id="解析延拓"><a href="#解析延拓" class="headerlink" title="解析延拓"></a>解析延拓</h3><p>设$\lambda&gt;0$，令<br>\begin{eqnarray*}<br>\theta(\lambda)&amp;=&amp;\sum<em>{n\in\mathbb{Z}}e^{-\pi n^2\lambda}\\<br>\psi(\lambda)&amp;=&amp;\sum</em>{n=1}^\infty e^{-\pi n^2\lambda}<br>\end{eqnarray*}<br>很显然$\theta(\lambda)=2\psi(\lambda)+1$。<br>考虑$f(t)=e^{-\pi t^2\lambda}$，计算得$\mathcal{F}f(x)=\frac{1}{\sqrt{\lambda}}e^{-\pi\frac{x^2}{\lambda}}$，而且满足相应条件，因此用Poisson求和公式，</p>
-<script type="math/tex; mode=display">\sum_{n\in\mathbb{Z}}e^{-\pi n^2\lambda}=\frac{1}{\sqrt{\lambda}}\sum_{n\in\mathbb{Z}}e^{-\pi\frac{n^2}{\lambda}}</script><p>即$\theta(\lambda)=\frac{1}{\sqrt{\lambda}}\theta\left(\frac{1}{\lambda}\right)$。<br>换成$\psi$就是$\psi\left(\frac{1}{\lambda}\right)=\sqrt{\lambda}\psi(\lambda)+\frac{\sqrt{\lambda}-1}{2}$。<br>第二部分的最后，得到了<br>\begin{align*}<br>\pi^{-z}\zeta(2z)\Gamma(z)&amp;=\int<em>0^{+\infty}\left(\sum</em>{n=1}^\infty e^{-\pi n^2s}\right)s^{z-1}ds\\<br>&amp;=\int_0^{+\infty}\psi(s)s^{z-1}ds<br>\end{align*}<br>因此<br>\begin{align*}<br>\pi^{-z}\zeta(2z)\Gamma(z)&amp;=\int_0^{+\infty}\psi(s)s^{z-1}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)s^{z-1}ds+\int_0^1\psi(s)s^{z-1}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)s^{z-1}ds+\int_1^{+\infty}\psi\left(\frac{1}{s}\right)s^{1-z}\frac{ds}{s^2}\\<br>&amp;=\int_1^{+\infty}\psi(s)s^{z-1}ds+\int_1^{+\infty}\left(\psi(s)\sqrt{s}+\frac{\sqrt{s}-1}{2}\right)s^{-1-z}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)(s^{z-1}+s^{-z-\frac{1}{2}})ds+\int_1^{+\infty}\frac{s^{-z-\frac{1}{2}}-s^{-z-1}}{2}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)(s^{z-1}+s^{-z-\frac{1}{2}})ds+\frac{1}{2z(2z-1)}<br>\end{align*}<br>以上计算的前提是$Re(z)&gt;\frac{1}{2}$。<br>令$w=2z$，则当$Re(w)&gt;1$时，</p>
-<script type="math/tex; mode=display">\sqrt{\pi}^{-w}\zeta(w)\Gamma\left(\frac{w}{2}\right)=\int_1^{+\infty}\psi(s)(\sqrt{s}^{w-2}+\sqrt{s}^{-w-1})ds-\frac{1}{w(1-w)}</script><p>现在观察：等号右边是一个亚纯函数（亚纯函数就是『能表示成两个解析函数的商』的函数，或者『没有本性奇点』的函数，两个亚纯函数经过四则运算仍然是亚纯函数），而等号左边的$\sqrt{\pi}^{-w}$、$\Gamma\left(\frac{w}{2}\right)$也都是亚纯函数。这样，上式相当于给出了$\zeta(w)$在$w\in\mathbb{C}$上的定义！</p>
-<h2 id="所有自然数的『和』"><a href="#所有自然数的『和』" class="headerlink" title="所有自然数的『和』"></a>所有自然数的『和』</h2><p>这还没完，试试在等号右边把$w$换为$1-w$，你会发现式子根本没变。这就说明：</p>
-<script type="math/tex; mode=display">\sqrt{\pi}^{-w}\zeta(w)\Gamma\left(\frac{w}{2}\right)=\sqrt{\pi}^{w-1}\zeta(1-w)\Gamma\left(\frac{1-w}{2}\right)</script><p>现在让$w=-1$，就有</p>
-<script type="math/tex; mode=display">\sqrt{\pi}\zeta(-1)\Gamma\left(-\frac{1}{2}\right)=\sqrt{\pi}^{-2}\zeta(2)\Gamma(1)</script><p>我们知道</p>
-<script type="math/tex; mode=display">\zeta(2)=\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}</script><p>并且，<br>\begin{eqnarray*}<br>\Gamma(1)&amp;=&amp;1\\<br>\Gamma\left(\frac{1}{2}\right)&amp;=&amp;\sqrt{\pi}\\<br>\Gamma\left(-\frac{1}{2}\right)&amp;=&amp;\frac{\Gamma\left(\frac{1}{2}\right)}{-\frac{1}{2}}=-2\sqrt{\pi}<br>\end{eqnarray*}<br>因此：</p>
-<script type="math/tex; mode=display">\zeta(-1)=\frac{\sqrt{\pi}^{-2}\zeta(2)\Gamma(1)}{\sqrt{\pi}\Gamma\left(-\frac{1}{2}\right)}=\frac{\frac{\pi^2}{6}}{\sqrt{\pi}^3(-2)\sqrt{\pi}}=-\frac{1}{12}</script><p>我们便得出了全体自然数的『和』为$-\frac{1}{12}$这一结论。</p>
-<h2 id="黎曼猜想与素数"><a href="#黎曼猜想与素数" class="headerlink" title="黎曼猜想与素数"></a>黎曼猜想与素数</h2><h3 id="欧拉乘积公式"><a href="#欧拉乘积公式" class="headerlink" title="欧拉乘积公式"></a>欧拉乘积公式</h3><p>从$\zeta$函数的原始定义出发：</p>
-<script type="math/tex; mode=display">\zeta(s)=\frac{1}{1^s}+\frac{1}{2^s}+\frac{1}{3^s}+\cdots</script><p>在等式两边同时乘以第二项：</p>
-<script type="math/tex; mode=display">\frac{1}{2^s}\times\zeta(s)=\frac{1}{2^s}+\frac{1}{4^s}+\frac{1}{6^s}+\cdots</script><p>两式相减得：</p>
-<script type="math/tex; mode=display">(1-\frac{1}{2^s})\times\zeta(s)=\frac{1}{1^s}+\frac{1}{3^s}+\frac{1}{5^s}+\cdots</script><p>这时，等号右边的分母上已经没有2的倍数了。重复这一过程：</p>
-<script type="math/tex; mode=display">\frac{1}{3^s}\times(1-\frac{1}{2^s})\zeta(s)=\frac{1}{3^s}+\frac{1}{9^s}+\frac{1}{15^s}+\cdots</script><p>以上两式相减，又有：</p>
-<script type="math/tex; mode=display">(1-\frac{1}{3^s})(1-\frac{1}{2^s})\zeta(s)=\frac{1}{1^s}+\frac{1}{5^s}+\frac{1}{7^s}+\cdots</script><p>等号右边也没有3的倍数了。无限重复此过程，就有：</p>
-<script type="math/tex; mode=display">\cdots(1-\frac{1}{11^s})(1-\frac{1}{7^s})(1-\frac{1}{5^s})(1-\frac{1}{3^s})\zeta(s)=1</script><p>即：</p>
-<script type="math/tex; mode=display">\zeta(s)=\frac{1}{1-\frac{1}{2^s}}\times\frac{1}{1-\frac{1}{3^s}}\times\frac{1}{1-\frac{1}{5^s}}\times\frac{1}{1-\frac{1}{7^s}}\times\cdots</script><p>可以写成：</p>
-<script type="math/tex; mode=display">\zeta(s)=\sum_n\frac{1}{n^s}=\prod_p\frac{1}{1-p^{-s}}</script><p>这就是欧拉乘积公式，该表达式首先出现在1737年一篇题为《Variae observationes circa series infinitas》（无穷级数的各种观察）的论文中。<br>该恒等式展示了素数与$\zeta$函数间的联系。</p>
-<h3 id="莫比乌斯函数"><a href="#莫比乌斯函数" class="headerlink" title="莫比乌斯函数"></a>莫比乌斯函数</h3><p>奥古斯特·费迪南德·莫比乌斯之后重写了欧拉乘积公式，创造了一个新的求和。首先引入莫比乌斯函数：</p>
-<script type="math/tex; mode=display">\mu(n)=
-\begin{cases}
-1 & n是偶数个不同的素数相乘\\\\
--1 & n是奇数个不同的素数相乘\\\\
-0 & n被某个素数的平方整除
-\end{cases}</script><p>和式用$\mu(n)$表示如下：</p>
-<script type="math/tex; mode=display">\frac{1}{\zeta(s)}=\sum_{n\in\mathbb{N}}\frac{\mu(n)}{n^s}</script><h3 id="素数计数函数"><a href="#素数计数函数" class="headerlink" title="素数计数函数"></a>素数计数函数</h3><p>定义为</p>
-<script type="math/tex; mode=display">\pi(x)=\sum_{p\le x}1</script><p>表示不超过x的素数个数。<br>在间断点处用左右平均代替更好，重新定义：</p>
-<script type="math/tex; mode=display">\pi(x)=\frac{1}{2}\left(\sum_{p\le x}1+\sum_{p< x}1\right)</script><p>令</p>
-<script type="math/tex; mode=display">\Pi(x)=\sum_n\frac{1}{n}\pi(x^{\frac{1}{n}})</script><p>有莫比乌斯反转</p>
-<script type="math/tex; mode=display">\pi(x)=\sum_n\frac{\mu(n)}{n}\Pi(x^{\frac{1}{n}})</script><h3 id="素数定理"><a href="#素数定理" class="headerlink" title="素数定理"></a>素数定理</h3><p>素数定理由高斯和勒让德独立地阐述：</p>
-<script type="math/tex; mode=display">\mathop{\lim}\_{x\rightarrow\infty}\frac{\pi(x)}{\frac{x}{\ln(x)}}=1</script><p>目前人类证明的素数定理的误差界是</p>
-<script type="math/tex; mode=display">\pi(x)=Li(x)+O\left(x\exp\left({-\frac{A(\ln x)^{0.6}}{(\ln\ln x)^{0.2}}}\right)\right)</script><p>从概率的角度来说，素数定理说明若你随机选择一个自然数$x$，那么该数字为素数的概率约为$\frac{1}{\ln(x)}$。这意味着前$x$个整数中相邻素数之间的平均间隙约为$\ln(x)$。</p>
-<h3 id="对数积分函数"><a href="#对数积分函数" class="headerlink" title="对数积分函数"></a>对数积分函数</h3><p>定义</p>
-<script type="math/tex; mode=display">Li(x)=\int_2^x\frac{1}{\ln(t)}dt</script><p>称为对数积分函数。<br>那么</p>
-<script type="math/tex; mode=display">\Pi(x)=Li(x)-\sum_{\rho}Li(x^{\rho})-\ln 2+\int_x^\infty\frac{dt}{t(t^2-1)\ln t}</script><p>其中求和号的$\rho$取$\zeta(s)$的非平凡零点，求和之后通常表现为震荡。至于剩下的常数和积分，对较大的$x$可以忽略。</p>
+<h3 id="泊松求和"><a href="#泊松求和" class="headerlink" title="泊松求和"></a>泊松求和</h3><p>再来看一下Fourier变换<br>$$\mathcal{F}f(x)=\int_{-\infty}^{+\infty}f(t)e^{ixt}dt$$<br>对于足够『好』的函数$f$，可以证明泊松（Poisson）求和公式<br>$$\sum_{n\in\mathbb{Z}}f(n)=\sum_{n\in\mathbb{Z}}\mathcal{F}f(n)$$<br>这部分我们就证明这个公式。<br>假设$f$足够『好』（要多好有多好），定义<br>$$F(t)=\sum_{n\in\mathbb{Z}}f(n+t)$$<br>则$F$是$\mathbb{R}$上周期为$1$的函数，于是可以构造$F$的Fourier级数：令<br>$$c_k=\int_0^1F(t)e^{-2\pi ikt}dt$$<br>是第$k$个Fourier系数，则<br>$$F(t)\sim\sum_{k\in\mathbb{Z}}c_ke^{2\pi ikt}$$<br>而这个系数<br>\begin{align*}
+c_k&amp;=\int_0^1F(t)e^{-2\pi ikt}dt\\<br>&amp;=\int_0^1\sum_{n\in\mathbb{Z}}f(n+t)e^{-2\pi ik(n+t)}dt\\<br>&amp;=\int_{-\infty}^{+\infty}f(t)e^{-2\pi ikt}dt\\<br>&amp;=\mathcal{F}f(k)<br>\end{align*}
+从而<br>$$\sum_{n\in\mathbb{Z}}f(n)=F(0)\sim\sum_{k\in\mathbb{Z}}c_k=\sum_{k\in\mathbb{Z}}\mathcal{F}f(k)$$<br>就得到了Poisson求和公式形式上的『证明』。<br>那么$f$究竟要满足什么条件呢？<br>如果周期函数$F\in C^2[0,1]$，就有$F(t)=\sum_{k\in\mathbb{Z}}c_ke^{2\pi ikt}$。因此，我们要求$f$二阶连续可导，并且<br>$$\sum_{n\in\mathbb{Z}}||f||_{[n.n+1],\infty}+||f’||_{[n.n+1],\infty}+||f’’||_{[n.n+1],\infty}&lt;+\infty$$<br>使用导数一致收敛的判别法则，就得到$F\in C^2[0,1]$啦。<br>也就是说，如果$f\in C^2(\mathbb{R})$，并且满足以上条件，就有Poisson求和公式<br>$$\sum_{n\in\mathbb{Z}}f(n)=\sum_{n\in\mathbb{Z}}\mathcal{F}f(n)$$</p>
+<h3 id="解析延拓"><a href="#解析延拓" class="headerlink" title="解析延拓"></a>解析延拓</h3><p>设$\lambda&gt;0$，令<br>\begin{eqnarray*}
+\theta(\lambda)&amp;=&amp;\sum_{n\in\mathbb{Z}}e^{-\pi n^2\lambda}\\<br>\psi(\lambda)&amp;=&amp;\sum_{n=1}^\infty e^{-\pi n^2\lambda}<br>\end{eqnarray*}
+很显然$\theta(\lambda)=2\psi(\lambda)+1$。<br>考虑$f(t)=e^{-\pi t^2\lambda}$，计算得$\mathcal{F}f(x)=\frac{1}{\sqrt{\lambda}}e^{-\pi\frac{x^2}{\lambda}}$，而且满足相应条件，因此用Poisson求和公式，<br>$$\sum_{n\in\mathbb{Z}}e^{-\pi n^2\lambda}=\frac{1}{\sqrt{\lambda}}\sum_{n\in\mathbb{Z}}e^{-\pi\frac{n^2}{\lambda}}$$<br>即$\theta(\lambda)=\frac{1}{\sqrt{\lambda}}\theta\left(\frac{1}{\lambda}\right)$。<br>换成$\psi$就是$\psi\left(\frac{1}{\lambda}\right)=\sqrt{\lambda}\psi(\lambda)+\frac{\sqrt{\lambda}-1}{2}$。<br>第二部分的最后，得到了<br>\begin{align*}
+\pi^{-z}\zeta(2z)\Gamma(z)&amp;=\int_0^{+\infty}\left(\sum_{n=1}^\infty e^{-\pi n^2s}\right)s^{z-1}ds\\<br>&amp;=\int_0^{+\infty}\psi(s)s^{z-1}ds<br>\end{align*}
+因此<br>\begin{align*}
+\pi^{-z}\zeta(2z)\Gamma(z)&amp;=\int_0^{+\infty}\psi(s)s^{z-1}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)s^{z-1}ds+\int_0^1\psi(s)s^{z-1}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)s^{z-1}ds+\int_1^{+\infty}\psi\left(\frac{1}{s}\right)s^{1-z}\frac{ds}{s^2}\\<br>&amp;=\int_1^{+\infty}\psi(s)s^{z-1}ds+\int_1^{+\infty}\left(\psi(s)\sqrt{s}+\frac{\sqrt{s}-1}{2}\right)s^{-1-z}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)(s^{z-1}+s^{-z-\frac{1}{2}})ds+\int_1^{+\infty}\frac{s^{-z-\frac{1}{2}}-s^{-z-1}}{2}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)(s^{z-1}+s^{-z-\frac{1}{2}})ds+\frac{1}{2z(2z-1)}<br>\end{align*}
+以上计算的前提是$Re(z)&gt;\frac{1}{2}$。<br>令$w=2z$，则当$Re(w)&gt;1$时，<br>$$\sqrt{\pi}^{-w}\zeta(w)\Gamma\left(\frac{w}{2}\right)=\int_1^{+\infty}\psi(s)(\sqrt{s}^{w-2}+\sqrt{s}^{-w-1})ds-\frac{1}{w(1-w)}$$<br>现在观察：等号右边是一个亚纯函数（亚纯函数就是『能表示成两个解析函数的商』的函数，或者『没有本性奇点』的函数，两个亚纯函数经过四则运算仍然是亚纯函数），而等号左边的$\sqrt{\pi}^{-w}$、$\Gamma\left(\frac{w}{2}\right)$也都是亚纯函数。这样，上式相当于给出了$\zeta(w)$在$w\in\mathbb{C}$上的定义！</p>
+<h2 id="所有自然数的『和』"><a href="#所有自然数的『和』" class="headerlink" title="所有自然数的『和』"></a>所有自然数的『和』</h2><p>这还没完，试试在等号右边把$w$换为$1-w$，你会发现式子根本没变。这就说明：<br>$$\sqrt{\pi}^{-w}\zeta(w)\Gamma\left(\frac{w}{2}\right)=\sqrt{\pi}^{w-1}\zeta(1-w)\Gamma\left(\frac{1-w}{2}\right)$$<br>现在让$w=-1$，就有<br>$$\sqrt{\pi}\zeta(-1)\Gamma\left(-\frac{1}{2}\right)=\sqrt{\pi}^{-2}\zeta(2)\Gamma(1)$$<br>我们知道<br>$$\zeta(2)=\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}$$<br>并且，<br>\begin{eqnarray*}
+\Gamma(1)&amp;=&amp;1\\<br>\Gamma\left(\frac{1}{2}\right)&amp;=&amp;\sqrt{\pi}\\<br>\Gamma\left(-\frac{1}{2}\right)&amp;=&amp;\frac{\Gamma\left(\frac{1}{2}\right)}{-\frac{1}{2}}=-2\sqrt{\pi}<br>\end{eqnarray*}
+因此：<br>$$\zeta(-1)=\frac{\sqrt{\pi}^{-2}\zeta(2)\Gamma(1)}{\sqrt{\pi}\Gamma\left(-\frac{1}{2}\right)}=\frac{\frac{\pi^2}{6}}{\sqrt{\pi}^3(-2)\sqrt{\pi}}=-\frac{1}{12}$$<br>我们便得出了全体自然数的『和』为$-\frac{1}{12}$这一结论。</p>
+<h2 id="黎曼猜想与素数"><a href="#黎曼猜想与素数" class="headerlink" title="黎曼猜想与素数"></a>黎曼猜想与素数</h2><h3 id="欧拉乘积公式"><a href="#欧拉乘积公式" class="headerlink" title="欧拉乘积公式"></a>欧拉乘积公式</h3><p>从$\zeta$函数的原始定义出发：<br>$$\zeta(s)=\frac{1}{1^s}+\frac{1}{2^s}+\frac{1}{3^s}+\cdots$$<br>在等式两边同时乘以第二项：<br>$$\frac{1}{2^s}\times\zeta(s)=\frac{1}{2^s}+\frac{1}{4^s}+\frac{1}{6^s}+\cdots$$<br>两式相减得：<br>$$(1-\frac{1}{2^s})\times\zeta(s)=\frac{1}{1^s}+\frac{1}{3^s}+\frac{1}{5^s}+\cdots$$<br>这时，等号右边的分母上已经没有2的倍数了。重复这一过程：<br>$$\frac{1}{3^s}\times(1-\frac{1}{2^s})\zeta(s)=\frac{1}{3^s}+\frac{1}{9^s}+\frac{1}{15^s}+\cdots$$<br>以上两式相减，又有：<br>$$(1-\frac{1}{3^s})(1-\frac{1}{2^s})\zeta(s)=\frac{1}{1^s}+\frac{1}{5^s}+\frac{1}{7^s}+\cdots$$<br>等号右边也没有3的倍数了。无限重复此过程，就有：<br>$$\cdots(1-\frac{1}{11^s})(1-\frac{1}{7^s})(1-\frac{1}{5^s})(1-\frac{1}{3^s})\zeta(s)=1$$<br>即：<br>$$\zeta(s)=\frac{1}{1-\frac{1}{2^s}}\times\frac{1}{1-\frac{1}{3^s}}\times\frac{1}{1-\frac{1}{5^s}}\times\frac{1}{1-\frac{1}{7^s}}\times\cdots$$<br>可以写成：<br>$$\zeta(s)=\sum_n\frac{1}{n^s}=\prod_p\frac{1}{1-p^{-s}}$$<br>这就是欧拉乘积公式，该表达式首先出现在1737年一篇题为《Variae observationes circa series infinitas》（无穷级数的各种观察）的论文中。<br>该恒等式展示了素数与$\zeta$函数间的联系。</p>
+<h3 id="莫比乌斯函数"><a href="#莫比乌斯函数" class="headerlink" title="莫比乌斯函数"></a>莫比乌斯函数</h3><p>奥古斯特·费迪南德·莫比乌斯之后重写了欧拉乘积公式，创造了一个新的求和。首先引入莫比乌斯函数：<br>$$\mu(n)=<br>\begin{cases}<br>1 &amp; n是偶数个不同的素数相乘\\<br>-1 &amp; n是奇数个不同的素数相乘\\<br>0 &amp; n被某个素数的平方整除<br>\end{cases}<br>$$<br>和式用$\mu(n)$表示如下：<br>$$\frac{1}{\zeta(s)}=\sum_{n\in\mathbb{N}}\frac{\mu(n)}{n^s}$$</p>
+<h3 id="素数计数函数"><a href="#素数计数函数" class="headerlink" title="素数计数函数"></a>素数计数函数</h3><p>定义为<br>$$\pi(x)=\sum_{p\le x}1$$<br>表示不超过x的素数个数。<br>在间断点处用左右平均代替更好，重新定义：<br>$$\pi(x)=\frac{1}{2}\left(\sum_{p\le x}1+\sum_{p&lt; x}1\right)$$<br>令
+$$\Pi(x)=\sum_n\frac{1}{n}\pi(x^{\frac{1}{n}})$$<br>有莫比乌斯反转<br>$$\pi(x)=\sum_n\frac{\mu(n)}{n}\Pi(x^{\frac{1}{n}})$$</p>
+<h3 id="素数定理"><a href="#素数定理" class="headerlink" title="素数定理"></a>素数定理</h3><p>素数定理由高斯和勒让德独立地阐述：<br>$$\mathop{\lim}_{x\rightarrow\infty}\frac{\pi(x)}{\frac{x}{\ln(x)}}=1$$<br>目前人类证明的素数定理的误差界是<br>$$\pi(x)=Li(x)+O\left(x\exp\left({-\frac{A(\ln x)^{0.6}}{(\ln\ln x)^{0.2}}}\right)\right)$$<br>从概率的角度来说，素数定理说明若你随机选择一个自然数$x$，那么该数字为素数的概率约为$\frac{1}{\ln(x)}$。这意味着前$x$个整数中相邻素数之间的平均间隙约为$\ln(x)$。</p>
+<h3 id="对数积分函数"><a href="#对数积分函数" class="headerlink" title="对数积分函数"></a>对数积分函数</h3><p>定义<br>$$Li(x)=\int_2^x\frac{1}{\ln(t)}dt$$<br>称为对数积分函数。<br>那么<br>$$\Pi(x)=Li(x)-\sum_{\rho}Li(x^{\rho})-\ln 2+\int_x^\infty\frac{dt}{t(t^2-1)\ln t}$$<br>其中求和号的$\rho$取$\zeta(s)$的非平凡零点，求和之后通常表现为震荡。至于剩下的常数和积分，对较大的$x$可以忽略。</p>
 <h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2><p>敬请期待</p>
 <hr>
 <p>参考文章：<br><a href="https://en.wikipedia.org/wiki/Riemann_hypothesis" target="_blank" rel="noopener">黎曼猜想 - 维基百科</a><br><a href="https://zhuanlan.zhihu.com/p/35397224" target="_blank" rel="noopener">为什么全体自然数的和是负十二分之一？ - 知乎</a><br><a href="https://zhuanlan.zhihu.com/p/45240901" target="_blank" rel="noopener">黎曼猜想跟素数分布有怎样的联系 - 知乎</a><br><a href="https://zhuanlan.zhihu.com/p/25055731" target="_blank" rel="noopener">黎曼猜想，及其解释（上） - 知乎</a><br><a href="https://zhuanlan.zhihu.com/p/25222934" target="_blank" rel="noopener">黎曼猜想，及其解释（下） - 知乎</a></p>
@@ -342,7 +318,7 @@ top: initial;
 </ul>
 <div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -350,7 +326,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -452,7 +428,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.1.2"></script>
 <script src="/js/post-details.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

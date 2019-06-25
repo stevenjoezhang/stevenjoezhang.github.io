@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -86,10 +86,10 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left page-post-detail">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -161,15 +161,15 @@ top: initial;
 <div class="content-wrap">
 <div id="content" class="content">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/制造MD5碰撞/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -189,7 +189,7 @@ top: initial;
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
@@ -211,10 +211,12 @@ top: initial;
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>下面这两张图片拥有相同的MD5值<code>253dd04e87492e4fc3471de5e776bc3d</code>：</p>
-<p><img src="/images/2018-02/plane.jpg" alt=""><br><img src="/images/2018-02/ship.jpg" alt=""></p>
+<p><img src="/images/2018-02/plane.jpg" alt><br><img src="/images/2018-02/ship.jpg" alt></p>
 <a id="more"></a>
-<p>使用Python计算文件MD5值的脚本：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">md5sum</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isfile(filename):</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    myhash = hashlib.md5()</span><br><span class="line">    f = file(filename, <span class="string">"rb"</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        b = f.read(<span class="number">8192</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> b:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        myhash.update(b)</span><br><span class="line">    f.close()</span><br><span class="line">    <span class="keyword">return</span> myhash.hexdigest()</span><br><span class="line"></span><br><span class="line">filepath = raw_input(<span class="string">"请输入文件路径："</span>)</span><br><span class="line">print(md5sum(filepath))</span><br></pre></td></tr></table></figure></p>
-<p>还有Python3的版本：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> partial</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">md5sum</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(filename, mode = <span class="string">"rb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">        myhash = hashlib.md5()</span><br><span class="line">        <span class="keyword">for</span> buf <span class="keyword">in</span> iter(partial(f.read, <span class="number">128</span>), <span class="string">b""</span>):</span><br><span class="line">            myhash.update(buf)</span><br><span class="line">    <span class="keyword">return</span> myhash.hexdigest()</span><br><span class="line"></span><br><span class="line">print(md5sum(input(<span class="string">"请输入文件路径："</span>)))</span><br></pre></td></tr></table></figure></p>
+<p>使用Python计算文件MD5值的脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">md5sum</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isfile(filename):</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    myhash = hashlib.md5()</span><br><span class="line">    f = file(filename, <span class="string">"rb"</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        b = f.read(<span class="number">8192</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> b:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        myhash.update(b)</span><br><span class="line">    f.close()</span><br><span class="line">    <span class="keyword">return</span> myhash.hexdigest()</span><br><span class="line"></span><br><span class="line">filepath = raw_input(<span class="string">"请输入文件路径："</span>)</span><br><span class="line">print(md5sum(filepath))</span><br></pre></td></tr></table></figure>
+<p>还有Python3的版本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> partial</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">md5sum</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(filename, mode = <span class="string">"rb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">        myhash = hashlib.md5()</span><br><span class="line">        <span class="keyword">for</span> buf <span class="keyword">in</span> iter(partial(f.read, <span class="number">128</span>), <span class="string">b""</span>):</span><br><span class="line">            myhash.update(buf)</span><br><span class="line">    <span class="keyword">return</span> myhash.hexdigest()</span><br><span class="line"></span><br><span class="line">print(md5sum(input(<span class="string">"请输入文件路径："</span>)))</span><br></pre></td></tr></table></figure>
 <p>拓展阅读：<br><a href="https://www.zhihu.com/question/265534528/answer/300135154" target="_blank" rel="noopener">至今有没有发现哪几个字符串的MD5相同? - 知乎</a><br><a href="https://natmchugh.blogspot.de/2015/02/create-your-own-md5-collisions.html" target="_blank" rel="noopener">Create your own MD5 collisions</a></p>
 </div>
 <div>
@@ -287,7 +289,7 @@ top: initial;
 <div class="sidebar-inner">
 <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -295,7 +297,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -390,7 +392,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.1.2"></script>
 <script src="/js/post-details.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -87,10 +87,10 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left page-post-detail">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -162,15 +162,15 @@ top: initial;
 <div class="content-wrap">
 <div id="content" class="content">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-01/什么是CAT等级？/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -190,7 +190,7 @@ top: initial;
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
@@ -219,9 +219,8 @@ top: initial;
 <li>CAT III：直接连接到配电盘的大型设备的一次线路及配电盘与插座之间的电路线路（三相分配电路包括单个商业照明电路）。位置固定的设备，如多相马达、多相闸盒；大型建设物内部的照明设备、线路；工业现场（车间）的机床、电源配电盘等。</li>
 <li>CAT IV：三相公用供电设备和室外供电线路设备。涉及到『初始连接』的设备，如电站的电力分配系统；电力仪表，前端过置保护，任何室外输电线路。</li>
 </ul>
-<p><img src="/images/2019-01/2ccd70dcb7a54444c2cfeb2fc78c23a3.png" alt=""></p>
+<p><img src="/images/2019-01/2ccd70dcb7a54444c2cfeb2fc78c23a3.png" alt></p>
 <h3 id="如何理解CAT等级"><a href="#如何理解CAT等级" class="headerlink" title="如何理解CAT等级"></a>如何理解CAT等级</h3><p>CAT等级有各自的工作电压和瞬时峰值电压。CAT等级的工作电压分为：50V，150V，300V，600V，1000V。工作电压越高意味着能够承受的瞬时峰值电压也越高。<br>如下表所示：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -229,8 +228,7 @@ top: initial;
 <th>瞬时峰值</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>CAT IV 600V</td>
 <td>8kV impulse</td>
 </tr>
@@ -250,14 +248,12 @@ top: initial;
 <td>CAT II 1000V</td>
 <td>6kV impulse</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>下图有更详细的数据：</p>
-<p><img src="/images/2019-01/5e0693d4c540a6d44ba986dc647409cd.png" alt=""></p>
+<p><img src="/images/2019-01/5e0693d4c540a6d44ba986dc647409cd.png" alt></p>
 <h3 id="CAT-III-600V比CAT-II-1000V更安全"><a href="#CAT-III-600V比CAT-II-1000V更安全" class="headerlink" title="CAT III 600V比CAT II 1000V更安全"></a>CAT III 600V比CAT II 1000V更安全</h3><p>人们往往无法理解这一点，为什么只能承受600V电压的设备的比1000V更安全？<br>这里涉及到信号源阻抗的问题。信号源阻抗越大，CAT等级越低。由表1可知，CAT III等级的阻抗为2欧姆，CAT II等级的阻抗时12欧姆，即CAT II等级的源阻抗是CAT III等级阻抗的6倍。所以，虽然CAT III等级的电压虽小，但阻抗也小，电流大，从而能够承受更高能量的信号，所以说CAT III 600V比CAT II 1000V安全。<br>同一个CAT等级下，工作电压越高，其安全等级也越高（同一CAT等级的源阻抗相同）。例如：CAT III 1000V（8kV 瞬时高发）比CAT II 600V（6kV瞬时高压）更安全。<br>如果您需要测试一个电力电路，你应该会用到一个CAT III 600V或CAT IV 600V/CAT III 1000V的仪表，配套CAT IV-600V/CAT III-1000V测试线和探头。</p>
 <h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><p>问：PicoScope的CAT I等级的高压探头TA044为什么配套 CAT III 1000V等级的探头尖端？是不是厂家弄错了。<br>答：不是。Pico所有的高压差分探头配套的都是CAT III等级的探头尖端。如下图所示。TA044整体上是一个在CAT I 环境中能够安全使用的设备，能够测量的最大单端电压7kV。探头尖端采用的是工作电压1000V的CAT III等级，该等级下能够承受的瞬时最大尖峰电压是8kV，所以CAT III等级的探头尖端 用起来更加安全。</p>
-<p><img src="/images/2019-01/4fbf3af969c5f5b73093dbfd1600be96.png" alt=""></p>
+<p><img src="/images/2019-01/4fbf3af969c5f5b73093dbfd1600be96.png" alt></p>
 <hr>
 <p>本文转载自：<a href="http://www.eepw.com.cn/article/274406.htm" target="_blank" rel="noopener">CAT 等级</a></p>
 </div>
@@ -336,7 +332,7 @@ top: initial;
 </ul>
 <div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -344,7 +340,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -446,7 +442,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.1.2"></script>
 <script src="/js/post-details.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

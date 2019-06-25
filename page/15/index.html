@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -82,11 +82,11 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left
 page-home">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -158,15 +158,71 @@ page-home">
 <div class="content-wrap">
 <div id="content" class="content">
 <section id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/一行代码为网站添加访客地图/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/MySQL 8.0的安装和使用/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-03/MySQL 8.0的安装和使用/" class="post-title-link" itemprop="url">MySQL 8.0的安装和使用</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-03-09 10:16:24" itemprop="dateCreated datePublished" datetime="2018-03-09T10:16:24+08:00">2018-03-09</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<h2 id="MySQL的安装"><a href="#MySQL的安装" class="headerlink" title="MySQL的安装"></a>MySQL的安装</h2><p>在MySQL官网的<a href="https://dev.mysql.com/downloads" target="_blank" rel="noopener">下载页</a>上，提供了各种系统和环境的安装方法。你可以选择通过包管理工具的软件源安装，也可以通过源码编译安装。不过编译是非常吃内存的（至少需要4GiB内存），并且还很耗时（毕竟是C++写的），因此不推荐。具体来说，你可以：</p>
+<h3 id="使用包管理工具"><a href="#使用包管理工具" class="headerlink" title="使用包管理工具"></a>使用包管理工具</h3><p>以<code>yum</code>为例，首先增加并启用MySQL软件源，在<a href="https://dev.mysql.com/downloads/repo/yum" target="_blank" rel="noopener">这个页面</a>找到适合你的版本，然后下载并启用之：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm <span class="comment">#换成适合你的版本</span></span><br><span class="line">rpm -ivh mysql80-community-release-el7-1.noarch.rpm</span><br><span class="line">yum-config-manager --<span class="built_in">enable</span> mysql80-community</span><br></pre></td></tr></table></figure>
+<p>这样，就可以直接通过yum安装MySQL服务器了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install mysql-community-server</span><br></pre></td></tr></table></figure>
+<p>安装完成后，会在<code>/usr/sbin/</code>和<code>/usr/bin/</code>目录下出现MySQL的可执行文件，而<code>mysqld.service</code>会自动加载好。MySQL的配置文件则是<code>/etc/my.cnf</code>。</p>
+<h3 id="使用源码编译安装"><a href="#使用源码编译安装" class="headerlink" title="使用源码编译安装"></a>使用源码编译安装</h3><p>再次提醒：源码编译安装方式非常麻烦，如果可以的话请使用包管理工具安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget wget https://cdn.mysql.com//Downloads/MySQL-8.0/mysql-boost-8.0.13.tar.gz</span><br><span class="line">tar -xzvf mysql-boost-8.0.13.tar.gz</span><br><span class="line"><span class="built_in">cd</span> mysql-boost-8.0.13</span><br><span class="line">cmake . -DCMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span>/mysql -DMYSQL_DATADIR=/data/mysql -DDOWNLOAD_BOOST=1 -DWITH_BOOST=boost -DSYSCONFDIR=/etc -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_PARTITION_STORAGE_ENGINE=1 -DWITH_FEDERATED_STORAGE_ENGINE=1 -DWITH_BLACKHOLE_STORAGE_ENGINE=1 -DWITH_MYISAM_STORAGE_ENGINE=1 -DWITH_EMBEDDED_SERVER=1 -DENABLE_DTRACE=0 -DENABLED_LOCAL_INFILE=1 -DDEFAULT_CHARSET=utf8mb4 -DEXTRA_CHARSETS=all</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<p>这里的<code>-DCMAKE_INSTALL_PREFIX</code>和<code>-DMYSQL_DATADIR</code>参数指定了MySQL的安装目录和数据文件存储目录。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-03/MySQL 8.0的安装和使用/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/一行代码为网站添加访客地图/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -187,18 +243,19 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>Revolver Maps是一个交互式的网站访客地图。每一个浏览者的位置都会实时在由Canvas渲染的地球上标记出来。在它的<a href="https://www.revolvermaps.com/?target=gallery" target="_blank" rel="noopener">官方网站</a>上，你可以轻松地选择地图样式，并生成用于插入HTML页面的script标签。</p>
-<p><img src="/images/2018-02/data-1491837049070-rJZtl7Y6x.jpg" alt=""></p>
-<p>其中，RevolverMaps Standard GL样式是响应式的，会自适应父元素大小，非常适合作为访客地图使用。点击『Get this Widget!』按钮，在新的页面中调整参数，可以自定义颜色、缩放、旋转等等。完成后，将生成的script标签复制下来，并放在你想要生成地图的地方即可。例如：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"//ra.revolvermaps.com/0/0/8.js?i=0pdvpgzth5r&amp;amp;m=7&amp;amp;c=ff0000&amp;amp;cr1=ffffff&amp;amp;f=arial&amp;amp;l=33&amp;amp;v0=20&amp;amp;z=11"</span> <span class="attr">async</span>=<span class="string">"async"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/2018-02/data-1491837049070-rJZtl7Y6x.jpg" alt></p>
+<p>其中，RevolverMaps Standard GL样式是响应式的，会自适应父元素大小，非常适合作为访客地图使用。点击『Get this Widget!』按钮，在新的页面中调整参数，可以自定义颜色、缩放、旋转等等。完成后，将生成的script标签复制下来，并放在你想要生成地图的地方即可。例如：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"//ra.revolvermaps.com/0/0/8.js?i=0pdvpgzth5r&amp;amp;m=7&amp;amp;c=ff0000&amp;amp;cr1=ffffff&amp;amp;f=arial&amp;amp;l=33&amp;amp;v0=20&amp;amp;z=11"</span> <span class="attr">async</span>=<span class="string">"async"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>这时，效果看上去会是这样：</p>
-<p><img src="/images/2018-02/revolvermaps-1.png" alt=""></p>
+<p><img src="/images/2018-02/revolvermaps-1.png" alt></p>
 <p>类似地，你也可以把它放到WordPress博客的侧边小工具栏中，像下图这样：</p>
-<p><img src="/images/2018-02/revolvermaps-2.png" alt=""></p>
+<p><img src="/images/2018-02/revolvermaps-2.png" alt></p>
 <p>访问站点时，访客地图就会自动显示了。</p>
 </div>
 <footer class="post-footer">
@@ -206,15 +263,15 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/米米弹幕系统正式上线/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -235,13 +292,13 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>在学院的新年晚会上，主办方使用了一个基于微信小程序的弹幕系统，让全场观众通过大屏幕发送弹幕互动。比较坑的是，该弹幕系统存在『高级弹幕』选项，以此向用户收费。考虑到这一系统的逻辑实际上并不复杂，博主决定自己实现一个。它被命名为『米米弹幕系统』（Mimi Danmaku），其初代版本基于Ajax轮询实现。这是客户端的样子：</p>
-<p><img src="/images/2018-02/danmaku.png" alt=""></p>
+<p><img src="/images/2018-02/danmaku.png" alt></p>
 <p>当然，由于博主是第一次接触实时通讯，程序上还存在不少缺陷。在进行调研后，博主决定使用WebSocket代替原先效率极低的轮询，并重构一部分逻辑。经过数天的调试，现在全新的米米弹幕系统已经可以正常使用了。这个重制后的版本，成功实现了消息即时收发、自定义弹幕颜色、大小等功能。下一步博主将把弹幕系统整合到直播中。附上链接：<br><a href="https://mimichat.herokuapp.com/danmaku/" target="_blank" rel="noopener">米米弹幕</a><br>同时还开放了一个随机生成用户名（来自魔兽世界）的API：<br><a href="https://api.galaxymimi.com/name/" target="_blank" rel="noopener">随机用户名</a></p>
 <hr>
 <p>本文更新于2018年5月18日：<br>zsq.im和galaxymimi.com即日起全站支持https访问，ws连接也升级为了wss。</p>
@@ -252,15 +309,15 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/CentOS 7启动BBR教程/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -281,24 +338,35 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>BBR的全称是Bottleneck Bandwidth and RTT congestion control。该技术的目的是通过优化和控制TCP的拥塞，充分利用带宽并降低延迟，起到神奇般的加速效果——通俗来讲就是对Linux内核TCP协议的优化从而达到提速的目的。自Google于2016年9月宣布<a href="https://github.com/google/bbr" target="_blank" rel="noopener">将BBR开源</a>起，世界各国的极客们就开始研究了。一些受制于特殊网络环境的网民，近年来一直在寻找各种提速的方法。不论是之前流行的锐速（后开始收费），还是FinalSpeed等都曾备受大家的爱戴。BBR则提供了一个全新的加速方式，在内核较新的Linux系统，例如Ubuntu 18.04上，它可以方便的开启；而一些较旧的系统，则需要先升级内核才能启用。<br>这篇文章将介绍在CentOS 7上，启动BBR的方法。文中使用的是<code>yum</code>包管理工具。如果你的主机是Debian系，需使用<code>apt</code>，请自行替换命令即可。</p>
 <hr>
-<h2 id="yum系统更新"><a href="#yum系统更新" class="headerlink" title="yum系统更新"></a>yum系统更新</h2><p>将CentOS系统版本更新到7.3或更高：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br><span class="line">yum upgrade</span><br></pre></td></tr></table></figure></p>
-<p>查看系统版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/redhat-release</span><br></pre></td></tr></table></figure></p>
-<p>输出如下，则表示已升级到7.3<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CentOS Linux release 7.3.1611 (Core)</span><br></pre></td></tr></table></figure></p>
-<h2 id="安装elrepo并升级内核"><a href="#安装elrepo并升级内核" class="headerlink" title="安装elrepo并升级内核"></a>安装elrepo并升级内核</h2><p>执行<code>uname -r</code>查看内核版本，例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4.9.0-1.el7.elrepo.x86_64</span><br></pre></td></tr></table></figure></p>
-<p><strong>如果内核版本低于4.9，需要升级内核；否则可以跳过这一步，直接到『开启BBR』部分。</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line">rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span><br></pre></td></tr></table></figure></p>
-<p>这时，执行<code>yum repolist all</code>可以看到所有安装的源，可以启用<code>elrepo-kernal</code>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager --<span class="built_in">enable</span> elrepo-kernel</span><br><span class="line">yum install kernel-ml -y</span><br></pre></td></tr></table></figure></p>
-<p>如果只是执行一次，也可以使用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum --enablerepo=elrepo-kernel install kernel-ml -y</span><br></pre></td></tr></table></figure></p>
-<p>正常情况下将输出如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Transaction Summary</span><br><span class="line">================================================================================</span><br><span class="line">Install  1 Package</span><br><span class="line"></span><br><span class="line">Total download size: 39 M</span><br><span class="line">Installed size: 169 M</span><br><span class="line">Downloading packages:</span><br><span class="line">kernel-ml-4.9.0-1.el7.elrepo.x86_64.rpm                    |  39 MB   00:00</span><br><span class="line">Running transaction check</span><br><span class="line">Running transaction <span class="built_in">test</span></span><br><span class="line">Transaction <span class="built_in">test</span> succeeded</span><br><span class="line">Running transaction</span><br><span class="line">Warning: RPMDB altered outside of yum.</span><br><span class="line">  Installing : kernel-ml-4.9.0-1.el7.elrepo.x86_64                          1/1</span><br><span class="line">  Verifying  : kernel-ml-4.9.0-1.el7.elrepo.x86_64                          1/1</span><br><span class="line"></span><br><span class="line">Installed:</span><br><span class="line">  kernel-ml.x86_64 0:4.9.0-1.el7.elrepo</span><br><span class="line"></span><br><span class="line">Complete!</span><br></pre></td></tr></table></figure></p>
-<p>随后更新grub文件并重启。执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \<span class="string">'</span></span><br></pre></td></tr></table></figure></p>
-<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F\<span class="string">' '</span><span class="variable">$1</span>==<span class="string">"menuentry "</span> &#123;<span class="built_in">print</span> i++ <span class="string">" : "</span> <span class="variable">$2</span>&#125;<span class="string">' /etc/grub2.cfg</span></span><br></pre></td></tr></table></figure></p>
-<p>这时，所有可用的内核会被输出。记下新内核所在的行数，第一行为0，第二行为1，以此类推。<br>执行以下命令来启用最新内核，需要把0替换成上一步得到的新内核所在的行数：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grub2-set-default 0</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure></p>
+<h2 id="yum系统更新"><a href="#yum系统更新" class="headerlink" title="yum系统更新"></a>yum系统更新</h2><p>将CentOS系统版本更新到7.3或更高：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br><span class="line">yum upgrade</span><br></pre></td></tr></table></figure>
+<p>查看系统版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/redhat-release</span><br></pre></td></tr></table></figure>
+<p>输出如下，则表示已升级到7.3</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CentOS Linux release 7.3.1611 (Core)</span><br></pre></td></tr></table></figure>
+<h2 id="安装elrepo并升级内核"><a href="#安装elrepo并升级内核" class="headerlink" title="安装elrepo并升级内核"></a>安装elrepo并升级内核</h2><p>执行<code>uname -r</code>查看内核版本，例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4.9.0-1.el7.elrepo.x86_64</span><br></pre></td></tr></table></figure>
+<p><strong>如果内核版本低于4.9，需要升级内核；否则可以跳过这一步，直接到『开启BBR』部分。</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line">rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span><br></pre></td></tr></table></figure>
+<p>这时，执行<code>yum repolist all</code>可以看到所有安装的源，可以启用<code>elrepo-kernal</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager --<span class="built_in">enable</span> elrepo-kernel</span><br><span class="line">yum install kernel-ml -y</span><br></pre></td></tr></table></figure>
+<p>如果只是执行一次，也可以使用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum --enablerepo=elrepo-kernel install kernel-ml -y</span><br></pre></td></tr></table></figure>
+<p>正常情况下将输出如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Transaction Summary</span><br><span class="line">================================================================================</span><br><span class="line">Install  1 Package</span><br><span class="line"></span><br><span class="line">Total download size: 39 M</span><br><span class="line">Installed size: 169 M</span><br><span class="line">Downloading packages:</span><br><span class="line">kernel-ml-4.9.0-1.el7.elrepo.x86_64.rpm                    |  39 MB   00:00</span><br><span class="line">Running transaction check</span><br><span class="line">Running transaction <span class="built_in">test</span></span><br><span class="line">Transaction <span class="built_in">test</span> succeeded</span><br><span class="line">Running transaction</span><br><span class="line">Warning: RPMDB altered outside of yum.</span><br><span class="line">  Installing : kernel-ml-4.9.0-1.el7.elrepo.x86_64                          1/1</span><br><span class="line">  Verifying  : kernel-ml-4.9.0-1.el7.elrepo.x86_64                          1/1</span><br><span class="line"></span><br><span class="line">Installed:</span><br><span class="line">  kernel-ml.x86_64 0:4.9.0-1.el7.elrepo</span><br><span class="line"></span><br><span class="line">Complete!</span><br></pre></td></tr></table></figure>
+<p>随后更新grub文件并重启。执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \<span class="string">'</span></span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F\<span class="string">' '</span><span class="variable">$1</span>==<span class="string">"menuentry "</span> &#123;<span class="built_in">print</span> i++ <span class="string">" : "</span> <span class="variable">$2</span>&#125;<span class="string">' /etc/grub2.cfg</span></span><br></pre></td></tr></table></figure>
+<p>这时，所有可用的内核会被输出。记下新内核所在的行数，第一行为0，第二行为1，以此类推。<br>执行以下命令来启用最新内核，需要把0替换成上一步得到的新内核所在的行数：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grub2-set-default 0</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
 <p>重启后，ssh会断开，稍等一会儿重新连接。可以再次查看内核版本，检查更新是否成功。如果一切顺利，下一步就是启动bbr了。</p>
 <!--noindex-->
 <div class="post-button text-center">
@@ -313,15 +381,15 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/米米直播平台正式上线/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -342,63 +410,14 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>经过为期半个月的测试，米米直播平台成功实现了多线路及多种播放方式的直播：<br>线路一是无需Flash支持的HLS直播，对移动端支持极为友好，只是由于原理所限，延时约为45秒；线路一的播放方式有原生HLS和Video.js解码的HLS，能够覆盖大部分设备。<br>线路二是基于Bilibili开源的<a href="https://github.com/Bilibili/flv.js" target="_blank" rel="noopener">flv.js</a>的HTTP FLV直播，同样无须Flash，且延时仅有3秒；该播放方式兼容大部分桌面浏览器，但由于需要<a href="https://w3c.github.io/media-source" target="_blank" rel="noopener">Media Source Extensions</a> API支持，对移动端不友好；该线路各项直播数据已经可以媲美各大主流直播平台。<br>线路三为基于video.js和Flash的RTMP直播流，延时亦为3秒左右；不过考虑到Flash的种种弊端，线路三只是作为备用线路。原生HTML5直播在性能上明显优于Flash。</p>
-<p><img src="/images/2018-02/mimilive.png" alt=""></p>
-<p>根据最新规划，米米视频将专注于视频点播功能，点播的视频大部分为原创作品；而米米直播目前已开放了一个<a href="https://galaxymimi.com/live/?room=mimi&amp;player=1" target="_blank" rel="noopener">测试频道</a>，未来将进行拓展。关于推流码验证的相关功能正在完善。附上链接：<br><a href="https://galaxymimi.com/player/" target="_blank" rel="noopener">米米视频</a><br><a href="https://galaxymimi.com/live/" target="_blank" rel="noopener">米米直播</a></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/制造MD5碰撞/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-02/制造MD5碰撞/" class="post-title-link" itemprop="url">制造MD5碰撞</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-02-05 18:09:35" itemprop="dateCreated datePublished" datetime="2018-02-05T18:09:35+08:00">2018-02-05</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>下面这两张图片拥有相同的MD5值<code>253dd04e87492e4fc3471de5e776bc3d</code>：</p>
-<p><img src="/images/2018-02/plane.jpg" alt=""><br><img src="/images/2018-02/ship.jpg" alt=""></p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-02/制造MD5碰撞/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
+<p><img src="/images/2018-02/mimilive.png" alt></p>
+<p>根据最新规划，米米视频将专注于视频点播功能，点播的视频大部分为原创作品；而米米直播目前已开放了一个<a href="https://galaxymimi.com/live/?room=mimi&player=1" target="_blank" rel="noopener">测试频道</a>，未来将进行拓展。关于推流码验证的相关功能正在完善。附上链接：<br><a href="https://galaxymimi.com/player/" target="_blank" rel="noopener">米米视频</a><br><a href="https://galaxymimi.com/live/" target="_blank" rel="noopener">米米直播</a></p>
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -407,7 +426,7 @@ page-home">
 </article>
 </section>
 <nav class="pagination">
-<a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+<a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
 </nav>
 </div>
 </div>
@@ -422,7 +441,7 @@ page-home">
 <div class="sidebar-inner">
 <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -430,7 +449,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -523,7 +542,6 @@ window.Promise = null;
 <script src="/js/affix.js?v=7.1.2"></script>
 <script src="/js/schemes/pisces.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

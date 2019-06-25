@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -85,10 +85,10 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left page-post-detail">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -160,15 +160,15 @@ top: initial;
 <div class="content-wrap">
 <div id="content" class="content">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/米米弹幕系统正式上线/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -188,7 +188,7 @@ top: initial;
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
 </span>
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
@@ -210,7 +210,7 @@ top: initial;
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>在学院的新年晚会上，主办方使用了一个基于微信小程序的弹幕系统，让全场观众通过大屏幕发送弹幕互动。比较坑的是，该弹幕系统存在『高级弹幕』选项，以此向用户收费。考虑到这一系统的逻辑实际上并不复杂，博主决定自己实现一个。它被命名为『米米弹幕系统』（Mimi Danmaku），其初代版本基于Ajax轮询实现。这是客户端的样子：</p>
-<p><img src="/images/2018-02/danmaku.png" alt=""></p>
+<p><img src="/images/2018-02/danmaku.png" alt></p>
 <p>当然，由于博主是第一次接触实时通讯，程序上还存在不少缺陷。在进行调研后，博主决定使用WebSocket代替原先效率极低的轮询，并重构一部分逻辑。经过数天的调试，现在全新的米米弹幕系统已经可以正常使用了。这个重制后的版本，成功实现了消息即时收发、自定义弹幕颜色、大小等功能。下一步博主将把弹幕系统整合到直播中。附上链接：<br><a href="https://mimichat.herokuapp.com/danmaku/" target="_blank" rel="noopener">米米弹幕</a><br>同时还开放了一个随机生成用户名（来自魔兽世界）的API：<br><a href="https://api.galaxymimi.com/name/" target="_blank" rel="noopener">随机用户名</a></p>
 <hr>
 <p>本文更新于2018年5月18日：<br>zsq.im和galaxymimi.com即日起全站支持https访问，ws连接也升级为了wss。</p>
@@ -286,7 +286,7 @@ top: initial;
 <div class="sidebar-inner">
 <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -294,7 +294,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -389,7 +389,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.1.2"></script>
 <script src="/js/post-details.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

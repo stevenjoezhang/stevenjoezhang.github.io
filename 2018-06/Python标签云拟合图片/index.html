@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -86,10 +86,10 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left page-post-detail">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -161,15 +161,15 @@ top: initial;
 <div class="content-wrap">
 <div id="content" class="content">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/Python标签云拟合图片/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -189,7 +189,7 @@ top: initial;
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
 </span>
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
@@ -210,7 +210,7 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p><img src="/images/2018-06/tux_after.png" alt=""></p>
+<p><img src="/images/2018-06/tux_after.png" alt></p>
 <p>借助Python，可以轻松地用标签云拼出一副图片，就像上图这样。让我们一起看看具体的步骤吧。</p>
 <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>请确保Python3和pip3（即<code>python3 -m pip</code>）都可以正常使用。需要使用pip安装的模块有：</p>
 <ul>
@@ -219,12 +219,13 @@ top: initial;
 <li>pillow</li>
 <li>wordcloud</li>
 </ul>
-<p>其中wordcloud模块有些特殊，博主尝试执行<code>pip3 install wordcloud</code>，结果却遇到了错误信息。如果在你看到这篇文章时，该项目的维护者仍然没有解决该问题，请执行以下安装方式：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/amueller/word_cloud.git</span><br><span class="line"><span class="built_in">cd</span> word_cloud</span><br><span class="line">pip3 install -r requirements.txt</span><br><span class="line">python3 setup.py install</span><br></pre></td></tr></table></figure></p>
+<p>其中wordcloud模块有些特殊，博主尝试执行<code>pip3 install wordcloud</code>，结果却遇到了错误信息。如果在你看到这篇文章时，该项目的维护者仍然没有解决该问题，请执行以下安装方式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/amueller/word_cloud.git</span><br><span class="line"><span class="built_in">cd</span> word_cloud</span><br><span class="line">pip3 install -r requirements.txt</span><br><span class="line">python3 setup.py install</span><br></pre></td></tr></table></figure>
 <p>这样就完成安装了。</p>
 <a id="more"></a>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud, ImageColorGenerator</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">pic = np.array(Image.open(<span class="string">"path/to/your/image.png"</span>))</span><br><span class="line">jsondict = &#123;</span><br><span class="line">	<span class="string">"Unix"</span>: <span class="number">9</span>,</span><br><span class="line">	<span class="string">"Linus Torvalds"</span>: <span class="number">8</span>,</span><br><span class="line">	<span class="string">"Richard Stallman"</span>: <span class="number">8</span>,</span><br><span class="line">	<span class="string">"open source"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Gentoo"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Archlinux"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Void Linux"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Guix"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"free software"</span>: <span class="number">8</span>,</span><br><span class="line">	<span class="string">"RadHat"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"php"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"SUSE"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Ruby"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Python"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Go"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Mandriva"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"root"</span>: <span class="number">5</span>,</span><br><span class="line">	<span class="string">"android"</span>: <span class="number">4</span>,</span><br><span class="line">	<span class="string">"Lisp"</span>: <span class="number">6</span>,</span><br><span class="line">	<span class="string">"C"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Haskell"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"XMonad"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"javascript"</span>: <span class="number">6</span>,</span><br><span class="line">	<span class="string">"clojure"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"bash"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"vim"</span>: <span class="number">4</span>,</span><br><span class="line">	<span class="string">"emacs"</span>: <span class="number">4</span>,</span><br><span class="line">	<span class="string">"vis"</span>: <span class="number">4</span>,</span><br><span class="line">	<span class="string">"ls"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"cd"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"grep"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"sed"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"awk"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"pascal"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"GNU"</span>: <span class="number">9</span>,</span><br><span class="line">	<span class="string">"irc"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"inkscape"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"github"</span>: <span class="number">5</span>,</span><br><span class="line">	<span class="string">"gitlab"</span>: <span class="number">4</span>,</span><br><span class="line">	<span class="string">"FOSDEM"</span>: <span class="number">5</span>,</span><br><span class="line">	<span class="string">"GPL"</span>: <span class="number">4</span>,</span><br><span class="line">	<span class="string">"Free as in Freedom"</span>: <span class="number">5</span>,</span><br><span class="line">	<span class="string">"FOSS"</span>: <span class="number">4</span>,</span><br><span class="line">	<span class="string">"Mozilla"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Busybox"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"qemu"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"gnome"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"android"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Fedora"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"R"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"xelatex"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"mupdf"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"chromium"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"riot"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"pidgin"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"vlc"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"deadbeef"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"xarchiver"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"calibre"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"s6"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"json"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"chez scheme"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"GIMP"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"gcc"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"debian"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"printf(\"Linux\")"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"echo Linux"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"(println \"Linux\")"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"console.log \"Linux\""</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"(format t \"Linux\")"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"writeln(\"Linux\")"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"PRINT \"Linux\""</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"(insert \"Linux\")"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"fmt.Println(\"Linux\")"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"main = putStrLn \"Linux\""</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"(display \"Linux\")"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"System.out.println(\"Linux\");"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"document.write(\"Linux\")"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"type [Linux]"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"disp('Linux')"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"&lt;?php\necho \"Linux\"\n?&gt;"</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">"Ubuntu"</span>: <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line">image_colors = ImageColorGenerator(pic, [<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>])</span><br><span class="line">wc = WordCloud(background_color = <span class="string">"white"</span>, mask = pic)</span><br><span class="line">wc.generate_from_frequencies(jsondict)</span><br><span class="line"></span><br><span class="line">plt.imshow(wc.recolor(color_func = image_colors), interpolation = <span class="string">"bilinear"</span>)</span><br><span class="line">plt.axis(<span class="string">"off"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p>将<code>path/to/your/image.png</code>换为你要制作的图片，例如下面这张：</p>
-<p><img src="/images/2018-06/tux.png" alt=""></p>
+<p><img src="/images/2018-06/tux.png" alt></p>
 <p>当然也可以替换为自己的图片，支持多种格式，但为了保证效果，非主体部分应填充白色。<br>jsondict是标签云中文字的内容和权重（大小），自行修改即可。<br>保存后使用python3执行以上代码，即可得到拟合出的图片。</p>
 </div>
 <div>
@@ -305,7 +306,7 @@ top: initial;
 </ul>
 <div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -313,7 +314,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -415,7 +416,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.1.2"></script>
 <script src="/js/post-details.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

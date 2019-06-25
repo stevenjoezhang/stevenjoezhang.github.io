@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -40,18 +40,18 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
-<meta name="description" content="在使用VPS时，如果出现内存不够用的情况，可能会产生各种奇怪的问题。这个时候，增加Swap空间，就可以起到救急的作用。下面就来看看具体步骤。 创建Swap文件检查Swap空间先检查一下系统里有没有既存的Swap文件：1swapon -s 如果返回的信息概要是空的，则表示Swap文件不存在。 计算参数创建Swap文件将用到dd命令，我们需要根据需求（即要分配的Swap文件的大小）来计算出参数。一种典">
+<meta name="description" content="在使用VPS时，如果出现内存不够用的情况，可能会产生各种奇怪的问题。这个时候，增加Swap空间，就可以起到救急的作用。下面就来看看具体步骤。 创建Swap文件检查Swap空间先检查一下系统里有没有既存的Swap文件： 1swapon -s  如果返回的信息概要是空的，则表示Swap文件不存在。 计算参数创建Swap文件将用到dd命令，我们需要根据需求（即要分配的Swap文件的大小）来计算出参数。一">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux下增加、删除Swap文件">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-06/Linux下增加、删除Swap文件/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="在使用VPS时，如果出现内存不够用的情况，可能会产生各种奇怪的问题。这个时候，增加Swap空间，就可以起到救急的作用。下面就来看看具体步骤。 创建Swap文件检查Swap空间先检查一下系统里有没有既存的Swap文件：1swapon -s 如果返回的信息概要是空的，则表示Swap文件不存在。 计算参数创建Swap文件将用到dd命令，我们需要根据需求（即要分配的Swap文件的大小）来计算出参数。一种典">
+<meta property="og:description" content="在使用VPS时，如果出现内存不够用的情况，可能会产生各种奇怪的问题。这个时候，增加Swap空间，就可以起到救急的作用。下面就来看看具体步骤。 创建Swap文件检查Swap空间先检查一下系统里有没有既存的Swap文件： 1swapon -s  如果返回的信息概要是空的，则表示Swap文件不存在。 计算参数创建Swap文件将用到dd命令，我们需要根据需求（即要分配的Swap文件的大小）来计算出参数。一">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-26T12:41:12.509Z">
+<meta property="og:updated_time" content="2019-06-24T15:43:06.476Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下增加、删除Swap文件">
-<meta name="twitter:description" content="在使用VPS时，如果出现内存不够用的情况，可能会产生各种奇怪的问题。这个时候，增加Swap空间，就可以起到救急的作用。下面就来看看具体步骤。 创建Swap文件检查Swap空间先检查一下系统里有没有既存的Swap文件：1swapon -s 如果返回的信息概要是空的，则表示Swap文件不存在。 计算参数创建Swap文件将用到dd命令，我们需要根据需求（即要分配的Swap文件的大小）来计算出参数。一种典">
+<meta name="twitter:description" content="在使用VPS时，如果出现内存不够用的情况，可能会产生各种奇怪的问题。这个时候，增加Swap空间，就可以起到救急的作用。下面就来看看具体步骤。 创建Swap文件检查Swap空间先检查一下系统里有没有既存的Swap文件： 1swapon -s  如果返回的信息概要是空的，则表示Swap文件不存在。 计算参数创建Swap文件将用到dd命令，我们需要根据需求（即要分配的Swap文件的大小）来计算出参数。一">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2018-06/Linux下增加、删除Swap文件/">
 <script id="page.configurations">
@@ -83,10 +83,10 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left page-post-detail">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -158,15 +158,15 @@ top: initial;
 <div class="content-wrap">
 <div id="content" class="content">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/Linux下增加、删除Swap文件/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -186,7 +186,7 @@ top: initial;
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
@@ -208,10 +208,12 @@ top: initial;
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>在使用VPS时，如果出现内存不够用的情况，可能会产生各种奇怪的问题。这个时候，增加Swap空间，就可以起到救急的作用。下面就来看看具体步骤。</p>
-<h2 id="创建Swap文件"><a href="#创建Swap文件" class="headerlink" title="创建Swap文件"></a>创建Swap文件</h2><h3 id="检查Swap空间"><a href="#检查Swap空间" class="headerlink" title="检查Swap空间"></a>检查Swap空间</h3><p>先检查一下系统里有没有既存的Swap文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon -s</span><br></pre></td></tr></table></figure></p>
+<h2 id="创建Swap文件"><a href="#创建Swap文件" class="headerlink" title="创建Swap文件"></a>创建Swap文件</h2><h3 id="检查Swap空间"><a href="#检查Swap空间" class="headerlink" title="检查Swap空间"></a>检查Swap空间</h3><p>先检查一下系统里有没有既存的Swap文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon -s</span><br></pre></td></tr></table></figure>
 <p>如果返回的信息概要是空的，则表示Swap文件不存在。</p>
-<h3 id="计算参数"><a href="#计算参数" class="headerlink" title="计算参数"></a>计算参数</h3><p>创建Swap文件将用到dd命令，我们需要根据需求（即要分配的Swap文件的大小）来计算出参数。一种典型的做法是，每次读写1KiB，重复N次，这样可以兼顾内存消耗和读写次数。因此，如果以MiB为单位计算你要分配的Swap文件的大小，那么读写次数（拷贝的块数）就是将该值乘以1024得到结果。例如，块大小为1KiB时，64MiB的Swap文件拷贝的块数是65536，而1GiB的Swap文件则是1048576。</p>
-<h3 id="使用dd命令来创建Swap"><a href="#使用dd命令来创建Swap" class="headerlink" title="使用dd命令来创建Swap"></a>使用dd命令来创建Swap</h3><p>根据前面的计算：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd <span class="keyword">if</span>=/dev/zero of=/swapfile bs=1024 count=1048576 <span class="comment">#分配1G的Swap空间</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="计算参数"><a href="#计算参数" class="headerlink" title="计算参数"></a>计算参数</h3><p>创建Swap文件将用到<code>dd</code>命令，我们需要根据需求（即要分配的Swap文件的大小）来计算出参数。一种典型的做法是，每次读写1KiB，重复N次，这样可以兼顾内存消耗和读写次数。因此，如果以MiB为单位计算你要分配的Swap文件的大小，那么读写次数（拷贝的块数）就是将该值乘以1024得到结果。例如，块大小为1KiB时，64MiB的Swap文件拷贝的块数是65536，而1GiB的Swap文件则是1048576。</p>
+<h3 id="使用dd命令来创建Swap"><a href="#使用dd命令来创建Swap" class="headerlink" title="使用dd命令来创建Swap"></a>使用<code>dd</code>命令来创建Swap</h3><p>根据前面的计算：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd <span class="keyword">if</span>=/dev/zero of=/swapfile bs=1024 count=1048576 <span class="comment">#分配1G的Swap空间</span></span><br></pre></td></tr></table></figure>
 <p>参数说明：</p>
 <ul>
 <li><code>if=input file</code>：输入文件名，缺省为标准输入。即指定源文件。</li>
@@ -221,11 +223,15 @@ top: initial;
 </ul>
 <p>这里的<code>if=/dev/zero</code>意味着向<code>/swapfile</code>填满空字符。你也可以尝试将它换成<code>/dev/random</code>，或许也可以正常初始化。</p>
 <a id="more"></a>
-<h2 id="权限设置"><a href="#权限设置" class="headerlink" title="权限设置"></a>权限设置</h2><p>分配空间后，需要赋予Swap文件适当的权限：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown root:root /swapfile</span><br><span class="line">chmod 0600 /swapfile</span><br></pre></td></tr></table></figure></p>
-<h2 id="启用Swap"><a href="#启用Swap" class="headerlink" title="启用Swap"></a>启用Swap</h2><p>创建好Swap文件，还需要格式化后才能使用。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#初始化并激活Swap</span></span><br><span class="line">mkswap /swapfile</span><br><span class="line">swapon /swapfile</span><br></pre></td></tr></table></figure></p>
-<p>如果要机器重启的时候自动挂载Swap，那么还需要修改fstab配置。<br>用vim打开<code>/etc/fstab</code>文件，在其最后添加如下一行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/swapfile  Swap Swap   defaults 0 0</span><br></pre></td></tr></table></figure></p>
-<p>当下一次系统启动时，新的swap文件就打开了。<br>添加新的swap文件并开启后，检查<code>cat /proc/swaps</code>或者free命令的输出来查看swap是否已打开。</p>
-<h2 id="删除Swap分区"><a href="#删除Swap分区" class="headerlink" title="删除Swap分区"></a>删除Swap分区</h2><p>最后，是删除Swap分区的方法。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">swapoff /swapfile <span class="comment">#卸载swap文件</span></span><br><span class="line">rm -rf /swapfile <span class="comment">#删除文件</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="权限设置"><a href="#权限设置" class="headerlink" title="权限设置"></a>权限设置</h2><p>分配空间后，需要赋予Swap文件适当的权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown root:root /swapfile</span><br><span class="line">chmod 0600 /swapfile</span><br></pre></td></tr></table></figure>
+<h2 id="启用Swap"><a href="#启用Swap" class="headerlink" title="启用Swap"></a>启用Swap</h2><p>创建好Swap文件，还需要格式化后才能使用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#初始化并激活Swap</span></span><br><span class="line">mkswap /swapfile</span><br><span class="line">swapon /swapfile</span><br></pre></td></tr></table></figure>
+<p>如果要机器重启的时候自动挂载Swap，那么还需要修改<code>fstab</code>配置。<br>用<code>vim</code>打开<code>/etc/fstab</code>文件，在其最后添加如下一行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/swapfile  Swap Swap   defaults 0 0</span><br></pre></td></tr></table></figure>
+<p>当下一次系统启动时，新的Swap文件就打开了。<br>添加新的Swap文件并开启后，检查<code>cat /proc/swaps</code>或者free命令的输出来查看swap是否已打开。</p>
+<h2 id="删除Swap分区"><a href="#删除Swap分区" class="headerlink" title="删除Swap分区"></a>删除Swap分区</h2><p>最后，是删除Swap分区的方法。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">swapoff /swapfile <span class="comment">#卸载swap文件</span></span><br><span class="line">rm -rf /swapfile <span class="comment">#删除文件</span></span><br></pre></td></tr></table></figure>
 </div>
 <div>
 <div id="reward-container">
@@ -305,7 +311,7 @@ Python标签云拟合图片 <i class="fa fa-chevron-right"></i>
 </ul>
 <div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -313,7 +319,7 @@ Python标签云拟合图片 <i class="fa fa-chevron-right"></i>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -415,7 +421,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.1.2"></script>
 <script src="/js/post-details.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

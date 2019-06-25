@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -82,11 +82,11 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left
 page-home">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -158,15 +158,71 @@ page-home">
 <div class="content-wrap">
 <div id="content" class="content">
 <section id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-12/十二月天象/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-12/历史上的今天/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-12/历史上的今天/" class="post-title-link" itemprop="url">历史上的今天</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-12-06 18:38:36" itemprop="dateCreated datePublished" datetime="2018-12-06T18:38:36+08:00">2018-12-06</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>如果要在网页上显示一些随机的语句，获得一些人生的经验，你会选择什么？<br>也许，<a href="https://hitokoto.cn" target="_blank" rel="noopener">一言</a>是一个很好的选择，它可以提供一些动漫中的台词，或是网络上的各种小段子。<br>在前面的文章<a href="/2018-05/有趣的Linux命令行工具">有趣的Linux命令行工具</a>中提到的<code>fortune</code>命令或许也可以满足需求，<code>pure-ftpd</code>就可以设置在连接成功时显示随机的来自<code>fortune</code>的语句。<br>那除此之外呢？历史上的今天是一个不错的方案。当你访问一些门户网站的首页，有时会看到这样的栏目。它也是一些百科全书网站，比如维基百科的传统。事实上，在Mac上就自带了一个小型的『历史上的今天』数据库，执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /usr/share/calendar/calendar.history</span><br></pre></td></tr></table></figure>
+<p>就可以看到。<br>这篇文章将介绍如何搭建一个提供『历史上的今天』信息的API。</p>
+<h2 id="建立数据库"><a href="#建立数据库" class="headerlink" title="建立数据库"></a>建立数据库</h2><p>首先，建立MySQL数据库，用于存储爬取的信息。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> dbname;</span><br><span class="line">#建立数据库，dbname保持一致即可</span><br><span class="line"><span class="keyword">USE</span> dbname;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">event</span> (</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">UNSIGNED</span> PRIMARY <span class="keyword">KEY</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="keyword">type</span> <span class="built_in">int</span>(<span class="number">1</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="keyword">year</span> <span class="built_in">varchar</span>(<span class="number">6</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="built_in">date</span> <span class="built_in">varchar</span>(<span class="number">6</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  info <span class="built_in">varchar</span>(<span class="number">300</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span></span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br><span class="line">QUIT;</span><br></pre></td></tr></table></figure>
+<h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><p>数据来源是维基百科，使用Python爬取数据，并存入数据库中。代码中的<code>username</code>、<code>password</code>和<code>dbname</code>分别是你的登录用户名、密码和数据库名。数据表名默认是event，也可以自行修改。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line">username = <span class="string">"username"</span></span><br><span class="line">password = <span class="string">"password"</span></span><br><span class="line">dbname = <span class="string">"dbname"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">typeList = [<span class="string">"大事记"</span>, <span class="string">"出生"</span>, <span class="string">"逝世"</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">savedb</span><span class="params">(data)</span>:</span></span><br><span class="line">    conn = pymysql.connect(host = <span class="string">"127.0.0.1"</span>, user = username, password = password, db = dbname, charset = <span class="string">"utf8"</span>)</span><br><span class="line">    print(conn)</span><br><span class="line">    cur = conn.cursor()</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        cur.execute(<span class="string">"insert into event values(null,%s,%s,%s,%s)"</span>, data)</span><br><span class="line">    <span class="keyword">except</span> pymysql.err.InternalError:</span><br><span class="line">        print(<span class="string">"\033[31mERROR: Incorrect string value.\033[0m"</span>, data)</span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">"failed.txt"</span>, <span class="string">"a"</span>) <span class="keyword">as</span> myfile:</span><br><span class="line">            myfile.write(str(data) + <span class="string">"\n"</span>)</span><br><span class="line">    <span class="keyword">except</span> pymysql.err.DataError:</span><br><span class="line">        print(<span class="string">"\033[31mERROR: Data too long.\033[0m"</span>, data)</span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">"failed.txt"</span>, <span class="string">"a"</span>) <span class="keyword">as</span> myfile:</span><br><span class="line">            myfile.write(str(data) + <span class="string">"\n"</span>)</span><br><span class="line">    cur.connection.commit()</span><br><span class="line">    cur.close()</span><br><span class="line">    conn.close()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getDateList</span><span class="params">()</span>:</span></span><br><span class="line">    list = []</span><br><span class="line">    date = datetime.date(<span class="number">2016</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">366</span>):</span><br><span class="line">        date_str = str(date.month) + <span class="string">"月"</span> + str(date.day) + <span class="string">"日"</span></span><br><span class="line">        list.append(date_str)</span><br><span class="line">        date += datetime.timedelta(days = <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> list</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getInfo</span><span class="params">(html, type, date)</span>:</span></span><br><span class="line">    flag = re.compile(<span class="string">"(&lt;h2&gt;&lt;span id=.*&lt;span class=\"mw-headline\" id=.*?"</span> + typeList[type] + <span class="string">"[\s\S]*?&lt;/ul&gt;\s*?)&lt;h2&gt;"</span>).search(html)</span><br><span class="line">    <span class="keyword">if</span> flag:</span><br><span class="line">        bsObj = BeautifulSoup(flag.group(<span class="number">1</span>), <span class="string">"html.parser"</span>).findAll(<span class="string">"li"</span>)</span><br><span class="line">        <span class="keyword">for</span> li <span class="keyword">in</span> bsObj:</span><br><span class="line">            match = re.compile(<span class="string">"((^前|^)\d&#123;1,4&#125;年)：([\s\S]*$)"</span>).match(li.get_text())</span><br><span class="line">            <span class="keyword">if</span> match:</span><br><span class="line">                year = match.group(<span class="number">1</span>)</span><br><span class="line">                info = re.sub(<span class="string">"\[\d&#123;1,&#125;\]"</span>, <span class="string">""</span>, match.group(<span class="number">3</span>).strip())</span><br><span class="line">                data = (type, year, date, info)</span><br><span class="line">                print(data)</span><br><span class="line">                savedb(data)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    list = getDateList()</span><br><span class="line">    <span class="keyword">for</span> date <span class="keyword">in</span> list:</span><br><span class="line">        print(date)</span><br><span class="line">        url = <span class="string">"https://zh.wikipedia.org/zh-cn/%s"</span> % date</span><br><span class="line">        <span class="comment">#若无法访问，请走代理</span></span><br><span class="line">        r = requests.get(url)</span><br><span class="line">        getInfo(r.text, <span class="number">0</span>, date) <span class="comment"># 大事记</span></span><br><span class="line">        getInfo(r.text, <span class="number">1</span>, date) <span class="comment"># 出生</span></span><br><span class="line">        getInfo(r.text, <span class="number">2</span>, date) <span class="comment"># 逝世</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>这里的两个<code>except</code>分别处理的是特殊字符（非UTF-8范围）和内容长度超出的问题。</p>
+<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><p>比较简单的方式是按照json格式进行输出，这里给出一种使用Python的方案。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-12/历史上的今天/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-12/十二月天象/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -187,22 +243,22 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>即将到来的12月天宇将先后上演『金星最亮』『双子座流星雨极大』『水星西大距』和『小熊座流星雨极大』等多部天象大片，天文爱好者们千万不要错过。</p>
 <h2 id="火星合海王星"><a href="#火星合海王星" class="headerlink" title="火星合海王星"></a>火星合海王星</h2><p>2018年12月7日入夜后西南方天空将可观赏到火星合海王星的天象，火星将至海王星北面0.04度（相当于2角分）的近距离通过，位于宝瓶座。火星视亮度+0.1等，海王星+7.9等，需用小型望远镜观测。</p>
-<p><img src="/images/2018-12/mars.png" alt=""></p>
+<p><img src="/images/2018-12/mars.png" alt></p>
 <h2 id="双子座流星雨极大期"><a href="#双子座流星雨极大期" class="headerlink" title="双子座流星雨极大期"></a>双子座流星雨极大期</h2><p>每到岁末，双子座流星雨（Geminids，00004 GEM）都会如期而至。作为北半球三大流星雨之一，它的流量非常稳定，并且全球绝大多数地区的公众都有机会观测到它。今年双子座流星雨的观测条件不错，预报的极大值出现在12月14日晚20时30分，天顶每时出现率ZHR为120。</p>
 <p>辐射点在12月14日入夜后自东北偏东方升起，即入夜后就有机会见到双子座流星出现。今年月相接近上弦，但对观测影响不大，尤其是后半夜观测条件很好，但要注意防寒保暖。</p>
-<p><img src="/images/2018-12/Comet_holmes_and_Geminid121307.jpg" alt=""></p>
+<p><img src="/images/2018-12/Comet_holmes_and_Geminid121307.jpg" alt></p>
 <h2 id="水星西大距"><a href="#水星西大距" class="headerlink" title="水星西大距"></a>水星西大距</h2><p>12月15日，今年最后一次水星西大距将上演。如果大气透明度足够高，在此后几天的日出前，用肉眼或借助双筒望远镜均可在黎明前的东方低空寻觅到水星的神秘身影。</p>
-<p><img src="/images/2018-12/mercury.png" alt=""></p>
+<p><img src="/images/2018-12/mercury.png" alt></p>
 <p>水星的视运动是这样的：东大距 → 半轮 → 近日点 → 留 → 下合 → 极长视直径 → 留 → 降交点 → 半轮 → 西大距 → 远日点 → 极短视直径 → 上合 → 升交点 → 东大距，周期是116日（水星的会合周期），而水星东大距 → 西大距平均间隔为41天。这次水星西大距，日出时位于东南方天空，与太阳的最大角距为21度，亮度约-0.5等，是今年观测水星的第四次最佳时机。</p>
 <h2 id="小熊座流星雨"><a href="#小熊座流星雨" class="headerlink" title="小熊座流星雨"></a>小熊座流星雨</h2><p>小熊座流星雨（Ursids，00015 URS）往往是全年精彩天象的收官之作，该流星雨的活动期为12月17日至12月26日。天文预报显示，今年该流星雨极大可能出现在12月22日4时53分。</p>
-<p><img src="/images/2018-12/Murahashi1.jpg" alt=""></p>
+<p><img src="/images/2018-12/Murahashi1.jpg" alt></p>
 <p>小熊座流星雨在1949年和1986年曾出现过两次爆发，但今年没有爆发的预期，届时每小时最大天顶流量为10颗左右，而且极大正好赶上满月，观测条件不是太好。</p>
 <hr>
 <blockquote>
@@ -215,15 +271,15 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/Safari顶栏彩虹效果/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -244,12 +300,13 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>从OS X Yosemite系统开始，Safari浏览器的顶部工具栏加入了类似iOS中的半透明毛玻璃效果。Safari会自动根据页面的颜色来显示工具栏的毛玻璃特效颜色，而通过CSS中的<code>body:before</code>类，我们可以对其进行定制。具体代码如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="selector-tag">body</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">        <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">        <span class="attribute">z-index</span>: <span class="number">2147483647</span>;</span><br><span class="line">        <span class="attribute">position</span>: fixed;</span><br><span class="line">        <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">        <span class="attribute">display</span>: block;</span><br><span class="line">        <span class="attribute">-webkit-transform</span>: <span class="built_in">translateY</span>(-99.99px);</span><br><span class="line">        <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(124deg,</span><br><span class="line">        #FF0000,</span><br><span class="line">        #FF7F00,</span><br><span class="line">        #FFFF00,</span><br><span class="line">        #7FFF00,</span><br><span class="line">        #00FF00,</span><br><span class="line">        #00FF7F,</span><br><span class="line">        #00FFFF,</span><br><span class="line">        #007FFF,</span><br><span class="line">        #0000FF,</span><br><span class="line">        #7F00FF,</span><br><span class="line">        #FF00FF,</span><br><span class="line">        #FF007F,</span><br><span class="line">        #FF0000);</span><br><span class="line">        <span class="attribute">animation</span>: rainbow <span class="number">15s</span> ease infinite;</span><br><span class="line">        <span class="attribute">background-size</span>: <span class="number">1000%</span> <span class="number">1000%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">keyframes</span> rainbow &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        <span class="attribute">background-position</span>: <span class="number">0%</span> <span class="number">80%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    50% &#123;</span><br><span class="line">        <span class="attribute">background-position</span>: <span class="number">100%</span> <span class="number">20%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        <span class="attribute">background-position</span>: <span class="number">0%</span> <span class="number">80%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>从OS X Yosemite系统开始，Safari浏览器的顶部工具栏加入了类似iOS中的半透明毛玻璃效果。Safari会自动根据页面的颜色来显示工具栏的毛玻璃特效颜色，而通过CSS中的<code>body:before</code>类，我们可以对其进行定制。具体代码如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="selector-tag">body</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">        <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">        <span class="attribute">z-index</span>: <span class="number">2147483647</span>;</span><br><span class="line">        <span class="attribute">position</span>: fixed;</span><br><span class="line">        <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">        <span class="attribute">display</span>: block;</span><br><span class="line">        <span class="attribute">-webkit-transform</span>: <span class="built_in">translateY</span>(-99.99px);</span><br><span class="line">        <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(124deg,</span><br><span class="line">        #FF0000,</span><br><span class="line">        #FF7F00,</span><br><span class="line">        #FFFF00,</span><br><span class="line">        #7FFF00,</span><br><span class="line">        #00FF00,</span><br><span class="line">        #00FF7F,</span><br><span class="line">        #00FFFF,</span><br><span class="line">        #007FFF,</span><br><span class="line">        #0000FF,</span><br><span class="line">        #7F00FF,</span><br><span class="line">        #FF00FF,</span><br><span class="line">        #FF007F,</span><br><span class="line">        #FF0000);</span><br><span class="line">        <span class="attribute">animation</span>: rainbow <span class="number">15s</span> ease infinite;</span><br><span class="line">        <span class="attribute">background-size</span>: <span class="number">1000%</span> <span class="number">1000%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">keyframes</span> rainbow &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        <span class="attribute">background-position</span>: <span class="number">0%</span> <span class="number">80%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    50% &#123;</span><br><span class="line">        <span class="attribute">background-position</span>: <span class="number">100%</span> <span class="number">20%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        <span class="attribute">background-position</span>: <span class="number">0%</span> <span class="number">80%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>将它们添加到页面中的<code>&lt;style&gt;</code>标签内，并在<code>&lt;body&gt;</code>中加入适当的内容。当使用Safari浏览器打开时，<strong>略微向下滚动页面</strong>，便可以看到顶部栏出现炫酷的彩虹效果。快去试试吧！<br><strong>注意：一些老旧浏览器不能正确识别<code>transform</code>，会导致彩色条挡住<code>&lt;body&gt;</code>，<code>-webkit-min-device-pixel-ratio</code>可以防止这一问题。</strong><br>GitHub项目地址：<a href="https://github.com/koole/rainbowsafari" target="_blank" rel="noopener">rainbowsafari</a></p>
 </div>
 <footer class="post-footer">
@@ -257,15 +314,15 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/国际单位制基本单位的重新定义/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -286,7 +343,7 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
 </span>
 </div>
 </header>
@@ -335,15 +392,15 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/在网页上实现3D Touch效果/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -364,19 +421,19 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p><img src="/images/2018-11/3d_touch_cover_.jpg" alt=""></p>
+<p><img src="/images/2018-11/3d_touch_cover_.jpg" alt></p>
 <p>2016年9月14日凌晨，iOS 10正式版开始向用户推送更新，而iOS 10搭载的Safari10亦带来了不少新特性，其中就有3D Touch事件的支持（官方文档<a href="https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html" target="_blank" rel="noopener">《What’s New in Safari 10》</a>）。</p>
 <h2 id="Force-Touch与3D-Touch"><a href="#Force-Touch与3D-Touch" class="headerlink" title="Force Touch与3D Touch"></a>Force Touch与3D Touch</h2><p>说到3D Touch不能不提与之相似的Force Touch。Force Touch是苹果公司在2014年9月公布的一项压力敏感屏幕技术，最早用于Apple Watch，可识别轻点、轻按两种操作。随后Force Touch于2015年9月在iPhone 6S上得到改进并更名为3D Touch，提供了更高灵敏度的触控力度识别、及更强的触感反馈，支持轻点、轻按及重按三个维度。</p>
 <p>支持3D Touch的设备，目前有iPhone 6S、iPhone 6S Plus、iPhone 7以及iPhone 7 Plus（注：截止2018年，还要加上iPhone 8和iPhone X等）。这是后文的硬件要求。</p>
 <h2 id="感受3D-Touch"><a href="#感受3D-Touch" class="headerlink" title="感受3D Touch"></a>感受3D Touch</h2><p>3D Touch最为典型的交互有Quick Actions和Peek and Pop两种。在APP图标上重按呼出一组快捷操作菜单，这即是典型的Quick Actions：</p>
-<p><img src="/images/2018-11/quick_actions.jpg" alt=""></p>
+<p><img src="/images/2018-11/quick_actions.jpg" alt></p>
 <p>而使用Peek and Pop则可以快速地对内容进行预览，以及后续的其他操作：</p>
-<p><img src="/images/2018-11/peek_and_pop.jpg" alt=""></p>
+<p><img src="/images/2018-11/peek_and_pop.jpg" alt></p>
 <p>如上图所示，在系统的邮件APP中，以一定的力度按压邮件列表中的某一项，会触发Peek弹出一个内容预览窗口（在Peek状态下上滑还能触发Quick Actions调出一些快捷操作项哦），如果继续加大按压力度，则会触发Pop进入邮件内容界面，这整个过程就称之为Peek and Pop。</p>
 <p>除了邮件APP以外，信息、照片等多个系统APP以及一些第三方APP（如微信、Facebook、Twitter等）也都很好的支持了Peek and Pop这种3D Touch交互形式。</p>
 <h2 id="网页中的3D-Touch"><a href="#网页中的3D-Touch" class="headerlink" title="网页中的3D Touch"></a>网页中的3D Touch</h2><p>要在网页中实现3D Touch，需要用到以下两个知识点：</p>
@@ -410,51 +467,9 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/使用示波器播放Bad Apple!!/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-11/使用示波器播放Bad Apple!!/" class="post-title-link" itemprop="url">使用示波器播放Bad Apple!!</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-11-14 10:09:01" itemprop="dateCreated datePublished" datetime="2018-11-14T10:09:01+08:00">2018-11-14</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>本视频于某次物理竞赛集训时拍摄于华中科技大学，音频为后期加上。<br>为了对上音轨，前后各有一段黑屏，这是feature而非bug。敬请欣赏。</p>
-<video src="/files/badapple.mp4" preload="metadata" controls playsinline="" poster="">Sorry, your browser does not support the video tag.</video>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
-<a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+<a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
 </nav>
 </div>
 </div>
@@ -469,7 +484,7 @@ page-home">
 <div class="sidebar-inner">
 <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -477,7 +492,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -570,7 +585,6 @@ window.Promise = null;
 <script src="/js/affix.js?v=7.1.2"></script>
 <script src="/js/schemes/pisces.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

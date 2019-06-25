@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -85,10 +85,10 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left page-post-detail">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -160,15 +160,15 @@ top: initial;
 <div class="content-wrap">
 <div id="content" class="content">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/在Mac上通过Sublime、Skim编辑LaTeX/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -188,7 +188,7 @@ top: initial;
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
 </span>
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
@@ -229,7 +229,8 @@ top: initial;
 <li>进入<a href="https://packagecontrol.io/installation" target="_blank" rel="noopener">Package Control官网</a>，复制灰色区块的代码（或者直接复制下面的代码）。<br>对于Sublime Text 3：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request,os,hashlib; h = <span class="string">'6f4c264a24d933ce70df5dedcf1dcaee'</span> + <span class="string">'ebe013ee18cced0ef93d5f746d80ef60'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> open(os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>对于Sublime Text 2：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib2,os,hashlib; h = <span class="string">'6f4c264a24d933ce70df5dedcf1dcaee'</span> + <span class="string">'ebe013ee18cced0ef93d5f746d80ef60'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(ipp) <span class="keyword">else</span> <span class="keyword">None</span>; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by) <span class="keyword">if</span> dh == h <span class="keyword">else</span> <span class="keyword">None</span>; print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h) <span class="keyword">if</span> dh != h <span class="keyword">else</span> <span class="string">'Please restart Sublime Text to finish installation'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>对于Sublime Text 2：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib2,os,hashlib; h = <span class="string">'6f4c264a24d933ce70df5dedcf1dcaee'</span> + <span class="string">'ebe013ee18cced0ef93d5f746d80ef60'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(ipp) <span class="keyword">else</span> <span class="keyword">None</span>; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by) <span class="keyword">if</span> dh == h <span class="keyword">else</span> <span class="keyword">None</span>; print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h) <span class="keyword">if</span> dh != h <span class="keyword">else</span> <span class="string">'Please restart Sublime Text to finish installation'</span>)</span><br></pre></td></tr></table></figure>
 <ul>
 <li>打开Sublime Text。</li>
 <li>使用快捷键<code>control+~</code>打开控制台（Console）。你会在Sublime Text的底部看到弹出一个白色窗口。</li>
@@ -249,7 +250,8 @@ top: initial;
 <li>在预设菜单中选择<code>Sublime Text</code>。</li>
 <li>关闭上面这个窗口。</li>
 </ul>
-<h2 id="修改编译和中文环境"><a href="#修改编译和中文环境" class="headerlink" title="修改编译和中文环境"></a>修改编译和中文环境</h2><p>现在，我们已经做完了所有的步骤✌️，可以打开Sublime Text，<code>Command+N</code>新建文件并在里面编写$\LaTeX$代码了，完成编辑之后，<code>Command+S</code>保存文件，<code>Command+B</code>编译并运行，这时就可以在Skim里面看到PDF预览了。<br>如果你使用了ctex，使用默认的编译配置可能会出现中文不正常的问题，这时需要进行手动设置。如图所示打开：<br><img src="/images/2017-11/tex.png" alt=""><br>然后输入以下内容：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"bring_forward_on_success"</span>: <span class="literal">true</span>,</span><br><span class="line">	<span class="attr">"cmd"</span>: [</span><br><span class="line">		<span class="string">"latexmk"</span>, <span class="string">"-quiet"</span>, <span class="string">"-pdf"</span>, <span class="string">"-e"</span>,</span><br><span class="line">		<span class="string">"$pdflatex='xelatex -synctex=1 --shell-escape %O %S'"</span></span><br><span class="line">	],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="修改编译和中文环境"><a href="#修改编译和中文环境" class="headerlink" title="修改编译和中文环境"></a>修改编译和中文环境</h2><p>现在，我们已经做完了所有的步骤✌️，可以打开Sublime Text，<code>Command+N</code>新建文件并在里面编写$\LaTeX$代码了，完成编辑之后，<code>Command+S</code>保存文件，<code>Command+B</code>编译并运行，这时就可以在Skim里面看到PDF预览了。<br>如果你使用了ctex，使用默认的编译配置可能会出现中文不正常的问题，这时需要进行手动设置。如图所示打开：<br><img src="/images/2017-11/tex.png" alt><br>然后输入以下内容：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"bring_forward_on_success"</span>: <span class="literal">true</span>,</span><br><span class="line">	<span class="attr">"cmd"</span>: [</span><br><span class="line">		<span class="string">"latexmk"</span>, <span class="string">"-quiet"</span>, <span class="string">"-pdf"</span>, <span class="string">"-e"</span>,</span><br><span class="line">		<span class="string">"$pdflatex='xelatex -synctex=1 --shell-escape %O %S'"</span></span><br><span class="line">	],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果使用LaTeXBox编译出现了其它问题，可以尝试在命令行中直接进行编译：在第一步完成后，打开终端，进入到tex所在到文件夹，使用<code>xelatex *.tex</code>，编译tex文件为pdf。如果成功，你可以将它添加到Sublime Text的Build System中，或者通过设置LaTeXBox的编译引擎，也可以实现一键编译。除此之外，还可以使用Pandoc等命令行工具将tex转为其他格式的文档。<br>在Windows上可以通过安装TexLive的方法配置TeX环境，过程是类似的。需要注意的是，tex文件应采用UTF-8编码。</p>
 <hr>
 <p>参考文章：<a href="https://blog.csdn.net/songrotek/article/details/46457571" target="_blank" rel="noopener">在Mac OS X下搭建Latex编辑环境</a></p>
@@ -334,7 +336,7 @@ top: initial;
 </ul>
 <div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -342,7 +344,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -444,7 +446,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.1.2"></script>
 <script src="/js/post-details.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

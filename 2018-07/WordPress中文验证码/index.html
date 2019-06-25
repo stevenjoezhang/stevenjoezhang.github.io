@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -87,10 +87,10 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left page-post-detail">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -162,15 +162,15 @@ top: initial;
 <div class="content-wrap">
 <div id="content" class="content">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/WordPress中文验证码/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -190,7 +190,7 @@ top: initial;
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
 </span>
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
@@ -212,9 +212,9 @@ top: initial;
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>反机器人和垃圾评论是个人博客老生常谈的话题。除了特征识别算法外，最普遍使用的屏蔽方法就是验证码了。在WordPress插件库中，有着各式各样的验证码插件。然而，很多验证码插件都依赖于Google的reCAPTCHA，这在国内无法访问；而一些基于Session或文件验证的验证码插件功能和质量参差不齐，性能和安全性难以得到保障。虽然博主已经抛弃了WordPress转投Hexo静态博客（正如你所看到的这样），但考虑到WordPress中少有适合我国国情的验证码插件，故决定将一些主流图形验证码的功能进行整合，制作出一个全新的通用性更强的验证码解决方案。Mimi Captcha就这样诞生了。<br>这是一个同时支持数字、大小写字母、中文、算术的图形验证码插件。它是基于Vinoj Cardoza的<a href="https://wordpress.org/plugins/captcha-code-authentication" target="_blank" rel="noopener">Captcha Code</a>在GPL协议下二次开发的。原项目存在的问题是，验证码中的字符采用同一字体在同一高度下顺序排列，这样非常容易被识别。改动过程中，加入了『超时时间』设置，以及对用户更为友好的『不区分大小写』设置。而验证码图片的生成算法，则进行了重构，很大程度上采用了<a href="http://www.iteye.com/topic/469170" target="_blank" rel="noopener">流水孟春</a>的方案。同时，在IP白名单等功能上，参考了<a href="https://wordpress.org/plugins/captcha" target="_blank" rel="noopener">Captcha</a>的代码。中文验证码和算术验证码则是新加入的功能，在原插件上拓展而成。最终效果如图：</p>
-<p><img src="/images/2018-07/screenshot-1.png" alt=""></p>
+<p><img src="/images/2018-07/screenshot-1.png" alt></p>
 <a id="more"></a>
-<p><img src="/images/2018-07/screenshot-2.png" alt=""><br><img src="/images/2018-07/screenshot-3.png" alt=""></p>
+<p><img src="/images/2018-07/screenshot-2.png" alt><br><img src="/images/2018-07/screenshot-3.png" alt></p>
 <p>如果你对这个插件有任何意见或建议，敬请在评论区留言！<br>代码可以在GitHub上查看：<a href="https://github.com/stevenjoezhang/mimi-captcha" target="_blank" rel="noopener">Mimi Captcha</a><br>同时也发布在了WordPress插件库：<a href="https://wordpress.org/plugins/mimi-captcha" target="_blank" rel="noopener">Mimi Captcha</a><br>顺便吐槽一下WordPress官方团队粗暴无礼的插件审核机制，真的是非常严格呢。（不过要确保插件的可靠性，严格一点也是必要的）<br>最后要说的是，没有绝对安全的系统。中文验证码只是提高了机器人发布垃圾评论和暴力破解密码的成本，而管理员保持良好的使用习惯、进行合理的维护才是确保WordPress正常运行的关键。</p>
 <hr>
 <p>拓展阅读：<br><a href="https://doc.yonyoucloud.com/doc/ae/920457.html" target="_blank" rel="noopener">知识库：使用Tesseract识别弱验证码</a><br><a href="https://pewae.com/2018/10/wordpress-settings-api-implementing-tabs-on-custom-menu-page.html" target="_blank" rel="noopener">【翻译】wordpress在后台自定义菜单页面上实现TAB页</a></p>
@@ -290,7 +290,7 @@ Hexo内容压缩 <i class="fa fa-chevron-right"></i>
 <div class="sidebar-inner">
 <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -298,7 +298,7 @@ Hexo内容压缩 <i class="fa fa-chevron-right"></i>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -393,7 +393,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.1.2"></script>
 <script src="/js/post-details.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

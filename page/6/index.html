@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -82,11 +82,11 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left
 page-home">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -158,15 +158,57 @@ page-home">
 <div class="content-wrap">
 <div id="content" class="content">
 <section id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/用Telnet观看Nyancat动画/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/使用示波器播放Bad Apple!!/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-11/使用示波器播放Bad Apple!!/" class="post-title-link" itemprop="url">使用示波器播放Bad Apple!!</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-11-14 10:09:01" itemprop="dateCreated datePublished" datetime="2018-11-14T10:09:01+08:00">2018-11-14</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>本视频于某次物理竞赛集训时拍摄于华中科技大学，音频为后期加上。<br>为了对上音轨，前后各有一段黑屏，这是feature而非bug。敬请欣赏。</p>
+<video src="/files/badapple.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/用Telnet观看Nyancat动画/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -187,38 +229,42 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在知乎上看到一个关于VPS有趣的用途的问题，<a href="https://www.zhihu.com/question/24284566/answer/27291403" target="_blank" rel="noopener">其中一个回答</a>提到了可以搭建Telnet服务器，成功运行后别人用Telnet连接你的主机将会看到Nyancat动画。大致效果如图所示：</p>
-<p><img src="/images/2018-11/nyancat.png" alt=""></p>
+<p><img src="/images/2018-11/nyancat.png" alt></p>
 <p>然而，回答中给出的Demo已经失效，<code>telnet nyancat.dakko.us</code>会返回一个<code>Connection refused</code>错误。不过值得庆幸的是，这个项目的官方网站<a href="http://nyancat.dakko.us" target="_blank" rel="noopener">Nyan Cat Telnet Server</a>和<a href="https://github.com/klange/nyancat" target="_blank" rel="noopener">GitHub Repo</a>都还可以正常访问，因此可以尝试重新把它搭起来。不用着急，这个过程并不复杂，请按照以下方法操作即可。</p>
-<h2 id="下载编译"><a href="#下载编译" class="headerlink" title="下载编译"></a>下载编译</h2><p>在命令行执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/klange/nyancat.git</span><br><span class="line"><span class="built_in">cd</span> nyancat</span><br><span class="line">make</span><br><span class="line">mv src/nyancat /usr/bin <span class="comment">#or make install</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="下载编译"><a href="#下载编译" class="headerlink" title="下载编译"></a>下载编译</h2><p>在命令行执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/klange/nyancat.git</span><br><span class="line"><span class="built_in">cd</span> nyancat</span><br><span class="line">make</span><br><span class="line">mv src/nyancat /usr/bin <span class="comment">#or make install</span></span><br></pre></td></tr></table></figure>
 <p>这时，通过<code>nyancat</code>或<code>nyancat -t</code>命令就可以查看效果。接下来把Telnet配置好就行了。</p>
-<h2 id="配置Telnet"><a href="#配置Telnet" class="headerlink" title="配置Telnet"></a>配置Telnet</h2><p>使用包管理工具安装<code>xinetd</code>，例如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install xinetd</span><br></pre></td></tr></table></figure></p>
-<p>然后在<code>/etc/xinetd.d</code>目录下新建文件<code>nyancat</code>，内容为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">service telnet</span><br><span class="line">&#123;</span><br><span class="line">    flags          = REUSE</span><br><span class="line">    socket_type    = stream</span><br><span class="line">    <span class="built_in">wait</span>           = no</span><br><span class="line">    user           = root</span><br><span class="line">    group          = root</span><br><span class="line">    server         = /usr/bin/nyancat</span><br><span class="line">    server_args    = -t</span><br><span class="line">    log_on_failure += USERID</span><br><span class="line">    <span class="built_in">disable</span>        = no</span><br><span class="line">    instances      = 10</span><br><span class="line">    per_source     = 2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>其中<code>instances</code>和<code>per_source</code>限制了总的连接数和单个IP的连接数。<br>接下来，重启<code>xinetd</code>服务：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart xinetd</span><br></pre></td></tr></table></figure></p>
+<h2 id="配置Telnet"><a href="#配置Telnet" class="headerlink" title="配置Telnet"></a>配置Telnet</h2><p>使用包管理工具安装<code>xinetd</code>，例如</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install xinetd</span><br></pre></td></tr></table></figure>
+<p>然后在<code>/etc/xinetd.d</code>目录下新建文件<code>nyancat</code>，内容为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">service telnet</span><br><span class="line">&#123;</span><br><span class="line">    flags          = REUSE</span><br><span class="line">    socket_type    = stream</span><br><span class="line">    <span class="built_in">wait</span>           = no</span><br><span class="line">    user           = root</span><br><span class="line">    group          = root</span><br><span class="line">    server         = /usr/bin/nyancat</span><br><span class="line">    server_args    = -t</span><br><span class="line">    log_on_failure += USERID</span><br><span class="line">    <span class="built_in">disable</span>        = no</span><br><span class="line">    instances      = 10</span><br><span class="line">    per_source     = 2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中<code>instances</code>和<code>per_source</code>限制了总的连接数和单个IP的连接数。<br>接下来，重启<code>xinetd</code>服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart xinetd</span><br></pre></td></tr></table></figure>
 <p>这时，你就可以通过<code>telnet localhost</code>查看是否一切正常。如果没有问题，配置防火墙开放23端口，就可以从公网访问了。试试用Telnet连接你的主机，效果是不是非常酷炫？<br>不过，博主在实践中发现，开放telnet的23端口可能会产生大量异常流量。解决方法是修改telnet的端口号，编辑<code>/etc/services</code>，找到telnet，将23改为一个你喜欢的数字（比如8082）。或者，可以在不需要使用时直接关闭这个服务，在<code>nyancat</code>中设置<code>disable: yes</code>即可。</p>
 <h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>俗话说，有光的地方就有Bad Apple!!。很久以前的一篇文章<a href="/2017-12/近期完成的数个游戏及应用/">近期完成的数个游戏及应用</a>中，就提到博主成功使用HTML页面播放Bad Apple!!字符画。目前，博主正在尝试搭建一个可以播放Bad Apple!!的Telnet服务器，敬请期待。</p>
 <hr>
-<p>本文更新于2019年2月14日：<br>博主通过魔改Nyancat的代码，成功地实现了可以播放Bad Apple!!的Telnet服务器。可以阅读文章<a href="/2019-02/用Telnet观看Bad Apple!!/">用Telnet观看Bad Apple!!</a>查看。</p>
+<p>本文更新于2019年2月14日：<br>博主通过魔改Nyancat的代码，成功地实现了可以播放Bad Apple!!的Telnet服务器。可以阅读文章[用Telnet观看Bad Apple!!](/2019-02/用Telnet观看Bad Apple!!/)查看。</p>
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-10/Heavens Above爬虫的实现/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -239,13 +285,13 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p><a href="https://www.heavens-above.com" target="_blank" rel="noopener">Heavens Above</a>是一个天文数据库网站，可以查询到诸如卫星过境的很多信息。虽然数据很全面，但是检索方式非常繁琐，在网站上需要依次打开多个链接进行比对，难以迅速地获取需要的信息。故博主决定写一个爬虫，以直观地展现所有数据。由于Heavens Above采取了大量的反爬虫措施，例如校验Cookie、限制单个IP的访问次数等，因此必须严格地模拟浏览器请求，才能正确爬取数据。</p>
-<p><img src="/images/2018-10/iss.png" alt=""></p>
+<p><img src="/images/2018-10/iss.png" alt></p>
 <p>博主也参考了大量GitHub上已有的Heavens Above爬虫项目，不过它们大部分失去维护，停留在数年前，已经不再适用。具体的逻辑还是要自行测试。</p>
 <p>项目地址：<a href="https://github.com/stevenjoezhang/heavens-above" target="_blank" rel="noopener">heavens-above</a></p>
 </div>
@@ -254,15 +300,15 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-10/Thanks for inventing Javascript/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -283,27 +329,27 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p><img src="/images/2018-10/thanks-for-inventing-javascript.jpg" alt=""></p>
+<p><img src="/images/2018-10/thanks-for-inventing-javascript.jpg" alt></p>
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-10/使用OpenCV进行星轨的后期处理/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -324,12 +370,13 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>贴上部分代码，择日填坑。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">addImage</span><span class="params">(img_orig, img_path, alpha = <span class="number">0.5</span>)</span>:</span></span><br><span class="line">    img = cv2.imread(img_path)</span><br><span class="line">    h, w, _ = img_orig.shape</span><br><span class="line">    beta = <span class="number">1</span> - alpha</span><br><span class="line">    gamma = <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> cv2.addWeighted(img_orig, alpha, img, beta, gamma)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    img_root = <span class="string">""</span> <span class="comment">#这里写你的文件夹路径，比如：/home/youname/data/img/ 注意最后一个文件夹要有斜杠</span></span><br><span class="line">    fps = <span class="number">24</span> <span class="comment">#保存视频的FPS，可以适当调整</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#可以用(*"DVIX")或(*"X264")，如果都不行先装ffmepg: sudo apt install ffmepg</span></span><br><span class="line">    fourcc = cv2.VideoWriter_fourcc(*<span class="string">"MJPG"</span>)</span><br><span class="line">    videoWriter = cv2.VideoWriter(<span class="string">"saveVideo.mp4v"</span>, fourcc, fps, (<span class="number">3168</span>, <span class="number">4752</span>)) <span class="comment">#最后一个是保存图片的尺寸</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">99</span>):</span><br><span class="line">        <span class="comment">#frame = cv2.imread(img_root+str(i+1)+".jpg")</span></span><br><span class="line">        frame = addImage(<span class="string">"IMG_3866.jpg"</span>, <span class="string">"IMG_3869.jpg"</span>)</span><br><span class="line">        videoWriter.write(frame)</span><br><span class="line">    videoWriter.release()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    folder = input(<span class="string">"请输入照片所在文件夹"</span>) <span class="keyword">or</span> <span class="string">"."</span></span><br><span class="line">    prefix = input(<span class="string">"请输入照片前缀"</span>) <span class="keyword">or</span> <span class="string">"IMG_"</span></span><br><span class="line">    suffix = input(<span class="string">"请输入照片后缀"</span>) <span class="keyword">or</span> <span class="string">"jpg"</span></span><br><span class="line">    digits = int(input(<span class="string">"请输入照片序号位数"</span>) <span class="keyword">or</span> <span class="number">4</span>)</span><br><span class="line">    start = int(input(<span class="string">"请输入第一张照片序号"</span>) <span class="keyword">or</span> <span class="number">0</span>)</span><br><span class="line">    end = int(input(<span class="string">"请输入最后一张照片序号"</span>) <span class="keyword">or</span> <span class="number">1</span>)</span><br><span class="line">    fps = int(input(<span class="string">"请输入视频帧率"</span>) <span class="keyword">or</span> <span class="number">24</span>)</span><br><span class="line">    fpp = int(input(<span class="string">"请输入每张照片持续的帧数"</span>) <span class="keyword">or</span> <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    imgArray = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(start, end + <span class="number">1</span>):</span><br><span class="line">        imgPath = folder + <span class="string">"/"</span> + prefix + i + <span class="string">"."</span> + suffix</span><br><span class="line">        <span class="keyword">if</span> os.path.exists(imgPath):</span><br><span class="line">            imgArray.append(imgPath)</span><br><span class="line"></span><br><span class="line">    frame = cv2.imread(imgArray[<span class="number">0</span>])</span><br><span class="line">    h, w, _ = frame.shape</span><br><span class="line">    fourcc = cv2.VideoWriter_fourcc(*<span class="string">"MJPG"</span>)</span><br><span class="line">    videoWriter = cv2.VideoWriter(<span class="string">"saveVideo.mp4v"</span>, fourcc, fps, (w, h))</span><br><span class="line">    <span class="comment">#videoWriter.write(frame)</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(imgArray)):</span><br><span class="line">        <span class="comment">#frame = cv2.imread(img_root+str(i+1)+".jpg")</span></span><br><span class="line">        frame = addImage(frame, imgArray[i], i / (i + <span class="number">1</span>))</span><br><span class="line">        videoWriter.write(frame)</span><br><span class="line">        print(i + <span class="string">"/"</span> + (i + <span class="number">1</span>))</span><br><span class="line">    videoWriter.release()</span><br></pre></td></tr></table></figure></p>
+<p>贴上部分代码，择日填坑。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">addImage</span><span class="params">(img_orig, img_path, alpha = <span class="number">0.5</span>)</span>:</span></span><br><span class="line">    img = cv2.imread(img_path)</span><br><span class="line">    h, w, _ = img_orig.shape</span><br><span class="line">    beta = <span class="number">1</span> - alpha</span><br><span class="line">    gamma = <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> cv2.addWeighted(img_orig, alpha, img, beta, gamma)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    img_root = <span class="string">""</span> <span class="comment">#这里写你的文件夹路径，比如：/home/youname/data/img/ 注意最后一个文件夹要有斜杠</span></span><br><span class="line">    fps = <span class="number">24</span> <span class="comment">#保存视频的FPS，可以适当调整</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#可以用(*"DVIX")或(*"X264")，如果都不行先装ffmepg: sudo apt install ffmepg</span></span><br><span class="line">    fourcc = cv2.VideoWriter_fourcc(*<span class="string">"MJPG"</span>)</span><br><span class="line">    videoWriter = cv2.VideoWriter(<span class="string">"saveVideo.mp4v"</span>, fourcc, fps, (<span class="number">3168</span>, <span class="number">4752</span>)) <span class="comment">#最后一个是保存图片的尺寸</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">99</span>):</span><br><span class="line">        <span class="comment">#frame = cv2.imread(img_root+str(i+1)+".jpg")</span></span><br><span class="line">        frame = addImage(<span class="string">"IMG_3866.jpg"</span>, <span class="string">"IMG_3869.jpg"</span>)</span><br><span class="line">        videoWriter.write(frame)</span><br><span class="line">    videoWriter.release()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    folder = input(<span class="string">"请输入照片所在文件夹"</span>) <span class="keyword">or</span> <span class="string">"."</span></span><br><span class="line">    prefix = input(<span class="string">"请输入照片前缀"</span>) <span class="keyword">or</span> <span class="string">"IMG_"</span></span><br><span class="line">    suffix = input(<span class="string">"请输入照片后缀"</span>) <span class="keyword">or</span> <span class="string">"jpg"</span></span><br><span class="line">    digits = int(input(<span class="string">"请输入照片序号位数"</span>) <span class="keyword">or</span> <span class="number">4</span>)</span><br><span class="line">    start = int(input(<span class="string">"请输入第一张照片序号"</span>) <span class="keyword">or</span> <span class="number">0</span>)</span><br><span class="line">    end = int(input(<span class="string">"请输入最后一张照片序号"</span>) <span class="keyword">or</span> <span class="number">1</span>)</span><br><span class="line">    fps = int(input(<span class="string">"请输入视频帧率"</span>) <span class="keyword">or</span> <span class="number">24</span>)</span><br><span class="line">    fpp = int(input(<span class="string">"请输入每张照片持续的帧数"</span>) <span class="keyword">or</span> <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    imgArray = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(start, end + <span class="number">1</span>):</span><br><span class="line">        imgPath = folder + <span class="string">"/"</span> + prefix + i + <span class="string">"."</span> + suffix</span><br><span class="line">        <span class="keyword">if</span> os.path.exists(imgPath):</span><br><span class="line">            imgArray.append(imgPath)</span><br><span class="line"></span><br><span class="line">    frame = cv2.imread(imgArray[<span class="number">0</span>])</span><br><span class="line">    h, w, _ = frame.shape</span><br><span class="line">    fourcc = cv2.VideoWriter_fourcc(*<span class="string">"MJPG"</span>)</span><br><span class="line">    videoWriter = cv2.VideoWriter(<span class="string">"saveVideo.mp4v"</span>, fourcc, fps, (w, h))</span><br><span class="line">    <span class="comment">#videoWriter.write(frame)</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(imgArray)):</span><br><span class="line">        <span class="comment">#frame = cv2.imread(img_root+str(i+1)+".jpg")</span></span><br><span class="line">        frame = addImage(frame, imgArray[i], i / (i + <span class="number">1</span>))</span><br><span class="line">        videoWriter.write(frame)</span><br><span class="line">        print(i + <span class="string">"/"</span> + (i + <span class="number">1</span>))</span><br><span class="line">    videoWriter.release()</span><br></pre></td></tr></table></figure>
 <hr>
 <p>参考文章：<br><a href="https://blog.csdn.net/zh_jessica/article/details/77992578" target="_blank" rel="noopener">Python-OpenCV 图像叠加or图像混合加权</a><br><a href="https://blog.csdn.net/aa846555831/article/details/53070314" target="_blank" rel="noopener">python + opencv 将图片保存为视频</a></p>
 <p>拓展阅读：<a href="http://www.imgzone.cn/article-377-1.html" target="_blank" rel="noopener">叠加法星轨的拍摄及后期方法</a></p>
@@ -339,62 +386,9 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-10/古惑狼游戏牵扯出的硬件bug/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-10/古惑狼游戏牵扯出的硬件bug/" class="post-title-link" itemprop="url">古惑狼游戏牵扯出的硬件bug</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-10-04 08:41:46" itemprop="dateCreated datePublished" datetime="2018-10-04T08:41:46+08:00">2018-10-04</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blame the compiler. Well down the list after that, you blame the hardware.<br>回想起这个bug，仍然让我感觉有些痛苦。作为一个程序员，在发现bug时，你学会了首先在自己代码中找问题，一次、两次、三次……或许在测试一万次之后，你会把问题归咎于编译器。只有在这所有的都不起作用之后，你才会把问题归咎于硬件。</p>
-<p>This is my hardware bug story.<br>这是我遭遇硬件bug的故事。</p>
-<p>Among other things, I wrote the memory card (load/save) code for Crash Bandicoot. For a swaggering game coder, this is like a walk in the park; I expected it would take a few days. I ended up debugging that code for six weeks. I did other stuff during that time, but I kept coming back to this bug — a few hours every few days. It was agonizing.<br>抛开别的不说，我曾为古惑狼（Crash Bandicoot，PS1游戏）写存储卡（读写）代码。对于一个自大的游戏程序员，这就像是在公园里散步一样轻松愉快；我预计只要几天就可以写完。我最终用了六个礼拜把那些代码调试完毕。在此期间我也做过一些其他的事情，但却一直绕不开这个bug——每几天内就要花上好几个小时来处理。这个bug实在烦人。</p>
-<p>The symptom was that you’d go to save your progress and it would access the memory card, and almost all the time, it worked normally… But every once in a while the write or read would time out… for no obvious reason. A short write would often corrupt the memory card. The player would go to save, and not only would we not save, we’d wipe their memory card. D’Oh.<br>这个bug的症状是，当你需要保存你的进度时，代码会访问存储卡，而大部分情况下没有什么问题…但是偶尔读写会超时…没有任何明显的原因。一个简短的写入经常毁掉存储卡。玩家要保存进度，我们不仅不保存，还擦除他们存储卡上的全部东西。天哪。</p>
-<p>After a while, our producer at Sony, Connie Booth, began to panic. We obviously couldn’t ship the game with that bug, and after six weeks I still had no clue what the problem was. Via Connie we put the word out to other PlayStation 1 developers — had anybody seen anything like this? Nope. Absolutely nobody had any problems with the memory card system.<br>过了一段时间，我们在Sony的制作人Connie Booth慌了。我们显然不能发布带有这个bug游戏，而六个星期之后我对于问题出在哪一点线索都没有。通过Connie我们向其他PS1开发者求助：有没有人出现过像我们这样的情况？没有。绝对没有任何人在存储卡系统上出现任何问题。</p>
-<p>About the only thing you can do when you run out of ideas debugging is divide and conquer: keep removing more and more of the errant program’s code until you’re left with something relatively small that still exhibits the problem. You keep carving parts away until the only stuff left is where the bug is.<br>在你绞尽脑汁之后，你能做的唯一一个调试方法就是分而治之：一点点去除错误程序中的代码，直到留下的代码相对很少，但仍然表现出问题。像雕刻一样去除没有问题的代码，留下的就是你的bug所在。</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-10/古惑狼游戏牵扯出的硬件bug/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
-<a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+<a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
 </nav>
 </div>
 </div>
@@ -409,7 +403,7 @@ page-home">
 <div class="sidebar-inner">
 <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -417,7 +411,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -510,7 +504,6 @@ window.Promise = null;
 <script src="/js/affix.js?v=7.1.2"></script>
 <script src="/js/schemes/pisces.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

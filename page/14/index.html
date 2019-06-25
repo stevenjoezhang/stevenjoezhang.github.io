@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -82,11 +82,11 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left
 page-home">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -158,15 +158,72 @@ page-home">
 <div class="content-wrap">
 <div id="content" class="content">
 <section id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/Quine——输出自身的程序/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/Bilibili弹幕文件的解析/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-03/Bilibili弹幕文件的解析/" class="post-title-link" itemprop="url">Bilibili弹幕文件的解析</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-03-30 00:07:56" itemprop="dateCreated datePublished" datetime="2018-03-30T00:07:56+08:00">2018-03-30</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>B站的每个视频都有<code>aid</code>和<code>cid</code>两个参数，在已知视频<code>aid</code>（即AV号）的情况下，可以通过链接<code>https://www.bilibili.com/widget/getPageList?aid=10492</code>获取<code>cid</code>（将10492替换为你要查询的视频的aid）。<br>视频的更多信息则可以通过<code>https://api.bilibili.com/view?type=jsonp&amp;appkey=8e9fc618fbd41e28&amp;id=10492</code>获取。<br>视频的弹幕文件采用xml格式存储，地址与其<code>cid</code>有关，为<code>https://comment.bilibili.com/$cid.xml</code>（将<code>$cid</code>替换为视频的<code>cid</code>）。<br>对于有许多分P的视频，它们的aid（AV号）相同，每个分P则对应一个不同的<code>cid</code>。而在同一个页面下的番剧、影视等内容，每一分集的<code>cid</code>也是唯一的。<br>弹幕内容的存储方式为：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">d</span> <span class="attr">p</span>=<span class="string">"0,1,25,16777215,1312863760,0,eff85771,42759017"</span>&gt;</span>前排占位置<span class="tag">&lt;/<span class="name">d</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这个元素中的各个参数由逗号分割，其意义分别为：</p>
+<ul>
+<li>弹幕出现的时间，以秒为单位</li>
+<li>弹幕的模式：1～3滚动弹幕 4底端弹幕 5顶端弹幕 6逆向弹幕 7精准定位 8高级弹幕</li>
+<li>字号：12非常小 16特小 18小 25中 36大 45很大 64特别大</li>
+<li>字体的颜色：将HTML六位十六进制颜色转为十进制表示，例如#FFFFFF会被存储为16777215，因为$(FFFFFF)_{16}=(16777215)_{10}$</li>
+<li>Unix时间戳，以毫秒为单位，基准时间为1970-1-1 08:00:00</li>
+<li>弹幕池：0普通池 1字幕池 2特殊池（注：目前特殊池为高级弹幕专用）</li>
+<li>发送者的ID，用于『屏蔽此弹幕的发送者』功能</li>
+<li>弹幕在弹幕数据库中rowID，用于『历史弹幕』功能</li>
+</ul>
+<hr>
+<p>将Bilibili弹幕的xml文件转为ass字幕，可以使用以下脚本：<br><a href="http://tiansh.github.io/us-danmaku/bilibili" target="_blank" rel="noopener">bilibili ASS 弹幕在线转换</a><br><a href="https://github.com/tiansh/us-danmaku" target="_blank" rel="noopener">us-danmaku</a></p>
+<p>关于ass字幕格式可以参考以下文章：<a href="https://www.douban.com/note/658520175" target="_blank" rel="noopener">ASS字幕格式规范</a></p>
+<p>拓展阅读：<br><a href="https://zhuanlan.zhihu.com/p/24599052" target="_blank" rel="noopener">Bilibili视频播放页面接口整理（不定期更新） - 知乎</a><br><a href="https://www.jianshu.com/p/f628679883e3" target="_blank" rel="noopener">Bilibili爬取视频信息进行数据分析</a></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/Quine——输出自身的程序/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -187,18 +244,22 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>能够输出自身的代码被称为Quine，以哲学家Willard van Orman Quine（1908-2000）而命名。<br>Quine在图灵完备的语言中都是可行的。在可计算性理论（computability theory）中，图灵等价指的是：对于两个计算机A和B，如果A可以模拟B，B可以模拟A，就称他们是图灵等价的。根据『丘奇-图灵』理论，图灵机是表达能力最强大的计算系统，对现实世界中的任何计算机，都可以用图灵机来模拟它。<br>套用上面的定义，如果一个编程语言可以完全模拟图灵机，那么它就是图灵完备的。大部分编程语言都是图灵完备的，因为他们需要解决各种问题的通用能力，而这正是图灵机所具备的。不过也存在一些语言不是图灵完备的，他们通常是被设计用来解决某些特殊的问题，比如SQL以及正则表达式。</p>
 <hr>
-<p>Shell<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">z=\<span class="string">' a='</span>z=\\<span class="variable">$z</span> a=<span class="variable">$z</span><span class="variable">$a</span><span class="variable">$z</span>\; <span class="built_in">eval</span> <span class="built_in">echo</span> \<span class="variable">$a</span><span class="string">'; eval echo $a</span></span><br></pre></td></tr></table></figure></p>
-<p>PHP<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> file_get_content(<span class="keyword">__FILE__</span>);</span><br></pre></td></tr></table></figure></p>
-<p>JavaScript<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span> $(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="string">'!'</span>+$+<span class="string">'()'</span>)&#125;()</span><br></pre></td></tr></table></figure></p>
+<p>Shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">z=\<span class="string">' a='</span>z=\\<span class="variable">$z</span> a=<span class="variable">$z</span><span class="variable">$a</span><span class="variable">$z</span>\; <span class="built_in">eval</span> <span class="built_in">echo</span> \<span class="variable">$a</span><span class="string">'; eval echo $a</span></span><br></pre></td></tr></table></figure>
+<p>PHP</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> file_get_content(<span class="keyword">__FILE__</span>);</span><br></pre></td></tr></table></figure>
+<p>JavaScript</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span> $(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="string">'!'</span>+$+<span class="string">'()'</span>)&#125;()</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">'var%20s%20%3D%20%27__%27%3B%20console.log%28unescape%28s%29.replace%28%27__%27%2C%20s%29%29'</span>; <span class="built_in">console</span>.log(<span class="built_in">unescape</span>(s).replace(<span class="string">'__'</span>, s))</span><br></pre></td></tr></table></figure>
-<p>Python<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r=<span class="string">'r=%r;print r%%r'</span>;<span class="keyword">print</span> r%r</span><br></pre></td></tr></table></figure></p>
+<p>Python</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r=<span class="string">'r=%r;print r%%r'</span>;<span class="keyword">print</span> r%r</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x=<span class="string">'y="x="+`x`+"\\n"\nprint y+x'</span></span><br><span class="line">y=<span class="string">"x="</span>+`x`+<span class="string">"\n"</span></span><br><span class="line"><span class="keyword">print</span> y+x</span><br></pre></td></tr></table></figure>
 <!--noindex-->
 <div class="post-button text-center">
@@ -213,15 +274,15 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/使用Electron构建桌面应用/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -242,14 +303,16 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>Electron是基于Node.js的桌面应用开发框架，所有代码均在Chrome『外壳』下运行，因而可以调用所有Node.js和浏览器的API，并且具有跨平台的特性。下面介绍如何使用Electron构建简单的桌面应用。你可以参照官方给出的入门程序：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/electron/electron-quick-start.git</span><br></pre></td></tr></table></figure></p>
+<p>Electron是基于Node.js的桌面应用开发框架，所有代码均在Chrome『外壳』下运行，因而可以调用所有Node.js和浏览器的API，并且具有跨平台的特性。下面介绍如何使用Electron构建简单的桌面应用。你可以参照官方给出的入门程序：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/electron/electron-quick-start.git</span><br></pre></td></tr></table></figure>
 <p>一个Electron应用应包含以下内容：</p>
-<h2 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h2><p>当你使用npm start启动Electron程序时，这是最先被执行的脚本。在main.js中可以创建窗口对象以构建图形界面。一个典型的main.js如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> electron = <span class="built_in">require</span>(<span class="string">'electron'</span>)</span><br><span class="line"><span class="keyword">const</span> app = electron.app</span><br><span class="line"><span class="keyword">const</span> BrowserWindow = electron.BrowserWindow</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>)</span><br><span class="line"><span class="keyword">let</span> mainWindow</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createWindow</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    mainWindow = <span class="keyword">new</span> BrowserWindow(&#123;<span class="attr">width</span>: <span class="number">800</span>, <span class="attr">height</span>: <span class="number">600</span>&#125;)</span><br><span class="line">    mainWindow.loadURL(url.format(&#123;</span><br><span class="line">        pathname: path.join(__dirname, <span class="string">'index.html'</span>),</span><br><span class="line">        protocol: <span class="string">'file:'</span>,</span><br><span class="line">        slashes: <span class="literal">true</span></span><br><span class="line">    &#125;))</span><br><span class="line">    mainWindow.on(<span class="string">'closed'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        mainWindow = <span class="literal">null</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">app.on(<span class="string">'ready'</span>, createWindow)</span><br><span class="line">app.on(<span class="string">'window-all-closed'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (process.platform !== <span class="string">'darwin'</span>) &#123;</span><br><span class="line">        app.quit()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">app.on(<span class="string">'activate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (mainWindow === <span class="literal">null</span>) &#123;</span><br><span class="line">        createWindow()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a><code>main.js</code></h2><p>当你使用<code>npm start</code>启动Electron程序时，这是最先被执行的脚本。在<code>main.js</code>中可以创建窗口对象以构建图形界面。一个典型的<code>main.js</code>如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> electron = <span class="built_in">require</span>(<span class="string">'electron'</span>)</span><br><span class="line"><span class="keyword">const</span> app = electron.app</span><br><span class="line"><span class="keyword">const</span> BrowserWindow = electron.BrowserWindow</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>)</span><br><span class="line"><span class="keyword">let</span> mainWindow</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createWindow</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    mainWindow = <span class="keyword">new</span> BrowserWindow(&#123;<span class="attr">width</span>: <span class="number">800</span>, <span class="attr">height</span>: <span class="number">600</span>&#125;)</span><br><span class="line">    mainWindow.loadURL(url.format(&#123;</span><br><span class="line">        pathname: path.join(__dirname, <span class="string">'index.html'</span>),</span><br><span class="line">        protocol: <span class="string">'file:'</span>,</span><br><span class="line">        slashes: <span class="literal">true</span></span><br><span class="line">    &#125;))</span><br><span class="line">    mainWindow.on(<span class="string">'closed'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        mainWindow = <span class="literal">null</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">app.on(<span class="string">'ready'</span>, createWindow)</span><br><span class="line">app.on(<span class="string">'window-all-closed'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (process.platform !== <span class="string">'darwin'</span>) &#123;</span><br><span class="line">        app.quit()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">app.on(<span class="string">'activate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (mainWindow === <span class="literal">null</span>) &#123;</span><br><span class="line">        createWindow()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <!--noindex-->
 <div class="post-button text-center">
 <a class="btn" href="/2018-03/使用Electron构建桌面应用/#more" rel="contents">
@@ -263,15 +326,15 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/Mac反编译apk程序/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -292,17 +355,19 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>APK，即Android应用程序包（Android application package），是Android操作系统使用的一种应用程序包文件格式，用于分发和安装移动应用及中间件。一个Android应用程序的代码想要在Android设备上运行，必须先进行编译，然后被打包成为一个被Android系统所能识别的文件才可以被运行，而这种能被Android系统识别并运行的文件格式便是APK。一个APK文件内包含被编译的代码文件(.dex 文件)，文件资源（resources）， assets，证书（certificates），和清单文件（manifest file）。</p>
+<p>APK，即Android应用程序包（Android application package），是Android操作系统使用的一种应用程序包文件格式，用于分发和安装移动应用及中间件。一个Android应用程序的代码想要在Android设备上运行，必须先进行编译，然后被打包成为一个被Android系统所能识别的文件才可以被运行，而这种能被Android系统识别并运行的文件格式便是APK。一个APK文件内包含被编译的代码文件(<code>.dex</code>文件)，文件资源（resources）， assets，证书（certificates），和清单文件（manifest file）。</p>
 <p>APK文件基于ZIP文件格式，它与JAR文件的构造方式相似。因而，直接解压APK文件可以得到一部分信息，如<code>classes.dex</code>等。如果要进行更详尽的分析，就需要用到反编译的工具了。</p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载最新的JDK"><a href="#下载最新的JDK" class="headerlink" title="下载最新的JDK"></a>下载最新的JDK</h3><p>前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>，在底部找到<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Download Java for Developers</a>，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。</p>
-<p><img src="/images/2018-03/jdk.png" alt=""></p>
-<h3 id="配置JDK"><a href="#配置JDK" class="headerlink" title="配置JDK"></a>配置JDK</h3><p>下载完成后，打开dmg镜像进行安装。JDK会被安装到<code>/Library/Java/JavaVirtualMachines</code>目录下。为了能在终端正确运行最新的JDK，需要配置环境变量。在<code>~/.bash_profile</code>中增加以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home</span><br><span class="line">PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span>:.</span><br><span class="line">CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:.</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME</span><br><span class="line"><span class="built_in">export</span> PATH</span><br><span class="line"><span class="built_in">export</span> CLASSPATH</span><br></pre></td></tr></table></figure></p>
-<p>其中，将<code>jdk1.8.0_40.jdk</code>换成你所安装的JDK对应的版本和目录。修改完成后，重开终端或使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/2018-03/jdk.png" alt></p>
+<h3 id="配置JDK"><a href="#配置JDK" class="headerlink" title="配置JDK"></a>配置JDK</h3><p>下载完成后，打开dmg镜像进行安装。JDK会被安装到<code>/Library/Java/JavaVirtualMachines</code>目录下。为了能在终端正确运行最新的JDK，需要配置环境变量。在<code>~/.bash_profile</code>中增加以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home</span><br><span class="line">PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span>:.</span><br><span class="line">CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:.</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME</span><br><span class="line"><span class="built_in">export</span> PATH</span><br><span class="line"><span class="built_in">export</span> CLASSPATH</span><br></pre></td></tr></table></figure>
+<p>其中，将<code>jdk1.8.0_40.jdk</code>换成你所安装的JDK对应的版本和目录。修改完成后，重开终端或使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
 <p>使环境变量生效。</p>
 <h3 id="下载apk反编译组件"><a href="#下载apk反编译组件" class="headerlink" title="下载apk反编译组件"></a>下载apk反编译组件</h3><p>需要下载的程序包括：</p>
 <ul>
@@ -310,7 +375,7 @@ page-home">
 <li><a href="https://github.com/pxb1988/dex2jar/releases" target="_blank" rel="noopener">dex2jar</a></li>
 <li><a href="http://java-decompiler.github.io" target="_blank" rel="noopener">JD-GUI</a></li>
 </ul>
-<p>一些论坛里会把它们称为『apk反编译三件套』。</p>
+<p>一些论坛里会把它们称为『APK反编译三件套』。</p>
 <!--noindex-->
 <div class="post-button text-center">
 <a class="btn" href="/2018-03/Mac反编译apk程序/#more" rel="contents">
@@ -324,15 +389,15 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/数学笑话/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -353,13 +418,13 @@ page-home">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>A point walks into A bar. $\bar{A}$ says, “We’re closed.”<br>$e^{x}$ is walking down the street when it sees $\pi$ running towards him. “Help!”, $\pi$ shouts, There’s a differential operator coming my way, and if it catches me, I’ll be reduced to nothing! $e^{x}$ confidently says “Stand beside me, $\pi$! Together, we’ll be safe from any differential operators we come across!” Suddenly, the differential operator appears and asks “Who are you?” They respond “We are $\pi e^{x}$. Who are you?” It smiles and says “$\frac{\partial}{\partial{y}}$”.</p>
-<p><img src="/images/2018-03/calczilla.png" alt=""></p>
+<p><img src="/images/2018-03/calczilla.png" alt></p>
 <!--noindex-->
 <div class="post-button text-center">
 <a class="btn" href="/2018-03/数学笑话/#more" rel="contents">
@@ -373,62 +438,9 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/MySQL 8.0的安装和使用/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-03/MySQL 8.0的安装和使用/" class="post-title-link" itemprop="url">MySQL 8.0的安装和使用</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-03-09 10:16:24" itemprop="dateCreated datePublished" datetime="2018-03-09T10:16:24+08:00">2018-03-09</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<h2 id="MySQL的安装"><a href="#MySQL的安装" class="headerlink" title="MySQL的安装"></a>MySQL的安装</h2><p>在MySQL官网的<a href="https://dev.mysql.com/downloads" target="_blank" rel="noopener">下载页</a>上，提供了各种系统和环境的安装方法。你可以选择通过包管理工具的软件源安装，也可以通过源码编译安装。不过编译是非常吃内存的（至少需要4GiB内存），并且还很耗时（毕竟是C++写的），因此不推荐。具体来说，你可以：</p>
-<h3 id="使用包管理工具"><a href="#使用包管理工具" class="headerlink" title="使用包管理工具"></a>使用包管理工具</h3><p>以yum为例，首先增加并启用MySQL软件源，在<a href="https://dev.mysql.com/downloads/repo/yum" target="_blank" rel="noopener">这个页面</a>找到适合你的版本，然后下载并启用之：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm <span class="comment">#换成适合你的版本</span></span><br><span class="line">rpm -ivh mysql80-community-release-el7-1.noarch.rpm</span><br><span class="line">yum-config-manager --<span class="built_in">enable</span> mysql80-community</span><br></pre></td></tr></table></figure></p>
-<p>这样，就可以直接通过yum安装MySQL服务器了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install mysql-community-server</span><br></pre></td></tr></table></figure></p>
-<p>安装完成后，会在<code>/usr/sbin/</code>和<code>/usr/bin/</code>目录下出现MySQL的可执行文件，而<code>mysqld.service</code>会自动加载好。MySQL的配置文件则是<code>/etc/my.cnf</code>。</p>
-<h3 id="使用源码编译安装"><a href="#使用源码编译安装" class="headerlink" title="使用源码编译安装"></a>使用源码编译安装</h3><p>再次提醒：源码编译安装方式非常麻烦，如果可以的话请使用包管理工具安装。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget wget https://cdn.mysql.com//Downloads/MySQL-8.0/mysql-boost-8.0.13.tar.gz</span><br><span class="line">tar -xzvf mysql-boost-8.0.13.tar.gz</span><br><span class="line"><span class="built_in">cd</span> mysql-boost-8.0.13</span><br><span class="line">cmake . -DCMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span>/mysql -DMYSQL_DATADIR=/data/mysql -DDOWNLOAD_BOOST=1 -DWITH_BOOST=boost -DSYSCONFDIR=/etc -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_PARTITION_STORAGE_ENGINE=1 -DWITH_FEDERATED_STORAGE_ENGINE=1 -DWITH_BLACKHOLE_STORAGE_ENGINE=1 -DWITH_MYISAM_STORAGE_ENGINE=1 -DWITH_EMBEDDED_SERVER=1 -DENABLE_DTRACE=0 -DENABLED_LOCAL_INFILE=1 -DDEFAULT_CHARSET=utf8mb4 -DEXTRA_CHARSETS=all</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure></p>
-<p>这里的<code>-DCMAKE_INSTALL_PREFIX</code>和<code>-DMYSQL_DATADIR</code>参数指定了MySQL的安装目录和数据文件存储目录。</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-03/MySQL 8.0的安装和使用/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
-<a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+<a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
 </nav>
 </div>
 </div>
@@ -443,7 +455,7 @@ page-home">
 <div class="sidebar-inner">
 <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -451,7 +463,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -544,7 +556,6 @@ window.Promise = null;
 <script src="/js/affix.js?v=7.1.2"></script>
 <script src="/js/schemes/pisces.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

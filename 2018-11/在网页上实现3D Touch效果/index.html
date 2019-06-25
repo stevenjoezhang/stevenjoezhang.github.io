@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -89,10 +89,10 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left page-post-detail">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -164,15 +164,15 @@ top: initial;
 <div class="content-wrap">
 <div id="content" class="content">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/在网页上实现3D Touch效果/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -192,7 +192,7 @@ top: initial;
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
 </span>
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
@@ -213,14 +213,14 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p><img src="/images/2018-11/3d_touch_cover_.jpg" alt=""></p>
+<p><img src="/images/2018-11/3d_touch_cover_.jpg" alt></p>
 <p>2016年9月14日凌晨，iOS 10正式版开始向用户推送更新，而iOS 10搭载的Safari10亦带来了不少新特性，其中就有3D Touch事件的支持（官方文档<a href="https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html" target="_blank" rel="noopener">《What’s New in Safari 10》</a>）。</p>
 <h2 id="Force-Touch与3D-Touch"><a href="#Force-Touch与3D-Touch" class="headerlink" title="Force Touch与3D Touch"></a>Force Touch与3D Touch</h2><p>说到3D Touch不能不提与之相似的Force Touch。Force Touch是苹果公司在2014年9月公布的一项压力敏感屏幕技术，最早用于Apple Watch，可识别轻点、轻按两种操作。随后Force Touch于2015年9月在iPhone 6S上得到改进并更名为3D Touch，提供了更高灵敏度的触控力度识别、及更强的触感反馈，支持轻点、轻按及重按三个维度。</p>
 <p>支持3D Touch的设备，目前有iPhone 6S、iPhone 6S Plus、iPhone 7以及iPhone 7 Plus（注：截止2018年，还要加上iPhone 8和iPhone X等）。这是后文的硬件要求。</p>
 <h2 id="感受3D-Touch"><a href="#感受3D-Touch" class="headerlink" title="感受3D Touch"></a>感受3D Touch</h2><p>3D Touch最为典型的交互有Quick Actions和Peek and Pop两种。在APP图标上重按呼出一组快捷操作菜单，这即是典型的Quick Actions：</p>
-<p><img src="/images/2018-11/quick_actions.jpg" alt=""></p>
+<p><img src="/images/2018-11/quick_actions.jpg" alt></p>
 <p>而使用Peek and Pop则可以快速地对内容进行预览，以及后续的其他操作：</p>
-<p><img src="/images/2018-11/peek_and_pop.jpg" alt=""></p>
+<p><img src="/images/2018-11/peek_and_pop.jpg" alt></p>
 <p>如上图所示，在系统的邮件APP中，以一定的力度按压邮件列表中的某一项，会触发Peek弹出一个内容预览窗口（在Peek状态下上滑还能触发Quick Actions调出一些快捷操作项哦），如果继续加大按压力度，则会触发Pop进入邮件内容界面，这整个过程就称之为Peek and Pop。</p>
 <p>除了邮件APP以外，信息、照片等多个系统APP以及一些第三方APP（如微信、Facebook、Twitter等）也都很好的支持了Peek and Pop这种3D Touch交互形式。</p>
 <h2 id="网页中的3D-Touch"><a href="#网页中的3D-Touch" class="headerlink" title="网页中的3D Touch"></a>网页中的3D Touch</h2><p>要在网页中实现3D Touch，需要用到以下两个知识点：</p>
@@ -242,7 +242,7 @@ top: initial;
 </ul>
 <h2 id="一个3D-Touch的例子"><a href="#一个3D-Touch的例子" class="headerlink" title="一个3D Touch的例子"></a>一个3D Touch的例子</h2><p>看到这里你肯定想说”Shut up and show me the code…”。好的，那我们来看一个例子，在这个示例页面，用支持3D Touch的设备按压蓝色按钮可以将树懒兄逗笑哦，嘿嘿嘿～</p>
 <a id="more"></a>
-<p><img src="/images/2018-11/demo.png" alt=""></p>
+<p><img src="/images/2018-11/demo.png" alt></p>
 <p>你可扫描以上二维码，或<a href="http://jdc.jd.com/demo/3d-touch" target="_blank" rel="noopener">戳我进行预览</a>，<strong>注意请使用iOS Safari浏览器进行访问！使用iOS Safari浏览器！！使用iOS Safari浏览器！！！</strong>重要的事情要说三遍，因为目前微信WebView并不支持3D Touch。</p>
 <p>实现思路其实比较简单，根据刚刚说到的知识，我们分别监听touchforcechange、touchstart、touchend、touchcancel事件：</p>
 <ul>
@@ -251,7 +251,7 @@ top: initial;
 <li>在touchend及touchcancel事件中把touch.force重置为0，并清除定时器。</li>
 </ul>
 <p>而树懒兄大笑的动画则用的是以下这张雪碧图，根据当前touch.force值来设置background-position以显示对应的动画帧来实现的。</p>
-<p><img src="/images/2018-11/sloth.png" alt=""></p>
+<p><img src="/images/2018-11/sloth.png" alt></p>
 <p>你可以访问这个<a href="https://github.com/hihuimin/3d-touch" target="_blank" rel="noopener">Github项目</a>来查看源码，核心代码位于ThreeDTouch.js，该文件封装了一个名为ThreeDTouch的类，事例化时传入一个DOM对象即可在callback中获取到按压力度值的变化。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 3D Touch 事件处理器，传入要监听的 DOM 对象，在 callback 回调中获取当前 force 值</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @param &#123; HTMLElement &#125; el - 要监听的 DOM 对象</span></span><br><span class="line"><span class="comment"> * @param &#123; Function &#125; callback - 带有 force 值的回调函数</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ThreeDTouch</span>(<span class="params">el, callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.el = el</span><br><span class="line">    <span class="keyword">this</span>.callback = callback</span><br><span class="line">    <span class="keyword">this</span>._bindEvents()</span><br><span class="line">&#125;</span><br><span class="line">ThreeDTouch.prototype = &#123;</span><br><span class="line">    <span class="comment">//绑定相关 touch 事件</span></span><br><span class="line">    _bindEvents: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> events = [<span class="string">'touchforcechange'</span>, <span class="string">'touchstart'</span>, <span class="string">'touchend'</span>, <span class="string">'touchcancel'</span>]</span><br><span class="line">        events.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.el.addEventListener(event, <span class="keyword">this</span>, <span class="literal">false</span>)</span><br><span class="line">        &#125;.bind(<span class="keyword">this</span>))</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//分派 touch 事件</span></span><br><span class="line">    handleEvent: <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (ev.type) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'touchforcechange'</span>:</span><br><span class="line">                <span class="keyword">this</span>._touchForceDidChange(ev)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">case</span> <span class="string">'touchstart'</span>:</span><br><span class="line">                <span class="keyword">this</span>._touchDidStart(ev)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">case</span> <span class="string">'touchend'</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'touchcancel'</span>:</span><br><span class="line">                <span class="keyword">this</span>._touchDidEnd(ev)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//force 值改变时</span></span><br><span class="line">    _touchForceDidChange: <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> force = ev.touches[<span class="number">0</span>].force</span><br><span class="line">        <span class="keyword">this</span>.callback(force)</span><br><span class="line">        clearTimeout(<span class="keyword">this</span>.timeoutId) <span class="comment">//支持 touchforcechange 的话则取消轮询</span></span><br><span class="line">    &#125;,</span><br><span class="line">    _touchDidStart: <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> touch = ev.touches[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">this</span>._checkForce(touch)</span><br><span class="line">    &#125;,</span><br><span class="line">    _touchDidEnd: <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.callback(<span class="number">0</span>)</span><br><span class="line">        clearTimeout(<span class="keyword">this</span>.timeoutId)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//轮询地获取 force 值</span></span><br><span class="line">    _checkForce: <span class="function"><span class="keyword">function</span>(<span class="params">touch</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.callback(touch.force)</span><br><span class="line">        <span class="keyword">this</span>.timeoutId = setTimeout(<span class="keyword">this</span>._checkForce.bind(<span class="keyword">this</span>, touch), <span class="number">16</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
@@ -335,7 +335,7 @@ top: initial;
 </ul>
 <div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -343,7 +343,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -445,7 +445,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.1.2"></script>
 <script src="/js/post-details.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

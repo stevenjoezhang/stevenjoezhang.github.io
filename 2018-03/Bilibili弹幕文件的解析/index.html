@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -48,7 +48,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="B站的每个视频都有aid和cid两个参数，在已知视频aid（即AV号）的情况下，可以通过链接https://www.bilibili.com/widget/getPageList?aid=10492获取cid（将10492替换为你要查询的视频的aid）。视频的更多信息则可以通过https://api.bilibili.com/view?type=jsonp&amp;amp;appkey=8e9fc618f">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T16:00:18.172Z">
+<meta property="og:updated_time" content="2019-06-24T15:34:22.128Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bilibili弹幕文件的解析">
 <meta name="twitter:description" content="B站的每个视频都有aid和cid两个参数，在已知视频aid（即AV号）的情况下，可以通过链接https://www.bilibili.com/widget/getPageList?aid=10492获取cid（将10492替换为你要查询的视频的aid）。视频的更多信息则可以通过https://api.bilibili.com/view?type=jsonp&amp;amp;appkey=8e9fc618f">
@@ -83,10 +83,10 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left page-post-detail">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -158,15 +158,15 @@ top: initial;
 <div class="content-wrap">
 <div id="content" class="content">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/Bilibili弹幕文件的解析/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -186,7 +186,7 @@ top: initial;
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
@@ -207,7 +207,8 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>B站的每个视频都有aid和cid两个参数，在已知视频aid（即AV号）的情况下，可以通过链接<code>https://www.bilibili.com/widget/getPageList?aid=10492</code>获取cid（将10492替换为你要查询的视频的aid）。<br>视频的更多信息则可以通过<code>https://api.bilibili.com/view?type=jsonp&amp;appkey=8e9fc618fbd41e28&amp;id=10492</code>获取。<br>视频的弹幕文件采用xml格式存储，地址与其cid有关，为<code>https://comment.bilibili.com/$cid.xml</code>（将$cid替换为视频的cid）。<br>对于有许多分P的视频，它们的aid（AV号）相同，每个分P则对应一个不同的cid。而在同一个页面下的番剧、影视等内容，每一分集的cid也是唯一的。<br>弹幕内容的存储方式为：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">d</span> <span class="attr">p</span>=<span class="string">"0,1,25,16777215,1312863760,0,eff85771,42759017"</span>&gt;</span>前排占位置<span class="tag">&lt;/<span class="name">d</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>B站的每个视频都有<code>aid</code>和<code>cid</code>两个参数，在已知视频<code>aid</code>（即AV号）的情况下，可以通过链接<code>https://www.bilibili.com/widget/getPageList?aid=10492</code>获取<code>cid</code>（将10492替换为你要查询的视频的aid）。<br>视频的更多信息则可以通过<code>https://api.bilibili.com/view?type=jsonp&amp;appkey=8e9fc618fbd41e28&amp;id=10492</code>获取。<br>视频的弹幕文件采用xml格式存储，地址与其<code>cid</code>有关，为<code>https://comment.bilibili.com/$cid.xml</code>（将<code>$cid</code>替换为视频的<code>cid</code>）。<br>对于有许多分P的视频，它们的aid（AV号）相同，每个分P则对应一个不同的<code>cid</code>。而在同一个页面下的番剧、影视等内容，每一分集的<code>cid</code>也是唯一的。<br>弹幕内容的存储方式为：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">d</span> <span class="attr">p</span>=<span class="string">"0,1,25,16777215,1312863760,0,eff85771,42759017"</span>&gt;</span>前排占位置<span class="tag">&lt;/<span class="name">d</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>这个元素中的各个参数由逗号分割，其意义分别为：</p>
 <ul>
 <li>弹幕出现的时间，以秒为单位</li>
@@ -291,7 +292,7 @@ top: initial;
 <div class="sidebar-inner">
 <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -299,7 +300,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -394,7 +395,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.1.2"></script>
 <script src="/js/post-details.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -87,10 +87,10 @@ top: initial;
 </style>
 </noscript>
 </head>
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <div class="container sidebar-position-left page-post-detail">
 <div class="headband"></div>
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
 <div class="custom-logo-site-title">
@@ -162,15 +162,15 @@ top: initial;
 <div class="content-wrap">
 <div id="content" class="content">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/一行代码为网站添加访客地图/">
-<span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
 <meta itemprop="image" content="/images/icon.gif">
 </span>
-<span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
@@ -190,7 +190,7 @@ top: initial;
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
 </span>
 <span class="post-comments-count">
 <span class="post-meta-divider">|</span>
@@ -212,12 +212,13 @@ top: initial;
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>Revolver Maps是一个交互式的网站访客地图。每一个浏览者的位置都会实时在由Canvas渲染的地球上标记出来。在它的<a href="https://www.revolvermaps.com/?target=gallery" target="_blank" rel="noopener">官方网站</a>上，你可以轻松地选择地图样式，并生成用于插入HTML页面的script标签。</p>
-<p><img src="/images/2018-02/data-1491837049070-rJZtl7Y6x.jpg" alt=""></p>
-<p>其中，RevolverMaps Standard GL样式是响应式的，会自适应父元素大小，非常适合作为访客地图使用。点击『Get this Widget!』按钮，在新的页面中调整参数，可以自定义颜色、缩放、旋转等等。完成后，将生成的script标签复制下来，并放在你想要生成地图的地方即可。例如：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"//ra.revolvermaps.com/0/0/8.js?i=0pdvpgzth5r&amp;amp;m=7&amp;amp;c=ff0000&amp;amp;cr1=ffffff&amp;amp;f=arial&amp;amp;l=33&amp;amp;v0=20&amp;amp;z=11"</span> <span class="attr">async</span>=<span class="string">"async"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/2018-02/data-1491837049070-rJZtl7Y6x.jpg" alt></p>
+<p>其中，RevolverMaps Standard GL样式是响应式的，会自适应父元素大小，非常适合作为访客地图使用。点击『Get this Widget!』按钮，在新的页面中调整参数，可以自定义颜色、缩放、旋转等等。完成后，将生成的script标签复制下来，并放在你想要生成地图的地方即可。例如：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"//ra.revolvermaps.com/0/0/8.js?i=0pdvpgzth5r&amp;amp;m=7&amp;amp;c=ff0000&amp;amp;cr1=ffffff&amp;amp;f=arial&amp;amp;l=33&amp;amp;v0=20&amp;amp;z=11"</span> <span class="attr">async</span>=<span class="string">"async"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>这时，效果看上去会是这样：</p>
-<p><img src="/images/2018-02/revolvermaps-1.png" alt=""></p>
+<p><img src="/images/2018-02/revolvermaps-1.png" alt></p>
 <p>类似地，你也可以把它放到WordPress博客的侧边小工具栏中，像下图这样：</p>
-<p><img src="/images/2018-02/revolvermaps-2.png" alt=""></p>
+<p><img src="/images/2018-02/revolvermaps-2.png" alt></p>
 <p>访问站点时，访客地图就会自动显示了。</p>
 </div>
 <div>
@@ -287,7 +288,7 @@ MySQL 8.0的安装和使用 <i class="fa fa-chevron-right"></i>
 <div class="sidebar-inner">
 <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
 <div class="site-overview">
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
@@ -295,7 +296,7 @@ MySQL 8.0的安装和使用 <i class="fa fa-chevron-right"></i>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">100</span>
+<span class="site-state-item-count">101</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -390,7 +391,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.1.2"></script>
 <script src="/js/post-details.js?v=7.1.2"></script>
 <script src="/js/next-boot.js?v=7.1.2"></script>
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

@@ -160,6 +160,48 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/震惊！黄金卡包竟能出橙/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-06/震惊！黄金卡包竟能出橙/" class="post-title-link" itemprop="url">震惊！黄金卡包竟能出橙</a>
+</h1>
+<div class="post-meta">
+<span class="post-time">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-06-15 15:55:32" itemprop="dateCreated datePublished" datetime="2018-06-15T15:55:32+08:00">2018-06-15</time>
+</span>
+<span class="post-category">
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>暴雪或将濒临破产。</p>
+<p><img src="/images/2018-06/al-akir.png" alt></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/PS制作科幻电路板/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -192,7 +234,8 @@ page-home">
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>科幻大片里的电路背景看上去是非常复杂的也是非常炫酷的，不过用滤镜来制作却不是很复杂。先把一些纹理处理成网格效果，然后用查找边缘等滤镜加强网络的边缘线条，后期细化一下线条，调整一下颜色即可。<br><img src="/images/2018-06/14513532189940.jpg" alt></p>
+<p>科幻大片里的电路背景看上去是非常复杂的也是非常炫酷的，不过用滤镜来制作却不是很复杂。先把一些纹理处理成网格效果，然后用查找边缘等滤镜加强网络的边缘线条，后期细化一下线条，调整一下颜色即可。</p>
+<p><img src="/images/2018-06/circuit.jpg" alt></p>
 <!--noindex-->
 <div class="post-button text-center">
 <a class="btn" href="/2018-06/PS制作科幻电路板/#more" rel="contents">
@@ -245,15 +288,9 @@ page-home">
 <h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p>首先，我们要从这个网站爬取表情包：<a href="http://www.doutula.com/photo/list/?page=0" target="_blank" rel="noopener">斗图啦</a>。
 我们先来分析一下这个网页的源代码：</p>
 <p><img src="/images/2018-06/1.png" alt></p>
-<p>通过源码，我们可以发现需要获取的内容包括每个img标签的data-original和alt属性。通过爬虫获取网页，用正则表达式提取内容，然后存入数据库即可。<br>首先，安装mysql，如果你在使用macOS，并配置好了Homebrew：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure>
-<p>其它系统可参考文章<a href="/2018-03/MySQL%208.0的安装和使用/">MySQL 8.0的安装和使用</a>。
-安装完成后，可能需要使用<code>mysql.server start</code>或者<code>systemctl start mysqld</code>等命令手动开启mysql服务。可以通过运行<code>lsof -i:3306</code>查看mysql是否正确工作在3306端口。初次登陆时可能需要用到MySQL生成的随机密码，查看方法是：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'temporary password'</span> /var/<span class="built_in">log</span>/mysqld.log</span><br></pre></td></tr></table></figure>
-<p>然后使用以下命令登录：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line"><span class="comment">#按下回车后，输入密码，无回显</span></span><br></pre></td></tr></table></figure>
-<p>如果你登录后设置了新的root密码，一定要记住。<br>接下来，你可以用root，也可以创建一个新用户，来新建数据库和数据表，用来存放表情包：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> images;</span><br><span class="line">#建立数据库images</span><br><span class="line"><span class="keyword">USE</span> images;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> images (</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">UNSIGNED</span> PRIMARY <span class="keyword">KEY</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">1000</span>),</span><br><span class="line">  imageUrl <span class="built_in">varchar</span>(<span class="number">200</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br><span class="line">#然后在该数据库中新建一个表，并添加相应的name和imageUrl</span><br><span class="line">QUIT;</span><br></pre></td></tr></table></figure>
+<p>通过源码，我们可以发现需要获取的内容包括每个<code>&lt;img&gt;</code>标签的<code>data-original</code>和<code>alt</code>属性。通过爬虫获取网页，用正则表达式提取内容，然后存入数据库即可。<br>这里用到的数据库是MySQL。如果还没有安装的话，不妨参考前面的文章<a href="/2018-03/MySQL%208.0的安装和使用/">MySQL 8.0的安装和使用</a>。</p>
+<p>安装完成后，你可以用root，也可以创建一个新用户，来新建数据库和数据表，用来存放表情包：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> images;</span><br><span class="line">#建立数据库images</span><br><span class="line"><span class="keyword">USE</span> images;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> images (</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">UNSIGNED</span> PRIMARY <span class="keyword">KEY</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">1000</span>),</span><br><span class="line">  imageUrl <span class="built_in">varchar</span>(<span class="number">200</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8mb4;</span><br><span class="line">#然后在该数据库中新建一个表，并添加相应的name和imageUrl</span><br><span class="line">QUIT;</span><br></pre></td></tr></table></figure>
 <p>至此数据库方面的工作就完成了。</p>
 <!--noindex-->
 <div class="post-button text-center">
@@ -422,64 +459,6 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/博客迁移至Hexo/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-05/博客迁移至Hexo/" class="post-title-link" itemprop="url">博客迁移至Hexo</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-05-20 16:44:30" itemprop="dateCreated datePublished" datetime="2018-05-20T16:44:30+08:00">2018-05-20</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>由于之前使用的WordPress博客在更新后出现未知错误（最后证实是主机商的问题），同时考虑到WordPress存在的一些弊端，例如：</p>
-<ul>
-<li>较为臃肿的PHP后端</li>
-<li>除了官方主题外，难以找到适合博客写作的主题，大多只适合做展示站</li>
-<li>在不安装插件的情况下，只能用自带的编辑器手写HTML，而无法使用Markdown来编辑文章</li>
-<li>静态文件的管理也让人头痛，『媒体库』的设计初衷很好，但实际上严重影响效率</li>
-</ul>
-<p>可见，用WordPress写文章，特别是长文，是一件非常麻烦的事情——你很难专注于写作。虽然它也有不少优点：</p>
-<ul>
-<li>丰富的插件库，可以拓展大量的功能</li>
-<li>完善的评论系统，无需依赖第三方服务</li>
-<li>更新非常方便</li>
-</ul>
-<p>这些特点是静态博客所不具有的，但最终喜欢折腾的博主还是决定将所有内容导出，转而使用Hexo进行渲染，并部署到GitHub Pages上。借助于<code>hexo-migrator-wordpress</code>，这一工作进行的非常顺利。当然，除了Hexo，也有很多其他的解决方案可以考虑，常见的包括Typecho或Hugo等。<br>迁移后的新站点使用了zhangshuqiao.org的域名，目前已可以通过https正常访问。旧的WordPress博客仍会保留，但不再更新，未来可能更多的用于进行插件的测试。<br>Galaxy Mimi站点近期也实装了全新LOGO（使用Monodraw制作）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">     ___           ___           ___       ___           ___           ___      </span><br><span class="line">    /\  \         /\  \         /\__\     /\  \         |\__\         |\__\     </span><br><span class="line">   /::\  \       /::\  \       /:/  /    /::\  \        |:|  |        |:|  |    </span><br><span class="line">  /:/\:\  \     /:/\:\  \     /:/  /    /:/\:\  \       |:|  |        |:|  |    </span><br><span class="line"> /:/  \:\  \   /::\~\:\  \   /:/  /    /::\~\:\  \      |:|__|__      |:|__|__  </span><br><span class="line">/:/__/_\:\__\ /:/\:\ \:\__\ /:/__/    /:/\:\ \:\__\ ____/::::\__\     /::::\__\ </span><br><span class="line">\:\  /\ \/__/ \/__\:\/:/  / \:\  \    \/__\:\/:/  / \::::/~~/~       /:/~~/~    </span><br><span class="line"> \:\ \:\__\        \::/  /   \:\  \        \::/  /   ~~|:|~~|       /:/  /      </span><br><span class="line">  \:\/:/  /        /:/  /     \:\  \       /:/  /      |:|  |       \/__/       </span><br><span class="line">   \::/  /        /:/  /       \:\__\     /:/  /       |:|  |                   </span><br><span class="line">    \/__/         \/__/         \/__/     \/__/         \|__|                   </span><br><span class="line">                   ___                       ___                                </span><br><span class="line">                  /\__\          ___        /\__\          ___                  </span><br><span class="line">                 /::|  |        /\  \      /::|  |        /\  \                 </span><br><span class="line">                /:|:|  |        \:\  \    /:|:|  |        \:\  \                </span><br><span class="line">               /:/|:|__|__      /::\__\  /:/|:|__|__      /::\__\               </span><br><span class="line">              /:/ |::::\__\  __/:/\/__/ /:/ |::::\__\  __/:/\/__/               </span><br><span class="line">              \/__/~~/:/  / /\/:/  /    \/__/~~/:/  / /\/:/  /                  </span><br><span class="line">                    /:/  /  \::/__/           /:/  /  \::/__/                   </span><br><span class="line">                   /:/  /    \:\__\          /:/  /    \:\__\                   </span><br><span class="line">                  /:/  /      \/__/         /:/  /      \/__/                   </span><br><span class="line">                  \/__/                     \/__/</span><br></pre></td></tr></table></figure>
-<p>同时博主计划于下半年将原来Galaxy Mimi站点的所有静态页面进行一次大型的改进，敬请期待。</p>
-<hr>
-<p>本文更新于2018年7月8日：<br>由于在国内GitHub Pages加载速度不稳定，且由于GitHub政策不利于SEO，博主已将所有托管在GitHub Pages上的页面迁移至另一台独立服务器。<br>目前全站已支持HTTPS访问，并启用了HSTS，未来时机成熟时将开启HTTP/2访问。</p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -505,7 +484,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">101</span>
+<span class="site-state-item-count">102</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -609,8 +588,8 @@ new Valine({
 el: '#comments',
 verify: true,
 notify: false,
-appId: '2L2N30Kyi18K1DjU0qxMGALD-gzGzoHsz',
-appKey: 'Bwrec8XDJon2rocQ5ScFcFWl',
+appId: 'piu0NMpHzJexJQxetynyuaxD-MdYXbMMI',
+appKey: 'faKsbM25WUuhAu2kB8hhjKtr',
 placeholder: '您可以在这里输入评论哟～',
 avatar: 'mm',
 meta: guest,
@@ -624,7 +603,7 @@ lang: '' || 'zh-cn'
 var isfetched = false;
 var isXml = true;
 // Search DB path;
-var search_path = "search.xml";
+var search_path = "search.json";
 if (search_path.length === 0) {
 search_path = "search.xml";
 } else if (/json$/i.test(search_path)) {

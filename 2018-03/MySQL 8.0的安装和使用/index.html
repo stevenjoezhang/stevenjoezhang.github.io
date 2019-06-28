@@ -48,7 +48,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="MySQL的安装在MySQL官网的下载页上，提供了各种系统和环境的安装方法。你可以选择通过包管理工具的软件源安装，也可以通过源码编译安装。不过编译是非常吃内存的（至少需要4GiB内存），并且还很耗时（毕竟是C++写的），因此不推荐。具体来说，你可以： 使用包管理工具以yum为例，首先增加并启用MySQL软件源，在这个页面找到适合你的版本，然后下载并启用之： 123wget https://dev.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-24T15:36:21.907Z">
+<meta property="og:updated_time" content="2019-06-28T10:40:03.586Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL 8.0的安装和使用">
 <meta name="twitter:description" content="MySQL的安装在MySQL官网的下载页上，提供了各种系统和环境的安装方法。你可以选择通过包管理工具的软件源安装，也可以通过源码编译安装。不过编译是非常吃内存的（至少需要4GiB内存），并且还很耗时（毕竟是C++写的），因此不推荐。具体来说，你可以： 使用包管理工具以yum为例，首先增加并启用MySQL软件源，在这个页面找到适合你的版本，然后下载并启用之： 123wget https://dev.">
@@ -213,6 +213,9 @@ top: initial;
 <p>这样，就可以直接通过yum安装MySQL服务器了。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install mysql-community-server</span><br></pre></td></tr></table></figure>
 <p>安装完成后，会在<code>/usr/sbin/</code>和<code>/usr/bin/</code>目录下出现MySQL的可执行文件，而<code>mysqld.service</code>会自动加载好。MySQL的配置文件则是<code>/etc/my.cnf</code>。</p>
+<p>如果你在使用macOS，并配置好了Homebrew：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure>
+<p>其它系统也可以使用相应的包管理工具安装。</p>
 <h3 id="使用源码编译安装"><a href="#使用源码编译安装" class="headerlink" title="使用源码编译安装"></a>使用源码编译安装</h3><p>再次提醒：源码编译安装方式非常麻烦，如果可以的话请使用包管理工具安装。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget wget https://cdn.mysql.com//Downloads/MySQL-8.0/mysql-boost-8.0.13.tar.gz</span><br><span class="line">tar -xzvf mysql-boost-8.0.13.tar.gz</span><br><span class="line"><span class="built_in">cd</span> mysql-boost-8.0.13</span><br><span class="line">cmake . -DCMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span>/mysql -DMYSQL_DATADIR=/data/mysql -DDOWNLOAD_BOOST=1 -DWITH_BOOST=boost -DSYSCONFDIR=/etc -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_PARTITION_STORAGE_ENGINE=1 -DWITH_FEDERATED_STORAGE_ENGINE=1 -DWITH_BLACKHOLE_STORAGE_ENGINE=1 -DWITH_MYISAM_STORAGE_ENGINE=1 -DWITH_EMBEDDED_SERVER=1 -DENABLE_DTRACE=0 -DENABLED_LOCAL_INFILE=1 -DDEFAULT_CHARSET=utf8mb4 -DEXTRA_CHARSETS=all</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 <p>这里的<code>-DCMAKE_INSTALL_PREFIX</code>和<code>-DMYSQL_DATADIR</code>参数指定了MySQL的安装目录和数据文件存储目录。</p>
@@ -350,13 +353,16 @@ top: initial;
 <td>x, for any “x” not listed above</td>
 </tr>
 </tbody></table>
-<p>这里的配置将会显示当前的数据库名。<br>完成设置后，重新启动mysqld即可：</p>
+<p>这里的配置将会显示当前的数据库名。</p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>完成设置后，重新启动mysqld即可：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure>
-<p>如果你是初次登陆，通过以下方式查看临时root密码：</p>
+<p>如果是macOS上使用Homebrew安装的，需要使用<code>mysql.server start</code>命令手动开启MySQL服务。可以通过运行<code>lsof -i:3306</code>查看MySQL是否正确工作在3306端口。<br>如果你是初次登陆，通过以下方式查看临时root密码：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'temporary password'</span> /var/<span class="built_in">log</span>/mysqld.log</span><br></pre></td></tr></table></figure>
-<p>然后执行<code>mysql -u root -p</code>，随后输入密码，即可登录。<br>如果是升级安装的，需要执行<code>mysql_upgrade -u root -p</code>来升级数据库。</p>
-<h2 id="MySQL命令"><a href="#MySQL命令" class="headerlink" title="MySQL命令"></a>MySQL命令</h2><p>登录的命令是<code>mysql -u username -p</code>，按回车后输入密码即可。如果要直接登录某个数据库，执行：<code>mysql -h host -u user -p dbname</code>。
-以下所有命令均需要以<code>;</code>结尾，大小写取决于系统设置。</p>
+<p>然后执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+<p>按回车后输入密码，即可登录。如果你登录后设置了新的root密码，一定要记住。<br>除此之外，如果要直接登录某个数据库，执行：<code>mysql -h host -u user -p dbname</code>。
+而如果是升级安装的，需要先执行<code>mysql_upgrade -u root -p</code>来升级数据库。</p>
+<h2 id="MySQL命令"><a href="#MySQL命令" class="headerlink" title="MySQL命令"></a>MySQL命令</h2><p>以下所有命令均需要以<code>;</code>结尾，大小写取决于系统设置。</p>
 <ul>
 <li>显示版本：<code>SHOW VARIABLES LIKE &quot;%version%&quot;;</code></li>
 <li>查看所有的库：<code>SHOW DATABASES;</code></li>
@@ -381,11 +387,6 @@ top: initial;
 <p>直接这样输入会造成问题，正确做法是：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> <span class="string">`hello-world`</span>;</span><br></pre></td></tr></table></figure>
 <p>如果对这些命令不熟悉，也可以安装phpMyAdmin之类的辅助软件。</p>
-<h3 id="AUTO-INCREMENT的重置"><a href="#AUTO-INCREMENT的重置" class="headerlink" title="AUTO_INCREMENT的重置"></a>AUTO_INCREMENT的重置</h3><p>在WordPress中，文章、用户的ID都是通过<code>AUTO_INCREMENT</code>分配的，如果要改变其值，可以在<code>wp_usermeta</code>和<code>wp_users</code>数据表中执行：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`wp_usermeta`</span></span><br><span class="line">  <span class="keyword">MODIFY</span> <span class="string">`umeta_id`</span> <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT, AUTO_INCREMENT=<span class="number">177</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure>
-<p>以及</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`wp_users`</span></span><br><span class="line">  <span class="keyword">MODIFY</span> <span class="string">`ID`</span> <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT, AUTO_INCREMENT=<span class="number">6</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure>
-<p>将<code>AUTO_INCREMENT</code>根据你自己的情况，修改为当前的行数。<br>对于存储评论信息的<code>wp_comments</code>也是类似的。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>MySQL8.0是MySQL5.7的后继版本，这次更新带来了许多新特性，比如更好的字符集支持、降序排列的优化等。官方宣传性能提高了2倍。<br>不过版本号从5.7之间跨越到了8.0确实是一次大飞跃，PHP 6、Windows 9和iPhone 9点了个赞，Sketch和Java笑而不语。<br>当然，这样还有一个好处是，避免<a href="https://groups.google.com/forum/#!topic/nodejs/iAPl--KJhK8" target="_blank" rel="noopener">版本6.4被GFW屏蔽</a>。嗯，仿佛没有什么问题。</p>
 </div>
 <div>
@@ -474,7 +475,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">101</span>
+<span class="site-state-item-count">102</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -516,7 +517,7 @@ RSS
 <!--noindex-->
 <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
 <div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL的安装"><span class="nav-number">1.</span> <span class="nav-text">MySQL的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用包管理工具"><span class="nav-number">1.1.</span> <span class="nav-text">使用包管理工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用源码编译安装"><span class="nav-number">1.2.</span> <span class="nav-text">使用源码编译安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL的配置"><span class="nav-number">2.</span> <span class="nav-text">MySQL的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL命令"><span class="nav-number">3.</span> <span class="nav-text">MySQL命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AUTO-INCREMENT的重置"><span class="nav-number">3.1.</span> <span class="nav-text">AUTO_INCREMENT的重置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL的安装"><span class="nav-number">1.</span> <span class="nav-text">MySQL的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用包管理工具"><span class="nav-number">1.1.</span> <span class="nav-text">使用包管理工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用源码编译安装"><span class="nav-number">1.2.</span> <span class="nav-text">使用源码编译安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL的配置"><span class="nav-number">2.</span> <span class="nav-text">MySQL的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">3.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL命令"><span class="nav-number">4.</span> <span class="nav-text">MySQL命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">5.</span> <span class="nav-text">后记</span></a></li></ol></div>
 </div>
 </div>
 <!--/noindex-->
@@ -587,8 +588,8 @@ new Valine({
 el: '#comments',
 verify: true,
 notify: false,
-appId: '2L2N30Kyi18K1DjU0qxMGALD-gzGzoHsz',
-appKey: 'Bwrec8XDJon2rocQ5ScFcFWl',
+appId: 'piu0NMpHzJexJQxetynyuaxD-MdYXbMMI',
+appKey: 'faKsbM25WUuhAu2kB8hhjKtr',
 placeholder: '您可以在这里输入评论哟～',
 avatar: 'mm',
 meta: guest,
@@ -602,7 +603,7 @@ lang: '' || 'zh-cn'
 var isfetched = false;
 var isXml = true;
 // Search DB path;
-var search_path = "search.xml";
+var search_path = "search.json";
 if (search_path.length === 0) {
 search_path = "search.xml";
 } else if (/json$/i.test(search_path)) {

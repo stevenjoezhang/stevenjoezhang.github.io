@@ -40,34 +40,29 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
-<meta name="description" content="上一篇文章介绍了使用Teensy 3.2将摩尔斯电键变为键盘的方法。经过研究，博主决定使用Arduino Leonardo实现之。相比Teensy 3.2，Arduino Leonardo成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。  Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入">
-<meta name="keywords" content="Morse Code,Arduino">
+<meta name="description" content="Pro Controller是任天堂为Switch适配的游戏手柄，于2016年10月20日与Switch一同亮相，并于2017年1月25日正式发布。除了在Switch上使用外，Pro Controller还可以与PC配对或连接，进行Steam上的游戏——Steam在2018年5月的客户端更新中增加了对Pro Controller的支持。 本文将介绍一个名为x360ce的工具，通过它可以将Pro C">
+<meta name="keywords" content="个人博客,张书樵,物理,技术,计算机">
 <meta property="og:type" content="article">
-<meta property="og:title" content="将电键变为鼠标和键盘——实现篇">
-<meta property="og:url" content="https://zhangshuqiao.org/2018-01/将电键变为鼠标和键盘——实现篇/index.html">
+<meta property="og:title" content="在PC上使用Pro Controller">
+<meta property="og:url" content="https://zhangshuqiao.org/2019-06/在PC上使用Pro Controller/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="上一篇文章介绍了使用Teensy 3.2将摩尔斯电键变为键盘的方法。经过研究，博主决定使用Arduino Leonardo实现之。相比Teensy 3.2，Arduino Leonardo成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。  Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入">
+<meta property="og:description" content="Pro Controller是任天堂为Switch适配的游戏手柄，于2016年10月20日与Switch一同亮相，并于2017年1月25日正式发布。除了在Switch上使用外，Pro Controller还可以与PC配对或连接，进行Steam上的游戏——Steam在2018年5月的客户端更新中增加了对Pro Controller的支持。 本文将介绍一个名为x360ce的工具，通过它可以将Pro C">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/IMG_4488.jpg">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/ArduinoLeonardo1.png">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/ArduinoLeonardo3.png">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/ArduinoLeonardo4.png">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/ArduinoLeonardo2.png">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/IMG_4490.jpg">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-01/IMG_4491.jpg">
-<meta property="og:updated_time" content="2019-02-12T03:36:37.786Z">
+<meta property="og:image" content="https://zhangshuqiao.org/images/2019-06/x360ce.png">
+<meta property="og:image" content="https://zhangshuqiao.org/images/2019-06/x360ce2.png">
+<meta property="og:updated_time" content="2019-07-02T07:45:32.277Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="将电键变为鼠标和键盘——实现篇">
-<meta name="twitter:description" content="上一篇文章介绍了使用Teensy 3.2将摩尔斯电键变为键盘的方法。经过研究，博主决定使用Arduino Leonardo实现之。相比Teensy 3.2，Arduino Leonardo成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。  Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入">
-<meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-01/IMG_4488.jpg">
+<meta name="twitter:title" content="在PC上使用Pro Controller">
+<meta name="twitter:description" content="Pro Controller是任天堂为Switch适配的游戏手柄，于2016年10月20日与Switch一同亮相，并于2017年1月25日正式发布。除了在Switch上使用外，Pro Controller还可以与PC配对或连接，进行Steam上的游戏——Steam在2018年5月的客户端更新中增加了对Pro Controller的支持。 本文将介绍一个名为x360ce的工具，通过它可以将Pro C">
+<meta name="twitter:image" content="https://zhangshuqiao.org/images/2019-06/x360ce.png">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
-<link rel="canonical" href="https://zhangshuqiao.org/2018-01/将电键变为鼠标和键盘——实现篇/">
+<link rel="canonical" href="https://zhangshuqiao.org/2019-06/在PC上使用Pro Controller/">
 <script id="page.configurations">
 CONFIG.page = {
 sidebar: "",
 };
 </script>
-<title>将电键变为鼠标和键盘——实现篇 | 米米的博客</title>
+<title>在PC上使用Pro Controller | 米米的博客</title>
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -168,7 +163,7 @@ top: initial;
 <div id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-01/将电键变为鼠标和键盘——实现篇/">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-06/在PC上使用Pro Controller/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
@@ -178,7 +173,7 @@ top: initial;
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
-<h1 class="post-title" itemprop="name headline">将电键变为鼠标和键盘——实现篇
+<h1 class="post-title" itemprop="name headline">在PC上使用Pro Controller
 </h1>
 <div class="post-meta">
 <span class="post-meta-item">
@@ -186,7 +181,7 @@ top: initial;
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-01-12 16:10:20" itemprop="dateCreated datePublished" datetime="2018-01-12T16:10:20+08:00">2018-01-12</time>
+<time title="创建时间：2019-06-22 17:03:20" itemprop="dateCreated datePublished" datetime="2019-06-22T17:03:20+08:00">2019-06-22</time>
 </span>
 <span class="post-meta-item">
 <span class="post-meta-item-icon">
@@ -200,8 +195,8 @@ top: initial;
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">评论数：</span>
-<a href="/2018-01/将电键变为鼠标和键盘——实现篇/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-01/将电键变为鼠标和键盘——实现篇/" itemprop="commentCount"></span>
+<a href="/2019-06/在PC上使用Pro Controller/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2019-06/在PC上使用Pro Controller/" itemprop="commentCount"></span>
 </a>
 </span>
 <span class="post-meta-item">
@@ -215,45 +210,19 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p><a href="/2018-01/将摩尔斯电键改造为USB键盘/">上一篇文章</a>介绍了使用Teensy 3.2将摩尔斯电键变为键盘的方法。经过研究，博主决定使用Arduino Leonardo实现之。相比Teensy 3.2，Arduino Leonardo成本更低，并且实现起来也较为简单。电键则采用全新产品，无需手动走线、打磨底座等，避免了使用二战时期古董带来的种种问题。</p>
-<p><img src="/images/2018-01/IMG_4488.jpg" alt></p>
-<p>Arduino Leonardo是基于ATmega32U4微控制器的开发板。它有20个输入/输出引脚（在写入程序时可以定义各个引脚的作用，其中最多有7个可用于PWM输出、12个可用于模拟输入），一个16 MHz的晶体振荡器，一个Micro USB接口，一个DC接口，一个ICSP接口，一个复位按钮。它包含了支持微控制器所需的一切，你可以简单地通过把它连接到计算机的USB接口来驱动它。<br>Leonardo不同于之前所有的Arduino控制器，他直接使用了ATmega32U4的USB通信功能，取消了USB转UART芯片。这使得Leonardo不仅可以作为一个虚拟的（CDC）串行/COM端口，还可以作为鼠标或者键盘连接到计算机。更多内容可以<a href="https://store.arduino.cc/usa/arduino-leonardo-with-headers" target="_blank" rel="noopener">参考文档</a>（在DOCUMENTATION选单中包含完整电路图）。</p>
-<a id="more"></a>
-<h2 id="硬件准备工作"><a href="#硬件准备工作" class="headerlink" title="硬件准备工作"></a>硬件准备工作</h2><p>需要准备</p>
-<ul>
-<li>Arduino Leonardo开发板1一块</li>
-<li>摩尔斯电键一个（例如K4型重型电键）</li>
-<li>面包板、导线（杜邦头连接线）及USB线</li>
-</ul>
-<p>取决于摩尔斯电键的输出方式，可能还需要一个3.5mm/6.5mm音频接口<br>有必要的话，还可以准备万用表等辅助工具</p>
-<h2 id="软件准备工作"><a href="#软件准备工作" class="headerlink" title="软件准备工作"></a>软件准备工作</h2><ul>
-<li><a href="https://www.arduino.cc/en/Main/Software" target="_blank" rel="noopener">Arduino IDE</a></li>
-<li><a href="/files/MimiMorse.zip">准备烧录的程序源代码</a></li>
-<li><a href="https://playground.arduino.cc/Code/Bounce" target="_blank" rel="noopener">Bounce2库</a></li>
-</ul>
-<p>理论上Arduino Leonardo在Mac下可以无需驱动，即插即用；如果出现系统无法识别设备（串口）的情况，可以到相关论坛寻求帮助。出现这种情况，常见的可能是FTDI驱动冲突，或者是由macOS系统完整性保护造成的问题。你可以试试重启Arduino Leonardo并等待几秒、外接9V电源或者检查驱动问题。Windows下情况暂未测试。</p>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><ul>
-<li>打开Arduino IDE，导入下载的Bounce2库。</li>
-</ul>
-<p><img src="/images/2018-01/ArduinoLeonardo1.png" alt></p>
-<ul>
-<li>将Arduino Leonardo开发板通过USB线连接到电脑上，在Arduino IDE的『工具』菜单下设置正确的开发板和端口，如图所示。</li>
-</ul>
-<p><img src="/images/2018-01/ArduinoLeonardo3.png" alt><br><img src="/images/2018-01/ArduinoLeonardo4.png" alt></p>
-<ul>
-<li>如果是初次使用，在『文件』菜单下选择示例，找到Blink，打开后，依次点击编译、上传。如果出现未响应、无法找到端口等现象，请点击开发板上的按钮重启。如果上传成功，并且二极管L以0.5Hz的频率闪烁，则说明配置正确。</li>
-</ul>
-<p><img src="/images/2018-01/ArduinoLeonardo2.png" alt></p>
-<ul>
-<li>解压并打开下载的源代码文件。其中Keyboard文件能够将摩尔斯电键变为虚拟键盘，通过敲击字符的摩尔斯电码输入；Mouse文件能够将摩尔斯电键变为虚拟鼠标，按下即触发一次鼠标点击。选择你需要的文件，使用Arduino IDE打开，然后依次点击编译、上传。</li>
-<li>请使用物理方法将摩尔斯电键的两端分别连到Arduino Leonardo的GND和12端口，如图所示（当然，你可以更改源代码来使用别的端口）。如果是虚拟键盘模式，连接GND和8端口可以输入大写字母，不连接则输入小写字母。</li>
-</ul>
-<p><img src="/images/2018-01/IMG_4490.jpg" alt></p>
-<ul>
-<li>如果一切就绪，那么，当你按下电键或输入摩尔斯电码，电脑就会作出正确的反应。</li>
-</ul>
-<p><img src="/images/2018-01/IMG_4491.jpg" alt></p>
-<p>以上就是用摩尔斯电键作鼠标和键盘的教程。当然，Arduino Leonardo开发板的作用远远不止这些，如果发现更为有趣的应用，博主会继续分享出来。</p>
+<p>Pro Controller是任天堂为Switch适配的游戏手柄，于2016年10月20日与Switch一同亮相，并于2017年1月25日正式发布。除了在Switch上使用外，Pro Controller还可以与PC配对或连接，进行Steam上的游戏——Steam在2018年5月的客户端更新中增加了对Pro Controller的支持。</p>
+<p>本文将介绍一个名为<a href="https://github.com/x360ce/x360ce" target="_blank" rel="noopener">x360ce</a>的工具，通过它可以将Pro Controller的操作映射为一个Xbox手柄，这比在Steam中设置手柄更加方便和友好。</p>
+<p>Pro Controller有两种与PC连接的方式：USB有线连接和蓝牙连接。通过USB连接的Pro Controller只能被steam识别，而无论是x360ce还是pygame都无法正确读取数据。因此，要使用x360ce，你的PC必须具有蓝牙功能。</p>
+<p>下面将介绍操作步骤。</p>
+<h3 id="充电"><a href="#充电" class="headerlink" title="充电"></a>充电</h3><p>通过5V电源适配器连接USB Type-C接口为Pro Controller充电，使其保持足够的电量。正如前面所说的，最好不要直接通过PC的USB接口连接Pro Controller，以避免出现混乱。</p>
+<h3 id="蓝牙连接"><a href="#蓝牙连接" class="headerlink" title="蓝牙连接"></a>蓝牙连接</h3><p>长按USB Type-C接口旁的按键，使Pro Controller开机并进入蓝牙配对模式。在PC上通过蓝牙搜索并连接Pro Controller。蓝牙配对完成后，就可以使用x360ce了。</p>
+<h3 id="安装x360ce"><a href="#安装x360ce" class="headerlink" title="安装x360ce"></a>安装x360ce</h3><p><a href="https://github.com/x360ce/x360ce/releases" target="_blank" rel="noopener">在这里</a>下载最新版本的x360ce，然后解压并运行。</p>
+<p><img src="/images/2019-06/x360ce.png" alt></p>
+<p>点击『Add…』按钮，并勾选通过蓝牙连接的Pro Controller。</p>
+<p><img src="/images/2019-06/x360ce2.png" alt></p>
+<p>完成后，点击『OK』回到之前的页面。</p>
+<h3 id="其它配置"><a href="#其它配置" class="headerlink" title="其它配置"></a>其它配置</h3><p>将所有设置项按照前面图中的方式调整好即可。在『General』页面中，可以自行调整按键映射。在『Left Stick』和『Right Stick』中，可以调整灵敏度。完成设置后，需要点击『Save All』进行保存。</p>
+<p>如果一切正常，系统会识别出x360ce虚拟的Xbox手柄，这样就可以愉快的进行游戏了！</p>
 </div>
 <div>
 <div id="reward-container">
@@ -283,28 +252,21 @@ top: initial;
 <strong>本文作者： </strong>张书樵</li>
 <li class="post-copyright-link">
 <strong>本文链接：</strong>
-<a href="https://zhangshuqiao.org/2018-01/将电键变为鼠标和键盘——实现篇/" title="将电键变为鼠标和键盘——实现篇">https://zhangshuqiao.org/2018-01/将电键变为鼠标和键盘——实现篇/</a>
+<a href="https://zhangshuqiao.org/2019-06/在PC上使用Pro Controller/" title="在PC上使用Pro Controller">https://zhangshuqiao.org/2019-06/在PC上使用Pro Controller/</a>
 </li>
 <li class="post-copyright-license">
 <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
 </div>
 <footer class="post-footer">
-<div class="post-tags">
-<a href="/tags/Morse-Code/" rel="tag"># Morse Code</a>
-<a href="/tags/Arduino/" rel="tag"># Arduino</a>
-</div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
-<a href="/2018-01/将摩尔斯电键改造为USB键盘/" rel="next" title="将摩尔斯电键改造为USB键盘">
-<i class="fa fa-chevron-left"></i> 将摩尔斯电键改造为USB键盘
+<a href="/2019-06/PS用文字拼出照片/" rel="next" title="PS用文字拼出照片">
+<i class="fa fa-chevron-left"></i> PS用文字拼出照片
 </a>
 </div>
 <span class="post-nav-divider"></span>
 <div class="post-nav-prev post-nav-item">
-<a href="/2018-01/为了联盟/" rel="prev" title="为了联盟">
-为了联盟 <i class="fa fa-chevron-right"></i>
-</a>
 </div>
 </div>
 </footer>
@@ -384,7 +346,7 @@ RSS
 <!--noindex-->
 <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
 <div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#硬件准备工作"><span class="nav-number">1.</span> <span class="nav-text">硬件准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件准备工作"><span class="nav-number">2.</span> <span class="nav-text">软件准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作步骤"><span class="nav-number">3.</span> <span class="nav-text">操作步骤</span></a></li></ol></div>
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#充电"><span class="nav-number">1.</span> <span class="nav-text">充电</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#蓝牙连接"><span class="nav-number">2.</span> <span class="nav-text">蓝牙连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装x360ce"><span class="nav-number">3.</span> <span class="nav-text">安装x360ce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它配置"><span class="nav-number">4.</span> <span class="nav-text">其它配置</span></a></li></ol></div>
 </div>
 </div>
 <!--/noindex-->

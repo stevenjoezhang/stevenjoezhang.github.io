@@ -160,6 +160,61 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/详解CSRF与XSS攻击/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-07/详解CSRF与XSS攻击/" class="post-title-link" itemprop="url">详解CSRF与XSS攻击</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-07-13 17:07:22" itemprop="dateCreated datePublished" datetime="2018-07-13T17:07:22+08:00">2018-07-13</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+<br>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>在<a href="/2018-07/WordPress中文验证码/">之前的一篇文章</a>中，提到了WordPress的插件审核机制，其中对于代码安全性的要求，主要就是对CSRF与XSS攻击的防范。官方邮件中这样写道：</p>
+<blockquote>
+<h2 id="Not-using-Nonces-and-or-checking-permissions"><a href="#Not-using-Nonces-and-or-checking-permissions" class="headerlink" title="Not using Nonces and/or checking permissions"></a>Not using Nonces and/or checking permissions</h2><p>Please add a nonce to your POST calls to prevent unauthorized access.<br>Keep in mind, check_admin_referer alone is NOT bulletproof security. Do not rely on nonces for authorization purposes. Use current_user_can() in order to prevent users without the right permissions from accessing things.</p>
+</blockquote>
+<blockquote>
+<h2 id="Please-sanitize-escape-and-validate-your-POST-calls"><a href="#Please-sanitize-escape-and-validate-your-POST-calls" class="headerlink" title="Please sanitize, escape, and validate your POST calls"></a>Please sanitize, escape, and validate your POST calls</h2><p>When you include POST/GET/REQUEST/FILE calls in your plugin, it’s important to sanitize, validate, and escape them. The goal here is to prevent a user from accidentally sending trash data through the system, as well as protecting them from potential security issues.<br>SANITIZE: Data that is input (either by a user or automatically) must be sanitized. This lessens the possibility of XSS vulnerabilities and MITM attacks where posted data is subverted.<br>VALIDATE: All data should be validated as much as possible. Even when you sanitize, remember that you don’t want someone putting in ‘dog’ when the only valid values are numbers.<br>ESCAPE: Data that is output must be escaped properly, so it can’t hijack admin screens. There are many esc_*() functions you can use to make sure you don’t show people the wrong data.<br>To help you with this, WordPress comes with a number of sanitization and escaping functions. You can read about those here: <a href="https://developer.wordpress.org/plugins/security/securing-input/" target="_blank" rel="noopener">https://developer.wordpress.org/plugins/security/securing-input/</a><br>Remember: You must use the MOST appropriate functions for the context. If you’re sanitizing email, use sanitize_email(), if you’re outputting HTML, use esc_html(), and so on.<br>Clean everything, check everything, escape everything, and never trust the users to always have input sane data.</p>
+</blockquote>
+<p>下面通过维基百科的内容介绍CSRF与XSS攻击的具体形式。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-07/详解CSRF与XSS攻击/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/Hexo内容压缩/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -174,21 +229,21 @@ page-home">
 <a href="/2018-07/Hexo内容压缩/" class="post-title-link" itemprop="url">Hexo内容压缩</a>
 </h1>
 <div class="post-meta">
-<span class="post-time">
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-07-10 07:16:41" itemprop="dateCreated datePublished" datetime="2018-07-10T07:16:41+08:00">2018-07-10</time>
 </span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
 </span>
+<br>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -224,21 +279,21 @@ page-home">
 <a href="/2018-07/WordPress中文验证码/" class="post-title-link" itemprop="url">WordPress中文验证码</a>
 </h1>
 <div class="post-meta">
-<span class="post-time">
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-07-05 21:25:35" itemprop="dateCreated datePublished" datetime="2018-07-05T21:25:35+08:00">2018-07-05</time>
 </span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
 </span>
+<br>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -273,21 +328,21 @@ page-home">
 <a href="/2018-06/贝利乌鸦嘴历史/" class="post-title-link" itemprop="url">贝利乌鸦嘴历史</a>
 </h1>
 <div class="post-meta">
-<span class="post-time">
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-06-25 16:37:24" itemprop="dateCreated datePublished" datetime="2018-06-25T16:37:24+08:00">2018-06-25</time>
 </span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
 </span>
+<br>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -336,21 +391,21 @@ page-home">
 <a href="/2018-06/Python标签云拟合图片/" class="post-title-link" itemprop="url">Python标签云拟合图片</a>
 </h1>
 <div class="post-meta">
-<span class="post-time">
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-06-24 11:18:32" itemprop="dateCreated datePublished" datetime="2018-06-24T11:18:32+08:00">2018-06-24</time>
 </span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
 </span>
+<br>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -369,68 +424,6 @@ page-home">
 <!--noindex-->
 <div class="post-button text-center">
 <a class="btn" href="/2018-06/Python标签云拟合图片/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/Linux下增加、删除Swap文件/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-06/Linux下增加、删除Swap文件/" class="post-title-link" itemprop="url">Linux下增加、删除Swap文件</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-06-18 17:14:42" itemprop="dateCreated datePublished" datetime="2018-06-18T17:14:42+08:00">2018-06-18</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>在使用VPS时，如果出现内存不够用的情况，可能会产生各种奇怪的问题。这个时候，增加Swap空间，就可以起到救急的作用。下面就来看看具体步骤。</p>
-<h2 id="创建Swap文件"><a href="#创建Swap文件" class="headerlink" title="创建Swap文件"></a>创建Swap文件</h2><h3 id="检查Swap空间"><a href="#检查Swap空间" class="headerlink" title="检查Swap空间"></a>检查Swap空间</h3><p>先检查一下系统里有没有既存的Swap文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon -s</span><br></pre></td></tr></table></figure>
-<p>如果返回的信息概要是空的，则表示Swap文件不存在。</p>
-<h3 id="计算参数"><a href="#计算参数" class="headerlink" title="计算参数"></a>计算参数</h3><p>创建Swap文件将用到<code>dd</code>命令，我们需要根据需求（即要分配的Swap文件的大小）来计算出参数。一种典型的做法是，每次读写1KiB，重复N次，这样可以兼顾内存消耗和读写次数。因此，如果以MiB为单位计算你要分配的Swap文件的大小，那么读写次数（拷贝的块数）就是将该值乘以1024得到结果。例如，块大小为1KiB时，64MiB的Swap文件拷贝的块数是65536，而1GiB的Swap文件则是1048576。</p>
-<h3 id="使用dd命令来创建Swap"><a href="#使用dd命令来创建Swap" class="headerlink" title="使用dd命令来创建Swap"></a>使用<code>dd</code>命令来创建Swap</h3><p>根据前面的计算：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd <span class="keyword">if</span>=/dev/zero of=/swapfile bs=1024 count=1048576 <span class="comment">#分配1G的Swap空间</span></span><br></pre></td></tr></table></figure>
-<p>参数说明：</p>
-<ul>
-<li><code>if=input file</code>：输入文件名，缺省为标准输入。即指定源文件。</li>
-<li><code>of=output file</code>：输出文件名，缺省为标准输出。即指定目的文件。</li>
-<li><code>bs=bytes</code>：同时设置读入/输出的块大小为bytes个字节，取为1024。</li>
-<li><code>count=blocks</code>：拷贝的块数，块大小等于bs指定的字节数。将前面算出的数字填入即可。</li>
-</ul>
-<p>这里的<code>if=/dev/zero</code>意味着向<code>/swapfile</code>填满空字符。你也可以尝试将它换成<code>/dev/random</code>，或许也可以正常初始化。</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-06/Linux下增加、删除Swap文件/#more" rel="contents">
 阅读全文 &raquo;
 </a>
 </div>
@@ -466,7 +459,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">102</span>
+<span class="site-state-item-count">103</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -897,7 +890,7 @@ pagemode: 'thumbs',
 view: 'FitH'
 },
 PDFJS_URL: '/lib/pdf/web/viewer.html',
-height: $(o).attr('height') || '500px'
+height: $(o).attr('height') || '1000px'
 });
 });
 },

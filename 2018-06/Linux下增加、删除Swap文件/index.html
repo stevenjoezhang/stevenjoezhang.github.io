@@ -48,7 +48,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="在使用VPS时，如果出现内存不够用的情况，可能会产生各种奇怪的问题。这个时候，增加Swap空间，就可以起到救急的作用。下面就来看看具体步骤。 创建Swap文件检查Swap空间先检查一下系统里有没有既存的Swap文件： 1swapon -s  如果返回的信息概要是空的，则表示Swap文件不存在。 计算参数创建Swap文件将用到dd命令，我们需要根据需求（即要分配的Swap文件的大小）来计算出参数。一">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-24T15:43:06.476Z">
+<meta property="og:updated_time" content="2019-07-01T05:30:55.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下增加、删除Swap文件">
 <meta name="twitter:description" content="在使用VPS时，如果出现内存不够用的情况，可能会产生各种奇怪的问题。这个时候，增加Swap空间，就可以起到救急的作用。下面就来看看具体步骤。 创建Swap文件检查Swap空间先检查一下系统里有没有既存的Swap文件： 1swapon -s  如果返回的信息概要是空的，则表示Swap文件不存在。 计算参数创建Swap文件将用到dd命令，我们需要根据需求（即要分配的Swap文件的大小）来计算出参数。一">
@@ -173,23 +173,21 @@ top: initial;
 <h1 class="post-title" itemprop="name headline">Linux下增加、删除Swap文件
 </h1>
 <div class="post-meta">
-<span class="post-time">
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-06-18 17:14:42" itemprop="dateCreated datePublished" datetime="2018-06-18T17:14:42+08:00">2018-06-18</time>
 </span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
-<span class="post-comments-count">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
@@ -198,12 +196,14 @@ top: initial;
 <span class="post-comments-count valine-comment-count" data-xid="/2018-06/Linux下增加、删除Swap文件/" itemprop="commentCount"></span>
 </a>
 </span>
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-file"></i>
 阅读次数：
 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
+</span>
+<br>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -228,7 +228,7 @@ top: initial;
 <h2 id="启用Swap"><a href="#启用Swap" class="headerlink" title="启用Swap"></a>启用Swap</h2><p>创建好Swap文件，还需要格式化后才能使用。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#初始化并激活Swap</span></span><br><span class="line">mkswap /swapfile</span><br><span class="line">swapon /swapfile</span><br></pre></td></tr></table></figure>
 <p>如果要机器重启的时候自动挂载Swap，那么还需要修改<code>fstab</code>配置。<br>用<code>vim</code>打开<code>/etc/fstab</code>文件，在其最后添加如下一行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/swapfile  Swap Swap   defaults 0 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/swapfile none swap sw 0 0</span><br></pre></td></tr></table></figure>
 <p>当下一次系统启动时，新的Swap文件就打开了。<br>添加新的Swap文件并开启后，检查<code>cat /proc/swaps</code>或者free命令的输出来查看swap是否已打开。</p>
 <h2 id="删除Swap分区"><a href="#删除Swap分区" class="headerlink" title="删除Swap分区"></a>删除Swap分区</h2><p>最后，是删除Swap分区的方法。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">swapoff /swapfile <span class="comment">#卸载swap文件</span></span><br><span class="line">rm -rf /swapfile <span class="comment">#删除文件</span></span><br></pre></td></tr></table></figure>
@@ -319,7 +319,7 @@ Python标签云拟合图片 <i class="fa fa-chevron-right"></i>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">102</span>
+<span class="site-state-item-count">103</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -759,7 +759,7 @@ pagemode: 'thumbs',
 view: 'FitH'
 },
 PDFJS_URL: '/lib/pdf/web/viewer.html',
-height: $(o).attr('height') || '500px'
+height: $(o).attr('height') || '1000px'
 });
 });
 },

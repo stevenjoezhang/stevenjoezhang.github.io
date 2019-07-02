@@ -160,6 +160,84 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/Crontab定时写法整理/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-05/Crontab定时写法整理/" class="post-title-link" itemprop="url">Crontab定时写法整理</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-05-27 17:24:22" itemprop="dateCreated datePublished" datetime="2018-05-27T17:24:22+08:00">2018-05-27</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+<br>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>在前面的文章<a href="/2018-05/Nginx配置SSL/">NGINX配置SSL</a>中，提到了关于创建Crontab定时任务的内容。事实上，在使用Linux系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了Crontab的机制，并对常见的Crontab用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。</p>
+<h2 id="Crontab使用方式"><a href="#Crontab使用方式" class="headerlink" title="Crontab使用方式"></a>Crontab使用方式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab [-u user] file</span><br><span class="line">crontab [-u user] [ -e | -l | -r ]</span><br></pre></td></tr></table></figure>
+<p>各参数为：</p>
+<ul>
+<li><code>-u user</code>：用来设定某个用户的crontab服务。</li>
+<li><code>file</code>：file是命令文件的名字，表示将file做为crontab的任务列表文件并载入crontab。如果在命令行中没有指定这个文件，crontab将接受从标准输入（如键盘）中键入的命令，并将它们载入crontab任务列表。</li>
+<li><code>-e</code>：编辑某个用户的crontab文件内容。如果不指定用户，则表示编辑当前用户的crontab文件。</li>
+<li><code>-l</code>：显示某个用户的crontab文件内容。如果不指定用户，则表示显示当前用户的crontab文件内容。</li>
+<li><code>-r</code>：从<code>/var/spool/cron</code>目录中删除某个用户的crontab文件。如果不指定用户，则默认删除当前用户的crontab文件。</li>
+<li><code>-i</code>：在删除用户的crontab文件时给确认提示。</li>
+</ul>
+<h2 id="Crontab文件格式"><a href="#Crontab文件格式" class="headerlink" title="Crontab文件格式"></a>Crontab文件格式</h2><p>用户所建立的crontab文件中，每一行都代表一项任务，每行的每个字段代表一项设置，它的格式共分为六个字段，前五段是时间设定段，第六段是要执行的命令段，格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">minute hour day month week command</span><br><span class="line">分　时　日　月　周　命令</span><br></pre></td></tr></table></figure>
+<p>具体来说，每一列的内容分别是：</p>
+<ul>
+<li>分钟，可以是从0到59之间的任何整数。</li>
+<li>小时，可以是从0到23之间的任何整数（0表示0点）。</li>
+<li>日期，可以是从1到31之间的任何整数。</li>
+<li>月份，可以是从1到12之间的任何整数。</li>
+<li>星期几，可以是从0到7之间的任何整数，这里的0或7代表星期日。</li>
+<li>要执行的命令，可以是系统命令，也可以是自己编写的脚本文件。</li>
+</ul>
+<p><img src="/images/2018-05/crontab_thumb.png" alt></p>
+<p>在以上各个字段中，还可以使用以下特殊字符：</p>
+<ul>
+<li>星号（*）：代表所有可能的值，例如month字段如果是星号，则表示在满足其它字段的制约条件后每月都执行该命令操作。</li>
+<li>逗号（,）：可以用逗号隔开的值指定一个列表范围，例如<code>1,2,5,7,8,9</code>。</li>
+<li>中杠（-）：可以用整数之间的中杠表示一个整数范围，例如<code>2-6</code>表示<code>2,3,4,5,6</code>。</li>
+<li>正斜线（/）：可以用正斜线指定时间的间隔频率，例如<code>0-23/2</code>表示每两小时执行一次。</li>
+</ul>
+<p>同时正斜线可以和星号一起使用，例如<code>*/10</code>，如果用在minute字段，表示每十分钟执行一次。又如，每分钟可以用<code>*</code>或者<code>*/1</code>表示。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-05/Crontab定时写法整理/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/博客迁移至Hexo/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -174,21 +252,21 @@ page-home">
 <a href="/2018-05/博客迁移至Hexo/" class="post-title-link" itemprop="url">博客迁移至Hexo</a>
 </h1>
 <div class="post-meta">
-<span class="post-time">
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-05-20 16:44:30" itemprop="dateCreated datePublished" datetime="2018-05-20T16:44:30+08:00">2018-05-20</time>
 </span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
 </span>
+<br>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -232,21 +310,21 @@ page-home">
 <a href="/2018-05/Nginx配置SSL/" class="post-title-link" itemprop="url">Nginx配置SSL</a>
 </h1>
 <div class="post-meta">
-<span class="post-time">
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-05-18 16:01:41" itemprop="dateCreated datePublished" datetime="2018-05-18T16:01:41+08:00">2018-05-18</time>
 </span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
 </span>
+<br>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -301,21 +379,21 @@ page-home">
 <a href="/2018-05/有趣的Linux命令行工具/" class="post-title-link" itemprop="url">有趣的Linux命令行工具</a>
 </h1>
 <div class="post-meta">
-<span class="post-time">
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-05-13 12:57:19" itemprop="dateCreated datePublished" datetime="2018-05-13T12:57:19+08:00">2018-05-13</time>
 </span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
+<br>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -363,81 +441,27 @@ page-home">
 <a href="/2018-05/在GitHub热点图上绘画/" class="post-title-link" itemprop="url">在GitHub热点图上绘画</a>
 </h1>
 <div class="post-meta">
-<span class="post-time">
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-05-04 07:00:35" itemprop="dateCreated datePublished" datetime="2018-05-04T07:00:35+08:00">2018-05-04</time>
 </span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
 </span>
+<br>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>借助这个项目，你可以在GitHub热点图（动态图）上绘制图案，并由此生成Shell脚本；在空项目中执行该脚本，便能创造过去的commit记录；而将该项目push到GitHub上，你的热点图就变得和绘制的图案完全相同。</p>
 <p><img src="/images/2018-05/gitdraw.png" alt></p>
 <p>项目地址：<a href="https://github.com/stevenjoezhang/git-draw" target="_blank" rel="noopener">git-draw</a><br>原项目是一个Chrome插件，由于长期没有维护，且GitHub改变了页面结构，导致插件不可用。新项目重写了部分JavaScript代码，使得其能够正常运行。快来试试吧！</p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/CUPT地震仪的实现/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-05/CUPT地震仪的实现/" class="post-title-link" itemprop="url">CUPT地震仪的实现</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-05-02 10:22:49" itemprop="dateCreated datePublished" datetime="2018-05-02T10:22:49+08:00">2018-05-02</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>2018年CUPT的第一题：</p>
-<blockquote>
-<p><strong>Invent Yourself</strong><br>Construct a simple seismograph that amplifies a local disturbance by mechanical, optical or electrical methods. Determine the typical response curve of your device and investigate the parameters of the damping constant. What is the maximum amplification that you can achieve?<br><strong>自主发明</strong><br>建造一个可以通过力学、光学或电学方法放大局部扰动的简单地震仪。确定你装置的标准响应曲线并且研究阻尼常数的参量。你能达到的最大放大率是多少？</p>
-</blockquote>
-<p>此题的关键便是将地震仪的反应谱通过可观测量进行表示。实现的思路有很多，力学、光学或电学方法都是可行的。综合考虑了实现难度和测量精度后，决定采用以下方案：通过力学方法放大震动，然后利用霍尔片和磁铁将力学量转换为电学量，借助Arduino单片机的模数转换，通过串口将信号输入到电脑，电脑用Python监听串口，将获得的数据保存并实时分析、绘图。</p>
-<p>仪器的整体构造如图：</p>
-<p><img src="/images/2018-05/1.jpg" alt></p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-05/CUPT地震仪的实现/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -469,7 +493,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">102</span>
+<span class="site-state-item-count">103</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -900,7 +924,7 @@ pagemode: 'thumbs',
 view: 'FitH'
 },
 PDFJS_URL: '/lib/pdf/web/viewer.html',
-height: $(o).attr('height') || '500px'
+height: $(o).attr('height') || '1000px'
 });
 });
 },

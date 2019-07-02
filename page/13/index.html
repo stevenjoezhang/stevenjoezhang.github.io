@@ -160,6 +160,60 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/CUPT地震仪的实现/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-05/CUPT地震仪的实现/" class="post-title-link" itemprop="url">CUPT地震仪的实现</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-05-02 10:22:49" itemprop="dateCreated datePublished" datetime="2018-05-02T10:22:49+08:00">2018-05-02</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
+</span>
+<br>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>2018年CUPT的第一题：</p>
+<blockquote>
+<p><strong>Invent Yourself</strong><br>Construct a simple seismograph that amplifies a local disturbance by mechanical, optical or electrical methods. Determine the typical response curve of your device and investigate the parameters of the damping constant. What is the maximum amplification that you can achieve?<br><strong>自主发明</strong><br>建造一个可以通过力学、光学或电学方法放大局部扰动的简单地震仪。确定你装置的标准响应曲线并且研究阻尼常数的参量。你能达到的最大放大率是多少？</p>
+</blockquote>
+<p>此题的关键便是将地震仪的反应谱通过可观测量进行表示。实现的思路有很多，力学、光学或电学方法都是可行的。综合考虑了实现难度和测量精度后，决定采用以下方案：通过力学方法放大震动，然后利用霍尔片和磁铁将力学量转换为电学量，借助Arduino单片机的模数转换，通过串口将信号输入到电脑，电脑用Python监听串口，将获得的数据保存并实时分析、绘图。</p>
+<p>仪器的整体构造如图：</p>
+<p><img src="/images/2018-05/1.jpg" alt></p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-05/CUPT地震仪的实现/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/文艺的代码/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -174,21 +228,21 @@ page-home">
 <a href="/2018-04/文艺的代码/" class="post-title-link" itemprop="url">文艺的代码</a>
 </h1>
 <div class="post-meta">
-<span class="post-time">
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-04-27 17:20:39" itemprop="dateCreated datePublished" datetime="2018-04-27T17:20:39+08:00">2018-04-27</time>
 </span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
 </span>
+<br>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -230,21 +284,21 @@ page-home">
 <a href="/2018-04/搭建MCPE服务器/" class="post-title-link" itemprop="url">搭建MCPE服务器</a>
 </h1>
 <div class="post-meta">
-<span class="post-time">
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-04-23 16:19:36" itemprop="dateCreated datePublished" datetime="2018-04-23T16:19:36+08:00">2018-04-23</time>
 </span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
 </span>
+<br>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -279,21 +333,21 @@ page-home">
 <a href="/2018-04/Mac启动Apache服务器/" class="post-title-link" itemprop="url">Mac启动Apache服务器</a>
 </h1>
 <div class="post-meta">
-<span class="post-time">
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-04-18 15:00:35" itemprop="dateCreated datePublished" datetime="2018-04-18T15:00:35+08:00">2018-04-18</time>
 </span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
 </span>
+<br>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -335,21 +389,21 @@ page-home">
 <a href="/2018-04/Linux命令行常用快捷键/" class="post-title-link" itemprop="url">Linux命令行常用快捷键</a>
 </h1>
 <div class="post-meta">
-<span class="post-time">
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-04-15 12:58:28" itemprop="dateCreated datePublished" datetime="2018-04-15T12:58:28+08:00">2018-04-15</time>
 </span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
+<br>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -399,69 +453,6 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/Shell中数学运算总结/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-04/Shell中数学运算总结/" class="post-title-link" itemprop="url">Shell中数学运算总结</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-04-11 20:23:03" itemprop="dateCreated datePublished" datetime="2018-04-11T20:23:03+08:00">2018-04-11</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>如果手边没有方便的计算器，想在Shell中进行数学运算该怎么办呢？要知道，Shell中的赋值和操作默认都是字符串处理。在此，博主整理了Shell中进行数学运算的几个特殊方法。</p>
-<h2 id="错误方法"><a href="#错误方法" class="headerlink" title="错误方法"></a>错误方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var=1+1</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br></pre></td></tr></table></figure>
-<p>输出的结果是<code>1+1</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var=1</span><br><span class="line">var=<span class="variable">$var</span>+1</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br></pre></td></tr></table></figure>
-<p>输出结果也是<code>1+1</code></p>
-<h2 id="正确方法"><a href="#正确方法" class="headerlink" title="正确方法"></a>正确方法</h2><h3 id="使用let"><a href="#使用let" class="headerlink" title="使用let"></a>使用<code>let</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var=1</span><br><span class="line"><span class="built_in">let</span> <span class="string">"var+=1"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br></pre></td></tr></table></figure>
-<p>输出结果为2<br>注意：</p>
-<ul>
-<li>经测试，<code>let</code>几乎支持所有的运算符，包括自加、自减以及括号等，且不同运算的优先级都得到了很好的支持</li>
-<li>方幂运算应使用<code>**</code>，如<code>2**10</code></li>
-<li>参数在表达式中直接访问，不必加$</li>
-<li>一般情况下算数表达式可以不加双引号，但是若表达式中有Bash中的关键字则需加上</li>
-<li><code>let</code>后的表达式只能进行整数运算</li>
-</ul>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用(())"></a>使用<code>(())</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var=1</span><br><span class="line">((var+=1))</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br></pre></td></tr></table></figure>
-<p>输出结果为2<br>注意：<br>(())的使用方法与<code>let</code>完全相同</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-04/Shell中数学运算总结/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -487,7 +478,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">102</span>
+<span class="site-state-item-count">103</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -918,7 +909,7 @@ pagemode: 'thumbs',
 view: 'FitH'
 },
 PDFJS_URL: '/lib/pdf/web/viewer.html',
-height: $(o).attr('height') || '500px'
+height: $(o).attr('height') || '1000px'
 });
 });
 },

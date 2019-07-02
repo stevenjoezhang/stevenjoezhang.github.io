@@ -494,9 +494,7 @@ body {
 }
 pre,
 .highlight {
-  overflow: auto;
   margin: 20px 0;
-  padding: 0;
   font-size: 14px;
   color: #4d4d4c;
   background: #f7f7f7;
@@ -516,6 +514,7 @@ code {
   font-size: 14px;
 }
 pre {
+  overflow: auto;
   padding: 10px;
 }
 pre code {
@@ -545,7 +544,6 @@ pre code {
   font-size: 1em;
   color: #4d4d4c;
   line-height: 1em;
-  margin-bottom: 1em;
   margin: 0em;
   padding: 0.5em;
   background: #eee;
@@ -576,7 +574,6 @@ pre code {
 .highlight .code pre {
   width: 100%;
   padding-left: 10px;
-  padding-right: 10px;
   background-color: #f7f7f7;
 }
 .highlight .line {
@@ -946,7 +943,7 @@ pre .javascript .function {
   position: relative;
   overflow: auto;
   width: 100%;
-  height: 500px;
+  height: 1000px;
 }
 .btn {
   display: inline-block;
@@ -1271,16 +1268,10 @@ pre .javascript .function {
   .posts-expand {
     margin: 0 20px;
   }
-  .post-body pre .gutter pre {
-    padding-right: 10px;
-  }
   .post-body .highlight {
     margin-left: 0px;
     margin-right: 0px;
     padding: 0;
-  }
-  .post-body .highlight .gutter pre {
-    padding-right: 10px;
   }
 }
 @media (min-width: 992px) {
@@ -1493,14 +1484,6 @@ pre .javascript .function {
   font-size: 12px;
   text-align: center;
 }
-.posts-expand .post-meta .post-category-list {
-  display: inline-block;
-  margin: 0;
-  padding: 3px;
-}
-.posts-expand .post-meta .post-category-list-link {
-  color: #999;
-}
 .posts-expand .post-meta .post-description {
   font-size: 14px;
   margin-top: 2px;
@@ -1512,25 +1495,19 @@ pre .javascript .function {
 .post-meta-divider {
   margin: 0 0.5em;
 }
+.post-meta .post-meta-item + .post-meta-item::before {
+  content: "|";
+  margin: 0 0.5em;
+}
 .post-meta-item-icon {
   margin-right: 3px;
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (max-width: 991px) {
   .post-meta-item-icon {
     display: inline-block;
   }
 }
-@media (max-width: 767px) {
-  .post-meta-item-icon {
-    display: inline-block;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .post-meta-item-text {
-    display: none;
-  }
-}
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .post-meta-item-text {
     display: none;
   }
@@ -1858,7 +1835,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff8204;
+  background: #1205ff;
 }
 .feed-link,
 .chat {

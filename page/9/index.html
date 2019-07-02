@@ -160,6 +160,61 @@ page-home">
 <section id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/自己打造一台恩尼格玛密码机/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-08/自己打造一台恩尼格玛密码机/" class="post-title-link" itemprop="url">自己打造一台恩尼格玛密码机</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-08-05 13:18:39" itemprop="dateCreated datePublished" datetime="2018-08-05T13:18:39+08:00">2018-08-05</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+<br>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p><img src="/images/2018-08/F5YSP9KHMF6R1PD.LARGE.jpg" alt></p>
+<p>在对称加密学当中，恩尼格玛机绝对是承前启后的存在。它将密码学研究从以前的语言文字学中心完全转移到了数学身上。在这里牵涉的密码并不是我们平时邮箱、银行帐号那种狭义概念，那种顶多叫做口令。这里说的密码就是通过某种映射方式，把一篇文章变得面目全非，以达到保密效果；只有特定的转换规律才能将其解密。这篇文章适于电脑控、军事控、历史控、数学控阅读，请做好烧脑准备。</p>
+<p>EDIT: This Instructable has won Second prize in the 2013 Radio Shack Microcontroller Contest. Thank You to all who voted!
+按：这个作品是2013年无线电单片机竞赛的亚军。感谢所有支持这个作品的你们！<br>EDIT2: An Open Enigma with fake Standup Nixie Tubes like the ones pictured in this Instructable will soon be available as a Special Kickstarter edition.</p>
+<p>This is our very first Instructable and this step by step guide will show you how to build a fully functional electronic replica of the world famous German Enigma machine. This Arduino based Open Source project is able to encrypt &amp; decrypt any Enigma M4 encoded message.<br>这是我们的初号机。以下教程将手把手教你如何完美复刻史上著名的德国恩尼格玛密码机。这个基于Arduino的开源程序能够加解密任何Enigma机M4型（海军型）的信息。<br>This first ever fully functional Open Source Enigma “exact” Replica was inspired by the Kid’s Game to Arduino Enigma Machine by sketchsk3tch.<br>这个第一台全功能开源完美Enigma机复制品是根据sketchsk3tch写的《Kid’s Game to Arduino Enigma Machine（从儿童玩具到Arduino恩尼格玛机）》所作。<br>Using Multiplexing for the LEDs, this circuit with 115 light emitting diodes uses only 38 pins and the 36 push buttons use only 4 pins total thanks to properly placed resistors (and the P-Channel MOSFETs) in the keyboard loop. These 4 16-Segment displays &amp; an LED for each keyboard button would add up quickly the total number of pins required and even the Arduino Mega would have ran out of pins without the 2 methods mentioned above….<br>采用多路复用LED电路，仅用38个针脚的115个发光二极管和4个针脚的36个按键所连接的整个电路，全靠在键盘回路里准确放置的电阻以及P沟道场效应晶体管得以实现。要不然，4个16段显示器，以及每个按键上的LED将大幅增加所需针脚总量——即使用了Arduino Mega板，但如果没用上述两个方法，电路也不能如此简洁。<br>In response to the overwhelming demand, we designed the PCB and made it available through <a href="http://www.stgeotronics.com" target="_blank" rel="noopener">www.stgeotronics.com</a>. Skip to Step 10 &amp; beyond for more info. We also offer it as a complete electronics kit &amp; an assembled &amp; tested complete product.<br>面对电路的超额需求，我们在 <a href="http://www.stgeotronics.com" target="_blank" rel="noopener">http://www.stgeotronics.com</a> 设计了专用的PCB板。直接跳到第10步和以后的步骤可以找到更多信息。同时，我们也发布了测试过的完整电子组装套装。</p>
+<h2 id="Step-1-Proof-of-Concept-on-Breadboard"><a href="#Step-1-Proof-of-Concept-on-Breadboard" class="headerlink" title="Step 1: Proof of Concept on Breadboard"></a>Step 1: Proof of Concept on Breadboard</h2><p>第一步：面包板上的论证</p>
+<p><img src="/images/2018-08/F3ULXLHHMEXSREA.LARGE.jpg" alt><br><img src="/images/2018-08/FQHGSW5HMF6R1XF.LARGE.jpg" alt></p>
+<p>Before going all out on the development of this electronic Enigma replica, we wanted to make sure we could properly drive the 16 Segment LEDs. If we can do that, than we will be able to do everything as the rest is only Math…<br>在开始制作电子Enigma机之前，我们先要确保能驱动16段LED显示。如果成功，我们就能做接下来的所有步骤——除了数学上的问题，一切都是浮云。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-08/自己打造一台恩尼格玛密码机/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/武功山游记/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -174,21 +229,21 @@ page-home">
 <a href="/2018-08/武功山游记/" class="post-title-link" itemprop="url">武功山游记</a>
 </h1>
 <div class="post-meta">
-<span class="post-time">
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-08-01 11:06:49" itemprop="dateCreated datePublished" datetime="2018-08-01T11:06:49+08:00">2018-08-01</time>
 </span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
 </span>
+<br>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -228,21 +283,21 @@ page-home">
 <a href="/2018-07/Unicode字符与颜文字表情/" class="post-title-link" itemprop="url">Unicode字符与颜文字表情</a>
 </h1>
 <div class="post-meta">
-<span class="post-time">
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-07-25 14:10:27" itemprop="dateCreated datePublished" datetime="2018-07-25T14:10:27+08:00">2018-07-25</time>
 </span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
+<br>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -293,21 +348,21 @@ page-home">
 <a href="/2018-07/在网页中添加Live2D看板娘/" class="post-title-link" itemprop="url">在网页中添加Live2D看板娘</a>
 </h1>
 <div class="post-meta">
-<span class="post-time">
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-07-21 20:05:32" itemprop="dateCreated datePublished" datetime="2018-07-21T20:05:32+08:00">2018-07-21</time>
 </span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
+<br>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -338,21 +393,21 @@ page-home">
 <a href="/2018-07/改变世界的17个公式/" class="post-title-link" itemprop="url">改变世界的17个公式</a>
 </h1>
 <div class="post-meta">
-<span class="post-time">
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
 <time title="创建时间：2018-07-18 11:53:28" itemprop="dateCreated datePublished" datetime="2018-07-18T11:53:28+08:00">2018-07-18</time>
 </span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
 </span>
+<br>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -361,61 +416,6 @@ page-home">
 <!--noindex-->
 <div class="post-button text-center">
 <a class="btn" href="/2018-07/改变世界的17个公式/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/详解CSRF与XSS攻击/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-07/详解CSRF与XSS攻击/" class="post-title-link" itemprop="url">详解CSRF与XSS攻击</a>
-</h1>
-<div class="post-meta">
-<span class="post-time">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-07-13 17:07:22" itemprop="dateCreated datePublished" datetime="2018-07-13T17:07:22+08:00">2018-07-13</time>
-</span>
-<span class="post-category">
-<span class="post-meta-divider">|</span>
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>在<a href="/2018-07/WordPress中文验证码/">之前的一篇文章</a>中，提到了WordPress的插件审核机制，其中对于代码安全性的要求，主要就是对CSRF与XSS攻击的防范。官方邮件中这样写道：</p>
-<blockquote>
-<h2 id="Not-using-Nonces-and-or-checking-permissions"><a href="#Not-using-Nonces-and-or-checking-permissions" class="headerlink" title="Not using Nonces and/or checking permissions"></a>Not using Nonces and/or checking permissions</h2><p>Please add a nonce to your POST calls to prevent unauthorized access.<br>Keep in mind, check_admin_referer alone is NOT bulletproof security. Do not rely on nonces for authorization purposes. Use current_user_can() in order to prevent users without the right permissions from accessing things.</p>
-</blockquote>
-<blockquote>
-<h2 id="Please-sanitize-escape-and-validate-your-POST-calls"><a href="#Please-sanitize-escape-and-validate-your-POST-calls" class="headerlink" title="Please sanitize, escape, and validate your POST calls"></a>Please sanitize, escape, and validate your POST calls</h2><p>When you include POST/GET/REQUEST/FILE calls in your plugin, it’s important to sanitize, validate, and escape them. The goal here is to prevent a user from accidentally sending trash data through the system, as well as protecting them from potential security issues.<br>SANITIZE: Data that is input (either by a user or automatically) must be sanitized. This lessens the possibility of XSS vulnerabilities and MITM attacks where posted data is subverted.<br>VALIDATE: All data should be validated as much as possible. Even when you sanitize, remember that you don’t want someone putting in ‘dog’ when the only valid values are numbers.<br>ESCAPE: Data that is output must be escaped properly, so it can’t hijack admin screens. There are many esc_*() functions you can use to make sure you don’t show people the wrong data.<br>To help you with this, WordPress comes with a number of sanitization and escaping functions. You can read about those here: <a href="https://developer.wordpress.org/plugins/security/securing-input/" target="_blank" rel="noopener">https://developer.wordpress.org/plugins/security/securing-input/</a><br>Remember: You must use the MOST appropriate functions for the context. If you’re sanitizing email, use sanitize_email(), if you’re outputting HTML, use esc_html(), and so on.<br>Clean everything, check everything, escape everything, and never trust the users to always have input sane data.</p>
-</blockquote>
-<p>下面通过维基百科的内容介绍CSRF与XSS攻击的具体形式。</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-07/详解CSRF与XSS攻击/#more" rel="contents">
 阅读全文 &raquo;
 </a>
 </div>
@@ -451,7 +451,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">102</span>
+<span class="site-state-item-count">103</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -914,7 +914,7 @@ pagemode: 'thumbs',
 view: 'FitH'
 },
 PDFJS_URL: '/lib/pdf/web/viewer.html',
-height: $(o).attr('height') || '500px'
+height: $(o).attr('height') || '1000px'
 });
 });
 },

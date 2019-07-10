@@ -6,20 +6,7 @@ This is a plugin that allows to preview PDF files in the blog pages.
 
 It's based on PDFObject and PDF.js. If the browser supports embedded PDFs natively, PDFObject will create a `<embed>` tag and include the PDF file on your website. Otherwise it will create a `<iframe>` tag and uses PDF.js to render the pdf file.
 
-Follow the guide below to install dependencies, then edit `_config.yml`:
-```
-pdf:
-  enable: true
-```
-<h3 align="center">Usage</h3>
-You just need to create an inline link point to your local pdf file, e.g.
-
-```
-[](/path/to/your/file.pdf)
-```
-Notice: Do not use cross-origin pdf files, it might be blocked by the CORS policy.
-
-Enjoy it!
+Follow the guide below to install dependencies.
 
 <h1 align="center">Installation</h1>
 
@@ -46,21 +33,31 @@ $ git clone https://github.com/theme-next/theme-next-pdf source/lib/pdf
 Enable module in **NexT** `_config.yml` file:
 
 ```yml
-# PDF Support
+# PDF tag, requires two plugins: pdfObject and pdf.js
+# pdfObject will try to load pdf files natively, if failed, pdf.js will be used.
+# The following `cdn` setting is only for pdfObject, because cdn for pdf.js might be blocked by CORS policy.
+# So, YOU MUST install the dependency of pdf.js if you want to use pdf tag and make it work on all browsers.
+# See: https://github.com/theme-next/theme-next-pdf
 pdf:
   enable: true
-
-  # Default(true) will load PDFObject/PDF.js script on demand
-  # That is it only render those page who has 'pdf: true' in Front Matter.
-  # If you set it to false, it will load PDFObject/PDF.js srcipt EVERY PAGE.
-  per_page: true
-
+  # Default height
   height: 500px
-
   pdfobject:
-    # Use 2.1.1 as default, cloudflare as default CDN
-    cdn: //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js
+    # Use 2.1.1 as default, jsdelivr as default CDN, works everywhere even in China
+    cdn: //cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js
+    # CDNJS, provided by cloudflare, maybe the best CDN, but not works in China
+    #cdn: //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js
 ```
+
+<h1 align="center">Usage</h1>
+In order to embed PDF files in the article, you just need to create an `pdf` tag with the URL of your local PDF file, e.g.
+
+```
+{% pdf /path/to/your/file.pdf %}
+```
+Notice: Do not use cross-origin PDF files, it might be blocked by the CORS policy.
+
+Enjoy it!
 
 <h1 align="center">Update</h1>
 

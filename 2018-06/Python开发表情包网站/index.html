@@ -11,17 +11,17 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.1.2">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
-<link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.1.2',
+version: '7.2.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
 back2top: true,
 back2top_sidebar: false,
@@ -40,6 +40,9 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
 <meta name="description" content="『表情包』是一种利用图片来表示感情的方式。在各种社交软件的带动下，『表情包』已经形成了一种流行文化。互联网上，基本人人都会发表情；很多实时通讯软件中，『斗图』成为了一种活跃气氛的常见方式。不知你是否曾有过找不到表情包去应对别人的时候？今天博主分享用Python开发个人专属的表情包网站的方法，想用什么表情包搜一下就有了！目标：获取海量表情包，存入数据库，然后搭建简单网站，通过输入关键字获取对应的的表">
 <meta name="keywords" content="Python,MySQL">
 <meta property="og:type" content="article">
@@ -411,16 +414,13 @@ window.Promise = null;
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
 <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
-<script src="/lib/waifu/live2d.min.js"></script>
-<script src="/lib/waifu/waifu-tips.js"></script>
-<script src="/lib/custom.js"></script>
-<script src="/js/utils.js?v=7.1.2"></script>
-<script src="/js/motion.js?v=7.1.2"></script>
-<script src="/js/affix.js?v=7.1.2"></script>
-<script src="/js/schemes/pisces.js?v=7.1.2"></script>
-<script src="/js/scrollspy.js?v=7.1.2"></script>
-<script src="/js/post-details.js?v=7.1.2"></script>
-<script src="/js/next-boot.js?v=7.1.2"></script>
+<script src="/js/utils.js?v=7.2.0"></script>
+<script src="/js/motion.js?v=7.2.0"></script>
+<script src="/js/affix.js?v=7.2.0"></script>
+<script src="/js/schemes/pisces.js?v=7.2.0"></script>
+<script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+<script src="/js/next-boot.js?v=7.2.0"></script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];

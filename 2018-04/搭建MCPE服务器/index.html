@@ -22,9 +22,9 @@ var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.2.0',
-sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
-back2top: true,
-back2top_sidebar: false,
+sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+copycode: {"enable":true,"show_result":true,"style":null},
 fancybox: true,
 fastclick: true,
 lazyload: false,
@@ -36,13 +36,15 @@ apiKey: '',
 indexName: '',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+},
+translation: {
+copy_button: '复制',
+copy_success: '复制成功',
+copy_failure: '复制失败'
 }
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
-<script src="/lib/waifu/live2d.min.js"></script>
-<script src="/lib/waifu/waifu-tips.js"></script>
-<script src="/lib/custom.js"></script>
 <meta name="description" content="目前搭建MCPE服务器的方法主要有两种：PocketMine-MP和Nukkit。前者基于PHP，而后者基于Java。无论选择哪一种方法，都要确保游戏客户端和服务器端均是最新版本。如果版本不匹配，可能造成无法连接等问题。 PocketMine-MP运行PocketMine-MP需要PHP7环境和大量的拓展库，例如php-leveldb和yaml等。即使你已经通过brew、yum等包管理工具安装了P">
 <meta name="keywords" content="我的世界">
 <meta property="og:type" content="article">
@@ -306,7 +308,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">103</span>
+<span class="site-state-item-count">102</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -354,6 +356,7 @@ RSS
 <!--/noindex-->
 </div>
 </aside>
+<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">
@@ -392,7 +395,7 @@ if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
 window.Promise = null;
 }
 </script>
-<script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+<script size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/fastclick/lib/fastclick.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
@@ -752,43 +755,8 @@ height: $(o).attr('height') || '1000px'
 </script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script>pangu.spacingPage();</script>
-<script>
-$('.highlight').not('.gist .highlight').each(function(i, e) {
-var $wrap = $('<div>').addClass('highlight-wrap');
-$(e).after($wrap);
-$wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
-var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-return $(e).text();
-}).toArray().join('\n');
-var ta = document.createElement('textarea');
-var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-ta.style.top = yPosition + 'px'; // Prevent page scroll
-ta.style.position = 'absolute';
-ta.style.opacity = '0';
-ta.readOnly = true;
-ta.value = code;
-document.body.appendChild(ta);
-const selection = document.getSelection();
-const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
-ta.select();
-ta.setSelectionRange(0, code.length);
-ta.readOnly = false;
-var result = document.execCommand('copy');
-if (result) $(this).text('复制成功');
-else $(this).text('复制失败');
-ta.blur(); // For iOS
-$(this).blur();
-if (selected) {
-selection.removeAllRanges();
-selection.addRange(selected);
-}
-})).on('mouseleave', function(e) {
-var $b = $(this).find('.copy-btn');
-setTimeout(function() {
-$b.text('复制');
-}, 300);
-}).append(e);
-})
-</script>
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
 </body>
 </html>

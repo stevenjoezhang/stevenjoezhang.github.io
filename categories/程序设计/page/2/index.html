@@ -22,9 +22,9 @@ var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.2.0',
-sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
-back2top: true,
-back2top_sidebar: false,
+sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+copycode: {"enable":true,"show_result":true,"style":null},
 fancybox: true,
 fastclick: true,
 lazyload: false,
@@ -36,13 +36,15 @@ apiKey: '',
 indexName: '',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+},
+translation: {
+copy_button: '复制',
+copy_success: '复制成功',
+copy_failure: '复制失败'
 }
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
-<script src="/lib/waifu/live2d.min.js"></script>
-<script src="/lib/waifu/waifu-tips.js"></script>
-<script src="/lib/custom.js"></script>
 <meta name="description" content="力电声光热，涵尽学海无涯">
 <meta name="keywords" content="个人博客,张书樵,物理,技术,计算机">
 <meta property="og:type" content="website">
@@ -168,20 +170,6 @@ top: initial;
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <header class="post-header">
 <h2 class="post-title">
-<a class="post-title-link" href="/2017-11/开源软件授权协议详解/" itemprop="url">
-<span itemprop="name">开源软件授权协议详解</span>
-</a>
-</h2>
-<div class="post-meta">
-<time class="post-time" itemprop="dateCreated" datetime="2017-11-18T19:19:47+08:00" content="2017-11-18">
-11-18
-</time>
-</div>
-</header>
-</article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<header class="post-header">
-<h2 class="post-title">
 <a class="post-title-link" href="/2017-11/WordPress 3.x版本中的彩蛋/" itemprop="url">
 <span itemprop="name">WordPress 3.x版本中的彩蛋</span>
 </a>
@@ -247,7 +235,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">103</span>
+<span class="site-state-item-count">102</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -288,6 +276,7 @@ RSS
 </div>
 </div>
 </aside>
+<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">
@@ -326,7 +315,7 @@ if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
 window.Promise = null;
 }
 </script>
-<script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+<script size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/fastclick/lib/fastclick.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
@@ -684,43 +673,8 @@ height: $(o).attr('height') || '1000px'
 </script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script>pangu.spacingPage();</script>
-<script>
-$('.highlight').not('.gist .highlight').each(function(i, e) {
-var $wrap = $('<div>').addClass('highlight-wrap');
-$(e).after($wrap);
-$wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
-var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-return $(e).text();
-}).toArray().join('\n');
-var ta = document.createElement('textarea');
-var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-ta.style.top = yPosition + 'px'; // Prevent page scroll
-ta.style.position = 'absolute';
-ta.style.opacity = '0';
-ta.readOnly = true;
-ta.value = code;
-document.body.appendChild(ta);
-const selection = document.getSelection();
-const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
-ta.select();
-ta.setSelectionRange(0, code.length);
-ta.readOnly = false;
-var result = document.execCommand('copy');
-if (result) $(this).text('复制成功');
-else $(this).text('复制失败');
-ta.blur(); // For iOS
-$(this).blur();
-if (selected) {
-selection.removeAllRanges();
-selection.addRange(selected);
-}
-})).on('mouseleave', function(e) {
-var $b = $(this).find('.copy-btn');
-setTimeout(function() {
-$b.text('复制');
-}, 300);
-}).append(e);
-})
-</script>
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
 </body>
 </html>

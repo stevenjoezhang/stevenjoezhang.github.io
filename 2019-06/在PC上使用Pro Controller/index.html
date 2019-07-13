@@ -22,9 +22,9 @@ var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.2.0',
-sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
-back2top: true,
-back2top_sidebar: false,
+sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+copycode: {"enable":true,"show_result":true,"style":null},
 fancybox: true,
 fastclick: true,
 lazyload: false,
@@ -36,13 +36,15 @@ apiKey: '',
 indexName: '',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+},
+translation: {
+copy_button: '复制',
+copy_success: '复制成功',
+copy_failure: '复制失败'
 }
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
-<script src="/lib/waifu/live2d.min.js"></script>
-<script src="/lib/waifu/waifu-tips.js"></script>
-<script src="/lib/custom.js"></script>
 <meta name="description" content="Pro Controller是任天堂为Switch适配的游戏手柄，于2016年10月20日与Switch一同亮相，并于2017年1月25日正式发布。除了在Switch上使用外，Pro Controller还可以与PC配对或连接，进行Steam上的游戏——Steam在2018年5月的客户端更新中增加了对Pro Controller的支持。 本文将介绍一个名为x360ce的工具，通过它可以将Pro C">
 <meta name="keywords" content="个人博客,张书樵,物理,技术,计算机">
 <meta property="og:type" content="article">
@@ -53,7 +55,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2019-06/x360ce.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2019-06/x360ce2.png">
-<meta property="og:updated_time" content="2019-07-07T13:51:55.581Z">
+<meta property="og:updated_time" content="2019-07-12T15:34:29.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在PC上使用Pro Controller">
 <meta name="twitter:description" content="Pro Controller是任天堂为Switch适配的游戏手柄，于2016年10月20日与Switch一同亮相，并于2017年1月25日正式发布。除了在Switch上使用外，Pro Controller还可以与PC配对或连接，进行Steam上的游戏——Steam在2018年5月的客户端更新中增加了对Pro Controller的支持。 本文将介绍一个名为x360ce的工具，通过它可以将Pro C">
@@ -270,6 +272,9 @@ top: initial;
 </div>
 <span class="post-nav-divider"></span>
 <div class="post-nav-prev post-nav-item">
+<a href="/2019-07/怎样修好任何电脑/" rel="prev" title="怎样修好任何电脑">
+怎样修好任何电脑 <i class="fa fa-chevron-right"></i>
+</a>
 </div>
 </div>
 </footer>
@@ -307,7 +312,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">103</span>
+<span class="site-state-item-count">102</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -355,6 +360,7 @@ RSS
 <!--/noindex-->
 </div>
 </aside>
+<div id="sidebar-dimmer"></div>
 </div>
 </main>
 <footer id="footer" class="footer">
@@ -393,7 +399,7 @@ if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
 window.Promise = null;
 }
 </script>
-<script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+<script size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/fastclick/lib/fastclick.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
@@ -753,43 +759,8 @@ height: $(o).attr('height') || '1000px'
 </script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script>pangu.spacingPage();</script>
-<script>
-$('.highlight').not('.gist .highlight').each(function(i, e) {
-var $wrap = $('<div>').addClass('highlight-wrap');
-$(e).after($wrap);
-$wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
-var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-return $(e).text();
-}).toArray().join('\n');
-var ta = document.createElement('textarea');
-var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-ta.style.top = yPosition + 'px'; // Prevent page scroll
-ta.style.position = 'absolute';
-ta.style.opacity = '0';
-ta.readOnly = true;
-ta.value = code;
-document.body.appendChild(ta);
-const selection = document.getSelection();
-const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
-ta.select();
-ta.setSelectionRange(0, code.length);
-ta.readOnly = false;
-var result = document.execCommand('copy');
-if (result) $(this).text('复制成功');
-else $(this).text('复制失败');
-ta.blur(); // For iOS
-$(this).blur();
-if (selected) {
-selection.removeAllRanges();
-selection.addRange(selected);
-}
-})).on('mouseleave', function(e) {
-var $b = $(this).find('.copy-btn');
-setTimeout(function() {
-$b.text('复制');
-}, 300);
-}).append(e);
-})
-</script>
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
 </body>
 </html>

@@ -8,14 +8,14 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
-<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
 <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
@@ -44,7 +44,6 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <meta name="description" content="MySQL的安装在MySQL官网的下载页上，提供了各种系统和环境的安装方法。你可以选择通过包管理工具的软件源安装，也可以通过源码编译安装。不过编译是非常吃内存的（至少需要4GiB内存），并且还很耗时（毕竟是C++写的），因此不推荐。具体来说，你可以： 使用包管理工具以yum为例，首先增加并启用MySQL软件源，在这个页面找到适合你的版本，然后下载并启用之： 123wget https://dev.">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
@@ -64,6 +63,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
+<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <title>MySQL 8.0的安装和使用 | 米米的博客</title>
 <noscript>
 <style>
@@ -234,8 +234,7 @@ top: initial;
 <li><code>php.ini</code>中，<code>[Pdo_mysql]</code>下的<code>pdo_mysql.default_socket</code>值</li>
 <li><code>php.ini</code>中，<code>[MySQLi]</code>下的<code>mysqli.default_socket</code>值</li>
 </ul>
-<p>这四个值是一致的。而之所以选择<code>/tmp/mysql.sock</code>，是因为PHP默认的MySQL套接字在这个位置，配置好<code>my.cnf</code>就行，而不用修改PHP的配置（即php.ini中的对应项留空即可，会采用默认值）；如果用了其他的目录，就需要修改<code>php.ini</code>。
-<code>php.ini</code>根据你的安装方式，可能出现在<code>/etc</code>或<code>/usr/local/php</code>下的某个位置，可以自行处理。<br>为了优化MySQL，还可以在<code>/etc/my.cnf</code>中增加如下设置：</p>
+<p>这四个值是一致的。而之所以选择<code>/tmp/mysql.sock</code>，是因为PHP默认的MySQL套接字在这个位置，配置好<code>my.cnf</code>就行，而不用修改PHP的配置（即php.ini中的对应项留空即可，会采用默认值）；如果用了其他的目录，就需要修改<code>php.ini</code>。<br><code>php.ini</code>根据你的安装方式，可能出现在<code>/etc</code>或<code>/usr/local/php</code>下的某个位置，可以自行处理。<br>为了优化MySQL，还可以在<code>/etc/my.cnf</code>中增加如下设置：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[mysql]</span><br><span class="line">no-auto-rehash</span><br><span class="line">connect_timeout=2</span><br><span class="line">prompt=<span class="string">"MySQL [\\d]&gt; "</span></span><br><span class="line"></span><br><span class="line">[mysqldump]</span><br><span class="line">quick</span><br><span class="line">max_allowed_packet = 500M</span><br></pre></td></tr></table></figure>
 <p>其中，<code>[mysql]</code>下的<code>prompt</code>允许个性化设置提示符，在操作数据库时更加方便快捷。可用的参数有：</p>
 <table>
@@ -365,8 +364,7 @@ top: initial;
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'temporary password'</span> /var/<span class="built_in">log</span>/mysqld.log</span><br></pre></td></tr></table></figure>
 <p>然后执行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
-<p>按回车后输入密码，即可登录。如果你登录后设置了新的root密码，一定要记住。<br>除此之外，如果要直接登录某个数据库，执行：<code>mysql -h host -u user -p dbname</code>。
-而如果是升级安装的，需要先执行<code>mysql_upgrade -u root -p</code>来升级数据库。</p>
+<p>按回车后输入密码，即可登录。如果你登录后设置了新的root密码，一定要记住。<br>除此之外，如果要直接登录某个数据库，执行：<code>mysql -h host -u user -p dbname</code>。<br>而如果是升级安装的，需要先执行<code>mysql_upgrade -u root -p</code>来升级数据库。</p>
 <h2 id="MySQL命令"><a href="#MySQL命令" class="headerlink" title="MySQL命令"></a>MySQL命令</h2><p>以下所有命令均需要以<code>;</code>结尾，大小写取决于系统设置。</p>
 <ul>
 <li>显示版本：<code>SHOW VARIABLES LIKE &quot;%version%&quot;;</code></li>
@@ -480,7 +478,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">102</span>
+<span class="site-state-item-count">103</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -499,8 +497,7 @@ top: initial;
 </nav>
 <div class="feed-link motion-element">
 <a href="/atom.xml" rel="alternate">
-<i class="fa fa-rss"></i>
-RSS
+<i class="fa fa-rss"></i>RSS
 </a>
 </div>
 <div class="links-of-blogroll motion-element links-of-blogroll-inline">
@@ -580,6 +577,8 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.2.0"></script>
 <script src="/js/post-details.js?v=7.2.0"></script>
 <script src="/js/next-boot.js?v=7.2.0"></script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script>pangu.spacingPage();</script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];
@@ -925,8 +924,6 @@ height: $(o).attr('height') || '1000px'
 });
 }
 </script>
-<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script>pangu.spacingPage();</script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>

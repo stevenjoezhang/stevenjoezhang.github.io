@@ -8,14 +8,14 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
-<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
 <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
@@ -44,7 +44,6 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <meta name="description" content="力电声光热，涵尽学海无涯">
 <meta name="keywords" content="个人博客,张书樵,物理,技术,计算机">
 <meta property="og:type" content="website">
@@ -63,6 +62,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
+<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <title>米米的博客</title>
 <noscript>
 <style>
@@ -163,6 +163,64 @@ page-home">
 <div class="content-wrap">
 <div id="content" class="content">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-07/在Win 95中晃动鼠标竟能加速系统/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2019-07/在Win 95中晃动鼠标竟能加速系统/" class="post-title-link" itemprop="url">在Win 95中晃动鼠标竟能加速系统</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2019-07-20 17:33:25" itemprop="dateCreated datePublished" datetime="2019-07-20T17:33:25+08:00">2019-07-20</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+<br>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p><img src="/images/2019-07/2019-07-15-image-24.jpg" alt></p>
+<p><strong>Through the looking glass:</strong> Adding new hardware or overclocking what you’ve already got are among the leading ways to squeeze more performance out of your PC but in the earlier days of computing, all one had to do to give their PC a jolt was wiggle the mouse cursor around during an install.<br>添加新硬件或超频现有硬件是使PC获得更佳性能的主要方法。但在个人计算机的早期阶段，用户竟然还可以通过一个巧妙的办法来提升性能——不停地晃动鼠标的光标。</p>
+<p>I’m a self-professed fidgeter, especially at the computer. It’s not uncommon to catch me moving the mouse all around with zero intent, even if I’m busy reading a story or watching a video.<br>我自认为是一个手抖的人，尤其是在电脑前。即使我在忙着用电脑读故事或看视频，你也会发现我在毫无目的地移动鼠标。</p>
+<p>I chalk it up to the earlier days of computing when keeping the mouse active seemed to have a tangible benefit on system performance. Turns out, it wasn’t just in our imagination.<br>我把它归结为在上古时期，保持鼠标活动似乎对系统性能有明显的好处。事实证明，这并不只是我们的想象。</p>
+<p>According to a running thread over on <a href="https://retrocomputing.stackexchange.com/questions/11533/why-did-moving-the-mouse-cursor-cause-windows-95-to-run-more-quickly" target="_blank" rel="noopener">Stack Exchange</a>, moving the mouse cursor in Windows 95 did indeed speed up performance due to a flaw in the way the OS generates events and the fact that many applications are event driven.<br>根据<a href="https://retrocomputing.stackexchange.com/questions/11533/why-did-moving-the-mouse-cursor-cause-windows-95-to-run-more-quickly" target="_blank" rel="noopener">Stack Exchange</a>上一个正在热烈讨论的主题，在Windows 95中移动鼠标光标确实加快了性能，因为操作系统的事件生成方法存在缺陷，并且许多应用程序都是基于事件来驱动的。</p>
+<p>As one user explains:<br>正如一位用户解释：</p>
+<blockquote>
+<p>Windows 95 applications often use asynchronous I/O, that is they ask for some file operation like a copy to be performed and then tell the OS that they can be put to sleep until that operation finishes. By sleeping they allow other applications to run, rather than wasting CPU time endlessly asking if the file operation has completed yet.<br>Windows 95应用程序通常采用了异步I/O，也就是说，在它们要求执行某些文件操作的时候（例如要执行的副本），会向操作系统表示其能够在操作完成之前转入休眠状态。通过这项休眠机制，其它应用程序将可以穿插空档来运行，而不是无休止地询问文件操作是否已经完成，从而浪费CPU时间。</p>
+</blockquote>
+<blockquote>
+<p>For reasons that are not entirely clear, but probably due to performance problems on low end machines, Windows 95 tends to bundle up the messages about I/O completion and doesn’t immediately wake up the application to service them. However, it does wake the application for user input, presumably to keep it feeling responsive, and when the application is awake it will handle any pending I/O messages too.<br>目前原因尚不完全清楚，但一个猜测是，这可能是为了解决低端计算机上的性能问题——Windows 95倾向于捆绑关于I/O完成的消息，并且不会立即唤醒应用程序来为它们提供服务。不过，在用户输入时，操作系统会唤醒应用程序，这可能是为了让应用程序保持响应；而当应用程序处于唤醒状态时，它就能够处理任何挂起的I/O消息。</p>
+</blockquote>
+<blockquote>
+<p>Thus wiggling the mouse causes the application to process I/O messages faster, and install quicker. The effect was quite pronounced; large applications that could take an hour to install could be reduced to 15 minutes with suitable mouse input.<br>换言之，晃动鼠标可以使应用程序更快地处理I/O消息，并加快安装速度。效果相当明显：配合合适的鼠标输入，原先可能需要一个小时安装的大型应用程序，耗时可以减少到15分钟。</p>
+</blockquote>
+<p>As a youth, I’d keep my mouse cursor active as much as possible – and especially during installs – simply because I didn’t want the screensaver to trigger and bog down system resources. Sure, I could have just set the timeout to longer on the screensaver, but that’s beside the point. As it turns out, my actions were actually helpful, and not for the reason I thought.<br>在我年轻的时候，我尽可能地让鼠标光标处于活动状态——尤其是在安装期间——只是因为我不想让屏幕保护程序触发并阻塞系统资源。当然，我可以把屏保上的超时设置得更长一些，但这不是重点。事实证明，我的行为实际上是有帮助的——即使这并不是我的初衷。</p>
+<hr>
+<p>本文翻译自：<a href="https://www.techspot.com/news/80956-wiggling-mouse-windows-95-made-operating-system-faster.html" target="_blank" rel="noopener">Wiggling the mouse in Windows 95 made the operating system faster</a></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-07/怎样修好任何电脑/">
@@ -292,8 +350,7 @@ page-home">
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>以下操作中的快捷键在Windows下有效，macOS可能需要用<kbd>Command</kbd>代替<kbd>Ctrl</kbd>。
-原始素材尽量选择人物，最好不要全身。</p>
+<p>以下操作中的快捷键在Windows下有效，macOS可能需要用<kbd>Command</kbd>代替<kbd>Ctrl</kbd>。<br>原始素材尽量选择人物，最好不要全身。</p>
 <p>博主以下面这张梅西庆祝的照片为例。</p>
 <p><img src="/images/2019-06/lionel-messi.jpg" alt></p>
 <h2 id="调整对比度"><a href="#调整对比度" class="headerlink" title="调整对比度"></a>调整对比度</h2><p>打开素材，<kbd>Ctrl</kbd>+<kbd>j</kbd>复制图层；选定新图层，<kbd>Ctrl</kbd>+<kbd>m</kbd>打开曲线，调大对比度。</p>
@@ -367,57 +424,6 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-05/在macOS上读写NTFS磁盘/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2019-05/在macOS上读写NTFS磁盘/" class="post-title-link" itemprop="url">在macOS上读写NTFS磁盘</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2019-05-30 11:55:22" itemprop="dateCreated datePublished" datetime="2019-05-30T11:55:22+08:00">2019-05-30</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<br>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>这里介绍一种在macOS上读写NTFS磁盘的方法，这样可以方便的在不同系统中传输文件。默认情况下，macOS是无法向NTFS磁盘写入的——这个功能由于种种原因被禁用了。我们使用一种Hack的方法将其启用即可。<br>macOS在挂载NTFS磁盘时加载的脚本为<code>/sbin/mount_ntfs</code>，参数为：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount_ntfs -o nodev -o noowners -o nosuid /dev/disk2s1 /Volumes/DATA</span><br></pre></td></tr></table></figure>
-<p>这时，只要加上额外的参数，就可以启用对NTFS磁盘的写入。具体方法是：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo -s <span class="comment">#输入密码，获取root权限</span></span><br><span class="line"><span class="built_in">cd</span> /sbin</span><br><span class="line">mv mount_ntfs mount_ntfs_orig</span><br><span class="line">vim mount_ntfs</span><br></pre></td></tr></table></figure>
-<p>将<code>mount_ntfs</code>重命名为<code>mount_ntfs_orig</code>，然后再新建一个<code>mount_ntfs</code>，输入以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">/sbin/mount_ntfs_orig -o rw,nobrowse <span class="string">"<span class="variable">$@</span>"</span></span><br></pre></td></tr></table></figure>
-<p>这样就可以欺骗系统，运行带有额外参数的指令。这里的<code>nobrowse</code>是为了避免挂载上来的还是只读模式，但是它同时会导致磁盘不可见，也就是挂在后不会在桌面和Finder中显示，需要手动到<code>/Volumes</code>下打开。如果这样不爽的话，你可以尝试</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">/sbin/mount_ntfs_orig -o rw <span class="string">"<span class="variable">$@</span>"</span></span><br></pre></td></tr></table></figure>
-<p>将磁盘推出再挂载，如果一切正常的话，就可以愉快的使用了。</p>
-<hr>
-<p>参考文章：<a href="https://www.jianshu.com/p/d4073acbb218" target="_blank" rel="noopener">OS X 原生可读写挂载NTFS分区</a></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -443,7 +449,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">102</span>
+<span class="site-state-item-count">103</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -462,8 +468,7 @@ page-home">
 </nav>
 <div class="feed-link motion-element">
 <a href="/atom.xml" rel="alternate">
-<i class="fa fa-rss"></i>
-RSS
+<i class="fa fa-rss"></i>RSS
 </a>
 </div>
 <div class="links-of-blogroll motion-element links-of-blogroll-inline">
@@ -534,6 +539,8 @@ window.Promise = null;
 <script src="/js/affix.js?v=7.2.0"></script>
 <script src="/js/schemes/pisces.js?v=7.2.0"></script>
 <script src="/js/next-boot.js?v=7.2.0"></script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script>pangu.spacingPage();</script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];
@@ -879,8 +886,6 @@ height: $(o).attr('height') || '1000px'
 });
 }
 </script>
-<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script>pangu.spacingPage();</script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>

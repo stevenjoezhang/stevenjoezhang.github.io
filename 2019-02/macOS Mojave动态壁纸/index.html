@@ -8,14 +8,14 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
-<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
 <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
@@ -44,7 +44,6 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <meta name="description" content="How Apple built dynamic wallpapers? And is it possible to create your own dynamic wallpaper for macOS? I spent some time because I would like to answer to the both above questions.Apple如何构建动态壁纸？是否可以为">
 <meta name="keywords" content="Mac">
 <meta property="og:type" content="article">
@@ -73,6 +72,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
+<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <title>macOS Mojave动态壁纸 | 米米的博客</title>
 <noscript>
 <style>
@@ -232,8 +232,7 @@ top: initial;
 <p>Dynamic wallpaper is saved as a HEIC file (<code>Mojave (Dynamic).heic</code>). More information about this type of file you can find on <a href="https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format" target="_blank" rel="noopener">Wikipedia</a>. Generally this is type of file which Apple uses in iOS devices. Photos in iOS (also live photos) are stored as a HEIC file. That kind of file can contains multiple images/thumbnails and metadata in a single file.<br>动态壁纸保存为HEIC文件（<code>Mojave (Dynamic).heic</code>）。有关此类文件的更多信息，请访问<a href="https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format" target="_blank" rel="noopener">Wikipedia</a>。通常，这是Apple在iOS设备中使用的文件类型。iOS中的照片（也包括实时照片）会存储为HEIC文件。这种文件可以在单个文件中包含多个图像/缩略图和元数据。</p>
 <p>There is really good online tool where we can check content of Mojave wallpaper file: <a href="https://strukturag.github.io/libheif/" target="_blank" rel="noopener">https://strukturag.github.io/libheif/</a>. You can upload <code>Mojave (Dynamic).heic</code> file and you will see that in this single file there is 16 separate pictures taken in different day phase.<br>有一个很好的在线工具，让我们可以检查Mojave壁纸文件的内容：<a href="https://strukturag.github.io/libheif/" target="_blank" rel="noopener">https://strukturag.github.io/libheif/</a> 。你可以上传<code>Mojave (Dynamic).heic</code>文件，然后你会发现在这个单独的文件中有16张不同时间拍摄的单独照片。</p>
 <p><img src="/images/2019-02/1_ESDAv949YKQIEocL-qDcGA.png" alt></p>
-<p>So maybe it’s enough to create new HEIC file with 16 separate images and macOS will show them properly. Let’s try it!
-所以也许它足以创建具有16个单独图像的新HEIC文件，macOS将正确显示它们。我们来试试吧！</p>
+<p>So maybe it’s enough to create new HEIC file with 16 separate images and macOS will show them properly. Let’s try it!<br>所以也许它足以创建具有16个单独图像的新HEIC文件，macOS将正确显示它们。我们来试试吧！</p>
 <a id="more"></a>
 <p>First I had to prepare 16 different images.<br>首先，我必须准备16张不同的图像。</p>
 <p><img src="/images/2019-02/1_VBLUh9q7ygeysmHmCPr7tQ.png" alt></p>
@@ -278,13 +277,11 @@ top: initial;
 </ul>
 <p>Thanks to <a href="https://en.wikipedia.org/wiki/Horizontal_coordinate_system" target="_blank" rel="noopener">altitude and azimuth</a> w exactly know where the Sun was when image was taken.<br>感谢<a href="https://en.wikipedia.org/wiki/Horizo​​ntal_coordinate_system" target="_blank" rel="noopener">海拔高度和方位角</a>，可以确切知道拍摄图像时太阳的位置。</p>
 <p><img src="/images/2019-02/1_yhrXm56MaqMLfRLYTWaTtw.png" alt></p>
-<p>This idea is brilliant, because thanks to this information macOS can change images differently during Summer and during Winter. System knows where the Sun is and it will choose image which was taken in similar conditions. <strong>Brilliant</strong>.
-这个想法很棒，因为由于这些信息，macOS可以在夏季和冬季期间以不同方式更改图像。系统知道太阳在哪里，它将选择在类似条件下拍摄的图像。<strong>太机智了</strong>。</p>
+<p>This idea is brilliant, because thanks to this information macOS can change images differently during Summer and during Winter. System knows where the Sun is and it will choose image which was taken in similar conditions. <strong>Brilliant</strong>.<br>这个想法很棒，因为由于这些信息，macOS可以在夏季和冬季期间以不同方式更改图像。系统知道太阳在哪里，它将选择在类似条件下拍摄的图像。<strong>太机智了</strong>。</p>
 <hr>
 <p>Based on that knowledge I prepared new dynamic wallpaper. Here is the video how it looks like:<br>基于这些知识，我准备了新的动态壁纸。以下是视频：<br><a href="https://www.youtube.com/watch?v=TVqfPzdsbzY" target="_blank" rel="noopener">https://www.youtube.com/watch?v=TVqfPzdsbzY</a></p>
 <p>You can download that wallpaper from my Dropbox:<br>你可以从我的Dropbox下载这个壁纸：<br><a href="https://www.dropbox.com/s/kd2g59qswchsd0v/Earth%20View.heic?dl=0" target="_blank" rel="noopener">https://www.dropbox.com/s/kd2g59qswchsd0v/Earth%20View.heic?dl=0</a></p>
-<p>Thank you for your help and feedback!
-感谢您的帮助和反馈！</p>
+<p>Thank you for your help and feedback!<br>感谢您的帮助和反馈！</p>
 <hr>
 <p><strong>Update:</strong> I created simple console application for macOS which can help you with creating custom dynamic wallpapers: <a href="https://github.com/mczachurski/wallpapper" target="_blank" rel="noopener">https://github.com/mczachurski/wallpapper</a><br><strong>更新：</strong>我为macOS创建了简单的控制台应用程序，它可以帮助您创建自定义动态壁纸：<a href="https://github.com/mczachurski/wallpapper" target="_blank" rel="noopener">https://github.com/mczachurski/wallpapper</a></p>
 <p>本文翻译自：<br><a href="https://itnext.io/macos-mojave-dynamic-wallpaper-fd26b0698223" target="_blank" rel="noopener">https://itnext.io/macos-mojave-dynamic-wallpaper-fd26b0698223</a><br><a href="https://itnext.io/macos-mojave-dynamic-wallpapers-ii-f8b1e55c82f" target="_blank" rel="noopener">https://itnext.io/macos-mojave-dynamic-wallpapers-ii-f8b1e55c82f</a></p>
@@ -367,7 +364,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">102</span>
+<span class="site-state-item-count">103</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -386,8 +383,7 @@ top: initial;
 </nav>
 <div class="feed-link motion-element">
 <a href="/atom.xml" rel="alternate">
-<i class="fa fa-rss"></i>
-RSS
+<i class="fa fa-rss"></i>RSS
 </a>
 </div>
 <div class="links-of-blogroll motion-element links-of-blogroll-inline">
@@ -460,6 +456,8 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.2.0"></script>
 <script src="/js/post-details.js?v=7.2.0"></script>
 <script src="/js/next-boot.js?v=7.2.0"></script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script>pangu.spacingPage();</script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];
@@ -805,8 +803,6 @@ height: $(o).attr('height') || '1000px'
 });
 }
 </script>
-<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script>pangu.spacingPage();</script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>

@@ -8,14 +8,14 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
-<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
 <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
@@ -44,7 +44,6 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <meta name="description" content="力电声光热，涵尽学海无涯">
 <meta name="keywords" content="个人博客,张书樵,物理,技术,计算机">
 <meta property="og:type" content="website">
@@ -63,6 +62,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
+<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <title>米米的博客</title>
 <noscript>
 <style>
@@ -163,6 +163,61 @@ page-home">
 <div class="content-wrap">
 <div id="content" class="content">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/Python开发表情包网站/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-06/Python开发表情包网站/" class="post-title-link" itemprop="url">Python开发表情包网站</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-06-06 20:47:45" itemprop="dateCreated datePublished" datetime="2018-06-06T20:47:45+08:00">2018-06-06</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+</span>
+<br>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>『表情包』是一种利用图片来表示感情的方式。在各种社交软件的带动下，『表情包』已经形成了一种流行文化。互联网上，基本人人都会发表情；很多实时通讯软件中，『斗图』成为了一种活跃气氛的常见方式。不知你是否曾有过找不到表情包去应对别人的时候？<br>今天博主分享用Python开发个人专属的表情包网站的方法，想用什么表情包搜一下就有了！<br><strong>目标：获取海量表情包，存入数据库，然后搭建简单网站，通过输入关键字获取对应的的表情包。</strong></p>
+<hr>
+<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p>首先，我们要从这个网站爬取表情包：<a href="http://www.doutula.com/photo/list/?page=0" target="_blank" rel="noopener">斗图啦</a>。<br>我们先来分析一下这个网页的源代码：</p>
+<p><img src="/images/2018-06/1.png" alt></p>
+<p>通过源码，我们可以发现需要获取的内容包括每个<code>&lt;img&gt;</code>标签的<code>data-original</code>和<code>alt</code>属性。通过爬虫获取网页，用正则表达式提取内容，然后存入数据库即可。<br>这里用到的数据库是MySQL。如果还没有安装的话，不妨参考前面的文章<a href="/2018-03/MySQL%208.0的安装和使用/">MySQL 8.0的安装和使用</a>。</p>
+<p>安装完成后，你可以用root，也可以创建一个新用户，来新建数据库和数据表，用来存放表情包：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> images;</span><br><span class="line">#建立数据库images</span><br><span class="line"><span class="keyword">USE</span> images;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> images (</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">UNSIGNED</span> PRIMARY <span class="keyword">KEY</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">1000</span>),</span><br><span class="line">  imageUrl <span class="built_in">varchar</span>(<span class="number">200</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8mb4;</span><br><span class="line">#然后在该数据库中新建一个表，并添加相应的name和imageUrl</span><br><span class="line">QUIT;</span><br></pre></td></tr></table></figure>
+<p>至此数据库方面的工作就完成了。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-06/Python开发表情包网站/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/Crontab定时写法整理/">
@@ -341,8 +396,7 @@ page-home">
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install yum-utils</span><br><span class="line">yum-config-manager --<span class="built_in">enable</span> rhui-REGION-rhel-server-extras rhui-REGION-rhel-server-optional</span><br><span class="line">yum install certbot</span><br></pre></td></tr></table></figure>
 <p>其它系统的安装方式可以在<a href="https://certbot.eff.org" target="_blank" rel="noopener">Certbot官网</a>上查询。<br>不过经博主测试，这种安装方式可能会产生错误，因此不建议使用。<br>安装完成后，可以使用</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot -h</span><br></pre></td></tr></table></figure>
-<p>查看安装是否成功。如果报错，也可以尝试使用<code>pip install certbot</code>。
-如果你使用了nginx服务器，还可以执行</p>
+<p>查看安装是否成功。如果报错，也可以尝试使用<code>pip install certbot</code>。<br>如果你使用了nginx服务器，还可以执行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install certbot-nginx</span><br></pre></td></tr></table></figure>
 <p>安装Certbot的Nginx拓展。</p>
 <h2 id="配置CertBot"><a href="#配置CertBot" class="headerlink" title="配置CertBot"></a>配置CertBot</h2><p>执行</p>
@@ -351,8 +405,7 @@ page-home">
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot certonly --webroot -w /path/to/your/webroot -d yourdomain.com,www.yourdomain.com</span><br></pre></td></tr></table></figure>
 <p>将<code>/path/to/your/webroot</code>替换为nginx的根目录，<code>yourdomain.com</code>替换为你的域名，多个域名用逗号隔开。<br>如果要申请泛域名证书，将上面的命令改为：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot certonly --server https://acme-v02.api.letsencrypt.org/directory --manual --preferred-challenges dns -d yourdomain.com,*.yourdomain.com</span><br></pre></td></tr></table></figure>
-<p>泛域名证书还需要验证TXT记录，比较麻烦。可以参考这篇文章：<a href="https://imjad.cn/archives/lab/letsencrypt-wildcard-certificate-support-is-live" target="_blank" rel="noopener">Let’s Encrypt现已正式支持泛域名证书</a>。
-如果一切顺利，会输出以下内容：</p>
+<p>泛域名证书还需要验证TXT记录，比较麻烦。可以参考这篇文章：<a href="https://imjad.cn/archives/lab/letsencrypt-wildcard-certificate-support-is-live" target="_blank" rel="noopener">Let’s Encrypt现已正式支持泛域名证书</a>。<br>如果一切顺利，会输出以下内容：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">IMPORTANT NOTES:</span><br><span class="line"> - Congratulations! Your certificate and chain have been saved at</span><br><span class="line">   /etc/letsencrypt/live/yourdomain.com/fullchain.pem. Your cert</span><br><span class="line">   will expire on 20XX-XX-XX. To obtain a new or tweaked version of</span><br><span class="line">   this certificate <span class="keyword">in</span> the future, simply run certbot again. To</span><br><span class="line">   non-interactively renew *all* of your certificates, run <span class="string">"certbot</span></span><br><span class="line"><span class="string">   renew"</span></span><br><span class="line"> - If you like Certbot, please consider supporting our work by: </span><br><span class="line">   Donating to ISRG / Let<span class="string">'s Encrypt:   https://letsencrypt.org/donate</span></span><br><span class="line"><span class="string">   Donating to EFF:                    https://eff.org/donate-le</span></span><br></pre></td></tr></table></figure>
 <p>生成的证书将会存放在<code>/etc/letsencrypt/live/</code>目录下。</p>
 <!--noindex-->
@@ -405,8 +458,7 @@ page-home">
 <p>Linux is fun! Huhhh. OK so you don’t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.<br>Linux是非常有趣的，别不相信——看完这篇文章，你一定会发现Linux系统神奇的用法。<br>请注意，下面部分命令给出了两种包管理软件的安装方式，如果是Debian系的系统，请使用<code>apt</code>，如果是Red Hat系的系统，请使用<code>yum</code>。如果你使用了其他Linux发行版，或使用了其他包管理工具（例如macOS上的brew），可能无法找到所有这些命令。<br><strong>注：为了在代码块中区别输入输出，以<code>$</code>开头的行代表输入，其它行代表输出。</strong></p>
 <h2 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h2><p>命令：curl<br>curl用于互联网传输数据，支持多种协议。通过以下命令可以查看天气：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -4 http://wttr.in</span><br></pre></td></tr></table></figure>
-<h2 id="sl-Steam-Locomotive"><a href="#sl-Steam-Locomotive" class="headerlink" title="sl (Steam Locomotive)"></a>sl (Steam Locomotive)</h2><p>命令：sl（蒸汽机车的缩写）<br>You might be aware of command ‘ls’ the list command and use it frequently to view the contents of a folder but because of miss-typing sometimes you would result in ‘sl’, how about getting a little fun in terminal and not <code>command not found</code>.
-你一定知道ls是用来显示文件夹内容的常见命令，但如果不小心打成sl呢？通过包管理工具安装它，你就能看见一辆跑过屏幕的火车，而不是『找不到命令』：</p>
+<h2 id="sl-Steam-Locomotive"><a href="#sl-Steam-Locomotive" class="headerlink" title="sl (Steam Locomotive)"></a>sl (Steam Locomotive)</h2><p>命令：sl（蒸汽机车的缩写）<br>You might be aware of command ‘ls’ the list command and use it frequently to view the contents of a folder but because of miss-typing sometimes you would result in ‘sl’, how about getting a little fun in terminal and not <code>command not found</code>.<br>你一定知道ls是用来显示文件夹内容的常见命令，但如果不小心打成sl呢？通过包管理工具安装它，你就能看见一辆跑过屏幕的火车，而不是『找不到命令』：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ apt install sl <span class="comment">#In Debian like OS, or aptitude based system</span></span><br><span class="line">$ yum install sl <span class="comment">#In Red Hat like OS, or yum based system</span></span><br><span class="line">$ sl</span><br></pre></td></tr></table></figure>
 <p>This command works even when you type ‘LS’ and not ‘ls’.</p>
 <video src="/files/ezgif-4-7bb965bfb6.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
@@ -424,49 +476,6 @@ page-home">
 </a>
 </div>
 <!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/在GitHub热点图上绘画/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-05/在GitHub热点图上绘画/" class="post-title-link" itemprop="url">在GitHub热点图上绘画</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-05-04 07:00:35" itemprop="dateCreated datePublished" datetime="2018-05-04T07:00:35+08:00">2018-05-04</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
-</span>
-<br>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>借助这个项目，你可以在GitHub热点图（动态图）上绘制图案，并由此生成Shell脚本；在空项目中执行该脚本，便能创造过去的commit记录；而将该项目push到GitHub上，你的热点图就变得和绘制的图案完全相同。</p>
-<p><img src="/images/2018-05/gitdraw.png" alt></p>
-<p>项目地址：<a href="https://github.com/stevenjoezhang/git-draw" target="_blank" rel="noopener">git-draw</a><br>原项目是一个Chrome插件，由于长期没有维护，且GitHub改变了页面结构，导致插件不可用。新项目重写了部分JavaScript代码，使得其能够正常运行。快来试试吧！</p>
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -498,7 +507,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">102</span>
+<span class="site-state-item-count">103</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -517,8 +526,7 @@ page-home">
 </nav>
 <div class="feed-link motion-element">
 <a href="/atom.xml" rel="alternate">
-<i class="fa fa-rss"></i>
-RSS
+<i class="fa fa-rss"></i>RSS
 </a>
 </div>
 <div class="links-of-blogroll motion-element links-of-blogroll-inline">
@@ -589,6 +597,8 @@ window.Promise = null;
 <script src="/js/affix.js?v=7.2.0"></script>
 <script src="/js/schemes/pisces.js?v=7.2.0"></script>
 <script src="/js/next-boot.js?v=7.2.0"></script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script>pangu.spacingPage();</script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];
@@ -934,8 +944,6 @@ height: $(o).attr('height') || '1000px'
 });
 }
 </script>
-<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script>pangu.spacingPage();</script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>

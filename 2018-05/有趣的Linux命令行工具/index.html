@@ -8,14 +8,14 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
-<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
 <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
@@ -44,7 +44,6 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <meta name="description" content="Linux is fun! Huhhh. OK so you don’t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.Linux是非常有趣的，别不相信——看完这篇文章，你一定会发现Linux系统神奇的用法。请注意，下面部分命令给出了两">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
@@ -67,6 +66,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
+<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <title>有趣的Linux命令行工具 | 米米的博客</title>
 <noscript>
 <style>
@@ -218,8 +218,7 @@ top: initial;
 <p>Linux is fun! Huhhh. OK so you don’t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.<br>Linux是非常有趣的，别不相信——看完这篇文章，你一定会发现Linux系统神奇的用法。<br>请注意，下面部分命令给出了两种包管理软件的安装方式，如果是Debian系的系统，请使用<code>apt</code>，如果是Red Hat系的系统，请使用<code>yum</code>。如果你使用了其他Linux发行版，或使用了其他包管理工具（例如macOS上的brew），可能无法找到所有这些命令。<br><strong>注：为了在代码块中区别输入输出，以<code>$</code>开头的行代表输入，其它行代表输出。</strong></p>
 <h2 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h2><p>命令：curl<br>curl用于互联网传输数据，支持多种协议。通过以下命令可以查看天气：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -4 http://wttr.in</span><br></pre></td></tr></table></figure>
-<h2 id="sl-Steam-Locomotive"><a href="#sl-Steam-Locomotive" class="headerlink" title="sl (Steam Locomotive)"></a>sl (Steam Locomotive)</h2><p>命令：sl（蒸汽机车的缩写）<br>You might be aware of command ‘ls’ the list command and use it frequently to view the contents of a folder but because of miss-typing sometimes you would result in ‘sl’, how about getting a little fun in terminal and not <code>command not found</code>.
-你一定知道ls是用来显示文件夹内容的常见命令，但如果不小心打成sl呢？通过包管理工具安装它，你就能看见一辆跑过屏幕的火车，而不是『找不到命令』：</p>
+<h2 id="sl-Steam-Locomotive"><a href="#sl-Steam-Locomotive" class="headerlink" title="sl (Steam Locomotive)"></a>sl (Steam Locomotive)</h2><p>命令：sl（蒸汽机车的缩写）<br>You might be aware of command ‘ls’ the list command and use it frequently to view the contents of a folder but because of miss-typing sometimes you would result in ‘sl’, how about getting a little fun in terminal and not <code>command not found</code>.<br>你一定知道ls是用来显示文件夹内容的常见命令，但如果不小心打成sl呢？通过包管理工具安装它，你就能看见一辆跑过屏幕的火车，而不是『找不到命令』：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ apt install sl <span class="comment">#In Debian like OS, or aptitude based system</span></span><br><span class="line">$ yum install sl <span class="comment">#In Red Hat like OS, or yum based system</span></span><br><span class="line">$ sl</span><br></pre></td></tr></table></figure>
 <p>This command works even when you type ‘LS’ and not ‘ls’.</p>
 <video src="/files/ezgif-4-7bb965bfb6.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
@@ -374,7 +373,7 @@ Nginx配置SSL <i class="fa fa-chevron-right"></i>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">102</span>
+<span class="site-state-item-count">103</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -393,8 +392,7 @@ Nginx配置SSL <i class="fa fa-chevron-right"></i>
 </nav>
 <div class="feed-link motion-element">
 <a href="/atom.xml" rel="alternate">
-<i class="fa fa-rss"></i>
-RSS
+<i class="fa fa-rss"></i>RSS
 </a>
 </div>
 <div class="links-of-blogroll motion-element links-of-blogroll-inline">
@@ -474,6 +472,8 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.2.0"></script>
 <script src="/js/post-details.js?v=7.2.0"></script>
 <script src="/js/next-boot.js?v=7.2.0"></script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script>pangu.spacingPage();</script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];
@@ -819,8 +819,6 @@ height: $(o).attr('height') || '1000px'
 });
 }
 </script>
-<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script>pangu.spacingPage();</script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>

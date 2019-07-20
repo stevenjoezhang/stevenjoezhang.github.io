@@ -8,14 +8,14 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
-<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
 <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
@@ -44,7 +44,6 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <meta name="description" content="It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blame the compiler. Well down the list after that, y">
 <meta name="keywords" content="个人博客,张书樵,物理,技术,计算机">
 <meta property="og:type" content="article">
@@ -64,6 +63,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
+<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <title>古惑狼游戏牵扯出的硬件bug | 米米的博客</title>
 <noscript>
 <style>
@@ -226,8 +226,7 @@ top: initial;
 <p>At some moment – it was probably 3 am – a thought entered my mind. Reading and writing (I/O) involves precise timing. Whether you’re dealing with a hard drive, a compact flash card, a Bluetooth transmitter – whatever – the low-level code that reads and writes has to do so according to a clock.<br>在那时——估计是凌晨3点——一个想法蹦了出来。读写（I/O）涉及精确定时。无论是硬盘、存储卡、蓝牙发送器——随便啥——做读写的底层代码都是根据时钟来的。</p>
 <p>The clock lets the hardware device – which isn’t directly connected to the CPU – stay in sync with the code the CPU is running. The clock determines the baud rate – the rate at which data is sent from one side to the other. If the timing gets messed up, the hardware or the software – or both – get confused. This is really, really bad, and usually results in data corruption.<br>时钟让不直接连接到CPU的硬件设备和CPU运行的代码同步。时钟决定了波特率——数据从一头传到另一头的速率。如果计时有什么问题，硬件或者软件或者两者都会乱七八糟的。这真的，真的很糟糕，并且通常导致数据损坏。</p>
 <p>What if something in our setup code was messing up the timing somehow? I looked again at the code in the test program for timing-related stuff, and noticed that we set the programmable timer on the PlayStation 1 to 1 kHz (1000 ticks/second). This is relatively fast; it was running at something like 100 Hz in its default state when the PlayStation 1 started up. Most games, therefore, would have this timer running at 100 Hz.<br>如果我们的初始化代码以某种方式弄乱了计时会怎么样？我又看了一遍测试程序中和计时有关的代码，并注意到我们将PS1上的可编程计时器设置到了1kHz（1000跳每秒）。这是比较快了，当PS1启动的时候，默认状态大概是100Hz。因此，大多数游戏将他们的计时器设置为100Hz。</p>
-<p>Andy, the lead (and only other) developer on the game, set the timer to 1 kHz so that the motion calculations in Crash Bandicoot would be more accurate. Andy likes overkill, and if we were going to simulate gravity, we ought to do it as high-precision as possible!
-这个游戏的带头（和除我外的唯一）开发者Andy，将计时器设置为1kHz，使得古惑狼的动作计算更加准确。Andy喜欢简单粗暴的做法，如果我们要模拟重力，我们应该尽可能的提高精度！</p>
+<p>Andy, the lead (and only other) developer on the game, set the timer to 1 kHz so that the motion calculations in Crash Bandicoot would be more accurate. Andy likes overkill, and if we were going to simulate gravity, we ought to do it as high-precision as possible!<br>这个游戏的带头（和除我外的唯一）开发者Andy，将计时器设置为1kHz，使得古惑狼的动作计算更加准确。Andy喜欢简单粗暴的做法，如果我们要模拟重力，我们应该尽可能的提高精度！</p>
 <p>But what if increasing this timer somehow interfered with the overall timing of the program, and therefore with the clock used to set the baud rate for the memory card?<br>然而如果提高计时器频率莫名其妙的干扰了整个程序的计时，故而将这个计时器设置到存储卡的波特率上会怎样呢？</p>
 <p>I commented the timer code out. I couldn’t make the error happen again. But this didn’t mean it was fixed; the problem only happened randomly. What if I was just getting lucky?<br>我将计时器代码注释掉。然后我就无法复现这个bug了。但是这并不表示bug被修复了，这个问题是随机发生的。万一我只是运气好呢？</p>
 <p>As more days went on, I kept playing with my test program. The bug never happened again. I went back to the full Crash Bandicoot code base, and modified the load/save code to reset the programmable timer to its default setting (100 Hz) before accessing the memory card, then put it back to 1 kHz afterwards. We never saw the read/write problems again.<br>几天过去了，我还是在玩我的测试程序。Bug没有再出现。我又回到完整的古惑狼游戏代码中，修改了加载/保存代码，在访问存储卡之前将可编程计时器重置为默认设置（100Hz），之后设置回1kHz。从此之后没有发现问题再次出现。</p>
@@ -324,7 +323,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">102</span>
+<span class="site-state-item-count">103</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -343,8 +342,7 @@ top: initial;
 </nav>
 <div class="feed-link motion-element">
 <a href="/atom.xml" rel="alternate">
-<i class="fa fa-rss"></i>
-RSS
+<i class="fa fa-rss"></i>RSS
 </a>
 </div>
 <div class="links-of-blogroll motion-element links-of-blogroll-inline">
@@ -417,6 +415,8 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.2.0"></script>
 <script src="/js/post-details.js?v=7.2.0"></script>
 <script src="/js/next-boot.js?v=7.2.0"></script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script>pangu.spacingPage();</script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];
@@ -762,8 +762,6 @@ height: $(o).attr('height') || '1000px'
 });
 }
 </script>
-<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script>pangu.spacingPage();</script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>

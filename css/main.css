@@ -510,10 +510,13 @@ body {
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
-  user-select: none;
   outline: 0;
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   background-color: #eee;
   background-image: linear-gradient(#fcfcfc, #eee);
   border: 1px solid #d5d5d5;
@@ -627,7 +630,11 @@ pre .addition {
   background: #dfd;
 }
 pre .meta {
-  color: #8959a8;
+  color: #eab700;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 pre .comment {
   color: #8e908c;
@@ -1824,7 +1831,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cb16ad;
+  background: #f7bfb3;
 }
 .feed-link,
 .chat {

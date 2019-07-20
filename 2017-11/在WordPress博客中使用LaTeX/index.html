@@ -8,14 +8,14 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
-<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
 <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
@@ -44,19 +44,18 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<link rel="stylesheet" href="/lib/waifu/waifu.css">
-<meta name="description" content="上帝说，要有\begin{eqnarray*} \nabla\cdot\vec{E}&amp;amp;=&amp;amp;\frac{\rho}{\epsilon_0}\\\nabla\cdot\vec{B}&amp;amp;=&amp;amp;0\\\nabla\times\vec{E}&amp;amp;=&amp;amp;-\frac{\partial B}{\partial t}\\\nabla\times\vec{B}&amp;amp;=&amp;am">
-<meta name="keywords" content="WordPress,LaTeX">
+<meta name="description" content="上帝说，要有\begin{eqnarray*}\nabla\cdot\vec{E}&amp;amp;=&amp;amp;\frac{\rho}{\epsilon_0}\\\nabla\cdot\vec{B}&amp;amp;=&amp;amp;0\\\nabla\times\vec{E}&amp;amp;=&amp;amp;-\frac{\partial B}{\partial t}\\\nabla\times\vec{B}&amp;amp;=&amp;amp">
+<meta name="keywords" content="LaTeX,WordPress">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在WordPress博客中使用LaTeX">
 <meta property="og:url" content="https://zhangshuqiao.org/2017-11/在WordPress博客中使用LaTeX/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="上帝说，要有\begin{eqnarray*} \nabla\cdot\vec{E}&amp;amp;=&amp;amp;\frac{\rho}{\epsilon_0}\\\nabla\cdot\vec{B}&amp;amp;=&amp;amp;0\\\nabla\times\vec{E}&amp;amp;=&amp;amp;-\frac{\partial B}{\partial t}\\\nabla\times\vec{B}&amp;amp;=&amp;am">
+<meta property="og:description" content="上帝说，要有\begin{eqnarray*}\nabla\cdot\vec{E}&amp;amp;=&amp;amp;\frac{\rho}{\epsilon_0}\\\nabla\cdot\vec{B}&amp;amp;=&amp;amp;0\\\nabla\times\vec{E}&amp;amp;=&amp;amp;-\frac{\partial B}{\partial t}\\\nabla\times\vec{B}&amp;amp;=&amp;amp">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-06-24T15:31:47.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在WordPress博客中使用LaTeX">
-<meta name="twitter:description" content="上帝说，要有\begin{eqnarray*} \nabla\cdot\vec{E}&amp;amp;=&amp;amp;\frac{\rho}{\epsilon_0}\\\nabla\cdot\vec{B}&amp;amp;=&amp;amp;0\\\nabla\times\vec{E}&amp;amp;=&amp;amp;-\frac{\partial B}{\partial t}\\\nabla\times\vec{B}&amp;amp;=&amp;am">
+<meta name="twitter:description" content="上帝说，要有\begin{eqnarray*}\nabla\cdot\vec{E}&amp;amp;=&amp;amp;\frac{\rho}{\epsilon_0}\\\nabla\cdot\vec{B}&amp;amp;=&amp;amp;0\\\nabla\times\vec{E}&amp;amp;=&amp;amp;-\frac{\partial B}{\partial t}\\\nabla\times\vec{B}&amp;amp;=&amp;amp">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2017-11/在WordPress博客中使用LaTeX/">
 <script id="page.configurations">
@@ -64,6 +63,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
+<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <title>在WordPress博客中使用LaTeX | 米米的博客</title>
 <noscript>
 <style>
@@ -212,13 +212,11 @@ top: initial;
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>上帝说，要有<br>\begin{eqnarray*}
-\nabla\cdot\vec{E}&amp;=&amp;\frac{\rho}{\epsilon_0}\\<br>\nabla\cdot\vec{B}&amp;=&amp;0\\<br>\nabla\times\vec{E}&amp;=&amp;-\frac{\partial B}{\partial t}\\<br>\nabla\times\vec{B}&amp;=&amp;\mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t}\right)\\<br>\end{eqnarray*}
-于是就有了光。<br><strong>注：以上文字旨在测试$\LaTeX$兼容情况。</strong><br>使用方法：在HTML页面中，通过</p>
+<p>上帝说，要有<br>\begin{eqnarray*}<br>\nabla\cdot\vec{E}&amp;=&amp;\frac{\rho}{\epsilon_0}\\<br>\nabla\cdot\vec{B}&amp;=&amp;0\\<br>\nabla\times\vec{E}&amp;=&amp;-\frac{\partial B}{\partial t}\\<br>\nabla\times\vec{B}&amp;=&amp;\mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t}\right)\\<br>\end{eqnarray*}<br>于是就有了光。<br><strong>注：以上文字旨在测试$\LaTeX$兼容情况。</strong><br>使用方法：在HTML页面中，通过</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--config后的参数可以根据需求自定义，默认为?config=default--&gt;</span></span><br></pre></td></tr></table></figure>
 <p>即可加载MathJax，该脚本将会把所有$\LaTeX$公式正确显示出来。尽情的按照$\LaTeX$语法插入公式就好啦！<br>如果要在WordPress中使用，可以通过在编辑文章界面，选择『文本』（如果使用『可视化』，字符将被转义，导致脚本无法加载），输入以上内容达到相同效果。</p>
 <p>使用时还需要注意的是，根据官方文档，标记行内公式的<code>$</code>符号默认不会被识别。你可以在HTML页面中加入以下配置以启用之：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">MathJax.Hub.Config(&#123;</span></span><br><span class="line"><span class="undefined">    tex2jax: &#123;</span></span><br><span class="line"><span class="javascript">        inlineMath: [ [<span class="string">'$'</span>,<span class="string">'$'</span>], [<span class="string">"\\("</span>,<span class="string">"\\)"</span>]  ],</span></span><br><span class="line"><span class="javascript">        processEscapes: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">        skipTags: [<span class="string">'script'</span>, <span class="string">'noscript'</span>, <span class="string">'style'</span>, <span class="string">'textarea'</span>, <span class="string">'pre'</span>, <span class="string">'code'</span>]</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="javascript">    TeX: &#123;<span class="attr">equationNumbers</span>: &#123; <span class="attr">autoNumber</span>: <span class="string">"AMS"</span> &#125;&#125;,</span></span><br><span class="line"><span class="javascript">    <span class="string">"HTML-CSS"</span>: &#123; <span class="attr">linebreaks</span>: &#123; <span class="attr">automatic</span>: <span class="literal">true</span> &#125;, <span class="attr">EqnChunk</span>: (MathJax.Hub.Browser.isMobile ? <span class="number">10</span> : <span class="number">50</span>) &#125;,</span></span><br><span class="line"><span class="javascript">    SVG: &#123; <span class="attr">linebreaks</span>: &#123; <span class="attr">automatic</span>: <span class="literal">true</span> &#125;&#125;</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">MathJax.Hub.Config(&#123;</span></span><br><span class="line"><span class="undefined">    tex2jax: &#123;</span></span><br><span class="line"><span class="undefined">        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],</span></span><br><span class="line"><span class="undefined">        processEscapes: true,</span></span><br><span class="line"><span class="undefined">        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    TeX: &#123;equationNumbers: &#123; autoNumber: "AMS" &#125;&#125;,</span></span><br><span class="line"><span class="undefined">    "HTML-CSS": &#123; linebreaks: &#123; automatic: true &#125;, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) &#125;,</span></span><br><span class="line"><span class="undefined">    SVG: &#123; linebreaks: &#123; automatic: true &#125;&#125;</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>其中<code>inlineMath</code>项启用了<code>$</code>符号标记的行内公式，而<code>linebreaks</code>项则会在屏幕宽度较小时自动使公式换行。</p>
 <p>更多信息可以访问官方网站：<a href="https://www.mathjax.org" target="_blank" rel="noopener">MathJax</a></p>
 <hr>
@@ -261,8 +259,8 @@ top: initial;
 </div>
 <footer class="post-footer">
 <div class="post-tags">
-<a href="/tags/WordPress/" rel="tag"># WordPress</a>
 <a href="/tags/LaTeX/" rel="tag"># LaTeX</a>
+<a href="/tags/WordPress/" rel="tag"># WordPress</a>
 </div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
@@ -304,7 +302,7 @@ WordPress 3.x版本中的彩蛋 <i class="fa fa-chevron-right"></i>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">102</span>
+<span class="site-state-item-count">103</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -323,8 +321,7 @@ WordPress 3.x版本中的彩蛋 <i class="fa fa-chevron-right"></i>
 </nav>
 <div class="feed-link motion-element">
 <a href="/atom.xml" rel="alternate">
-<i class="fa fa-rss"></i>
-RSS
+<i class="fa fa-rss"></i>RSS
 </a>
 </div>
 <div class="links-of-blogroll motion-element links-of-blogroll-inline">
@@ -397,6 +394,40 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.2.0"></script>
 <script src="/js/post-details.js?v=7.2.0"></script>
 <script src="/js/next-boot.js?v=7.2.0"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+processEscapes: true,
+skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+},
+TeX: {
+equationNumbers: {
+autoNumber: 'AMS'
+}
+}
+});
+MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+if (data.display) {
+var next = data.script.nextSibling;
+while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+}
+});
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+var all = MathJax.Hub.getAllJax(), i;
+for (i = 0; i < all.length; i += 1) {
+document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+}
+});
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script>pangu.spacingPage();</script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];
@@ -717,38 +748,6 @@ onPopupClose();
 }
 });
 </script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-processEscapes: true,
-skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-},
-TeX: {
-equationNumbers: {
-autoNumber: 'AMS'
-}
-}
-});
-MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-if (data.display) {
-var next = data.script.nextSibling;
-while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-}
-});
-});
-</script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Queue(function() {
-var all = MathJax.Hub.getAllJax(), i;
-for (i = 0; i < all.length; i += 1) {
-document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-}
-});
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
 <script>
 if ($('body').find('div.pdf').length) {
 $.ajax({
@@ -774,8 +773,6 @@ height: $(o).attr('height') || '1000px'
 });
 }
 </script>
-<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script>pangu.spacingPage();</script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>

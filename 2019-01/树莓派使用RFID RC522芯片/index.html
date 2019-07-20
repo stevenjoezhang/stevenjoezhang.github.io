@@ -8,14 +8,14 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
-<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
 <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
@@ -44,7 +44,6 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <meta name="description" content="实用教程：树莓派使用RFID RC522芯片进行数据的读写  In this Raspberry Pi RFID RC522 tutorial, I will be walking you through the steps on how to set up and wire the RFID RC522 chip with your Raspberry Pi. This project is a">
 <meta name="keywords" content="Linux,Python">
 <meta property="og:type" content="article">
@@ -68,6 +67,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
+<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <title>树莓派使用RFID RC522芯片 | 米米的博客</title>
 <noscript>
 <style>
@@ -291,16 +291,12 @@ top: initial;
 <p>Before we begin the process of utilizing the RFID RC522 on our Raspberry Pi, we will first have to make changes to its configuration. By default, the Raspberry Pi has the SPI (Serial Peripheral Interface) disabled, which is a bit of a problem as that is what our RFID reader circuit runs through.<br>在我们开始在Raspberry Pi上使用RFID RC522之前，我们将首先对其配置进行更改。默认情况下，树莓派的SPI（串行外设接口）是被禁用的。<br>Don’t worry though as it is fairly simple to re-enable this interface, just follow our steps below to configure your Raspberry Pi and Raspbian to utilize the SPI interface.<br>不要担心，因为重新启用此接口非常简单，只需按照以下步骤配置Raspberry Pi和Raspbian即可使用SPI接口。</p>
 <p>Let’s begin by first opening the <strong>raspi-config</strong> tool, and we can do this by opening the terminal and running the following command.<br>首先打开<strong>raspi-config</strong>工具，打开终端并运行以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo raspi-config</span><br></pre></td></tr></table></figure>
-<p>This tool will load up a screen showing a variety of different options. If you want a more in-depth look into these options, you can check <a href="https://pimylifeup.com/raspi-config-tool" target="_blank" rel="noopener">out our raspi-config guide</a>.
-该工具将加载一个显示各种不同选项的界面。如果你想深入了解这些选项，可以参阅我们的<a href="https://pimylifeup.com/raspi-config-tool" target="_blank" rel="noopener">raspi-config指南</a>。</p>
-<p>On here use the <strong>arrow keys</strong> to select <strong>“5 Interfacing Options”</strong>. Once you have this option selected, press <strong>Enter</strong>.
-在这里使用<strong>方向键</strong>选择『<strong>5 Interfacing Options</strong>』。选中此选项后，按<strong>回车</strong>。</p>
+<p>This tool will load up a screen showing a variety of different options. If you want a more in-depth look into these options, you can check <a href="https://pimylifeup.com/raspi-config-tool" target="_blank" rel="noopener">out our raspi-config guide</a>.<br>该工具将加载一个显示各种不同选项的界面。如果你想深入了解这些选项，可以参阅我们的<a href="https://pimylifeup.com/raspi-config-tool" target="_blank" rel="noopener">raspi-config指南</a>。</p>
+<p>On here use the <strong>arrow keys</strong> to select <strong>“5 Interfacing Options”</strong>. Once you have this option selected, press <strong>Enter</strong>.<br>在这里使用<strong>方向键</strong>选择『<strong>5 Interfacing Options</strong>』。选中此选项后，按<strong>回车</strong>。</p>
 <p>Now on this next screen, you want to use your <strong>arrow keys</strong> to select <strong>“P4 SPI”</strong>, again press Enter to select the option once it is highlighted.<br>现在在下一个界面上，你需要使用<strong>方向键</strong>选择『<strong>P4 SPI</strong>』，再次按回车选择高亮显示的选项。</p>
 <p>You will now be asked if you want to enable the SPI Interface, select <strong>Yes</strong> with your <strong>arrow keys</strong> and press <strong>Enter</strong> to proceed. You will need to wait a little bit while the <strong>raspi-config</strong> tool does its thing in enabling SPI.<br>现在将询问你是否要启用SPI接口，使用<strong>方向键</strong>选择<strong>Yes</strong>，然后按<strong>回车</strong>继续。你需要等一会儿，<strong>raspi-config</strong>工具会启用SPI。</p>
-<p>Once the SPI interface has been successfully enabled by the <strong>raspi-config</strong> tool you should see the following text appear on the screen, <strong>“The SPI interface is enabled”</strong>.
-一旦通过<strong>raspi-config</strong>工具成功启用了SPI接口，你应该会看到屏幕上出现以下文本：『<strong>The SPI interface is enabled</strong>』。</p>
-<p>Before the SPI Interface is fully enabled we will first have to restart the Raspberry Pi. To do this first get back to the terminal by pressing <strong>Enter</strong> and then <kbd><strong>Esc</strong><kbd>.
-在SPI接口完全启用之前，我们将首先重新启动Raspberry Pi。要做到这一点首先回到终端按<strong>回车</strong>，然后按<kbd><strong>Esc</strong><kbd>。</kbd></kbd></kbd></kbd></p>
+<p>Once the SPI interface has been successfully enabled by the <strong>raspi-config</strong> tool you should see the following text appear on the screen, <strong>“The SPI interface is enabled”</strong>.<br>一旦通过<strong>raspi-config</strong>工具成功启用了SPI接口，你应该会看到屏幕上出现以下文本：『<strong>The SPI interface is enabled</strong>』。</p>
+<p>Before the SPI Interface is fully enabled we will first have to restart the Raspberry Pi. To do this first get back to the terminal by pressing <strong>Enter</strong> and then <kbd><strong>Esc</strong><kbd>.<br>在SPI接口完全启用之前，我们将首先重新启动Raspberry Pi。要做到这一点首先回到终端按<strong>回车</strong>，然后按<kbd><strong>Esc</strong><kbd>。</kbd></kbd></kbd></kbd></p>
 <p>Type the following <a href="https://pimylifeup.com/linux-commands-cheat-sheet" target="_blank" rel="noopener">Linux command into the terminal</a> on your Raspberry Pi to restart your Raspberry Pi.<br>在Raspberry Pi的终端中输入以下<a href="https://pimylifeup.com/linux-commands-cheat-sheet" target="_blank" rel="noopener">Linux命令</a>来重启。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo reboot</span><br></pre></td></tr></table></figure>
 <p>Once your Raspberry Pi has finished rebooting, we can now check to make sure that it has in fact been enabled. The easiest way to do this is to run the following command to see if <strong>spi_bcm2835</strong> is listed.<br>在Raspberry Pi完成重启后，我们现在可以检查确认它已经被启用。最简单的方法是运行以下命令，查看是否列出了<strong>spi_bcm2835</strong>。</p>
@@ -308,8 +304,7 @@ top: initial;
 <p>If you see <strong>spi_bcm2835</strong>, then you can proceed on with this tutorial and skip on to the next section. If for some reason it had not appeared when you entered the previous command, try following the next three steps.<br>如果你看到<strong>spi_bcm2835</strong>，那么你可以继续，直接跳到下一节。如果由于某种原因，当你输入上一个命令时没有出现，请尝试执行以下3个步骤。</p>
 <p>If for some reason the SPI module has not activated, we can edit the boot configuration file manually by running the following command on our Raspberry Pi.<br>如果由于某种原因SPI模块没有激活，我们可以通过在我们的Raspberry Pi上运行以下命令来手动编辑启动配置文件。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /boot/config.txt</span><br></pre></td></tr></table></figure>
-<p>Within the configuration file, use <kbd>Ctrl</kbd>+<kbd>W</kbd> to find <strong>“dtparam=spi=on”</strong>.
-在配置文件中，使用<kbd>Ctrl</kbd>+<kbd>W</kbd>查找『<strong>dtparam=spi=on</strong>』。</p>
+<p>Within the configuration file, use <kbd>Ctrl</kbd>+<kbd>W</kbd> to find <strong>“dtparam=spi=on”</strong>.<br>在配置文件中，使用<kbd>Ctrl</kbd>+<kbd>W</kbd>查找『<strong>dtparam=spi=on</strong>』。</p>
 <p>If you have found it, check to see if there is a # in front of it. If there is, remove it as this is commenting out the activation line. If you can’t find the line at all, add “dtparam=spi=on” to the bottom of the file.<br>如果你找到了，请检查前面是否有<code>#</code>号。如果有，就删除它，因为这是用来注释一行代码的。如果找不到该行，只需在文件底部添加『dtparam = spi = on』即可。</p>
 <p>Once you have made the changes, you can press <kbd>Ctrl</kbd>+<kbd>X</kbd> then pressing <kbd>Y</kbd> and then Enter to save the changes.<br>完成更改后，可以按<kbd>Ctrl</kbd>+<kbd>X</kbd>，然后按<kbd>Y</kbd>，然后按回车以保存更改。</p>
 <p>You can now proceed from Step 5 again, rebooting your Raspberry Pi then checking to see if the module has been enabled.<br>现在，你可以回到前面的步骤，重新启动Raspberry Pi，然后检查模块是否已启用。</p>
@@ -483,7 +478,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">102</span>
+<span class="site-state-item-count">103</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -502,8 +497,7 @@ top: initial;
 </nav>
 <div class="feed-link motion-element">
 <a href="/atom.xml" rel="alternate">
-<i class="fa fa-rss"></i>
-RSS
+<i class="fa fa-rss"></i>RSS
 </a>
 </div>
 <div class="links-of-blogroll motion-element links-of-blogroll-inline">
@@ -583,6 +577,8 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.2.0"></script>
 <script src="/js/post-details.js?v=7.2.0"></script>
 <script src="/js/next-boot.js?v=7.2.0"></script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script>pangu.spacingPage();</script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];
@@ -928,8 +924,6 @@ height: $(o).attr('height') || '1000px'
 });
 }
 </script>
-<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script>pangu.spacingPage();</script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>

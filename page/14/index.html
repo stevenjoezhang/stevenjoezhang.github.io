@@ -8,14 +8,14 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
-<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
 <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
@@ -44,7 +44,6 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <meta name="description" content="力电声光热，涵尽学海无涯">
 <meta name="keywords" content="个人博客,张书樵,物理,技术,计算机">
 <meta property="og:type" content="website">
@@ -63,6 +62,7 @@ CONFIG.page = {
 sidebar: "",
 };
 </script>
+<link rel="stylesheet" href="/lib/waifu/waifu.css">
 <title>米米的博客</title>
 <noscript>
 <style>
@@ -163,6 +163,86 @@ page-home">
 <div class="content-wrap">
 <div id="content" class="content">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/Linux命令行常用快捷键/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-04/Linux命令行常用快捷键/" class="post-title-link" itemprop="url">Linux命令行常用快捷键</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-04-15 12:58:28" itemprop="dateCreated datePublished" datetime="2018-04-15T12:58:28+08:00">2018-04-15</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+<br>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>通过快捷键，可以方便地在Linux命令行下快速移动光标、编辑命令、编辑后执行历史命令、<code>Bang(!)</code>命令、控制命令等，有效提高工作效率。</p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
+<li><kbd>Ctrl</kbd>+<kbd>K</kbd>：先按住<kbd>CTRL</kbd>键，然后再按<kbd>K</kbd>键</li>
+<li><kbd>Ctrl</kbd>+<kbd>KL</kbd>：先按住<kbd>CTRL</kbd>键，然后再按<kbd>K</kbd>键，然后松开<kbd>K</kbd>键，再按<kbd>L</kbd>键</li>
+<li><kbd>Alt</kbd>+<kbd>K</kbd>：先按住<kbd>ALT</kbd>键，然后再按<kbd>K</kbd>键</li>
+<li><kbd>Meta</kbd>+<kbd>K</kbd>：先单击<kbd>Meta</kbd>（Esc）键，然后再按<kbd>K</kbd>键</li>
+</ul>
+<h2 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h2><ul>
+<li><kbd>Ctrl</kbd>+<code>左右键</code>：在单词之间跳转</li>
+<li><kbd>Ctrl</kbd>+<kbd>A</kbd>：移到行首</li>
+<li><kbd>Ctrl</kbd>+<kbd>E</kbd>：移到行尾</li>
+<li><kbd>Ctrl</kbd>+<kbd>B</kbd>：往回（左）移动一个字符</li>
+<li><kbd>Ctrl</kbd>+<kbd>F</kbd>：往后（右）移动一个字符</li>
+<li><kbd>Ctrl</kbd>+<kbd>XX</kbd>：在命令行尾和光标之间移动</li>
+<li><kbd>Alt</kbd>+<kbd>B</kbd>：往回（左）移动一个单词</li>
+<li><kbd>Alt</kbd>+<kbd>F</kbd>：往后（右）移动一个单词</li>
+<li><kbd>Meta</kbd>+<kbd>B</kbd>：往回（左）移动一个单词</li>
+<li><kbd>Meta</kbd>+<kbd>F</kbd>：往后（右）移动一个单词</li>
+</ul>
+<h2 id="编辑命令"><a href="#编辑命令" class="headerlink" title="编辑命令"></a>编辑命令</h2><ul>
+<li><kbd>Ctrl</kbd>+<kbd>H</kbd>：删除光标左方位置的字符</li>
+<li><kbd>Ctrl</kbd>+<kbd>D</kbd>：删除光标右方位置的字符（注意：<kbd>Ctrl</kbd>+<kbd>D</kbd>也代表EOF，当前命令行没有任何字符时，会注销系统或结束终端）</li>
+<li><kbd>Ctrl</kbd>+<kbd>W</kbd>：由光标位置开始，往左删除单词（往行首删）</li>
+<li><kbd>Alt</kbd>+<kbd>D</kbd>：由光标位置开始，往右删除单词（往行尾删）</li>
+<li><kbd>Meta</kbd>+<kbd>D</kbd>：由光标位置开始，删除单词，直到该单词结束</li>
+<li><kbd>Ctrl</kbd>+<kbd>U</kbd>：由光标所在位置开始，删除左方所有的字符，直到该行开始</li>
+<li><kbd>Ctrl</kbd>+<kbd>K</kbd>：由光标所在位置开始，删除右方所有的字符，直到该行结束</li>
+<li><kbd>Ctrl</kbd>+<kbd>Y</kbd>：粘贴<kbd>Ctrl</kbd>+<kbd>U</kbd>或<kbd>Ctrl</kbd>+<kbd>K</kbd>剪切的内容到光标后</li>
+<li><kbd>Ctrl</kbd>+<kbd>T</kbd>：交换光标处和之前两个字符的位置</li>
+<li><kbd>Alt</kbd>+<kbd>.</kbd>：使用上一条命令的最后一个参数</li>
+<li><kbd>Ctrl</kbd>+<kbd>_</kbd>：回复之前的状态，撤销操作</li>
+</ul>
+<p>另外，<kbd>Ctrl</kbd>+<kbd>AK</kbd>或<kbd>Ctrl</kbd>+<kbd>EU</kbd>或<kbd>Ctrl</kbd>+<kbd>KU</kbd>组合可删除整行。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-04/Linux命令行常用快捷键/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/Shell中数学运算总结/">
@@ -372,7 +452,7 @@ page-home">
 <p>PHP</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> file_get_content(<span class="keyword">__FILE__</span>);</span><br></pre></td></tr></table></figure>
 <p>JavaScript</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span> $(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="string">'!'</span>+$+<span class="string">'()'</span>)&#125;()</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="string">'!'</span>+$+<span class="string">'()'</span>)&#125;()</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">'var%20s%20%3D%20%27__%27%3B%20console.log%28unescape%28s%29.replace%28%27__%27%2C%20s%29%29'</span>; <span class="built_in">console</span>.log(<span class="built_in">unescape</span>(s).replace(<span class="string">'__'</span>, s))</span><br></pre></td></tr></table></figure>
 <p>Python</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r=<span class="string">'r=%r;print r%%r'</span>;<span class="keyword">print</span> r%r</span><br></pre></td></tr></table></figure>
@@ -380,69 +460,6 @@ page-home">
 <!--noindex-->
 <div class="post-button text-center">
 <a class="btn" href="/2018-03/Quine——输出自身的程序/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/Mac反编译apk程序/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-03/Mac反编译apk程序/" class="post-title-link" itemprop="url">Mac反编译apk程序</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-03-18 12:20:17" itemprop="dateCreated datePublished" datetime="2018-03-18T12:20:17+08:00">2018-03-18</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<br>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>APK，即Android应用程序包（Android application package），是Android操作系统使用的一种应用程序包文件格式，用于分发和安装移动应用及中间件。一个Android应用程序的代码想要在Android设备上运行，必须先进行编译，然后被打包成为一个被Android系统所能识别的文件才可以被运行，而这种能被Android系统识别并运行的文件格式便是APK。一个APK文件内包含被编译的代码文件(<code>.dex</code>文件)，文件资源（resources）， assets，证书（certificates），和清单文件（manifest file）。</p>
-<p>APK文件基于ZIP文件格式，它与JAR文件的构造方式相似。因而，直接解压APK文件可以得到一部分信息，如<code>classes.dex</code>等。如果要进行更详尽的分析，就需要用到反编译的工具了。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载最新的JDK"><a href="#下载最新的JDK" class="headerlink" title="下载最新的JDK"></a>下载最新的JDK</h3><p>前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>，在底部找到<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Download Java for Developers</a>，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。</p>
-<p><img src="/images/2018-03/jdk.png" alt></p>
-<h3 id="配置JDK"><a href="#配置JDK" class="headerlink" title="配置JDK"></a>配置JDK</h3><p>下载完成后，打开dmg镜像进行安装。JDK会被安装到<code>/Library/Java/JavaVirtualMachines</code>目录下。为了能在终端正确运行最新的JDK，需要配置环境变量。在<code>~/.bash_profile</code>中增加以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home</span><br><span class="line">PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span>:.</span><br><span class="line">CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:.</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME</span><br><span class="line"><span class="built_in">export</span> PATH</span><br><span class="line"><span class="built_in">export</span> CLASSPATH</span><br></pre></td></tr></table></figure>
-<p>其中，将<code>jdk1.8.0_40.jdk</code>换成你所安装的JDK对应的版本和目录。修改完成后，重开终端或使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
-<p>使环境变量生效。</p>
-<h3 id="下载apk反编译组件"><a href="#下载apk反编译组件" class="headerlink" title="下载apk反编译组件"></a>下载apk反编译组件</h3><p>需要下载的程序包括：</p>
-<ul>
-<li><a href="https://ibotpeaches.github.io/Apktool/install" target="_blank" rel="noopener">Apktool</a></li>
-<li><a href="https://github.com/pxb1988/dex2jar/releases" target="_blank" rel="noopener">dex2jar</a></li>
-<li><a href="http://java-decompiler.github.io" target="_blank" rel="noopener">JD-GUI</a></li>
-</ul>
-<p>一些论坛里会把它们称为『APK反编译三件套』。</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-03/Mac反编译apk程序/#more" rel="contents">
 阅读全文 &raquo;
 </a>
 </div>
@@ -478,7 +495,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">102</span>
+<span class="site-state-item-count">103</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -497,8 +514,7 @@ page-home">
 </nav>
 <div class="feed-link motion-element">
 <a href="/atom.xml" rel="alternate">
-<i class="fa fa-rss"></i>
-RSS
+<i class="fa fa-rss"></i>RSS
 </a>
 </div>
 <div class="links-of-blogroll motion-element links-of-blogroll-inline">
@@ -569,6 +585,40 @@ window.Promise = null;
 <script src="/js/affix.js?v=7.2.0"></script>
 <script src="/js/schemes/pisces.js?v=7.2.0"></script>
 <script src="/js/next-boot.js?v=7.2.0"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+processEscapes: true,
+skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+},
+TeX: {
+equationNumbers: {
+autoNumber: 'AMS'
+}
+}
+});
+MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+if (data.display) {
+var next = data.script.nextSibling;
+while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+}
+});
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+var all = MathJax.Hub.getAllJax(), i;
+for (i = 0; i < all.length; i += 1) {
+document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+}
+});
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script>pangu.spacingPage();</script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];
@@ -889,38 +939,6 @@ onPopupClose();
 }
 });
 </script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-processEscapes: true,
-skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-},
-TeX: {
-equationNumbers: {
-autoNumber: 'AMS'
-}
-}
-});
-MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-if (data.display) {
-var next = data.script.nextSibling;
-while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-}
-});
-});
-</script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Queue(function() {
-var all = MathJax.Hub.getAllJax(), i;
-for (i = 0; i < all.length; i += 1) {
-document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-}
-});
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
 <script>
 if ($('body').find('div.pdf').length) {
 $.ajax({
@@ -946,8 +964,6 @@ height: $(o).attr('height') || '1000px'
 });
 }
 </script>
-<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script>pangu.spacingPage();</script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>

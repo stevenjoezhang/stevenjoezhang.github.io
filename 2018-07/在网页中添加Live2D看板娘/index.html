@@ -26,8 +26,10 @@ sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 copycode: {"enable":true,"show_result":true,"style":null},
 fancybox: true,
+mediumzoom: false,
 fastclick: true,
 lazyload: false,
+pangu: true,
 tabs: true,
 motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 algolia: {
@@ -45,7 +47,7 @@ copy_failure: '复制失败'
 };
 </script>
 <meta name="description" content="项目地址：live2d-widget 克隆这个仓库到服务器上，并配置autoload.js，修改其中的链接为各文件的绝对地址，即可在网页中添加Live2D看板娘。相对于市面上广为流传的版本，博主对触发动作和语言进行了魔改（针对Hexo NexT主题），调整了图标样式、元素定位，并解决了CSS的前缀等问题。更多内容可以参考项目文档及下方链接。快来把萌萌哒的看板娘抱回家吧！  参考文章：网页添加 L">
-<meta name="keywords" content="JavaScript,GitHub,PHP">
+<meta name="keywords" content="JavaScript,PHP,GitHub">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在网页中添加Live2D看板娘">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-07/在网页中添加Live2D看板娘/index.html">
@@ -257,8 +259,8 @@ top: initial;
 <footer class="post-footer">
 <div class="post-tags">
 <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
-<a href="/tags/GitHub/" rel="tag"># GitHub</a>
 <a href="/tags/PHP/" rel="tag"># PHP</a>
+<a href="/tags/GitHub/" rel="tag"># GitHub</a>
 </div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
@@ -381,10 +383,11 @@ window.Promise = null;
 </script>
 <script size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/fastclick/lib/fastclick.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
 <script src="/js/utils.js?v=7.2.0"></script>
 <script src="/js/motion.js?v=7.2.0"></script>
 <script src="/js/affix.js?v=7.2.0"></script>
@@ -392,8 +395,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.2.0"></script>
 <script src="/js/post-details.js?v=7.2.0"></script>
 <script src="/js/next-boot.js?v=7.2.0"></script>
-<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script>pangu.spacingPage();</script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];
@@ -738,6 +739,17 @@ height: $(o).attr('height') || '1000px'
 },
 });
 }
+</script>
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+window.addEventListener("message", function(e) {
+var data = e.data;
+if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+var featureID = data.split(':')[1];
+var height = data.split(':')[2];
+$(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+}
+}, false);
 </script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>

@@ -26,8 +26,10 @@ sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 copycode: {"enable":true,"show_result":true,"style":null},
 fancybox: true,
+mediumzoom: false,
 fastclick: true,
 lazyload: false,
+pangu: true,
 tabs: true,
 motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 algolia: {
@@ -219,7 +221,7 @@ top: initial;
 <p><img src="/images/2018-02/plane.jpg" alt><br><img src="/images/2018-02/ship.jpg" alt></p>
 <a id="more"></a>
 <p>使用Python计算文件MD5值的脚本：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">md5sum</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isfile(filename):</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    myhash = hashlib.md5()</span><br><span class="line">    f = file(filename, <span class="string">"rb"</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        b = f.read(<span class="number">8192</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> b:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        myhash.update(b)</span><br><span class="line">    f.close()</span><br><span class="line">    <span class="keyword">return</span> myhash.hexdigest()</span><br><span class="line"></span><br><span class="line">filepath = raw_input(<span class="string">"请输入文件路径："</span>)</span><br><span class="line">print(md5sum(filepath))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">md5sum</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isfile(filename):</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    myhash = hashlib.md5()</span><br><span class="line">    f = file(filename, <span class="string">"rb"</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        b = f.read(<span class="number">8192</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> b:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        myhash.update(b)</span><br><span class="line">    f.close()</span><br><span class="line">    <span class="keyword">return</span> myhash.hexdigest()</span><br><span class="line"></span><br><span class="line">filepath = raw_input(<span class="string">"请输入文件路径："</span>)</span><br><span class="line">print(md5sum(filepath))</span><br></pre></td></tr></table></figure>
 <p>还有Python3的版本：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> partial</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">md5sum</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(filename, mode = <span class="string">"rb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">        myhash = hashlib.md5()</span><br><span class="line">        <span class="keyword">for</span> buf <span class="keyword">in</span> iter(partial(f.read, <span class="number">128</span>), <span class="string">b""</span>):</span><br><span class="line">            myhash.update(buf)</span><br><span class="line">    <span class="keyword">return</span> myhash.hexdigest()</span><br><span class="line"></span><br><span class="line">print(md5sum(input(<span class="string">"请输入文件路径："</span>)))</span><br></pre></td></tr></table></figure>
 <p>拓展阅读：<br><a href="https://www.zhihu.com/question/265534528/answer/300135154" target="_blank" rel="noopener">至今有没有发现哪几个字符串的MD5相同? - 知乎</a><br><a href="https://natmchugh.blogspot.de/2015/02/create-your-own-md5-collisions.html" target="_blank" rel="noopener">Create your own MD5 collisions</a></p>
@@ -383,10 +385,11 @@ window.Promise = null;
 </script>
 <script size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/fastclick/lib/fastclick.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
 <script src="/js/utils.js?v=7.2.0"></script>
 <script src="/js/motion.js?v=7.2.0"></script>
 <script src="/js/affix.js?v=7.2.0"></script>
@@ -394,8 +397,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.2.0"></script>
 <script src="/js/post-details.js?v=7.2.0"></script>
 <script src="/js/next-boot.js?v=7.2.0"></script>
-<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script>pangu.spacingPage();</script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];
@@ -740,6 +741,17 @@ height: $(o).attr('height') || '1000px'
 },
 });
 }
+</script>
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+window.addEventListener("message", function(e) {
+var data = e.data;
+if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+var featureID = data.split(':')[1];
+var height = data.split(':')[2];
+$(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+}
+}, false);
 </script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>

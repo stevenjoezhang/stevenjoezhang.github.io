@@ -26,8 +26,10 @@ sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 copycode: {"enable":true,"show_result":true,"style":null},
 fancybox: true,
+mediumzoom: false,
 fastclick: true,
 lazyload: false,
+pangu: true,
 tabs: true,
 motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 algolia: {
@@ -373,10 +375,11 @@ window.Promise = null;
 </script>
 <script size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/fastclick/lib/fastclick.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
 <script src="/js/utils.js?v=7.2.0"></script>
 <script src="/js/motion.js?v=7.2.0"></script>
 <script src="/js/affix.js?v=7.2.0"></script>
@@ -384,8 +387,6 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.2.0"></script>
 <script src="/js/post-details.js?v=7.2.0"></script>
 <script src="/js/next-boot.js?v=7.2.0"></script>
-<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script>pangu.spacingPage();</script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];
@@ -730,6 +731,17 @@ height: $(o).attr('height') || '1000px'
 },
 });
 }
+</script>
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+window.addEventListener("message", function(e) {
+var data = e.data;
+if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+var featureID = data.split(':')[1];
+var height = data.split(':')[2];
+$(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+}
+}, false);
 </script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>

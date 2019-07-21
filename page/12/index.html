@@ -26,8 +26,10 @@ sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 copycode: {"enable":true,"show_result":true,"style":null},
 fancybox: true,
+mediumzoom: false,
 fastclick: true,
 lazyload: false,
+pangu: true,
 tabs: true,
 motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 algolia: {
@@ -203,7 +205,7 @@ page-home">
 <p><img src="/images/2018-06/1.png" alt></p>
 <p>通过源码，我们可以发现需要获取的内容包括每个<code>&lt;img&gt;</code>标签的<code>data-original</code>和<code>alt</code>属性。通过爬虫获取网页，用正则表达式提取内容，然后存入数据库即可。<br>这里用到的数据库是MySQL。如果还没有安装的话，不妨参考前面的文章<a href="/2018-03/MySQL%208.0的安装和使用/">MySQL 8.0的安装和使用</a>。</p>
 <p>安装完成后，你可以用root，也可以创建一个新用户，来新建数据库和数据表，用来存放表情包：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> images;</span><br><span class="line">#建立数据库images</span><br><span class="line"><span class="keyword">USE</span> images;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> images (</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">UNSIGNED</span> PRIMARY <span class="keyword">KEY</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">1000</span>),</span><br><span class="line">  imageUrl <span class="built_in">varchar</span>(<span class="number">200</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8mb4;</span><br><span class="line">#然后在该数据库中新建一个表，并添加相应的name和imageUrl</span><br><span class="line">QUIT;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> images;</span><br><span class="line"><span class="comment">#建立数据库images</span></span><br><span class="line"><span class="keyword">USE</span> images;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> images (</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">UNSIGNED</span> PRIMARY <span class="keyword">KEY</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">1000</span>),</span><br><span class="line">  imageUrl <span class="built_in">varchar</span>(<span class="number">200</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8mb4;</span><br><span class="line"><span class="comment">#然后在该数据库中新建一个表，并添加相应的name和imageUrl</span></span><br><span class="line">QUIT;</span><br></pre></td></tr></table></figure>
 <p>至此数据库方面的工作就完成了。</p>
 <!--noindex-->
 <div class="post-button text-center">
@@ -588,17 +590,16 @@ window.Promise = null;
 </script>
 <script size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/fastclick/lib/fastclick.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
 <script src="/js/utils.js?v=7.2.0"></script>
 <script src="/js/motion.js?v=7.2.0"></script>
 <script src="/js/affix.js?v=7.2.0"></script>
 <script src="/js/schemes/pisces.js?v=7.2.0"></script>
 <script src="/js/next-boot.js?v=7.2.0"></script>
-<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script>pangu.spacingPage();</script>
 <script src="/lib/Valine.min.js"></script>
 <script>
 var GUEST = ['nick', 'mail', 'link'];
@@ -943,6 +944,17 @@ height: $(o).attr('height') || '1000px'
 },
 });
 }
+</script>
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+window.addEventListener("message", function(e) {
+var data = e.data;
+if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+var featureID = data.split(':')[1];
+var height = data.split(':')[2];
+$(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+}
+}, false);
 </script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>

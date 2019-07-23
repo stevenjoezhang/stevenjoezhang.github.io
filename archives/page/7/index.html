@@ -15,7 +15,6 @@
 <link rel="stylesheet" href="/css/main.css?v=7.2.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
@@ -24,10 +23,9 @@ scheme: 'Gemini',
 version: '7.2.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-copycode: {"enable":true,"show_result":true,"style":null},
-fancybox: true,
-mediumzoom: false,
-fastclick: true,
+copycode: {"enable":true,"show_result":true,"style":"mac"},
+fancybox: false,
+mediumzoom: true,
 lazyload: false,
 pangu: true,
 tabs: true,
@@ -167,11 +165,39 @@ top: initial;
 <div id="posts" class="posts-collapse">
 <span class="archive-move-on"></span>
 <span class="archive-page-counter">
-很好! 目前共计 103 篇日志。 继续努力。
+很好! 目前共计 105 篇日志。 继续努力。
 </span>
 <div class="collection-title">
 <h1 class="archive-year" id="archive-year-2017">2017</h1>
 </div>
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<header class="post-header">
+<h2 class="post-title">
+<a class="post-title-link" href="/2017-12/游戏圈的鄙视链/" itemprop="url">
+<span itemprop="name">游戏圈的鄙视链</span>
+</a>
+</h2>
+<div class="post-meta">
+<time class="post-time" itemprop="dateCreated" datetime="2017-12-06T22:09:39+08:00" content="2017-12-06">
+12-06
+</time>
+</div>
+</header>
+</article>
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<header class="post-header">
+<h2 class="post-title">
+<a class="post-title-link" href="/2017-12/潘建伟院士莅临我校讲座/" itemprop="url">
+<span itemprop="name">潘建伟院士莅临我校讲座</span>
+</a>
+</h2>
+<div class="post-meta">
+<time class="post-time" itemprop="dateCreated" datetime="2017-12-04T00:02:02+08:00" content="2017-12-04">
+12-04
+</time>
+</div>
+</header>
+</article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <header class="post-header">
 <h2 class="post-title">
@@ -380,7 +406,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">103</span>
+<span class="site-state-item-count">105</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -461,8 +487,7 @@ window.Promise = null;
 </script>
 <script size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/fastclick/lib/fastclick.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
@@ -827,6 +852,7 @@ $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
 }
 }, false);
 </script>
+<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>

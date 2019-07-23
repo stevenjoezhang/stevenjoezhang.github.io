@@ -15,7 +15,6 @@
 <link rel="stylesheet" href="/css/main.css?v=7.2.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
@@ -24,10 +23,9 @@ scheme: 'Gemini',
 version: '7.2.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-copycode: {"enable":true,"show_result":true,"style":null},
-fancybox: true,
-mediumzoom: false,
-fastclick: true,
+copycode: {"enable":true,"show_result":true,"style":"mac"},
+fancybox: false,
+mediumzoom: true,
 lazyload: false,
 pangu: true,
 tabs: true,
@@ -54,14 +52,12 @@ copy_failure: '复制失败'
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。 document.write这个函数可以直接向HTML文档写入任何内容。比如，你需要根据屏幕宽度来加载不同js时，如果希望写入的内容是&amp;lt;script src=&amp;quot;main.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;，那么只要这样就可以了： 1&amp;lt;script&amp;gt; if (scree">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/2018-07-17.png">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/072156353445447.gif">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/3386824149-594a3500b37f4.png">
-<meta property="og:updated_time" content="2019-06-24T15:28:47.168Z">
+<meta property="og:updated_time" content="2019-07-23T09:01:34.516Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些HTML与JS的小技巧">
 <meta name="twitter:description" content="最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。 document.write这个函数可以直接向HTML文档写入任何内容。比如，你需要根据屏幕宽度来加载不同js时，如果希望写入的内容是&amp;lt;script src=&amp;quot;main.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;，那么只要这样就可以了： 1&amp;lt;script&amp;gt; if (scree">
-<meta name="twitter:image" content="https://zhangshuqiao.org/images/2017-10/2018-07-17.png">
+<meta name="twitter:image" content="https://zhangshuqiao.org/images/2017-10/3386824149-594a3500b37f4.png">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2017-10/一些HTML与JS的小技巧/">
 <script id="page.configurations">
@@ -250,49 +246,6 @@ top: initial;
 <h2 id="lt-a-gt-标签的download属性"><a href="#lt-a-gt-标签的download属性" class="headerlink" title="&lt;a&gt;标签的download属性"></a><code>&lt;a&gt;</code>标签的<code>download</code>属性</h2><p>设置<code>&lt;a&gt;</code>标签的<code>download</code>属性，可以在点击该链接时下载目标，即href属性指向的超链接。<br>该属性也可以设置一个值来规定下载文件的名称。所允许的值没有限制，浏览器将自动检测正确的文件扩展名并添加到文件。例如：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.example.com//images/2017-10/example.jpg"</span> <span class="attr">download</span>=<span class="string">"logo"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>正常情况下，浏览器会将其保存为logo.jpg。</p>
-<h2 id="为console-log-添加样式"><a href="#为console-log-添加样式" class="headerlink" title="为console.log()添加样式"></a>为<code>console.log()</code>添加样式</h2><p>在常见的JavaScript代码中，一般会通过<code>console</code>向控制台输出简单的文字信息。为了把信息输出得更优雅更便于阅读，除了<code>cosole.log()</code>方法外，还可以调用<code>cosole.warn()</code>来输出警告信息，在输出信息前面会有一个带感叹号的黄色三角警告符号。<br>另外经常用到的是输出错误信息，可以通过调用<code>console.error()</code>来实现，信息前面会出现一个带叉的红色圆形图标。<br>在某些浏览器下，还可以按以下格式，为输出到控制台的文字进行CSS控制，添加样式：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%c需要输出的信息"</span>, <span class="string">"css代码"</span>);</span><br></pre></td></tr></table></figure>
-<p>这样可以显示缤纷的颜色，甚至图片，简直爽翻了。<br>下面是Chrome中<code>console.log()</code>的官方文档摘要，也适用于大部分主流浏览器：</p>
-<table>
-<thead>
-<tr>
-<th>Format Specifier</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>%s</td>
-<td>Formats the value as a string.</td>
-</tr>
-<tr>
-<td>%d or %i</td>
-<td>Formats the value as an integer.</td>
-</tr>
-<tr>
-<td>%f</td>
-<td>Formats the value as a floating point value.</td>
-</tr>
-<tr>
-<td>%o</td>
-<td>Formats the value as an expandable DOM element (as in the Elements panel).</td>
-</tr>
-<tr>
-<td>%O</td>
-<td>Formats the value as an expandable JavaScript object.</td>
-</tr>
-<tr>
-<td>%c</td>
-<td>Formats the output string according to CSS styles you provide.</td>
-</tr>
-</tbody></table>
-<p>下面是一些例子：</p>
-<p><img src="/images/2017-10/2018-07-17.png" alt></p>
-<h3 id="3D-Text"><a href="#3D-Text" class="headerlink" title="3D Text"></a>3D Text</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%c3D Text"</span>, <span class="string">"text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);\</span></span><br><span class="line"><span class="string">font-size: 5em;"</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="Colorful-CSS"><a href="#Colorful-CSS" class="headerlink" title="Colorful CSS"></a>Colorful CSS</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%cColorful CSS"</span>, <span class="string">"background: rgba(252, 234, 187, 1);\</span></span><br><span class="line"><span class="string">background: -moz-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: -webkit-gradient(left top, right top, color-stop(0%, rgba(252, 234, 187, 1)), color-stop(12%, rgba(175, 250, 77, 1)), color-stop(28%, rgba(0, 247, 49, 1)), color-stop(39%, rgba(0, 210, 247, 1)), color-stop(51%, rgba(0, 189, 247, 1)), color-stop(64%, rgba(133, 108, 217, 1)), color-stop(78%, rgba(177, 0, 247, 1)), color-stop(87%, rgba(247, 0, 189, 1)), color-stop(100%, rgba(245, 22, 52, 1)));\</span></span><br><span class="line"><span class="string">background: -webkit-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: -o-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: -ms-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: linear-gradient(to right, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#f51634', GradientType=1);\</span></span><br><span class="line"><span class="string">font-size: 5em;"</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="Rainbow-Text"><a href="#Rainbow-Text" class="headerlink" title="Rainbow Text"></a>Rainbow Text</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%cRainbow Text"</span>, <span class="string">"background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));\</span></span><br><span class="line"><span class="string">color: transparent;\</span></span><br><span class="line"><span class="string">-webkit-background-clip: text;\</span></span><br><span class="line"><span class="string">font-size: 5em;"</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h3><p><img src="/images/2017-10/072156353445447.gif" alt></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%c"</span>, <span class="string">"padding: 50px 300px; line-height: 120px; background: url('//images/2017-10/icon.gif') no-repeat;"</span>);</span><br></pre></td></tr></table></figure>
-<p>更多内容可以参考<a href="https://www.cnblogs.com/Wayou/p/chrome_dev_tool_style_console.html" target="_blank" rel="noopener">Chrome控制台新玩法-console显示图片以及为文字加样式</a>。</p>
 <h2 id="Range对象的使用"><a href="#Range对象的使用" class="headerlink" title="Range对象的使用"></a>Range对象的使用</h2><h3 id="什么是Range对象"><a href="#什么是Range对象" class="headerlink" title="什么是Range对象"></a>什么是Range对象</h3><p>Range是指html文档中的区域，如用户用鼠标拖动选中的区域，如下图：</p>
 <p><img src="/images/2017-10/3386824149-594a3500b37f4.png" alt></p>
 <p>通过Range对象，可以获取用户选中的区域，或者指定选中区域，得到Range的起点和终点、修改或者复制里边的文本，甚至是html。在富文本编辑器开发中，经常会使用到这些功能。</p>
@@ -401,7 +354,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">103</span>
+<span class="site-state-item-count">105</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -442,7 +395,7 @@ top: initial;
 <!--noindex-->
 <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
 <div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#document-write"><span class="nav-number">1.</span> <span class="nav-text">document.write</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#use-strict"><span class="nav-number">2.</span> <span class="nav-text">use strict</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript传递参数"><span class="nav-number">3.</span> <span class="nav-text">JavaScript传递参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-noscript-gt-标签"><span class="nav-number">4.</span> <span class="nav-text">&lt;noscript&gt;标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE条件注释"><span class="nav-number">5.</span> <span class="nav-text">IE条件注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式页面的设计"><span class="nav-number">6.</span> <span class="nav-text">响应式页面的设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-a-gt-标签的download属性"><span class="nav-number">7.</span> <span class="nav-text">&lt;a&gt;标签的download属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为console-log-添加样式"><span class="nav-number">8.</span> <span class="nav-text">为console.log()添加样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3D-Text"><span class="nav-number">8.1.</span> <span class="nav-text">3D Text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Colorful-CSS"><span class="nav-number">8.2.</span> <span class="nav-text">Colorful CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rainbow-Text"><span class="nav-number">8.3.</span> <span class="nav-text">Rainbow Text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Image"><span class="nav-number">8.4.</span> <span class="nav-text">Image</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Range对象的使用"><span class="nav-number">9.</span> <span class="nav-text">Range对象的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Range对象"><span class="nav-number">9.1.</span> <span class="nav-text">什么是Range对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取当前的选区"><span class="nav-number">9.2.</span> <span class="nav-text">获取当前的选区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Range对象的属性"><span class="nav-number">9.3.</span> <span class="nav-text">Range对象的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Range对象的操作"><span class="nav-number">9.4.</span> <span class="nav-text">Range对象的操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它的一些技巧"><span class="nav-number">10.</span> <span class="nav-text">其它的一些技巧</span></a></li></ol></div>
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#document-write"><span class="nav-number">1.</span> <span class="nav-text">document.write</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#use-strict"><span class="nav-number">2.</span> <span class="nav-text">use strict</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript传递参数"><span class="nav-number">3.</span> <span class="nav-text">JavaScript传递参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-noscript-gt-标签"><span class="nav-number">4.</span> <span class="nav-text">&lt;noscript&gt;标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE条件注释"><span class="nav-number">5.</span> <span class="nav-text">IE条件注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式页面的设计"><span class="nav-number">6.</span> <span class="nav-text">响应式页面的设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-a-gt-标签的download属性"><span class="nav-number">7.</span> <span class="nav-text">&lt;a&gt;标签的download属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Range对象的使用"><span class="nav-number">8.</span> <span class="nav-text">Range对象的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Range对象"><span class="nav-number">8.1.</span> <span class="nav-text">什么是Range对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取当前的选区"><span class="nav-number">8.2.</span> <span class="nav-text">获取当前的选区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Range对象的属性"><span class="nav-number">8.3.</span> <span class="nav-text">Range对象的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Range对象的操作"><span class="nav-number">8.4.</span> <span class="nav-text">Range对象的操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它的一些技巧"><span class="nav-number">9.</span> <span class="nav-text">其它的一些技巧</span></a></li></ol></div>
 </div>
 </div>
 <!--/noindex-->
@@ -489,8 +442,7 @@ window.Promise = null;
 </script>
 <script size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/fastclick/lib/fastclick.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
@@ -857,6 +809,7 @@ $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
 }
 }, false);
 </script>
+<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>

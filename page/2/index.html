@@ -15,7 +15,6 @@
 <link rel="stylesheet" href="/css/main.css?v=7.2.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
@@ -24,10 +23,9 @@ scheme: 'Gemini',
 version: '7.2.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-copycode: {"enable":true,"show_result":true,"style":null},
-fancybox: true,
-mediumzoom: false,
-fastclick: true,
+copycode: {"enable":true,"show_result":true,"style":"mac"},
+fancybox: false,
+mediumzoom: true,
 lazyload: false,
 pangu: true,
 tabs: true,
@@ -165,6 +163,62 @@ page-home">
 <div class="content-wrap">
 <div id="content" class="content">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-06/历史上的今天/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2019-06/历史上的今天/" class="post-title-link" itemprop="url">历史上的今天</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2019-06-04 18:38:36" itemprop="dateCreated datePublished" datetime="2019-06-04T18:38:36+08:00">2019-06-04</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+</span>
+<br>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>如果要在网页上显示一些随机的语句，获得一些人生的经验，你会选择什么？<br>也许，<a href="https://hitokoto.cn" target="_blank" rel="noopener">一言</a>是一个很好的选择，它可以提供一些动漫中的台词，或是网络上的各种小段子。<br>在前面的文章<a href="/2018-05/有趣的Linux命令行工具">有趣的Linux命令行工具</a>中提到的<code>fortune</code>命令或许也可以满足需求，<code>pure-ftpd</code>就可以设置在连接成功时显示随机的来自<code>fortune</code>的语句。<br>那除此之外呢？历史上的今天是一个不错的方案。当你访问一些门户网站的首页，有时会看到这样的栏目。它也是一些百科全书网站，比如维基百科的传统。事实上，在Mac上就自带了一个小型的『历史上的今天』数据库，执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /usr/share/calendar/calendar.history</span><br></pre></td></tr></table></figure>
+<p>就可以看到。<br>这篇文章将介绍如何搭建一个提供『历史上的今天』信息的API。</p>
+<h2 id="建立数据库"><a href="#建立数据库" class="headerlink" title="建立数据库"></a>建立数据库</h2><p>首先，建立MySQL数据库，用于存储爬取的信息。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> dbname;</span><br><span class="line"><span class="comment">#建立数据库，dbname保持一致即可</span></span><br><span class="line"><span class="keyword">USE</span> dbname;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">event</span> (</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">UNSIGNED</span> PRIMARY <span class="keyword">KEY</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="keyword">type</span> <span class="built_in">int</span>(<span class="number">1</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="keyword">year</span> <span class="built_in">varchar</span>(<span class="number">6</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="built_in">date</span> <span class="built_in">varchar</span>(<span class="number">6</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  info <span class="built_in">varchar</span>(<span class="number">300</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span></span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8mb4;</span><br><span class="line">QUIT;</span><br></pre></td></tr></table></figure>
+<h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><p>数据来源是维基百科，使用Python爬取数据，并存入数据库中。代码中的<code>username</code>、<code>password</code>和<code>dbname</code>分别是你的登录用户名、密码和数据库名。数据表名默认是event，也可以自行修改。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line">username = <span class="string">"username"</span></span><br><span class="line">password = <span class="string">"password"</span></span><br><span class="line">dbname = <span class="string">"dbname"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"></span><br><span class="line">conn = pymysql.connect(host = <span class="string">"127.0.0.1"</span>, user = username, password = password, db = dbname, charset = <span class="string">"utf8"</span>)</span><br><span class="line">print(conn)</span><br><span class="line">cur = conn.cursor()</span><br><span class="line">cur.execute(<span class="string">"SET NAMES utf8mb4"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">savedb</span><span class="params">(data)</span>:</span></span><br><span class="line">    print(data)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        cur.execute(<span class="string">"insert into event values(null,%s,%s,%s,%s)"</span>, data)</span><br><span class="line">    <span class="keyword">except</span> pymysql.err.InternalError:</span><br><span class="line">        print(<span class="string">"\033[31mERROR: Incorrect string value.\033[0m"</span>, data)</span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">"failed.txt"</span>, <span class="string">"a"</span>) <span class="keyword">as</span> myfile:</span><br><span class="line">            myfile.write(str(data) + <span class="string">"\n"</span>)</span><br><span class="line">    <span class="keyword">except</span> pymysql.err.DataError:</span><br><span class="line">        print(<span class="string">"\033[31mERROR: Data too long.\033[0m"</span>, data)</span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">"failed.txt"</span>, <span class="string">"a"</span>) <span class="keyword">as</span> myfile:</span><br><span class="line">            myfile.write(str(data) + <span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getDateList</span><span class="params">()</span>:</span></span><br><span class="line">    list = []</span><br><span class="line">    date = datetime.date(<span class="number">2016</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">366</span>):</span><br><span class="line">        date_str = str(date.month) + <span class="string">"月"</span> + str(date.day) + <span class="string">"日"</span></span><br><span class="line">        list.append(date_str)</span><br><span class="line">        date += datetime.timedelta(days = <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> list</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getInfo</span><span class="params">(html, type, date)</span>:</span></span><br><span class="line">    typeList = [<span class="string">"大事记"</span>, <span class="string">"出生"</span>, <span class="string">"逝世"</span>]</span><br><span class="line">    flag = re.compile(<span class="string">"(&lt;h2&gt;&lt;span id=.*&lt;span class=\"mw-headline\" id=.*?"</span> + typeList[type] + <span class="string">"[\s\S]*?&lt;/ul&gt;\s*?)&lt;h2&gt;"</span>).search(html)</span><br><span class="line">    <span class="keyword">if</span> flag:</span><br><span class="line">        bsObj = BeautifulSoup(flag.group(<span class="number">1</span>), <span class="string">"html.parser"</span>).findAll(<span class="string">"li"</span>)</span><br><span class="line">        <span class="keyword">for</span> li <span class="keyword">in</span> bsObj:</span><br><span class="line">            match = re.compile(<span class="string">"((^前|^)\d&#123;1,4&#125;年)：([\s\S]*$)"</span>).match(li.get_text())</span><br><span class="line">            <span class="keyword">if</span> match:</span><br><span class="line">                year = match.group(<span class="number">1</span>)</span><br><span class="line">                info = re.sub(<span class="string">"\[\d&#123;1,&#125;\]"</span>, <span class="string">""</span>, match.group(<span class="number">3</span>).strip())</span><br><span class="line">                data = (type, year, date, info)</span><br><span class="line">                savedb(data)</span><br><span class="line"></span><br><span class="line">list = getDateList()</span><br><span class="line"><span class="keyword">for</span> date <span class="keyword">in</span> list:</span><br><span class="line">    print(date)</span><br><span class="line">    url = <span class="string">"https://zh.wikipedia.org/zh-cn/%s"</span> % date</span><br><span class="line">    r = requests.get(url)</span><br><span class="line">    getInfo(r.text, <span class="number">0</span>, date) <span class="comment"># 大事记</span></span><br><span class="line">    getInfo(r.text, <span class="number">1</span>, date) <span class="comment"># 出生</span></span><br><span class="line">    getInfo(r.text, <span class="number">2</span>, date) <span class="comment"># 逝世</span></span><br><span class="line"></span><br><span class="line">cur.connection.commit()</span><br><span class="line">cur.close()</span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
+<p>这里的两个<code>except</code>分别处理的是特殊字符（非UTF-8范围）和内容长度超出的问题。</p>
+<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><p>比较简单的方式是按照json格式进行输出，这里给出一种使用Python的方案。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2019-06/历史上的今天/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-05/在macOS上读写NTFS磁盘/">
@@ -407,52 +461,6 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-04/macOS Chrome禁用双指手势/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2019-04/macOS Chrome禁用双指手势/" class="post-title-link" itemprop="url">macOS Chrome禁用双指手势</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2019-04-10 00:02:42" itemprop="dateCreated datePublished" datetime="2019-04-10T00:02:42+08:00">2019-04-10</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<br>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>Mac版Chrome自带双指手势前进后退功能，也就是在一个页面已经水平滑动到尽头后，继续向前/向后滑动，就会触发前进/后退。这个功能的初衷不错，只是容易误操作，博主一直想把它关闭了，但Chrome的设置里没有该选项，也没有从<code>chrome://flags/</code>中找到相关内容。<br>后来发现可以通过命令行进行设置，操作方法是：</p>
-<p>禁用鼠标手势</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<p>禁用触控板手势</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<p>参考文章：<a href="https://blog.csdn.net/HandSome696/article/details/79493889" target="_blank" rel="noopener">Mac Chrome 关闭 双指手势 前进 后退</a></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -478,7 +486,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">103</span>
+<span class="site-state-item-count">105</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -559,8 +567,7 @@ window.Promise = null;
 </script>
 <script size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/fastclick/lib/fastclick.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
@@ -925,6 +932,7 @@ $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
 }
 }, false);
 </script>
+<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>

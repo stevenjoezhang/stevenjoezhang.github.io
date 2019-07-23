@@ -15,7 +15,6 @@
 <link rel="stylesheet" href="/css/main.css?v=7.2.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
@@ -24,10 +23,9 @@ scheme: 'Gemini',
 version: '7.2.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-copycode: {"enable":true,"show_result":true,"style":null},
-fancybox: true,
-mediumzoom: false,
-fastclick: true,
+copycode: {"enable":true,"show_result":true,"style":"mac"},
+fancybox: false,
+mediumzoom: true,
 lazyload: false,
 pangu: true,
 tabs: true,
@@ -165,6 +163,135 @@ page-home">
 <div class="content-wrap">
 <div id="content" class="content">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-04/为JavaScript控制台添加样式/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2019-04/为JavaScript控制台添加样式/" class="post-title-link" itemprop="url">为JavaScript控制台添加样式</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2019-04-18 19:59:58" itemprop="dateCreated datePublished" datetime="2019-04-18T19:59:58+08:00">2019-04-18</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
+</span>
+<br>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>在常见的JavaScript代码中，一般会通过<code>console</code>向控制台输出简单的文字信息。为了把信息输出得更优雅更便于阅读，除了<code>cosole.log()</code>方法外，还可以调用<code>cosole.warn()</code>来输出警告信息，在输出信息前面会有一个带感叹号的黄色三角警告符号。<br>另外经常用到的是输出错误信息，可以通过调用<code>console.error()</code>来实现，信息前面会出现一个带叉的红色圆形图标。<br>在某些浏览器下，还可以按以下格式，为输出到控制台的文字进行CSS控制，添加样式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%c需要输出的信息"</span>, <span class="string">"css代码"</span>);</span><br></pre></td></tr></table></figure>
+<p>这样可以显示缤纷的颜色，甚至图片，简直爽翻了。<br>下面是Chrome中<code>console.log()</code>的官方文档摘要，也适用于大部分主流浏览器：</p>
+<table>
+<thead>
+<tr>
+<th>Format Specifier</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%s</td>
+<td>Formats the value as a string.</td>
+</tr>
+<tr>
+<td>%d or %i</td>
+<td>Formats the value as an integer.</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>Formats the value as a floating point value.</td>
+</tr>
+<tr>
+<td>%o</td>
+<td>Formats the value as an expandable DOM element (as in the Elements panel).</td>
+</tr>
+<tr>
+<td>%O</td>
+<td>Formats the value as an expandable JavaScript object.</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>Formats the output string according to CSS styles you provide.</td>
+</tr>
+</tbody></table>
+<p>下面是一些例子：</p>
+<p><img src="/images/2019-04/2018-07-17.png" alt></p>
+<h2 id="3D-Text"><a href="#3D-Text" class="headerlink" title="3D Text"></a>3D Text</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%c3D Text"</span>, <span class="string">"text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);\</span></span><br><span class="line"><span class="string">font-size: 5em;"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="Colorful-CSS"><a href="#Colorful-CSS" class="headerlink" title="Colorful CSS"></a>Colorful CSS</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%cColorful CSS"</span>, <span class="string">"background: rgba(252, 234, 187, 1);\</span></span><br><span class="line"><span class="string">background: -moz-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: -webkit-gradient(left top, right top, color-stop(0%, rgba(252, 234, 187, 1)), color-stop(12%, rgba(175, 250, 77, 1)), color-stop(28%, rgba(0, 247, 49, 1)), color-stop(39%, rgba(0, 210, 247, 1)), color-stop(51%, rgba(0, 189, 247, 1)), color-stop(64%, rgba(133, 108, 217, 1)), color-stop(78%, rgba(177, 0, 247, 1)), color-stop(87%, rgba(247, 0, 189, 1)), color-stop(100%, rgba(245, 22, 52, 1)));\</span></span><br><span class="line"><span class="string">background: -webkit-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: -o-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: -ms-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: linear-gradient(to right, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#f51634', GradientType=1);\</span></span><br><span class="line"><span class="string">font-size: 5em;"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="Rainbow-Text"><a href="#Rainbow-Text" class="headerlink" title="Rainbow Text"></a>Rainbow Text</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%cRainbow Text"</span>, <span class="string">"background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));\</span></span><br><span class="line"><span class="string">color: transparent;\</span></span><br><span class="line"><span class="string">-webkit-background-clip: text;\</span></span><br><span class="line"><span class="string">font-size: 5em;"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h2><p><img src="/images/2019-04/072156353445447.gif" alt></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%c"</span>, <span class="string">"padding: 50px 300px; line-height: 120px; background: url('/images/icon.gif') no-repeat;"</span>);</span><br></pre></td></tr></table></figure>
+<p>更多内容可以参考<a href="https://www.cnblogs.com/Wayou/p/chrome_dev_tool_style_console.html" target="_blank" rel="noopener">Chrome控制台新玩法-console显示图片以及为文字加样式</a>。</p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-04/macOS Chrome禁用双指手势/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2019-04/macOS Chrome禁用双指手势/" class="post-title-link" itemprop="url">macOS Chrome禁用双指手势</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2019-04-10 00:02:42" itemprop="dateCreated datePublished" datetime="2019-04-10T00:02:42+08:00">2019-04-10</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+<br>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>Mac版Chrome自带双指手势前进后退功能，也就是在一个页面已经水平滑动到尽头后，继续向前/向后滑动，就会触发前进/后退。这个功能的初衷不错，只是容易误操作，博主一直想把它关闭了，但Chrome的设置里没有该选项，也没有从<code>chrome://flags/</code>中找到相关内容。<br>后来发现可以通过命令行进行设置，操作方法是：</p>
+<p>禁用鼠标手势</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>禁用触控板手势</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>参考文章：<a href="https://blog.csdn.net/HandSome696/article/details/79493889" target="_blank" rel="noopener">Mac Chrome 关闭 双指手势 前进 后退</a></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-03/Test-driven Development/">
@@ -305,110 +432,6 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-02/macOS Mojave动态壁纸/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2019-02/macOS Mojave动态壁纸/" class="post-title-link" itemprop="url">macOS Mojave动态壁纸</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2019-02-26 08:33:12" itemprop="dateCreated datePublished" datetime="2019-02-26T08:33:12+08:00">2019-02-26</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<br>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p><img src="/images/2019-02/1_qjVGv0IMNTeKFIcks41ohA.png" alt></p>
-<p>How Apple built dynamic wallpapers? And is it possible to create your own dynamic wallpaper for macOS? I spent some time because I would like to answer to the both above questions.<br>Apple如何构建动态壁纸？是否可以为macOS创建自己的动态壁纸？我花了一些时间，因为我想回答上述两个问题。</p>
-<hr>
-<p>In Mojave we can choose new type of wallpaper: dynamic.<br>在Mojave，我们可以选择新型壁纸：动态。</p>
-<p><img src="/images/2019-02/1_4a3SZs7wS3g3AtO8E2RNvw.png" alt></p>
-<p>Depending on day time, system displays different wallpaper. At night it is picture of Mojave at night, during day it’s picture of Mojave taken during day. So at night we have dark wallpaper at day we have light wallpaper.<br>根据时间，系统会显示不同的壁纸。晚上显示Mojave晚上的照片，白天则是在白天拍摄的Mojave的照片。所以晚上我们有暗色的壁纸，白天则是明亮的壁纸。</p>
-<p>All built in wallpapers in macOS we can find in folder: <code>/Library/Desktop Pictures</code>. Also here we can find dynamic wallpaper.<br>我们可以在文件夹<code>/Library/Desktop Pictures</code>中找到所有macOS内置的壁纸。在这里我们也可以找到动态壁纸。</p>
-<p><img src="/images/2019-02/1_lRpwIxzeyEoXMbz97ZfG5Q.png" alt></p>
-<p>Dynamic wallpaper is saved as a HEIC file (<code>Mojave (Dynamic).heic</code>). More information about this type of file you can find on <a href="https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format" target="_blank" rel="noopener">Wikipedia</a>. Generally this is type of file which Apple uses in iOS devices. Photos in iOS (also live photos) are stored as a HEIC file. That kind of file can contains multiple images/thumbnails and metadata in a single file.<br>动态壁纸保存为HEIC文件（<code>Mojave (Dynamic).heic</code>）。有关此类文件的更多信息，请访问<a href="https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format" target="_blank" rel="noopener">Wikipedia</a>。通常，这是Apple在iOS设备中使用的文件类型。iOS中的照片（也包括实时照片）会存储为HEIC文件。这种文件可以在单个文件中包含多个图像/缩略图和元数据。</p>
-<p>There is really good online tool where we can check content of Mojave wallpaper file: <a href="https://strukturag.github.io/libheif/" target="_blank" rel="noopener">https://strukturag.github.io/libheif/</a>. You can upload <code>Mojave (Dynamic).heic</code> file and you will see that in this single file there is 16 separate pictures taken in different day phase.<br>有一个很好的在线工具，让我们可以检查Mojave壁纸文件的内容：<a href="https://strukturag.github.io/libheif/" target="_blank" rel="noopener">https://strukturag.github.io/libheif/</a> 。你可以上传<code>Mojave (Dynamic).heic</code>文件，然后你会发现在这个单独的文件中有16张不同时间拍摄的单独照片。</p>
-<p><img src="/images/2019-02/1_ESDAv949YKQIEocL-qDcGA.png" alt></p>
-<p>So maybe it’s enough to create new HEIC file with 16 separate images and macOS will show them properly. Let’s try it!<br>所以也许它足以创建具有16个单独图像的新HEIC文件，macOS将正确显示它们。我们来试试吧！</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2019-02/macOS Mojave动态壁纸/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-02/十五的月亮十五圆/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2019-02/十五的月亮十五圆/" class="post-title-link" itemprop="url">十五的月亮十五圆</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2019-02-20 20:53:14" itemprop="dateCreated datePublished" datetime="2019-02-20T20:53:14+08:00">2019-02-20</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
-</span>
-<br>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<blockquote>
-<p>摄于己亥年正月十六</p>
-</blockquote>
-<p><img src="/images/2019-02/IMG_4634.jpg" alt></p>
-<p><em>400mm f/8 1/160s</em></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -434,7 +457,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">103</span>
+<span class="site-state-item-count">105</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -515,8 +538,7 @@ window.Promise = null;
 </script>
 <script size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/fastclick/lib/fastclick.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
@@ -913,6 +935,7 @@ $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
 }
 }, false);
 </script>
+<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>

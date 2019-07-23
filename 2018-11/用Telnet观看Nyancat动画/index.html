@@ -15,7 +15,6 @@
 <link rel="stylesheet" href="/css/main.css?v=7.2.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
@@ -24,10 +23,9 @@ scheme: 'Gemini',
 version: '7.2.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-copycode: {"enable":true,"show_result":true,"style":null},
-fancybox: true,
-mediumzoom: false,
-fastclick: true,
+copycode: {"enable":true,"show_result":true,"style":"mac"},
+fancybox: false,
+mediumzoom: true,
 lazyload: false,
 pangu: true,
 tabs: true,
@@ -55,7 +53,7 @@ copy_failure: '复制失败'
 <meta property="og:description" content="前言最近在知乎上看到一个关于VPS有趣的用途的问题，其中一个回答提到了可以搭建Telnet服务器，成功运行后别人用Telnet连接你的主机将会看到Nyancat动画。大致效果如图所示：  然而，回答中给出的Demo已经失效，telnet nyancat.dakko.us会返回一个Connection refused错误。不过值得庆幸的是，这个项目的官方网站Nyan Cat Telnet Serve">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-11/nyancat.png">
-<meta property="og:updated_time" content="2019-02-19T14:47:35.536Z">
+<meta property="og:updated_time" content="2019-07-23T08:44:54.186Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用Telnet观看Nyancat动画">
 <meta name="twitter:description" content="前言最近在知乎上看到一个关于VPS有趣的用途的问题，其中一个回答提到了可以搭建Telnet服务器，成功运行后别人用Telnet连接你的主机将会看到Nyancat动画。大致效果如图所示：  然而，回答中给出的Demo已经失效，telnet nyancat.dakko.us会返回一个Connection refused错误。不过值得庆幸的是，这个项目的官方网站Nyan Cat Telnet Serve">
@@ -231,7 +229,7 @@ top: initial;
 <p>这时，你就可以通过<code>telnet localhost</code>查看是否一切正常。如果没有问题，配置防火墙开放23端口，就可以从公网访问了。试试用Telnet连接你的主机，效果是不是非常酷炫？<br>不过，博主在实践中发现，开放telnet的23端口可能会产生大量异常流量。解决方法是修改telnet的端口号，编辑<code>/etc/services</code>，找到telnet，将23改为一个你喜欢的数字（比如8082）。或者，可以在不需要使用时直接关闭这个服务，在<code>nyancat</code>中设置<code>disable: yes</code>即可。</p>
 <h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>俗话说，有光的地方就有Bad Apple!!。很久以前的一篇文章<a href="/2017-12/近期完成的数个游戏及应用/">近期完成的数个游戏及应用</a>中，就提到博主成功使用HTML页面播放Bad Apple!!字符画。目前，博主正在尝试搭建一个可以播放Bad Apple!!的Telnet服务器，敬请期待。</p>
 <hr>
-<p>本文更新于2019年2月14日：<br>博主通过魔改Nyancat的代码，成功地实现了可以播放Bad Apple!!的Telnet服务器。可以阅读文章[用Telnet观看Bad Apple!!](/2019-02/用Telnet观看Bad Apple!!/)查看。</p>
+<p>本文更新于2019年2月14日：<br>博主通过魔改Nyancat的代码，成功地实现了可以播放Bad Apple!!的Telnet服务器。可以阅读文章<a href="/2019-02/用Telnet观看Bad%20Apple!!/">用Telnet观看Bad Apple!!</a>查看。</p>
 </div>
 <div>
 <div id="reward-container">
@@ -319,7 +317,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">103</span>
+<span class="site-state-item-count">105</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -407,8 +405,7 @@ window.Promise = null;
 </script>
 <script size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/fastclick/lib/fastclick.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
@@ -775,6 +772,7 @@ $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
 }
 }, false);
 </script>
+<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>

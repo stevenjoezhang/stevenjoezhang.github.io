@@ -15,7 +15,6 @@
 <link rel="stylesheet" href="/css/main.css?v=7.2.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
@@ -24,10 +23,9 @@ scheme: 'Gemini',
 version: '7.2.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-copycode: {"enable":true,"show_result":true,"style":null},
-fancybox: true,
-mediumzoom: false,
-fastclick: true,
+copycode: {"enable":true,"show_result":true,"style":"mac"},
+fancybox: false,
+mediumzoom: true,
 lazyload: false,
 pangu: true,
 tabs: true,
@@ -56,7 +54,7 @@ copy_failure: '复制失败'
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2019-06/x360ce.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2019-06/x360ce2.png">
-<meta property="og:updated_time" content="2019-07-12T15:34:29.438Z">
+<meta property="og:updated_time" content="2019-07-23T09:02:24.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在PC上使用Pro Controller">
 <meta name="twitter:description" content="Pro Controller是任天堂为Switch适配的游戏手柄，于2016年10月20日与Switch一同亮相，并于2017年1月25日正式发布。除了在Switch上使用外，Pro Controller还可以与PC配对或连接，进行Steam上的游戏——Steam在2018年5月的客户端更新中增加了对Pro Controller的支持。 本文将介绍一个名为x360ce的工具，通过它可以将Pro C">
@@ -221,14 +219,14 @@ top: initial;
 <p>本文将介绍一个名为<a href="https://github.com/x360ce/x360ce" target="_blank" rel="noopener">x360ce</a>的工具，通过它可以将Pro Controller的操作映射为一个Xbox手柄，这比在Steam中设置手柄更加方便和友好。</p>
 <p>Pro Controller有两种与PC连接的方式：USB有线连接和蓝牙连接。通过USB连接的Pro Controller只能被steam识别，而无论是x360ce还是pygame都无法正确读取数据。因此，要使用x360ce，你的PC必须具有蓝牙功能。</p>
 <p>下面将介绍操作步骤。</p>
-<h3 id="充电"><a href="#充电" class="headerlink" title="充电"></a>充电</h3><p>通过5V电源适配器连接USB Type-C接口为Pro Controller充电，使其保持足够的电量。正如前面所说的，最好不要直接通过PC的USB接口连接Pro Controller，以避免出现混乱。</p>
-<h3 id="蓝牙连接"><a href="#蓝牙连接" class="headerlink" title="蓝牙连接"></a>蓝牙连接</h3><p>长按USB Type-C接口旁的按键，使Pro Controller开机并进入蓝牙配对模式。在PC上通过蓝牙搜索并连接Pro Controller。蓝牙配对完成后，就可以使用x360ce了。</p>
-<h3 id="安装x360ce"><a href="#安装x360ce" class="headerlink" title="安装x360ce"></a>安装x360ce</h3><p><a href="https://github.com/x360ce/x360ce/releases" target="_blank" rel="noopener">在这里</a>下载最新版本的x360ce，然后解压并运行。</p>
+<h2 id="充电"><a href="#充电" class="headerlink" title="充电"></a>充电</h2><p>通过5V电源适配器连接USB Type-C接口为Pro Controller充电，使其保持足够的电量。正如前面所说的，最好不要直接通过PC的USB接口连接Pro Controller，以避免出现混乱。</p>
+<h2 id="蓝牙连接"><a href="#蓝牙连接" class="headerlink" title="蓝牙连接"></a>蓝牙连接</h2><p>长按USB Type-C接口旁的按键，使Pro Controller开机并进入蓝牙配对模式。在PC上通过蓝牙搜索并连接Pro Controller。蓝牙配对完成后，就可以使用x360ce了。</p>
+<h2 id="安装x360ce"><a href="#安装x360ce" class="headerlink" title="安装x360ce"></a>安装x360ce</h2><p><a href="https://github.com/x360ce/x360ce/releases" target="_blank" rel="noopener">在这里</a>下载最新版本的x360ce，然后解压并运行。</p>
 <p><img src="/images/2019-06/x360ce.png" alt></p>
 <p>点击『Add…』按钮，并勾选通过蓝牙连接的Pro Controller。</p>
 <p><img src="/images/2019-06/x360ce2.png" alt></p>
 <p>完成后，点击『OK』回到之前的页面。</p>
-<h3 id="其它配置"><a href="#其它配置" class="headerlink" title="其它配置"></a>其它配置</h3><p>将所有设置项按照前面图中的方式调整好即可。在『General』页面中，可以自行调整按键映射。在『Left Stick』和『Right Stick』中，可以调整灵敏度。完成设置后，需要点击『Save All』进行保存。</p>
+<h2 id="其它配置"><a href="#其它配置" class="headerlink" title="其它配置"></a>其它配置</h2><p>将所有设置项按照前面图中的方式调整好即可。在『General』页面中，可以自行调整按键映射。在『Left Stick』和『Right Stick』中，可以调整灵敏度。完成设置后，需要点击『Save All』进行保存。</p>
 <p>如果一切正常，系统会识别出x360ce虚拟的Xbox手柄，这样就可以愉快的进行游戏了！</p>
 </div>
 <div>
@@ -314,7 +312,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">103</span>
+<span class="site-state-item-count">105</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -355,7 +353,7 @@ top: initial;
 <!--noindex-->
 <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
 <div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#充电"><span class="nav-number">1.</span> <span class="nav-text">充电</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#蓝牙连接"><span class="nav-number">2.</span> <span class="nav-text">蓝牙连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装x360ce"><span class="nav-number">3.</span> <span class="nav-text">安装x360ce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它配置"><span class="nav-number">4.</span> <span class="nav-text">其它配置</span></a></li></ol></div>
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#充电"><span class="nav-number">1.</span> <span class="nav-text">充电</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#蓝牙连接"><span class="nav-number">2.</span> <span class="nav-text">蓝牙连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装x360ce"><span class="nav-number">3.</span> <span class="nav-text">安装x360ce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它配置"><span class="nav-number">4.</span> <span class="nav-text">其它配置</span></a></li></ol></div>
 </div>
 </div>
 <!--/noindex-->
@@ -402,8 +400,7 @@ window.Promise = null;
 </script>
 <script size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/fastclick/lib/fastclick.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
@@ -770,6 +767,7 @@ $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
 }
 }, false);
 </script>
+<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>

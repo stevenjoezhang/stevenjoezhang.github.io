@@ -116,11 +116,11 @@ page-home">
 <li class="menu-item menu-item-home menu-item-active">
 <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 </li>
-<li class="menu-item menu-item-about">
-<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
-</li>
 <li class="menu-item menu-item-archives">
 <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+</li>
+<li class="menu-item menu-item-about">
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
 </li>
 <li class="menu-item menu-item-categories">
 <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
@@ -128,10 +128,10 @@ page-home">
 <li class="menu-item menu-item-tags">
 <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 </li>
-<li class="menu-item menu-item-friends">
+<li class="menu-item menu-item-朋友们">
 <a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
-<li class="menu-item menu-item-lab">
+<li class="menu-item menu-item-实验室">
 <a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
 </li>
 <li class="menu-item menu-item-search">
@@ -333,6 +333,86 @@ page-home">
 </article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-06/Range对象的使用/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2019-06/Range对象的使用/" class="post-title-link" itemprop="url">Range对象的使用</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2019-06-28 17:11:18" itemprop="dateCreated datePublished" datetime="2019-06-28T17:11:18+08:00">2019-06-28</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
+</span>
+<br>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<h2 id="什么是Range对象"><a href="#什么是Range对象" class="headerlink" title="什么是Range对象"></a>什么是Range对象</h2><p>Range是指html文档中的区域，如用户用鼠标拖动选中的区域，如下图：</p>
+<p><img src="/images/2019-06/range.png" alt></p>
+<p>通过Range对象，可以获取用户选中的区域，或者指定选中区域，得到Range的起点和终点、修改或者复制里边的文本，甚至是html。在富文本编辑器开发中，经常会使用到这些功能。</p>
+<h2 id="获取当前的选区"><a href="#获取当前的选区" class="headerlink" title="获取当前的选区"></a>获取当前的选区</h2><p>由于兼容性的问题，需要区分IE浏览器。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> selection, range;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.getSelection) &#123;</span><br><span class="line">    <span class="comment">//现代浏览器</span></span><br><span class="line">    selection = <span class="built_in">window</span>.getSelection();</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">document</span>.selection) &#123;</span><br><span class="line">    <span class="comment">//IE</span></span><br><span class="line">    selection = <span class="built_in">document</span>.selection.createRange();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Range对象</span></span><br><span class="line">range = selection.getRangeAt(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="Range对象的属性"><a href="#Range对象的属性" class="headerlink" title="Range对象的属性"></a>Range对象的属性</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>collapsed</code></td>
+<td>如果范围的开始点和结束点在文档的同一位置，则为<code>true</code>，即范围是空的，或折叠的。</td>
+</tr>
+<tr>
+<td><code>commonAncestorContainer</code></td>
+<td>范围的开始点和结束点的（即它们的祖先节点）、嵌套最深的Document节点。</td>
+</tr>
+<tr>
+<td><code>endContainer</code></td>
+<td>包含范围的结束点的Document节点。</td>
+</tr>
+<tr>
+<td><code>endOffset</code></td>
+<td>endContainer中的结束点位置。</td>
+</tr>
+<tr>
+<td><code>startContainer</code></td>
+<td>包含范围的开始点的Document节点。</td>
+</tr>
+<tr>
+<td><code>startOffset</code></td>
+<td>startContainer中的开始点位置。</td>
+</tr>
+</tbody></table>
+<h2 id="Range对象的操作"><a href="#Range对象的操作" class="headerlink" title="Range对象的操作"></a>Range对象的操作</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//选中区域的文字</span></span><br><span class="line"><span class="keyword">var</span> text = range.toString();</span><br><span class="line"></span><br><span class="line"><span class="comment">//选中区域的Element元素</span></span><br><span class="line"><span class="keyword">var</span> elem = range.commonAncestorContainer;</span><br><span class="line"><span class="keyword">if</span> (elem.nodeType != <span class="number">1</span>) &#123;</span><br><span class="line">    elem = elem.parentNode;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//选中区域的html</span></span><br><span class="line"><span class="keyword">var</span> span = <span class="built_in">document</span>.createElement(<span class="string">'SPAN'</span>);</span><br><span class="line">span.appendChild(range.cloneContents());</span><br><span class="line"></span><br><span class="line"><span class="comment">//选区是否为空</span></span><br><span class="line"><span class="keyword">var</span> isSelectionEmpty = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">if</span> (range.startContainer === range.endContainer) &#123;</span><br><span class="line">    <span class="keyword">if</span> (range.startOffset === range.endOffset) &#123;</span><br><span class="line">        isSelectionEmpty = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>参考文章：<a href="https://segmentfault.com/a/1190000009875696" target="_blank" rel="noopener">JS Range 对象的使用</a></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-06/在PC上使用Pro Controller/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -384,61 +464,9 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-06/PS用文字拼出照片/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2019-06/PS用文字拼出照片/" class="post-title-link" itemprop="url">PS用文字拼出照片</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2019-06-19 09:14:34" itemprop="dateCreated datePublished" datetime="2019-06-19T09:14:34+08:00">2019-06-19</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<br>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>以下操作中的快捷键在Windows下有效，macOS可能需要用<kbd>Command</kbd>代替<kbd>Ctrl</kbd>。<br>原始素材尽量选择人物，最好不要全身。</p>
-<p>博主以下面这张梅西庆祝的照片为例。</p>
-<p><img src="/images/2019-06/lionel-messi.jpg" alt></p>
-<h2 id="调整对比度"><a href="#调整对比度" class="headerlink" title="调整对比度"></a>调整对比度</h2><p>打开素材，<kbd>Ctrl</kbd>+<kbd>j</kbd>复制图层；选定新图层，<kbd>Ctrl</kbd>+<kbd>m</kbd>打开曲线，调大对比度。</p>
-<p><img src="/images/2019-06/1.png" alt></p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2019-06/PS用文字拼出照片/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
-<span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+<span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
 </nav>
 </div>
 </div>
@@ -461,7 +489,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">105</span>
+<span class="site-state-item-count">106</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>

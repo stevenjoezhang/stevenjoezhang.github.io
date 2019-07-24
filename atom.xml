@@ -93,6 +93,33 @@
   </entry>
   
   <entry>
+    <title>Range对象的使用</title>
+    <link href="https://zhangshuqiao.org/2019-06/Range%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>https://zhangshuqiao.org/2019-06/Range对象的使用/</id>
+    <published>2019-06-28T09:11:18.000Z</published>
+    <updated>2019-07-23T15:37:24.527Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是Range对象"><a href="#什么是Range对象" class="headerlink" title="什么是Range对象"></a>什么是Range对象</h2><p>Range是指html文档中的区域，如用户用鼠标拖动选中的区域，如下图：</p><p><img src="/images/2019-06/range.png" alt></p><p>通过Range对象，可以获取用户选中的区域，或者指定选中区域，得到Range的起点和终点、修改或者复制里边的文本，甚至是html。在富文本编辑器开发中，经常会使用到这些功能。</p><h2 id="获取当前的选区"><a href="#获取当前的选区" class="headerlink" title="获取当前的选区"></a>获取当前的选区</h2><p>由于兼容性的问题，需要区分IE浏览器。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> selection, range;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.getSelection) &#123;</span><br><span class="line">    <span class="comment">//现代浏览器</span></span><br><span class="line">    selection = <span class="built_in">window</span>.getSelection();</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">document</span>.selection) &#123;</span><br><span class="line">    <span class="comment">//IE</span></span><br><span class="line">    selection = <span class="built_in">document</span>.selection.createRange();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Range对象</span></span><br><span class="line">range = selection.getRangeAt(<span class="number">0</span>);</span><br></pre></td></tr></table></figure><h2 id="Range对象的属性"><a href="#Range对象的属性" class="headerlink" title="Range对象的属性"></a>Range对象的属性</h2><table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><code>collapsed</code></td><td>如果范围的开始点和结束点在文档的同一位置，则为<code>true</code>，即范围是空的，或折叠的。</td></tr><tr><td><code>commonAncestorContainer</code></td><td>范围的开始点和结束点的（即它们的祖先节点）、嵌套最深的Document节点。</td></tr><tr><td><code>endContainer</code></td><td>包含范围的结束点的Document节点。</td></tr><tr><td><code>endOffset</code></td><td>endContainer中的结束点位置。</td></tr><tr><td><code>startContainer</code></td><td>包含范围的开始点的Document节点。</td></tr><tr><td><code>startOffset</code></td><td>startContainer中的开始点位置。</td></tr></tbody></table><h2 id="Range对象的操作"><a href="#Range对象的操作" class="headerlink" title="Range对象的操作"></a>Range对象的操作</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//选中区域的文字</span></span><br><span class="line"><span class="keyword">var</span> text = range.toString();</span><br><span class="line"></span><br><span class="line"><span class="comment">//选中区域的Element元素</span></span><br><span class="line"><span class="keyword">var</span> elem = range.commonAncestorContainer;</span><br><span class="line"><span class="keyword">if</span> (elem.nodeType != <span class="number">1</span>) &#123;</span><br><span class="line">    elem = elem.parentNode;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//选中区域的html</span></span><br><span class="line"><span class="keyword">var</span> span = <span class="built_in">document</span>.createElement(<span class="string">'SPAN'</span>);</span><br><span class="line">span.appendChild(range.cloneContents());</span><br><span class="line"></span><br><span class="line"><span class="comment">//选区是否为空</span></span><br><span class="line"><span class="keyword">var</span> isSelectionEmpty = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">if</span> (range.startContainer === range.endContainer) &#123;</span><br><span class="line">    <span class="keyword">if</span> (range.startOffset === range.endOffset) &#123;</span><br><span class="line">        isSelectionEmpty = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><p>参考文章：<a href="https://segmentfault.com/a/1190000009875696" target="_blank" rel="noopener">JS Range 对象的使用</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;什么是Range对象&quot;&gt;&lt;a href=&quot;#什么是Range对象&quot; class=&quot;headerlink&quot; title=&quot;什么是Range对象&quot;&gt;&lt;/a&gt;什么是Range对象&lt;/h2&gt;&lt;p&gt;Range是指html文档中的区域，如用户用鼠标拖动选中的区域，如下图：&lt;/
+      
+    
+    </summary>
+    
+      <category term="Web开发" scheme="https://zhangshuqiao.org/categories/Web%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="HTML" scheme="https://zhangshuqiao.org/tags/HTML/"/>
+    
+      <category term="JavaScript" scheme="https://zhangshuqiao.org/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>在PC上使用Pro Controller</title>
     <link href="https://zhangshuqiao.org/2019-06/%E5%9C%A8PC%E4%B8%8A%E4%BD%BF%E7%94%A8Pro%20Controller/"/>
     <id>https://zhangshuqiao.org/2019-06/在PC上使用Pro Controller/</id>
@@ -545,32 +572,6 @@
     
       <category term="其他" scheme="https://zhangshuqiao.org/categories/%E5%85%B6%E4%BB%96/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>鱼眼镜头与小行星特效</title>
-    <link href="https://zhangshuqiao.org/2019-01/%E9%B1%BC%E7%9C%BC%E9%95%9C%E5%A4%B4%E4%B8%8E%E5%B0%8F%E8%A1%8C%E6%98%9F%E7%89%B9%E6%95%88/"/>
-    <id>https://zhangshuqiao.org/2019-01/鱼眼镜头与小行星特效/</id>
-    <published>2019-01-28T06:18:34.000Z</published>
-    <updated>2019-03-13T16:01:04.624Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/images/2019-01/EclipsePrince_Vetter_1500.jpg" alt></p><p>In this beautifully rendered “little planet” image, photographer <a href="https://www.facebook.com/stephane.vetter.nuitsacrees" target="_blank" rel="noopener">Stephane Vetter</a> fuses both night and day captured from a single location at Magone Lake in Oregon during the August 21st solar eclipse. The shot required tons of careful planning, and here’s an explanation of how he did it via <a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener">Astronomy Picture of the Day</a>:<br>在8月21日的日食期间，摄影师<a href="https://www.facebook.com/stephane.vetter.nuitsacrees" target="_blank" rel="noopener">Stephane Vetter</a>于俄勒冈州马格纳湖的同一地点，融合了白天和黑夜的景象，完成了这个精美渲染的『小行星』图像。拍摄需要大量的精心策划，这里是他通过<a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener">Astronomy Picture of the Day</a>解释他是如何做到的：</p><blockquote><p>This featured little-planet, all-sky, double time-lapse, digitally-fused composite captured celestial action during both night and day from a single location. In this 360×180 panorama, north and south are at the image bottom and top, while east and west are at the left and right edges, respectively. During four hours the night before the eclipse, star trails were captured circling the north celestial pole (bottom) as the Earth spun. During the day of the total eclipse, the Sun was captured every fifteen minutes from sunrise to sunset (top), sometimes in partial eclipse. All of these images were then digitally merged onto a single image taken exactly during the total solar eclipse. Then, the Sun’s bright corona could be seen flaring around the dark new Moon (upper left), while Venus simultaneously became easily visible (top). The tree in the middle, below the camera, is a Douglas fir.<br>这是一个小行星、全天空、双时延、数字融合的复合材料，在同一个地方，从夜间到白天持续捕获天体运动。在这个360×180全景图中，北部和南部分别位于图像的底部和顶部，而东部和西部分别位于左右边缘。在日食前一个晚上的四个小时内，当地球旋转时，在北天极（底部）环绕着星轨。在日全食期间，从日出到日落（上图）每隔十五分钟拍摄一次太阳，有时是偏食。然后将所有这些图像数字合并到在日全食期间拍摄的单个图像上。然后，可以看到太阳的明亮日冕在黑暗的新月（左上）周围闪烁，而金星同时变得容易看见（顶部）。中间的树，在相机下面，是道格拉斯冷杉。</p></blockquote><p>So, just your typical full eclipse, little-planet, all-sky, double time-lapse photo by a fir tree, really. You can see more of Vetter’s photography on his <a href="http://nuitsacrees.fr" target="_blank" rel="noopener">website</a>.<br>所以，这就是典型的日全食、小行星、全天空、双时延照片，借助一棵冷杉拍摄，仅此而已。你可以在Vetter的<a href="http://nuitsacrees.fr" target="_blank" rel="noopener">网站</a>上看到更多他的摄影作品。</p><hr><p>本文翻译自：<a href="https://www.thisiscolossal.com/2017/08/a-panoramic-eclipse-composite-with-star-trails-captured-by-stephane-vetter/" target="_blank" rel="noopener">A Panoramic Full Eclipse Composite with Star Trails Captured by Stephane Vetter</a></p><p>这样的『小行星』图像虽然具有鱼眼镜头的扭曲效果，但是并不一定需要使用鱼眼镜头拍摄。通过强大的图像后期处理技术，只要拍摄多个角度的照片，也可以合成出这样的效果。</p><p>拓展阅读：<a href="https://www.zhihu.com/question/27440901" target="_blank" rel="noopener">360度球状全景的照片是怎样拍出来的？ - 知乎</a></p><p>更多小行星特效：<br><a href="http://720.jum8.com/quanjing/xx/" target="_blank" rel="noopener">小行星转场+车内全景</a><br><a href="https://720yun.com/t/eeb24mf59tn?scene_id=487241" target="_blank" rel="noopener">天使眼中的天堂——华中师大一附中</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;/images/2019-01/EclipsePrince_Vetter_1500.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;In this beautifully rendered “little planet” image, photographer &lt;a 
-      
-    
-    </summary>
-    
-      <category term="技术" scheme="https://zhangshuqiao.org/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="摄影" scheme="https://zhangshuqiao.org/tags/%E6%91%84%E5%BD%B1/"/>
     
   </entry>
   

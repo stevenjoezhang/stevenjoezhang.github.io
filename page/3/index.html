@@ -116,11 +116,11 @@ page-home">
 <li class="menu-item menu-item-home">
 <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 </li>
-<li class="menu-item menu-item-about">
-<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
-</li>
 <li class="menu-item menu-item-archives">
 <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+</li>
+<li class="menu-item menu-item-about">
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
 </li>
 <li class="menu-item menu-item-categories">
 <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
@@ -128,10 +128,10 @@ page-home">
 <li class="menu-item menu-item-tags">
 <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 </li>
-<li class="menu-item menu-item-friends">
+<li class="menu-item menu-item-朋友们">
 <a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
-<li class="menu-item menu-item-lab">
+<li class="menu-item menu-item-实验室">
 <a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
 </li>
 <li class="menu-item menu-item-search">
@@ -163,6 +163,80 @@ page-home">
 <div class="content-wrap">
 <div id="content" class="content">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-04/Minecraft配置Seus光影/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2019-04/Minecraft配置Seus光影/" class="post-title-link" itemprop="url">Minecraft配置Seus光影</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2019-04-28 12:35:24" itemprop="dateCreated datePublished" datetime="2019-04-28T12:35:24+08:00">2019-04-28</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
+</span>
+<br>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>下面列出了博主测试成功的环境，使用其它的版本可能出现不可预料的情况。</p>
+<h3 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h3><ul>
+<li><p>图形卡<br>由于Seus光影对计算机的图形性能有较高的要求，博主使用了一块NVIDIA GeForce RTX 2070显卡进行测试。根据作者的描述，20系和10系显卡对Seus光影的支持没有本质区别。因此，你也可以选择其它型号的N卡，运行起来不会有大问题。不过，根据一些Minecraft论坛的反馈，A卡和I卡可能无法支持。</p>
+</li>
+<li><p>其它<br>其它硬件达到主流配置即可，Minecraft对性能没有什么苛求。如果上卡吧标配的话，流畅玩耍一定没有什么问题。</p>
+</li>
+</ul>
+<h3 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h3><ul>
+<li><p>Windows系统<br>由于macOS Mojave的N卡驱动迟迟没有更新（据说是苹果已经抛弃了N卡，未来很有可能不会再更新驱动），因而需要在其它系统上运行。博主使用的是Windows 10。Linux原理上也是可以的，不过博主并没有尝试。</p>
+</li>
+<li><p>JAVA环境<br>Minecraft JAVA版自然需要JAVA的支持。由于后面用到的启动器对JAVA9及以上版本的支持不佳，博主推荐安装JAVA SE 8。可以到<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">Oracle官网</a>下载。测试使用的是JDK1.8.0_211。</p>
+</li>
+<li><p>HMCL启动器<br>你可以从GitHub上<a href="https://github.com/huanghongxun/HMCL/releases" target="_blank" rel="noopener">获取HMCL启动器</a>，下载<code>exe</code>版本即可。博主使用的是发稿前的最新版本3.2.129，后面的步骤也以该版本为例。</p>
+</li>
+<li><p>光影<br>在<a href="https://sonicether.com/seus/#Downloads" target="_blank" rel="noopener">Seus官方网站</a>可以下载免费的光影包。推荐使用<code>SEUS Renewed v1.0.0</code>和<code>SEUS V11</code>。除此之外，可以向作者本人<a href="https://www.patreon.com/sonicether" target="_blank" rel="noopener">付费购买</a>制作中的<code>SEUS PTGI</code>（目前的版本收费10美元，未来发布的正式版将免费）。截至发稿前，最新版本为<code>SEUS PTGI E6</code>。博主这里提供了一个免费镜像：<br><a href="/files/SEUS_PTGI_E6.zip">SEUS_PTGI_E6.zip</a></p>
+</li>
+<li><p>材质<br>一个好的材质包同样是不可或缺的。博主推荐使用<a href="https://matteorizzo.com/realistico/" target="_blank" rel="noopener">Realistico</a>，不过，这个材质包的官方<code>512x</code>版本是付费的，可以自行到国内或国外的玩家论坛上寻找资源。<br>此外还有一个<a href="https://continuum.graphics/stratum-rp" target="_blank" rel="noopener">Stratum</a>材质也很不错，Reddit上的讨论地址是<a href="https://www.reddit.com/r/modpiracy/comments/9vmmj9/request_tier_3_of_the_stratum_resource_pack/" target="_blank" rel="noopener">[Request] Tier 3 of the stratum resource pack</a>，不过下载链接被删帖了。后来博主发现可以通过把<code>www.reddit.com</code>替换为<code>www.removeddit.com</code>查看所有被删除的内容，然后就找到了这个Mediafire上的存储库：<a href="https://www.mediafire.com/folder/6lxv0w9517j6l/Stratum" target="_blank" rel="noopener">Stratum</a>。</p>
+</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装Minecraft"><a href="#安装Minecraft" class="headerlink" title="安装Minecraft"></a>安装Minecraft</h3><p>安装过程并不复杂。运行<code>HMCL-3.2.129.exe</code>，在『游戏列表』中选择『安装新游戏版本』。<br><img src="/images/2019-04/seus1.png" alt></p>
+<p>然后选择1.12.2版本，其它版本可能无法正确适配光影。</p>
+<p><img src="/images/2019-04/seus2.png" alt></p>
+<p>随后安装OptiFine，点击这里的箭头：</p>
+<p><img src="/images/2019-04/seus3.png" alt></p>
+<p>选择最新版本，例如HD_U_E3。如果在游戏过程中发现存在渲染问题（例如黑屏等），可以换其它版本试试。</p>
+<p><img src="/images/2019-04/seus4.png" alt></p>
+<p>最后点击『安装』，HMCL启动器会自动下载并配置相关组件。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2019-04/Minecraft配置Seus光影/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-04/为JavaScript控制台添加样式/">
@@ -391,50 +465,9 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-03/真正的红黑树/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2019-03/真正的红黑树/" class="post-title-link" itemprop="url">真正的红黑树</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2019-03-05 00:17:14" itemprop="dateCreated datePublished" datetime="2019-03-05T00:17:14+08:00">2019-03-05</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
-</span>
-<br>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p><img src="/images/2019-03/IMG_4171.jpg" alt></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
-<a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+<a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
 </nav>
 </div>
 </div>
@@ -457,7 +490,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">105</span>
+<span class="site-state-item-count">106</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -564,17 +597,23 @@ MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
 MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
 if (data.display) {
 var next = data.script.nextSibling;
-while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+while (next && next.nodeName.toLowerCase() === '#text') {
+next = next.nextSibling;
+}
+if (next && next.nodeName.toLowerCase() === 'br') {
+next.parentNode.removeChild(next);
+}
 }
 });
 });
-</script>
-<script type="text/x-mathjax-config">
 MathJax.Hub.Queue(function() {
 var all = MathJax.Hub.getAllJax(), i;
 for (i = 0; i < all.length; i += 1) {
-document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+if (element.nodeName.toLowerCase() == 'li') {
+element = element.parentNode;
+}
+element.classList.add('has-jax');
 }
 });
 </script>

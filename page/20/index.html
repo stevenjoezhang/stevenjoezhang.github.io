@@ -116,11 +116,11 @@ page-home">
 <li class="menu-item menu-item-home">
 <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 </li>
-<li class="menu-item menu-item-about">
-<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
-</li>
 <li class="menu-item menu-item-archives">
 <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+</li>
+<li class="menu-item menu-item-about">
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
 </li>
 <li class="menu-item menu-item-categories">
 <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
@@ -128,10 +128,10 @@ page-home">
 <li class="menu-item menu-item-tags">
 <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 </li>
-<li class="menu-item menu-item-friends">
+<li class="menu-item menu-item-朋友们">
 <a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
-<li class="menu-item menu-item-lab">
+<li class="menu-item menu-item-实验室">
 <a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
 </li>
 <li class="menu-item menu-item-search">
@@ -163,6 +163,47 @@ page-home">
 <div class="content-wrap">
 <div id="content" class="content">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/细思恐极/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2017-11/细思恐极/" class="post-title-link" itemprop="url">细思恐极</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2017-11-14 19:51:42" itemprop="dateCreated datePublished" datetime="2017-11-14T19:51:42+08:00">2017-11-14</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+</span>
+<br>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p><img src="/images/2017-11/IMG_4263.jpg" alt><br><img src="/images/2017-11/6592b5f47ee61115f25057554223beb3.jpg" alt></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-11/WordPress 3.x版本中的彩蛋/">
@@ -350,9 +391,6 @@ page-home">
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。</p>
-<h2 id="document-write"><a href="#document-write" class="headerlink" title="document.write"></a><code>document.write</code></h2><p>这个函数可以直接向HTML文档写入任何内容。比如，你需要根据屏幕宽度来加载不同js时，如果希望写入的内容是<code>&lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;</code>，那么只要这样就可以了：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="xml"> if (screen.width &gt;= 1200) document.write('<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"main.js"</span>&gt;</span><span class="xml"><span class="tag">&lt;<span class="name">\</span>/<span class="attr">script</span>&gt;</span>'); </span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>JavaScript的字符串可以使用单引号或双引号表示，但是由于要写入的内容里有双引号，使用document.write时应该用单引号括起来，否则需要将双引号转义为<code>\&quot;</code>，避免造成错误。如果有多层引号，应将最内层的引号改为HTML转义字符<code>&amp;quot;</code>。而对于这里出现的<code>/</code>，将其改写为了<code>\/</code>，原因是浏览器会认为<code>&lt;/script&gt;</code>是闭合标签，造成代码解析错误。<br>通过<code>document.write</code>可以实现根据不同的条件向HTML写入不同的内容，但是要注意，如果这个时候页面已经加载完毕，<code>document.write</code>会导致页面的内容被清空。实际使用时一定要注意。</p>
 <h2 id="use-strict"><a href="#use-strict" class="headerlink" title="use strict"></a><code>use strict</code></h2><p>在一些脚本中，你或许会在最前面看到单独的一行<code>&quot;use strict&quot;</code>，这是严格模式的声明。<br>严格模式对正常的JavaScript语义做了一些更改：</p>
 <ul>
 <li>严格模式通过抛出错误来消除了一些原有静默错误。</li>
@@ -364,13 +402,11 @@ page-home">
 <p>在<code>example.js</code>中写入</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scripts = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"script"</span>),</span><br><span class="line">    script_len = scripts.length,</span><br><span class="line">    script = scripts[script_len - <span class="number">1</span>],</span><br><span class="line">    tag1 = script.getAttribute(<span class="string">"tag1"</span>);</span><br></pre></td></tr></table></figure>
 <p>这样即可获取tag1的值，可以说是非常的巧妙了。</p>
+<h2 id="document-write"><a href="#document-write" class="headerlink" title="document.write"></a><code>document.write</code></h2><p>这个函数可以直接向HTML文档写入任何内容。比如，你需要根据屏幕宽度来加载不同js时，如果希望写入的内容是<code>&lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;</code>，那么只要这样就可以了：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="xml"> if (screen.width &gt;= 1200) document.write('<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"main.js"</span>&gt;</span><span class="xml"><span class="tag">&lt;<span class="name">\</span>/<span class="attr">script</span>&gt;</span>'); </span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>JavaScript的字符串可以使用单引号或双引号表示，但是由于要写入的内容里有双引号，使用document.write时应该用单引号括起来，否则需要将双引号转义为<code>\&quot;</code>，避免造成错误。如果有多层引号，应将最内层的引号改为HTML转义字符<code>&amp;quot;</code>。而对于这里出现的<code>/</code>，将其改写为了<code>\/</code>，原因是浏览器会认为<code>&lt;/script&gt;</code>是闭合标签，造成代码解析错误。<br>通过<code>document.write</code>可以实现根据不同的条件向HTML写入不同的内容，但是要注意，如果这个时候页面已经加载完毕，<code>document.write</code>会导致页面的内容被清空、覆盖。因此，这个方法不被推荐使用，应该通过其它方式代替。</p>
 <h2 id="lt-noscript-gt-标签"><a href="#lt-noscript-gt-标签" class="headerlink" title="&lt;noscript&gt;标签"></a><code>&lt;noscript&gt;</code>标签</h2><p>对于某些不支持JavaScript的上古浏览器，以及对于停用了JavaScript的用户，<code>&lt;noscript&gt;</code>标签可能非常有用。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">noscript</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #5C5C5C; position: fixed; bottom: 50px; left: 80px; opacity: 0.95; border-radius: 15px; color: #FFFFFF;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"margin: 15px; max-width: 400px;"</span>&gt;</span>系统检测到您的浏览器禁用了或不支持JavaScript。为了保障您的浏览体验，请启用JavaScript或<span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">href</span>=<span class="string">"http://browsehappy.com"</span> <span class="attr">class</span>=<span class="string">"a"</span> <span class="attr">style</span>=<span class="string">"color: rgba(239,178,75,1)"</span>&gt;</span>升级浏览器<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="IE条件注释"><a href="#IE条件注释" class="headerlink" title="IE条件注释"></a>IE条件注释</h2><p>以下类型的注释会被IE9及更早的版本读取，而被其他浏览器忽略：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Since Conditional Comments have been deprecated since Internet Explorer 10, the following script will be ignored, so only Internet Explorer 9 (and below) users will be redirected to a page asking to upgrade their browsers. --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE]&gt;</span></span><br><span class="line"><span class="comment">    &lt;script type="text/javascript" src="./js/upgrade_your_fucking_browser.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">    &lt;div class="notice chromeframe"&gt;您的浏览器版本&lt;strong&gt;很旧很旧&lt;/strong&gt;，为了正常地访问网站，请升级您的浏览器&lt;a target="_blank" href="http://browsehappy.com"&gt;立即升级&lt;/a&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
-<p>在『现代』浏览器占主导的今天，这种条件注释的一个用处是提醒IE用户升级浏览器。不过，IE10及更新的IE不会读取这些条件注释。如果想要所有IE都看到提醒，可能还要靠别的办法，比如用JavaScript判断User Agent。可以看看微软的文档：<a href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214%28v=vs.85%29" target="_blank" rel="noopener">Conditional comments are no longer supported</a>。</p>
 <!--noindex-->
 <div class="post-button text-center">
 <a class="btn" href="/2017-10/一些HTML与JS的小技巧/#more" rel="contents">
@@ -384,53 +420,9 @@ page-home">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-10/伟安生，不玩蛇/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2017-10/伟安生，不玩蛇/" class="post-title-link" itemprop="url">伟安生，不玩蛇</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2017-10-19 10:07:35" itemprop="dateCreated datePublished" datetime="2017-10-19T10:07:35+08:00">2017-10-19</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
-</span>
-<br>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p><img src="/images/2017-10/SNAKE.jpg" alt></p>
-<blockquote>
-<p>安德罗妮：这不是我说的。</p>
-</blockquote>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
-<a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+<a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
 </nav>
 </div>
 </div>
@@ -453,7 +445,7 @@ page-home">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">105</span>
+<span class="site-state-item-count">106</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -560,17 +552,23 @@ MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
 MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
 if (data.display) {
 var next = data.script.nextSibling;
-while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+while (next && next.nodeName.toLowerCase() === '#text') {
+next = next.nextSibling;
+}
+if (next && next.nodeName.toLowerCase() === 'br') {
+next.parentNode.removeChild(next);
+}
 }
 });
 });
-</script>
-<script type="text/x-mathjax-config">
 MathJax.Hub.Queue(function() {
 var all = MathJax.Hub.getAllJax(), i;
 for (i = 0; i < all.length; i += 1) {
-document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+if (element.nodeName.toLowerCase() == 'li') {
+element = element.parentNode;
+}
+element.classList.add('has-jax');
 }
 });
 </script>

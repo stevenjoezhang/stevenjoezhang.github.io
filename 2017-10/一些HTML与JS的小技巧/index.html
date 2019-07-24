@@ -44,20 +44,18 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<meta name="description" content="最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。 document.write这个函数可以直接向HTML文档写入任何内容。比如，你需要根据屏幕宽度来加载不同js时，如果希望写入的内容是&amp;lt;script src=&amp;quot;main.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;，那么只要这样就可以了： 1&amp;lt;script&amp;gt; if (scree">
+<meta name="description" content="最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。 use strict在一些脚本中，你或许会在最前面看到单独的一行&amp;quot;use strict&amp;quot;，这是严格模式的声明。严格模式对正常的JavaScript语义做了一些更改：  严格模式通过抛出错误来消除了一些原有静默错误。 严格模式修复了一些导致JavaScript引擎难以执行优化的缺陷：有时候，相同的">
 <meta name="keywords" content="HTML,JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一些HTML与JS的小技巧">
 <meta property="og:url" content="https://zhangshuqiao.org/2017-10/一些HTML与JS的小技巧/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。 document.write这个函数可以直接向HTML文档写入任何内容。比如，你需要根据屏幕宽度来加载不同js时，如果希望写入的内容是&amp;lt;script src=&amp;quot;main.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;，那么只要这样就可以了： 1&amp;lt;script&amp;gt; if (scree">
+<meta property="og:description" content="最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。 use strict在一些脚本中，你或许会在最前面看到单独的一行&amp;quot;use strict&amp;quot;，这是严格模式的声明。严格模式对正常的JavaScript语义做了一些更改：  严格模式通过抛出错误来消除了一些原有静默错误。 严格模式修复了一些导致JavaScript引擎难以执行优化的缺陷：有时候，相同的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2017-10/3386824149-594a3500b37f4.png">
-<meta property="og:updated_time" content="2019-07-23T09:01:34.516Z">
+<meta property="og:updated_time" content="2019-07-23T15:28:35.440Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些HTML与JS的小技巧">
-<meta name="twitter:description" content="最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。 document.write这个函数可以直接向HTML文档写入任何内容。比如，你需要根据屏幕宽度来加载不同js时，如果希望写入的内容是&amp;lt;script src=&amp;quot;main.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;，那么只要这样就可以了： 1&amp;lt;script&amp;gt; if (scree">
-<meta name="twitter:image" content="https://zhangshuqiao.org/images/2017-10/3386824149-594a3500b37f4.png">
+<meta name="twitter:description" content="最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。 use strict在一些脚本中，你或许会在最前面看到单独的一行&amp;quot;use strict&amp;quot;，这是严格模式的声明。严格模式对正常的JavaScript语义做了一些更改：  严格模式通过抛出错误来消除了一些原有静默错误。 严格模式修复了一些导致JavaScript引擎难以执行优化的缺陷：有时候，相同的">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <link rel="canonical" href="https://zhangshuqiao.org/2017-10/一些HTML与JS的小技巧/">
 <script id="page.configurations">
@@ -118,11 +116,11 @@ top: initial;
 <li class="menu-item menu-item-home">
 <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 </li>
-<li class="menu-item menu-item-about">
-<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
-</li>
 <li class="menu-item menu-item-archives">
 <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+</li>
+<li class="menu-item menu-item-about">
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
 </li>
 <li class="menu-item menu-item-categories">
 <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
@@ -130,10 +128,10 @@ top: initial;
 <li class="menu-item menu-item-tags">
 <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 </li>
-<li class="menu-item menu-item-friends">
+<li class="menu-item menu-item-朋友们">
 <a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
-<li class="menu-item menu-item-lab">
+<li class="menu-item menu-item-实验室">
 <a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
 </li>
 <li class="menu-item menu-item-search">
@@ -215,9 +213,6 @@ top: initial;
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。</p>
-<h2 id="document-write"><a href="#document-write" class="headerlink" title="document.write"></a><code>document.write</code></h2><p>这个函数可以直接向HTML文档写入任何内容。比如，你需要根据屏幕宽度来加载不同js时，如果希望写入的内容是<code>&lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;</code>，那么只要这样就可以了：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="xml"> if (screen.width &gt;= 1200) document.write('<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"main.js"</span>&gt;</span><span class="xml"><span class="tag">&lt;<span class="name">\</span>/<span class="attr">script</span>&gt;</span>'); </span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>JavaScript的字符串可以使用单引号或双引号表示，但是由于要写入的内容里有双引号，使用document.write时应该用单引号括起来，否则需要将双引号转义为<code>\&quot;</code>，避免造成错误。如果有多层引号，应将最内层的引号改为HTML转义字符<code>&amp;quot;</code>。而对于这里出现的<code>/</code>，将其改写为了<code>\/</code>，原因是浏览器会认为<code>&lt;/script&gt;</code>是闭合标签，造成代码解析错误。<br>通过<code>document.write</code>可以实现根据不同的条件向HTML写入不同的内容，但是要注意，如果这个时候页面已经加载完毕，<code>document.write</code>会导致页面的内容被清空。实际使用时一定要注意。</p>
 <h2 id="use-strict"><a href="#use-strict" class="headerlink" title="use strict"></a><code>use strict</code></h2><p>在一些脚本中，你或许会在最前面看到单独的一行<code>&quot;use strict&quot;</code>，这是严格模式的声明。<br>严格模式对正常的JavaScript语义做了一些更改：</p>
 <ul>
 <li>严格模式通过抛出错误来消除了一些原有静默错误。</li>
@@ -229,14 +224,17 @@ top: initial;
 <p>在<code>example.js</code>中写入</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scripts = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"script"</span>),</span><br><span class="line">    script_len = scripts.length,</span><br><span class="line">    script = scripts[script_len - <span class="number">1</span>],</span><br><span class="line">    tag1 = script.getAttribute(<span class="string">"tag1"</span>);</span><br></pre></td></tr></table></figure>
 <p>这样即可获取tag1的值，可以说是非常的巧妙了。</p>
+<h2 id="document-write"><a href="#document-write" class="headerlink" title="document.write"></a><code>document.write</code></h2><p>这个函数可以直接向HTML文档写入任何内容。比如，你需要根据屏幕宽度来加载不同js时，如果希望写入的内容是<code>&lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;</code>，那么只要这样就可以了：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="xml"> if (screen.width &gt;= 1200) document.write('<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"main.js"</span>&gt;</span><span class="xml"><span class="tag">&lt;<span class="name">\</span>/<span class="attr">script</span>&gt;</span>'); </span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>JavaScript的字符串可以使用单引号或双引号表示，但是由于要写入的内容里有双引号，使用document.write时应该用单引号括起来，否则需要将双引号转义为<code>\&quot;</code>，避免造成错误。如果有多层引号，应将最内层的引号改为HTML转义字符<code>&amp;quot;</code>。而对于这里出现的<code>/</code>，将其改写为了<code>\/</code>，原因是浏览器会认为<code>&lt;/script&gt;</code>是闭合标签，造成代码解析错误。<br>通过<code>document.write</code>可以实现根据不同的条件向HTML写入不同的内容，但是要注意，如果这个时候页面已经加载完毕，<code>document.write</code>会导致页面的内容被清空、覆盖。因此，这个方法不被推荐使用，应该通过其它方式代替。</p>
 <h2 id="lt-noscript-gt-标签"><a href="#lt-noscript-gt-标签" class="headerlink" title="&lt;noscript&gt;标签"></a><code>&lt;noscript&gt;</code>标签</h2><p>对于某些不支持JavaScript的上古浏览器，以及对于停用了JavaScript的用户，<code>&lt;noscript&gt;</code>标签可能非常有用。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">noscript</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #5C5C5C; position: fixed; bottom: 50px; left: 80px; opacity: 0.95; border-radius: 15px; color: #FFFFFF;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"margin: 15px; max-width: 400px;"</span>&gt;</span>系统检测到您的浏览器禁用了或不支持JavaScript。为了保障您的浏览体验，请启用JavaScript或<span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">href</span>=<span class="string">"http://browsehappy.com"</span> <span class="attr">class</span>=<span class="string">"a"</span> <span class="attr">style</span>=<span class="string">"color: rgba(239,178,75,1)"</span>&gt;</span>升级浏览器<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="IE条件注释"><a href="#IE条件注释" class="headerlink" title="IE条件注释"></a>IE条件注释</h2><p>以下类型的注释会被IE9及更早的版本读取，而被其他浏览器忽略：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Since Conditional Comments have been deprecated since Internet Explorer 10, the following script will be ignored, so only Internet Explorer 9 (and below) users will be redirected to a page asking to upgrade their browsers. --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE]&gt;</span></span><br><span class="line"><span class="comment">    &lt;script type="text/javascript" src="./js/upgrade_your_fucking_browser.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
 <p>或者</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">    &lt;div class="notice chromeframe"&gt;您的浏览器版本&lt;strong&gt;很旧很旧&lt;/strong&gt;，为了正常地访问网站，请升级您的浏览器&lt;a target="_blank" href="http://browsehappy.com"&gt;立即升级&lt;/a&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
 <p>在『现代』浏览器占主导的今天，这种条件注释的一个用处是提醒IE用户升级浏览器。不过，IE10及更新的IE不会读取这些条件注释。如果想要所有IE都看到提醒，可能还要靠别的办法，比如用JavaScript判断User Agent。可以看看微软的文档：<a href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214%28v=vs.85%29" target="_blank" rel="noopener">Conditional comments are no longer supported</a>。</p>
-<a id="more"></a>
 <h2 id="响应式页面的设计"><a href="#响应式页面的设计" class="headerlink" title="响应式页面的设计"></a>响应式页面的设计</h2><p>这个问题较为复杂。就说『屏幕宽度』，设备的物理分辨率、逻辑分辨率、出现滚动条时参数都各不相同。在CSS中使用</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (max-width: <span class="number">1200px</span>)</span><br></pre></td></tr></table></figure>
 <p>识别的似乎是逻辑分辨率。为了让它对高分辨率的设备（例如Retina屏幕的iPhone）有效，还需要在HTML中使用以下<code>&lt;meta&gt;</code>标签</p>
@@ -246,24 +244,9 @@ top: initial;
 <h2 id="lt-a-gt-标签的download属性"><a href="#lt-a-gt-标签的download属性" class="headerlink" title="&lt;a&gt;标签的download属性"></a><code>&lt;a&gt;</code>标签的<code>download</code>属性</h2><p>设置<code>&lt;a&gt;</code>标签的<code>download</code>属性，可以在点击该链接时下载目标，即href属性指向的超链接。<br>该属性也可以设置一个值来规定下载文件的名称。所允许的值没有限制，浏览器将自动检测正确的文件扩展名并添加到文件。例如：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.example.com//images/2017-10/example.jpg"</span> <span class="attr">download</span>=<span class="string">"logo"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>正常情况下，浏览器会将其保存为logo.jpg。</p>
-<h2 id="Range对象的使用"><a href="#Range对象的使用" class="headerlink" title="Range对象的使用"></a>Range对象的使用</h2><h3 id="什么是Range对象"><a href="#什么是Range对象" class="headerlink" title="什么是Range对象"></a>什么是Range对象</h3><p>Range是指html文档中的区域，如用户用鼠标拖动选中的区域，如下图：</p>
-<p><img src="/images/2017-10/3386824149-594a3500b37f4.png" alt></p>
-<p>通过Range对象，可以获取用户选中的区域，或者指定选中区域，得到Range的起点和终点、修改或者复制里边的文本，甚至是html。在富文本编辑器开发中，经常会使用到这些功能。</p>
-<h3 id="获取当前的选区"><a href="#获取当前的选区" class="headerlink" title="获取当前的选区"></a>获取当前的选区</h3><p>由于兼容性的问题，需要区分IE浏览器。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> selection, range;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.getSelection) &#123; </span><br><span class="line">    <span class="comment">//现代浏览器</span></span><br><span class="line">    selection = <span class="built_in">window</span>.getSelection();</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">document</span>.selection) &#123; </span><br><span class="line">    <span class="comment">//IE</span></span><br><span class="line">    selection = <span class="built_in">document</span>.selection.createRange();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Range对象</span></span><br><span class="line">range = selection.getRangeAt(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="Range对象的属性"><a href="#Range对象的属性" class="headerlink" title="Range对象的属性"></a>Range对象的属性</h3><ul>
-<li>collapsed 如果范围的开始点和结束点在文档的同一位置，则为<code>true</code>，即范围是空的，或折叠的。</li>
-<li>commonAncestorContainer 范围的开始点和结束点的（即它们的祖先节点）、嵌套最深的Document节点。</li>
-<li>endContainer 包含范围的结束点的Document节点。</li>
-<li>endOffset endContainer中的结束点位置。</li>
-<li>startContainer 包含范围的开始点的Document节点。</li>
-<li>startOffset startContainer中的开始点位置。</li>
-</ul>
-<h3 id="Range对象的操作"><a href="#Range对象的操作" class="headerlink" title="Range对象的操作"></a>Range对象的操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//选中区域的文字</span></span><br><span class="line"><span class="keyword">var</span> text = range.toString();</span><br><span class="line"></span><br><span class="line"><span class="comment">//选中区域的Element元素</span></span><br><span class="line"><span class="keyword">var</span> elem = range.commonAncestorContainer;</span><br><span class="line"><span class="keyword">if</span> (elem.nodeType != <span class="number">1</span>) &#123;</span><br><span class="line">    elem = elem.parentNode;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//选中区域的html</span></span><br><span class="line"><span class="keyword">var</span> span = <span class="built_in">document</span>.createElement(<span class="string">'SPAN'</span>);</span><br><span class="line">span.appendChild(range.cloneContents());</span><br><span class="line"></span><br><span class="line"><span class="comment">//选区是否为空</span></span><br><span class="line"><span class="keyword">var</span> isSelectionEmpty = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">if</span> (range.startContainer === range.endContainer) &#123;</span><br><span class="line">    <span class="keyword">if</span> (range.startOffset === range.endOffset) &#123;</span><br><span class="line">        isSelectionEmpty = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="其它的一些技巧"><a href="#其它的一些技巧" class="headerlink" title="其它的一些技巧"></a>其它的一些技巧</h2><p>在<code>&lt;script&gt;</code>标签中的代码会被浏览器顺序执行，而函数大括号<code>{}</code>内的代码，在函数被调用时才会执行。如果要直接运行一个匿名函数，可以使用<code>(function(){})();</code>或者<code>!function(){}();</code>，这样可以有效地避免全局变量名污染。<br>如果需要调用<code>getElementById</code>之类的函数，务必把<code>&lt;script&gt;</code>标签放到对应的元素后面，否则会找不到对象。<br>将body标签写为<code>&lt;body onload=&quot;main()&quot;&gt;</code>，那么main函数会在页面加载完成后直接运行，通过<code>window.addEventListener(&quot;load&quot;, main)</code>也能达到类似的效果。</p>
 <hr>
 <p>文末，再写一些博主关于Safari 4.0的一些回忆吧。<br>为了测试网站对不同浏览器的友好程度，博主下载了Oracle和Firefox，看到首次打开Firefox的欢迎动画时，突然想到多年之前，在Windows上首次运行Safari时看到的极为惊艳的欢迎动画。这段动画展示了HTML5的诸多新特性。经过推断，那是2010年左右，版本是Safari 4.0。查找各大论坛后，找到了这个Safari欢迎动画的网址：<code>http://www.apple.com/safari/welcome/</code>。可惜年代久远，它可能已经永远地从苹果的服务器上消失了。非常遗憾，那个时候的我还too young，沉迷于制作逐帧flash动画，丝毫没有了解html的奇妙世界。当今天我的回忆再一次被唤起时，Safari for Windows已经凉了，<a href="https://www.apple.com/hotnews/thoughts-on-flash" target="_blank" rel="noopener">Flash也快凉了</a>，Safari for macOS已经是11.0版本。互联网时代的高速发展实在是令人感慨万千。</p>
-<p>参考文章：<a href="https://segmentfault.com/a/1190000009875696" target="_blank" rel="noopener">JS Range 对象的使用</a></p>
 <p>拓展阅读：<br><a href="https://www.bestagencies.com/tools/filter-effects-css-generator" target="_blank" rel="noopener">CSS3 Filter Effects</a><br><a href="https://www.runoob.com/js/js-examples.html" target="_blank" rel="noopener">JavaScript 实例</a></p>
 <p>本文更新于2018年6月21日</p>
 </div>
@@ -354,7 +337,7 @@ top: initial;
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">105</span>
+<span class="site-state-item-count">106</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -395,7 +378,7 @@ top: initial;
 <!--noindex-->
 <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
 <div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#document-write"><span class="nav-number">1.</span> <span class="nav-text">document.write</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#use-strict"><span class="nav-number">2.</span> <span class="nav-text">use strict</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript传递参数"><span class="nav-number">3.</span> <span class="nav-text">JavaScript传递参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-noscript-gt-标签"><span class="nav-number">4.</span> <span class="nav-text">&lt;noscript&gt;标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE条件注释"><span class="nav-number">5.</span> <span class="nav-text">IE条件注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式页面的设计"><span class="nav-number">6.</span> <span class="nav-text">响应式页面的设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-a-gt-标签的download属性"><span class="nav-number">7.</span> <span class="nav-text">&lt;a&gt;标签的download属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Range对象的使用"><span class="nav-number">8.</span> <span class="nav-text">Range对象的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Range对象"><span class="nav-number">8.1.</span> <span class="nav-text">什么是Range对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取当前的选区"><span class="nav-number">8.2.</span> <span class="nav-text">获取当前的选区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Range对象的属性"><span class="nav-number">8.3.</span> <span class="nav-text">Range对象的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Range对象的操作"><span class="nav-number">8.4.</span> <span class="nav-text">Range对象的操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它的一些技巧"><span class="nav-number">9.</span> <span class="nav-text">其它的一些技巧</span></a></li></ol></div>
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#use-strict"><span class="nav-number">1.</span> <span class="nav-text">use strict</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript传递参数"><span class="nav-number">2.</span> <span class="nav-text">JavaScript传递参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#document-write"><span class="nav-number">3.</span> <span class="nav-text">document.write</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-noscript-gt-标签"><span class="nav-number">4.</span> <span class="nav-text">&lt;noscript&gt;标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE条件注释"><span class="nav-number">5.</span> <span class="nav-text">IE条件注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式页面的设计"><span class="nav-number">6.</span> <span class="nav-text">响应式页面的设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-a-gt-标签的download属性"><span class="nav-number">7.</span> <span class="nav-text">&lt;a&gt;标签的download属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它的一些技巧"><span class="nav-number">8.</span> <span class="nav-text">其它的一些技巧</span></a></li></ol></div>
 </div>
 </div>
 <!--/noindex-->

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
 <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
@@ -13,7 +14,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
 <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
 <link rel="stylesheet" href="/css/main.css?v=7.2.0">
-<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
 <script id="hexo.configurations">
 var NexT = window.NexT || {};
@@ -28,8 +29,6 @@ fancybox: false,
 mediumzoom: true,
 lazyload: false,
 pangu: true,
-tabs: true,
-motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 algolia: {
 applicationID: '',
 apiKey: '',
@@ -37,6 +36,13 @@ indexName: '',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
+localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},
+search: {
+root: '/',
+path: 'search.json'
+},
+tabs: true,
+motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
 copy_button: '复制',
 copy_success: '复制成功',
@@ -52,7 +58,7 @@ copy_failure: '复制失败'
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。 use strict在一些脚本中，你或许会在最前面看到单独的一行&amp;quot;use strict&amp;quot;，这是严格模式的声明。严格模式对正常的JavaScript语义做了一些更改：  严格模式通过抛出错误来消除了一些原有静默错误。 严格模式修复了一些导致JavaScript引擎难以执行优化的缺陷：有时候，相同的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-23T15:28:35.440Z">
+<meta property="og:updated_time" content="2019-07-24T16:50:58.626Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些HTML与JS的小技巧">
 <meta name="twitter:description" content="最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。 use strict在一些脚本中，你或许会在最前面看到单独的一行&amp;quot;use strict&amp;quot;，这是严格模式的声明。严格模式对正常的JavaScript语义做了一些更改：  严格模式通过抛出错误来消除了一些原有静默错误。 严格模式修复了一些导致JavaScript引擎难以执行优化的缺陷：有时候，相同的">
@@ -114,29 +120,29 @@ top: initial;
 <nav class="site-nav">
 <ul id="menu" class="menu">
 <li class="menu-item menu-item-home">
-<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
 </li>
 <li class="menu-item menu-item-archives">
-<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
 </li>
 <li class="menu-item menu-item-about">
-<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br/>关于</a>
 </li>
 <li class="menu-item menu-item-categories">
-<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类</a>
 </li>
 <li class="menu-item menu-item-tags">
-<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签</a>
 </li>
 <li class="menu-item menu-item-朋友们">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br/>朋友们</a>
 </li>
 <li class="menu-item menu-item-实验室">
-<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
+<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br/>实验室</a>
 </li>
 <li class="menu-item menu-item-search">
 <a href="javascript:;" class="popup-trigger">
-<i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+<i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
 </li>
 </ul>
 <div class="site-search">
@@ -149,7 +155,9 @@ top: initial;
 <i class="fa fa-times-circle"></i>
 </span>
 <div class="local-search-input-wrapper">
-<input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+<input autocomplete="off"
+placeholder="搜索..." spellcheck="false"
+type="text" id="local-search-input">
 </div>
 </div>
 <div id="local-search-result"></div>
@@ -193,6 +201,14 @@ top: initial;
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
 </span>
 <span class="post-meta-item">
+<span class="post-meta-item-icon"
+>
+<i class="fa fa-file"></i>
+阅读次数：
+<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+<span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
@@ -201,14 +217,7 @@ top: initial;
 <span class="post-comments-count valine-comment-count" data-xid="/2017-10/一些HTML与JS的小技巧/" itemprop="commentCount"></span>
 </a>
 </span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-file"></i>
-阅读次数：
-<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-<br>
+<br/>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -229,21 +238,22 @@ top: initial;
 <p>JavaScript的字符串可以使用单引号或双引号表示，但是由于要写入的内容里有双引号，使用document.write时应该用单引号括起来，否则需要将双引号转义为<code>\&quot;</code>，避免造成错误。如果有多层引号，应将最内层的引号改为HTML转义字符<code>&amp;quot;</code>。而对于这里出现的<code>/</code>，将其改写为了<code>\/</code>，原因是浏览器会认为<code>&lt;/script&gt;</code>是闭合标签，造成代码解析错误。<br>通过<code>document.write</code>可以实现根据不同的条件向HTML写入不同的内容，但是要注意，如果这个时候页面已经加载完毕，<code>document.write</code>会导致页面的内容被清空、覆盖。因此，这个方法不被推荐使用，应该通过其它方式代替。</p>
 <h2 id="lt-noscript-gt-标签"><a href="#lt-noscript-gt-标签" class="headerlink" title="&lt;noscript&gt;标签"></a><code>&lt;noscript&gt;</code>标签</h2><p>对于某些不支持JavaScript的上古浏览器，以及对于停用了JavaScript的用户，<code>&lt;noscript&gt;</code>标签可能非常有用。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">noscript</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #5C5C5C; position: fixed; bottom: 50px; left: 80px; opacity: 0.95; border-radius: 15px; color: #FFFFFF;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"margin: 15px; max-width: 400px;"</span>&gt;</span>系统检测到您的浏览器禁用了或不支持JavaScript。为了保障您的浏览体验，请启用JavaScript或<span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">href</span>=<span class="string">"http://browsehappy.com"</span> <span class="attr">class</span>=<span class="string">"a"</span> <span class="attr">style</span>=<span class="string">"color: rgba(239,178,75,1)"</span>&gt;</span>升级浏览器<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="lt-a-gt-标签的download属性"><a href="#lt-a-gt-标签的download属性" class="headerlink" title="&lt;a&gt;标签的download属性"></a><code>&lt;a&gt;</code>标签的<code>download</code>属性</h2><p>设置<code>&lt;a&gt;</code>标签的<code>download</code>属性，可以在点击该链接时下载目标，即href属性指向的超链接。<br>该属性也可以设置一个值来规定下载文件的名称。所允许的值没有限制，浏览器将自动检测正确的文件扩展名并添加到文件。例如：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.example.com//images/2017-10/example.jpg"</span> <span class="attr">download</span>=<span class="string">"logo"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>正常情况下，浏览器会将其保存为logo.jpg。</p>
 <a id="more"></a>
 <h2 id="IE条件注释"><a href="#IE条件注释" class="headerlink" title="IE条件注释"></a>IE条件注释</h2><p>以下类型的注释会被IE9及更早的版本读取，而被其他浏览器忽略：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Since Conditional Comments have been deprecated since Internet Explorer 10, the following script will be ignored, so only Internet Explorer 9 (and below) users will be redirected to a page asking to upgrade their browsers. --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE]&gt;</span></span><br><span class="line"><span class="comment">    &lt;script type="text/javascript" src="./js/upgrade_your_fucking_browser.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
 <p>或者</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">    &lt;div class="notice chromeframe"&gt;您的浏览器版本&lt;strong&gt;很旧很旧&lt;/strong&gt;，为了正常地访问网站，请升级您的浏览器&lt;a target="_blank" href="http://browsehappy.com"&gt;立即升级&lt;/a&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
 <p>在『现代』浏览器占主导的今天，这种条件注释的一个用处是提醒IE用户升级浏览器。不过，IE10及更新的IE不会读取这些条件注释。如果想要所有IE都看到提醒，可能还要靠别的办法，比如用JavaScript判断User Agent。可以看看微软的文档：<a href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214%28v=vs.85%29" target="_blank" rel="noopener">Conditional comments are no longer supported</a>。</p>
-<h2 id="响应式页面的设计"><a href="#响应式页面的设计" class="headerlink" title="响应式页面的设计"></a>响应式页面的设计</h2><p>这个问题较为复杂。就说『屏幕宽度』，设备的物理分辨率、逻辑分辨率、出现滚动条时参数都各不相同。在CSS中使用</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (max-width: <span class="number">1200px</span>)</span><br></pre></td></tr></table></figure>
-<p>识别的似乎是逻辑分辨率。为了让它对高分辨率的设备（例如Retina屏幕的iPhone）有效，还需要在HTML中使用以下<code>&lt;meta&gt;</code>标签</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-<p>由此避免缩放产生的问题——这也是Bootstrap的做法。同时，为了避免出现横向滚动条，下面的css代码也要加上：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="lt-a-gt-标签的download属性"><a href="#lt-a-gt-标签的download属性" class="headerlink" title="&lt;a&gt;标签的download属性"></a><code>&lt;a&gt;</code>标签的<code>download</code>属性</h2><p>设置<code>&lt;a&gt;</code>标签的<code>download</code>属性，可以在点击该链接时下载目标，即href属性指向的超链接。<br>该属性也可以设置一个值来规定下载文件的名称。所允许的值没有限制，浏览器将自动检测正确的文件扩展名并添加到文件。例如：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.example.com//images/2017-10/example.jpg"</span> <span class="attr">download</span>=<span class="string">"logo"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>正常情况下，浏览器会将其保存为logo.jpg。</p>
+<h2 id="阻止非法操作"><a href="#阻止非法操作" class="headerlink" title="阻止非法操作"></a>阻止非法操作</h2><h3 id="屏蔽IE浏览器"><a href="#屏蔽IE浏览器" class="headerlink" title="屏蔽IE浏览器"></a>屏蔽IE浏览器</h3><p>前面讲到的IE条件注释，可以针对IE浏览器做一些适配。但如果网页中使用了大量的HTML5和CSS3标准的内容，那么任何版本的IE都是招架不住的。为了一劳永逸地解决问题，可以屏蔽IE浏览器的访问，甚至直接重定向到<a href="https://browsehappy.com/" target="_blank" rel="noopener">Browse Happy</a>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Kill XP and IE8</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ua = navigator.userAgent;</span><br><span class="line">    <span class="keyword">var</span> res = <span class="regexp">/Windows NT (\d+\.\d+)/</span>.exec(ua);</span><br><span class="line">    <span class="keyword">var</span> xpOrLower = res &amp;&amp; <span class="built_in">JSON</span>.parse(res[<span class="number">1</span>]) &lt; <span class="number">6</span>;</span><br><span class="line">    res = <span class="regexp">/MSIE (\d+\.\d+)/</span>.exec(ua);</span><br><span class="line">    <span class="keyword">var</span> ie8OrLower = res &amp;&amp; <span class="built_in">JSON</span>.parse(res[<span class="number">1</span>]) &lt; <span class="number">9</span>;</span><br><span class="line">    <span class="keyword">if</span> (xpOrLower || ie8OrLower) &#123;</span><br><span class="line">        alert(<span class="string">"请不要用XP及之前的Windows系统，和IE8及之前的IE浏览器访问本站！"</span>);</span><br><span class="line">        location.href = <span class="string">"about:blank"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<h3 id="屏蔽百度搜索"><a href="#屏蔽百度搜索" class="headerlink" title="屏蔽百度搜索"></a>屏蔽百度搜索</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fromBaiduSE = <span class="regexp">/^https?:\/\/www.baidu.com/</span>.test(<span class="built_in">document</span>.referrer);</span><br><span class="line"><span class="keyword">if</span> (fromBaiduSE) &#123;</span><br><span class="line">    alert(<span class="string">"检测到你还在使用百度搜索，作为一个程序员，这是一种自暴自弃！\n\n做不作恶的程序员，从不用百度开始！"</span>)</span><br><span class="line">    location.href = <span class="string">"about:blank"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="防盗链"><a href="#防盗链" class="headerlink" title="防盗链"></a>防盗链</h3><p>如果是视频、图片等静态资源的防盗链，通过服务器判断<code>referer</code>即可阻止非法访问。而要防止自己的页面被其他网站用作<code>&lt;iframe&gt;</code>，则可以通过以下JavaScript代码来实现：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (top.location != self.location) top.location = self.location;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.location.search.match(<span class="regexp">/type=embed/gi</span>)) &#123;</span><br><span class="line">    <span class="built_in">window</span>.parent.postMessage(<span class="string">"resize"</span>, <span class="string">"*"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="禁止选中复制"><a href="#禁止选中复制" class="headerlink" title="禁止选中复制"></a>禁止选中复制</h3><p>监听<code>onselectstart</code>事件，即可阻止用户的拖拽选择行为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.onselectstart = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    event.preventDefault();</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="其它的一些技巧"><a href="#其它的一些技巧" class="headerlink" title="其它的一些技巧"></a>其它的一些技巧</h2><p>在<code>&lt;script&gt;</code>标签中的代码会被浏览器顺序执行，而函数大括号<code>{}</code>内的代码，在函数被调用时才会执行。如果要直接运行一个匿名函数，可以使用<code>(function(){})();</code>或者<code>!function(){}();</code>，这样可以有效地避免全局变量名污染。<br>如果需要调用<code>getElementById</code>之类的函数，务必把<code>&lt;script&gt;</code>标签放到对应的元素后面，否则会找不到对象。<br>将body标签写为<code>&lt;body onload=&quot;main()&quot;&gt;</code>，那么main函数会在页面加载完成后直接运行，通过<code>window.addEventListener(&quot;load&quot;, main)</code>也能达到类似的效果。</p>
 <hr>
 <p>文末，再写一些博主关于Safari 4.0的一些回忆吧。<br>为了测试网站对不同浏览器的友好程度，博主下载了Oracle和Firefox，看到首次打开Firefox的欢迎动画时，突然想到多年之前，在Windows上首次运行Safari时看到的极为惊艳的欢迎动画。这段动画展示了HTML5的诸多新特性。经过推断，那是2010年左右，版本是Safari 4.0。查找各大论坛后，找到了这个Safari欢迎动画的网址：<code>http://www.apple.com/safari/welcome/</code>。可惜年代久远，它可能已经永远地从苹果的服务器上消失了。非常遗憾，那个时候的我还too young，沉迷于制作逐帧flash动画，丝毫没有了解html的奇妙世界。当今天我的回忆再一次被唤起时，Safari for Windows已经凉了，<a href="https://www.apple.com/hotnews/thoughts-on-flash" target="_blank" rel="noopener">Flash也快凉了</a>，Safari for macOS已经是11.0版本。互联网时代的高速发展实在是令人感慨万千。</p>
@@ -307,8 +317,7 @@ top: initial;
 </article>
 </div>
 </div>
-<div class="comments" id="comments">
-</div>
+<div class="comments" id="comments"></div>
 </div>
 <div class="sidebar-toggle">
 <div class="sidebar-toggle-line-wrap">
@@ -330,7 +339,9 @@ top: initial;
 <div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-<img class="site-author-image" itemprop="image" src="/images/icon.gif" alt="张书樵">
+<img class="site-author-image" itemprop="image"
+src="/images/icon.gif"
+alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
 <div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
 </div>
@@ -378,7 +389,7 @@ top: initial;
 <!--noindex-->
 <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
 <div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#use-strict"><span class="nav-number">1.</span> <span class="nav-text">use strict</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript传递参数"><span class="nav-number">2.</span> <span class="nav-text">JavaScript传递参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#document-write"><span class="nav-number">3.</span> <span class="nav-text">document.write</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-noscript-gt-标签"><span class="nav-number">4.</span> <span class="nav-text">&lt;noscript&gt;标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE条件注释"><span class="nav-number">5.</span> <span class="nav-text">IE条件注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式页面的设计"><span class="nav-number">6.</span> <span class="nav-text">响应式页面的设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-a-gt-标签的download属性"><span class="nav-number">7.</span> <span class="nav-text">&lt;a&gt;标签的download属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它的一些技巧"><span class="nav-number">8.</span> <span class="nav-text">其它的一些技巧</span></a></li></ol></div>
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#use-strict"><span class="nav-number">1.</span> <span class="nav-text">use strict</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript传递参数"><span class="nav-number">2.</span> <span class="nav-text">JavaScript传递参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#document-write"><span class="nav-number">3.</span> <span class="nav-text">document.write</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-noscript-gt-标签"><span class="nav-number">4.</span> <span class="nav-text">&lt;noscript&gt;标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-a-gt-标签的download属性"><span class="nav-number">5.</span> <span class="nav-text">&lt;a&gt;标签的download属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE条件注释"><span class="nav-number">6.</span> <span class="nav-text">IE条件注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阻止非法操作"><span class="nav-number">7.</span> <span class="nav-text">阻止非法操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#屏蔽IE浏览器"><span class="nav-number">7.1.</span> <span class="nav-text">屏蔽IE浏览器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏蔽百度搜索"><span class="nav-number">7.2.</span> <span class="nav-text">屏蔽百度搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防盗链"><span class="nav-number">7.3.</span> <span class="nav-text">防盗链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁止选中复制"><span class="nav-number">7.4.</span> <span class="nav-text">禁止选中复制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它的一些技巧"><span class="nav-number">8.</span> <span class="nav-text">其它的一些技巧</span></a></li></ol></div>
 </div>
 </div>
 <!--/noindex-->
@@ -418,12 +429,7 @@ top: initial;
 <span id="scrollpercent"><span>0</span>%</span>
 </div>
 </div>
-<script>
-if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-window.Promise = null;
-}
-</script>
-<script size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+<script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
@@ -436,326 +442,7 @@ window.Promise = null;
 <script src="/js/scrollspy.js?v=7.2.0"></script>
 <script src="/js/post-details.js?v=7.2.0"></script>
 <script src="/js/next-boot.js?v=7.2.0"></script>
-<script src="/lib/Valine.min.js"></script>
-<script>
-var GUEST = ['nick', 'mail', 'link'];
-var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function(item) {
-return GUEST.indexOf(item) > -1;
-});
-new Valine({
-el: '#comments',
-verify: true,
-notify: false,
-appId: 'piu0NMpHzJexJQxetynyuaxD-MdYXbMMI',
-appKey: 'faKsbM25WUuhAu2kB8hhjKtr',
-placeholder: '您可以在这里输入评论哟～',
-avatar: 'mm',
-meta: guest,
-pageSize: '12' || 10,
-visitor: false,
-lang: '' || 'zh-cn'
-});
-</script>
-<script>
-// Popup Window;
-var isfetched = false;
-var isXml = true;
-// Search DB path;
-var search_path = "search.json";
-if (search_path.length === 0) {
-search_path = "search.xml";
-} else if (/json$/i.test(search_path)) {
-isXml = false;
-}
-var path = "/" + search_path;
-// monitor main search box;
-var onPopupClose = function (e) {
-$('.popup').hide();
-$('#local-search-input').val('');
-$('.search-result-list').remove();
-$('#no-result').remove();
-$(".local-search-pop-overlay").remove();
-$('body').css('overflow', '');
-}
-function proceedsearch() {
-$("body")
-.append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-.css('overflow', 'hidden');
-$('.search-popup-overlay').click(onPopupClose);
-$('.popup').toggle();
-var $localSearchInput = $('#local-search-input');
-$localSearchInput.attr("autocapitalize", "none");
-$localSearchInput.attr("autocorrect", "off");
-$localSearchInput.focus();
-}
-// search function;
-var searchFunc = function(path, search_id, content_id) {
-'use strict';
-// start loading animation
-$("body")
-.append('<div class="search-popup-overlay local-search-pop-overlay">' +
-'<div id="search-loading-icon">' +
-'<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-'</div>' +
-'</div>')
-.css('overflow', 'hidden');
-$("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-// ref: https://github.com/ForbesLindesay/unescape-html
-var unescapeHtml = function(html) {
-return String(html)
-.replace(/&quot;/g, '"')
-.replace(/&#39;/g, '\'')
-.replace(/&#x3A;/g, ':')
-// replace all the other &#x; chars
-.replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-.replace(/&lt;/g, '<')
-.replace(/&gt;/g, '>')
-.replace(/&amp;/g, '&');
-};
-$.ajax({
-url: path,
-dataType: isXml ? "xml" : "json",
-async: true,
-success: function(res) {
-// get the contents from search data
-isfetched = true;
-$('.popup').detach().appendTo('.header-inner');
-var datas = isXml ? $("entry", res).map(function() {
-return {
-title: $("title", this).text(),
-content: $("content",this).text(),
-url: $("url" , this).text()
-};
-}).get() : res;
-var input = document.getElementById(search_id);
-var resultContent = document.getElementById(content_id);
-var inputEventFunction = function() {
-var searchText = input.value.trim().toLowerCase();
-var keywords = searchText.split(/[\s\-]+/);
-if (keywords.length > 1) {
-keywords.push(searchText);
-}
-var resultItems = [];
-if (searchText.length > 0) {
-// perform local searching
-datas.forEach(function(data) {
-var isMatch = false;
-var hitCount = 0;
-var searchTextCount = 0;
-var title = data.title.trim();
-var titleInLowerCase = title.toLowerCase();
-var content = data.content.trim().replace(/<[^>]+>/g,"");
-content = unescapeHtml(content);
-var contentInLowerCase = content.toLowerCase();
-var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-var indexOfTitle = [];
-var indexOfContent = [];
-// only match articles with not empty titles
-if(title != '') {
-keywords.forEach(function(keyword) {
-function getIndexByWord(word, text, caseSensitive) {
-var wordLen = word.length;
-if (wordLen === 0) {
-return [];
-}
-var startPosition = 0, position = [], index = [];
-if (!caseSensitive) {
-text = text.toLowerCase();
-word = word.toLowerCase();
-}
-while ((position = text.indexOf(word, startPosition)) > -1) {
-index.push({position: position, word: word});
-startPosition = position + wordLen;
-}
-return index;
-}
-indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-});
-if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-isMatch = true;
-hitCount = indexOfTitle.length + indexOfContent.length;
-}
-}
-// show search results
-if (isMatch) {
-// sort index by position of keyword
-[indexOfTitle, indexOfContent].forEach(function (index) {
-index.sort(function (itemLeft, itemRight) {
-if (itemRight.position !== itemLeft.position) {
-return itemRight.position - itemLeft.position;
-} else {
-return itemLeft.word.length - itemRight.word.length;
-}
-});
-});
-// merge hits into slices
-function mergeIntoSlice(text, start, end, index) {
-var item = index[index.length - 1];
-var position = item.position;
-var word = item.word;
-var hits = [];
-var searchTextCountInSlice = 0;
-while (position + word.length <= end && index.length != 0) {
-if (word === searchText) {
-searchTextCountInSlice++;
-}
-hits.push({position: position, length: word.length});
-var wordEnd = position + word.length;
-// move to next position of hit
-index.pop();
-while (index.length != 0) {
-item = index[index.length - 1];
-position = item.position;
-word = item.word;
-if (wordEnd > position) {
-index.pop();
-} else {
-break;
-}
-}
-}
-searchTextCount += searchTextCountInSlice;
-return {
-hits: hits,
-start: start,
-end: end,
-searchTextCount: searchTextCountInSlice
-};
-}
-var slicesOfTitle = [];
-if (indexOfTitle.length != 0) {
-slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-}
-var slicesOfContent = [];
-while (indexOfContent.length != 0) {
-var item = indexOfContent[indexOfContent.length - 1];
-var position = item.position;
-var word = item.word;
-// cut out 100 characters
-var start = position - 20;
-var end = position + 80;
-if(start < 0){
-start = 0;
-}
-if (end < position + word.length) {
-end = position + word.length;
-}
-if(end > content.length){
-end = content.length;
-}
-slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-}
-// sort slices in content by search text's count and hits' count
-slicesOfContent.sort(function (sliceLeft, sliceRight) {
-if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-} else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-return sliceRight.hits.length - sliceLeft.hits.length;
-} else {
-return sliceLeft.start - sliceRight.start;
-}
-});
-// select top N slices in content
-var upperBound = parseInt('1');
-if (upperBound >= 0) {
-slicesOfContent = slicesOfContent.slice(0, upperBound);
-}
-// highlight title and content
-function highlightKeyword(text, slice) {
-var result = '';
-var prevEnd = slice.start;
-slice.hits.forEach(function (hit) {
-result += text.substring(prevEnd, hit.position);
-var end = hit.position + hit.length;
-result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-prevEnd = end;
-});
-result += text.substring(prevEnd, slice.end);
-return result;
-}
-var resultItem = '';
-if (slicesOfTitle.length != 0) {
-resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-} else {
-resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-}
-slicesOfContent.forEach(function (slice) {
-resultItem += "<a href='" + articleUrl + "'>" +
-"<p class=\"search-result\">" + highlightKeyword(content, slice) +
-"...</p>" + "</a>";
-});
-resultItem += "</li>";
-resultItems.push({
-item: resultItem,
-searchTextCount: searchTextCount,
-hitCount: hitCount,
-id: resultItems.length
-});
-}
-})
-};
-if (keywords.length === 1 && keywords[0] === "") {
-resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-} else if (resultItems.length === 0) {
-resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-} else {
-resultItems.sort(function (resultLeft, resultRight) {
-if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-return resultRight.searchTextCount - resultLeft.searchTextCount;
-} else if (resultLeft.hitCount !== resultRight.hitCount) {
-return resultRight.hitCount - resultLeft.hitCount;
-} else {
-return resultRight.id - resultLeft.id;
-}
-});
-var searchResultList = '<ul class=\"search-result-list\">';
-resultItems.forEach(function (result) {
-searchResultList += result.item;
-})
-searchResultList += "</ul>";
-resultContent.innerHTML = searchResultList;
-}
-}
-if ('auto' === 'auto') {
-input.addEventListener('input', inputEventFunction);
-} else {
-$('.search-icon').click(inputEventFunction);
-input.addEventListener('keypress', function (event) {
-if (event.keyCode === 13) {
-inputEventFunction();
-}
-});
-}
-// remove loading animation
-$(".local-search-pop-overlay").remove();
-$('body').css('overflow', '');
-proceedsearch();
-}
-});
-}
-// handle and trigger popup window;
-$('.popup-trigger').click(function(e) {
-e.stopPropagation();
-if (isfetched === false) {
-searchFunc(path, 'local-search-input', 'local-search-result');
-} else {
-proceedsearch();
-};
-});
-$('.popup-btn-close').click(onPopupClose);
-$('.popup').click(function(e){
-e.stopPropagation();
-});
-$(document).on('keyup', function (event) {
-var shouldDismissSearchPopup = event.which === 27 &&
-$('.search-popup').is(':visible');
-if (shouldDismissSearchPopup) {
-onPopupClose();
-}
-});
-</script>
+<script src="/js/local-search.js?v=7.2.0"></script>
 <script>
 if ($('body').find('div.pdf').length) {
 $.ajax({
@@ -781,16 +468,26 @@ height: $(o).attr('height') || '1000px'
 });
 }
 </script>
+<script src="/lib/Valine.min.js"></script>
 <script>
-// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
-window.addEventListener("message", function(e) {
-var data = e.data;
-if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
-var featureID = data.split(':')[1];
-var height = data.split(':')[2];
-$(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
-}
-}, false);
+var GUEST = ['nick', 'mail', 'link'];
+var guest = 'nick,mail,link';
+guest = guest.split(',').filter(function(item) {
+return GUEST.indexOf(item) > -1;
+});
+new Valine({
+el: '#comments',
+verify: true,
+notify: false,
+appId: 'piu0NMpHzJexJQxetynyuaxD-MdYXbMMI',
+appKey: 'faKsbM25WUuhAu2kB8hhjKtr',
+placeholder: '您可以在这里输入评论哟～',
+avatar: 'mm',
+meta: guest,
+pageSize: '12' || 10,
+visitor: false,
+lang: '' || 'zh-cn'
+});
 </script>
 <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
 <script src="/lib/waifu/live2d.min.js"></script>

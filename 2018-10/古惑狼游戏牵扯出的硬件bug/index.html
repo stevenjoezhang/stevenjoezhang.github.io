@@ -6,24 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<script id="hexo.configurations">
+<script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.2.0',
+version: '7.3.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+save_scroll: true,
 copycode: {"enable":true,"show_result":true,"style":"mac"},
 fancybox: false,
 mediumzoom: true,
@@ -36,11 +37,8 @@ indexName: '',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
-localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},
-search: {
-root: '/',
-path: 'search.json'
-},
+localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
+path: 'search.json',
 tabs: true,
 motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
@@ -50,26 +48,40 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<meta name="description" content="It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blame the compiler. Well down the list after that, y">
+<meta name="description" content="It&amp;#39;s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third... and somewhere around 10,000th you blame the compiler. Well down the list after t">
 <meta name="keywords" content="个人博客,物理,技术,计算机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="古惑狼游戏牵扯出的硬件bug">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-10/古惑狼游戏牵扯出的硬件bug/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blame the compiler. Well down the list after that, y">
+<meta property="og:description" content="It&amp;#39;s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third... and somewhere around 10,000th you blame the compiler. Well down the list after t">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-02-12T03:41:41.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="古惑狼游戏牵扯出的硬件bug">
-<meta name="twitter:description" content="It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blame the compiler. Well down the list after that, y">
+<meta name="twitter:description" content="It&amp;#39;s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third... and somewhere around 10,000th you blame the compiler. Well down the list after t">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
-<link rel="canonical" href="https://zhangshuqiao.org/2018-10/古惑狼游戏牵扯出的硬件bug/">
-<script id="page.configurations">
+<script id="page-configurations">
+// https://hexo.io/docs/variables.html
 CONFIG.page = {
 sidebar: "",
+isHome: false,
+isPost: true,
+isPage: false,
+isArchive: false
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-8784231462763562",
+enable_page_level_ads: true
+});
+</script>
 <title>古惑狼游戏牵扯出的硬件bug | 米米的博客</title>
 <noscript>
 <style>
@@ -95,7 +107,7 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left page-post-detail">
+<div class="container sidebar-position-left">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
@@ -120,29 +132,29 @@ top: initial;
 <nav class="site-nav">
 <ul id="menu" class="menu">
 <li class="menu-item menu-item-home">
-<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 </li>
 <li class="menu-item menu-item-archives">
-<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
+<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-about">
-<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br/>关于</a>
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
 </li>
 <li class="menu-item menu-item-categories">
-<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类</a>
+<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 </li>
 <li class="menu-item menu-item-tags">
-<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签</a>
+<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 </li>
 <li class="menu-item menu-item-朋友们">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br/>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-实验室">
-<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br/>实验室</a>
+<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
 </li>
 <li class="menu-item menu-item-search">
 <a href="javascript:;" class="popup-trigger">
-<i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
+<i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
 <div class="site-search">
@@ -169,7 +181,7 @@ type="text" id="local-search-input">
 <main id="main" class="main">
 <div class="main-inner">
 <div class="content-wrap">
-<div id="content" class="content">
+<div id="content" class="content page-post-detail">
 <div id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
@@ -200,13 +212,12 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
 </span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon"
->
+<span class="post-meta-item" title="阅读次数">
+<span class="post-meta-item-icon">
 <i class="fa fa-file"></i>
-阅读次数：
-<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
+<span class="post-meta-item-text">阅读次数：</span>
+<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
 <span class="post-meta-item">
 <span class="post-meta-item-icon">
@@ -217,44 +228,43 @@ type="text" id="local-search-input">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-10/古惑狼游戏牵扯出的硬件bug/" itemprop="commentCount"></span>
 </a>
 </span>
-<br/>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blame the compiler. Well down the list after that, you blame the hardware.<br>回想起这个bug，仍然让我感觉有些痛苦。作为一个程序员，在发现bug时，你学会了首先在自己代码中找问题，一次、两次、三次……或许在测试一万次之后，你会把问题归咎于编译器。只有在这所有的都不起作用之后，你才会把问题归咎于硬件。</p>
+<p>It&#39;s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third... and somewhere around 10,000th you blame the compiler. Well down the list after that, you blame the hardware.<br>回想起这个bug，仍然让我感觉有些痛苦。作为一个程序员，在发现bug时，你学会了首先在自己代码中找问题，一次、两次、三次……或许在测试一万次之后，你会把问题归咎于编译器。只有在这所有的都不起作用之后，你才会把问题归咎于硬件。</p>
 <p>This is my hardware bug story.<br>这是我遭遇硬件bug的故事。</p>
-<p>Among other things, I wrote the memory card (load/save) code for Crash Bandicoot. For a swaggering game coder, this is like a walk in the park; I expected it would take a few days. I ended up debugging that code for six weeks. I did other stuff during that time, but I kept coming back to this bug – a few hours every few days. It was agonizing.<br>抛开别的不说，我曾为古惑狼（Crash Bandicoot，PS1游戏）写存储卡（读写）代码。对于一个自大的游戏程序员，这就像是在公园里散步一样轻松愉快；我预计只要几天就可以写完。我最终用了六个礼拜把那些代码调试完毕。在此期间我也做过一些其他的事情，但却一直绕不开这个bug——每几天内就要花上好几个小时来处理。这个bug实在烦人。</p>
-<p>The symptom was that you’d go to save your progress and it would access the memory card, and almost all the time, it worked normally… But every once in a while the write or read would time out… for no obvious reason. A short write would often corrupt the memory card. The player would go to save, and not only would we not save, we’d wipe their memory card. D’Oh.<br>这个bug的症状是，当你需要保存你的进度时，代码会访问存储卡，而大部分情况下没有什么问题…但是偶尔读写会超时…没有任何明显的原因。一个简短的写入经常毁掉存储卡。玩家要保存进度，我们不仅不保存，还擦除他们存储卡上的全部东西。天哪。</p>
-<p>After a while, our producer at Sony, Connie Booth, began to panic. We obviously couldn’t ship the game with that bug, and after six weeks I still had no clue what the problem was. Via Connie we put the word out to other PlayStation 1 developers – had anybody seen anything like this? Nope. Absolutely nobody had any problems with the memory card system.<br>过了一段时间，我们在Sony的制作人Connie Booth慌了。我们显然不能发布带有这个bug游戏，而六个星期之后我对于问题出在哪一点线索都没有。通过Connie我们向其他PS1开发者求助：有没有人出现过像我们这样的情况？没有。绝对没有任何人在存储卡系统上出现任何问题。</p>
-<p>About the only thing you can do when you run out of ideas debugging is divide and conquer: keep removing more and more of the errant program’s code until you’re left with something relatively small that still exhibits the problem. You keep carving parts away until the only stuff left is where the bug is.<br>在你绞尽脑汁之后，你能做的唯一一个调试方法就是分而治之：一点点去除错误程序中的代码，直到留下的代码相对很少，但仍然表现出问题。像雕刻一样去除没有问题的代码，留下的就是你的bug所在。</p>
+<p>Among other things, I wrote the memory card (load/save) code for Crash Bandicoot. For a swaggering game coder, this is like a walk in the park; I expected it would take a few days. I ended up debugging that code for six weeks. I did other stuff during that time, but I kept coming back to this bug -- a few hours every few days. It was agonizing.<br>抛开别的不说，我曾为古惑狼（Crash Bandicoot，PS1游戏）写存储卡（读写）代码。对于一个自大的游戏程序员，这就像是在公园里散步一样轻松愉快；我预计只要几天就可以写完。我最终用了六个礼拜把那些代码调试完毕。在此期间我也做过一些其他的事情，但却一直绕不开这个bug——每几天内就要花上好几个小时来处理。这个bug实在烦人。</p>
+<p>The symptom was that you&#39;d go to save your progress and it would access the memory card, and almost all the time, it worked normally... But every once in a while the write or read would time out... for no obvious reason. A short write would often corrupt the memory card. The player would go to save, and not only would we not save, we&#39;d wipe their memory card. D&#39;Oh.<br>这个bug的症状是，当你需要保存你的进度时，代码会访问存储卡，而大部分情况下没有什么问题…但是偶尔读写会超时…没有任何明显的原因。一个简短的写入经常毁掉存储卡。玩家要保存进度，我们不仅不保存，还擦除他们存储卡上的全部东西。天哪。</p>
+<p>After a while, our producer at Sony, Connie Booth, began to panic. We obviously couldn&#39;t ship the game with that bug, and after six weeks I still had no clue what the problem was. Via Connie we put the word out to other PlayStation 1 developers -- had anybody seen anything like this? Nope. Absolutely nobody had any problems with the memory card system.<br>过了一段时间，我们在Sony的制作人Connie Booth慌了。我们显然不能发布带有这个bug游戏，而六个星期之后我对于问题出在哪一点线索都没有。通过Connie我们向其他PS1开发者求助：有没有人出现过像我们这样的情况？没有。绝对没有任何人在存储卡系统上出现任何问题。</p>
+<p>About the only thing you can do when you run out of ideas debugging is divide and conquer: keep removing more and more of the errant program&#39;s code until you&#39;re left with something relatively small that still exhibits the problem. You keep carving parts away until the only stuff left is where the bug is.<br>在你绞尽脑汁之后，你能做的唯一一个调试方法就是分而治之：一点点去除错误程序中的代码，直到留下的代码相对很少，但仍然表现出问题。像雕刻一样去除没有问题的代码，留下的就是你的bug所在。</p>
 <a id="more"></a>
-<p>The challenge with this in the context of, say, a video game is that it’s very hard to remove pieces. How do you still run the game if you remove the code that simulates gravity in the game? Or renders the characters?<br>在这样的背景下挑战在于，视频游戏是很难去除某一部分的。在你删除模拟重力或者显示字符的代码后，如何运行游戏？</p>
-<p>What you have to do is replace entire modules with stubs that pretend to do the real thing, but actually do something completely trivial that can’t be buggy. You have to write new scaffolding code just to keep things working at all. It is a slow, painful process.<br>你必须做的是用一个假装做真正的事情，但实际上只是做很简单的不会出现bug事情的东西来替换掉整个模块。你必须写新的支撑代码来让这些玩意正常工作。这是一个缓慢而痛苦的过程。</p>
-<p>Long story short: I did this. I kept removing more and more hunks of code until I ended up, pretty much, with nothing but the startup code – just the code that set up the system to run the game, initialized the rendering hardware, etc. Of course, I couldn’t put up the load/save menu at that point because I’d stubbed out all the graphics code. But I could pretend the user used the (invisible) load/save screen and asked to save, then write to the card.<br>长话短说：我做完了。我移除了大片大片的代码，相当多，只留下了初始化代码——就是准备游戏运行系统，初始化渲染硬件等等。当然，我不能显示加载/保存菜单，因为我掐掉了所有的图像代码。但是我能够假装用户使用（不可见的）加载/保存屏幕并且请求保存，然后写入卡中。</p>
-<p>I ultimately ended up with a pretty small amount of code that exhibited the problem – but still randomly! Most of the time, it would work, but every once in a while, it would fail. Almost all of the actual Crash Bandicoot code had been removed, but it still happened. This was really baffling: the code that remained wasn’t really doing anything.<br>我最终以一个带有这个bug的很少量的代码结束——但问题仍然随机出现！在大多数情况下没啥问题，但是偶尔会失效。基本上所有古惑狼游戏的实际代码都被移除了，但问题还是会复现。这实在是莫名其妙：留下来的代码基本上都没做什么事。</p>
-<p>At some moment – it was probably 3 am – a thought entered my mind. Reading and writing (I/O) involves precise timing. Whether you’re dealing with a hard drive, a compact flash card, a Bluetooth transmitter – whatever – the low-level code that reads and writes has to do so according to a clock.<br>在那时——估计是凌晨3点——一个想法蹦了出来。读写（I/O）涉及精确定时。无论是硬盘、存储卡、蓝牙发送器——随便啥——做读写的底层代码都是根据时钟来的。</p>
-<p>The clock lets the hardware device – which isn’t directly connected to the CPU – stay in sync with the code the CPU is running. The clock determines the baud rate – the rate at which data is sent from one side to the other. If the timing gets messed up, the hardware or the software – or both – get confused. This is really, really bad, and usually results in data corruption.<br>时钟让不直接连接到CPU的硬件设备和CPU运行的代码同步。时钟决定了波特率——数据从一头传到另一头的速率。如果计时有什么问题，硬件或者软件或者两者都会乱七八糟的。这真的，真的很糟糕，并且通常导致数据损坏。</p>
+<p>The challenge with this in the context of, say, a video game is that it&#39;s very hard to remove pieces. How do you still run the game if you remove the code that simulates gravity in the game? Or renders the characters?<br>在这样的背景下挑战在于，视频游戏是很难去除某一部分的。在你删除模拟重力或者显示字符的代码后，如何运行游戏？</p>
+<p>What you have to do is replace entire modules with stubs that pretend to do the real thing, but actually do something completely trivial that can&#39;t be buggy. You have to write new scaffolding code just to keep things working at all. It is a slow, painful process.<br>你必须做的是用一个假装做真正的事情，但实际上只是做很简单的不会出现bug事情的东西来替换掉整个模块。你必须写新的支撑代码来让这些玩意正常工作。这是一个缓慢而痛苦的过程。</p>
+<p>Long story short: I did this. I kept removing more and more hunks of code until I ended up, pretty much, with nothing but the startup code -- just the code that set up the system to run the game, initialized the rendering hardware, etc. Of course, I couldn&#39;t put up the load/save menu at that point because I&#39;d stubbed out all the graphics code. But I could pretend the user used the (invisible) load/save screen and asked to save, then write to the card.<br>长话短说：我做完了。我移除了大片大片的代码，相当多，只留下了初始化代码——就是准备游戏运行系统，初始化渲染硬件等等。当然，我不能显示加载/保存菜单，因为我掐掉了所有的图像代码。但是我能够假装用户使用（不可见的）加载/保存屏幕并且请求保存，然后写入卡中。</p>
+<p>I ultimately ended up with a pretty small amount of code that exhibited the problem -- but still randomly! Most of the time, it would work, but every once in a while, it would fail. Almost all of the actual Crash Bandicoot code had been removed, but it still happened. This was really baffling: the code that remained wasn&#39;t really doing anything.<br>我最终以一个带有这个bug的很少量的代码结束——但问题仍然随机出现！在大多数情况下没啥问题，但是偶尔会失效。基本上所有古惑狼游戏的实际代码都被移除了，但问题还是会复现。这实在是莫名其妙：留下来的代码基本上都没做什么事。</p>
+<p>At some moment -- it was probably 3 am -- a thought entered my mind. Reading and writing (I/O) involves precise timing. Whether you&#39;re dealing with a hard drive, a compact flash card, a Bluetooth transmitter -- whatever -- the low-level code that reads and writes has to do so according to a clock.<br>在那时——估计是凌晨3点——一个想法蹦了出来。读写（I/O）涉及精确定时。无论是硬盘、存储卡、蓝牙发送器——随便啥——做读写的底层代码都是根据时钟来的。</p>
+<p>The clock lets the hardware device -- which isn&#39;t directly connected to the CPU -- stay in sync with the code the CPU is running. The clock determines the baud rate -- the rate at which data is sent from one side to the other. If the timing gets messed up, the hardware or the software -- or both -- get confused. This is really, really bad, and usually results in data corruption.<br>时钟让不直接连接到CPU的硬件设备和CPU运行的代码同步。时钟决定了波特率——数据从一头传到另一头的速率。如果计时有什么问题，硬件或者软件或者两者都会乱七八糟的。这真的，真的很糟糕，并且通常导致数据损坏。</p>
 <p>What if something in our setup code was messing up the timing somehow? I looked again at the code in the test program for timing-related stuff, and noticed that we set the programmable timer on the PlayStation 1 to 1 kHz (1000 ticks/second). This is relatively fast; it was running at something like 100 Hz in its default state when the PlayStation 1 started up. Most games, therefore, would have this timer running at 100 Hz.<br>如果我们的初始化代码以某种方式弄乱了计时会怎么样？我又看了一遍测试程序中和计时有关的代码，并注意到我们将PS1上的可编程计时器设置到了1kHz（1000跳每秒）。这是比较快了，当PS1启动的时候，默认状态大概是100Hz。因此，大多数游戏将他们的计时器设置为100Hz。</p>
 <p>Andy, the lead (and only other) developer on the game, set the timer to 1 kHz so that the motion calculations in Crash Bandicoot would be more accurate. Andy likes overkill, and if we were going to simulate gravity, we ought to do it as high-precision as possible!<br>这个游戏的带头（和除我外的唯一）开发者Andy，将计时器设置为1kHz，使得古惑狼的动作计算更加准确。Andy喜欢简单粗暴的做法，如果我们要模拟重力，我们应该尽可能的提高精度！</p>
 <p>But what if increasing this timer somehow interfered with the overall timing of the program, and therefore with the clock used to set the baud rate for the memory card?<br>然而如果提高计时器频率莫名其妙的干扰了整个程序的计时，故而将这个计时器设置到存储卡的波特率上会怎样呢？</p>
-<p>I commented the timer code out. I couldn’t make the error happen again. But this didn’t mean it was fixed; the problem only happened randomly. What if I was just getting lucky?<br>我将计时器代码注释掉。然后我就无法复现这个bug了。但是这并不表示bug被修复了，这个问题是随机发生的。万一我只是运气好呢？</p>
+<p>I commented the timer code out. I couldn&#39;t make the error happen again. But this didn&#39;t mean it was fixed; the problem only happened randomly. What if I was just getting lucky?<br>我将计时器代码注释掉。然后我就无法复现这个bug了。但是这并不表示bug被修复了，这个问题是随机发生的。万一我只是运气好呢？</p>
 <p>As more days went on, I kept playing with my test program. The bug never happened again. I went back to the full Crash Bandicoot code base, and modified the load/save code to reset the programmable timer to its default setting (100 Hz) before accessing the memory card, then put it back to 1 kHz afterwards. We never saw the read/write problems again.<br>几天过去了，我还是在玩我的测试程序。Bug没有再出现。我又回到完整的古惑狼游戏代码中，修改了加载/保存代码，在访问存储卡之前将可编程计时器重置为默认设置（100Hz），之后设置回1kHz。从此之后没有发现问题再次出现。</p>
 <p>But why?<br>但是…为什么？</p>
-<p>I returned repeatedly to the test program, trying to detect some pattern to the errors that occurred when the timer was set to 1 kHz. Eventually, I noticed that the errors happened when someone was playing with the PlayStation 1 controller. Since I would rarely do this myself – why would I play with the controller when testing the load/save code? – I hadn’t noticed it. But one day one of the artists was waiting for me to finish testing – I’m sure I was cursing at the time – and he was nervously fiddling with the controller. It failed. “Wait, what? Hey, do that again!”<br>我重新回到测试程序上，试着检测当计时器设置为1kHz时出现的那些错误的模式。终于，我注意到这些错误出现在使用PS1手柄的人身上。因为我自己很少这样做，所以我没有注意到（为啥我要在测试加载/保存代码的时候用手柄）。但是有一天我们的美工等我去完成测试（我确定那时候我在爆粗口），而他紧张的摆弄着手柄。卡损坏了。『等下，怎么回事？喂，再来一次！』</p>
+<p>I returned repeatedly to the test program, trying to detect some pattern to the errors that occurred when the timer was set to 1 kHz. Eventually, I noticed that the errors happened when someone was playing with the PlayStation 1 controller. Since I would rarely do this myself -- why would I play with the controller when testing the load/save code? -- I hadn&#39;t noticed it. But one day one of the artists was waiting for me to finish testing -- I&#39;m sure I was cursing at the time -- and he was nervously fiddling with the controller. It failed. &quot;Wait, what? Hey, do that again!&quot;<br>我重新回到测试程序上，试着检测当计时器设置为1kHz时出现的那些错误的模式。终于，我注意到这些错误出现在使用PS1手柄的人身上。因为我自己很少这样做，所以我没有注意到（为啥我要在测试加载/保存代码的时候用手柄）。但是有一天我们的美工等我去完成测试（我确定那时候我在爆粗口），而他紧张的摆弄着手柄。卡损坏了。『等下，怎么回事？喂，再来一次！』</p>
 <p>Once I had the insight that the two things were correlated, it was easy to reproduce: start writing to memory card, wiggle controller, corrupt memory card. Sure looked like a hardware bug to me.<br>一旦我发现了这两件事是联系着的，就很容易重现bug：开始写入存储卡，动一下手柄，存储卡损坏。在我看来这完全是硬件bug。</p>
-<p>I went back to Connie and told her what I’d found. She relayed this to one of the hardware engineers who had designed the PlayStation 1. “Impossible,” she was told. “This cannot be a hardware problem.” I told her to ask if I could speak with him.<br>我去找Connie告诉他我的发现。她转述给设计过PS1的硬件工程师。她被告知：『不可能，这不可能是硬件问题。』我跟她说问一下我能不能直接和硬件工程师交流。</p>
-<p>He called me and, in his broken English and my (extremely) broken Japanese, we argued. I finally said, “just let me send you a 30-line test program that makes it happen when you wiggle the controller.” He relented. This would be a waste of time, he assured me, and he was extremely busy with a new project, but he would oblige because we were a very important developer for Sony. I cleaned up my little test program and sent it over.<br>那个工程师给我打电话了，我们争论了起来——他用着他的烂英语，我用着我更烂的日语。我最后说：『我给你一个30行的测试程序，让你在动手柄的时候能够出现这问题。』他答应了。『这是浪费时间』，他向我保证，而他正忙于一个新项目，但因为我们是Sony的重要开发者，他会帮忙看看的。我整理了这个测试程序，然后发送给了他。</p>
+<p>I went back to Connie and told her what I&#39;d found. She relayed this to one of the hardware engineers who had designed the PlayStation 1. &quot;Impossible,&quot; she was told. &quot;This cannot be a hardware problem.&quot; I told her to ask if I could speak with him.<br>我去找Connie告诉他我的发现。她转述给设计过PS1的硬件工程师。她被告知：『不可能，这不可能是硬件问题。』我跟她说问一下我能不能直接和硬件工程师交流。</p>
+<p>He called me and, in his broken English and my (extremely) broken Japanese, we argued. I finally said, &quot;just let me send you a 30-line test program that makes it happen when you wiggle the controller.&quot; He relented. This would be a waste of time, he assured me, and he was extremely busy with a new project, but he would oblige because we were a very important developer for Sony. I cleaned up my little test program and sent it over.<br>那个工程师给我打电话了，我们争论了起来——他用着他的烂英语，我用着我更烂的日语。我最后说：『我给你一个30行的测试程序，让你在动手柄的时候能够出现这问题。』他答应了。『这是浪费时间』，他向我保证，而他正忙于一个新项目，但因为我们是Sony的重要开发者，他会帮忙看看的。我整理了这个测试程序，然后发送给了他。</p>
 <p>The next evening (we were in LA and he was in Tokyo, so it was evening for me when he came in the next day) he called me and sheepishly apologized. It was a hardware problem.<br>第二天晚上（我们在洛杉矶，而他在东京，所以对于我来说是晚上而他是到了第二天），他给我打电话，很难为情地向我道歉。这确实是个硬件问题。</p>
-<p>I’ve never been totally clear on what the exact problem was, but my impression from what I heard back from Sony HQ was that setting the programmable timer to a sufficiently high clock rate would interfere with things on the motherboard near the timer crystal. One of these things was the baud rate controller for the memory card, which also set the baud rate for the controllers. I’m not a hardware guy, so I’m pretty fuzzy on the details.<br>我还是没有完全搞清楚问题到底在哪，但是我的印象中，从Sony总部的反馈听到的是，如果将可编程计时器设置到足够高的时钟频率，会影响到主板上时钟晶振附近的一些东西。这些东西之一就是存储卡的波特率控制器，而它同时也设置手柄的波特率。我不是搞硬件的，所以对于细节我相当模糊。</p>
-<p>But the gist of it was that crosstalk between individual parts on the motherboard, and the combination of sending data over both the controller port and the memory card port while running the timer at 1 kHz would cause bits to get dropped… and the data lost… and the card corrupted.<br>但是主旨是主板上两个独立部分的串扰，以及手柄接口和存储卡接口数据发送的结合在1kHz的时钟频率下会导致丢位，从而数据丢失，以致卡损坏。</p>
-<p>This is the only time in my entire programming life that I’ve debugged a problem caused by quantum mechanics.<br>这是我整个编程生涯中，唯一一次因为量子力学而debug的问题。</p>
+<p>I&#39;ve never been totally clear on what the exact problem was, but my impression from what I heard back from Sony HQ was that setting the programmable timer to a sufficiently high clock rate would interfere with things on the motherboard near the timer crystal. One of these things was the baud rate controller for the memory card, which also set the baud rate for the controllers. I&#39;m not a hardware guy, so I&#39;m pretty fuzzy on the details.<br>我还是没有完全搞清楚问题到底在哪，但是我的印象中，从Sony总部的反馈听到的是，如果将可编程计时器设置到足够高的时钟频率，会影响到主板上时钟晶振附近的一些东西。这些东西之一就是存储卡的波特率控制器，而它同时也设置手柄的波特率。我不是搞硬件的，所以对于细节我相当模糊。</p>
+<p>But the gist of it was that crosstalk between individual parts on the motherboard, and the combination of sending data over both the controller port and the memory card port while running the timer at 1 kHz would cause bits to get dropped... and the data lost... and the card corrupted.<br>但是主旨是主板上两个独立部分的串扰，以及手柄接口和存储卡接口数据发送的结合在1kHz的时钟频率下会导致丢位，从而数据丢失，以致卡损坏。</p>
+<p>This is the only time in my entire programming life that I&#39;ve debugged a problem caused by quantum mechanics.<br>这是我整个编程生涯中，唯一一次因为量子力学而debug的问题。</p>
 <p>Footnotes for posterity:<br>后记：</p>
-<p>A few people have pointed out that this bug really wasn’t a product of quantum mechanical effects, any more than any other bug is. Of course I was being hyperbolic mentioning quantum mechanics. But this bug did feel different to me, in that the behavior was – at least at the level of the source code – non-deterministic.<br>有小部分人指出这个bug实际上不是量子力学的副效应，在这点上和其它bug也没什么不同。当然我提到量子力学确实是夸张了。不过这个bug给我的感觉很不相同，特别是它的行为——至少在源代码层面上——不是很具有确定性。</p>
-<p>Some people have said I should have taken more electronics classes. That is absolutely true; I consider myself a “full stack” programmer, but my stack really only goes down to hand-writing assembly code, not to playing with transistors. Perhaps some day I will learn more about the “bare metal”…<br>有人说我应该学习更多的电子线路课程。这当然没毛病；我自称『全栈工程师』，但我的技术栈只开到了手写汇编代码，而没有涉及晶体管之类。也许有一天我会更多地了解『裸金属』。</p>
-<p>Finally, a few have questioned whether a better development methodology would have prevented this kind of bug in the first place. I don’t think so, but it’s possible. I use test-driven development for some coding tasks these days, but it’s doubtful we could have usefully applied these techniques given the constraints of the systems and tools we were using.<br>最后，一些人质疑一种更好的开发方法是否能够首先防止这种错误。我不这么认为，但这是可能的。我现在使用测试驱动开发来完成某些编码任务，但考虑到我们使用的系统和工具的限制，我们可以有效地应用这些技术。</p>
+<p>A few people have pointed out that this bug really wasn&#39;t a product of quantum mechanical effects, any more than any other bug is. Of course I was being hyperbolic mentioning quantum mechanics. But this bug did feel different to me, in that the behavior was -- at least at the level of the source code -- non-deterministic.<br>有小部分人指出这个bug实际上不是量子力学的副效应，在这点上和其它bug也没什么不同。当然我提到量子力学确实是夸张了。不过这个bug给我的感觉很不相同，特别是它的行为——至少在源代码层面上——不是很具有确定性。</p>
+<p>Some people have said I should have taken more electronics classes. That is absolutely true; I consider myself a &quot;full stack&quot; programmer, but my stack really only goes down to hand-writing assembly code, not to playing with transistors. Perhaps some day I will learn more about the &quot;bare metal&quot;...<br>有人说我应该学习更多的电子线路课程。这当然没毛病；我自称『全栈工程师』，但我的技术栈只开到了手写汇编代码，而没有涉及晶体管之类。也许有一天我会更多地了解『裸金属』。</p>
+<p>Finally, a few have questioned whether a better development methodology would have prevented this kind of bug in the first place. I don&#39;t think so, but it&#39;s possible. I use test-driven development for some coding tasks these days, but it&#39;s doubtful we could have usefully applied these techniques given the constraints of the systems and tools we were using.<br>最后，一些人质疑一种更好的开发方法是否能够首先防止这种错误。我不这么认为，但这是可能的。我现在使用测试驱动开发来完成某些编码任务，但考虑到我们使用的系统和工具的限制，我们可以有效地应用这些技术。</p>
 <hr>
-<p>本文翻译自：<a href="https://www.quora.com/Programming-Interviews/Whats-the-hardest-bug-youve-debugged/answer/Dave-Baggett" target="_blank" rel="noopener">What’s the hardest bug you’ve debugged?</a></p>
-<p>拓展阅读：<br>更多关于Bug和Feature的故事：<br><a href="http://news.bbc.co.uk/2/hi/technology/7807797.stm" target="_blank" rel="noopener">Zune ‘bug’ fixed, says Microsoft</a><br><a href="http://news.bbc.co.uk/2/hi/technology/8306631.stm" target="_blank" rel="noopener">Berners-Lee ‘sorry’ for slashes</a></p>
+<p>本文翻译自：<a href="https://www.quora.com/Programming-Interviews/Whats-the-hardest-bug-youve-debugged/answer/Dave-Baggett" target="_blank" rel="noopener">What&#39;s the hardest bug you&#39;ve debugged?</a></p>
+<p>拓展阅读：<br>更多关于Bug和Feature的故事：<br><a href="http://news.bbc.co.uk/2/hi/technology/7807797.stm" target="_blank" rel="noopener">Zune &#39;bug&#39; fixed, says Microsoft</a><br><a href="http://news.bbc.co.uk/2/hi/technology/8306631.stm" target="_blank" rel="noopener">Berners-Lee &#39;sorry&#39; for slashes</a></p>
 <p>一个人为制造异常的故事：<a href="https://github.com/Netflix/SimianArmy/wiki/Chaos-Monkey" target="_blank" rel="noopener">Chaos Monkey</a></p>
 </div>
 <div>
@@ -333,7 +343,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">106</span>
+<span class="site-state-item-count">107</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -345,7 +355,7 @@ alt="张书樵">
 </div>
 <div class="site-state-item site-state-tags">
 <a href="/tags/">
-<span class="site-state-item-count">23</span>
+<span class="site-state-item-count">24</span>
 <span class="site-state-item-name">标签</span>
 </a>
 </div>
@@ -362,7 +372,7 @@ alt="张书樵">
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
-<a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+<a href="https://zsq.im" title="https://zsq.im" rel="noopener" target="_blank">ZSQ.IM</a>
 </li>
 <li class="links-of-blogroll-item">
 <a href="https://three-body.org" title="https://three-body.org" rel="noopener" target="_blank">Three Body</a>
@@ -385,7 +395,7 @@ alt="张书樵">
 <span class="author" itemprop="copyrightHolder">张书樵</span>
 </div>
 <div class="busuanzi-count">
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span class="post-meta-item-icon">
 <i class="fa fa-user"></i>
 </span>
@@ -409,26 +419,20 @@ alt="张书樵">
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
-<script src="/js/utils.js?v=7.2.0"></script>
-<script src="/js/motion.js?v=7.2.0"></script>
-<script src="/js/affix.js?v=7.2.0"></script>
-<script src="/js/schemes/pisces.js?v=7.2.0"></script>
-<script src="/js/scrollspy.js?v=7.2.0"></script>
-<script src="/js/post-details.js?v=7.2.0"></script>
-<script src="/js/next-boot.js?v=7.2.0"></script>
-<script src="/js/local-search.js?v=7.2.0"></script>
-<script>
+<script src="/js/utils.js?v=7.3.0"></script>
+<script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/affix.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+<script src="/js/local-search.js?v=7.3.0"></script>
+<script pjax>
 if ($('body').find('div.pdf').length) {
-$.ajax({
-type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
-dataType: 'script',
-cache: true,
-success: function() {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
 $('body').find('div.pdf').each(function(i, o) {
 PDFObject.embed($(o).attr('target'), $(o), {
 pdfOpenParams: {
@@ -442,12 +446,14 @@ PDFJS_URL: '/lib/pdf/web/viewer.html',
 height: $(o).attr('height') || '1000px'
 });
 });
-},
-});
+}, window.PDFObject);
 }
 </script>
-<script src="/lib/Valine.min.js"></script>
+<div id="pjax">
+<script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
 <script>
+NexT.utils.getScript('/lib/Valine.min.js', function() {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
 guest = guest.split(',').filter(function(item) {
@@ -464,12 +470,47 @@ avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
 visitor: false,
-lang: '' || 'zh-cn'
+lang: '' || 'zh-cn',
+path: location.pathname
+});
+}, window.Valine);
+</script>
+</div>
+<script>
+var pjax = new Pjax({
+selectors: [
+'title',
+'#page-configurations',
+'.content-wrap',
+'.sidebar-inner',
+'#pjax'
+],
+switches: {
+'.sidebar-inner': Pjax.switches.innerHTML
+},
+analytics: false,
+cacheBust: false,
+scrollTo: !CONFIG.save_scroll
+});
+$(document).on('pjax:send', function() {
+$('.sidebar-inner').stop().fadeTo('fast', 0);
+CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
+});
+$(document).on('pjax:success', function() {
+$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
+$(o).parent().append($(o).remove());
+});
+// Define Motion Sequence & Bootstrap Motion.
+if (CONFIG.motion.enable) {
+NexT.motion.integrator
+.init()
+.add(NexT.motion.middleWares.postList)
+.bootstrap();
+}
+$('.sidebar-inner .motion-element').css('opacity', 1);
+$('.sidebar-inner').fadeTo('fast', 1);
+NexT.utils.updateSidebarPosition();
 });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
-<script src="/lib/waifu/live2d.min.js"></script>
-<script src="/lib/waifu/waifu-tips.js"></script>
-<script src="/lib/custom.js"></script>
 </body>
 </html>

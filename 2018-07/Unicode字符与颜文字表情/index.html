@@ -6,24 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<script id="hexo.configurations">
+<script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.2.0',
+version: '7.3.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+save_scroll: true,
 copycode: {"enable":true,"show_result":true,"style":"mac"},
 fancybox: false,
 mediumzoom: true,
@@ -36,11 +37,8 @@ indexName: '',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
-localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},
-search: {
-root: '/',
-path: 'search.json'
-},
+localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
+path: 'search.json',
 tabs: true,
 motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
@@ -65,19 +63,33 @@ copy_failure: '复制失败'
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/Fk4jy-lOTJvqGmGul8nZfz8r9B7p.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/Fn9DaIzvbgkExdrsLhSdCvJjCqX1.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/IMG_0151.png">
-<meta property="og:updated_time" content="2019-06-29T02:07:27.766Z">
+<meta property="og:updated_time" content="2019-08-06T10:07:25.500Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unicode字符与颜文字表情">
 <meta name="twitter:description" content="前言编码，是每个程序员绕不开的话题。对于前端工程师而言，字符更是会直观地展示在界面上。提起文字，大部分人的脑中，都会定式为规整排列的字符。但是林子大了什么鸟都有，世界上可是存在着6800+种文字，难免会飞出来一些诡异的鸟…而号称『万国码』的Unicode，在实现编码与展示的时候，也会不会遇到一些奇葩的事情呢？事实上，可能你早已见识过了：  x̙͈̝͍͕̙̄͛̽̆͌́̕͟g̘̣̠̝̟̤̽͑͋̈̑̒͞">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-07/FqLq54KAJkoSVA-7_jdJpSRI3fcI.png">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
-<link rel="canonical" href="https://zhangshuqiao.org/2018-07/Unicode字符与颜文字表情/">
-<script id="page.configurations">
+<script id="page-configurations">
+// https://hexo.io/docs/variables.html
 CONFIG.page = {
 sidebar: "",
+isHome: false,
+isPost: true,
+isPage: false,
+isArchive: false
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-8784231462763562",
+enable_page_level_ads: true
+});
+</script>
 <title>Unicode字符与颜文字表情 | 米米的博客</title>
 <noscript>
 <style>
@@ -103,7 +115,7 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left page-post-detail">
+<div class="container sidebar-position-left">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
@@ -128,29 +140,29 @@ top: initial;
 <nav class="site-nav">
 <ul id="menu" class="menu">
 <li class="menu-item menu-item-home">
-<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 </li>
 <li class="menu-item menu-item-archives">
-<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
+<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-about">
-<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br/>关于</a>
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
 </li>
 <li class="menu-item menu-item-categories">
-<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类</a>
+<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 </li>
 <li class="menu-item menu-item-tags">
-<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签</a>
+<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 </li>
 <li class="menu-item menu-item-朋友们">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br/>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-实验室">
-<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br/>实验室</a>
+<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
 </li>
 <li class="menu-item menu-item-search">
 <a href="javascript:;" class="popup-trigger">
-<i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
+<i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
 <div class="site-search">
@@ -177,7 +189,7 @@ type="text" id="local-search-input">
 <main id="main" class="main">
 <div class="main-inner">
 <div class="content-wrap">
-<div id="content" class="content">
+<div id="content" class="content page-post-detail">
 <div id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
@@ -208,13 +220,12 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon"
->
+<span class="post-meta-item" title="阅读次数">
+<span class="post-meta-item-icon">
 <i class="fa fa-file"></i>
-阅读次数：
-<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
+<span class="post-meta-item-text">阅读次数：</span>
+<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
 <span class="post-meta-item">
 <span class="post-meta-item-icon">
@@ -225,7 +236,6 @@ type="text" id="local-search-input">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-07/Unicode字符与颜文字表情/" itemprop="commentCount"></span>
 </a>
 </span>
-<br/>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -249,14 +259,14 @@ type="text" id="local-search-input">
 <h2 id="萌即正义的颜文字-ง-•̀-•́-ง"><a href="#萌即正义的颜文字-ง-•̀-•́-ง" class="headerlink" title="萌即正义的颜文字 (ง •̀_•́)ง"></a>萌即正义的颜文字 (ง •̀_•́)ง</h2><p>也许你觉得泰文奇葩，但它的声调就在文字里，看到就能准确地读出来。这样更容易传播，是不是也没了你读文言文要查字典的烦恼呢？所以文字的设计各有优劣。<br>这样的设计不止泰文，它只是一个典型的例子。除此之外常见的还有老挝文、藏文。<br>脑洞大开的艺术家们，又会想到另外一个好玩的事情：我能不能拿老挝文的『帽子』，组合藏文的『鞋子』，合成一个独立的字符呢？<br>他们赢了。不久，颜文字开始流行。<br>比如，这个表情：(;´༎ຶД༎ຶ`)<br>里面有眼睛流泪的一个字符：<code>༎ຶ</code><br>它是什么语言呢？<br>事实上，它并不属于世界上任何一种语言！眼睛部分是<strong>老挝文</strong>，泪水部分属于<strong>藏文</strong>。<br>但是，你在复制它的时候，可以发现它却是一个<strong>单独</strong>的字符，这就非常的神奇。原因我们在第二部分已经讲过了。<br>我是如何知道的呢？当然我并不是个语言学家，我们可以转码一下，发现<code>༎ຶ</code>对应的编码是<code>\u0f0e\u0eb6</code>，再到<a href="https://unicode-table.com/cn/#tibetan" target="_blank" rel="noopener">unicode-table</a>里去查看就清楚了。<br>除此之外——</p>
 <ul>
 <li>▷ˋε´◁中ε是希腊字母</li>
-<li>ʕ-‘ᴥ’-ʔ中ʕᴥʔ是国际音标</li>
+<li>ʕ-&#39;ᴥ&#39;-ʔ中ʕᴥʔ是国际音标</li>
 <li>*(·ཀ·」∠)*中ཀ是藏文</li>
 <li>(ง •̀_•́ )ง中ง是泰文</li>
 <li>罒д罒中罒是中文（同网），д是俄语西里尔字母</li>
 </ul>
 <p>看来如果你会发颜文字，就是名副其实的会十八国语言了呢 (๑✦ˑ̫✦)✧<br>这里有B站评论区自带的颜文字表情：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(=・ω・=)    (〜￣△￣)〜    o(￣ヘ￣o＃)    (○･｀Д´･ ○)</span><br><span class="line">(･∀･)    (°∀°)ﾉ    (￣3￣)    ╮(￣▽￣)╭    (´_ゝ｀)</span><br><span class="line">←_←    →_→    (&lt;_&lt;)    (&gt;_&gt;)    (￣ε(#￣)Σ    ヾ(o◕∀◕)ﾉ</span><br><span class="line">(⌒▽⌒)    (￣▽￣)    (ﾟДﾟ≡ﾟдﾟ)!?    Σ(ﾟдﾟ;)    (&quot;▔□▔)/</span><br><span class="line">(^・ω・^)    (｡･ω･｡)    (●￣(ｴ)￣●)    ε=ε=(ノ≧∇≦)ノ</span><br><span class="line">(-_-#)    (￣へ￣)    (ฅ´ω`ฅ)    ヽ(`Д´)ﾉ    (´･_･`)</span><br><span class="line">(#-_-)┯━┯    _(:3」∠)_    (╯°口°)╯(┴—┴    (´▽｀)ノ♪</span><br><span class="line">ヘ(_ _ヘ)    (｀・ω・´)    Σ(￣□￣||)    (´；ω；`)</span><br><span class="line">⌇●﹏●⌇    ヾ(^▽^*)))    (/TДT)/    (ó﹏ò｡)    (;¬_¬)</span><br></pre></td></tr></table></figure>
-<p>Unicode的转码可以在这里完成：<a href="https://galaxymimi.com/tool/strtool.html" target="_blank" rel="noopener">Galaxy Mimi&gt;应用&gt;实用工具&gt;TexToolBox</a></p>
+<p>Unicode的转码可以在这里完成：<a href="https://zsq.im/tool/strtool.html" target="_blank" rel="noopener">ZSQ.IM &gt; 应用 &gt; 实用工具 &gt; TexToolBox</a></p>
 <h2 id="字体的错位"><a href="#字体的错位" class="headerlink" title="字体的错位"></a>字体的错位</h2><p>前面我们一直在谈字符的本质，但字符在屏幕中的展示，还有一个关键的因素：字体。<br>相同的字符，使用了不同的字体，它们的显示也会有差别。<br>一行中文，你设置黑体或草书，它大体来看还是规整的；但如果你设置一行英文为草书，可能就会有问题。<br>在浏览器里，如果对应编码在字体文件里为空，一般会展示成一个方格，起码不会影响其他正常字符的排版。但我们知道，Unicode的林子实在太大了…<br>在某些字体里，就会对一些特殊的字符产生错误的排版。<br>比如：热҈的҈字҈都҈出҈汗҈了҈<br>把它转义一下，就得到编码是：<br><code>\u70ed\u0488\u7684\u0488\u5b57\u0488\u90fd\u0488\u51fa\u0488\u6c57\u0488\u4e86\u0488</code><br>其中<code>\u0488</code>就是<code>҈</code>这个字符的编码，它是一个组合用的<a href="https://unicode-table.com/cn/0488" target="_blank" rel="noopener">西里尔文百千符号</a>。<br>它在大部分常用字体里，都有错位问题；而其他一些字体，比如Courier New字体，则是分开的展示：</p>
 <p><img src="/images/2018-07/Fk4jy-lOTJvqGmGul8nZfz8r9B7p.png" alt></p>
 <p>那么，这两种展示哪种才是正常的呢？其实都不正常。<br>我们查看<a href="https://en.wikipedia.org/wiki/Cyrillic_numerals" target="_blank" rel="noopener">西里尔文计数法的wiki</a>，可以看到它只有配合西里尔数字时，才能展示正常：</p>
@@ -353,7 +363,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">106</span>
+<span class="site-state-item-count">107</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -365,7 +375,7 @@ alt="张书樵">
 </div>
 <div class="site-state-item site-state-tags">
 <a href="/tags/">
-<span class="site-state-item-count">23</span>
+<span class="site-state-item-count">24</span>
 <span class="site-state-item-name">标签</span>
 </a>
 </div>
@@ -382,7 +392,7 @@ alt="张书樵">
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
-<a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+<a href="https://zsq.im" title="https://zsq.im" rel="noopener" target="_blank">ZSQ.IM</a>
 </li>
 <li class="links-of-blogroll-item">
 <a href="https://three-body.org" title="https://three-body.org" rel="noopener" target="_blank">Three Body</a>
@@ -412,7 +422,7 @@ alt="张书樵">
 <span class="author" itemprop="copyrightHolder">张书樵</span>
 </div>
 <div class="busuanzi-count">
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span class="post-meta-item-icon">
 <i class="fa fa-user"></i>
 </span>
@@ -436,26 +446,20 @@ alt="张书樵">
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
-<script src="/js/utils.js?v=7.2.0"></script>
-<script src="/js/motion.js?v=7.2.0"></script>
-<script src="/js/affix.js?v=7.2.0"></script>
-<script src="/js/schemes/pisces.js?v=7.2.0"></script>
-<script src="/js/scrollspy.js?v=7.2.0"></script>
-<script src="/js/post-details.js?v=7.2.0"></script>
-<script src="/js/next-boot.js?v=7.2.0"></script>
-<script src="/js/local-search.js?v=7.2.0"></script>
-<script>
+<script src="/js/utils.js?v=7.3.0"></script>
+<script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/affix.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+<script src="/js/local-search.js?v=7.3.0"></script>
+<script pjax>
 if ($('body').find('div.pdf').length) {
-$.ajax({
-type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
-dataType: 'script',
-cache: true,
-success: function() {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
 $('body').find('div.pdf').each(function(i, o) {
 PDFObject.embed($(o).attr('target'), $(o), {
 pdfOpenParams: {
@@ -469,12 +473,14 @@ PDFJS_URL: '/lib/pdf/web/viewer.html',
 height: $(o).attr('height') || '1000px'
 });
 });
-},
-});
+}, window.PDFObject);
 }
 </script>
-<script src="/lib/Valine.min.js"></script>
+<div id="pjax">
+<script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
 <script>
+NexT.utils.getScript('/lib/Valine.min.js', function() {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
 guest = guest.split(',').filter(function(item) {
@@ -491,12 +497,47 @@ avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
 visitor: false,
-lang: '' || 'zh-cn'
+lang: '' || 'zh-cn',
+path: location.pathname
+});
+}, window.Valine);
+</script>
+</div>
+<script>
+var pjax = new Pjax({
+selectors: [
+'title',
+'#page-configurations',
+'.content-wrap',
+'.sidebar-inner',
+'#pjax'
+],
+switches: {
+'.sidebar-inner': Pjax.switches.innerHTML
+},
+analytics: false,
+cacheBust: false,
+scrollTo: !CONFIG.save_scroll
+});
+$(document).on('pjax:send', function() {
+$('.sidebar-inner').stop().fadeTo('fast', 0);
+CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
+});
+$(document).on('pjax:success', function() {
+$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
+$(o).parent().append($(o).remove());
+});
+// Define Motion Sequence & Bootstrap Motion.
+if (CONFIG.motion.enable) {
+NexT.motion.integrator
+.init()
+.add(NexT.motion.middleWares.postList)
+.bootstrap();
+}
+$('.sidebar-inner .motion-element').css('opacity', 1);
+$('.sidebar-inner').fadeTo('fast', 1);
+NexT.utils.updateSidebarPosition();
 });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
-<script src="/lib/waifu/live2d.min.js"></script>
-<script src="/lib/waifu/waifu-tips.js"></script>
-<script src="/lib/custom.js"></script>
 </body>
 </html>

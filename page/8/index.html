@@ -6,24 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<script id="hexo.configurations">
+<script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.2.0',
+version: '7.3.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+save_scroll: true,
 copycode: {"enable":true,"show_result":true,"style":"mac"},
 fancybox: false,
 mediumzoom: true,
@@ -36,11 +37,8 @@ indexName: '',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
-localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},
-search: {
-root: '/',
-path: 'search.json'
-},
+localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
+path: 'search.json',
 tabs: true,
 motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
@@ -62,13 +60,27 @@ copy_failure: '复制失败'
 <meta name="twitter:title" content="米米的博客">
 <meta name="twitter:description" content="力电声光热，涵尽学海无涯">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
-<link rel="canonical" href="https://zhangshuqiao.org/page/8/">
-<script id="page.configurations">
+<script id="page-configurations">
+// https://hexo.io/docs/variables.html
 CONFIG.page = {
 sidebar: "",
+isHome: true,
+isPost: false,
+isPage: false,
+isArchive: false
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-8784231462763562",
+enable_page_level_ads: true
+});
+</script>
 <title>米米的博客</title>
 <noscript>
 <style>
@@ -94,7 +106,7 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left page-home">
+<div class="container sidebar-position-left">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
@@ -119,29 +131,29 @@ top: initial;
 <nav class="site-nav">
 <ul id="menu" class="menu">
 <li class="menu-item menu-item-home">
-<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 </li>
 <li class="menu-item menu-item-archives">
-<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
+<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-about">
-<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br/>关于</a>
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
 </li>
 <li class="menu-item menu-item-categories">
-<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类</a>
+<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 </li>
 <li class="menu-item menu-item-tags">
-<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签</a>
+<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 </li>
 <li class="menu-item menu-item-朋友们">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br/>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-实验室">
-<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br/>实验室</a>
+<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
 </li>
 <li class="menu-item menu-item-search">
 <a href="javascript:;" class="popup-trigger">
-<i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
+<i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
 <div class="site-search">
@@ -168,8 +180,60 @@ type="text" id="local-search-input">
 <main id="main" class="main">
 <div class="main-inner">
 <div class="content-wrap">
-<div id="content" class="content">
+<div id="content" class="content page-home">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-10/Heavens Above爬虫的实现/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-10/Heavens Above爬虫的实现/" class="post-title-link" itemprop="url">Heavens Above爬虫的实现</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-10-23 11:00:19" itemprop="dateCreated datePublished" datetime="2018-10-23T11:00:19+08:00">2018-10-23</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">评论数：</span>
+<a href="/2018-10/Heavens Above爬虫的实现/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-10/Heavens Above爬虫的实现/" itemprop="commentCount"></span>
+</a>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p><a href="https://www.heavens-above.com" target="_blank" rel="noopener">Heavens Above</a>是一个天文数据库网站，可以查询到诸如卫星过境的很多信息。虽然数据很全面，但是检索方式非常繁琐，在网站上需要依次打开多个链接进行比对，难以迅速地获取需要的信息。故博主决定写一个爬虫，以直观地展现所有数据。由于Heavens Above采取了大量的反爬虫措施，例如校验Cookie、限制单个IP的访问次数等，因此必须严格地模拟浏览器请求，才能正确爬取数据。</p>
+<p><img src="/images/2018-10/iss.png" alt></p>
+<p>博主也参考了大量GitHub上已有的Heavens Above爬虫项目，不过它们大部分失去维护，停留在数年前，已经不再适用。具体的逻辑还是要自行测试。</p>
+<p>项目地址：<a href="https://github.com/stevenjoezhang/heavens-above" target="_blank" rel="noopener">heavens-above</a></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-10/Thanks for inventing Javascript/">
@@ -200,7 +264,15 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
 </span>
-<br/>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">评论数：</span>
+<a href="/2018-10/Thanks for inventing Javascript/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-10/Thanks for inventing Javascript/" itemprop="commentCount"></span>
+</a>
+</span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -241,7 +313,15 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
 </span>
-<br/>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">评论数：</span>
+<a href="/2018-10/使用OpenCV进行星轨的后期处理/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-10/使用OpenCV进行星轨的后期处理/" itemprop="commentCount"></span>
+</a>
+</span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -286,16 +366,24 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
 </span>
-<br/>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">评论数：</span>
+<a href="/2018-10/古惑狼游戏牵扯出的硬件bug/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-10/古惑狼游戏牵扯出的硬件bug/" itemprop="commentCount"></span>
+</a>
+</span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>It’s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third… and somewhere around 10,000th you blame the compiler. Well down the list after that, you blame the hardware.<br>回想起这个bug，仍然让我感觉有些痛苦。作为一个程序员，在发现bug时，你学会了首先在自己代码中找问题，一次、两次、三次……或许在测试一万次之后，你会把问题归咎于编译器。只有在这所有的都不起作用之后，你才会把问题归咎于硬件。</p>
+<p>It&#39;s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third... and somewhere around 10,000th you blame the compiler. Well down the list after that, you blame the hardware.<br>回想起这个bug，仍然让我感觉有些痛苦。作为一个程序员，在发现bug时，你学会了首先在自己代码中找问题，一次、两次、三次……或许在测试一万次之后，你会把问题归咎于编译器。只有在这所有的都不起作用之后，你才会把问题归咎于硬件。</p>
 <p>This is my hardware bug story.<br>这是我遭遇硬件bug的故事。</p>
-<p>Among other things, I wrote the memory card (load/save) code for Crash Bandicoot. For a swaggering game coder, this is like a walk in the park; I expected it would take a few days. I ended up debugging that code for six weeks. I did other stuff during that time, but I kept coming back to this bug – a few hours every few days. It was agonizing.<br>抛开别的不说，我曾为古惑狼（Crash Bandicoot，PS1游戏）写存储卡（读写）代码。对于一个自大的游戏程序员，这就像是在公园里散步一样轻松愉快；我预计只要几天就可以写完。我最终用了六个礼拜把那些代码调试完毕。在此期间我也做过一些其他的事情，但却一直绕不开这个bug——每几天内就要花上好几个小时来处理。这个bug实在烦人。</p>
-<p>The symptom was that you’d go to save your progress and it would access the memory card, and almost all the time, it worked normally… But every once in a while the write or read would time out… for no obvious reason. A short write would often corrupt the memory card. The player would go to save, and not only would we not save, we’d wipe their memory card. D’Oh.<br>这个bug的症状是，当你需要保存你的进度时，代码会访问存储卡，而大部分情况下没有什么问题…但是偶尔读写会超时…没有任何明显的原因。一个简短的写入经常毁掉存储卡。玩家要保存进度，我们不仅不保存，还擦除他们存储卡上的全部东西。天哪。</p>
-<p>After a while, our producer at Sony, Connie Booth, began to panic. We obviously couldn’t ship the game with that bug, and after six weeks I still had no clue what the problem was. Via Connie we put the word out to other PlayStation 1 developers – had anybody seen anything like this? Nope. Absolutely nobody had any problems with the memory card system.<br>过了一段时间，我们在Sony的制作人Connie Booth慌了。我们显然不能发布带有这个bug游戏，而六个星期之后我对于问题出在哪一点线索都没有。通过Connie我们向其他PS1开发者求助：有没有人出现过像我们这样的情况？没有。绝对没有任何人在存储卡系统上出现任何问题。</p>
-<p>About the only thing you can do when you run out of ideas debugging is divide and conquer: keep removing more and more of the errant program’s code until you’re left with something relatively small that still exhibits the problem. You keep carving parts away until the only stuff left is where the bug is.<br>在你绞尽脑汁之后，你能做的唯一一个调试方法就是分而治之：一点点去除错误程序中的代码，直到留下的代码相对很少，但仍然表现出问题。像雕刻一样去除没有问题的代码，留下的就是你的bug所在。</p>
+<p>Among other things, I wrote the memory card (load/save) code for Crash Bandicoot. For a swaggering game coder, this is like a walk in the park; I expected it would take a few days. I ended up debugging that code for six weeks. I did other stuff during that time, but I kept coming back to this bug -- a few hours every few days. It was agonizing.<br>抛开别的不说，我曾为古惑狼（Crash Bandicoot，PS1游戏）写存储卡（读写）代码。对于一个自大的游戏程序员，这就像是在公园里散步一样轻松愉快；我预计只要几天就可以写完。我最终用了六个礼拜把那些代码调试完毕。在此期间我也做过一些其他的事情，但却一直绕不开这个bug——每几天内就要花上好几个小时来处理。这个bug实在烦人。</p>
+<p>The symptom was that you&#39;d go to save your progress and it would access the memory card, and almost all the time, it worked normally... But every once in a while the write or read would time out... for no obvious reason. A short write would often corrupt the memory card. The player would go to save, and not only would we not save, we&#39;d wipe their memory card. D&#39;Oh.<br>这个bug的症状是，当你需要保存你的进度时，代码会访问存储卡，而大部分情况下没有什么问题…但是偶尔读写会超时…没有任何明显的原因。一个简短的写入经常毁掉存储卡。玩家要保存进度，我们不仅不保存，还擦除他们存储卡上的全部东西。天哪。</p>
+<p>After a while, our producer at Sony, Connie Booth, began to panic. We obviously couldn&#39;t ship the game with that bug, and after six weeks I still had no clue what the problem was. Via Connie we put the word out to other PlayStation 1 developers -- had anybody seen anything like this? Nope. Absolutely nobody had any problems with the memory card system.<br>过了一段时间，我们在Sony的制作人Connie Booth慌了。我们显然不能发布带有这个bug游戏，而六个星期之后我对于问题出在哪一点线索都没有。通过Connie我们向其他PS1开发者求助：有没有人出现过像我们这样的情况？没有。绝对没有任何人在存储卡系统上出现任何问题。</p>
+<p>About the only thing you can do when you run out of ideas debugging is divide and conquer: keep removing more and more of the errant program&#39;s code until you&#39;re left with something relatively small that still exhibits the problem. You keep carving parts away until the only stuff left is where the bug is.<br>在你绞尽脑汁之后，你能做的唯一一个调试方法就是分而治之：一点点去除错误程序中的代码，直到留下的代码相对很少，但仍然表现出问题。像雕刻一样去除没有问题的代码，留下的就是你的bug所在。</p>
 <!--noindex-->
 <div class="post-button text-center">
 <a class="btn" href="/2018-10/古惑狼游戏牵扯出的硬件bug/#more" rel="contents">
@@ -339,7 +427,15 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
 </span>
-<br/>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">评论数：</span>
+<a href="/2018-09/关于黎曼猜想/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-09/关于黎曼猜想/" itemprop="commentCount"></span>
+</a>
+</span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -350,59 +446,6 @@ type="text" id="local-search-input">
 <!--noindex-->
 <div class="post-button text-center">
 <a class="btn" href="/2018-09/关于黎曼猜想/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-09/月下独酌/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-09/月下独酌/" class="post-title-link" itemprop="url">月下独酌</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-09-24 18:15:20" itemprop="dateCreated datePublished" datetime="2018-09-24T18:15:20+08:00">2018-09-24</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
-</span>
-<br/>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p><strong>月下独酌</strong><br><em>李白</em><br>花间一壶酒，独酌无相亲。<br>举杯邀明月，对影成三人。<br>月既不解饮，影徒随我身。<br>暂伴月将影，行乐须及春。<br>我歌月徘徊，我舞影零乱。<br>醒时同交欢，醉后各分散。<br>永结无情游，相期邈云汉。</p>
-<p><strong>八月十五夜月</strong><br><em>杜甫</em><br>满月飞明镜，归心折大刀。<br>转蓬行地远，攀桂仰天高。<br>水路疑霜雪，林栖见羽毛。<br>此时瞻白兔，直欲数秋毫。</p>
-<p><strong>十五夜望月</strong><br><em>王建</em><br>中庭地白树栖鸦，冷露无声湿桂花。<br>今夜月明人尽望，不知秋思落谁家！</p>
-<p><strong>南斋玩月</strong><br><em>王昌龄</em><br>高卧南斋时，开帷月初吐。<br>清辉澹水木，演漾在窗户。<br>荏苒几盈虚，澄澄变今古。<br>美人清江畔，是夜越吟苦。<br>千里共如何，微风吹兰杜。</p>
-<p><strong>中秋月</strong><br><em>苏轼</em><br>暮云收尽溢清寒，银汉无声转玉盘。<br>此生此夜不长好，明月明年何处看。</p>
-<p><strong>中秋月</strong><br><em>齐已</em><br>空碧无云露湿衣，众星光外涌清规。<br>东林莫碍渐高势，四海正看当路时。<br>还许分明吟皓魄，肯教幽暗取丹枝。<br>可怜关夜婵娟影，正对五候残酒卮。</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-09/月下独酌/#more" rel="contents">
 阅读全文 &raquo;
 </a>
 </div>
@@ -440,7 +483,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">106</span>
+<span class="site-state-item-count">107</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -452,7 +495,7 @@ alt="张书樵">
 </div>
 <div class="site-state-item site-state-tags">
 <a href="/tags/">
-<span class="site-state-item-count">23</span>
+<span class="site-state-item-count">24</span>
 <span class="site-state-item-name">标签</span>
 </a>
 </div>
@@ -469,7 +512,7 @@ alt="张书樵">
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
-<a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+<a href="https://zsq.im" title="https://zsq.im" rel="noopener" target="_blank">ZSQ.IM</a>
 </li>
 <li class="links-of-blogroll-item">
 <a href="https://three-body.org" title="https://three-body.org" rel="noopener" target="_blank">Three Body</a>
@@ -492,7 +535,7 @@ alt="张书樵">
 <span class="author" itemprop="copyrightHolder">张书樵</span>
 </div>
 <div class="busuanzi-count">
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span class="post-meta-item-icon">
 <i class="fa fa-user"></i>
 </span>
@@ -516,15 +559,37 @@ alt="张书樵">
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
-<script src="/js/utils.js?v=7.2.0"></script>
-<script src="/js/motion.js?v=7.2.0"></script>
-<script src="/js/affix.js?v=7.2.0"></script>
-<script src="/js/schemes/pisces.js?v=7.2.0"></script>
-<script src="/js/next-boot.js?v=7.2.0"></script>
+<script src="/js/utils.js?v=7.3.0"></script>
+<script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/affix.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+<script src="/js/local-search.js?v=7.3.0"></script>
+<script pjax>
+if ($('body').find('div.pdf').length) {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
+$('body').find('div.pdf').each(function(i, o) {
+PDFObject.embed($(o).attr('target'), $(o), {
+pdfOpenParams: {
+navpanes: 0,
+toolbar: 0,
+statusbar: 0,
+pagemode: 'thumbs',
+view: 'FitH'
+},
+PDFJS_URL: '/lib/pdf/web/viewer.html',
+height: $(o).attr('height') || '1000px'
+});
+});
+}, window.PDFObject);
+}
+</script>
+<div id="pjax">
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
 tex2jax: {
@@ -562,35 +627,13 @@ element.classList.add('has-jax');
 }
 });
 </script>
-<script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
-<script src="/js/local-search.js?v=7.2.0"></script>
 <script>
-if ($('body').find('div.pdf').length) {
-$.ajax({
-type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
-dataType: 'script',
-cache: true,
-success: function() {
-$('body').find('div.pdf').each(function(i, o) {
-PDFObject.embed($(o).attr('target'), $(o), {
-pdfOpenParams: {
-navpanes: 0,
-toolbar: 0,
-statusbar: 0,
-pagemode: 'thumbs',
-view: 'FitH'
-},
-PDFJS_URL: '/lib/pdf/web/viewer.html',
-height: $(o).attr('height') || '1000px'
-});
-});
-},
-});
-}
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML', function() {
+MathJax.Hub.Typeset();
+}, window.MathJax);
 </script>
-<script src="/lib/Valine.min.js"></script>
 <script>
+NexT.utils.getScript('/lib/Valine.min.js', function() {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
 guest = guest.split(',').filter(function(item) {
@@ -607,12 +650,47 @@ avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
 visitor: false,
-lang: '' || 'zh-cn'
+lang: '' || 'zh-cn',
+path: location.pathname
+});
+}, window.Valine);
+</script>
+</div>
+<script>
+var pjax = new Pjax({
+selectors: [
+'title',
+'#page-configurations',
+'.content-wrap',
+'.sidebar-inner',
+'#pjax'
+],
+switches: {
+'.sidebar-inner': Pjax.switches.innerHTML
+},
+analytics: false,
+cacheBust: false,
+scrollTo: !CONFIG.save_scroll
+});
+$(document).on('pjax:send', function() {
+$('.sidebar-inner').stop().fadeTo('fast', 0);
+CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
+});
+$(document).on('pjax:success', function() {
+$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
+$(o).parent().append($(o).remove());
+});
+// Define Motion Sequence & Bootstrap Motion.
+if (CONFIG.motion.enable) {
+NexT.motion.integrator
+.init()
+.add(NexT.motion.middleWares.postList)
+.bootstrap();
+}
+$('.sidebar-inner .motion-element').css('opacity', 1);
+$('.sidebar-inner').fadeTo('fast', 1);
+NexT.utils.updateSidebarPosition();
 });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
-<script src="/lib/waifu/live2d.min.js"></script>
-<script src="/lib/waifu/waifu-tips.js"></script>
-<script src="/lib/custom.js"></script>
 </body>
 </html>

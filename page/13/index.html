@@ -6,24 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<script id="hexo.configurations">
+<script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.2.0',
+version: '7.3.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+save_scroll: true,
 copycode: {"enable":true,"show_result":true,"style":"mac"},
 fancybox: false,
 mediumzoom: true,
@@ -36,11 +37,8 @@ indexName: '',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
-localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},
-search: {
-root: '/',
-path: 'search.json'
-},
+localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
+path: 'search.json',
 tabs: true,
 motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
@@ -62,13 +60,27 @@ copy_failure: '复制失败'
 <meta name="twitter:title" content="米米的博客">
 <meta name="twitter:description" content="力电声光热，涵尽学海无涯">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
-<link rel="canonical" href="https://zhangshuqiao.org/page/13/">
-<script id="page.configurations">
+<script id="page-configurations">
+// https://hexo.io/docs/variables.html
 CONFIG.page = {
 sidebar: "",
+isHome: true,
+isPost: false,
+isPage: false,
+isArchive: false
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-8784231462763562",
+enable_page_level_ads: true
+});
+</script>
 <title>米米的博客</title>
 <noscript>
 <style>
@@ -94,7 +106,7 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left page-home">
+<div class="container sidebar-position-left">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
@@ -119,29 +131,29 @@ top: initial;
 <nav class="site-nav">
 <ul id="menu" class="menu">
 <li class="menu-item menu-item-home">
-<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 </li>
 <li class="menu-item menu-item-archives">
-<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
+<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-about">
-<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br/>关于</a>
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
 </li>
 <li class="menu-item menu-item-categories">
-<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类</a>
+<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 </li>
 <li class="menu-item menu-item-tags">
-<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签</a>
+<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 </li>
 <li class="menu-item menu-item-朋友们">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br/>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-实验室">
-<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br/>实验室</a>
+<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
 </li>
 <li class="menu-item menu-item-search">
 <a href="javascript:;" class="popup-trigger">
-<i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
+<i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
 <div class="site-search">
@@ -168,8 +180,94 @@ type="text" id="local-search-input">
 <main id="main" class="main">
 <div class="main-inner">
 <div class="content-wrap">
-<div id="content" class="content">
+<div id="content" class="content page-home">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/Crontab定时写法整理/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-05/Crontab定时写法整理/" class="post-title-link" itemprop="url">Crontab定时写法整理</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-05-27 17:24:22" itemprop="dateCreated datePublished" datetime="2018-05-27T17:24:22+08:00">2018-05-27</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">评论数：</span>
+<a href="/2018-05/Crontab定时写法整理/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-05/Crontab定时写法整理/" itemprop="commentCount"></span>
+</a>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>在前面的文章<a href="/2018-05/Nginx配置SSL/">NGINX配置SSL</a>中，提到了关于创建Crontab定时任务的内容。事实上，在使用Linux系统时（特别是在服务器上），经常会碰到需要在某个特定时间执行某些任务的情况。博主近期研究了Crontab的机制，并对常见的Crontab用法做了一个总结，收集了一些关于计划任务的实例，现把相关内容分享出来，同时也给自己一个备忘。</p>
+<h2 id="Crontab使用方式"><a href="#Crontab使用方式" class="headerlink" title="Crontab使用方式"></a>Crontab使用方式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab [-u user] file</span><br><span class="line">crontab [-u user] [ -e | -l | -r ]</span><br></pre></td></tr></table></figure>
+<p>各参数为：</p>
+<ul>
+<li><code>-u user</code>：用来设定某个用户的crontab服务。</li>
+<li><code>file</code>：file是命令文件的名字，表示将file做为crontab的任务列表文件并载入crontab。如果在命令行中没有指定这个文件，crontab将接受从标准输入（如键盘）中键入的命令，并将它们载入crontab任务列表。</li>
+<li><code>-e</code>：编辑某个用户的crontab文件内容。如果不指定用户，则表示编辑当前用户的crontab文件。</li>
+<li><code>-l</code>：显示某个用户的crontab文件内容。如果不指定用户，则表示显示当前用户的crontab文件内容。</li>
+<li><code>-r</code>：从<code>/var/spool/cron</code>目录中删除某个用户的crontab文件。如果不指定用户，则默认删除当前用户的crontab文件。</li>
+<li><code>-i</code>：在删除用户的crontab文件时给确认提示。</li>
+</ul>
+<h2 id="Crontab文件格式"><a href="#Crontab文件格式" class="headerlink" title="Crontab文件格式"></a>Crontab文件格式</h2><p>用户所建立的crontab文件中，每一行都代表一项任务，每行的每个字段代表一项设置，它的格式共分为六个字段，前五段是时间设定段，第六段是要执行的命令段，格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">minute hour day month week command</span><br><span class="line">分　时　日　月　周　命令</span><br></pre></td></tr></table></figure>
+<p>具体来说，每一列的内容分别是：</p>
+<ul>
+<li>分钟，可以是从0到59之间的任何整数。</li>
+<li>小时，可以是从0到23之间的任何整数（0表示0点）。</li>
+<li>日期，可以是从1到31之间的任何整数。</li>
+<li>月份，可以是从1到12之间的任何整数。</li>
+<li>星期几，可以是从0到7之间的任何整数，这里的0或7代表星期日。</li>
+<li>要执行的命令，可以是系统命令，也可以是自己编写的脚本文件。</li>
+</ul>
+<p><img src="/images/2018-05/crontab_thumb.png" alt></p>
+<p>在以上各个字段中，还可以使用以下特殊字符：</p>
+<ul>
+<li>星号（*）：代表所有可能的值，例如month字段如果是星号，则表示在满足其它字段的制约条件后每月都执行该命令操作。</li>
+<li>逗号（,）：可以用逗号隔开的值指定一个列表范围，例如<code>1,2,5,7,8,9</code>。</li>
+<li>中杠（-）：可以用整数之间的中杠表示一个整数范围，例如<code>2-6</code>表示<code>2,3,4,5,6</code>。</li>
+<li>正斜线（/）：可以用正斜线指定时间的间隔频率，例如<code>0-23/2</code>表示每两小时执行一次。</li>
+</ul>
+<p>同时正斜线可以和星号一起使用，例如<code>*/10</code>，如果用在minute字段，表示每十分钟执行一次。又如，每分钟可以用<code>*</code>或者<code>*/1</code>表示。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-05/Crontab定时写法整理/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/博客迁移至Hexo/">
@@ -200,7 +298,15 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
 </span>
-<br/>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">评论数：</span>
+<a href="/2018-05/博客迁移至Hexo/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-05/博客迁移至Hexo/" itemprop="commentCount"></span>
+</a>
+</span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -217,9 +323,9 @@ type="text" id="local-search-input">
 <li>完善的评论系统，无需依赖第三方服务</li>
 <li>更新非常方便</li>
 </ul>
-<p>这些特点是静态博客所不具有的，但最终喜欢折腾的博主还是决定将所有内容导出，转而使用Hexo进行渲染，并部署到GitHub Pages上。借助于<code>hexo-migrator-wordpress</code>，这一工作进行的非常顺利。当然，除了Hexo，也有很多其他的解决方案可以考虑，常见的包括Typecho或Hugo等。<br>迁移后的新站点使用了zhangshuqiao.org的域名，目前已可以通过https正常访问。旧的WordPress博客仍会保留，但不再更新，未来可能更多的用于进行插件的测试。<br>Galaxy Mimi站点近期也实装了全新LOGO（使用Monodraw制作）：</p>
+<p>这些特点是静态博客所不具有的，但最终喜欢折腾的博主还是决定将所有内容导出，转而使用Hexo进行渲染，并部署到GitHub Pages上。借助于<code>hexo-migrator-wordpress</code>，这一工作进行的非常顺利。当然，除了Hexo，也有很多其他的解决方案可以考虑，常见的包括Typecho或Hugo等。<br>迁移后的新站点使用了zhangshuqiao.org的域名，目前已可以通过https正常访问。旧的WordPress博客仍会保留，但不再更新，未来可能更多的用于进行插件的测试。<br>ZSQ.IM站点近期也实装了全新LOGO（使用Monodraw制作）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">     ___           ___           ___       ___           ___           ___      </span><br><span class="line">    /\  \         /\  \         /\__\     /\  \         |\__\         |\__\     </span><br><span class="line">   /::\  \       /::\  \       /:/  /    /::\  \        |:|  |        |:|  |    </span><br><span class="line">  /:/\:\  \     /:/\:\  \     /:/  /    /:/\:\  \       |:|  |        |:|  |    </span><br><span class="line"> /:/  \:\  \   /::\~\:\  \   /:/  /    /::\~\:\  \      |:|__|__      |:|__|__  </span><br><span class="line">/:/__/_\:\__\ /:/\:\ \:\__\ /:/__/    /:/\:\ \:\__\ ____/::::\__\     /::::\__\ </span><br><span class="line">\:\  /\ \/__/ \/__\:\/:/  / \:\  \    \/__\:\/:/  / \::::/~~/~       /:/~~/~    </span><br><span class="line"> \:\ \:\__\        \::/  /   \:\  \        \::/  /   ~~|:|~~|       /:/  /      </span><br><span class="line">  \:\/:/  /        /:/  /     \:\  \       /:/  /      |:|  |       \/__/       </span><br><span class="line">   \::/  /        /:/  /       \:\__\     /:/  /       |:|  |                   </span><br><span class="line">    \/__/         \/__/         \/__/     \/__/         \|__|                   </span><br><span class="line">                   ___                       ___                                </span><br><span class="line">                  /\__\          ___        /\__\          ___                  </span><br><span class="line">                 /::|  |        /\  \      /::|  |        /\  \                 </span><br><span class="line">                /:|:|  |        \:\  \    /:|:|  |        \:\  \                </span><br><span class="line">               /:/|:|__|__      /::\__\  /:/|:|__|__      /::\__\               </span><br><span class="line">              /:/ |::::\__\  __/:/\/__/ /:/ |::::\__\  __/:/\/__/               </span><br><span class="line">              \/__/~~/:/  / /\/:/  /    \/__/~~/:/  / /\/:/  /                  </span><br><span class="line">                    /:/  /  \::/__/           /:/  /  \::/__/                   </span><br><span class="line">                   /:/  /    \:\__\          /:/  /    \:\__\                   </span><br><span class="line">                  /:/  /      \/__/         /:/  /      \/__/                   </span><br><span class="line">                  \/__/                     \/__/</span><br></pre></td></tr></table></figure>
-<p>同时博主计划于下半年将原来Galaxy Mimi站点的所有静态页面进行一次大型的改进，敬请期待。</p>
+<p>同时博主计划于下半年将原来ZSQ.IM站点的所有静态页面进行一次大型的改进，敬请期待。</p>
 <hr>
 <p>本文更新于2018年7月8日：<br>由于在国内GitHub Pages加载速度不稳定，且由于GitHub政策不利于SEO，博主已将所有托管在GitHub Pages上的页面迁移至另一台独立服务器。<br>目前全站已支持HTTPS访问，并启用了HSTS，未来时机成熟时将开启HTTP/2访问。</p>
 </div>
@@ -258,7 +364,15 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
 </span>
-<br/>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">评论数：</span>
+<a href="/2018-05/Nginx配置SSL/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-05/Nginx配置SSL/" itemprop="commentCount"></span>
+</a>
+</span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -279,7 +393,7 @@ type="text" id="local-search-input">
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot certonly --webroot -w /path/to/your/webroot -d yourdomain.com,www.yourdomain.com</span><br></pre></td></tr></table></figure>
 <p>将<code>/path/to/your/webroot</code>替换为nginx的根目录，<code>yourdomain.com</code>替换为你的域名，多个域名用逗号隔开。<br>如果要申请泛域名证书，将上面的命令改为：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot certonly --server https://acme-v02.api.letsencrypt.org/directory --manual --preferred-challenges dns -d yourdomain.com,*.yourdomain.com</span><br></pre></td></tr></table></figure>
-<p>泛域名证书还需要验证TXT记录，比较麻烦。可以参考这篇文章：<a href="https://imjad.cn/archives/lab/letsencrypt-wildcard-certificate-support-is-live" target="_blank" rel="noopener">Let’s Encrypt现已正式支持泛域名证书</a>。<br>如果一切顺利，会输出以下内容：</p>
+<p>泛域名证书还需要验证TXT记录，比较麻烦。可以参考这篇文章：<a href="https://imjad.cn/archives/lab/letsencrypt-wildcard-certificate-support-is-live" target="_blank" rel="noopener">Let&#39;s Encrypt现已正式支持泛域名证书</a>。<br>如果一切顺利，会输出以下内容：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">IMPORTANT NOTES:</span><br><span class="line"> - Congratulations! Your certificate and chain have been saved at</span><br><span class="line">   /etc/letsencrypt/live/yourdomain.com/fullchain.pem. Your cert</span><br><span class="line">   will expire on 20XX-XX-XX. To obtain a new or tweaked version of</span><br><span class="line">   this certificate <span class="keyword">in</span> the future, simply run certbot again. To</span><br><span class="line">   non-interactively renew *all* of your certificates, run <span class="string">"certbot</span></span><br><span class="line"><span class="string">   renew"</span></span><br><span class="line"> - If you like Certbot, please consider supporting our work by: </span><br><span class="line">   Donating to ISRG / Let<span class="string">'s Encrypt:   https://letsencrypt.org/donate</span></span><br><span class="line"><span class="string">   Donating to EFF:                    https://eff.org/donate-le</span></span><br></pre></td></tr></table></figure>
 <p>生成的证书将会存放在<code>/etc/letsencrypt/live/</code>目录下。</p>
 <!--noindex-->
@@ -325,16 +439,24 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
-<br/>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">评论数：</span>
+<a href="/2018-05/有趣的Linux命令行工具/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-05/有趣的Linux命令行工具/" itemprop="commentCount"></span>
+</a>
+</span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>Linux is fun! Huhhh. OK so you don’t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.<br>Linux是非常有趣的，别不相信——看完这篇文章，你一定会发现Linux系统神奇的用法。<br>请注意，下面部分命令给出了两种包管理软件的安装方式，如果是Debian系的系统，请使用<code>apt</code>，如果是Red Hat系的系统，请使用<code>yum</code>。如果你使用了其他Linux发行版，或使用了其他包管理工具（例如macOS上的brew），可能无法找到所有这些命令。<br><strong>注：为了在代码块中区别输入输出，以<code>$</code>开头的行代表输入，其它行代表输出。</strong></p>
+<p>Linux is fun! Huhhh. OK so you don&#39;t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.<br>Linux是非常有趣的，别不相信——看完这篇文章，你一定会发现Linux系统神奇的用法。<br>请注意，下面部分命令给出了两种包管理软件的安装方式，如果是Debian系的系统，请使用<code>apt</code>，如果是Red Hat系的系统，请使用<code>yum</code>。如果你使用了其他Linux发行版，或使用了其他包管理工具（例如macOS上的brew），可能无法找到所有这些命令。<br><strong>注：为了在代码块中区别输入输出，以<code>$</code>开头的行代表输入，其它行代表输出。</strong></p>
 <h2 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h2><p>命令：curl<br>curl用于互联网传输数据，支持多种协议。通过以下命令可以查看天气：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -4 http://wttr.in</span><br></pre></td></tr></table></figure>
-<h2 id="sl-Steam-Locomotive"><a href="#sl-Steam-Locomotive" class="headerlink" title="sl (Steam Locomotive)"></a>sl (Steam Locomotive)</h2><p>命令：sl（蒸汽机车的缩写）<br>You might be aware of command ‘ls’ the list command and use it frequently to view the contents of a folder but because of miss-typing sometimes you would result in ‘sl’, how about getting a little fun in terminal and not <code>command not found</code>.<br>你一定知道ls是用来显示文件夹内容的常见命令，但如果不小心打成sl呢？通过包管理工具安装它，你就能看见一辆跑过屏幕的火车，而不是『找不到命令』：</p>
+<h2 id="sl-Steam-Locomotive"><a href="#sl-Steam-Locomotive" class="headerlink" title="sl (Steam Locomotive)"></a>sl (Steam Locomotive)</h2><p>命令：sl（蒸汽机车的缩写）<br>You might be aware of command &#39;ls&#39; the list command and use it frequently to view the contents of a folder but because of miss-typing sometimes you would result in &#39;sl&#39;, how about getting a little fun in terminal and not <code>command not found</code>.<br>你一定知道ls是用来显示文件夹内容的常见命令，但如果不小心打成sl呢？通过包管理工具安装它，你就能看见一辆跑过屏幕的火车，而不是『找不到命令』：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ apt install sl <span class="comment">#In Debian like OS, or aptitude based system</span></span><br><span class="line">$ yum install sl <span class="comment">#In Red Hat like OS, or yum based system</span></span><br><span class="line">$ sl</span><br></pre></td></tr></table></figure>
-<p>This command works even when you type ‘LS’ and not ‘ls’.</p>
+<p>This command works even when you type &#39;LS&#39; and not &#39;ls&#39;.</p>
 <video src="/files/ezgif-4-7bb965bfb6.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
 <h2 id="telnet"><a href="#telnet" class="headerlink" title="telnet"></a>telnet</h2><p>命令：telnet<br>No! No!! it is not as much complex as it seems. You would be familiar with telnet. Telnet is a text-oriented bidirectional network protocol over network. Here is nothing to be installed. What you should have is a Linux box and a working Internet.<br>不！它并不像看上去那样复杂。你会熟悉它的。Telnet是一个基于文本的双向网络协议。你无需安装它，只需要一台能够联网的linux机器就行。<br>输入以下命令即可观看ASCII版星球大战：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ telnet towel.blinkenlights.nl</span><br></pre></td></tr></table></figure>
@@ -386,67 +508,21 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
 </span>
-<br/>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">评论数：</span>
+<a href="/2018-05/在GitHub热点图上绘画/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-05/在GitHub热点图上绘画/" itemprop="commentCount"></span>
+</a>
+</span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>借助这个项目，你可以在GitHub热点图（动态图）上绘制图案，并由此生成Shell脚本；在空项目中执行该脚本，便能创造过去的commit记录；而将该项目push到GitHub上，你的热点图就变得和绘制的图案完全相同。</p>
 <p><img src="/images/2018-05/gitdraw.png" alt></p>
 <p>项目地址：<a href="https://github.com/stevenjoezhang/git-draw" target="_blank" rel="noopener">git-draw</a><br>原项目是一个Chrome插件，由于长期没有维护，且GitHub改变了页面结构，导致插件不可用。新项目重写了部分JavaScript代码，使得其能够正常运行。快来试试吧！</p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/CUPT地震仪的实现/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-05/CUPT地震仪的实现/" class="post-title-link" itemprop="url">CUPT地震仪的实现</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-05-02 10:22:49" itemprop="dateCreated datePublished" datetime="2018-05-02T10:22:49+08:00">2018-05-02</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
-</span>
-<br/>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>2018年CUPT的第一题：</p>
-<blockquote>
-<p><strong>Invent Yourself</strong><br>Construct a simple seismograph that amplifies a local disturbance by mechanical, optical or electrical methods. Determine the typical response curve of your device and investigate the parameters of the damping constant. What is the maximum amplification that you can achieve?<br><strong>自主发明</strong><br>建造一个可以通过力学、光学或电学方法放大局部扰动的简单地震仪。确定你装置的标准响应曲线并且研究阻尼常数的参量。你能达到的最大放大率是多少？</p>
-</blockquote>
-<p>此题的关键便是将地震仪的反应谱通过可观测量进行表示。实现的思路有很多，力学、光学或电学方法都是可行的。综合考虑了实现难度和测量精度后，决定采用以下方案：通过力学方法放大震动，然后利用霍尔片和磁铁将力学量转换为电学量，借助Arduino单片机的模数转换，通过串口将信号输入到电脑，电脑用Python监听串口，将获得的数据保存并实时分析、绘图。</p>
-<p>仪器的整体构造如图：</p>
-<p><img src="/images/2018-05/1.jpg" alt></p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-05/CUPT地震仪的实现/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -480,7 +556,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">106</span>
+<span class="site-state-item-count">107</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -492,7 +568,7 @@ alt="张书樵">
 </div>
 <div class="site-state-item site-state-tags">
 <a href="/tags/">
-<span class="site-state-item-count">23</span>
+<span class="site-state-item-count">24</span>
 <span class="site-state-item-name">标签</span>
 </a>
 </div>
@@ -509,7 +585,7 @@ alt="张书樵">
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
-<a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+<a href="https://zsq.im" title="https://zsq.im" rel="noopener" target="_blank">ZSQ.IM</a>
 </li>
 <li class="links-of-blogroll-item">
 <a href="https://three-body.org" title="https://three-body.org" rel="noopener" target="_blank">Three Body</a>
@@ -532,7 +608,7 @@ alt="张书樵">
 <span class="author" itemprop="copyrightHolder">张书樵</span>
 </div>
 <div class="busuanzi-count">
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span class="post-meta-item-icon">
 <i class="fa fa-user"></i>
 </span>
@@ -556,24 +632,20 @@ alt="张书樵">
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
-<script src="/js/utils.js?v=7.2.0"></script>
-<script src="/js/motion.js?v=7.2.0"></script>
-<script src="/js/affix.js?v=7.2.0"></script>
-<script src="/js/schemes/pisces.js?v=7.2.0"></script>
-<script src="/js/next-boot.js?v=7.2.0"></script>
-<script src="/js/local-search.js?v=7.2.0"></script>
-<script>
+<script src="/js/utils.js?v=7.3.0"></script>
+<script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/affix.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+<script src="/js/local-search.js?v=7.3.0"></script>
+<script pjax>
 if ($('body').find('div.pdf').length) {
-$.ajax({
-type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
-dataType: 'script',
-cache: true,
-success: function() {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
 $('body').find('div.pdf').each(function(i, o) {
 PDFObject.embed($(o).attr('target'), $(o), {
 pdfOpenParams: {
@@ -587,12 +659,12 @@ PDFJS_URL: '/lib/pdf/web/viewer.html',
 height: $(o).attr('height') || '1000px'
 });
 });
-},
-});
+}, window.PDFObject);
 }
 </script>
-<script src="/lib/Valine.min.js"></script>
+<div id="pjax">
 <script>
+NexT.utils.getScript('/lib/Valine.min.js', function() {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
 guest = guest.split(',').filter(function(item) {
@@ -609,12 +681,47 @@ avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
 visitor: false,
-lang: '' || 'zh-cn'
+lang: '' || 'zh-cn',
+path: location.pathname
+});
+}, window.Valine);
+</script>
+</div>
+<script>
+var pjax = new Pjax({
+selectors: [
+'title',
+'#page-configurations',
+'.content-wrap',
+'.sidebar-inner',
+'#pjax'
+],
+switches: {
+'.sidebar-inner': Pjax.switches.innerHTML
+},
+analytics: false,
+cacheBust: false,
+scrollTo: !CONFIG.save_scroll
+});
+$(document).on('pjax:send', function() {
+$('.sidebar-inner').stop().fadeTo('fast', 0);
+CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
+});
+$(document).on('pjax:success', function() {
+$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
+$(o).parent().append($(o).remove());
+});
+// Define Motion Sequence & Bootstrap Motion.
+if (CONFIG.motion.enable) {
+NexT.motion.integrator
+.init()
+.add(NexT.motion.middleWares.postList)
+.bootstrap();
+}
+$('.sidebar-inner .motion-element').css('opacity', 1);
+$('.sidebar-inner').fadeTo('fast', 1);
+NexT.utils.updateSidebarPosition();
 });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
-<script src="/lib/waifu/live2d.min.js"></script>
-<script src="/lib/waifu/waifu-tips.js"></script>
-<script src="/lib/custom.js"></script>
 </body>
 </html>

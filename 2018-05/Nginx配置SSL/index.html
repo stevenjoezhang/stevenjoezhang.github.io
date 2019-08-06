@@ -6,24 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<script id="hexo.configurations">
+<script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.2.0',
+version: '7.3.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+save_scroll: true,
 copycode: {"enable":true,"show_result":true,"style":"mac"},
 fancybox: false,
 mediumzoom: true,
@@ -36,11 +37,8 @@ indexName: '',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
-localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},
-search: {
-root: '/',
-path: 'search.json'
-},
+localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
+path: 'search.json',
 tabs: true,
 motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
@@ -63,13 +61,27 @@ copy_failure: '复制失败'
 <meta name="twitter:title" content="Nginx配置SSL">
 <meta name="twitter:description" content="安装CertBot首先，克隆Certbot在GitHub上的仓库到本地： 1git clone https://github.com/certbot/certbot.git  在certbot文件夹下，有一个shell脚本，名为certbot-auto。你可以将其软链接为certbot，方便进行接下来的步骤。具体操作是，在你的家目录~下的.bashrc或.bash_profile文件中追加以下内容">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
-<link rel="canonical" href="https://zhangshuqiao.org/2018-05/Nginx配置SSL/">
-<script id="page.configurations">
+<script id="page-configurations">
+// https://hexo.io/docs/variables.html
 CONFIG.page = {
 sidebar: "",
+isHome: false,
+isPost: true,
+isPage: false,
+isArchive: false
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-8784231462763562",
+enable_page_level_ads: true
+});
+</script>
 <title>Nginx配置SSL | 米米的博客</title>
 <noscript>
 <style>
@@ -95,7 +107,7 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left page-post-detail">
+<div class="container sidebar-position-left">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
@@ -120,29 +132,29 @@ top: initial;
 <nav class="site-nav">
 <ul id="menu" class="menu">
 <li class="menu-item menu-item-home">
-<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 </li>
 <li class="menu-item menu-item-archives">
-<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
+<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-about">
-<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br/>关于</a>
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
 </li>
 <li class="menu-item menu-item-categories">
-<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类</a>
+<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 </li>
 <li class="menu-item menu-item-tags">
-<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签</a>
+<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 </li>
 <li class="menu-item menu-item-朋友们">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br/>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-实验室">
-<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br/>实验室</a>
+<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
 </li>
 <li class="menu-item menu-item-search">
 <a href="javascript:;" class="popup-trigger">
-<i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
+<i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
 <div class="site-search">
@@ -169,7 +181,7 @@ type="text" id="local-search-input">
 <main id="main" class="main">
 <div class="main-inner">
 <div class="content-wrap">
-<div id="content" class="content">
+<div id="content" class="content page-post-detail">
 <div id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
@@ -200,13 +212,12 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
 </span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon"
->
+<span class="post-meta-item" title="阅读次数">
+<span class="post-meta-item-icon">
 <i class="fa fa-file"></i>
-阅读次数：
-<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
+<span class="post-meta-item-text">阅读次数：</span>
+<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
 <span class="post-meta-item">
 <span class="post-meta-item-icon">
@@ -217,7 +228,6 @@ type="text" id="local-search-input">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-05/Nginx配置SSL/" itemprop="commentCount"></span>
 </a>
 </span>
-<br/>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -238,7 +248,7 @@ type="text" id="local-search-input">
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot certonly --webroot -w /path/to/your/webroot -d yourdomain.com,www.yourdomain.com</span><br></pre></td></tr></table></figure>
 <p>将<code>/path/to/your/webroot</code>替换为nginx的根目录，<code>yourdomain.com</code>替换为你的域名，多个域名用逗号隔开。<br>如果要申请泛域名证书，将上面的命令改为：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot certonly --server https://acme-v02.api.letsencrypt.org/directory --manual --preferred-challenges dns -d yourdomain.com,*.yourdomain.com</span><br></pre></td></tr></table></figure>
-<p>泛域名证书还需要验证TXT记录，比较麻烦。可以参考这篇文章：<a href="https://imjad.cn/archives/lab/letsencrypt-wildcard-certificate-support-is-live" target="_blank" rel="noopener">Let’s Encrypt现已正式支持泛域名证书</a>。<br>如果一切顺利，会输出以下内容：</p>
+<p>泛域名证书还需要验证TXT记录，比较麻烦。可以参考这篇文章：<a href="https://imjad.cn/archives/lab/letsencrypt-wildcard-certificate-support-is-live" target="_blank" rel="noopener">Let&#39;s Encrypt现已正式支持泛域名证书</a>。<br>如果一切顺利，会输出以下内容：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">IMPORTANT NOTES:</span><br><span class="line"> - Congratulations! Your certificate and chain have been saved at</span><br><span class="line">   /etc/letsencrypt/live/yourdomain.com/fullchain.pem. Your cert</span><br><span class="line">   will expire on 20XX-XX-XX. To obtain a new or tweaked version of</span><br><span class="line">   this certificate <span class="keyword">in</span> the future, simply run certbot again. To</span><br><span class="line">   non-interactively renew *all* of your certificates, run <span class="string">"certbot</span></span><br><span class="line"><span class="string">   renew"</span></span><br><span class="line"> - If you like Certbot, please consider supporting our work by: </span><br><span class="line">   Donating to ISRG / Let<span class="string">'s Encrypt:   https://letsencrypt.org/donate</span></span><br><span class="line"><span class="string">   Donating to EFF:                    https://eff.org/donate-le</span></span><br></pre></td></tr></table></figure>
 <p>生成的证书将会存放在<code>/etc/letsencrypt/live/</code>目录下。</p>
 <a id="more"></a>
@@ -275,7 +285,7 @@ type="text" id="local-search-input">
 <p>通过配置Nginx，利用<code>add_header</code>加上这个响应头，然后就可以在HSTS preload list的<a href="https://hstspreload.org" target="_blank" rel="noopener">官方网站</a>上进行申请了。从申请到审核通过，时间在几天到几周不等。申请后，你可以随时查询最新的状态，也可以在Chrome浏览器的地址框中输入<code>chrome://net-internals/#hsts</code>查看。从审核通过到正式加入到Chrome的stable release版本中还需要一段时间，因为还要经过canary、dev、beta以及stable progression等步骤。</p>
 <hr>
 <p>参考文章：<br><a href="https://blog.csdn.net/p793049488/article/details/53483381" target="_blank" rel="noopener">nginx+ssl配置http和https共存</a><br><a href="https://segmentfault.com/a/1190000005797776" target="_blank" rel="noopener">手把手教你在Nginx上使用CertBot</a></p>
-<p>本文更新于2018年7月28日：<br>在较新版本中，<code>ssl on</code>不再被使用，否则会报错：[warn] the “ssl” directive is deprecated, use the “listen … ssl” directive instead；将推荐的CertBot安装方式由包管理工具改为Git项目。</p>
+<p>本文更新于2018年7月28日：<br>在较新版本中，<code>ssl on</code>不再被使用，否则会报错：[warn] the &quot;ssl&quot; directive is deprecated, use the &quot;listen ... ssl&quot; directive instead；将推荐的CertBot安装方式由包管理工具改为Git项目。</p>
 </div>
 <div>
 <div id="reward-container">
@@ -364,7 +374,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">106</span>
+<span class="site-state-item-count">107</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -376,7 +386,7 @@ alt="张书樵">
 </div>
 <div class="site-state-item site-state-tags">
 <a href="/tags/">
-<span class="site-state-item-count">23</span>
+<span class="site-state-item-count">24</span>
 <span class="site-state-item-name">标签</span>
 </a>
 </div>
@@ -393,7 +403,7 @@ alt="张书樵">
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
-<a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+<a href="https://zsq.im" title="https://zsq.im" rel="noopener" target="_blank">ZSQ.IM</a>
 </li>
 <li class="links-of-blogroll-item">
 <a href="https://three-body.org" title="https://three-body.org" rel="noopener" target="_blank">Three Body</a>
@@ -423,7 +433,7 @@ alt="张书樵">
 <span class="author" itemprop="copyrightHolder">张书樵</span>
 </div>
 <div class="busuanzi-count">
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span class="post-meta-item-icon">
 <i class="fa fa-user"></i>
 </span>
@@ -447,26 +457,20 @@ alt="张书樵">
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
-<script src="/js/utils.js?v=7.2.0"></script>
-<script src="/js/motion.js?v=7.2.0"></script>
-<script src="/js/affix.js?v=7.2.0"></script>
-<script src="/js/schemes/pisces.js?v=7.2.0"></script>
-<script src="/js/scrollspy.js?v=7.2.0"></script>
-<script src="/js/post-details.js?v=7.2.0"></script>
-<script src="/js/next-boot.js?v=7.2.0"></script>
-<script src="/js/local-search.js?v=7.2.0"></script>
-<script>
+<script src="/js/utils.js?v=7.3.0"></script>
+<script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/affix.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+<script src="/js/local-search.js?v=7.3.0"></script>
+<script pjax>
 if ($('body').find('div.pdf').length) {
-$.ajax({
-type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
-dataType: 'script',
-cache: true,
-success: function() {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
 $('body').find('div.pdf').each(function(i, o) {
 PDFObject.embed($(o).attr('target'), $(o), {
 pdfOpenParams: {
@@ -480,12 +484,14 @@ PDFJS_URL: '/lib/pdf/web/viewer.html',
 height: $(o).attr('height') || '1000px'
 });
 });
-},
-});
+}, window.PDFObject);
 }
 </script>
-<script src="/lib/Valine.min.js"></script>
+<div id="pjax">
+<script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
 <script>
+NexT.utils.getScript('/lib/Valine.min.js', function() {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
 guest = guest.split(',').filter(function(item) {
@@ -502,12 +508,47 @@ avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
 visitor: false,
-lang: '' || 'zh-cn'
+lang: '' || 'zh-cn',
+path: location.pathname
+});
+}, window.Valine);
+</script>
+</div>
+<script>
+var pjax = new Pjax({
+selectors: [
+'title',
+'#page-configurations',
+'.content-wrap',
+'.sidebar-inner',
+'#pjax'
+],
+switches: {
+'.sidebar-inner': Pjax.switches.innerHTML
+},
+analytics: false,
+cacheBust: false,
+scrollTo: !CONFIG.save_scroll
+});
+$(document).on('pjax:send', function() {
+$('.sidebar-inner').stop().fadeTo('fast', 0);
+CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
+});
+$(document).on('pjax:success', function() {
+$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
+$(o).parent().append($(o).remove());
+});
+// Define Motion Sequence & Bootstrap Motion.
+if (CONFIG.motion.enable) {
+NexT.motion.integrator
+.init()
+.add(NexT.motion.middleWares.postList)
+.bootstrap();
+}
+$('.sidebar-inner .motion-element').css('opacity', 1);
+$('.sidebar-inner').fadeTo('fast', 1);
+NexT.utils.updateSidebarPosition();
 });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
-<script src="/lib/waifu/live2d.min.js"></script>
-<script src="/lib/waifu/waifu-tips.js"></script>
-<script src="/lib/custom.js"></script>
 </body>
 </html>

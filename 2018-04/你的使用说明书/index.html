@@ -6,24 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<script id="hexo.configurations">
+<script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.2.0',
+version: '7.3.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+save_scroll: true,
 copycode: {"enable":true,"show_result":true,"style":"mac"},
 fancybox: false,
 mediumzoom: true,
@@ -36,11 +37,8 @@ indexName: '',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
-localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},
-search: {
-root: '/',
-path: 'search.json'
-},
+localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
+path: 'search.json',
 tabs: true,
 motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
@@ -58,18 +56,32 @@ copy_failure: '复制失败'
 <meta property="og:site_name" content="米米的博客">
 <meta property="og:description" content="____擅于发现美的事物，并从中吸收能量，变得越来越好看。____笑起来像个孩子，把他带在身边，能带来青春永驻的效果。请多给予____一点睡眠时间。____偶尔也有像天使一样温柔的时候。____喜欢自由，适合经常带出去放养。肚子饿了就会心情不好，带____一起去吃美味的食物吧！____常常给身边的人带来好运。____因为太可爱了，会令人陷入沉迷，属于正常现象。____遇到香喷喷的东西就会变圆。可能">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-07T08:34:07.305Z">
+<meta property="og:updated_time" content="2019-08-06T10:07:09.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="你的使用说明书">
 <meta name="twitter:description" content="____擅于发现美的事物，并从中吸收能量，变得越来越好看。____笑起来像个孩子，把他带在身边，能带来青春永驻的效果。请多给予____一点睡眠时间。____偶尔也有像天使一样温柔的时候。____喜欢自由，适合经常带出去放养。肚子饿了就会心情不好，带____一起去吃美味的食物吧！____常常给身边的人带来好运。____因为太可爱了，会令人陷入沉迷，属于正常现象。____遇到香喷喷的东西就会变圆。可能">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
-<link rel="canonical" href="https://zhangshuqiao.org/2018-04/你的使用说明书/">
-<script id="page.configurations">
+<script id="page-configurations">
+// https://hexo.io/docs/variables.html
 CONFIG.page = {
 sidebar: "",
+isHome: false,
+isPost: true,
+isPage: false,
+isArchive: false
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-8784231462763562",
+enable_page_level_ads: true
+});
+</script>
 <title>你的使用说明书 | 米米的博客</title>
 <noscript>
 <style>
@@ -95,7 +107,7 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left page-post-detail">
+<div class="container sidebar-position-left">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
@@ -120,29 +132,29 @@ top: initial;
 <nav class="site-nav">
 <ul id="menu" class="menu">
 <li class="menu-item menu-item-home">
-<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 </li>
 <li class="menu-item menu-item-archives">
-<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
+<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-about">
-<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br/>关于</a>
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
 </li>
 <li class="menu-item menu-item-categories">
-<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类</a>
+<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 </li>
 <li class="menu-item menu-item-tags">
-<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签</a>
+<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 </li>
 <li class="menu-item menu-item-朋友们">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br/>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-实验室">
-<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br/>实验室</a>
+<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
 </li>
 <li class="menu-item menu-item-search">
 <a href="javascript:;" class="popup-trigger">
-<i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
+<i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
 <div class="site-search">
@@ -169,7 +181,7 @@ type="text" id="local-search-input">
 <main id="main" class="main">
 <div class="main-inner">
 <div class="content-wrap">
-<div id="content" class="content">
+<div id="content" class="content page-post-detail">
 <div id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
@@ -200,13 +212,12 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
 </span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon"
->
+<span class="post-meta-item" title="阅读次数">
+<span class="post-meta-item-icon">
 <i class="fa fa-file"></i>
-阅读次数：
-<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
+<span class="post-meta-item-text">阅读次数：</span>
+<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
 <span class="post-meta-item">
 <span class="post-meta-item-icon">
@@ -217,14 +228,13 @@ type="text" id="local-search-input">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-04/你的使用说明书/" itemprop="commentCount"></span>
 </a>
 </span>
-<br/>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>____擅于发现美的事物，并从中吸收能量，变得越来越好看。<br>____笑起来像个孩子，把他带在身边，能带来青春永驻的效果。<br>请多给予____一点睡眠时间。<br>____偶尔也有像天使一样温柔的时候。<br>____喜欢自由，适合经常带出去放养。<br>肚子饿了就会心情不好，带____一起去吃美味的食物吧！<br>____常常给身边的人带来好运。<br>____因为太可爱了，会令人陷入沉迷，属于正常现象。<br>____遇到香喷喷的东西就会变圆。<br>可能因为材质特殊，____对外界的攻击有折射能力。<br>____虽然经过多次更新迭代，但依然有颗纯真的心。<br>____发光的时候，可能会使对象产生短时眩晕，使用时请注意。<br>____拥有迷之运气，中乐透的实力异于常人。<br>只要缘分到了，____自己就会瘦下来。<br>____拥有高性能大脑，可快速运转，但过度工作（学习）容易发热。<br>____买买买时会释放出强大气场，胆子也会变大。<br>____常常因为无法体验人类的乐趣而神伤。<br>____是能带来元气和灵感的谜之吉祥物。<br>____心心念念的梦，会在某个不经意的时候实现。<br>____的光芒太耀眼，但也不至于会刺瞎别人。<br>____历经严苛质检品控，是市面上难得一遇的珍品。<br>只要对____倾注感情，他就能成为最可靠的伙伴，遇到危机可无限次召唤。<br>____的出厂设定就是温暖的守护者，也是周围人快乐和活力的源泉。<br>____有极为罕见的感官知觉，对他说谎可不是明智之举。<br>____装备了精准的探测仪，能发觉并把握住人生中真正的机会。<br>____能通过每次挑战完成升级，获得更高的智慧和运气。<br>____具备安全与稳定性，是居家、旅行必备的小能手。<br>____能快速拆卸烦恼，重新制作出充满乐趣和创造力的产物。<br>变态（萌）是____的常态。<br>保温杯和泡脚桶，可延长____的使用寿命。<br>____偶尔会孤单，但也能享受孤单，是一款自由的产品。<br>____对时间的感知力弱，所以不知不觉又加班了。</p>
 <a id="more"></a>
-<p>____拥有读气氛的技巧和超高感知力，自己却毫无察觉。<br>____是怪人，但接触后会很有趣，一款来自外星的产品。<br>____听到喜爱的音乐，就能触发运气开挂的效果。<br>____还在努力融入人类世界，拥有地球人不具备的思维方式。<br>____肯花费大量时间和精力，超出预期的完成任务。<br>要定期给予____喂食，他相当单纯。<br>请用纤细的语调对____说话吧。<br>如果做事开始慢腾腾，及时给____一点吃的。<br>____如果发生故障，就给他一个拥抱吧。<br>____喜欢被夸奖，所以一天表扬他一次吧。<br>____一困就会情绪低落，请给予他适当的睡眠时间。<br>____即使心情低落，也会保持精神，这时候给他送些点心吧。<br>____心情不好的时候，给他吃一点甜甜的东西吧！<br>____最大的兴趣就是睡觉。<br>____能带给你更神奇的经历…当你带他出去玩的时候。<br>____看着对方眼睛说话就会脸红。<br>____对气温变化的感知力很弱，可能因为内心一直是暖的。<br>____脑子里塞满天真的幻想，能拍成一部高分动画片。<br>____遇到寒冷的温度就会变圆。<br>____吃越少，越会变胖<br>吃饭也是____缓解压力的一种办法<br>____易燃，需要时刻为他准备好灭火器。<br>____拥有巨大内存，收到的关心（和红包）他都会记得。<br>如果丢开____不管，要小心他自己溜走了！<br>未来的道路上，____会因为无敌而略感寂寞。<br>____不擅长向别人求助。如果有人察觉到的话请主动帮他一下。<br>____的脑部为S级原装货，其他身体部分都是普通零件。<br>如果你觉得____发量开始减少，那一定是出现了幻觉。<br>____只要一出门就会变漂亮。<br>____遇到刮痕损伤不会自己修理。<br>____对地球充满好奇，喜欢人类（不工作时）的生活方式。<br>____只要开启降噪模式，就能获得坚定追随内心和直觉的勇气。<br>____早上起床时容易发生爆炸。<br>____按时睡觉的程序被设计的太复杂，很难执行。</p>
-<p>可以在这里查看JavaScript版本：<a href="https://galaxymimi.com/tool/163.html" target="_blank" rel="noopener">Galaxy Mimi&gt;更多&gt;你的使用说明书</a></p>
+<p>____拥有读气氛的技巧和超高感知力，自己却毫无察觉。<br>____是怪人，但接触后会很有趣，一款来自外星的产品。<br>____听到喜爱的音乐，就能触发运气开挂的效果。<br>____还在努力融入人类世界，拥有地球人不具备的思维方式。<br>____肯花费大量时间和精力，超出预期的完成任务。<br>要定期给予____喂食，他相当单纯。<br>请用纤细的语调对____说话吧。<br>如果做事开始慢腾腾，及时给____一点吃的。<br>____如果发生故障，就给他一个拥抱吧。<br>____喜欢被夸奖，所以一天表扬他一次吧。<br>____一困就会情绪低落，请给予他适当的睡眠时间。<br>____即使心情低落，也会保持精神，这时候给他送些点心吧。<br>____心情不好的时候，给他吃一点甜甜的东西吧！<br>____最大的兴趣就是睡觉。<br>____能带给你更神奇的经历...当你带他出去玩的时候。<br>____看着对方眼睛说话就会脸红。<br>____对气温变化的感知力很弱，可能因为内心一直是暖的。<br>____脑子里塞满天真的幻想，能拍成一部高分动画片。<br>____遇到寒冷的温度就会变圆。<br>____吃越少，越会变胖<br>吃饭也是____缓解压力的一种办法<br>____易燃，需要时刻为他准备好灭火器。<br>____拥有巨大内存，收到的关心（和红包）他都会记得。<br>如果丢开____不管，要小心他自己溜走了！<br>未来的道路上，____会因为无敌而略感寂寞。<br>____不擅长向别人求助。如果有人察觉到的话请主动帮他一下。<br>____的脑部为S级原装货，其他身体部分都是普通零件。<br>如果你觉得____发量开始减少，那一定是出现了幻觉。<br>____只要一出门就会变漂亮。<br>____遇到刮痕损伤不会自己修理。<br>____对地球充满好奇，喜欢人类（不工作时）的生活方式。<br>____只要开启降噪模式，就能获得坚定追随内心和直觉的勇气。<br>____早上起床时容易发生爆炸。<br>____按时睡觉的程序被设计的太复杂，很难执行。</p>
+<p>可以在这里查看JavaScript版本：<a href="https://zsq.im/tool/163.html" target="_blank" rel="noopener">ZSQ.IM &gt; 更多 &gt; 你的使用说明书</a></p>
 </div>
 <div>
 <div id="reward-container">
@@ -302,7 +312,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">106</span>
+<span class="site-state-item-count">107</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -314,7 +324,7 @@ alt="张书樵">
 </div>
 <div class="site-state-item site-state-tags">
 <a href="/tags/">
-<span class="site-state-item-count">23</span>
+<span class="site-state-item-count">24</span>
 <span class="site-state-item-name">标签</span>
 </a>
 </div>
@@ -331,7 +341,7 @@ alt="张书樵">
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
-<a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+<a href="https://zsq.im" title="https://zsq.im" rel="noopener" target="_blank">ZSQ.IM</a>
 </li>
 <li class="links-of-blogroll-item">
 <a href="https://three-body.org" title="https://three-body.org" rel="noopener" target="_blank">Three Body</a>
@@ -354,7 +364,7 @@ alt="张书樵">
 <span class="author" itemprop="copyrightHolder">张书樵</span>
 </div>
 <div class="busuanzi-count">
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span class="post-meta-item-icon">
 <i class="fa fa-user"></i>
 </span>
@@ -378,26 +388,20 @@ alt="张书樵">
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
-<script src="/js/utils.js?v=7.2.0"></script>
-<script src="/js/motion.js?v=7.2.0"></script>
-<script src="/js/affix.js?v=7.2.0"></script>
-<script src="/js/schemes/pisces.js?v=7.2.0"></script>
-<script src="/js/scrollspy.js?v=7.2.0"></script>
-<script src="/js/post-details.js?v=7.2.0"></script>
-<script src="/js/next-boot.js?v=7.2.0"></script>
-<script src="/js/local-search.js?v=7.2.0"></script>
-<script>
+<script src="/js/utils.js?v=7.3.0"></script>
+<script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/affix.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+<script src="/js/local-search.js?v=7.3.0"></script>
+<script pjax>
 if ($('body').find('div.pdf').length) {
-$.ajax({
-type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
-dataType: 'script',
-cache: true,
-success: function() {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
 $('body').find('div.pdf').each(function(i, o) {
 PDFObject.embed($(o).attr('target'), $(o), {
 pdfOpenParams: {
@@ -411,12 +415,14 @@ PDFJS_URL: '/lib/pdf/web/viewer.html',
 height: $(o).attr('height') || '1000px'
 });
 });
-},
-});
+}, window.PDFObject);
 }
 </script>
-<script src="/lib/Valine.min.js"></script>
+<div id="pjax">
+<script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
 <script>
+NexT.utils.getScript('/lib/Valine.min.js', function() {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
 guest = guest.split(',').filter(function(item) {
@@ -433,12 +439,47 @@ avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
 visitor: false,
-lang: '' || 'zh-cn'
+lang: '' || 'zh-cn',
+path: location.pathname
+});
+}, window.Valine);
+</script>
+</div>
+<script>
+var pjax = new Pjax({
+selectors: [
+'title',
+'#page-configurations',
+'.content-wrap',
+'.sidebar-inner',
+'#pjax'
+],
+switches: {
+'.sidebar-inner': Pjax.switches.innerHTML
+},
+analytics: false,
+cacheBust: false,
+scrollTo: !CONFIG.save_scroll
+});
+$(document).on('pjax:send', function() {
+$('.sidebar-inner').stop().fadeTo('fast', 0);
+CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
+});
+$(document).on('pjax:success', function() {
+$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
+$(o).parent().append($(o).remove());
+});
+// Define Motion Sequence & Bootstrap Motion.
+if (CONFIG.motion.enable) {
+NexT.motion.integrator
+.init()
+.add(NexT.motion.middleWares.postList)
+.bootstrap();
+}
+$('.sidebar-inner .motion-element').css('opacity', 1);
+$('.sidebar-inner').fadeTo('fast', 1);
+NexT.utils.updateSidebarPosition();
 });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
-<script src="/lib/waifu/live2d.min.js"></script>
-<script src="/lib/waifu/waifu-tips.js"></script>
-<script src="/lib/custom.js"></script>
 </body>
 </html>

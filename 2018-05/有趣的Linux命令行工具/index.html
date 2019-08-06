@@ -6,24 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<script id="hexo.configurations">
+<script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.2.0',
+version: '7.3.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+save_scroll: true,
 copycode: {"enable":true,"show_result":true,"style":"mac"},
 fancybox: false,
 mediumzoom: true,
@@ -36,11 +37,8 @@ indexName: '',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
-localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},
-search: {
-root: '/',
-path: 'search.json'
-},
+localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
+path: 'search.json',
 tabs: true,
 motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
@@ -50,29 +48,43 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<meta name="description" content="Linux is fun! Huhhh. OK so you don’t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.Linux是非常有趣的，别不相信——看完这篇文章，你一定会发现Linux系统神奇的用法。请注意，下面部分命令给出了两">
+<meta name="description" content="Linux is fun! Huhhh. OK so you don&amp;#39;t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.Linux是非常有趣的，别不相信——看完这篇文章，你一定会发现Linux系统神奇的用法。请注意，下面部分命令">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="有趣的Linux命令行工具">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-05/有趣的Linux命令行工具/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="Linux is fun! Huhhh. OK so you don’t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.Linux是非常有趣的，别不相信——看完这篇文章，你一定会发现Linux系统神奇的用法。请注意，下面部分命令给出了两">
+<meta property="og:description" content="Linux is fun! Huhhh. OK so you don&amp;#39;t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.Linux是非常有趣的，别不相信——看完这篇文章，你一定会发现Linux系统神奇的用法。请注意，下面部分命令">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-05/cmatrix.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-05/asciiquarium.png">
 <meta property="og:updated_time" content="2019-04-07T12:32:23.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有趣的Linux命令行工具">
-<meta name="twitter:description" content="Linux is fun! Huhhh. OK so you don’t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.Linux是非常有趣的，别不相信——看完这篇文章，你一定会发现Linux系统神奇的用法。请注意，下面部分命令给出了两">
+<meta name="twitter:description" content="Linux is fun! Huhhh. OK so you don&amp;#39;t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.Linux是非常有趣的，别不相信——看完这篇文章，你一定会发现Linux系统神奇的用法。请注意，下面部分命令">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-05/cmatrix.png">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
-<link rel="canonical" href="https://zhangshuqiao.org/2018-05/有趣的Linux命令行工具/">
-<script id="page.configurations">
+<script id="page-configurations">
+// https://hexo.io/docs/variables.html
 CONFIG.page = {
 sidebar: "",
+isHome: false,
+isPost: true,
+isPage: false,
+isArchive: false
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-8784231462763562",
+enable_page_level_ads: true
+});
+</script>
 <title>有趣的Linux命令行工具 | 米米的博客</title>
 <noscript>
 <style>
@@ -98,7 +110,7 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left page-post-detail">
+<div class="container sidebar-position-left">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
@@ -123,29 +135,29 @@ top: initial;
 <nav class="site-nav">
 <ul id="menu" class="menu">
 <li class="menu-item menu-item-home">
-<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 </li>
 <li class="menu-item menu-item-archives">
-<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
+<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-about">
-<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br/>关于</a>
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
 </li>
 <li class="menu-item menu-item-categories">
-<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类</a>
+<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 </li>
 <li class="menu-item menu-item-tags">
-<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签</a>
+<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 </li>
 <li class="menu-item menu-item-朋友们">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br/>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-实验室">
-<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br/>实验室</a>
+<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
 </li>
 <li class="menu-item menu-item-search">
 <a href="javascript:;" class="popup-trigger">
-<i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
+<i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
 <div class="site-search">
@@ -172,7 +184,7 @@ type="text" id="local-search-input">
 <main id="main" class="main">
 <div class="main-inner">
 <div class="content-wrap">
-<div id="content" class="content">
+<div id="content" class="content page-post-detail">
 <div id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
@@ -203,13 +215,12 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon"
->
+<span class="post-meta-item" title="阅读次数">
+<span class="post-meta-item-icon">
 <i class="fa fa-file"></i>
-阅读次数：
-<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
+<span class="post-meta-item-text">阅读次数：</span>
+<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
 <span class="post-meta-item">
 <span class="post-meta-item-icon">
@@ -220,16 +231,15 @@ type="text" id="local-search-input">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-05/有趣的Linux命令行工具/" itemprop="commentCount"></span>
 </a>
 </span>
-<br/>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>Linux is fun! Huhhh. OK so you don’t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.<br>Linux是非常有趣的，别不相信——看完这篇文章，你一定会发现Linux系统神奇的用法。<br>请注意，下面部分命令给出了两种包管理软件的安装方式，如果是Debian系的系统，请使用<code>apt</code>，如果是Red Hat系的系统，请使用<code>yum</code>。如果你使用了其他Linux发行版，或使用了其他包管理工具（例如macOS上的brew），可能无法找到所有这些命令。<br><strong>注：为了在代码块中区别输入输出，以<code>$</code>开头的行代表输入，其它行代表输出。</strong></p>
+<p>Linux is fun! Huhhh. OK so you don&#39;t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.<br>Linux是非常有趣的，别不相信——看完这篇文章，你一定会发现Linux系统神奇的用法。<br>请注意，下面部分命令给出了两种包管理软件的安装方式，如果是Debian系的系统，请使用<code>apt</code>，如果是Red Hat系的系统，请使用<code>yum</code>。如果你使用了其他Linux发行版，或使用了其他包管理工具（例如macOS上的brew），可能无法找到所有这些命令。<br><strong>注：为了在代码块中区别输入输出，以<code>$</code>开头的行代表输入，其它行代表输出。</strong></p>
 <h2 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h2><p>命令：curl<br>curl用于互联网传输数据，支持多种协议。通过以下命令可以查看天气：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -4 http://wttr.in</span><br></pre></td></tr></table></figure>
-<h2 id="sl-Steam-Locomotive"><a href="#sl-Steam-Locomotive" class="headerlink" title="sl (Steam Locomotive)"></a>sl (Steam Locomotive)</h2><p>命令：sl（蒸汽机车的缩写）<br>You might be aware of command ‘ls’ the list command and use it frequently to view the contents of a folder but because of miss-typing sometimes you would result in ‘sl’, how about getting a little fun in terminal and not <code>command not found</code>.<br>你一定知道ls是用来显示文件夹内容的常见命令，但如果不小心打成sl呢？通过包管理工具安装它，你就能看见一辆跑过屏幕的火车，而不是『找不到命令』：</p>
+<h2 id="sl-Steam-Locomotive"><a href="#sl-Steam-Locomotive" class="headerlink" title="sl (Steam Locomotive)"></a>sl (Steam Locomotive)</h2><p>命令：sl（蒸汽机车的缩写）<br>You might be aware of command &#39;ls&#39; the list command and use it frequently to view the contents of a folder but because of miss-typing sometimes you would result in &#39;sl&#39;, how about getting a little fun in terminal and not <code>command not found</code>.<br>你一定知道ls是用来显示文件夹内容的常见命令，但如果不小心打成sl呢？通过包管理工具安装它，你就能看见一辆跑过屏幕的火车，而不是『找不到命令』：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ apt install sl <span class="comment">#In Debian like OS, or aptitude based system</span></span><br><span class="line">$ yum install sl <span class="comment">#In Red Hat like OS, or yum based system</span></span><br><span class="line">$ sl</span><br></pre></td></tr></table></figure>
-<p>This command works even when you type ‘LS’ and not ‘ls’.</p>
+<p>This command works even when you type &#39;LS&#39; and not &#39;ls&#39;.</p>
 <video src="/files/ezgif-4-7bb965bfb6.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
 <h2 id="telnet"><a href="#telnet" class="headerlink" title="telnet"></a>telnet</h2><p>命令：telnet<br>No! No!! it is not as much complex as it seems. You would be familiar with telnet. Telnet is a text-oriented bidirectional network protocol over network. Here is nothing to be installed. What you should have is a Linux box and a working Internet.<br>不！它并不像看上去那样复杂。你会熟悉它的。Telnet是一个基于文本的双向网络协议。你无需安装它，只需要一台能够联网的linux机器就行。<br>输入以下命令即可观看ASCII版星球大战：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ telnet towel.blinkenlights.nl</span><br></pre></td></tr></table></figure>
@@ -247,9 +257,9 @@ type="text" id="local-search-input">
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">for</span> i <span class="keyword">in</span> &#123;1..9&#125;; <span class="keyword">do</span> <span class="keyword">for</span> j <span class="keyword">in</span> $(seq 1 <span class="variable">$i</span>); <span class="keyword">do</span> <span class="built_in">echo</span> -ne <span class="variable">$i</span>*<span class="variable">$j</span>=$((i*j))\\t;<span class="keyword">done</span>; <span class="built_in">echo</span>;<span class="keyword">done</span></span><br><span class="line"></span><br><span class="line">1*1=1</span><br><span class="line">2*1=2   2*2=4</span><br><span class="line">3*1=3   3*2=6   3*3=9</span><br><span class="line">4*1=4   4*2=8   4*3=12  4*4=16</span><br><span class="line">5*1=5   5*2=10  5*3=15  5*4=20  5*5=25</span><br><span class="line">6*1=6   6*2=12  6*3=18  6*4=24  6*5=30  6*6=36</span><br><span class="line">7*1=7   7*2=14  7*3=21  7*4=28  7*5=35  7*6=42  7*7=49</span><br><span class="line">8*1=8   8*2=16  8*3=24  8*4=32  8*5=40  8*6=48  8*7=56  8*8=64</span><br><span class="line">9*1=9   9*2=18  9*3=27  9*4=36  9*5=45  9*6=54  9*7=63  9*8=72  9*9=81</span><br></pre></td></tr></table></figure>
 <h2 id="cowsay"><a href="#cowsay" class="headerlink" title="cowsay"></a>cowsay</h2><p>命令：cowsay<br>An ASCII cow in terminal that will say what ever you want.<br>一个终端里由ASCII码组成的牛，你想让它说什么，它就会说什么。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ apt install cowsay</span><br><span class="line">$ yum install cowsay</span><br><span class="line">$ cowsay I Love *nix</span><br><span class="line"></span><br><span class="line"> _____________</span><br><span class="line">&lt; I Love *nix &gt;</span><br><span class="line"> -------------</span><br><span class="line">        \   ^__^</span><br><span class="line">         \  (oo)\_______</span><br><span class="line">            (__)\       )\/\</span><br><span class="line">                ||----w |</span><br><span class="line">                ||     ||</span><br></pre></td></tr></table></figure>
-<p>How about pipelineing ‘fortune command’, described above with cowsay?<br>通过管道指令将fortune命令的输出作为cowsay的输入：</p>
+<p>How about pipelineing &#39;fortune command&#39;, described above with cowsay?<br>通过管道指令将fortune命令的输出作为cowsay的输入：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ fortune | cowsay</span><br><span class="line"></span><br><span class="line">_________________________________________</span><br><span class="line">/ Q: How many Oregonians does it take to  \</span><br><span class="line">| screw <span class="keyword">in</span> a light bulb? A: Three. One to |</span><br><span class="line">| screw <span class="keyword">in</span> the light bulb and two to fend |</span><br><span class="line">| off all those                           |</span><br><span class="line">|                                         |</span><br><span class="line">| Californians trying to share the        |</span><br><span class="line">\ experience.                             /</span><br><span class="line">-----------------------------------------</span><br><span class="line">        \   ^__^</span><br><span class="line">         \  (oo)\_______</span><br><span class="line">            (__)\       )\/\</span><br><span class="line">                ||----w |</span><br><span class="line">                ||     ||</span><br></pre></td></tr></table></figure>
-<p>Note: ‘|‘ is called pipeline instruction and it is used where the output of one command needs to be the input of another command. In the above example the output of ‘fortune’ command acts as an input of ‘cowsay’ command. This pipeline instruction is frequently used in scripting and programming.<br>注意：’|‘被称为管道指令，用于将一个命令的输出作为另一个命令的输入。在上面的例子中，fortune命令的输出作为cowsay命令的输入。管道指令经常用于脚本和编程。<br>xcowsay is a graphical program which response similar to cowsay but in a graphical manner, hence it is X of cowsay.<br>xcowsay是一个图形程序，其效果类似于cowsay，但是是以图形方式显示说话的牛。</p>
+<p>Note: &#39;|&#39; is called pipeline instruction and it is used where the output of one command needs to be the input of another command. In the above example the output of &#39;fortune&#39; command acts as an input of &#39;cowsay&#39; command. This pipeline instruction is frequently used in scripting and programming.<br>注意：&#39;|&#39;被称为管道指令，用于将一个命令的输出作为另一个命令的输入。在上面的例子中，fortune命令的输出作为cowsay命令的输入。管道指令经常用于脚本和编程。<br>xcowsay is a graphical program which response similar to cowsay but in a graphical manner, hence it is X of cowsay.<br>xcowsay是一个图形程序，其效果类似于cowsay，但是是以图形方式显示说话的牛。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt install xcowsay</span><br><span class="line">$ xcowsay I Love nix</span><br></pre></td></tr></table></figure>
 <p>cowthink is another command, just run <code>cowthink Linux is sooo funny</code> and see the difference in output of cowsay and cowthink. cowthink是另一个命令，你可以执行<code>cowthink Linux is sooo funny</code>看看它和cowthink的输出差异。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ apt install cowthink</span><br><span class="line">$ brew install cowthink</span><br><span class="line">$ cowthink ....Linux is sooo funny</span><br><span class="line"></span><br><span class="line"> _________________________</span><br><span class="line">( ....Linux is sooo funny )</span><br><span class="line"> -------------------------</span><br><span class="line">        o   ^__^</span><br><span class="line">         o  (oo)\_______</span><br><span class="line">            (__)\       )\/\</span><br><span class="line">                ||----w |</span><br><span class="line">                ||     ||</span><br></pre></td></tr></table></figure>
@@ -257,30 +267,30 @@ type="text" id="local-search-input">
 <h2 id="yes"><a href="#yes" class="headerlink" title="yes"></a>yes</h2><p>命令：yes<br>It is funny but useful as well, specially in scripts and for System Administrators where an automated predefined response can be passed to terminal or generated.<br>它很有趣，也很实用。使用yes，终端将会不断输出你所输入的字符串。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ yes I Love Linux</span><br><span class="line"></span><br><span class="line">I Love Linux</span><br><span class="line">I Love Linux</span><br><span class="line">I Love Linux</span><br><span class="line">I Love Linux</span><br><span class="line">I Love Linux</span><br><span class="line">I Love Linux</span><br></pre></td></tr></table></figure>
 <p>Note: (Till you interrupt i.e <kbd>Ctrl</kbd>+<kbd>C</kbd>).<br>直到你使用<kbd>Ctrl</kbd>+<kbd>C</kbd>结束它，否则会一直输出。</p>
-<h2 id="toilet"><a href="#toilet" class="headerlink" title="toilet"></a>toilet</h2><p>命令：toilet<br>What? Are u kidding, huhh no! Definitely not, but for sure this command name itself is too funny, and I don’t know from where this command gets it’s name.<br>什么？你在开玩笑吗，不！绝对不是，但肯定这个命令名称本身太有趣了，我不知道这个命令从哪里得到它的名字。</p>
+<h2 id="toilet"><a href="#toilet" class="headerlink" title="toilet"></a>toilet</h2><p>命令：toilet<br>What? Are u kidding, huhh no! Definitely not, but for sure this command name itself is too funny, and I don&#39;t know from where this command gets it&#39;s name.<br>什么？你在开玩笑吗，不！绝对不是，但肯定这个命令名称本身太有趣了，我不知道这个命令从哪里得到它的名字。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ apt install toilet</span><br><span class="line">$ brew install toilet</span><br><span class="line">$ toilet mimi</span><br><span class="line"></span><br><span class="line">          <span class="string">"             "</span></span><br><span class="line"> mmmmm  mmm    mmmmm  mmm</span><br><span class="line"> <span class="comment"># # #    #    # # #    #</span></span><br><span class="line"> <span class="comment"># # #    #    # # #    #</span></span><br><span class="line"> <span class="comment"># # #  mm#mm  # # #  mm#mm</span></span><br></pre></td></tr></table></figure>
 <p>It even offers some kind of color and fonts style.<br>它甚至提供了颜色和字体样式。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ toilet -f mono12 -F metal mimi.com</span><br></pre></td></tr></table></figure>
 <p>Note: Figlet is another command that more or less provide such kind of effect in terminal.<br>注意：Figlet是另一个或多或少在终端提供这种效果的命令。</p>
-<h2 id="cmatrix"><a href="#cmatrix" class="headerlink" title="cmatrix"></a>cmatrix</h2><p>命令：cmatrix<br>You might have seen Hollywood movie ‘matrix’ and would be fascinated with power, Neo was provided with, to see anything and everything in matrix or you might think of an animation that looks alike Hacker’s desktop.<br>你可能已经看过好莱坞电影《黑客帝国》，并且会被Neo获取的力量所吸引——在矩阵中看到一切；或许你也会想到一个看起来和Hacker的桌面一样的动画。</p>
+<h2 id="cmatrix"><a href="#cmatrix" class="headerlink" title="cmatrix"></a>cmatrix</h2><p>命令：cmatrix<br>You might have seen Hollywood movie &#39;matrix&#39; and would be fascinated with power, Neo was provided with, to see anything and everything in matrix or you might think of an animation that looks alike Hacker&#39;s desktop.<br>你可能已经看过好莱坞电影《黑客帝国》，并且会被Neo获取的力量所吸引——在矩阵中看到一切；或许你也会想到一个看起来和Hacker的桌面一样的动画。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ apt install cmatrix</span><br><span class="line">$ brew install cmatrix</span><br><span class="line">$ cmatrix</span><br></pre></td></tr></table></figure>
 <p>yum上似乎找不到，可以使用<a href="https://github.com/abishekvashok/cmatrix" target="_blank" rel="noopener">源码</a>编译安装。</p>
 <p><img src="/images/2018-05/cmatrix.png" alt></p>
-<h2 id="oneko"><a href="#oneko" class="headerlink" title="oneko"></a>oneko</h2><p>命令：oneko<br>OK so you believe that mouse pointer of Linux is the same silly black/white pointer where no animation lies then I fear you could be wrong. <code>oneko</code> is a package that will attach a “Jerry” with you mouse pointer and moves along with you pointer.<br>如果你觉得Linux的鼠标就是一个愚蠢的黑色/白色指针，而没有动画，我担心你可能是错的。使用<code>oneko</code>命令，就可以创造一只与你的鼠标指针玩耍的猫。</p>
+<h2 id="oneko"><a href="#oneko" class="headerlink" title="oneko"></a>oneko</h2><p>命令：oneko<br>OK so you believe that mouse pointer of Linux is the same silly black/white pointer where no animation lies then I fear you could be wrong. <code>oneko</code> is a package that will attach a &quot;Jerry&quot; with you mouse pointer and moves along with you pointer.<br>如果你觉得Linux的鼠标就是一个愚蠢的黑色/白色指针，而没有动画，我担心你可能是错的。使用<code>oneko</code>命令，就可以创造一只与你的鼠标指针玩耍的猫。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ apt install oneko</span><br><span class="line">$ yum install oneko</span><br><span class="line">$ oneko</span><br></pre></td></tr></table></figure>
 <p>Note: Once you close the terminal from which oneko was run, jerry will disappear, nor will start at start-up. You can add the application to start up and continue enjoying.<br>注意：一旦你关闭了运行oneko的终端，小猫就会消失。你可以把它添加到开机启动中，继续享受撸猫的乐趣。</p>
 <h2 id="while"><a href="#while" class="headerlink" title="while"></a>while</h2><p>命令：while<br>The below <code>while</code> command is a script which provides you with colored date and file till you interrupt (<kbd>Ctrl</kbd>+<kbd>C</kbd>). Just copy and paste the below code in terminal.<br>下面的<code>while</code>命令是一个脚本，它会为你提供彩色日期和文件，直到你用<kbd>Ctrl</kbd>+<kbd>C</kbd>中断。只需在终端中复制并粘贴以下代码即可。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">while</span> <span class="literal">true</span>; <span class="keyword">do</span> <span class="built_in">echo</span> <span class="string">"<span class="variable">$(date '+%D %T' | toilet -f term -F border --gay)</span>"</span>; sleep 1; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <p>Note: The above script when modified with following command, will gives similar output but with a little difference, check it in your terminal.<br>注意：上面的脚本在使用以下命令修改后，会给出类似的输出，但有一点区别，请在终端中检查它。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">while</span> <span class="literal">true</span>; <span class="keyword">do</span> clear; <span class="built_in">echo</span> <span class="string">"<span class="variable">$(date '+%D %T' | toilet -f term -F border --gay)</span>"</span>; sleep 1; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<h2 id="espeak"><a href="#espeak" class="headerlink" title="espeak"></a>espeak</h2><p>命令：espeak<br>Just Turn the Knob of your multimedia speaker to full before pasting this command in your terminal and let us know how you felt listening the god’s voice.<br>在将此命令粘贴到终端之前，请将你的音箱音量开到最大，让我们知道你是如何聆听上帝的声音的。</p>
+<h2 id="espeak"><a href="#espeak" class="headerlink" title="espeak"></a>espeak</h2><p>命令：espeak<br>Just Turn the Knob of your multimedia speaker to full before pasting this command in your terminal and let us know how you felt listening the god&#39;s voice.<br>在将此命令粘贴到终端之前，请将你的音箱音量开到最大，让我们知道你是如何聆听上帝的声音的。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ apt install espeak</span><br><span class="line">$ yum install espeak</span><br><span class="line">$ espeak <span class="string">"This is a very good website dedicated to Foss Community"</span></span><br></pre></td></tr></table></figure>
 <h2 id="aafire"><a href="#aafire" class="headerlink" title="aafire"></a>aafire</h2><p>命令：aafire<br>How about fire in your terminal. Just type <code>aafire</code> in the terminal, without quotes and see the magic. Press any key to interrupt the program.<br>在你的终端放火，听上去如何？只需在终端输入<code>aafire</code>，就可以看到神奇的现象。按任意键中断程序。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt install libaa-bin</span><br><span class="line">$ aafire</span><br></pre></td></tr></table></figure>
 <h2 id="bb"><a href="#bb" class="headerlink" title="bb"></a>bb</h2><p>命令：bb<br>First install <code>apt insatll bb</code> and then, type <code>bb</code> in terminal and see what happens.<br>首先用<code>apt</code>安装<code>bb</code>命令，然后在终端输入<code>bb</code>，看看会发生什么。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt install bb</span><br><span class="line">$ bb</span><br></pre></td></tr></table></figure>
 <p><strong>注：需要图形界面。</strong></p>
-<h2 id="url"><a href="#url" class="headerlink" title="url"></a>url</h2><p>命令：url<br>Won’t it be an awesome feeling for you if you can update you twitter status from command line in front of your friend and they seems impressed. OK just replace username, password and your status message with your’s username, password and “your status message”.<br>如果你可以在你的朋友面前通过命令行更新你的Twitter状态，这绝对是超棒的感觉——而且他们也会印象深刻。好的，只需把下面的YourUsername，YourPassword和Your status message替换为你自己的用户名，密码和状态信息即可。</p>
+<h2 id="url"><a href="#url" class="headerlink" title="url"></a>url</h2><p>命令：url<br>Won&#39;t it be an awesome feeling for you if you can update you twitter status from command line in front of your friend and they seems impressed. OK just replace username, password and your status message with your&#39;s username, password and &quot;your status message&quot;.<br>如果你可以在你的朋友面前通过命令行更新你的Twitter状态，这绝对是超棒的感觉——而且他们也会印象深刻。好的，只需把下面的YourUsername，YourPassword和Your status message替换为你自己的用户名，密码和状态信息即可。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ url -u YourUsername:YourPassword -d status=<span class="string">"Your status message"</span> http://twitter.com/statuses/update.xml</span><br></pre></td></tr></table></figure>
 <h2 id="ASCIIquarium"><a href="#ASCIIquarium" class="headerlink" title="ASCIIquarium"></a>ASCIIquarium</h2><p>命令：ASCIIquarium<br>How it will be to get an aquarium in terminal.<br>怎样才能在终端获得一个水族馆？</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ apt install libcurses-perl</span><br><span class="line">$ <span class="built_in">cd</span> /tmp</span><br><span class="line">$ wget http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/Term-Animation-2.4.tar.gz</span><br><span class="line">$ tar -zxvf Term-Animation-2.4.tar.gz</span><br><span class="line">$ <span class="built_in">cd</span> Term-Animation-2.4</span><br><span class="line">$ perl Makefile.PL &amp;&amp; make &amp;&amp; make <span class="built_in">test</span></span><br><span class="line">$ make install</span><br></pre></td></tr></table></figure>
@@ -383,7 +393,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">106</span>
+<span class="site-state-item-count">107</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -395,7 +405,7 @@ alt="张书樵">
 </div>
 <div class="site-state-item site-state-tags">
 <a href="/tags/">
-<span class="site-state-item-count">23</span>
+<span class="site-state-item-count">24</span>
 <span class="site-state-item-name">标签</span>
 </a>
 </div>
@@ -412,7 +422,7 @@ alt="张书樵">
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
-<a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+<a href="https://zsq.im" title="https://zsq.im" rel="noopener" target="_blank">ZSQ.IM</a>
 </li>
 <li class="links-of-blogroll-item">
 <a href="https://three-body.org" title="https://three-body.org" rel="noopener" target="_blank">Three Body</a>
@@ -442,7 +452,7 @@ alt="张书樵">
 <span class="author" itemprop="copyrightHolder">张书樵</span>
 </div>
 <div class="busuanzi-count">
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span class="post-meta-item-icon">
 <i class="fa fa-user"></i>
 </span>
@@ -466,26 +476,20 @@ alt="张书樵">
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
-<script src="/js/utils.js?v=7.2.0"></script>
-<script src="/js/motion.js?v=7.2.0"></script>
-<script src="/js/affix.js?v=7.2.0"></script>
-<script src="/js/schemes/pisces.js?v=7.2.0"></script>
-<script src="/js/scrollspy.js?v=7.2.0"></script>
-<script src="/js/post-details.js?v=7.2.0"></script>
-<script src="/js/next-boot.js?v=7.2.0"></script>
-<script src="/js/local-search.js?v=7.2.0"></script>
-<script>
+<script src="/js/utils.js?v=7.3.0"></script>
+<script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/affix.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+<script src="/js/local-search.js?v=7.3.0"></script>
+<script pjax>
 if ($('body').find('div.pdf').length) {
-$.ajax({
-type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
-dataType: 'script',
-cache: true,
-success: function() {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
 $('body').find('div.pdf').each(function(i, o) {
 PDFObject.embed($(o).attr('target'), $(o), {
 pdfOpenParams: {
@@ -499,12 +503,14 @@ PDFJS_URL: '/lib/pdf/web/viewer.html',
 height: $(o).attr('height') || '1000px'
 });
 });
-},
-});
+}, window.PDFObject);
 }
 </script>
-<script src="/lib/Valine.min.js"></script>
+<div id="pjax">
+<script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
 <script>
+NexT.utils.getScript('/lib/Valine.min.js', function() {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
 guest = guest.split(',').filter(function(item) {
@@ -521,12 +527,47 @@ avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
 visitor: false,
-lang: '' || 'zh-cn'
+lang: '' || 'zh-cn',
+path: location.pathname
+});
+}, window.Valine);
+</script>
+</div>
+<script>
+var pjax = new Pjax({
+selectors: [
+'title',
+'#page-configurations',
+'.content-wrap',
+'.sidebar-inner',
+'#pjax'
+],
+switches: {
+'.sidebar-inner': Pjax.switches.innerHTML
+},
+analytics: false,
+cacheBust: false,
+scrollTo: !CONFIG.save_scroll
+});
+$(document).on('pjax:send', function() {
+$('.sidebar-inner').stop().fadeTo('fast', 0);
+CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
+});
+$(document).on('pjax:success', function() {
+$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
+$(o).parent().append($(o).remove());
+});
+// Define Motion Sequence & Bootstrap Motion.
+if (CONFIG.motion.enable) {
+NexT.motion.integrator
+.init()
+.add(NexT.motion.middleWares.postList)
+.bootstrap();
+}
+$('.sidebar-inner .motion-element').css('opacity', 1);
+$('.sidebar-inner').fadeTo('fast', 1);
+NexT.utils.updateSidebarPosition();
 });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
-<script src="/lib/waifu/live2d.min.js"></script>
-<script src="/lib/waifu/waifu-tips.js"></script>
-<script src="/lib/custom.js"></script>
 </body>
 </html>

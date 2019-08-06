@@ -6,24 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<script id="hexo.configurations">
+<script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.2.0',
+version: '7.3.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+save_scroll: true,
 copycode: {"enable":true,"show_result":true,"style":"mac"},
 fancybox: false,
 mediumzoom: true,
@@ -36,11 +37,8 @@ indexName: '',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
-localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},
-search: {
-root: '/',
-path: 'search.json'
-},
+localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
+path: 'search.json',
 tabs: true,
 motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
@@ -71,13 +69,27 @@ copy_failure: '复制失败'
 <meta name="twitter:description" content="The finished Morse key sitting happily on my laptop. Full project details below.最终完成的莫尔斯键盘与笔记本电脑的合影～整个项目的细节如下： Background: I can just about remember growing up around beautifully designed analogue de">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-01/Vi93ahx.jpg">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
-<link rel="canonical" href="https://zhangshuqiao.org/2018-01/将摩尔斯电键改造为USB键盘/">
-<script id="page.configurations">
+<script id="page-configurations">
+// https://hexo.io/docs/variables.html
 CONFIG.page = {
 sidebar: "",
+isHome: false,
+isPost: true,
+isPage: false,
+isArchive: false
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-8784231462763562",
+enable_page_level_ads: true
+});
+</script>
 <title>将摩尔斯电键改造为USB键盘 | 米米的博客</title>
 <noscript>
 <style>
@@ -103,7 +115,7 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left page-post-detail">
+<div class="container sidebar-position-left">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
@@ -128,29 +140,29 @@ top: initial;
 <nav class="site-nav">
 <ul id="menu" class="menu">
 <li class="menu-item menu-item-home">
-<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 </li>
 <li class="menu-item menu-item-archives">
-<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
+<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-about">
-<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br/>关于</a>
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
 </li>
 <li class="menu-item menu-item-categories">
-<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类</a>
+<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 </li>
 <li class="menu-item menu-item-tags">
-<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签</a>
+<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 </li>
 <li class="menu-item menu-item-朋友们">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br/>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-实验室">
-<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br/>实验室</a>
+<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
 </li>
 <li class="menu-item menu-item-search">
 <a href="javascript:;" class="popup-trigger">
-<i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
+<i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
 <div class="site-search">
@@ -177,7 +189,7 @@ type="text" id="local-search-input">
 <main id="main" class="main">
 <div class="main-inner">
 <div class="content-wrap">
-<div id="content" class="content">
+<div id="content" class="content page-post-detail">
 <div id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
@@ -208,13 +220,12 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon"
->
+<span class="post-meta-item" title="阅读次数">
+<span class="post-meta-item-icon">
 <i class="fa fa-file"></i>
-阅读次数：
-<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
+<span class="post-meta-item-text">阅读次数：</span>
+<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
 <span class="post-meta-item">
 <span class="post-meta-item-icon">
@@ -225,33 +236,32 @@ type="text" id="local-search-input">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-01/将摩尔斯电键改造为USB键盘/" itemprop="commentCount"></span>
 </a>
 </span>
-<br/>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p><img src="/images/2018-01/Vi93ahx.jpg" alt></p>
 <p>The finished Morse key sitting happily on my laptop. Full project details below.<br>最终完成的莫尔斯键盘与笔记本电脑的合影～整个项目的细节如下：</p>
-<p>Background: I can just about remember growing up around beautifully designed analogue devices like rotary dial phones, typewriters, and record players. I’ve always like the idea of converting these largely defunct objects into digital devices, and my Dad’s old Morse key seemed like a simple project to get started on.<br>背景：打从记事以来，我就生活在设计精美的模拟设备的环境中，比如旋转式拨号电话，打字机和唱片机。我一直有把这些大部分现在不常用的东西转换成数字设备的想法，而这其中，老爸的旧莫尔斯电键看起来像是一个简单的项目。</p>
+<p>Background: I can just about remember growing up around beautifully designed analogue devices like rotary dial phones, typewriters, and record players. I&#39;ve always like the idea of converting these largely defunct objects into digital devices, and my Dad&#39;s old Morse key seemed like a simple project to get started on.<br>背景：打从记事以来，我就生活在设计精美的模拟设备的环境中，比如旋转式拨号电话，打字机和唱片机。我一直有把这些大部分现在不常用的东西转换成数字设备的想法，而这其中，老爸的旧莫尔斯电键看起来像是一个简单的项目。</p>
 <a id="more"></a>
 <p>Morse code is an internationally recognised way of representing letters of the alphabet (a-z) and numbers (0–9) as a series of dots and dashes. During WW1 and WW2, it became a handy way of sending encrypted messages across long distances and quite possibly sent carrier pigeon unemployment rates skyrocketing. A conventional Morse key acts like a switch, making and breaking a circuit connection to transmit these dots and dashes as short and long beeps over radio waves.<br>莫尔斯电码是一种将国际公认的字母表（a-z）和数字（0-9）字母表示为一系列点和破折号的方式。在一战和二战期间，它变成了一个十分方便发送加密的信息的方式。传统的莫尔斯电键就像一个开关，联通和断开电路连接就能通过无线电波传播这些点和点的音长。</p>
-<p>The idea was that the Morse key would behave like a keyboard when plugged into any laptop or PC’s USB 3.0 port; the user could key in messages in Morse code, and the corresponding English alphanumeric characters would appear on screen. Code for the project is here (<a href="https://github.com/nomblr/morse" target="_blank" rel="noopener">https://github.com/nomblr/morse/</a>) and full details are below.<br>所以我就想到当插入任何笔记本电脑或PC的USB 3.0端口时，莫尔斯键的行为就像一个键盘；用户可以用莫尔斯电码键入信息，并在屏幕上出现相应的英文字母数字字符。这个项目的代码我po到了Github上，有心人都可以去尝试一下。</p>
+<p>The idea was that the Morse key would behave like a keyboard when plugged into any laptop or PC&#39;s USB 3.0 port; the user could key in messages in Morse code, and the corresponding English alphanumeric characters would appear on screen. Code for the project is here (<a href="https://github.com/nomblr/morse" target="_blank" rel="noopener">https://github.com/nomblr/morse/</a>) and full details are below.<br>所以我就想到当插入任何笔记本电脑或PC的USB 3.0端口时，莫尔斯键的行为就像一个键盘；用户可以用莫尔斯电码键入信息，并在屏幕上出现相应的英文字母数字字符。这个项目的代码我po到了Github上，有心人都可以去尝试一下。</p>
 <p><img src="/images/2018-01/wb72Pzy.jpg" alt></p>
 <p>The Morse key was incredibly dusty and attached to a nasty plastic base, so I took the whole thing apart, scrapped the base, and gave the Morse key a good clean.<br>莫尔斯电键积了很多灰尘，而且装在一个很丑的塑料基地上，因此我准备把所有东西都拆开，把莫尔斯电键清洁干净。</p>
 <p><img src="/images/2018-01/k8vNI65.jpg" alt></p>
-<p>Some wet wipes did the job nicely, and I also sanded down the two metal contacts (the ‘switch’) a tiny bit to improve the electrical connection and remove some of the accumulated gunk.<br>使用湿纸巾，这项工作完成的很出色。并且我还仔细打磨了两个金属触点（即『开关』），改善电路连接的情况并去除一些沉积的脏东西。</p>
+<p>Some wet wipes did the job nicely, and I also sanded down the two metal contacts (the &#39;switch&#39;) a tiny bit to improve the electrical connection and remove some of the accumulated gunk.<br>使用湿纸巾，这项工作完成的很出色。并且我还仔细打磨了两个金属触点（即『开关』），改善电路连接的情况并去除一些沉积的脏东西。</p>
 <p><img src="/images/2018-01/4kpenAM.jpg" alt></p>
 <p>Converting the (VERY analogue) Morse key into a digital device was the next step. To do this I used a tiny, cheap micro-controller aptly named a Teensy 3.2 (<a href="https://www.pjrc.com/teensy" target="_blank" rel="noopener">https://www.pjrc.com/teensy/</a>). The Teensy has 28 pins, each of which can be configured as an input or an output; because I wanted to the Teensy to receive signals from the Morse key, I configured Pin 7 of the Teensy as an input and wired it to one connection on Morse key. (This was an arbitrary choice, any of the I/O pins would have worked just fine.) I then wired the ground pin of the Teensy to the other connection on the Morse key.<br>接下来就是将电键转换为数字设备。为了实现这一点，我使用一个小巧，便宜的微型控制器——Teensy 3.2。</p>
 <p>This was my first foray into working with electronics or microcomputers so feel free to imagine a progress montage punctuated by thoughtful moustache stroking scenes, eighties music and gratuitous but entirely pointless shots of the terminal.<br>这是我第一次尝试做这种事，你可以想象当我点亮并且成功运行的时候，我的内心是多么喜悦。</p>
-<p>I wrote some test code for the Teensy to make sure it was working with the Morse key as expected; I expected to see ‘KEY PRESS’ printed out once every time I pressed the Morse key down once. This is where I hit my first problem. Mechanical switches don’t make perfect physical or electrical contact when they’re pressed; they’ll typically oscillate between being ‘open’ and ‘closed’ a few times over ～1ms before settling down to a stable ‘closed’ state. Microcomputers are fast enough to detect these oscillations so when I pressed my Morse key down just once, the Teensy detected several rapid key presses as shown in the photo. This effect is called ‘bounce’ and luckily there’s a built-in Teensy library (<a href="https://playground.arduino.cc/Code/Bounce" target="_blank" rel="noopener">https://playground.arduino.cc/Code/Bounce</a>) that compensates for it.<br>为了确保Teensy正确按照预期『翻译』莫尔斯密码，我为Teensy写了一些测试代码。因此每当按下莫尔斯电键一次，我就会看到电脑端有字符输出。然而很快我就遇到了一个问题：机械开关按下时不能形成完美的物理接触（通常在『通路』和『断路』之间摆动几次，持续约1ms，然后稳定到『通路』状态）。计算机能够快速检测到这些振荡，所以当我按下我的莫尔斯电键时，Teensy检测到照片中显示的几个快速按键。这种效应称为『反弹』，幸好内置的Teensy库能够补偿它。</p>
-<p>Once the Teensy could successfully detect single Morse key presses, I needed a way to differentiate the pauses between dots, dashes, letters, and words. Implementing a method for the Teensy to figure out relative timings for individual users would’ve involved a fair amount of faff, so I used absolute timings based on my own keying speeds. A threshold of 150ms was used to differentiate dots from dashes, and pauses between letters and words were set to 500ms and 3000ms. Of course, this configuration will break down with a faster or slower Morse operator, but as my old engineering tutor used to say, “good engineers are smart but lazy”, which for the purposes of this project I will choose to interpret as “good engineers are lazy”.<br>为了Teensy能够成功检测到每次点击莫尔斯电键的不同，来区分点、破折号、字母和单词之间的停顿。我在绝对时间的基础上结合自己的键控速度。用150ms的阈值来区分短划线，并且字母和单词之间的时间间隔被设置为500ms和3000ms。当然，每个人的习惯都不一样，这个就要自己把握了。</p>
+<p>I wrote some test code for the Teensy to make sure it was working with the Morse key as expected; I expected to see &#39;KEY PRESS&#39; printed out once every time I pressed the Morse key down once. This is where I hit my first problem. Mechanical switches don&#39;t make perfect physical or electrical contact when they&#39;re pressed; they&#39;ll typically oscillate between being &#39;open&#39; and &#39;closed&#39; a few times over ～1ms before settling down to a stable &#39;closed&#39; state. Microcomputers are fast enough to detect these oscillations so when I pressed my Morse key down just once, the Teensy detected several rapid key presses as shown in the photo. This effect is called &#39;bounce&#39; and luckily there&#39;s a built-in Teensy library (<a href="https://playground.arduino.cc/Code/Bounce" target="_blank" rel="noopener">https://playground.arduino.cc/Code/Bounce</a>) that compensates for it.<br>为了确保Teensy正确按照预期『翻译』莫尔斯密码，我为Teensy写了一些测试代码。因此每当按下莫尔斯电键一次，我就会看到电脑端有字符输出。然而很快我就遇到了一个问题：机械开关按下时不能形成完美的物理接触（通常在『通路』和『断路』之间摆动几次，持续约1ms，然后稳定到『通路』状态）。计算机能够快速检测到这些振荡，所以当我按下我的莫尔斯电键时，Teensy检测到照片中显示的几个快速按键。这种效应称为『反弹』，幸好内置的Teensy库能够补偿它。</p>
+<p>Once the Teensy could successfully detect single Morse key presses, I needed a way to differentiate the pauses between dots, dashes, letters, and words. Implementing a method for the Teensy to figure out relative timings for individual users would&#39;ve involved a fair amount of faff, so I used absolute timings based on my own keying speeds. A threshold of 150ms was used to differentiate dots from dashes, and pauses between letters and words were set to 500ms and 3000ms. Of course, this configuration will break down with a faster or slower Morse operator, but as my old engineering tutor used to say, &quot;good engineers are smart but lazy&quot;, which for the purposes of this project I will choose to interpret as &quot;good engineers are lazy&quot;.<br>为了Teensy能够成功检测到每次点击莫尔斯电键的不同，来区分点、破折号、字母和单词之间的停顿。我在绝对时间的基础上结合自己的键控速度。用150ms的阈值来区分短划线，并且字母和单词之间的时间间隔被设置为500ms和3000ms。当然，每个人的习惯都不一样，这个就要自己把握了。</p>
 <p><img src="/images/2018-01/hncjuCW.jpg" alt></p>
-<p>With the Teensy fully programmed, I was ready to build a wooden base to hide the electronics underneath the Morse key, with holes to feed through the two wires connecting the Morse key to the Teensy. I’d like to say I chose wood for aesthetic reasons, but in reality all my attempts at 3D printing a base failed so abysmally that I decided to try my luck with a plank I found lying around at my local Hackspace, of approximate width 130mm and depth 20mm.<br>Teensy编程完后，我准备制作一个隐藏莫尔斯电键下方的电子设备的木质底座，并且底座上有两个孔，用于连接Teensy到莫尔斯电键的电线。为啥选木材而不是3D打印呢？其实不是美观不美观的问题，而是因为用3D打印出来的底座都适配失败了。</p>
+<p>With the Teensy fully programmed, I was ready to build a wooden base to hide the electronics underneath the Morse key, with holes to feed through the two wires connecting the Morse key to the Teensy. I&#39;d like to say I chose wood for aesthetic reasons, but in reality all my attempts at 3D printing a base failed so abysmally that I decided to try my luck with a plank I found lying around at my local Hackspace, of approximate width 130mm and depth 20mm.<br>Teensy编程完后，我准备制作一个隐藏莫尔斯电键下方的电子设备的木质底座，并且底座上有两个孔，用于连接Teensy到莫尔斯电键的电线。为啥选木材而不是3D打印呢？其实不是美观不美观的问题，而是因为用3D打印出来的底座都适配失败了。</p>
 <p><img src="/images/2018-01/WjlHEcO.jpg" alt></p>
 <p>I sawed the plank down to 110x90mm so the Morse key would fit nicely on top, and chiselled out an indentation of approximate dimensions 50x40x10mm on the underside, so fit the Teensy and wiring.<br>我把木板锯成110x90mm，这样莫尔斯电键可以很恰当地放在上面。在下方我凿出了一个尺寸约为50x40x10mm的凹痕，用于放置微控制器Teensy和布线。</p>
 <p><img src="/images/2018-01/ocVQDyq.jpg" alt></p>
 <p>I sanded the whole thing down and connected it to my laptop. You can see it in action here: <a href="https://www.youtube.com/watch?v=qh_apYcr4xI" target="_blank" rel="noopener">https://www.youtube.com/watch?v=qh_apYcr4xI</a><br>最后我打磨了一下新的键盘，并将其连接到我的笔记本电脑上。</p>
 <hr>
-<p>本文翻译自：<a href="https://imgur.com/gallery/lNAtQ" target="_blank" rel="noopener">I Turned my Dad’s 1950s Morse Key into a USB Keyboard</a></p>
+<p>本文翻译自：<a href="https://imgur.com/gallery/lNAtQ" target="_blank" rel="noopener">I Turned my Dad&#39;s 1950s Morse Key into a USB Keyboard</a></p>
 </div>
 <div>
 <div id="reward-container">
@@ -332,7 +342,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">106</span>
+<span class="site-state-item-count">107</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -344,7 +354,7 @@ alt="张书樵">
 </div>
 <div class="site-state-item site-state-tags">
 <a href="/tags/">
-<span class="site-state-item-count">23</span>
+<span class="site-state-item-count">24</span>
 <span class="site-state-item-name">标签</span>
 </a>
 </div>
@@ -361,7 +371,7 @@ alt="张书樵">
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
-<a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+<a href="https://zsq.im" title="https://zsq.im" rel="noopener" target="_blank">ZSQ.IM</a>
 </li>
 <li class="links-of-blogroll-item">
 <a href="https://three-body.org" title="https://three-body.org" rel="noopener" target="_blank">Three Body</a>
@@ -384,7 +394,7 @@ alt="张书樵">
 <span class="author" itemprop="copyrightHolder">张书樵</span>
 </div>
 <div class="busuanzi-count">
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span class="post-meta-item-icon">
 <i class="fa fa-user"></i>
 </span>
@@ -408,26 +418,20 @@ alt="张书樵">
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
-<script src="/js/utils.js?v=7.2.0"></script>
-<script src="/js/motion.js?v=7.2.0"></script>
-<script src="/js/affix.js?v=7.2.0"></script>
-<script src="/js/schemes/pisces.js?v=7.2.0"></script>
-<script src="/js/scrollspy.js?v=7.2.0"></script>
-<script src="/js/post-details.js?v=7.2.0"></script>
-<script src="/js/next-boot.js?v=7.2.0"></script>
-<script src="/js/local-search.js?v=7.2.0"></script>
-<script>
+<script src="/js/utils.js?v=7.3.0"></script>
+<script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/affix.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+<script src="/js/local-search.js?v=7.3.0"></script>
+<script pjax>
 if ($('body').find('div.pdf').length) {
-$.ajax({
-type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
-dataType: 'script',
-cache: true,
-success: function() {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
 $('body').find('div.pdf').each(function(i, o) {
 PDFObject.embed($(o).attr('target'), $(o), {
 pdfOpenParams: {
@@ -441,12 +445,14 @@ PDFJS_URL: '/lib/pdf/web/viewer.html',
 height: $(o).attr('height') || '1000px'
 });
 });
-},
-});
+}, window.PDFObject);
 }
 </script>
-<script src="/lib/Valine.min.js"></script>
+<div id="pjax">
+<script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
 <script>
+NexT.utils.getScript('/lib/Valine.min.js', function() {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
 guest = guest.split(',').filter(function(item) {
@@ -463,12 +469,47 @@ avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
 visitor: false,
-lang: '' || 'zh-cn'
+lang: '' || 'zh-cn',
+path: location.pathname
+});
+}, window.Valine);
+</script>
+</div>
+<script>
+var pjax = new Pjax({
+selectors: [
+'title',
+'#page-configurations',
+'.content-wrap',
+'.sidebar-inner',
+'#pjax'
+],
+switches: {
+'.sidebar-inner': Pjax.switches.innerHTML
+},
+analytics: false,
+cacheBust: false,
+scrollTo: !CONFIG.save_scroll
+});
+$(document).on('pjax:send', function() {
+$('.sidebar-inner').stop().fadeTo('fast', 0);
+CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
+});
+$(document).on('pjax:success', function() {
+$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
+$(o).parent().append($(o).remove());
+});
+// Define Motion Sequence & Bootstrap Motion.
+if (CONFIG.motion.enable) {
+NexT.motion.integrator
+.init()
+.add(NexT.motion.middleWares.postList)
+.bootstrap();
+}
+$('.sidebar-inner .motion-element').css('opacity', 1);
+$('.sidebar-inner').fadeTo('fast', 1);
+NexT.utils.updateSidebarPosition();
 });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
-<script src="/lib/waifu/live2d.min.js"></script>
-<script src="/lib/waifu/waifu-tips.js"></script>
-<script src="/lib/custom.js"></script>
 </body>
 </html>

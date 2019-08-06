@@ -6,24 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<script id="hexo.configurations">
+<script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.2.0',
+version: '7.3.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+save_scroll: true,
 copycode: {"enable":true,"show_result":true,"style":"mac"},
 fancybox: false,
 mediumzoom: true,
@@ -36,11 +37,8 @@ indexName: '',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
-localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},
-search: {
-root: '/',
-path: 'search.json'
-},
+localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
+path: 'search.json',
 tabs: true,
 motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
@@ -63,13 +61,27 @@ copy_failure: '复制失败'
 <meta name="twitter:title" content="关于黎曼猜想">
 <meta name="twitter:description" content="前几日关于黎曼猜想（Riemann Hypothesis）被证明的消息在网络上炒得沸沸扬扬，菲尔兹奖、阿贝尔奖双料得主Michael Francis Atiyah爵士声称他证明了这个困扰了数学界160年的问题，且其目的是为了研究精细结构常数。然而，在他公布了他的Simple Proof后，却不被学界所看好，甚至遭到了一些尖锐的批评。毕竟，这篇只有五页纸的文章，刨去介绍等内容，并没有展示太多的细节；">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
-<link rel="canonical" href="https://zhangshuqiao.org/2018-09/关于黎曼猜想/">
-<script id="page.configurations">
+<script id="page-configurations">
+// https://hexo.io/docs/variables.html
 CONFIG.page = {
 sidebar: "",
+isHome: false,
+isPost: true,
+isPage: false,
+isArchive: false
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-8784231462763562",
+enable_page_level_ads: true
+});
+</script>
 <title>关于黎曼猜想 | 米米的博客</title>
 <noscript>
 <style>
@@ -95,7 +107,7 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left page-post-detail">
+<div class="container sidebar-position-left">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
@@ -120,29 +132,29 @@ top: initial;
 <nav class="site-nav">
 <ul id="menu" class="menu">
 <li class="menu-item menu-item-home">
-<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 </li>
 <li class="menu-item menu-item-archives">
-<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
+<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-about">
-<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br/>关于</a>
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
 </li>
 <li class="menu-item menu-item-categories">
-<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类</a>
+<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 </li>
 <li class="menu-item menu-item-tags">
-<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签</a>
+<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 </li>
 <li class="menu-item menu-item-朋友们">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br/>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-实验室">
-<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br/>实验室</a>
+<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
 </li>
 <li class="menu-item menu-item-search">
 <a href="javascript:;" class="popup-trigger">
-<i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
+<i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
 <div class="site-search">
@@ -169,7 +181,7 @@ type="text" id="local-search-input">
 <main id="main" class="main">
 <div class="main-inner">
 <div class="content-wrap">
-<div id="content" class="content">
+<div id="content" class="content page-post-detail">
 <div id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
@@ -200,13 +212,12 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
 </span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon"
->
+<span class="post-meta-item" title="阅读次数">
+<span class="post-meta-item-icon">
 <i class="fa fa-file"></i>
-阅读次数：
-<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
+<span class="post-meta-item-text">阅读次数：</span>
+<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
 <span class="post-meta-item">
 <span class="post-meta-item-icon">
@@ -217,7 +228,6 @@ type="text" id="local-search-input">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-09/关于黎曼猜想/" itemprop="commentCount"></span>
 </a>
 </span>
-<br/>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -226,7 +236,7 @@ type="text" id="local-search-input">
 <h2 id="zeta-函数的解析延拓"><a href="#zeta-函数的解析延拓" class="headerlink" title="$\zeta$函数的解析延拓"></a>$\zeta$函数的解析延拓</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在中学数学中，我们所接触到的函数都是实变函数，即从实数集到实数集的映射，写为$f:\mathbb{R}\rightarrow\mathbb{R}$。在接触了虚数单位i和复数后，就可以开始定义复变函数，即复数集到复数集的映射，写为$f:\mathbb{C}\rightarrow\mathbb{C}$。实变函数的定义域被限制在了实轴上，而为了表示出一个与之对应的复变函数，就需要扩充其定义域到复平面上。这样，可以定义出复数域上的各种函数：指数、对数、三角函数等。由于复数的性质，还需要根据枝点规定割线、单值分支等，来确定出函数值。而原本定义域只在复平面上某一区域的复变函数，经过严格的数学推导（例如级数展开等），也可以扩充其定义域。这时，解析延拓的办法应运而生。对于$\zeta(s)$函数而言，非常明显，当$s$取在实轴上（即作为实变函数时），若$s\le 1$，其函数值发散；而$s&gt;1$时收敛。特别的，$s=1$时为调和级数，而$s=2$时由高斯最早计算出了其函数值$\frac{\pi^2}{6}$。<br>在复数域上，可以证明，$\zeta(s)$在$Re(s)&gt;1$上解析。接下来，我们需要将其定义域扩展到全复平面；之前的级数定义将不在对$Re(s)&lt;1$的情况使用，因为它不收敛，无法采用Cauchy和。</p>
 <h3 id="梅林变换"><a href="#梅林变换" class="headerlink" title="梅林变换"></a>梅林变换</h3><p>梅林（Mellin）变换是一个积分变换，它把一个正实数域$\mathbb{R}^+$上的函数变换为一个复数域$\mathbb{C}$上的函数。设$f:\mathbb{R}^+\rightarrow\mathbb{C}$是一个函数，定义：<br>$$\mathcal{M}f(z)=\int_0^{+\infty}f(s)s^z\frac{ds}{s}$$<br>称$\mathcal{M}f:\mathbb{C}\rightarrow\mathbb{C}$为$f$的梅林变换。<br>取$f(s)$为$f_\lambda (s)=e^{-\lambda s}$，则有：<br>\begin{align*}<br>\mathcal{M}f(z)&amp;=\int_0^{+\infty}e^{-\lambda s}s^z\frac{ds}{s}\\<br>&amp;=\lambda^{-z}\int_0^{+\infty}e^{-s}s^{z-1}ds\\<br>&amp;=\lambda^{-z}\Gamma(z)<br>\end{align*}<br>这里的$\Gamma(z)$就是一般数理方程中会涉及到的$\Gamma$函数，其性质不再赘述。<br>记住以上结论，取$\lambda=\pi n^2$，继续构造函数：<br>$$f(s)=\sum_{n=1}^{\infty}f_{\pi n^2}(s)=\sum_{n=1}^{\infty}e^{-\pi n^2 s}$$<br>注意到梅林变换是线性的，这时，<br>\begin{align*}<br>\mathcal{M}f(z)&amp;=\sum_{n=1}^{\infty}\mathcal{M}f_{\pi n^2}(z)\\<br>&amp;=\sum_{n=1}^{\infty}(\pi n^2)^{-z}\Gamma(z)\\<br>&amp;=\pi^{-z}\sum_{n=1}^{\infty}n^{-2z}\Gamma(z)\\<br>&amp;=\pi^{-z}\zeta(2z)\Gamma(z)<br>\end{align*}<br>最后一个等号使用了$\zeta$函数的原始定义。考虑到：<br>$$\mathcal{M}f(z)=\int_0^{+\infty}(\sum_{n=1}^{\infty}e^{-\pi n^2 s})s^{z-1}ds$$<br>于是，利用$\mathcal{M}f(z)$的两个等价表达式，我们得到了一个重要结论：<br>$$\pi^{-z}\zeta(2z)\Gamma(z)=\int_0^{+\infty}(\sum_{n=1}^{\infty}e^{-\pi n^2 s})s^{z-1}ds$$<br>注意，这里的推导并非十分严谨，还需要证明其收敛性，才能交换积分与极限。这要求$Re(z)&gt;\frac{1}{2}$。</p>
 <a id="more"></a>
-<h3 id="泊松求和"><a href="#泊松求和" class="headerlink" title="泊松求和"></a>泊松求和</h3><p>再来看一下Fourier变换<br>$$\mathcal{F}f(x)=\int_{-\infty}^{+\infty}f(t)e^{ixt}dt$$<br>对于足够『好』的函数$f$，可以证明泊松（Poisson）求和公式<br>$$\sum_{n\in\mathbb{Z}}f(n)=\sum_{n\in\mathbb{Z}}\mathcal{F}f(n)$$<br>这部分我们就证明这个公式。<br>假设$f$足够『好』（要多好有多好），定义<br>$$F(t)=\sum_{n\in\mathbb{Z}}f(n+t)$$<br>则$F$是$\mathbb{R}$上周期为$1$的函数，于是可以构造$F$的Fourier级数：令<br>$$c_k=\int_0^1F(t)e^{-2\pi ikt}dt$$<br>是第$k$个Fourier系数，则<br>$$F(t)\sim\sum_{k\in\mathbb{Z}}c_ke^{2\pi ikt}$$<br>而这个系数<br>\begin{align*}<br>c_k&amp;=\int_0^1F(t)e^{-2\pi ikt}dt\\<br>&amp;=\int_0^1\sum_{n\in\mathbb{Z}}f(n+t)e^{-2\pi ik(n+t)}dt\\<br>&amp;=\int_{-\infty}^{+\infty}f(t)e^{-2\pi ikt}dt\\<br>&amp;=\mathcal{F}f(k)<br>\end{align*}<br>从而<br>$$\sum_{n\in\mathbb{Z}}f(n)=F(0)\sim\sum_{k\in\mathbb{Z}}c_k=\sum_{k\in\mathbb{Z}}\mathcal{F}f(k)$$<br>就得到了Poisson求和公式形式上的『证明』。<br>那么$f$究竟要满足什么条件呢？<br>如果周期函数$F\in C^2[0,1]$，就有$F(t)=\sum_{k\in\mathbb{Z}}c_ke^{2\pi ikt}$。因此，我们要求$f$二阶连续可导，并且<br>$$\sum_{n\in\mathbb{Z}}||f||_{[n.n+1],\infty}+||f’||_{[n.n+1],\infty}+||f’’||_{[n.n+1],\infty}&lt;+\infty$$<br>使用导数一致收敛的判别法则，就得到$F\in C^2[0,1]$啦。<br>也就是说，如果$f\in C^2(\mathbb{R})$，并且满足以上条件，就有Poisson求和公式<br>$$\sum_{n\in\mathbb{Z}}f(n)=\sum_{n\in\mathbb{Z}}\mathcal{F}f(n)$$</p>
+<h3 id="泊松求和"><a href="#泊松求和" class="headerlink" title="泊松求和"></a>泊松求和</h3><p>再来看一下Fourier变换<br>$$\mathcal{F}f(x)=\int_{-\infty}^{+\infty}f(t)e^{ixt}dt$$<br>对于足够『好』的函数$f$，可以证明泊松（Poisson）求和公式<br>$$\sum_{n\in\mathbb{Z}}f(n)=\sum_{n\in\mathbb{Z}}\mathcal{F}f(n)$$<br>这部分我们就证明这个公式。<br>假设$f$足够『好』（要多好有多好），定义<br>$$F(t)=\sum_{n\in\mathbb{Z}}f(n+t)$$<br>则$F$是$\mathbb{R}$上周期为$1$的函数，于是可以构造$F$的Fourier级数：令<br>$$c_k=\int_0^1F(t)e^{-2\pi ikt}dt$$<br>是第$k$个Fourier系数，则<br>$$F(t)\sim\sum_{k\in\mathbb{Z}}c_ke^{2\pi ikt}$$<br>而这个系数<br>\begin{align*}<br>c_k&amp;=\int_0^1F(t)e^{-2\pi ikt}dt\\<br>&amp;=\int_0^1\sum_{n\in\mathbb{Z}}f(n+t)e^{-2\pi ik(n+t)}dt\\<br>&amp;=\int_{-\infty}^{+\infty}f(t)e^{-2\pi ikt}dt\\<br>&amp;=\mathcal{F}f(k)<br>\end{align*}<br>从而<br>$$\sum_{n\in\mathbb{Z}}f(n)=F(0)\sim\sum_{k\in\mathbb{Z}}c_k=\sum_{k\in\mathbb{Z}}\mathcal{F}f(k)$$<br>就得到了Poisson求和公式形式上的『证明』。<br>那么$f$究竟要满足什么条件呢？<br>如果周期函数$F\in C^2[0,1]$，就有$F(t)=\sum_{k\in\mathbb{Z}}c_ke^{2\pi ikt}$。因此，我们要求$f$二阶连续可导，并且<br>$$\sum_{n\in\mathbb{Z}}||f||_{[n.n+1],\infty}+||f&#39;||_{[n.n+1],\infty}+||f&#39;&#39;||_{[n.n+1],\infty}&lt;+\infty$$<br>使用导数一致收敛的判别法则，就得到$F\in C^2[0,1]$啦。<br>也就是说，如果$f\in C^2(\mathbb{R})$，并且满足以上条件，就有Poisson求和公式<br>$$\sum_{n\in\mathbb{Z}}f(n)=\sum_{n\in\mathbb{Z}}\mathcal{F}f(n)$$</p>
 <h3 id="解析延拓"><a href="#解析延拓" class="headerlink" title="解析延拓"></a>解析延拓</h3><p>设$\lambda&gt;0$，令<br>\begin{eqnarray*}<br>\theta(\lambda)&amp;=&amp;\sum_{n\in\mathbb{Z}}e^{-\pi n^2\lambda}\\<br>\psi(\lambda)&amp;=&amp;\sum_{n=1}^\infty e^{-\pi n^2\lambda}<br>\end{eqnarray*}<br>很显然$\theta(\lambda)=2\psi(\lambda)+1$。<br>考虑$f(t)=e^{-\pi t^2\lambda}$，计算得$\mathcal{F}f(x)=\frac{1}{\sqrt{\lambda}}e^{-\pi\frac{x^2}{\lambda}}$，而且满足相应条件，因此用Poisson求和公式，<br>$$\sum_{n\in\mathbb{Z}}e^{-\pi n^2\lambda}=\frac{1}{\sqrt{\lambda}}\sum_{n\in\mathbb{Z}}e^{-\pi\frac{n^2}{\lambda}}$$<br>即$\theta(\lambda)=\frac{1}{\sqrt{\lambda}}\theta\left(\frac{1}{\lambda}\right)$。<br>换成$\psi$就是$\psi\left(\frac{1}{\lambda}\right)=\sqrt{\lambda}\psi(\lambda)+\frac{\sqrt{\lambda}-1}{2}$。<br>第二部分的最后，得到了<br>\begin{align*}<br>\pi^{-z}\zeta(2z)\Gamma(z)&amp;=\int_0^{+\infty}\left(\sum_{n=1}^\infty e^{-\pi n^2s}\right)s^{z-1}ds\\<br>&amp;=\int_0^{+\infty}\psi(s)s^{z-1}ds<br>\end{align*}<br>因此<br>\begin{align*}<br>\pi^{-z}\zeta(2z)\Gamma(z)&amp;=\int_0^{+\infty}\psi(s)s^{z-1}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)s^{z-1}ds+\int_0^1\psi(s)s^{z-1}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)s^{z-1}ds+\int_1^{+\infty}\psi\left(\frac{1}{s}\right)s^{1-z}\frac{ds}{s^2}\\<br>&amp;=\int_1^{+\infty}\psi(s)s^{z-1}ds+\int_1^{+\infty}\left(\psi(s)\sqrt{s}+\frac{\sqrt{s}-1}{2}\right)s^{-1-z}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)(s^{z-1}+s^{-z-\frac{1}{2}})ds+\int_1^{+\infty}\frac{s^{-z-\frac{1}{2}}-s^{-z-1}}{2}ds\\<br>&amp;=\int_1^{+\infty}\psi(s)(s^{z-1}+s^{-z-\frac{1}{2}})ds+\frac{1}{2z(2z-1)}<br>\end{align*}<br>以上计算的前提是$Re(z)&gt;\frac{1}{2}$。<br>令$w=2z$，则当$Re(w)&gt;1$时，<br>$$\sqrt{\pi}^{-w}\zeta(w)\Gamma\left(\frac{w}{2}\right)=\int_1^{+\infty}\psi(s)(\sqrt{s}^{w-2}+\sqrt{s}^{-w-1})ds-\frac{1}{w(1-w)}$$<br>现在观察：等号右边是一个亚纯函数（亚纯函数就是『能表示成两个解析函数的商』的函数，或者『没有本性奇点』的函数，两个亚纯函数经过四则运算仍然是亚纯函数），而等号左边的$\sqrt{\pi}^{-w}$、$\Gamma\left(\frac{w}{2}\right)$也都是亚纯函数。这样，上式相当于给出了$\zeta(w)$在$w\in\mathbb{C}$上的定义！</p>
 <h2 id="所有自然数的『和』"><a href="#所有自然数的『和』" class="headerlink" title="所有自然数的『和』"></a>所有自然数的『和』</h2><p>这还没完，试试在等号右边把$w$换为$1-w$，你会发现式子根本没变。这就说明：<br>$$\sqrt{\pi}^{-w}\zeta(w)\Gamma\left(\frac{w}{2}\right)=\sqrt{\pi}^{w-1}\zeta(1-w)\Gamma\left(\frac{1-w}{2}\right)$$<br>现在让$w=-1$，就有<br>$$\sqrt{\pi}\zeta(-1)\Gamma\left(-\frac{1}{2}\right)=\sqrt{\pi}^{-2}\zeta(2)\Gamma(1)$$<br>我们知道<br>$$\zeta(2)=\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}$$<br>并且，<br>\begin{eqnarray*}<br>\Gamma(1)&amp;=&amp;1\\<br>\Gamma\left(\frac{1}{2}\right)&amp;=&amp;\sqrt{\pi}\\<br>\Gamma\left(-\frac{1}{2}\right)&amp;=&amp;\frac{\Gamma\left(\frac{1}{2}\right)}{-\frac{1}{2}}=-2\sqrt{\pi}<br>\end{eqnarray*}<br>因此：<br>$$\zeta(-1)=\frac{\sqrt{\pi}^{-2}\zeta(2)\Gamma(1)}{\sqrt{\pi}\Gamma\left(-\frac{1}{2}\right)}=\frac{\frac{\pi^2}{6}}{\sqrt{\pi}^3(-2)\sqrt{\pi}}=-\frac{1}{12}$$<br>我们便得出了全体自然数的『和』为$-\frac{1}{12}$这一结论。</p>
 <h2 id="黎曼猜想与素数"><a href="#黎曼猜想与素数" class="headerlink" title="黎曼猜想与素数"></a>黎曼猜想与素数</h2><h3 id="欧拉乘积公式"><a href="#欧拉乘积公式" class="headerlink" title="欧拉乘积公式"></a>欧拉乘积公式</h3><p>从$\zeta$函数的原始定义出发：<br>$$\zeta(s)=\frac{1}{1^s}+\frac{1}{2^s}+\frac{1}{3^s}+\cdots$$<br>在等式两边同时乘以第二项：<br>$$\frac{1}{2^s}\times\zeta(s)=\frac{1}{2^s}+\frac{1}{4^s}+\frac{1}{6^s}+\cdots$$<br>两式相减得：<br>$$(1-\frac{1}{2^s})\times\zeta(s)=\frac{1}{1^s}+\frac{1}{3^s}+\frac{1}{5^s}+\cdots$$<br>这时，等号右边的分母上已经没有2的倍数了。重复这一过程：<br>$$\frac{1}{3^s}\times(1-\frac{1}{2^s})\zeta(s)=\frac{1}{3^s}+\frac{1}{9^s}+\frac{1}{15^s}+\cdots$$<br>以上两式相减，又有：<br>$$(1-\frac{1}{3^s})(1-\frac{1}{2^s})\zeta(s)=\frac{1}{1^s}+\frac{1}{5^s}+\frac{1}{7^s}+\cdots$$<br>等号右边也没有3的倍数了。无限重复此过程，就有：<br>$$\cdots(1-\frac{1}{11^s})(1-\frac{1}{7^s})(1-\frac{1}{5^s})(1-\frac{1}{3^s})\zeta(s)=1$$<br>即：<br>$$\zeta(s)=\frac{1}{1-\frac{1}{2^s}}\times\frac{1}{1-\frac{1}{3^s}}\times\frac{1}{1-\frac{1}{5^s}}\times\frac{1}{1-\frac{1}{7^s}}\times\cdots$$<br>可以写成：<br>$$\zeta(s)=\sum_n\frac{1}{n^s}=\prod_p\frac{1}{1-p^{-s}}$$<br>这就是欧拉乘积公式，该表达式首先出现在1737年一篇题为《Variae observationes circa series infinitas》（无穷级数的各种观察）的论文中。<br>该恒等式展示了素数与$\zeta$函数间的联系。</p>
@@ -326,7 +336,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">106</span>
+<span class="site-state-item-count">107</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -338,7 +348,7 @@ alt="张书樵">
 </div>
 <div class="site-state-item site-state-tags">
 <a href="/tags/">
-<span class="site-state-item-count">23</span>
+<span class="site-state-item-count">24</span>
 <span class="site-state-item-name">标签</span>
 </a>
 </div>
@@ -355,7 +365,7 @@ alt="张书樵">
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
-<a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+<a href="https://zsq.im" title="https://zsq.im" rel="noopener" target="_blank">ZSQ.IM</a>
 </li>
 <li class="links-of-blogroll-item">
 <a href="https://three-body.org" title="https://three-body.org" rel="noopener" target="_blank">Three Body</a>
@@ -385,7 +395,7 @@ alt="张书樵">
 <span class="author" itemprop="copyrightHolder">张书樵</span>
 </div>
 <div class="busuanzi-count">
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span class="post-meta-item-icon">
 <i class="fa fa-user"></i>
 </span>
@@ -409,17 +419,37 @@ alt="张书樵">
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
-<script src="/js/utils.js?v=7.2.0"></script>
-<script src="/js/motion.js?v=7.2.0"></script>
-<script src="/js/affix.js?v=7.2.0"></script>
-<script src="/js/schemes/pisces.js?v=7.2.0"></script>
-<script src="/js/scrollspy.js?v=7.2.0"></script>
-<script src="/js/post-details.js?v=7.2.0"></script>
-<script src="/js/next-boot.js?v=7.2.0"></script>
+<script src="/js/utils.js?v=7.3.0"></script>
+<script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/affix.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+<script src="/js/local-search.js?v=7.3.0"></script>
+<script pjax>
+if ($('body').find('div.pdf').length) {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
+$('body').find('div.pdf').each(function(i, o) {
+PDFObject.embed($(o).attr('target'), $(o), {
+pdfOpenParams: {
+navpanes: 0,
+toolbar: 0,
+statusbar: 0,
+pagemode: 'thumbs',
+view: 'FitH'
+},
+PDFJS_URL: '/lib/pdf/web/viewer.html',
+height: $(o).attr('height') || '1000px'
+});
+});
+}, window.PDFObject);
+}
+</script>
+<div id="pjax">
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
 tex2jax: {
@@ -457,35 +487,15 @@ element.classList.add('has-jax');
 }
 });
 </script>
-<script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
-<script src="/js/local-search.js?v=7.2.0"></script>
 <script>
-if ($('body').find('div.pdf').length) {
-$.ajax({
-type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
-dataType: 'script',
-cache: true,
-success: function() {
-$('body').find('div.pdf').each(function(i, o) {
-PDFObject.embed($(o).attr('target'), $(o), {
-pdfOpenParams: {
-navpanes: 0,
-toolbar: 0,
-statusbar: 0,
-pagemode: 'thumbs',
-view: 'FitH'
-},
-PDFJS_URL: '/lib/pdf/web/viewer.html',
-height: $(o).attr('height') || '1000px'
-});
-});
-},
-});
-}
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML', function() {
+MathJax.Hub.Typeset();
+}, window.MathJax);
 </script>
-<script src="/lib/Valine.min.js"></script>
+<script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
 <script>
+NexT.utils.getScript('/lib/Valine.min.js', function() {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
 guest = guest.split(',').filter(function(item) {
@@ -502,12 +512,47 @@ avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
 visitor: false,
-lang: '' || 'zh-cn'
+lang: '' || 'zh-cn',
+path: location.pathname
+});
+}, window.Valine);
+</script>
+</div>
+<script>
+var pjax = new Pjax({
+selectors: [
+'title',
+'#page-configurations',
+'.content-wrap',
+'.sidebar-inner',
+'#pjax'
+],
+switches: {
+'.sidebar-inner': Pjax.switches.innerHTML
+},
+analytics: false,
+cacheBust: false,
+scrollTo: !CONFIG.save_scroll
+});
+$(document).on('pjax:send', function() {
+$('.sidebar-inner').stop().fadeTo('fast', 0);
+CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
+});
+$(document).on('pjax:success', function() {
+$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
+$(o).parent().append($(o).remove());
+});
+// Define Motion Sequence & Bootstrap Motion.
+if (CONFIG.motion.enable) {
+NexT.motion.integrator
+.init()
+.add(NexT.motion.middleWares.postList)
+.bootstrap();
+}
+$('.sidebar-inner .motion-element').css('opacity', 1);
+$('.sidebar-inner').fadeTo('fast', 1);
+NexT.utils.updateSidebarPosition();
 });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
-<script src="/lib/waifu/live2d.min.js"></script>
-<script src="/lib/waifu/waifu-tips.js"></script>
-<script src="/lib/custom.js"></script>
 </body>
 </html>

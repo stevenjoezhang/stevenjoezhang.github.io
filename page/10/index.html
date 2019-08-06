@@ -6,24 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<script id="hexo.configurations">
+<script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.2.0',
+version: '7.3.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+save_scroll: true,
 copycode: {"enable":true,"show_result":true,"style":"mac"},
 fancybox: false,
 mediumzoom: true,
@@ -36,11 +37,8 @@ indexName: '',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
-localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},
-search: {
-root: '/',
-path: 'search.json'
-},
+localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
+path: 'search.json',
 tabs: true,
 motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
@@ -62,13 +60,27 @@ copy_failure: '复制失败'
 <meta name="twitter:title" content="米米的博客">
 <meta name="twitter:description" content="力电声光热，涵尽学海无涯">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
-<link rel="canonical" href="https://zhangshuqiao.org/page/10/">
-<script id="page.configurations">
+<script id="page-configurations">
+// https://hexo.io/docs/variables.html
 CONFIG.page = {
 sidebar: "",
+isHome: true,
+isPost: false,
+isPage: false,
+isArchive: false
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-8784231462763562",
+enable_page_level_ads: true
+});
+</script>
 <title>米米的博客</title>
 <noscript>
 <style>
@@ -94,7 +106,7 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left page-home">
+<div class="container sidebar-position-left">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
@@ -119,29 +131,29 @@ top: initial;
 <nav class="site-nav">
 <ul id="menu" class="menu">
 <li class="menu-item menu-item-home">
-<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 </li>
 <li class="menu-item menu-item-archives">
-<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
+<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-about">
-<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br/>关于</a>
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
 </li>
 <li class="menu-item menu-item-categories">
-<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类</a>
+<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 </li>
 <li class="menu-item menu-item-tags">
-<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签</a>
+<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 </li>
 <li class="menu-item menu-item-朋友们">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br/>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-实验室">
-<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br/>实验室</a>
+<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
 </li>
 <li class="menu-item menu-item-search">
 <a href="javascript:;" class="popup-trigger">
-<i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
+<i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
 <div class="site-search">
@@ -168,8 +180,57 @@ type="text" id="local-search-input">
 <main id="main" class="main">
 <div class="main-inner">
 <div class="content-wrap">
-<div id="content" class="content">
+<div id="content" class="content page-home">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/膜法大赛预赛/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-08/膜法大赛预赛/" class="post-title-link" itemprop="url">膜法大赛预赛</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-08-17 21:35:23" itemprop="dateCreated datePublished" datetime="2018-08-17T21:35:23+08:00">2018-08-17</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">评论数：</span>
+<a href="/2018-08/膜法大赛预赛/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-08/膜法大赛预赛/" itemprop="commentCount"></span>
+</a>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<div class="pdf" target="/files/膜法大赛预赛.pdf" height></div>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/自己打造一台恩尼格玛密码机/">
@@ -200,17 +261,25 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
-<br/>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">评论数：</span>
+<a href="/2018-08/自己打造一台恩尼格玛密码机/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-08/自己打造一台恩尼格玛密码机/" itemprop="commentCount"></span>
+</a>
+</span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p><img src="/images/2018-08/F5YSP9KHMF6R1PD.LARGE.jpg" alt></p>
 <p>在对称加密学当中，恩尼格玛机绝对是承前启后的存在。它将密码学研究从以前的语言文字学中心完全转移到了数学身上。在这里牵涉的密码并不是我们平时邮箱、银行帐号那种狭义概念，那种顶多叫做口令。这里说的密码就是通过某种映射方式，把一篇文章变得面目全非，以达到保密效果；只有特定的转换规律才能将其解密。这篇文章适于电脑控、军事控、历史控、数学控阅读，请做好烧脑准备。</p>
 <p>EDIT: This Instructable has won Second prize in the 2013 Radio Shack Microcontroller Contest. Thank You to all who voted!<br>按：这个作品是2013年无线电单片机竞赛的亚军。感谢所有支持这个作品的你们！<br>EDIT2: An Open Enigma with fake Standup Nixie Tubes like the ones pictured in this Instructable will soon be available as a Special Kickstarter edition.</p>
-<p>This is our very first Instructable and this step by step guide will show you how to build a fully functional electronic replica of the world famous German Enigma machine. This Arduino based Open Source project is able to encrypt &amp; decrypt any Enigma M4 encoded message.<br>这是我们的初号机。以下教程将手把手教你如何完美复刻史上著名的德国恩尼格玛密码机。这个基于Arduino的开源程序能够加解密任何Enigma机M4型（海军型）的信息。<br>This first ever fully functional Open Source Enigma “exact” Replica was inspired by the Kid’s Game to Arduino Enigma Machine by sketchsk3tch.<br>这个第一台全功能开源完美Enigma机复制品是根据sketchsk3tch写的《Kid’s Game to Arduino Enigma Machine（从儿童玩具到Arduino恩尼格玛机）》所作。<br>Using Multiplexing for the LEDs, this circuit with 115 light emitting diodes uses only 38 pins and the 36 push buttons use only 4 pins total thanks to properly placed resistors (and the P-Channel MOSFETs) in the keyboard loop. These 4 16-Segment displays &amp; an LED for each keyboard button would add up quickly the total number of pins required and even the Arduino Mega would have ran out of pins without the 2 methods mentioned above….<br>采用多路复用LED电路，仅用38个针脚的115个发光二极管和4个针脚的36个按键所连接的整个电路，全靠在键盘回路里准确放置的电阻以及P沟道场效应晶体管得以实现。要不然，4个16段显示器，以及每个按键上的LED将大幅增加所需针脚总量——即使用了Arduino Mega板，但如果没用上述两个方法，电路也不能如此简洁。<br>In response to the overwhelming demand, we designed the PCB and made it available through <a href="http://www.stgeotronics.com" target="_blank" rel="noopener">www.stgeotronics.com</a>. Skip to Step 10 &amp; beyond for more info. We also offer it as a complete electronics kit &amp; an assembled &amp; tested complete product.<br>面对电路的超额需求，我们在 <a href="http://www.stgeotronics.com" target="_blank" rel="noopener">http://www.stgeotronics.com</a> 设计了专用的PCB板。直接跳到第10步和以后的步骤可以找到更多信息。同时，我们也发布了测试过的完整电子组装套装。</p>
+<p>This is our very first Instructable and this step by step guide will show you how to build a fully functional electronic replica of the world famous German Enigma machine. This Arduino based Open Source project is able to encrypt &amp; decrypt any Enigma M4 encoded message.<br>这是我们的初号机。以下教程将手把手教你如何完美复刻史上著名的德国恩尼格玛密码机。这个基于Arduino的开源程序能够加解密任何Enigma机M4型（海军型）的信息。<br>This first ever fully functional Open Source Enigma &quot;exact&quot; Replica was inspired by the Kid&#39;s Game to Arduino Enigma Machine by sketchsk3tch.<br>这个第一台全功能开源完美Enigma机复制品是根据sketchsk3tch写的《Kid&#39;s Game to Arduino Enigma Machine（从儿童玩具到Arduino恩尼格玛机）》所作。<br>Using Multiplexing for the LEDs, this circuit with 115 light emitting diodes uses only 38 pins and the 36 push buttons use only 4 pins total thanks to properly placed resistors (and the P-Channel MOSFETs) in the keyboard loop. These 4 16-Segment displays &amp; an LED for each keyboard button would add up quickly the total number of pins required and even the Arduino Mega would have ran out of pins without the 2 methods mentioned above....<br>采用多路复用LED电路，仅用38个针脚的115个发光二极管和4个针脚的36个按键所连接的整个电路，全靠在键盘回路里准确放置的电阻以及P沟道场效应晶体管得以实现。要不然，4个16段显示器，以及每个按键上的LED将大幅增加所需针脚总量——即使用了Arduino Mega板，但如果没用上述两个方法，电路也不能如此简洁。<br>In response to the overwhelming demand, we designed the PCB and made it available through <a href="http://www.stgeotronics.com" target="_blank" rel="noopener">www.stgeotronics.com</a>. Skip to Step 10 &amp; beyond for more info. We also offer it as a complete electronics kit &amp; an assembled &amp; tested complete product.<br>面对电路的超额需求，我们在 <a href="http://www.stgeotronics.com" target="_blank" rel="noopener">http://www.stgeotronics.com</a> 设计了专用的PCB板。直接跳到第10步和以后的步骤可以找到更多信息。同时，我们也发布了测试过的完整电子组装套装。</p>
 <h2 id="Step-1-Proof-of-Concept-on-Breadboard"><a href="#Step-1-Proof-of-Concept-on-Breadboard" class="headerlink" title="Step 1: Proof of Concept on Breadboard"></a>Step 1: Proof of Concept on Breadboard</h2><p>第一步：面包板上的论证</p>
 <p><img src="/images/2018-08/F3ULXLHHMEXSREA.LARGE.jpg" alt><br><img src="/images/2018-08/FQHGSW5HMF6R1XF.LARGE.jpg" alt></p>
-<p>Before going all out on the development of this electronic Enigma replica, we wanted to make sure we could properly drive the 16 Segment LEDs. If we can do that, than we will be able to do everything as the rest is only Math…<br>在开始制作电子Enigma机之前，我们先要确保能驱动16段LED显示。如果成功，我们就能做接下来的所有步骤——除了数学上的问题，一切都是浮云。</p>
+<p>Before going all out on the development of this electronic Enigma replica, we wanted to make sure we could properly drive the 16 Segment LEDs. If we can do that, than we will be able to do everything as the rest is only Math...<br>在开始制作电子Enigma机之前，我们先要确保能驱动16段LED显示。如果成功，我们就能做接下来的所有步骤——除了数学上的问题，一切都是浮云。</p>
 <!--noindex-->
 <div class="post-button text-center">
 <a class="btn" href="/2018-08/自己打造一台恩尼格玛密码机/#more" rel="contents">
@@ -254,7 +323,15 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
 </span>
-<br/>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">评论数：</span>
+<a href="/2018-08/武功山游记/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-08/武功山游记/" itemprop="commentCount"></span>
+</a>
+</span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -307,7 +384,15 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
-<br/>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">评论数：</span>
+<a href="/2018-07/Unicode字符与颜文字表情/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-07/Unicode字符与颜文字表情/" itemprop="commentCount"></span>
+</a>
+</span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -369,7 +454,15 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
-<br/>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">评论数：</span>
+<a href="/2018-07/在网页中添加Live2D看板娘/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-07/在网页中添加Live2D看板娘/" itemprop="commentCount"></span>
+</a>
+</span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
@@ -378,55 +471,6 @@ type="text" id="local-search-input">
 <p>克隆这个仓库到服务器上，并配置<code>autoload.js</code>，修改其中的链接为各文件的绝对地址，即可在网页中添加Live2D看板娘。<br>相对于市面上广为流传的版本，博主对触发动作和语言进行了魔改（针对Hexo NexT主题），调整了图标样式、元素定位，并解决了CSS的前缀等问题。<br>更多内容可以参考项目文档及下方链接。<br>快来把萌萌哒的看板娘抱回家吧！</p>
 <hr>
 <p>参考文章：<br><a href="https://www.fghrsh.net/post/123.html" target="_blank" rel="noopener">网页添加 Live2D 看板娘</a><br><a href="https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02" target="_blank" rel="noopener">给博客添加能动的看板娘(Live2D)-将其添加到网页上吧</a></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/改变世界的17个公式/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-07/改变世界的17个公式/" class="post-title-link" itemprop="url">改变世界的17个公式</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-07-18 11:53:28" itemprop="dateCreated datePublished" datetime="2018-07-18T11:53:28+08:00">2018-07-18</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
-</span>
-<br/>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>In 2012, Mathematician Ian Stewart came out with an excellent and deeply researched book titled “In Pursuit of the Unknown: 17 Equations That Changed the World.”<br>在2012年，数学家斯图尔特（Ian Stewart）出版了一本精彩而深入研究的著作，名为《追寻未知：改变世界的17个公式》。<br>His book takes a look at the most pivotal equations of all time, and puts them in a human, rather than technical context.<br>他的书着眼于有史以来最关键的方程式，并将它们置于普通人而非专业的背景中。<br>“Equations definitely can be dull, and they can seem complicated, but that’s because they are often presented in a dull and complicated way,” Stewart told Business Insider. “I have an advantage over school math teachers: I’m not trying to show you how to do the sums yourself.”<br>『方程式肯定会显得沉闷，而且它们看起来很复杂，但那是因为它们经常以这样的方式呈现，』斯图尔特告诉Business Insider。 『我比学校的数学老师更有优势：我不会试图告诉你如何自己算出它们。』<br>He explained that anyone can “appreciate the beauty and importance of equations without knowing how to solve them … The intention is to locate them in their cultural and human context, and pull back the veil on their hidden effects on history.”<br>他解释说，任何人都可以『欣赏方程式的美丽和重要性，而不去知道如何解它们……目的是将它们置于文化和人文环境中，并揭开它们对历史隐藏效应的面纱。』<br>Stewart continued that “equations are a vital part of our culture. The stories behind them — the people who discovered or invented them and the periods in which they lived — are fascinating.”<br>斯图尔特继续说道，『方程式是我们文化的重要组成部分。他们背后的故事——发现或发明它们的人以及他们生活的时期——都很吸引人。』<br>Here are 17 equations that have changed the world:<br>以下是改变世界的17个方程式：<br>Max Nisen contributed to an earlier version of this post.<br>Max Nisen为本文的早期版本做出了贡献。</p>
-<h2 id="The-Pythagorean-Theorem"><a href="#The-Pythagorean-Theorem" class="headerlink" title="The Pythagorean Theorem"></a>The Pythagorean Theorem</h2><p>$$a^{2}+b^{2}=c^{2}$$<br>Pythagoras, 530 BC<br>What does it mean? The square of the hypotenuse of a right triangle is equal to the sum of the squares of its legs.<br>作用：直角三角形的斜边的平方等于其直角边的平方和。<br>History: Though attributed to Pythagoras, it is not certain that he was the first person to prove it. The first clear proof came from Euclid, and it is possible the concept was known 1,000 years before Pythagoras by the Babylonians.<br>历史：虽然认为毕达哥拉斯（Pythagoras）发现了这个公式，但不确定他是否是第一个证明它的人。第一个明确的证明来自欧几里得，而这个概念可能是在毕达哥拉斯之前1000年就被巴比伦人知道了。<br>Importance: The equation is at the core of much of geometry, links it with algebra, and is the foundation of trigonometry. Without it, accurate surveying, mapmaking, and navigation would be impossible.<br>重要性：勾股定理是几何的核心，它与代数联系起来，是三角学的基础。没有它，准确的测量、地图制作和导航将是不可能的。<br>In terms of pure math, the Pythagorean Theorem defines normal, Euclidean plane geometry. For example, a right triangle drawn on the surface of a sphere like the Earth doesn’t necessarily satisfy the theorem.<br>在纯数学方面，毕达哥拉斯定理定义了正常的欧几里德平面几何。例如，在像地球一样的球体表面上绘制的直角三角形不一定满足该定理。<br>Modern use: Triangulation is used to this day to pinpoint relative location for GPS navigation.<br>现代用途：今天使用三角测量来确定GPS导航的相对位置。</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-07/改变世界的17个公式/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -460,7 +504,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">106</span>
+<span class="site-state-item-count">107</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -472,7 +516,7 @@ alt="张书樵">
 </div>
 <div class="site-state-item site-state-tags">
 <a href="/tags/">
-<span class="site-state-item-count">23</span>
+<span class="site-state-item-count">24</span>
 <span class="site-state-item-name">标签</span>
 </a>
 </div>
@@ -489,7 +533,7 @@ alt="张书樵">
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
-<a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+<a href="https://zsq.im" title="https://zsq.im" rel="noopener" target="_blank">ZSQ.IM</a>
 </li>
 <li class="links-of-blogroll-item">
 <a href="https://three-body.org" title="https://three-body.org" rel="noopener" target="_blank">Three Body</a>
@@ -512,7 +556,7 @@ alt="张书樵">
 <span class="author" itemprop="copyrightHolder">张书樵</span>
 </div>
 <div class="busuanzi-count">
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span class="post-meta-item-icon">
 <i class="fa fa-user"></i>
 </span>
@@ -536,62 +580,20 @@ alt="张书樵">
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
-<script src="/js/utils.js?v=7.2.0"></script>
-<script src="/js/motion.js?v=7.2.0"></script>
-<script src="/js/affix.js?v=7.2.0"></script>
-<script src="/js/schemes/pisces.js?v=7.2.0"></script>
-<script src="/js/next-boot.js?v=7.2.0"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-processEscapes: true,
-skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-},
-TeX: {
-equationNumbers: {
-autoNumber: 'AMS'
-}
-}
-});
-MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-if (data.display) {
-var next = data.script.nextSibling;
-while (next && next.nodeName.toLowerCase() === '#text') {
-next = next.nextSibling;
-}
-if (next && next.nodeName.toLowerCase() === 'br') {
-next.parentNode.removeChild(next);
-}
-}
-});
-});
-MathJax.Hub.Queue(function() {
-var all = MathJax.Hub.getAllJax(), i;
-for (i = 0; i < all.length; i += 1) {
-element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-if (element.nodeName.toLowerCase() == 'li') {
-element = element.parentNode;
-}
-element.classList.add('has-jax');
-}
-});
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
-<script src="/js/local-search.js?v=7.2.0"></script>
-<script>
+<script src="/js/utils.js?v=7.3.0"></script>
+<script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/affix.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+<script src="/js/local-search.js?v=7.3.0"></script>
+<script pjax>
 if ($('body').find('div.pdf').length) {
-$.ajax({
-type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
-dataType: 'script',
-cache: true,
-success: function() {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
 $('body').find('div.pdf').each(function(i, o) {
 PDFObject.embed($(o).attr('target'), $(o), {
 pdfOpenParams: {
@@ -605,12 +607,12 @@ PDFJS_URL: '/lib/pdf/web/viewer.html',
 height: $(o).attr('height') || '1000px'
 });
 });
-},
-});
+}, window.PDFObject);
 }
 </script>
-<script src="/lib/Valine.min.js"></script>
+<div id="pjax">
 <script>
+NexT.utils.getScript('/lib/Valine.min.js', function() {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
 guest = guest.split(',').filter(function(item) {
@@ -627,12 +629,47 @@ avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
 visitor: false,
-lang: '' || 'zh-cn'
+lang: '' || 'zh-cn',
+path: location.pathname
+});
+}, window.Valine);
+</script>
+</div>
+<script>
+var pjax = new Pjax({
+selectors: [
+'title',
+'#page-configurations',
+'.content-wrap',
+'.sidebar-inner',
+'#pjax'
+],
+switches: {
+'.sidebar-inner': Pjax.switches.innerHTML
+},
+analytics: false,
+cacheBust: false,
+scrollTo: !CONFIG.save_scroll
+});
+$(document).on('pjax:send', function() {
+$('.sidebar-inner').stop().fadeTo('fast', 0);
+CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
+});
+$(document).on('pjax:success', function() {
+$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
+$(o).parent().append($(o).remove());
+});
+// Define Motion Sequence & Bootstrap Motion.
+if (CONFIG.motion.enable) {
+NexT.motion.integrator
+.init()
+.add(NexT.motion.middleWares.postList)
+.bootstrap();
+}
+$('.sidebar-inner .motion-element').css('opacity', 1);
+$('.sidebar-inner').fadeTo('fast', 1);
+NexT.utils.updateSidebarPosition();
 });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
-<script src="/lib/waifu/live2d.min.js"></script>
-<script src="/lib/waifu/waifu-tips.js"></script>
-<script src="/lib/custom.js"></script>
 </body>
 </html>

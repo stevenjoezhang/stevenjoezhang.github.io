@@ -6,24 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-<script id="hexo.configurations">
+<script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.2.0',
+version: '7.3.0',
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+save_scroll: true,
 copycode: {"enable":true,"show_result":true,"style":"mac"},
 fancybox: false,
 mediumzoom: true,
@@ -36,11 +37,8 @@ indexName: '',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
-localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},
-search: {
-root: '/',
-path: 'search.json'
-},
+localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
+path: 'search.json',
 tabs: true,
 motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
@@ -50,28 +48,42 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<meta name="description" content="Through the looking glass: Adding new hardware or overclocking what you’ve already got are among the leading ways to squeeze more performance out of your PC but in the earlier days of computing, all">
-<meta name="keywords" content="个人博客,物理,技术,计算机">
+<meta name="description" content="Through the looking glass: Adding new hardware or overclocking what you&amp;#39;ve already got are among the leading ways to squeeze more performance out of your PC but in the earlier days of computing,">
+<meta name="keywords" content="Windows">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Win 95中晃动鼠标竟能加速系统">
 <meta property="og:url" content="https://zhangshuqiao.org/2019-07/在Win 95中晃动鼠标竟能加速系统/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="Through the looking glass: Adding new hardware or overclocking what you’ve already got are among the leading ways to squeeze more performance out of your PC but in the earlier days of computing, all">
+<meta property="og:description" content="Through the looking glass: Adding new hardware or overclocking what you&amp;#39;ve already got are among the leading ways to squeeze more performance out of your PC but in the earlier days of computing,">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2019-07/2019-07-15-image-24.jpg">
-<meta property="og:updated_time" content="2019-07-24T15:59:45.100Z">
+<meta property="og:updated_time" content="2019-08-05T13:11:32.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Win 95中晃动鼠标竟能加速系统">
-<meta name="twitter:description" content="Through the looking glass: Adding new hardware or overclocking what you’ve already got are among the leading ways to squeeze more performance out of your PC but in the earlier days of computing, all">
+<meta name="twitter:description" content="Through the looking glass: Adding new hardware or overclocking what you&amp;#39;ve already got are among the leading ways to squeeze more performance out of your PC but in the earlier days of computing,">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2019-07/2019-07-15-image-24.jpg">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
-<link rel="canonical" href="https://zhangshuqiao.org/2019-07/在Win 95中晃动鼠标竟能加速系统/">
-<script id="page.configurations">
+<script id="page-configurations">
+// https://hexo.io/docs/variables.html
 CONFIG.page = {
 sidebar: "",
+isHome: false,
+isPost: true,
+isPage: false,
+isArchive: false
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-8784231462763562",
+enable_page_level_ads: true
+});
+</script>
 <title>在Win 95中晃动鼠标竟能加速系统 | 米米的博客</title>
 <noscript>
 <style>
@@ -97,7 +109,7 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left page-post-detail">
+<div class="container sidebar-position-left">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
@@ -122,29 +134,29 @@ top: initial;
 <nav class="site-nav">
 <ul id="menu" class="menu">
 <li class="menu-item menu-item-home">
-<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 </li>
 <li class="menu-item menu-item-archives">
-<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
+<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 </li>
 <li class="menu-item menu-item-about">
-<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br/>关于</a>
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
 </li>
 <li class="menu-item menu-item-categories">
-<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类</a>
+<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 </li>
 <li class="menu-item menu-item-tags">
-<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签</a>
+<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 </li>
 <li class="menu-item menu-item-朋友们">
-<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br/>朋友们</a>
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
 </li>
 <li class="menu-item menu-item-实验室">
-<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br/>实验室</a>
+<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
 </li>
 <li class="menu-item menu-item-search">
 <a href="javascript:;" class="popup-trigger">
-<i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
+<i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
 <div class="site-search">
@@ -171,7 +183,7 @@ type="text" id="local-search-input">
 <main id="main" class="main">
 <div class="main-inner">
 <div class="content-wrap">
-<div id="content" class="content">
+<div id="content" class="content page-post-detail">
 <div id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
@@ -202,13 +214,12 @@ type="text" id="local-search-input">
 <span class="post-meta-item-text">分类于</span>
 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 </span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon"
->
+<span class="post-meta-item" title="阅读次数">
+<span class="post-meta-item-icon">
 <i class="fa fa-file"></i>
-阅读次数：
-<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
+<span class="post-meta-item-text">阅读次数：</span>
+<span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
 </span>
 <span class="post-meta-item">
 <span class="post-meta-item-icon">
@@ -219,26 +230,25 @@ type="text" id="local-search-input">
 <span class="post-comments-count valine-comment-count" data-xid="/2019-07/在Win 95中晃动鼠标竟能加速系统/" itemprop="commentCount"></span>
 </a>
 </span>
-<br/>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p><img src="/images/2019-07/2019-07-15-image-24.jpg" alt></p>
-<p><strong>Through the looking glass:</strong> Adding new hardware or overclocking what you’ve already got are among the leading ways to squeeze more performance out of your PC but in the earlier days of computing, all one had to do to give their PC a jolt was wiggle the mouse cursor around during an install.<br>添加新硬件或超频现有硬件是使PC获得更佳性能的主要方法。但在个人计算机的早期阶段，用户竟然还可以通过一个巧妙的办法来提升性能——不停地晃动鼠标的光标。</p>
-<p>I’m a self-professed fidgeter, especially at the computer. It’s not uncommon to catch me moving the mouse all around with zero intent, even if I’m busy reading a story or watching a video.<br>我自认为是一个手抖的人，尤其是在电脑前。即使我在忙着用电脑读故事或看视频，你也会发现我在毫无目的地移动鼠标。</p>
-<p>I chalk it up to the earlier days of computing when keeping the mouse active seemed to have a tangible benefit on system performance. Turns out, it wasn’t just in our imagination.<br>我把它归结为在上古时期，保持鼠标活动似乎对系统性能有明显的好处。事实证明，这并不只是我们的想象。</p>
+<p><strong>Through the looking glass:</strong> Adding new hardware or overclocking what you&#39;ve already got are among the leading ways to squeeze more performance out of your PC but in the earlier days of computing, all one had to do to give their PC a jolt was wiggle the mouse cursor around during an install.<br>添加新硬件或超频现有硬件是使PC获得更佳性能的主要方法。但在个人计算机的早期阶段，用户竟然还可以通过一个巧妙的办法来提升性能——不停地晃动鼠标的光标。</p>
+<p>I&#39;m a self-professed fidgeter, especially at the computer. It&#39;s not uncommon to catch me moving the mouse all around with zero intent, even if I&#39;m busy reading a story or watching a video.<br>我自认为是一个手抖的人，尤其是在电脑前。即使我在忙着用电脑读故事或看视频，你也会发现我在毫无目的地移动鼠标。</p>
+<p>I chalk it up to the earlier days of computing when keeping the mouse active seemed to have a tangible benefit on system performance. Turns out, it wasn&#39;t just in our imagination.<br>我把它归结为在上古时期，保持鼠标活动似乎对系统性能有明显的好处。事实证明，这并不只是我们的想象。</p>
 <p>According to a running thread over on <a href="https://retrocomputing.stackexchange.com/questions/11533/why-did-moving-the-mouse-cursor-cause-windows-95-to-run-more-quickly" target="_blank" rel="noopener">Stack Exchange</a>, moving the mouse cursor in Windows 95 did indeed speed up performance due to a flaw in the way the OS generates events and the fact that many applications are event driven.<br>根据<a href="https://retrocomputing.stackexchange.com/questions/11533/why-did-moving-the-mouse-cursor-cause-windows-95-to-run-more-quickly" target="_blank" rel="noopener">Stack Exchange</a>上一个正在热烈讨论的主题，在Windows 95中移动鼠标光标确实提升了性能，因为操作系统的事件生成方法存在缺陷，并且许多应用程序都是基于事件来驱动的。</p>
 <p>As one user explains:<br>正如一位用户解释到：</p>
 <blockquote>
 <p>Windows 95 applications often use asynchronous I/O, that is they ask for some file operation like a copy to be performed and then tell the OS that they can be put to sleep until that operation finishes. By sleeping they allow other applications to run, rather than wasting CPU time endlessly asking if the file operation has completed yet.<br>Windows 95应用程序通常采用了异步I/O，也就是说，在它们要求执行某些文件操作的时候（例如要执行的副本），会向操作系统表示其能够在操作完成之前转入休眠状态。通过这项休眠机制，其它应用程序将可以穿插空档来运行，而不是无休止地询问文件操作是否已经完成，从而浪费CPU时间。</p>
 </blockquote>
 <blockquote>
-<p>For reasons that are not entirely clear, but probably due to performance problems on low end machines, Windows 95 tends to bundle up the messages about I/O completion and doesn’t immediately wake up the application to service them. However, it does wake the application for user input, presumably to keep it feeling responsive, and when the application is awake it will handle any pending I/O messages too.<br>目前原因尚不完全清楚，但一个猜测是，这可能是为了解决低端计算机上的性能问题——Windows 95倾向于捆绑关于I/O完成的消息，并且不会立即唤醒应用程序来为它们提供服务。不过，在用户输入时，操作系统会唤醒应用程序，这可能是为了让应用程序保持响应；而当应用程序处于唤醒状态时，它就能够处理任何挂起的I/O消息。</p>
+<p>For reasons that are not entirely clear, but probably due to performance problems on low end machines, Windows 95 tends to bundle up the messages about I/O completion and doesn&#39;t immediately wake up the application to service them. However, it does wake the application for user input, presumably to keep it feeling responsive, and when the application is awake it will handle any pending I/O messages too.<br>目前原因尚不完全清楚，但一个猜测是，这可能是为了解决低端计算机上的性能问题——Windows 95倾向于捆绑关于I/O完成的消息，并且不会立即唤醒应用程序来为它们提供服务。不过，在用户输入时，操作系统会唤醒应用程序，这可能是为了让应用程序保持响应；而当应用程序处于唤醒状态时，它就能够处理任何挂起的I/O消息。</p>
 </blockquote>
 <blockquote>
 <p>Thus wiggling the mouse causes the application to process I/O messages faster, and install quicker. The effect was quite pronounced; large applications that could take an hour to install could be reduced to 15 minutes with suitable mouse input.<br>换言之，晃动鼠标可以使应用程序更快地处理I/O消息，并加快安装速度。效果相当明显：配合合适的鼠标输入，原先可能需要一个小时安装的大型应用程序，耗时可以减少到15分钟。</p>
 </blockquote>
-<p>As a youth, I’d keep my mouse cursor active as much as possible – and especially during installs – simply because I didn’t want the screensaver to trigger and bog down system resources. Sure, I could have just set the timeout to longer on the screensaver, but that’s beside the point. As it turns out, my actions were actually helpful, and not for the reason I thought.<br>在我年轻的时候，我尽可能地让鼠标光标处于活动状态——尤其是在安装期间——只是因为我不想让屏幕保护程序触发并阻塞系统资源。当然，我可以把屏保上的超时设置得更长一些，但这不是重点。事实证明，我的行为实际上是有帮助的——即使这并不是我的初衷。</p>
+<p>As a youth, I&#39;d keep my mouse cursor active as much as possible -- and especially during installs -- simply because I didn&#39;t want the screensaver to trigger and bog down system resources. Sure, I could have just set the timeout to longer on the screensaver, but that&#39;s beside the point. As it turns out, my actions were actually helpful, and not for the reason I thought.<br>在我年轻的时候，我尽可能地让鼠标光标处于活动状态——尤其是在安装期间——只是因为我不想让屏幕保护程序触发并阻塞系统资源。当然，我可以把屏保上的超时设置得更长一些，但这不是重点。事实证明，我的行为实际上是有帮助的——即使这并不是我的初衷。</p>
 <hr>
 <p>本文翻译自：<a href="https://www.techspot.com/news/80956-wiggling-mouse-windows-95-made-operating-system-faster.html" target="_blank" rel="noopener">Wiggling the mouse in Windows 95 made the operating system faster</a></p>
 </div>
@@ -277,6 +287,9 @@ type="text" id="local-search-input">
 </ul>
 </div>
 <footer class="post-footer">
+<div class="post-tags">
+<a href="/tags/Windows/" rel="tag"># Windows</a>
+</div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
 <a href="/2019-07/怎样修好任何电脑/" rel="next" title="怎样修好任何电脑">
@@ -318,7 +331,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">106</span>
+<span class="site-state-item-count">107</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -330,7 +343,7 @@ alt="张书樵">
 </div>
 <div class="site-state-item site-state-tags">
 <a href="/tags/">
-<span class="site-state-item-count">23</span>
+<span class="site-state-item-count">24</span>
 <span class="site-state-item-name">标签</span>
 </a>
 </div>
@@ -347,7 +360,7 @@ alt="张书樵">
 </div>
 <ul class="links-of-blogroll-list">
 <li class="links-of-blogroll-item">
-<a href="https://galaxymimi.com" title="https://galaxymimi.com" rel="noopener" target="_blank">Galaxy Mimi</a>
+<a href="https://zsq.im" title="https://zsq.im" rel="noopener" target="_blank">ZSQ.IM</a>
 </li>
 <li class="links-of-blogroll-item">
 <a href="https://three-body.org" title="https://three-body.org" rel="noopener" target="_blank">Three Body</a>
@@ -370,7 +383,7 @@ alt="张书樵">
 <span class="author" itemprop="copyrightHolder">张书樵</span>
 </div>
 <div class="busuanzi-count">
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span class="post-meta-item-icon">
 <i class="fa fa-user"></i>
 </span>
@@ -394,26 +407,20 @@ alt="张书樵">
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
-<script src="/js/utils.js?v=7.2.0"></script>
-<script src="/js/motion.js?v=7.2.0"></script>
-<script src="/js/affix.js?v=7.2.0"></script>
-<script src="/js/schemes/pisces.js?v=7.2.0"></script>
-<script src="/js/scrollspy.js?v=7.2.0"></script>
-<script src="/js/post-details.js?v=7.2.0"></script>
-<script src="/js/next-boot.js?v=7.2.0"></script>
-<script src="/js/local-search.js?v=7.2.0"></script>
-<script>
+<script src="/js/utils.js?v=7.3.0"></script>
+<script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/affix.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+<script src="/js/local-search.js?v=7.3.0"></script>
+<script pjax>
 if ($('body').find('div.pdf').length) {
-$.ajax({
-type: 'GET',
-url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
-dataType: 'script',
-cache: true,
-success: function() {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
 $('body').find('div.pdf').each(function(i, o) {
 PDFObject.embed($(o).attr('target'), $(o), {
 pdfOpenParams: {
@@ -427,12 +434,14 @@ PDFJS_URL: '/lib/pdf/web/viewer.html',
 height: $(o).attr('height') || '1000px'
 });
 });
-},
-});
+}, window.PDFObject);
 }
 </script>
-<script src="/lib/Valine.min.js"></script>
+<div id="pjax">
+<script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
 <script>
+NexT.utils.getScript('/lib/Valine.min.js', function() {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
 guest = guest.split(',').filter(function(item) {
@@ -449,12 +458,47 @@ avatar: 'mm',
 meta: guest,
 pageSize: '12' || 10,
 visitor: false,
-lang: '' || 'zh-cn'
+lang: '' || 'zh-cn',
+path: location.pathname
+});
+}, window.Valine);
+</script>
+</div>
+<script>
+var pjax = new Pjax({
+selectors: [
+'title',
+'#page-configurations',
+'.content-wrap',
+'.sidebar-inner',
+'#pjax'
+],
+switches: {
+'.sidebar-inner': Pjax.switches.innerHTML
+},
+analytics: false,
+cacheBust: false,
+scrollTo: !CONFIG.save_scroll
+});
+$(document).on('pjax:send', function() {
+$('.sidebar-inner').stop().fadeTo('fast', 0);
+CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
+});
+$(document).on('pjax:success', function() {
+$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
+$(o).parent().append($(o).remove());
+});
+// Define Motion Sequence & Bootstrap Motion.
+if (CONFIG.motion.enable) {
+NexT.motion.integrator
+.init()
+.add(NexT.motion.middleWares.postList)
+.bootstrap();
+}
+$('.sidebar-inner .motion-element').css('opacity', 1);
+$('.sidebar-inner').fadeTo('fast', 1);
+NexT.utils.updateSidebarPosition();
 });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
-<script src="/lib/waifu/live2d.min.js"></script>
-<script src="/lib/waifu/waifu-tips.js"></script>
-<script src="/lib/custom.js"></script>
 </body>
 </html>

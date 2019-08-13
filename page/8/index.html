@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next gemini" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.9.0">
@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
+<script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 <script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
+exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 save_scroll: true,
@@ -39,8 +42,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 },
 localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
 path: 'search.json',
-tabs: true,
-motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
 copy_button: '复制',
 copy_success: '复制成功',
@@ -156,6 +158,7 @@ top: initial;
 <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
+</nav>
 <div class="site-search">
 <div class="popup search-popup local-search-popup">
 <div class="local-search-header clearfix">
@@ -174,7 +177,6 @@ type="text" id="local-search-input">
 <div id="local-search-result"></div>
 </div>
 </div>
-</nav>
 </div>
 </header>
 <main id="main" class="main">
@@ -182,6 +184,70 @@ type="text" id="local-search-input">
 <div class="content-wrap">
 <div id="content" class="content page-home">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/用Telnet观看Nyancat动画/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-11/用Telnet观看Nyancat动画/" class="post-title-link" itemprop="url">用Telnet观看Nyancat动画</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-11-08 22:36:23" itemprop="dateCreated datePublished" datetime="2018-11-08T22:36:23+08:00">2018-11-08</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-11/用Telnet观看Nyancat动画/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-11/用Telnet观看Nyancat动画/" itemprop="commentCount"></span>
+</a>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在知乎上看到一个关于VPS有趣的用途的问题，<a href="https://www.zhihu.com/question/24284566/answer/27291403" target="_blank" rel="noopener">其中一个回答</a>提到了可以搭建Telnet服务器，成功运行后别人用Telnet连接你的主机将会看到Nyancat动画。大致效果如图所示：</p>
+<p><img src="/images/2018-11/nyancat.png" alt></p>
+<p>然而，回答中给出的Demo已经失效，<code>telnet nyancat.dakko.us</code>会返回一个<code>Connection refused</code>错误。不过值得庆幸的是，这个项目的官方网站<a href="http://nyancat.dakko.us" target="_blank" rel="noopener">Nyan Cat Telnet Server</a>和<a href="https://github.com/klange/nyancat" target="_blank" rel="noopener">GitHub Repo</a>都还可以正常访问，因此可以尝试重新把它搭起来。不用着急，这个过程并不复杂，请按照以下方法操作即可。</p>
+<h2 id="下载编译"><a href="#下载编译" class="headerlink" title="下载编译"></a>下载编译</h2><p>在命令行执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/klange/nyancat.git</span><br><span class="line"><span class="built_in">cd</span> nyancat</span><br><span class="line">make</span><br><span class="line">mv src/nyancat /usr/bin <span class="comment">#or make install</span></span><br></pre></td></tr></table></figure>
+<p>这时，通过<code>nyancat</code>或<code>nyancat -t</code>命令就可以查看效果。接下来把Telnet配置好就行了。</p>
+<h2 id="配置Telnet"><a href="#配置Telnet" class="headerlink" title="配置Telnet"></a>配置Telnet</h2><p>使用包管理工具安装<code>xinetd</code>，例如</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install xinetd</span><br></pre></td></tr></table></figure>
+<p>然后在<code>/etc/xinetd.d</code>目录下新建文件<code>nyancat</code>，内容为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">service telnet</span><br><span class="line">&#123;</span><br><span class="line">    flags          = REUSE</span><br><span class="line">    socket_type    = stream</span><br><span class="line">    <span class="built_in">wait</span>           = no</span><br><span class="line">    user           = root</span><br><span class="line">    group          = root</span><br><span class="line">    server         = /usr/bin/nyancat</span><br><span class="line">    server_args    = -t</span><br><span class="line">    log_on_failure += USERID</span><br><span class="line">    <span class="built_in">disable</span>        = no</span><br><span class="line">    instances      = 10</span><br><span class="line">    per_source     = 2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中<code>instances</code>和<code>per_source</code>限制了总的连接数和单个IP的连接数。<br>接下来，重启<code>xinetd</code>服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart xinetd</span><br></pre></td></tr></table></figure>
+<p>这时，你就可以通过<code>telnet localhost</code>查看是否一切正常。如果没有问题，配置防火墙开放23端口，就可以从公网访问了。试试用Telnet连接你的主机，效果是不是非常酷炫？<br>不过，博主在实践中发现，开放telnet的23端口可能会产生大量异常流量。解决方法是修改telnet的端口号，编辑<code>/etc/services</code>，找到telnet，将23改为一个你喜欢的数字（比如8080）。或者，可以在不需要使用时直接关闭这个服务，在<code>nyancat</code>中设置<code>disable: yes</code>即可。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>俗话说，有光的地方就有Bad Apple!!。很久以前的一篇文章<a href="/2017-12/近期完成的数个游戏及应用/">近期完成的数个游戏及应用</a>中，就提到博主成功使用HTML页面播放Bad Apple!!字符画。目前，博主正在尝试搭建一个可以播放Bad Apple!!的Telnet服务器，敬请期待。</p>
+<hr>
+<p>本文更新于2019年2月14日：<br>博主通过魔改Nyancat的代码，成功地实现了可以播放Bad Apple!!的Telnet服务器。可以阅读文章<a href="/2019-02/用Telnet观看Bad%20Apple!!/">用Telnet观看Bad Apple!!</a>查看。</p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-10/Heavens Above爬虫的实现/">
@@ -216,8 +282,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-10/Heavens Above爬虫的实现/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-10/Heavens Above爬虫的实现/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-10/Heavens Above爬虫的实现/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -268,8 +334,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-10/Thanks for inventing Javascript/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-10/Thanks for inventing Javascript/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-10/Thanks for inventing Javascript/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -317,8 +383,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-10/使用OpenCV进行星轨的后期处理/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-10/使用OpenCV进行星轨的后期处理/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-10/使用OpenCV进行星轨的后期处理/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -370,8 +436,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-10/古惑狼游戏牵扯出的硬件bug/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-10/古惑狼游戏牵扯出的硬件bug/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-10/古惑狼游戏牵扯出的硬件bug/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -387,65 +453,6 @@ type="text" id="local-search-input">
 <!--noindex-->
 <div class="post-button text-center">
 <a class="btn" href="/2018-10/古惑狼游戏牵扯出的硬件bug/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-09/关于黎曼猜想/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-09/关于黎曼猜想/" class="post-title-link" itemprop="url">关于黎曼猜想</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-09-25 10:48:48" itemprop="dateCreated datePublished" datetime="2018-09-25T10:48:48+08:00">2018-09-25</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-comment-o"></i>
-</span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-09/关于黎曼猜想/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-09/关于黎曼猜想/" itemprop="commentCount"></span>
-</a>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>前几日关于黎曼猜想（Riemann Hypothesis）被证明的消息在网络上炒得沸沸扬扬，菲尔兹奖、阿贝尔奖双料得主Michael Francis Atiyah爵士声称他证明了这个困扰了数学界160年的问题，且其目的是为了研究精细结构常数。然而，在他公布了他的Simple Proof后，却不被学界所看好，甚至遭到了一些尖锐的批评。毕竟，这篇只有五页纸的文章，刨去介绍等内容，并没有展示太多的细节；其证明过程，又依赖于一个存疑的Todd function。如果如证明中所说，黎曼猜想真的指向了精细结构常数，这对于由第一性原理出发构建物理学体系将有极大的启发性，其结果无疑是令人激动的。但是经过计算，却发现文中所声称的极限存在问题，整个理论的正确性难以得到证实。<br>有鉴于此，博主研究该证明过程的计划搁置了（毕竟没有什么价值，大概可以用来提升读Paper的能力#捂脸），还是写篇文章介绍下黎曼猜想本身吧。</p>
-<h2 id="猜想的提出"><a href="#猜想的提出" class="headerlink" title="猜想的提出"></a>猜想的提出</h2><p>时间回到1859年，著名的德国数学家波恩哈德·黎曼（Bernhard Riemann）在他的论文《Über die Anzahl der Primzahlen unter einer gegebenen Größe》中提及了这个著名的猜想。黎曼本人在数学界颇有建树，但他却并没有试图对论文中的猜想给出证明。<br>这个猜想是关于黎曼$\zeta$函数的，该函数的定义为：<br>$$\zeta(s)=\frac{1}{1^s}+\frac{1}{2^s}+\frac{1}{3^s}+\frac{1}{4^s}+\cdots$$<br>注意，$\zeta$函数必须经过解析延拓，才能在全复平面上有定义，稍后将给出解析延拓的过程。<br>而黎曼猜想就是：$\zeta(s)$的所有非平凡零点的实部均为$\frac{1}{2}$。</p>
-<h2 id="zeta-函数的解析延拓"><a href="#zeta-函数的解析延拓" class="headerlink" title="$\zeta$函数的解析延拓"></a>$\zeta$函数的解析延拓</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在中学数学中，我们所接触到的函数都是实变函数，即从实数集到实数集的映射，写为$f:\mathbb{R}\rightarrow\mathbb{R}$。在接触了虚数单位i和复数后，就可以开始定义复变函数，即复数集到复数集的映射，写为$f:\mathbb{C}\rightarrow\mathbb{C}$。实变函数的定义域被限制在了实轴上，而为了表示出一个与之对应的复变函数，就需要扩充其定义域到复平面上。这样，可以定义出复数域上的各种函数：指数、对数、三角函数等。由于复数的性质，还需要根据枝点规定割线、单值分支等，来确定出函数值。而原本定义域只在复平面上某一区域的复变函数，经过严格的数学推导（例如级数展开等），也可以扩充其定义域。这时，解析延拓的办法应运而生。对于$\zeta(s)$函数而言，非常明显，当$s$取在实轴上（即作为实变函数时），若$s\le 1$，其函数值发散；而$s&gt;1$时收敛。特别的，$s=1$时为调和级数，而$s=2$时由高斯最早计算出了其函数值$\frac{\pi^2}{6}$。<br>在复数域上，可以证明，$\zeta(s)$在$Re(s)&gt;1$上解析。接下来，我们需要将其定义域扩展到全复平面；之前的级数定义将不在对$Re(s)&lt;1$的情况使用，因为它不收敛，无法采用Cauchy和。</p>
-<h3 id="梅林变换"><a href="#梅林变换" class="headerlink" title="梅林变换"></a>梅林变换</h3><p>梅林（Mellin）变换是一个积分变换，它把一个正实数域$\mathbb{R}^+$上的函数变换为一个复数域$\mathbb{C}$上的函数。设$f:\mathbb{R}^+\rightarrow\mathbb{C}$是一个函数，定义：<br>$$\mathcal{M}f(z)=\int_0^{+\infty}f(s)s^z\frac{ds}{s}$$<br>称$\mathcal{M}f:\mathbb{C}\rightarrow\mathbb{C}$为$f$的梅林变换。<br>取$f(s)$为$f_\lambda (s)=e^{-\lambda s}$，则有：<br>\begin{align*}<br>\mathcal{M}f(z)&amp;=\int_0^{+\infty}e^{-\lambda s}s^z\frac{ds}{s}\\<br>&amp;=\lambda^{-z}\int_0^{+\infty}e^{-s}s^{z-1}ds\\<br>&amp;=\lambda^{-z}\Gamma(z)<br>\end{align*}<br>这里的$\Gamma(z)$就是一般数理方程中会涉及到的$\Gamma$函数，其性质不再赘述。<br>记住以上结论，取$\lambda=\pi n^2$，继续构造函数：<br>$$f(s)=\sum_{n=1}^{\infty}f_{\pi n^2}(s)=\sum_{n=1}^{\infty}e^{-\pi n^2 s}$$<br>注意到梅林变换是线性的，这时，<br>\begin{align*}<br>\mathcal{M}f(z)&amp;=\sum_{n=1}^{\infty}\mathcal{M}f_{\pi n^2}(z)\\<br>&amp;=\sum_{n=1}^{\infty}(\pi n^2)^{-z}\Gamma(z)\\<br>&amp;=\pi^{-z}\sum_{n=1}^{\infty}n^{-2z}\Gamma(z)\\<br>&amp;=\pi^{-z}\zeta(2z)\Gamma(z)<br>\end{align*}<br>最后一个等号使用了$\zeta$函数的原始定义。考虑到：<br>$$\mathcal{M}f(z)=\int_0^{+\infty}(\sum_{n=1}^{\infty}e^{-\pi n^2 s})s^{z-1}ds$$<br>于是，利用$\mathcal{M}f(z)$的两个等价表达式，我们得到了一个重要结论：<br>$$\pi^{-z}\zeta(2z)\Gamma(z)=\int_0^{+\infty}(\sum_{n=1}^{\infty}e^{-\pi n^2 s})s^{z-1}ds$$<br>注意，这里的推导并非十分严谨，还需要证明其收敛性，才能交换积分与极限。这要求$Re(z)&gt;\frac{1}{2}$。</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-09/关于黎曼猜想/#more" rel="contents">
 阅读全文 &raquo;
 </a>
 </div>
@@ -562,10 +569,7 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>
@@ -590,48 +594,6 @@ height: $(o).attr('height') || '1000px'
 }
 </script>
 <div id="pjax">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-processEscapes: true,
-skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-},
-TeX: {
-equationNumbers: {
-autoNumber: 'AMS'
-}
-}
-});
-MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-if (data.display) {
-var next = data.script.nextSibling;
-while (next && next.nodeName.toLowerCase() === '#text') {
-next = next.nextSibling;
-}
-if (next && next.nodeName.toLowerCase() === 'br') {
-next.parentNode.removeChild(next);
-}
-}
-});
-});
-MathJax.Hub.Queue(function() {
-var all = MathJax.Hub.getAllJax(), i;
-for (i = 0; i < all.length; i += 1) {
-element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-if (element.nodeName.toLowerCase() == 'li') {
-element = element.parentNode;
-}
-element.classList.add('has-jax');
-}
-});
-</script>
-<script>
-NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML', function() {
-MathJax.Hub.Typeset();
-}, window.MathJax);
-</script>
 <script>
 NexT.utils.getScript('/lib/Valine.min.js', function() {
 var GUEST = ['nick', 'mail', 'link'];

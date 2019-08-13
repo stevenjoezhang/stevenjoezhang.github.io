@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next gemini" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.9.0">
@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
+<script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 <script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
+exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 save_scroll: true,
@@ -39,8 +42,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 },
 localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
 path: 'search.json',
-tabs: true,
-motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
 copy_button: '复制',
 copy_success: '复制成功',
@@ -156,6 +158,7 @@ top: initial;
 <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
+</nav>
 <div class="site-search">
 <div class="popup search-popup local-search-popup">
 <div class="local-search-header clearfix">
@@ -174,7 +177,6 @@ type="text" id="local-search-input">
 <div id="local-search-result"></div>
 </div>
 </div>
-</nav>
 </div>
 </header>
 <main id="main" class="main">
@@ -182,6 +184,99 @@ type="text" id="local-search-input">
 <div class="content-wrap">
 <div id="content" class="content page-home">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-01/什么是CAT等级？/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2019-01/什么是CAT等级？/" class="post-title-link" itemprop="url">什么是CAT等级？</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2019-01-08 13:08:11" itemprop="dateCreated datePublished" datetime="2019-01-08T13:08:11+08:00">2019-01-08</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2019-01/什么是CAT等级？/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2019-01/什么是CAT等级？/" itemprop="commentCount"></span>
+</a>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>根据国际电子电工委员会IEC1010-1的定义，我们把电工工作的区域分为四个等级，分别称作CAT I，CAT II，CAT III和CAT IV。CAT等级是向下兼容的，也就是说，一块CAT IV的表用在CAT I，CAT II，CAT III下使用是完全安全的，但是一块CAT I的万用表用在CAT II，CAT III和CAT IV环境下使用就不保证安全了。</p>
+<h2 id="CAT等级对用户意味着什么"><a href="#CAT等级对用户意味着什么" class="headerlink" title="CAT等级对用户意味着什么"></a>CAT等级对用户意味着什么</h2><p>CAT等级意味着对客户的人身安全承诺，它不仅仅是耐高压！CAT等级严格规定了电气工作人员在不同级别的电气环境中可能遇到的电气设备的类型以及在这样的区域中工作所使用的测量工具必须要遵循的安全标准。CAT后面的电压数值则表示了他们能够收到电压冲击的上限。<br>例如，一个CAT III 600V的万用表，表示该表可以在CAT I，II和III区域安全使用，在这三个区域里如果该表收到最高600V的电压冲击，表不会对人体安全产生威胁，但是这款表在CAT IV域使用时，或者到700V的高压冲击的时候，就不能保证同样的安全了。CAT等级是向下兼容的，也就是说，一块CAT IV的表用在CAT I，CAT II，CAT III下使用是完全安全的，但是一块CAT I的万用表用在CAT II，CAT III和CAT IV环境下使用就不保证安全了，表可能发生爆炸、燃烧威胁到你的安全。</p>
+<h2 id="CAT等级划分"><a href="#CAT等级划分" class="headerlink" title="CAT等级划分"></a>CAT等级划分</h2><ul>
+<li>CAT I：通过变压器或者类似设备连接到墙上插座的二次电气线路，例如电子仪器设备类。有保护措施的电子设备、任何高压、低压回路，如办公室内部的复印机等。</li>
+<li>CAT II：通过电源线连接到室内插座的用电设备的一次电气线路，如移动式工具，家电等。家用电器、便携工具（电钻等）、家用插座，距离三类线路10米以上的插座或者距离四类线路20米以上的插座。</li>
+<li>CAT III：直接连接到配电盘的大型设备的一次线路及配电盘与插座之间的电路线路（三相分配电路包括单个商业照明电路）。位置固定的设备，如多相马达、多相闸盒；大型建设物内部的照明设备、线路；工业现场（车间）的机床、电源配电盘等。</li>
+<li>CAT IV：三相公用供电设备和室外供电线路设备。涉及到『初始连接』的设备，如电站的电力分配系统；电力仪表，前端过置保护，任何室外输电线路。</li>
+</ul>
+<p><img src="/images/2019-01/2ccd70dcb7a54444c2cfeb2fc78c23a3.png" alt></p>
+<h2 id="如何理解CAT等级"><a href="#如何理解CAT等级" class="headerlink" title="如何理解CAT等级"></a>如何理解CAT等级</h2><p>CAT等级有各自的工作电压和瞬时峰值电压。CAT等级的工作电压分为：50V，150V，300V，600V，1000V。工作电压越高意味着能够承受的瞬时峰值电压也越高。<br>如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>等级</th>
+<th>瞬时峰值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CAT IV 600V</td>
+<td>8kV impulse</td>
+</tr>
+<tr>
+<td>CAT III 600V</td>
+<td>6kV impulse</td>
+</tr>
+<tr>
+<td>CAT III 1000V</td>
+<td>8kV impulse</td>
+</tr>
+<tr>
+<td>CAT II 600V</td>
+<td>4kV impluse</td>
+</tr>
+<tr>
+<td>CAT II 1000V</td>
+<td>6kV impulse</td>
+</tr>
+</tbody></table>
+<p>下图有更详细的数据：</p>
+<p><img src="/images/2019-01/5e0693d4c540a6d44ba986dc647409cd.png" alt></p>
+<h2 id="CAT-III-600V比CAT-II-1000V更安全"><a href="#CAT-III-600V比CAT-II-1000V更安全" class="headerlink" title="CAT III 600V比CAT II 1000V更安全"></a>CAT III 600V比CAT II 1000V更安全</h2><p>人们往往无法理解这一点，为什么只能承受600V电压的设备的比1000V更安全？<br>这里涉及到信号源阻抗的问题。信号源阻抗越大，CAT等级越低。由表1可知，CAT III等级的阻抗为2欧姆，CAT II等级的阻抗时12欧姆，即CAT II等级的源阻抗是CAT III等级阻抗的6倍。所以，虽然CAT III等级的电压虽小，但阻抗也小，电流大，从而能够承受更高能量的信号，所以说CAT III 600V比CAT II 1000V安全。<br>同一个CAT等级下，工作电压越高，其安全等级也越高（同一CAT等级的源阻抗相同）。例如：CAT III 1000V（8kV 瞬时高发）比CAT II 600V（6kV瞬时高压）更安全。<br>如果您需要测试一个电力电路，你应该会用到一个CAT III 600V或CAT IV 600V/CAT III 1000V的仪表，配套CAT IV-600V/CAT III-1000V测试线和探头。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p>问：PicoScope的CAT I等级的高压探头TA044为什么配套 CAT III 1000V等级的探头尖端？是不是厂家弄错了。<br>答：不是。Pico所有的高压差分探头配套的都是CAT III等级的探头尖端。如下图所示。TA044整体上是一个在CAT I 环境中能够安全使用的设备，能够测量的最大单端电压7kV。探头尖端采用的是工作电压1000V的CAT III等级，该等级下能够承受的瞬时最大尖峰电压是8kV，所以CAT III等级的探头尖端 用起来更加安全。</p>
+<p><img src="/images/2019-01/4fbf3af969c5f5b73093dbfd1600be96.png" alt></p>
+<hr>
+<p>本文转载自：<a href="http://www.eepw.com.cn/article/274406.htm" target="_blank" rel="noopener">CAT 等级</a></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-01/成功召唤独角兽/">
@@ -216,8 +311,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2019-01/成功召唤独角兽/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2019-01/成功召唤独角兽/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2019-01/成功召唤独角兽/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -268,8 +363,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-12/炉石卡组代码解析/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-12/炉石卡组代码解析/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-12/炉石卡组代码解析/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -336,8 +431,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-12/Command Line Russian Roulette/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-12/Command Line Russian Roulette/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-12/Command Line Russian Roulette/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -386,15 +481,97 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-12/Base64编码的原理与实现/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-12/Base64编码的原理与实现/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-12/Base64编码的原理与实现/" itemprop="commentCount"></span>
 </a>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>在数据传输的时候，并不是所有的字符都可以受到支持，很多时候只能传输可见字符，对于不可见字符的传输需要经过特殊处理，这就是Base64产生的原因。Base64编码是一种基于64个可打印字符来表示二进制数据的表示方法。由于$2^6=64$，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。在Base64中的可打印字符包括字母A-Z、a-z、数字0-9，这样共有62个字符，此外两个可打印符号在不同的系统中而不同。一些如uuencode的其他编码方法，和之后BinHex的版本使用不同的64字符集来代表6个二进制数字，但是不被称为Base64。<br>Base64常用于在通常处理文本数据的场合，表示、传输、存储一些二进制数据，包括MIME的电子邮件及XML的一些复杂数据。用Base64编码图片也是互联网上常见的做法。</p>
+<html><head><style type="text/css">
+.mjpage .MJX-monospace {
+font-family: monospace
+}
+.mjpage .MJX-sans-serif {
+font-family: sans-serif
+}
+.mjpage {
+display: inline;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 100%;
+font-size-adjust: none;
+text-indent: 0;
+text-align: left;
+text-transform: none;
+letter-spacing: normal;
+word-spacing: normal;
+word-wrap: normal;
+white-space: nowrap;
+float: none;
+direction: ltr;
+max-width: none;
+max-height: none;
+min-width: 0;
+min-height: 0;
+border: 0;
+padding: 0;
+margin: 0
+}
+.mjpage * {
+transition: none;
+-webkit-transition: none;
+-moz-transition: none;
+-ms-transition: none;
+-o-transition: none
+}
+.mjx-svg-href {
+fill: blue;
+stroke: blue
+}
+.MathJax_SVG_LineBox {
+display: table!important
+}
+.MathJax_SVG_LineBox span {
+display: table-cell!important;
+width: 10000em!important;
+min-width: 0;
+max-width: none;
+padding: 0;
+border: 0;
+margin: 0
+}
+.mjpage__block {
+text-align: center;
+margin: 1em 0em;
+position: relative;
+display: block!important;
+text-indent: 0;
+max-width: none;
+max-height: none;
+min-width: 0;
+min-height: 0;
+width: 100%
+}</style></head><body><p>在数据传输的时候，并不是所有的字符都可以受到支持，很多时候只能传输可见字符，对于不可见字符的传输需要经过特殊处理，这就是Base64产生的原因。Base64编码是一种基于64个可打印字符来表示二进制数据的表示方法。由于<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="7.64ex" height="2.676ex" style="vertical-align: -0.338ex;" viewbox="0 -1006.6 3289.5 1152.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">2^6=64</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+<path stroke-width="1" id="E1-MJMAIN-36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"/>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E1-MJMAIN-34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+<use xlink:href="#E1-MJMAIN-32" x="0" y="0"/>
+<use transform="scale(0.707)" xlink:href="#E1-MJMAIN-36" x="707" y="557"/>
+<use xlink:href="#E1-MJMAIN-3D" x="1232" y="0"/>
+<g transform="translate(2288,0)">
+<use xlink:href="#E1-MJMAIN-36"/>
+<use xlink:href="#E1-MJMAIN-34" x="500" y="0"/>
+</g>
+</g>
+</svg></span>，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。在Base64中的可打印字符包括字母A-Z、a-z、数字0-9，这样共有62个字符，此外两个可打印符号在不同的系统中而不同。一些如uuencode的其他编码方法，和之后BinHex的版本使用不同的64字符集来代表6个二进制数字，但是不被称为Base64。<br>Base64常用于在通常处理文本数据的场合，表示、传输、存储一些二进制数据，包括MIME的电子邮件及XML的一些复杂数据。用Base64编码图片也是互联网上常见的做法。</p>
 <p>Base64的字符索引如下表所示：</p>
 <table>
 <thead>
@@ -587,71 +764,6 @@ type="text" id="local-search-input">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-12/十二月天象/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-12/十二月天象/" class="post-title-link" itemprop="url">十二月天象</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-12-02 20:11:36" itemprop="dateCreated datePublished" datetime="2018-12-02T20:11:36+08:00">2018-12-02</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-comment-o"></i>
-</span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-12/十二月天象/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-12/十二月天象/" itemprop="commentCount"></span>
-</a>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>即将到来的12月天宇将先后上演『金星最亮』『双子座流星雨极大』『水星西大距』和『小熊座流星雨极大』等多部天象大片，天文爱好者们千万不要错过。</p>
-<h2 id="火星合海王星"><a href="#火星合海王星" class="headerlink" title="火星合海王星"></a>火星合海王星</h2><p>2018年12月7日入夜后西南方天空将可观赏到火星合海王星的天象，火星将至海王星北面0.04度（相当于2角分）的近距离通过，位于宝瓶座。火星视亮度+0.1等，海王星+7.9等，需用小型望远镜观测。</p>
-<p><img src="/images/2018-12/mars.png" alt></p>
-<h2 id="双子座流星雨极大期"><a href="#双子座流星雨极大期" class="headerlink" title="双子座流星雨极大期"></a>双子座流星雨极大期</h2><p>每到岁末，双子座流星雨（Geminids，00004 GEM）都会如期而至。作为北半球三大流星雨之一，它的流量非常稳定，并且全球绝大多数地区的公众都有机会观测到它。今年双子座流星雨的观测条件不错，预报的极大值出现在12月14日晚20时30分，天顶每时出现率ZHR为120。</p>
-<p>辐射点在12月14日入夜后自东北偏东方升起，即入夜后就有机会见到双子座流星出现。今年月相接近上弦，但对观测影响不大，尤其是后半夜观测条件很好，但要注意防寒保暖。</p>
-<p><img src="/images/2018-12/Comet_holmes_and_Geminid121307.jpg" alt></p>
-<h2 id="水星西大距"><a href="#水星西大距" class="headerlink" title="水星西大距"></a>水星西大距</h2><p>12月15日，今年最后一次水星西大距将上演。如果大气透明度足够高，在此后几天的日出前，用肉眼或借助双筒望远镜均可在黎明前的东方低空寻觅到水星的神秘身影。</p>
-<p><img src="/images/2018-12/mercury.png" alt></p>
-<p>水星的视运动是这样的：东大距 → 半轮 → 近日点 → 留 → 下合 → 极长视直径 → 留 → 降交点 → 半轮 → 西大距 → 远日点 → 极短视直径 → 上合 → 升交点 → 东大距，周期是116日（水星的会合周期），而水星东大距 → 西大距平均间隔为41天。这次水星西大距，日出时位于东南方天空，与太阳的最大角距为21度，亮度约-0.5等，是今年观测水星的第四次最佳时机。</p>
-<h2 id="小熊座流星雨"><a href="#小熊座流星雨" class="headerlink" title="小熊座流星雨"></a>小熊座流星雨</h2><p>小熊座流星雨（Ursids，00015 URS）往往是全年精彩天象的收官之作，该流星雨的活动期为12月17日至12月26日。天文预报显示，今年该流星雨极大可能出现在12月22日4时53分。</p>
-<p><img src="/images/2018-12/Murahashi1.jpg" alt></p>
-<p>小熊座流星雨在1949年和1986年曾出现过两次爆发，但今年没有爆发的预期，届时每小时最大天顶流量为10颗左右，而且极大正好赶上满月，观测条件不是太好。</p>
-<hr>
-<blockquote>
-<p>部分图片来自维基百科，采用CC BY-SA 3.0许可证，作者为Brocken Inaglory以及Brian Murahashi和Jim Albers。部分图片来自Stellarium，该软件为开源软件，采用GPL3.0协议。</p>
-</blockquote>
-<p>拓展阅读：<a href="https://www.skyandtelescope.com/astronomy-news/spot-decembers-ursid-meteors" target="_blank" rel="noopener">Can You Spot December’s Ursid Meteors?</a></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -758,10 +870,7 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>
@@ -786,48 +895,6 @@ height: $(o).attr('height') || '1000px'
 }
 </script>
 <div id="pjax">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-processEscapes: true,
-skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-},
-TeX: {
-equationNumbers: {
-autoNumber: 'AMS'
-}
-}
-});
-MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-if (data.display) {
-var next = data.script.nextSibling;
-while (next && next.nodeName.toLowerCase() === '#text') {
-next = next.nextSibling;
-}
-if (next && next.nodeName.toLowerCase() === 'br') {
-next.parentNode.removeChild(next);
-}
-}
-});
-});
-MathJax.Hub.Queue(function() {
-var all = MathJax.Hub.getAllJax(), i;
-for (i = 0; i < all.length; i += 1) {
-element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-if (element.nodeName.toLowerCase() == 'li') {
-element = element.parentNode;
-}
-element.classList.add('has-jax');
-}
-});
-</script>
-<script>
-NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML', function() {
-MathJax.Hub.Typeset();
-}, window.MathJax);
-</script>
 <script>
 NexT.utils.getScript('/lib/Valine.min.js', function() {
 var GUEST = ['nick', 'mail', 'link'];

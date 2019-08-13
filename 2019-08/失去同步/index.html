@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next gemini" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.9.0">
@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
+<script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 <script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
+exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 save_scroll: true,
@@ -39,8 +42,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 },
 localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
 path: 'search.json',
-tabs: true,
-motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
 copy_button: '复制',
 copy_success: '复制成功',
@@ -48,20 +50,20 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<meta name="description" content="经过为期半个月的测试，米米直播平台成功实现了多线路及多种播放方式的直播：线路一是无需Flash支持的HLS直播，对移动端支持极为友好，只是由于原理所限，延时约为45秒；线路一的播放方式有原生HLS和Video.js解码的HLS，能够覆盖大部分设备。线路二是基于Bilibili开源的flv.js的HTTP FLV直播，同样无须Flash，且延时仅有3秒；该播放方式兼容大部分桌面浏览器，但由于需要Me">
-<meta name="keywords" content="系统日志">
+<meta name="description" content="图片来源：1. Justice and Fresh Vegetables - Europe Comics 这样巧妙的设计，不禁让人联想起《哆啦A梦》中的类似剧情：大雄为了破案乘坐时光机回到过去，结果发现罪犯正是自己…… 这本漫画书中还有很多像这样脑洞大开的漫画，可以通过多个渠道购买、下载。">
+<meta name="keywords" content="个人博客,物理,技术,计算机">
 <meta property="og:type" content="article">
-<meta property="og:title" content="米米直播平台正式上线">
-<meta property="og:url" content="https://zhangshuqiao.org/2018-02/米米直播平台正式上线/index.html">
+<meta property="og:title" content="失去同步">
+<meta property="og:url" content="https://zhangshuqiao.org/2019-08/失去同步/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="经过为期半个月的测试，米米直播平台成功实现了多线路及多种播放方式的直播：线路一是无需Flash支持的HLS直播，对移动端支持极为友好，只是由于原理所限，延时约为45秒；线路一的播放方式有原生HLS和Video.js解码的HLS，能够覆盖大部分设备。线路二是基于Bilibili开源的flv.js的HTTP FLV直播，同样无须Flash，且延时仅有3秒；该播放方式兼容大部分桌面浏览器，但由于需要Me">
+<meta property="og:description" content="图片来源：1. Justice and Fresh Vegetables - Europe Comics 这样巧妙的设计，不禁让人联想起《哆啦A梦》中的类似剧情：大雄为了破案乘坐时光机回到过去，结果发现罪犯正是自己…… 这本漫画书中还有很多像这样脑洞大开的漫画，可以通过多个渠道购买、下载。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-02/mimilive.png">
-<meta property="og:updated_time" content="2019-08-06T06:19:37.600Z">
+<meta property="og:image" content="https://zhangshuqiao.org/images/2019-08/005.jpg">
+<meta property="og:updated_time" content="2019-08-11T18:33:07.879Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="米米直播平台正式上线">
-<meta name="twitter:description" content="经过为期半个月的测试，米米直播平台成功实现了多线路及多种播放方式的直播：线路一是无需Flash支持的HLS直播，对移动端支持极为友好，只是由于原理所限，延时约为45秒；线路一的播放方式有原生HLS和Video.js解码的HLS，能够覆盖大部分设备。线路二是基于Bilibili开源的flv.js的HTTP FLV直播，同样无须Flash，且延时仅有3秒；该播放方式兼容大部分桌面浏览器，但由于需要Me">
-<meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-02/mimilive.png">
+<meta name="twitter:title" content="失去同步">
+<meta name="twitter:description" content="图片来源：1. Justice and Fresh Vegetables - Europe Comics 这样巧妙的设计，不禁让人联想起《哆啦A梦》中的类似剧情：大雄为了破案乘坐时光机回到过去，结果发现罪犯正是自己…… 这本漫画书中还有很多像这样脑洞大开的漫画，可以通过多个渠道购买、下载。">
+<meta name="twitter:image" content="https://zhangshuqiao.org/images/2019-08/005.jpg">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <script id="page-configurations">
 // https://hexo.io/docs/variables.html
@@ -84,7 +86,7 @@ google_ad_client: "ca-pub-8784231462763562",
 enable_page_level_ads: true
 });
 </script>
-<title>米米直播平台正式上线 | 米米的博客</title>
+<title>失去同步 | 米米的博客</title>
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -159,6 +161,7 @@ top: initial;
 <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
+</nav>
 <div class="site-search">
 <div class="popup search-popup local-search-popup">
 <div class="local-search-header clearfix">
@@ -177,7 +180,6 @@ type="text" id="local-search-input">
 <div id="local-search-result"></div>
 </div>
 </div>
-</nav>
 </div>
 </header>
 <main id="main" class="main">
@@ -187,7 +189,7 @@ type="text" id="local-search-input">
 <div id="posts" class="posts-expand">
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-02/米米直播平台正式上线/">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-08/失去同步/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
 <meta itemprop="description" content="力电声光热，涵尽学海无涯">
@@ -197,7 +199,7 @@ type="text" id="local-search-input">
 <meta itemprop="name" content="米米的博客">
 </span>
 <header class="post-header">
-<h1 class="post-title" itemprop="name headline">米米直播平台正式上线
+<h1 class="post-title" itemprop="name headline">失去同步
 </h1>
 <div class="post-meta">
 <span class="post-meta-item">
@@ -205,14 +207,14 @@ type="text" id="local-search-input">
 <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-02-10 18:03:14" itemprop="dateCreated datePublished" datetime="2018-02-10T18:03:14+08:00">2018-02-10</time>
+<time title="创建时间：2019-08-11 18:03:14" itemprop="dateCreated datePublished" datetime="2019-08-11T18:03:14+08:00">2019-08-11</time>
 </span>
 <span class="post-meta-item">
 <span class="post-meta-item-icon">
 <i class="fa fa-folder-o"></i>
 </span>
 <span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
 </span>
 <span class="post-meta-item" title="阅读次数">
 <span class="post-meta-item-icon">
@@ -225,19 +227,19 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-02/米米直播平台正式上线/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-02/米米直播平台正式上线/" itemprop="commentCount"></span>
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2019-08/失去同步/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2019-08/失去同步/" itemprop="commentCount"></span>
 </a>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>经过为期半个月的测试，米米直播平台成功实现了多线路及多种播放方式的直播：<br>线路一是无需Flash支持的HLS直播，对移动端支持极为友好，只是由于原理所限，延时约为45秒；线路一的播放方式有原生HLS和Video.js解码的HLS，能够覆盖大部分设备。<br>线路二是基于Bilibili开源的<a href="https://github.com/Bilibili/flv.js" target="_blank" rel="noopener">flv.js</a>的HTTP FLV直播，同样无须Flash，且延时仅有3秒；该播放方式兼容大部分桌面浏览器，但由于需要<a href="https://w3c.github.io/media-source" target="_blank" rel="noopener">Media Source Extensions</a> API支持，对移动端不友好；该线路各项直播数据已经可以媲美各大主流直播平台。<br>线路三为基于video.js和Flash的RTMP直播流，延时亦为3秒左右；不过考虑到Flash的种种弊端，线路三只是作为备用线路。原生HTML5直播在性能上明显优于Flash。</p>
-<p><img src="/images/2018-02/mimilive.png" alt></p>
-<p>根据最新规划，米米视频将专注于视频点播功能，点播的视频大部分为原创作品；而米米直播目前已开放了一个<a href="https://zsq.im/live/?room=mimi&player=1" target="_blank" rel="noopener">测试频道</a>，未来将进行拓展。关于推流码验证的相关功能正在完善。附上链接：<br><a href="https://zsq.im/player/" target="_blank" rel="noopener">米米视频</a><br><a href="https://zsq.im/live/" target="_blank" rel="noopener">米米直播</a></p>
+<p><img src="/images/2019-08/005.jpg" alt></p>
+<p>图片来源：<a href="http://www.europecomics.com/album/1-justice-fresh-vegetables/" target="_blank" rel="noopener">1. Justice and Fresh Vegetables - Europe Comics</a></p>
+<p>这样巧妙的设计，不禁让人联想起《哆啦A梦》中的类似剧情：大雄为了破案乘坐时光机回到过去，结果发现罪犯正是自己……</p>
+<p>这本漫画书中还有很多像这样脑洞大开的漫画，可以通过多个渠道购买、下载。</p>
 </div>
-<div>
 <div id="reward-container">
 <div>🍭支持一根棒棒糖！</div>
 <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
@@ -258,34 +260,27 @@ type="text" id="local-search-input">
 </div>
 </div>
 </div>
-</div>
 <div>
 <ul class="post-copyright">
 <li class="post-copyright-author">
 <strong>本文作者： </strong>张书樵</li>
 <li class="post-copyright-link">
 <strong>本文链接：</strong>
-<a href="https://zhangshuqiao.org/2018-02/米米直播平台正式上线/" title="米米直播平台正式上线">https://zhangshuqiao.org/2018-02/米米直播平台正式上线/</a>
+<a href="https://zhangshuqiao.org/2019-08/失去同步/" title="失去同步">https://zhangshuqiao.org/2019-08/失去同步/</a>
 </li>
 <li class="post-copyright-license">
 <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
 </div>
 <footer class="post-footer">
-<div class="post-tags">
-<a href="/tags/系统日志/" rel="tag"># 系统日志</a>
-</div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
-<a href="/2018-02/制造MD5碰撞/" rel="next" title="制造MD5碰撞">
-<i class="fa fa-chevron-left"></i> 制造MD5碰撞
+<a href="/2019-08/在Ubuntu上安装TeamViewer/" rel="next" title="在Ubuntu上安装TeamViewer">
+<i class="fa fa-chevron-left"></i> 在Ubuntu上安装TeamViewer
 </a>
 </div>
 <span class="post-nav-divider"></span>
 <div class="post-nav-prev post-nav-item">
-<a href="/2018-02/CentOS 7启动BBR教程/" rel="prev" title="CentOS 7启动BBR教程">
-CentOS 7启动BBR教程 <i class="fa fa-chevron-right"></i>
-</a>
 </div>
 </div>
 </footer>
@@ -395,10 +390,7 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>

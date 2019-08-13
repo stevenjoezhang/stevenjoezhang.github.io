@@ -9,14 +9,21 @@
 
     <url>
         <loc>https://zhangshuqiao.org/categories/%E6%8A%80%E6%9C%AF/</loc>
-        <lastmod>2019-08-06T10:07:42.429Z</lastmod>
+        <lastmod>2019-08-12T02:16:46.349Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://zhangshuqiao.org/categories/%E5%B9%BD%E9%BB%98/</loc>
-        <lastmod>2019-08-06T10:07:09.239Z</lastmod>
+        <lastmod>2019-08-11T18:33:07.879Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://zhangshuqiao.org/categories/%E5%85%B6%E4%BB%96/</loc>
+        <lastmod>2019-08-09T01:39:18.092Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -24,13 +31,6 @@
     <url>
         <loc>https://zhangshuqiao.org/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/</loc>
         <lastmod>2019-08-06T10:06:55.973Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://zhangshuqiao.org/categories/%E5%85%B6%E4%BB%96/</loc>
-        <lastmod>2019-08-06T08:23:33.083Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

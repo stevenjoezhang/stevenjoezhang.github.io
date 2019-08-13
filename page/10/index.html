@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next gemini" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.9.0">
@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
+<script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 <script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
+exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 save_scroll: true,
@@ -39,8 +42,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 },
 localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
 path: 'search.json',
-tabs: true,
-motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
 copy_button: '复制',
 copy_success: '复制成功',
@@ -156,6 +158,7 @@ top: initial;
 <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
+</nav>
 <div class="site-search">
 <div class="popup search-popup local-search-popup">
 <div class="local-search-header clearfix">
@@ -174,7 +177,6 @@ type="text" id="local-search-input">
 <div id="local-search-result"></div>
 </div>
 </div>
-</nav>
 </div>
 </header>
 <main id="main" class="main">
@@ -182,6 +184,68 @@ type="text" id="local-search-input">
 <div class="content-wrap">
 <div id="content" class="content page-home">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/入手信达小黑天文望远镜/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-08/入手信达小黑天文望远镜/" class="post-title-link" itemprop="url">入手信达小黑天文望远镜</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-08-20 23:44:29" itemprop="dateCreated datePublished" datetime="2018-08-20T23:44:29+08:00">2018-08-20</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-08/入手信达小黑天文望远镜/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-08/入手信达小黑天文望远镜/" itemprop="commentCount"></span>
+</a>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>2018年的暑期，诸多天文奇观轮番上演：火星冲日、日偏食、英仙座流星雨，这对天文爱好者来说是绝佳的观测机会。在好基友的怂恿下，博主也正式踏入了天文摄影的巨坑。<br>博主在小学时曾拥有一台700/60入门级伽利略式天文望远镜，但是其使用的经纬仪是纯手动的，调节精度较差；且望远镜本身存在明显的色差，成像效果不佳。为了满足行星摄影的要求，需要入手一台更为可靠的天文望远镜。目前市面上常见的天文望远镜，一般由三部分组成：三脚架（底座），赤道仪（经纬仪），以及望远镜镜筒。镜筒主体根据成像原理划分，有牛顿反射式、马克苏托夫-卡塞格林式和复消色差（APO）式等等。基于其他成像原理的望远镜也能在市面上买到，不过从销量和评价上来看，前文提到的这三种望远镜占主流。在查阅了大量资料，并参考了天文相关贴吧、论坛后，博主决定入手信达小黑天文望远镜。这是一款入门级牛顿反射式望远镜，其焦距750mm，口径150mm，等效光圈较大，适合摄影；赤道仪采用EQ3D，搭配双轴电跟，在通过北极星校准极轴后，即可进行长时间曝光。<br>这是望远镜组装完成的状态：</p>
+<p><img src="/images/2018-08/IMG_0272.jpg" alt></p>
+<p>安装EF卡口转接环，就可以连接单反相机了：</p>
+<p><img src="/images/2018-08/IMG_0199.jpg" alt></p>
+<p>8月11日拍摄的日偏食：</p>
+<p><img src="/images/2018-08/IMG_5639.jpg" alt></p>
+<p>由于望远镜自带的巴罗镜只适用于目镜，为了增加拍照的放大率，博主还购买了一个EF卡口的增倍镜。这是使用增倍镜后拍摄的月球：</p>
+<p><img src="/images/2018-08/IMG_5767.jpg" alt></p>
+<p>由于视宁度不佳（以及可能的对焦问题），虽然也成功拍摄了土星，但是土星环的辨识度较差：</p>
+<p><img src="/images/2018-08/IMG_5758.jpg" alt></p>
+<p>仙后座（以及划过天空的飞机航行灯）：</p>
+<p><img src="/images/2018-08/IMG_5680.jpg" alt></p>
+<hr>
+<p>本文更新于2018年9月28日：<br>与学校的青年天文爱好者协会部分（矿里有家的）前辈交流后，发现EQ3D赤道仪和双轴电跟仍有许多不足，可能并不是天文摄影的入门首选。如果有足够多的预算，可以购买NEQ6搭配GOTO，该赤道仪的稳定性与鲁棒性都更胜一筹（当然价格也略高）。</p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-08/膜法大赛预赛/">
@@ -216,8 +280,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-08/膜法大赛预赛/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-08/膜法大赛预赛/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-08/膜法大赛预赛/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -265,8 +329,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-08/自己打造一台恩尼格玛密码机/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-08/自己打造一台恩尼格玛密码机/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-08/自己打造一台恩尼格玛密码机/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -327,8 +391,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-08/武功山游记/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-08/武功山游记/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-08/武功山游记/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -388,8 +452,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-07/Unicode字符与颜文字表情/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-07/Unicode字符与颜文字表情/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-07/Unicode字符与颜文字表情/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -406,9 +470,9 @@ type="text" id="local-search-input">
 <h2 id="文字可以戴帽子和穿鞋子"><a href="#文字可以戴帽子和穿鞋子" class="headerlink" title="文字可以戴帽子和穿鞋子"></a>文字可以戴帽子和穿鞋子</h2><p>提起泰文，很多朋友都会立即想到：<strong>萨瓦迪卡（你好）</strong>。<br>但这句话是怎么写的呢？<br>其实这句你好，男生和女生之间还有差异，男生写法是：<code>สวัสดีครับ</code>，女生则是：<code>สวัสดีค่ะ</code>。<br>不过这并不重要，重要的是，我们发现某些字的上面，还带了特殊的符号。就好像是戴上了帽子。<br>事实上，泰文字符不仅会『戴帽子』，偶尔还会『穿鞋子』，比如这三个字符：<code>ผ ผู ผู้</code>。<br>如果脑洞再大一点，有人就会想，那是不是还可以戴多顶帽子呢？<br>的确如此…泰文允许你穿一双鞋子，并且戴两顶帽子。完整的形式是这样的：</p>
 <p><img src="/images/2018-07/FqLq54KAJkoSVA-7_jdJpSRI3fcI.png" alt></p>
 <p>所以，平时看惯了中英文的我们，需要改变一下思路了。<br>世界上的文字，并不全是规规整整横向排列的格子，也存在像泰文这种变形金刚<strong>组合式</strong>的文字。<br>虽然标准的泰文里，『帽子』和『鞋子』的数量是有限制的，但由于国际码的迷之设计（先卖个关子），在计算机里显示的泰文字符，却可以拥有无数的帽子和鞋子。也就是说，它变成了一款可以在Y轴无限拓展的文字！<br>并且，咱不光可以往上喷，还可以有一定角度…<br><em>（由于一些系统会崩溃，这里使用截图）</em></p>
-<p><img src="/images/2018-07/Fr8cS9UX21MEgBtmOU_CDhreGqlO.jpeg" alt><br><img src="/images/2018-07/Fr-rlbbriydg4cUmoU_Zs6VQSbpU.jpeg" alt></p>
+<p><img src="/images/2018-07/Fr8cS9UX21MEgBtmOU_CDhreGqlO.jpg" alt><br><img src="/images/2018-07/Fr-rlbbriydg4cUmoU_Zs6VQSbpU.jpg" alt></p>
 <p>还可以</p>
-<p><img src="/images/2018-07/Fk0kXSTymPxute84rceAkzGd5PKA.jpeg" alt></p>
+<p><img src="/images/2018-07/Fk0kXSTymPxute84rceAkzGd5PKA.jpg" alt></p>
 <p>简直是不讲道理。</p>
 <h2 id="文字还能倒过来"><a href="#文字还能倒过来" class="headerlink" title="文字还能倒过来"></a>文字还能倒过来</h2><p>这里还介绍一个神奇的Unicode字符：<code>\u202e</code>，它的作用是让它之后的字符从右到左显示。博主最早是在微信中发现这个小技巧的，如果昵称中包含这个字符，可以产生奇妙的效果。例如用户：<br><code>米米‮</code><br>看上去没有什么问题，但实际上是<br><code>米米\u202e</code><br>发送一个表情，就会显示为<br><code>米米‮：[动画表情]</code><br>如果用在文件名中，还可以起到欺骗的效果，例如：<br><code>sample_\u202ecod.exe</code><br>就会显示为<br><code>sample_‮cod.exe</code></p>
 <!--noindex-->
@@ -418,59 +482,6 @@ type="text" id="local-search-input">
 </a>
 </div>
 <!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/在网页中添加Live2D看板娘/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-07/在网页中添加Live2D看板娘/" class="post-title-link" itemprop="url">在网页中添加Live2D看板娘</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-07-21 20:05:32" itemprop="dateCreated datePublished" datetime="2018-07-21T20:05:32+08:00">2018-07-21</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-comment-o"></i>
-</span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-07/在网页中添加Live2D看板娘/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-07/在网页中添加Live2D看板娘/" itemprop="commentCount"></span>
-</a>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p><img src="/images/2018-07/photo.jpg" alt></p>
-<p>项目地址：<a href="https://github.com/stevenjoezhang/live2d-widget" target="_blank" rel="noopener">live2d-widget</a></p>
-<p>克隆这个仓库到服务器上，并配置<code>autoload.js</code>，修改其中的链接为各文件的绝对地址，即可在网页中添加Live2D看板娘。<br>相对于市面上广为流传的版本，博主对触发动作和语言进行了魔改（针对Hexo NexT主题），调整了图标样式、元素定位，并解决了CSS的前缀等问题。<br>更多内容可以参考项目文档及下方链接。<br>快来把萌萌哒的看板娘抱回家吧！</p>
-<hr>
-<p>参考文章：<br><a href="https://www.fghrsh.net/post/123.html" target="_blank" rel="noopener">网页添加 Live2D 看板娘</a><br><a href="https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02" target="_blank" rel="noopener">给博客添加能动的看板娘(Live2D)-将其添加到网页上吧</a></p>
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -583,10 +594,7 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>

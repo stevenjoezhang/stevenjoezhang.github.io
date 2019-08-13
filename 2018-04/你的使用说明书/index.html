@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next gemini" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.9.0">
@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
+<script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 <script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
+exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 save_scroll: true,
@@ -39,8 +42,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 },
 localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
 path: 'search.json',
-tabs: true,
-motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
 copy_button: '复制',
 copy_success: '复制成功',
@@ -157,6 +159,7 @@ top: initial;
 <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
+</nav>
 <div class="site-search">
 <div class="popup search-popup local-search-popup">
 <div class="local-search-header clearfix">
@@ -175,7 +178,6 @@ type="text" id="local-search-input">
 <div id="local-search-result"></div>
 </div>
 </div>
-</nav>
 </div>
 </header>
 <main id="main" class="main">
@@ -223,8 +225,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-04/你的使用说明书/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-04/你的使用说明书/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-04/你的使用说明书/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -236,7 +238,6 @@ type="text" id="local-search-input">
 <p>____拥有读气氛的技巧和超高感知力，自己却毫无察觉。<br>____是怪人，但接触后会很有趣，一款来自外星的产品。<br>____听到喜爱的音乐，就能触发运气开挂的效果。<br>____还在努力融入人类世界，拥有地球人不具备的思维方式。<br>____肯花费大量时间和精力，超出预期的完成任务。<br>要定期给予____喂食，他相当单纯。<br>请用纤细的语调对____说话吧。<br>如果做事开始慢腾腾，及时给____一点吃的。<br>____如果发生故障，就给他一个拥抱吧。<br>____喜欢被夸奖，所以一天表扬他一次吧。<br>____一困就会情绪低落，请给予他适当的睡眠时间。<br>____即使心情低落，也会保持精神，这时候给他送些点心吧。<br>____心情不好的时候，给他吃一点甜甜的东西吧！<br>____最大的兴趣就是睡觉。<br>____能带给你更神奇的经历...当你带他出去玩的时候。<br>____看着对方眼睛说话就会脸红。<br>____对气温变化的感知力很弱，可能因为内心一直是暖的。<br>____脑子里塞满天真的幻想，能拍成一部高分动画片。<br>____遇到寒冷的温度就会变圆。<br>____吃越少，越会变胖<br>吃饭也是____缓解压力的一种办法<br>____易燃，需要时刻为他准备好灭火器。<br>____拥有巨大内存，收到的关心（和红包）他都会记得。<br>如果丢开____不管，要小心他自己溜走了！<br>未来的道路上，____会因为无敌而略感寂寞。<br>____不擅长向别人求助。如果有人察觉到的话请主动帮他一下。<br>____的脑部为S级原装货，其他身体部分都是普通零件。<br>如果你觉得____发量开始减少，那一定是出现了幻觉。<br>____只要一出门就会变漂亮。<br>____遇到刮痕损伤不会自己修理。<br>____对地球充满好奇，喜欢人类（不工作时）的生活方式。<br>____只要开启降噪模式，就能获得坚定追随内心和直觉的勇气。<br>____早上起床时容易发生爆炸。<br>____按时睡觉的程序被设计的太复杂，很难执行。</p>
 <p>可以在这里查看JavaScript版本：<a href="https://zsq.im/tool/163.html" target="_blank" rel="noopener">ZSQ.IM &gt; 更多 &gt; 你的使用说明书</a></p>
 </div>
-<div>
 <div id="reward-container">
 <div>🍭支持一根棒棒糖！</div>
 <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
@@ -254,7 +255,6 @@ type="text" id="local-search-input">
 <div style="display: inline-block">
 <img src="/images/bitcoin.png" alt="张书樵 比特币">
 <p>比特币</p>
-</div>
 </div>
 </div>
 </div>
@@ -391,10 +391,7 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>

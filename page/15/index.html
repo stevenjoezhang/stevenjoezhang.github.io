@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next gemini" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.9.0">
@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
+<script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 <script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
+exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 save_scroll: true,
@@ -39,8 +42,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 },
 localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
 path: 'search.json',
-tabs: true,
-motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
 copy_button: '复制',
 copy_success: '复制成功',
@@ -156,6 +158,7 @@ top: initial;
 <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
+</nav>
 <div class="site-search">
 <div class="popup search-popup local-search-popup">
 <div class="local-search-header clearfix">
@@ -174,7 +177,6 @@ type="text" id="local-search-input">
 <div id="local-search-result"></div>
 </div>
 </div>
-</nav>
 </div>
 </header>
 <main id="main" class="main">
@@ -182,6 +184,94 @@ type="text" id="local-search-input">
 <div class="content-wrap">
 <div id="content" class="content page-home">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/Linux命令行常用快捷键/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-04/Linux命令行常用快捷键/" class="post-title-link" itemprop="url">Linux命令行常用快捷键</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-04-15 12:58:28" itemprop="dateCreated datePublished" datetime="2018-04-15T12:58:28+08:00">2018-04-15</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-04/Linux命令行常用快捷键/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-04/Linux命令行常用快捷键/" itemprop="commentCount"></span>
+</a>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>通过快捷键，可以方便地在Linux命令行下快速移动光标、编辑命令、编辑后执行历史命令、<code>Bang(!)</code>命令、控制命令等，有效提高工作效率。</p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
+<li><kbd>Ctrl</kbd>+<kbd>K</kbd>：先按住<kbd>CTRL</kbd>键，然后再按<kbd>K</kbd>键</li>
+<li><kbd>Ctrl</kbd>+<kbd>KL</kbd>：先按住<kbd>CTRL</kbd>键，然后再按<kbd>K</kbd>键，然后松开<kbd>K</kbd>键，再按<kbd>L</kbd>键</li>
+<li><kbd>Alt</kbd>+<kbd>K</kbd>：先按住<kbd>ALT</kbd>键，然后再按<kbd>K</kbd>键</li>
+<li><kbd>Meta</kbd>+<kbd>K</kbd>：先单击<kbd>Meta</kbd>（Esc）键，然后再按<kbd>K</kbd>键</li>
+</ul>
+<h2 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h2><ul>
+<li><kbd>Ctrl</kbd>+<code>左右键</code>：在单词之间跳转</li>
+<li><kbd>Ctrl</kbd>+<kbd>A</kbd>：移到行首</li>
+<li><kbd>Ctrl</kbd>+<kbd>E</kbd>：移到行尾</li>
+<li><kbd>Ctrl</kbd>+<kbd>B</kbd>：往回（左）移动一个字符</li>
+<li><kbd>Ctrl</kbd>+<kbd>F</kbd>：往后（右）移动一个字符</li>
+<li><kbd>Ctrl</kbd>+<kbd>XX</kbd>：在命令行尾和光标之间移动</li>
+<li><kbd>Alt</kbd>+<kbd>B</kbd>：往回（左）移动一个单词</li>
+<li><kbd>Alt</kbd>+<kbd>F</kbd>：往后（右）移动一个单词</li>
+<li><kbd>Meta</kbd>+<kbd>B</kbd>：往回（左）移动一个单词</li>
+<li><kbd>Meta</kbd>+<kbd>F</kbd>：往后（右）移动一个单词</li>
+</ul>
+<h2 id="编辑命令"><a href="#编辑命令" class="headerlink" title="编辑命令"></a>编辑命令</h2><ul>
+<li><kbd>Ctrl</kbd>+<kbd>H</kbd>：删除光标左方位置的字符</li>
+<li><kbd>Ctrl</kbd>+<kbd>D</kbd>：删除光标右方位置的字符（注意：<kbd>Ctrl</kbd>+<kbd>D</kbd>也代表EOF，当前命令行没有任何字符时，会注销系统或结束终端）</li>
+<li><kbd>Ctrl</kbd>+<kbd>W</kbd>：由光标位置开始，往左删除单词（往行首删）</li>
+<li><kbd>Alt</kbd>+<kbd>D</kbd>：由光标位置开始，往右删除单词（往行尾删）</li>
+<li><kbd>Meta</kbd>+<kbd>D</kbd>：由光标位置开始，删除单词，直到该单词结束</li>
+<li><kbd>Ctrl</kbd>+<kbd>U</kbd>：由光标所在位置开始，删除左方所有的字符，直到该行开始</li>
+<li><kbd>Ctrl</kbd>+<kbd>K</kbd>：由光标所在位置开始，删除右方所有的字符，直到该行结束</li>
+<li><kbd>Ctrl</kbd>+<kbd>Y</kbd>：粘贴<kbd>Ctrl</kbd>+<kbd>U</kbd>或<kbd>Ctrl</kbd>+<kbd>K</kbd>剪切的内容到光标后</li>
+<li><kbd>Ctrl</kbd>+<kbd>T</kbd>：交换光标处和之前两个字符的位置</li>
+<li><kbd>Alt</kbd>+<kbd>.</kbd>：使用上一条命令的最后一个参数</li>
+<li><kbd>Ctrl</kbd>+<kbd>_</kbd>：回复之前的状态，撤销操作</li>
+</ul>
+<p>另外，<kbd>Ctrl</kbd>+<kbd>AK</kbd>或<kbd>Ctrl</kbd>+<kbd>EU</kbd>或<kbd>Ctrl</kbd>+<kbd>KU</kbd>组合可删除整行。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-04/Linux命令行常用快捷键/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-04/Shell中数学运算总结/">
@@ -216,8 +306,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-04/Shell中数学运算总结/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-04/Shell中数学运算总结/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-04/Shell中数学运算总结/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -287,8 +377,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-04/你的使用说明书/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-04/你的使用说明书/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-04/你的使用说明书/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -343,22 +433,136 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-03/Bilibili弹幕文件的解析/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-03/Bilibili弹幕文件的解析/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-03/Bilibili弹幕文件的解析/" itemprop="commentCount"></span>
 </a>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>B站的每个视频都有<code>aid</code>和<code>cid</code>两个参数，在已知视频<code>aid</code>（即AV号）的情况下，可以通过链接<code>https://www.bilibili.com/widget/getPageList?aid=10492</code>获取<code>cid</code>（将10492替换为你要查询的视频的aid）。<br>视频的更多信息则可以通过<code>https://api.bilibili.com/view?type=jsonp&amp;appkey=8e9fc618fbd41e28&amp;id=10492</code>获取。<br>视频的弹幕文件采用xml格式存储，地址与其<code>cid</code>有关，为<code>https://comment.bilibili.com/$cid.xml</code>（将<code>$cid</code>替换为视频的<code>cid</code>）。<br>对于有许多分P的视频，它们的aid（AV号）相同，每个分P则对应一个不同的<code>cid</code>。而在同一个页面下的番剧、影视等内容，每一分集的<code>cid</code>也是唯一的。<br>弹幕内容的存储方式为：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">d</span> <span class="attr">p</span>=<span class="string">"0,1,25,16777215,1312863760,0,eff85771,42759017"</span>&gt;</span>前排占位置<span class="tag">&lt;/<span class="name">d</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<html><head><style type="text/css">
+.mjpage .MJX-monospace {
+font-family: monospace
+}
+.mjpage .MJX-sans-serif {
+font-family: sans-serif
+}
+.mjpage {
+display: inline;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 100%;
+font-size-adjust: none;
+text-indent: 0;
+text-align: left;
+text-transform: none;
+letter-spacing: normal;
+word-spacing: normal;
+word-wrap: normal;
+white-space: nowrap;
+float: none;
+direction: ltr;
+max-width: none;
+max-height: none;
+min-width: 0;
+min-height: 0;
+border: 0;
+padding: 0;
+margin: 0
+}
+.mjpage * {
+transition: none;
+-webkit-transition: none;
+-moz-transition: none;
+-ms-transition: none;
+-o-transition: none
+}
+.mjx-svg-href {
+fill: blue;
+stroke: blue
+}
+.MathJax_SVG_LineBox {
+display: table!important
+}
+.MathJax_SVG_LineBox span {
+display: table-cell!important;
+width: 10000em!important;
+min-width: 0;
+max-width: none;
+padding: 0;
+border: 0;
+margin: 0
+}
+.mjpage__block {
+text-align: center;
+margin: 1em 0em;
+position: relative;
+display: block!important;
+text-indent: 0;
+max-width: none;
+max-height: none;
+min-width: 0;
+min-height: 0;
+width: 100%
+}</style></head><body><p>B站的每个视频都有<code>aid</code>和<code>cid</code>两个参数，在已知视频<code>aid</code>（即AV号）的情况下，可以通过链接<code>https://www.bilibili.com/widget/getPageList?aid=10492</code>获取<code>cid</code>（将10492替换为你要查询的视频的aid）。<br>视频的更多信息则可以通过<code>https://api.bilibili.com/view?type=jsonp&amp;appkey=8e9fc618fbd41e28&amp;id=10492</code>获取。<br>视频的弹幕文件采用xml格式存储，地址与其<code>cid</code>有关，为<code>https://comment.bilibili.com/$cid.xml</code>（将<code>$cid</code>替换为视频的<code>cid</code>）。<br>对于有许多分P的视频，它们的aid（AV号）相同，每个分P则对应一个不同的<code>cid</code>。而在同一个页面下的番剧、影视等内容，每一分集的<code>cid</code>也是唯一的。<br>弹幕内容的存储方式为：</p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">d</span> <span class="attr">p</span>=<span class="string">"0,1,25,16777215,1312863760,0,eff85771,42759017"</span>&gt;</span>前排占位置<span class="tag">&lt;/<span class="name">d</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
 <p>这个元素中的各个参数由逗号分割，其意义分别为：</p>
 <ul>
 <li>弹幕出现的时间，以秒为单位</li>
 <li>弹幕的模式：1～3滚动弹幕 4底端弹幕 5顶端弹幕 6逆向弹幕 7精准定位 8高级弹幕</li>
 <li>字号：12非常小 16特小 18小 25中 36大 45很大 64特别大</li>
-<li>字体的颜色：将HTML六位十六进制颜色转为十进制表示，例如#FFFFFF会被存储为16777215，因为$(FFFFFF)_{16}=(16777215)_{10}$</li>
+<li>字体的颜色：将HTML六位十六进制颜色转为十进制表示，例如#FFFFFF会被存储为16777215，因为<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="30.214ex" height="2.843ex" style="vertical-align: -0.838ex;" viewbox="0 -863.1 13008.7 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">(FFFFFF)_{16}=(16777215)_{10}</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/>
+<path stroke-width="1" id="E1-MJMATHI-46" d="M48 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H742Q749 676 749 669Q749 664 736 557T722 447Q720 440 702 440H690Q683 445 683 453Q683 454 686 477T689 530Q689 560 682 579T663 610T626 626T575 633T503 634H480Q398 633 393 631Q388 629 386 623Q385 622 352 492L320 363H375Q378 363 398 363T426 364T448 367T472 374T489 386Q502 398 511 419T524 457T529 475Q532 480 548 480H560Q567 475 567 470Q567 467 536 339T502 207Q500 200 482 200H470Q463 206 463 212Q463 215 468 234T473 274Q473 303 453 310T364 317H309L277 190Q245 66 245 60Q245 46 334 46H359Q365 40 365 39T363 19Q359 6 353 0H336Q295 2 185 2Q120 2 86 2T48 1Z"/>
+<path stroke-width="1" id="E1-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/>
+<path stroke-width="1" id="E1-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
+<path stroke-width="1" id="E1-MJMAIN-36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"/>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E1-MJMAIN-37" d="M55 458Q56 460 72 567L88 674Q88 676 108 676H128V672Q128 662 143 655T195 646T364 644H485V605L417 512Q408 500 387 472T360 435T339 403T319 367T305 330T292 284T284 230T278 162T275 80Q275 66 275 52T274 28V19Q270 2 255 -10T221 -22Q210 -22 200 -19T179 0T168 40Q168 198 265 368Q285 400 349 489L395 552H302Q128 552 119 546Q113 543 108 522T98 479L95 458V455H55V458Z"/>
+<path stroke-width="1" id="E1-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+<path stroke-width="1" id="E1-MJMAIN-35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"/>
+<path stroke-width="1" id="E1-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+<use xlink:href="#E1-MJMAIN-28" x="0" y="0"/>
+<use xlink:href="#E1-MJMATHI-46" x="389" y="0"/>
+<use xlink:href="#E1-MJMATHI-46" x="1139" y="0"/>
+<use xlink:href="#E1-MJMATHI-46" x="1888" y="0"/>
+<use xlink:href="#E1-MJMATHI-46" x="2638" y="0"/>
+<use xlink:href="#E1-MJMATHI-46" x="3387" y="0"/>
+<use xlink:href="#E1-MJMATHI-46" x="4137" y="0"/>
+<g transform="translate(4886,0)">
+<use xlink:href="#E1-MJMAIN-29" x="0" y="0"/>
+<g transform="translate(389,-150)">
+<use transform="scale(0.707)" xlink:href="#E1-MJMAIN-31"/>
+<use transform="scale(0.707)" xlink:href="#E1-MJMAIN-36" x="500" y="0"/>
+</g>
+</g>
+<use xlink:href="#E1-MJMAIN-3D" x="6361" y="0"/>
+<use xlink:href="#E1-MJMAIN-28" x="7417" y="0"/>
+<g transform="translate(7807,0)">
+<use xlink:href="#E1-MJMAIN-31"/>
+<use xlink:href="#E1-MJMAIN-36" x="500" y="0"/>
+<use xlink:href="#E1-MJMAIN-37" x="1001" y="0"/>
+<use xlink:href="#E1-MJMAIN-37" x="1501" y="0"/>
+<use xlink:href="#E1-MJMAIN-37" x="2002" y="0"/>
+<use xlink:href="#E1-MJMAIN-32" x="2502" y="0"/>
+<use xlink:href="#E1-MJMAIN-31" x="3003" y="0"/>
+<use xlink:href="#E1-MJMAIN-35" x="3503" y="0"/>
+</g>
+<g transform="translate(11811,0)">
+<use xlink:href="#E1-MJMAIN-29" x="0" y="0"/>
+<g transform="translate(389,-150)">
+<use transform="scale(0.707)" xlink:href="#E1-MJMAIN-31"/>
+<use transform="scale(0.707)" xlink:href="#E1-MJMAIN-30" x="500" y="0"/>
+</g>
+</g>
+</g>
+</svg></span></li>
 <li>Unix时间戳，以毫秒为单位，基准时间为1970-1-1 08:00:00</li>
 <li>弹幕池：0普通池 1字幕池 2特殊池（注：目前特殊池为高级弹幕专用）</li>
 <li>发送者的ID，用于『屏蔽此弹幕的发送者』功能</li>
@@ -367,7 +571,7 @@ type="text" id="local-search-input">
 <hr>
 <p>将Bilibili弹幕的xml文件转为ass字幕，可以使用以下脚本：<br><a href="http://tiansh.github.io/us-danmaku/bilibili" target="_blank" rel="noopener">bilibili ASS 弹幕在线转换</a><br><a href="https://github.com/tiansh/us-danmaku" target="_blank" rel="noopener">us-danmaku</a></p>
 <p>关于ass字幕格式可以参考以下文章：<a href="https://www.douban.com/note/658520175" target="_blank" rel="noopener">ASS字幕格式规范</a></p>
-<p>拓展阅读：<br><a href="https://zhuanlan.zhihu.com/p/24599052" target="_blank" rel="noopener">Bilibili视频播放页面接口整理（不定期更新） - 知乎</a><br><a href="https://www.jianshu.com/p/f628679883e3" target="_blank" rel="noopener">Bilibili爬取视频信息进行数据分析</a></p>
+<p>拓展阅读：<br><a href="https://zhuanlan.zhihu.com/p/24599052" target="_blank" rel="noopener">Bilibili视频播放页面接口整理（不定期更新） - 知乎</a><br><a href="https://www.jianshu.com/p/f628679883e3" target="_blank" rel="noopener">Bilibili爬取视频信息进行数据分析</a></p></body></html>
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -408,8 +612,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-03/Quine——输出自身的程序/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-03/Quine——输出自身的程序/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-03/Quine——输出自身的程序/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -431,77 +635,6 @@ type="text" id="local-search-input">
 <!--noindex-->
 <div class="post-button text-center">
 <a class="btn" href="/2018-03/Quine——输出自身的程序/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-03/Mac反编译apk程序/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-03/Mac反编译apk程序/" class="post-title-link" itemprop="url">Mac反编译apk程序</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-03-18 12:20:17" itemprop="dateCreated datePublished" datetime="2018-03-18T12:20:17+08:00">2018-03-18</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-comment-o"></i>
-</span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-03/Mac反编译apk程序/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-03/Mac反编译apk程序/" itemprop="commentCount"></span>
-</a>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>APK，即Android应用程序包（Android application package），是Android操作系统使用的一种应用程序包文件格式，用于分发和安装移动应用及中间件。一个Android应用程序的代码想要在Android设备上运行，必须先进行编译，然后被打包成为一个被Android系统所能识别的文件才可以被运行，而这种能被Android系统识别并运行的文件格式便是APK。一个APK文件内包含被编译的代码文件(<code>.dex</code>文件)，文件资源（resources）， assets，证书（certificates），和清单文件（manifest file）。</p>
-<p>APK文件基于ZIP文件格式，它与JAR文件的构造方式相似。因而，直接解压APK文件可以得到一部分信息，如<code>classes.dex</code>等。如果要进行更详尽的分析，就需要用到反编译的工具了。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载最新的JDK"><a href="#下载最新的JDK" class="headerlink" title="下载最新的JDK"></a>下载最新的JDK</h3><p>前往<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">ORACLE官网</a>，在底部找到<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Download Java for Developers</a>，点击该链接，在打开的页面中找到JDK，选择Download，然后下载对应的版本即可。</p>
-<p><img src="/images/2018-03/jdk.png" alt></p>
-<h3 id="配置JDK"><a href="#配置JDK" class="headerlink" title="配置JDK"></a>配置JDK</h3><p>下载完成后，打开dmg镜像进行安装。JDK会被安装到<code>/Library/Java/JavaVirtualMachines</code>目录下。为了能在终端正确运行最新的JDK，需要配置环境变量。在<code>~/.bash_profile</code>中增加以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home</span><br><span class="line">PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span>:.</span><br><span class="line">CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:.</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME</span><br><span class="line"><span class="built_in">export</span> PATH</span><br><span class="line"><span class="built_in">export</span> CLASSPATH</span><br></pre></td></tr></table></figure>
-<p>其中，将<code>jdk1.8.0_40.jdk</code>换成你所安装的JDK对应的版本和目录。修改完成后，重开终端或使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
-<p>使环境变量生效。</p>
-<h3 id="下载apk反编译组件"><a href="#下载apk反编译组件" class="headerlink" title="下载apk反编译组件"></a>下载apk反编译组件</h3><p>需要下载的程序包括：</p>
-<ul>
-<li><a href="https://ibotpeaches.github.io/Apktool/install" target="_blank" rel="noopener">Apktool</a></li>
-<li><a href="https://github.com/pxb1988/dex2jar/releases" target="_blank" rel="noopener">dex2jar</a></li>
-<li><a href="http://java-decompiler.github.io" target="_blank" rel="noopener">JD-GUI</a></li>
-</ul>
-<p>一些论坛里会把它们称为『APK反编译三件套』。</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-03/Mac反编译apk程序/#more" rel="contents">
 阅读全文 &raquo;
 </a>
 </div>
@@ -618,10 +751,7 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>
@@ -646,48 +776,6 @@ height: $(o).attr('height') || '1000px'
 }
 </script>
 <div id="pjax">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-processEscapes: true,
-skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-},
-TeX: {
-equationNumbers: {
-autoNumber: 'AMS'
-}
-}
-});
-MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-if (data.display) {
-var next = data.script.nextSibling;
-while (next && next.nodeName.toLowerCase() === '#text') {
-next = next.nextSibling;
-}
-if (next && next.nodeName.toLowerCase() === 'br') {
-next.parentNode.removeChild(next);
-}
-}
-});
-});
-MathJax.Hub.Queue(function() {
-var all = MathJax.Hub.getAllJax(), i;
-for (i = 0; i < all.length; i += 1) {
-element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-if (element.nodeName.toLowerCase() == 'li') {
-element = element.parentNode;
-}
-element.classList.add('has-jax');
-}
-});
-</script>
-<script>
-NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML', function() {
-MathJax.Hub.Typeset();
-}, window.MathJax);
-</script>
 <script>
 NexT.utils.getScript('/lib/Valine.min.js', function() {
 var GUEST = ['nick', 'mail', 'link'];

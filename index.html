@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next gemini" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.9.0">
@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
+<script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 <script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
+exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 save_scroll: true,
@@ -39,8 +42,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 },
 localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
 path: 'search.json',
-tabs: true,
-motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
 copy_button: '复制',
 copy_success: '复制成功',
@@ -156,6 +158,7 @@ top: initial;
 <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
+</nav>
 <div class="site-search">
 <div class="popup search-popup local-search-popup">
 <div class="local-search-header clearfix">
@@ -174,7 +177,6 @@ type="text" id="local-search-input">
 <div id="local-search-result"></div>
 </div>
 </div>
-</nav>
 </div>
 </header>
 <main id="main" class="main">
@@ -182,6 +184,58 @@ type="text" id="local-search-input">
 <div class="content-wrap">
 <div id="content" class="content page-home">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-08/失去同步/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2019-08/失去同步/" class="post-title-link" itemprop="url">失去同步</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2019-08-11 18:03:14" itemprop="dateCreated datePublished" datetime="2019-08-11T18:03:14+08:00">2019-08-11</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2019-08/失去同步/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2019-08/失去同步/" itemprop="commentCount"></span>
+</a>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p><img src="/images/2019-08/005.jpg" alt></p>
+<p>图片来源：<a href="http://www.europecomics.com/album/1-justice-fresh-vegetables/" target="_blank" rel="noopener">1. Justice and Fresh Vegetables - Europe Comics</a></p>
+<p>这样巧妙的设计，不禁让人联想起《哆啦A梦》中的类似剧情：大雄为了破案乘坐时光机回到过去，结果发现罪犯正是自己……</p>
+<p>这本漫画书中还有很多像这样脑洞大开的漫画，可以通过多个渠道购买、下载。</p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-08/在Ubuntu上安装TeamViewer/">
@@ -216,8 +270,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2019-08/在Ubuntu上安装TeamViewer/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2019-08/在Ubuntu上安装TeamViewer/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2019-08/在Ubuntu上安装TeamViewer/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -292,8 +346,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2019-07/青海湖之行/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2019-07/青海湖之行/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2019-07/青海湖之行/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -368,8 +422,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2019-07/在Win 95中晃动鼠标竟能加速系统/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2019-07/在Win 95中晃动鼠标竟能加速系统/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2019-07/在Win 95中晃动鼠标竟能加速系统/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -434,8 +488,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2019-07/怎样修好任何电脑/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2019-07/怎样修好任何电脑/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2019-07/怎样修好任何电脑/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -444,94 +498,6 @@ type="text" id="local-search-input">
 <div class="post-body" itemprop="articleBody">
 <p><img src="/images/2019-07/header.png" alt><br><img src="/images/2019-07/windows.png" alt><br><img src="/images/2019-07/apple.png" alt><br><img src="/images/2019-07/linux.png" alt></p>
 <p>图片来源：<a href="https://theoatmeal.com/blog/fix_computer" target="_blank" rel="noopener">How to fix any computer - The Oatmeal</a></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-06/Range对象的使用/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2019-06/Range对象的使用/" class="post-title-link" itemprop="url">Range对象的使用</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2019-06-28 17:11:18" itemprop="dateCreated datePublished" datetime="2019-06-28T17:11:18+08:00">2019-06-28</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-comment-o"></i>
-</span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2019-06/Range对象的使用/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2019-06/Range对象的使用/" itemprop="commentCount"></span>
-</a>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<h2 id="什么是Range对象"><a href="#什么是Range对象" class="headerlink" title="什么是Range对象"></a>什么是Range对象</h2><p>Range是指html文档中的区域，如用户用鼠标拖动选中的区域，如下图：</p>
-<p><img src="/images/2019-06/range.png" alt></p>
-<p>通过Range对象，可以获取用户选中的区域，或者指定选中区域，得到Range的起点和终点、修改或者复制里边的文本，甚至是html。在富文本编辑器开发中，经常会使用到这些功能。</p>
-<h2 id="获取当前的选区"><a href="#获取当前的选区" class="headerlink" title="获取当前的选区"></a>获取当前的选区</h2><p>由于兼容性的问题，需要区分IE浏览器。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> selection, range;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.getSelection) &#123;</span><br><span class="line">    <span class="comment">//现代浏览器</span></span><br><span class="line">    selection = <span class="built_in">window</span>.getSelection();</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">document</span>.selection) &#123;</span><br><span class="line">    <span class="comment">//IE</span></span><br><span class="line">    selection = <span class="built_in">document</span>.selection.createRange();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Range对象</span></span><br><span class="line">range = selection.getRangeAt(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="Range对象的属性"><a href="#Range对象的属性" class="headerlink" title="Range对象的属性"></a>Range对象的属性</h2><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>collapsed</code></td>
-<td>如果范围的开始点和结束点在文档的同一位置，则为<code>true</code>，即范围是空的，或折叠的。</td>
-</tr>
-<tr>
-<td><code>commonAncestorContainer</code></td>
-<td>范围的开始点和结束点的（即它们的祖先节点）、嵌套最深的Document节点。</td>
-</tr>
-<tr>
-<td><code>endContainer</code></td>
-<td>包含范围的结束点的Document节点。</td>
-</tr>
-<tr>
-<td><code>endOffset</code></td>
-<td>endContainer中的结束点位置。</td>
-</tr>
-<tr>
-<td><code>startContainer</code></td>
-<td>包含范围的开始点的Document节点。</td>
-</tr>
-<tr>
-<td><code>startOffset</code></td>
-<td>startContainer中的开始点位置。</td>
-</tr>
-</tbody></table>
-<h2 id="Range对象的操作"><a href="#Range对象的操作" class="headerlink" title="Range对象的操作"></a>Range对象的操作</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//选中区域的文字</span></span><br><span class="line"><span class="keyword">var</span> text = range.toString();</span><br><span class="line"></span><br><span class="line"><span class="comment">//选中区域的Element元素</span></span><br><span class="line"><span class="keyword">var</span> elem = range.commonAncestorContainer;</span><br><span class="line"><span class="keyword">if</span> (elem.nodeType != <span class="number">1</span>) &#123;</span><br><span class="line">    elem = elem.parentNode;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//选中区域的html</span></span><br><span class="line"><span class="keyword">var</span> span = <span class="built_in">document</span>.createElement(<span class="string">'SPAN'</span>);</span><br><span class="line">span.appendChild(range.cloneContents());</span><br><span class="line"></span><br><span class="line"><span class="comment">//选区是否为空</span></span><br><span class="line"><span class="keyword">var</span> isSelectionEmpty = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">if</span> (range.startContainer === range.endContainer) &#123;</span><br><span class="line">    <span class="keyword">if</span> (range.startOffset === range.endOffset) &#123;</span><br><span class="line">        isSelectionEmpty = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>参考文章：<a href="https://segmentfault.com/a/1190000009875696" target="_blank" rel="noopener">JS Range 对象的使用</a></p>
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -644,10 +610,7 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>

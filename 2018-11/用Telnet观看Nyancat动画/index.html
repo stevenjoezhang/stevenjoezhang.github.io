@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next gemini" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.9.0">
@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
+<script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 <script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
+exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 save_scroll: true,
@@ -39,8 +42,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 },
 localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
 path: 'search.json',
-tabs: true,
-motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
 copy_button: '复制',
 copy_success: '复制成功',
@@ -57,7 +59,7 @@ copy_failure: '复制失败'
 <meta property="og:description" content="前言最近在知乎上看到一个关于VPS有趣的用途的问题，其中一个回答提到了可以搭建Telnet服务器，成功运行后别人用Telnet连接你的主机将会看到Nyancat动画。大致效果如图所示：  然而，回答中给出的Demo已经失效，telnet nyancat.dakko.us会返回一个Connection refused错误。不过值得庆幸的是，这个项目的官方网站Nyan Cat Telnet Serve">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-11/nyancat.png">
-<meta property="og:updated_time" content="2019-07-23T08:44:54.186Z">
+<meta property="og:updated_time" content="2019-08-09T01:44:41.034Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用Telnet观看Nyancat动画">
 <meta name="twitter:description" content="前言最近在知乎上看到一个关于VPS有趣的用途的问题，其中一个回答提到了可以搭建Telnet服务器，成功运行后别人用Telnet连接你的主机将会看到Nyancat动画。大致效果如图所示：  然而，回答中给出的Demo已经失效，telnet nyancat.dakko.us会返回一个Connection refused错误。不过值得庆幸的是，这个项目的官方网站Nyan Cat Telnet Serve">
@@ -159,6 +161,7 @@ top: initial;
 <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
+</nav>
 <div class="site-search">
 <div class="popup search-popup local-search-popup">
 <div class="local-search-header clearfix">
@@ -177,7 +180,6 @@ type="text" id="local-search-input">
 <div id="local-search-result"></div>
 </div>
 </div>
-</nav>
 </div>
 </header>
 <main id="main" class="main">
@@ -225,8 +227,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-11/用Telnet观看Nyancat动画/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-11/用Telnet观看Nyancat动画/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-11/用Telnet观看Nyancat动画/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -245,12 +247,11 @@ type="text" id="local-search-input">
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">service telnet</span><br><span class="line">&#123;</span><br><span class="line">    flags          = REUSE</span><br><span class="line">    socket_type    = stream</span><br><span class="line">    <span class="built_in">wait</span>           = no</span><br><span class="line">    user           = root</span><br><span class="line">    group          = root</span><br><span class="line">    server         = /usr/bin/nyancat</span><br><span class="line">    server_args    = -t</span><br><span class="line">    log_on_failure += USERID</span><br><span class="line">    <span class="built_in">disable</span>        = no</span><br><span class="line">    instances      = 10</span><br><span class="line">    per_source     = 2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>其中<code>instances</code>和<code>per_source</code>限制了总的连接数和单个IP的连接数。<br>接下来，重启<code>xinetd</code>服务：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart xinetd</span><br></pre></td></tr></table></figure>
-<p>这时，你就可以通过<code>telnet localhost</code>查看是否一切正常。如果没有问题，配置防火墙开放23端口，就可以从公网访问了。试试用Telnet连接你的主机，效果是不是非常酷炫？<br>不过，博主在实践中发现，开放telnet的23端口可能会产生大量异常流量。解决方法是修改telnet的端口号，编辑<code>/etc/services</code>，找到telnet，将23改为一个你喜欢的数字（比如8082）。或者，可以在不需要使用时直接关闭这个服务，在<code>nyancat</code>中设置<code>disable: yes</code>即可。</p>
+<p>这时，你就可以通过<code>telnet localhost</code>查看是否一切正常。如果没有问题，配置防火墙开放23端口，就可以从公网访问了。试试用Telnet连接你的主机，效果是不是非常酷炫？<br>不过，博主在实践中发现，开放telnet的23端口可能会产生大量异常流量。解决方法是修改telnet的端口号，编辑<code>/etc/services</code>，找到telnet，将23改为一个你喜欢的数字（比如8080）。或者，可以在不需要使用时直接关闭这个服务，在<code>nyancat</code>中设置<code>disable: yes</code>即可。</p>
 <h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>俗话说，有光的地方就有Bad Apple!!。很久以前的一篇文章<a href="/2017-12/近期完成的数个游戏及应用/">近期完成的数个游戏及应用</a>中，就提到博主成功使用HTML页面播放Bad Apple!!字符画。目前，博主正在尝试搭建一个可以播放Bad Apple!!的Telnet服务器，敬请期待。</p>
 <hr>
 <p>本文更新于2019年2月14日：<br>博主通过魔改Nyancat的代码，成功地实现了可以播放Bad Apple!!的Telnet服务器。可以阅读文章<a href="/2019-02/用Telnet观看Bad%20Apple!!/">用Telnet观看Bad Apple!!</a>查看。</p>
 </div>
-<div>
 <div id="reward-container">
 <div>🍭支持一根棒棒糖！</div>
 <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
@@ -268,7 +269,6 @@ type="text" id="local-search-input">
 <div style="display: inline-block">
 <img src="/images/bitcoin.png" alt="张书樵 比特币">
 <p>比特币</p>
-</div>
 </div>
 </div>
 </div>
@@ -423,10 +423,7 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next gemini" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.9.0">
@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
+<script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 <script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
+exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 save_scroll: true,
@@ -39,8 +42,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 },
 localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
 path: 'search.json',
-tabs: true,
-motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
 copy_button: '复制',
 copy_success: '复制成功',
@@ -48,20 +50,20 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<meta name="description" content="在数据传输的时候，并不是所有的字符都可以受到支持，很多时候只能传输可见字符，对于不可见字符的传输需要经过特殊处理，这就是Base64产生的原因。Base64编码是一种基于64个可打印字符来表示二进制数据的表示方法。由于$2^6=64$，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。在Base64中的可打印字符包括">
+<meta name="description" content=".mjpage .MJX-monospace {                             font-family: monospace                             }                              .mjpage .MJX-sans-serif {">
 <meta name="keywords" content="HTML,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Base64编码的原理与实现">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-12/Base64编码的原理与实现/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="在数据传输的时候，并不是所有的字符都可以受到支持，很多时候只能传输可见字符，对于不可见字符的传输需要经过特殊处理，这就是Base64产生的原因。Base64编码是一种基于64个可打印字符来表示二进制数据的表示方法。由于$2^6=64$，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。在Base64中的可打印字符包括">
+<meta property="og:description" content=".mjpage .MJX-monospace {                             font-family: monospace                             }                              .mjpage .MJX-sans-serif {">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-12/1.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-12/2.png">
 <meta property="og:updated_time" content="2019-07-23T08:43:20.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Base64编码的原理与实现">
-<meta name="twitter:description" content="在数据传输的时候，并不是所有的字符都可以受到支持，很多时候只能传输可见字符，对于不可见字符的传输需要经过特殊处理，这就是Base64产生的原因。Base64编码是一种基于64个可打印字符来表示二进制数据的表示方法。由于$2^6=64$，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。在Base64中的可打印字符包括">
+<meta name="twitter:description" content=".mjpage .MJX-monospace {                             font-family: monospace                             }                              .mjpage .MJX-sans-serif {">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-12/1.png">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <script id="page-configurations">
@@ -160,6 +162,7 @@ top: initial;
 <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
+</nav>
 <div class="site-search">
 <div class="popup search-popup local-search-popup">
 <div class="local-search-header clearfix">
@@ -178,7 +181,6 @@ type="text" id="local-search-input">
 <div id="local-search-result"></div>
 </div>
 </div>
-</nav>
 </div>
 </header>
 <main id="main" class="main">
@@ -226,15 +228,97 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-12/Base64编码的原理与实现/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-12/Base64编码的原理与实现/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-12/Base64编码的原理与实现/" itemprop="commentCount"></span>
 </a>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>在数据传输的时候，并不是所有的字符都可以受到支持，很多时候只能传输可见字符，对于不可见字符的传输需要经过特殊处理，这就是Base64产生的原因。Base64编码是一种基于64个可打印字符来表示二进制数据的表示方法。由于$2^6=64$，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。在Base64中的可打印字符包括字母A-Z、a-z、数字0-9，这样共有62个字符，此外两个可打印符号在不同的系统中而不同。一些如uuencode的其他编码方法，和之后BinHex的版本使用不同的64字符集来代表6个二进制数字，但是不被称为Base64。<br>Base64常用于在通常处理文本数据的场合，表示、传输、存储一些二进制数据，包括MIME的电子邮件及XML的一些复杂数据。用Base64编码图片也是互联网上常见的做法。</p>
+<html><head><style type="text/css">
+.mjpage .MJX-monospace {
+font-family: monospace
+}
+.mjpage .MJX-sans-serif {
+font-family: sans-serif
+}
+.mjpage {
+display: inline;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 100%;
+font-size-adjust: none;
+text-indent: 0;
+text-align: left;
+text-transform: none;
+letter-spacing: normal;
+word-spacing: normal;
+word-wrap: normal;
+white-space: nowrap;
+float: none;
+direction: ltr;
+max-width: none;
+max-height: none;
+min-width: 0;
+min-height: 0;
+border: 0;
+padding: 0;
+margin: 0
+}
+.mjpage * {
+transition: none;
+-webkit-transition: none;
+-moz-transition: none;
+-ms-transition: none;
+-o-transition: none
+}
+.mjx-svg-href {
+fill: blue;
+stroke: blue
+}
+.MathJax_SVG_LineBox {
+display: table!important
+}
+.MathJax_SVG_LineBox span {
+display: table-cell!important;
+width: 10000em!important;
+min-width: 0;
+max-width: none;
+padding: 0;
+border: 0;
+margin: 0
+}
+.mjpage__block {
+text-align: center;
+margin: 1em 0em;
+position: relative;
+display: block!important;
+text-indent: 0;
+max-width: none;
+max-height: none;
+min-width: 0;
+min-height: 0;
+width: 100%
+}</style></head><body><p>在数据传输的时候，并不是所有的字符都可以受到支持，很多时候只能传输可见字符，对于不可见字符的传输需要经过特殊处理，这就是Base64产生的原因。Base64编码是一种基于64个可打印字符来表示二进制数据的表示方法。由于<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="7.64ex" height="2.676ex" style="vertical-align: -0.338ex;" viewbox="0 -1006.6 3289.5 1152.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">2^6=64</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+<path stroke-width="1" id="E1-MJMAIN-36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"/>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E1-MJMAIN-34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+<use xlink:href="#E1-MJMAIN-32" x="0" y="0"/>
+<use transform="scale(0.707)" xlink:href="#E1-MJMAIN-36" x="707" y="557"/>
+<use xlink:href="#E1-MJMAIN-3D" x="1232" y="0"/>
+<g transform="translate(2288,0)">
+<use xlink:href="#E1-MJMAIN-36"/>
+<use xlink:href="#E1-MJMAIN-34" x="500" y="0"/>
+</g>
+</g>
+</svg></span>，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。在Base64中的可打印字符包括字母A-Z、a-z、数字0-9，这样共有62个字符，此外两个可打印符号在不同的系统中而不同。一些如uuencode的其他编码方法，和之后BinHex的版本使用不同的64字符集来代表6个二进制数字，但是不被称为Base64。<br>Base64常用于在通常处理文本数据的场合，表示、传输、存储一些二进制数据，包括MIME的电子邮件及XML的一些复杂数据。用Base64编码图片也是互联网上常见的做法。</p>
 <p>Base64的字符索引如下表所示：</p>
 <table>
 <thead>
@@ -416,15 +500,14 @@ type="text" id="local-search-input">
 <p><img src="/images/2018-12/2.png" alt></p>
 <a id="more"></a>
 <p>这是一个用Python实现Base64编码的脚本：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myBase64Encode</span><span class="params">(preCoding)</span>:</span></span><br><span class="line">    charTable = <span class="string">'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'</span> <span class="comment">#字符表</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> len(preCoding) &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>  <span class="comment">#字符串为空则返回空</span></span><br><span class="line">    lackCharNums = <span class="number">3</span> - len(preCoding) % <span class="number">3</span></span><br><span class="line">    <span class="keyword">if</span> lackCharNums == <span class="number">3</span> : lackCharNums = <span class="number">0</span> <span class="comment">#整除说明不缺字符</span></span><br><span class="line">    <span class="comment">#待转换字符不是3的倍数的情况补全它</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(lackCharNums) :</span><br><span class="line">        preCoding = preCoding + <span class="string">b'\x00'</span></span><br><span class="line">    result = <span class="string">''</span> <span class="comment">#用于保存最终结果的str数据</span></span><br><span class="line">    rp = <span class="string">''</span> <span class="comment">#处理补全字符时的暂存变量</span></span><br><span class="line">    <span class="comment">#每三个字符处理一轮</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(int(len(preCoding) / <span class="number">3</span>)):</span><br><span class="line">        threeChar = preCoding[i * <span class="number">3</span> : i * <span class="number">3</span> + <span class="number">3</span>] <span class="comment">#取三个字符出来</span></span><br><span class="line">        tCode = <span class="string">''</span> <span class="comment">#用于存放三个字符拼接后的二进制数值 文本形式</span></span><br><span class="line">        pCode = <span class="string">''</span> <span class="comment">#暂存变量</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">3</span>) :</span><br><span class="line">            pCode = bin(threeChar[j])[<span class="number">2</span> :]  <span class="comment">#把省略的0补上</span></span><br><span class="line">            lackZeroNums = <span class="number">8</span> - len(pCode) <span class="comment">#省略的0的个数</span></span><br><span class="line">            <span class="keyword">for</span> x <span class="keyword">in</span> range(lackZeroNums):</span><br><span class="line">                pCode = <span class="string">'0'</span> + pCode</span><br><span class="line">            tCode = tCode + pCode</span><br><span class="line">        pCode = <span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">4</span>): <span class="comment">#每6位一个字符</span></span><br><span class="line">            pCode = tCode[j * <span class="number">6</span> : j * <span class="number">6</span> + <span class="number">6</span>]</span><br><span class="line">            rp = rp + charTable[int(pCode, <span class="number">2</span>)]</span><br><span class="line">        <span class="comment">#处理补全的00字符</span></span><br><span class="line">        result = rp[: len(rp) - lackCharNums]</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(lackCharNums):</span><br><span class="line">            result = result + <span class="string">'='</span></span><br><span class="line">    <span class="keyword">return</span> bytes(result, encoding = <span class="string">"utf-8"</span>)</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myBase64Decode</span><span class="params">(encodedBin)</span> :</span></span><br><span class="line">    charTable = <span class="string">'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'</span> <span class="comment">#字符表</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">#如果字符不是4的倍数 返回空</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> len(encodedBin) % <span class="number">4</span> == <span class="number">0</span> :</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line"> </span><br><span class="line">    tCode = <span class="string">''</span> <span class="comment">#用于存放最终的二进制文本字符串</span></span><br><span class="line">    pCpde = <span class="string">''</span> <span class="comment">#暂存变量</span></span><br><span class="line">    <span class="comment">#遍历encodedBin每一个字符</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> encodedBin:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(charTable)): <span class="comment">#找到表中对应坐标</span></span><br><span class="line">            <span class="keyword">if</span> chr(i) == charTable[j]:</span><br><span class="line">                pCode = bin(j)[<span class="number">2</span> :]  <span class="comment">#转二进制去除开头的0b</span></span><br><span class="line">                lackZeroNums = <span class="number">6</span> - len(pCode) <span class="comment">#省略的0的个数</span></span><br><span class="line">                <span class="keyword">for</span> x <span class="keyword">in</span> range(lackZeroNums):</span><br><span class="line">                    pCode = <span class="string">'0'</span> + pCode</span><br><span class="line">                tCode = tCode + pCode</span><br><span class="line">    pCode = <span class="string">''</span></span><br><span class="line">    result = <span class="string">''</span> <span class="comment">#储存最终结果</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(int(len(tCode) / <span class="number">8</span>)):</span><br><span class="line">        pCode = tCode[i * <span class="number">8</span> : i * <span class="number">8</span> + <span class="number">8</span>]</span><br><span class="line">        result = result + chr(int(pCode, <span class="number">2</span>))</span><br><span class="line">    <span class="keyword">return</span> bytes(result, encoding = <span class="string">"utf-8"</span>)</span><br><span class="line"></span><br><span class="line">print(myBase64Encode(<span class="string">b"helloworld"</span>))</span><br><span class="line">print(myBase64Decode(<span class="string">b"aGVsbG93b3JsZA=="</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myBase64Encode</span><span class="params">(preCoding)</span>:</span></span><br><span class="line">    charTable = <span class="string">'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'</span> <span class="comment">#字符表</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> len(preCoding) &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>  <span class="comment">#字符串为空则返回空</span></span><br><span class="line">    lackCharNums = <span class="number">3</span> - len(preCoding) % <span class="number">3</span></span><br><span class="line">    <span class="keyword">if</span> lackCharNums == <span class="number">3</span> : lackCharNums = <span class="number">0</span> <span class="comment">#整除说明不缺字符</span></span><br><span class="line">    <span class="comment">#待转换字符不是3的倍数的情况补全它</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(lackCharNums) :</span><br><span class="line">        preCoding = preCoding + <span class="string">b'\x00'</span></span><br><span class="line">    result = <span class="string">''</span> <span class="comment">#用于保存最终结果的str数据</span></span><br><span class="line">    rp = <span class="string">''</span> <span class="comment">#处理补全字符时的暂存变量</span></span><br><span class="line">    <span class="comment">#每三个字符处理一轮</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(int(len(preCoding) / <span class="number">3</span>)):</span><br><span class="line">        threeChar = preCoding[i * <span class="number">3</span> : i * <span class="number">3</span> + <span class="number">3</span>] <span class="comment">#取三个字符出来</span></span><br><span class="line">        tCode = <span class="string">''</span> <span class="comment">#用于存放三个字符拼接后的二进制数值 文本形式</span></span><br><span class="line">        pCode = <span class="string">''</span> <span class="comment">#暂存变量</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">3</span>) :</span><br><span class="line">            pCode = bin(threeChar[j])[<span class="number">2</span> :]  <span class="comment">#把省略的0补上</span></span><br><span class="line">            lackZeroNums = <span class="number">8</span> - len(pCode) <span class="comment">#省略的0的个数</span></span><br><span class="line">            <span class="keyword">for</span> x <span class="keyword">in</span> range(lackZeroNums):</span><br><span class="line">                pCode = <span class="string">'0'</span> + pCode</span><br><span class="line">            tCode = tCode + pCode</span><br><span class="line">        pCode = <span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">4</span>): <span class="comment">#每6位一个字符</span></span><br><span class="line">            pCode = tCode[j * <span class="number">6</span> : j * <span class="number">6</span> + <span class="number">6</span>]</span><br><span class="line">            rp = rp + charTable[int(pCode, <span class="number">2</span>)]</span><br><span class="line">        <span class="comment">#处理补全的00字符</span></span><br><span class="line">        result = rp[: len(rp) - lackCharNums]</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(lackCharNums):</span><br><span class="line">            result = result + <span class="string">'='</span></span><br><span class="line">    <span class="keyword">return</span> bytes(result, encoding = <span class="string">"utf-8"</span>)</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myBase64Decode</span><span class="params">(encodedBin)</span> :</span></span><br><span class="line">    charTable = <span class="string">'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'</span> <span class="comment">#字符表</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">#如果字符不是4的倍数 返回空</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> len(encodedBin) % <span class="number">4</span> == <span class="number">0</span> :</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line"> </span><br><span class="line">    tCode = <span class="string">''</span> <span class="comment">#用于存放最终的二进制文本字符串</span></span><br><span class="line">    pCpde = <span class="string">''</span> <span class="comment">#暂存变量</span></span><br><span class="line">    <span class="comment">#遍历encodedBin每一个字符</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> encodedBin:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(charTable)): <span class="comment">#找到表中对应坐标</span></span><br><span class="line">            <span class="keyword">if</span> chr(i) == charTable[j]:</span><br><span class="line">                pCode = bin(j)[<span class="number">2</span> :]  <span class="comment">#转二进制去除开头的0b</span></span><br><span class="line">                lackZeroNums = <span class="number">6</span> - len(pCode) <span class="comment">#省略的0的个数</span></span><br><span class="line">                <span class="keyword">for</span> x <span class="keyword">in</span> range(lackZeroNums):</span><br><span class="line">                    pCode = <span class="string">'0'</span> + pCode</span><br><span class="line">                tCode = tCode + pCode</span><br><span class="line">    pCode = <span class="string">''</span></span><br><span class="line">    result = <span class="string">''</span> <span class="comment">#储存最终结果</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(int(len(tCode) / <span class="number">8</span>)):</span><br><span class="line">        pCode = tCode[i * <span class="number">8</span> : i * <span class="number">8</span> + <span class="number">8</span>]</span><br><span class="line">        result = result + chr(int(pCode, <span class="number">2</span>))</span><br><span class="line">    <span class="keyword">return</span> bytes(result, encoding = <span class="string">"utf-8"</span>)</span><br><span class="line"></span><br><span class="line">print(myBase64Encode(<span class="string">b"helloworld"</span>))</span><br><span class="line">print(myBase64Decode(<span class="string">b"aGVsbG93b3JsZA=="</span>))</span><br></pre></td></tr></tbody></table></figure>
 <p>浏览器中可以直接调用相关的API：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>文件base64——直接拖进来<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">body &#123;</span><br><span class="line">    word-break: break-all;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="built_in">window</span>.addEventListener(<span class="string">"dragenter"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span></span><br><span class="line">    event.preventDefault();</span><br><span class="line"><span class="javascript">&#125;, <span class="literal">false</span>);</span></span><br><span class="line"><span class="javascript"><span class="built_in">window</span>.addEventListener(<span class="string">"dragover"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span></span><br><span class="line">    event.preventDefault();</span><br><span class="line"><span class="javascript">&#125;, <span class="literal">false</span>);</span></span><br><span class="line"><span class="javascript"><span class="built_in">window</span>.addEventListener(<span class="string">"drop"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span></span><br><span class="line"><span class="javascript">    reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.body.insertAdjacentHTML(<span class="string">"afterBegin"</span>, <span class="string">'&lt;p&gt;'</span> + e.target.result + <span class="string">'&lt;/p&gt;'</span>); </span></span><br><span class="line"><span class="javascript">        <span class="comment">//base64 encoded file data!</span></span></span><br><span class="line">    &#125;;</span><br><span class="line">    reader.readAsDataURL(event.dataTransfer.files[0]);</span><br><span class="line">    event.preventDefault();</span><br><span class="line"><span class="javascript">&#125;, <span class="literal">false</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>文件base64——直接拖进来<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">body {</span><br><span class="line">    word-break: break-all;</span><br><span class="line">}</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="built_in">window</span>.addEventListener(<span class="string">"dragenter"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>{</span></span><br><span class="line">    event.preventDefault();</span><br><span class="line"><span class="javascript">}, <span class="literal">false</span>);</span></span><br><span class="line"><span class="javascript"><span class="built_in">window</span>.addEventListener(<span class="string">"dragover"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>{</span></span><br><span class="line">    event.preventDefault();</span><br><span class="line"><span class="javascript">}, <span class="literal">false</span>);</span></span><br><span class="line"><span class="javascript"><span class="built_in">window</span>.addEventListener(<span class="string">"drop"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>{</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span></span><br><span class="line"><span class="javascript">    reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>{</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.body.insertAdjacentHTML(<span class="string">"afterBegin"</span>, <span class="string">'&lt;p&gt;'</span> + e.target.result + <span class="string">'&lt;/p&gt;'</span>); </span></span><br><span class="line"><span class="javascript">        <span class="comment">//base64 encoded file data!</span></span></span><br><span class="line">    };</span><br><span class="line">    reader.readAsDataURL(event.dataTransfer.files[0]);</span><br><span class="line">    event.preventDefault();</span><br><span class="line"><span class="javascript">}, <span class="literal">false</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
 <p>这是加载Base64编码的图片的方法。这可以将图片硬编码到网页中。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Base64 Encode编码实现1x1px透明(黑白)图片<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">body &#123;</span><br><span class="line">    text-align: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>以下是透明图片<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"100"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>以下是黑色图片<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"100"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Base64 Encode编码实现1x1px透明(黑白)图片<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">body {</span><br><span class="line">    text-align: center;</span><br><span class="line">}</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>以下是透明图片<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"100"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>以下是黑色图片<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"100"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
 <hr>
-<p>拓展阅读：<br><a href="https://zh.wikipedia.org/wiki/Base64" target="_blank" rel="noopener">Base64 - 维基百科</a><br><a href="https://www.52pojie.cn/thread-831202-1-1.html" target="_blank" rel="noopener">Base64编码原理及脚本的简单实现</a></p>
+<p>拓展阅读：<br><a href="https://zh.wikipedia.org/wiki/Base64" target="_blank" rel="noopener">Base64 - 维基百科</a><br><a href="https://www.52pojie.cn/thread-831202-1-1.html" target="_blank" rel="noopener">Base64编码原理及脚本的简单实现</a></p></body></html>
 </div>
-<div>
 <div id="reward-container">
 <div>🍭支持一根棒棒糖！</div>
 <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
@@ -442,7 +525,6 @@ type="text" id="local-search-input">
 <div style="display: inline-block">
 <img src="/images/bitcoin.png" alt="张书樵 比特币">
 <p>比特币</p>
-</div>
 </div>
 </div>
 </div>
@@ -583,10 +665,7 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>
@@ -611,48 +690,6 @@ height: $(o).attr('height') || '1000px'
 }
 </script>
 <div id="pjax">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-processEscapes: true,
-skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-},
-TeX: {
-equationNumbers: {
-autoNumber: 'AMS'
-}
-}
-});
-MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-if (data.display) {
-var next = data.script.nextSibling;
-while (next && next.nodeName.toLowerCase() === '#text') {
-next = next.nextSibling;
-}
-if (next && next.nodeName.toLowerCase() === 'br') {
-next.parentNode.removeChild(next);
-}
-}
-});
-});
-MathJax.Hub.Queue(function() {
-var all = MathJax.Hub.getAllJax(), i;
-for (i = 0; i < all.length; i += 1) {
-element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-if (element.nodeName.toLowerCase() == 'li') {
-element = element.parentNode;
-}
-element.classList.add('has-jax');
-}
-});
-</script>
-<script>
-NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML', function() {
-MathJax.Hub.Typeset();
-}, window.MathJax);
-</script>
 <script src="/js/scrollspy.js?v=7.3.0"></script>
 <script src="/js/post-details.js?v=7.3.0"></script>
 <script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next gemini" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.9.0">
@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
+<script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 <script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
+exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 save_scroll: true,
@@ -39,8 +42,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 },
 localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
 path: 'search.json',
-tabs: true,
-motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
 copy_button: '复制',
 copy_success: '复制成功',
@@ -48,18 +50,18 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<meta name="description" content="编写C语言控制台程序时，如果使用scanf()函数作为输入，往往需要解决非法输入的问题。比如以下情况： 123printf(&quot;输入一个0~9的整数a\n&quot;);int a;scanf(&quot;%d&quot;, &amp;amp;a);  此时可能出现如下几种典型的非法输入：  123 123xyz xyz123  对于第一种，使用if判断a的范围是否满足要求即可。第二种和第三种则较为复杂，因为其中涉及到了字符的输入。第二">
+<meta name="description" content="编写C语言控制台程序时，如果使用scanf()函数作为输入，往往需要解决非法输入的问题。比如以下情况： 123printf(&quot;输入一个0~9的整数a\n&quot;);int a;scanf(&quot;%d&quot;, &amp;amp;a); 此时可能出现如下几种典型的非法输入：  123 123xyz xyz123  对于第一种，使用if判断a的范围是否满足要求即可。第二种和第三种则较为复杂，因为其中涉及到了字符的输入。第二种">
 <meta name="keywords" content="C">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C语言控制台程序清除输入缓冲区">
 <meta property="og:url" content="https://zhangshuqiao.org/2017-10/C语言控制台程序清除输入缓冲区/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="编写C语言控制台程序时，如果使用scanf()函数作为输入，往往需要解决非法输入的问题。比如以下情况： 123printf(&quot;输入一个0~9的整数a\n&quot;);int a;scanf(&quot;%d&quot;, &amp;amp;a);  此时可能出现如下几种典型的非法输入：  123 123xyz xyz123  对于第一种，使用if判断a的范围是否满足要求即可。第二种和第三种则较为复杂，因为其中涉及到了字符的输入。第二">
+<meta property="og:description" content="编写C语言控制台程序时，如果使用scanf()函数作为输入，往往需要解决非法输入的问题。比如以下情况： 123printf(&quot;输入一个0~9的整数a\n&quot;);int a;scanf(&quot;%d&quot;, &amp;amp;a); 此时可能出现如下几种典型的非法输入：  123 123xyz xyz123  对于第一种，使用if判断a的范围是否满足要求即可。第二种和第三种则较为复杂，因为其中涉及到了字符的输入。第二种">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-06-17T17:53:34.825Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言控制台程序清除输入缓冲区">
-<meta name="twitter:description" content="编写C语言控制台程序时，如果使用scanf()函数作为输入，往往需要解决非法输入的问题。比如以下情况： 123printf(&quot;输入一个0~9的整数a\n&quot;);int a;scanf(&quot;%d&quot;, &amp;amp;a);  此时可能出现如下几种典型的非法输入：  123 123xyz xyz123  对于第一种，使用if判断a的范围是否满足要求即可。第二种和第三种则较为复杂，因为其中涉及到了字符的输入。第二">
+<meta name="twitter:description" content="编写C语言控制台程序时，如果使用scanf()函数作为输入，往往需要解决非法输入的问题。比如以下情况： 123printf(&quot;输入一个0~9的整数a\n&quot;);int a;scanf(&quot;%d&quot;, &amp;amp;a); 此时可能出现如下几种典型的非法输入：  123 123xyz xyz123  对于第一种，使用if判断a的范围是否满足要求即可。第二种和第三种则较为复杂，因为其中涉及到了字符的输入。第二种">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <script id="page-configurations">
 // https://hexo.io/docs/variables.html
@@ -157,6 +159,7 @@ top: initial;
 <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
+</nav>
 <div class="site-search">
 <div class="popup search-popup local-search-popup">
 <div class="local-search-header clearfix">
@@ -175,7 +178,6 @@ type="text" id="local-search-input">
 <div id="local-search-result"></div>
 </div>
 </div>
-</nav>
 </div>
 </header>
 <main id="main" class="main">
@@ -223,8 +225,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2017-10/C语言控制台程序清除输入缓冲区/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2017-10/C语言控制台程序清除输入缓冲区/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2017-10/C语言控制台程序清除输入缓冲区/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -252,7 +254,6 @@ type="text" id="local-search-input">
 </ul>
 <p>其原理各不相同，但经过测试，像<code>fflush(stdin)</code>这样的函数，在VC中可以清除输入缓冲区，但在XCode（或gcc）中不起作用。而<code>scanf(&quot;%*[^\n]%*c&quot;)</code>原理是读取输入缓冲区的所有字符，达到清除输入缓冲区的目的；这似乎也不能解决某些形式的非法输入。<br>经研究，最为有效的办法是在每次接受输入前加一句<code>rewind(stdin)</code>，其效果是坠吼的。</p>
 </div>
-<div>
 <div id="reward-container">
 <div>🍭支持一根棒棒糖！</div>
 <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
@@ -270,7 +271,6 @@ type="text" id="local-search-input">
 <div style="display: inline-block">
 <img src="/images/bitcoin.png" alt="张书樵 比特币">
 <p>比特币</p>
-</div>
 </div>
 </div>
 </div>
@@ -410,10 +410,7 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>

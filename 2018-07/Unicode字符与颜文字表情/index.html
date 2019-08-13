@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next gemini" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.9.0">
@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
+<script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 <script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
+exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 save_scroll: true,
@@ -39,8 +42,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 },
 localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
 path: 'search.json',
-tabs: true,
-motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
 copy_button: '复制',
 copy_success: '复制成功',
@@ -57,13 +59,13 @@ copy_failure: '复制失败'
 <meta property="og:description" content="前言编码，是每个程序员绕不开的话题。对于前端工程师而言，字符更是会直观地展示在界面上。提起文字，大部分人的脑中，都会定式为规整排列的字符。但是林子大了什么鸟都有，世界上可是存在着6800+种文字，难免会飞出来一些诡异的鸟…而号称『万国码』的Unicode，在实现编码与展示的时候，也会不会遇到一些奇葩的事情呢？事实上，可能你早已见识过了：  x̙͈̝͍͕̙̄͛̽̆͌́̕͟g̘̣̠̝̟̤̽͑͋̈̑̒͞">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/FqLq54KAJkoSVA-7_jdJpSRI3fcI.png">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/Fr8cS9UX21MEgBtmOU_CDhreGqlO.jpeg">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/Fr-rlbbriydg4cUmoU_Zs6VQSbpU.jpeg">
-<meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/Fk0kXSTymPxute84rceAkzGd5PKA.jpeg">
+<meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/Fr8cS9UX21MEgBtmOU_CDhreGqlO.jpg">
+<meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/Fr-rlbbriydg4cUmoU_Zs6VQSbpU.jpg">
+<meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/Fk0kXSTymPxute84rceAkzGd5PKA.jpg">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/Fk4jy-lOTJvqGmGul8nZfz8r9B7p.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/Fn9DaIzvbgkExdrsLhSdCvJjCqX1.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-07/IMG_0151.png">
-<meta property="og:updated_time" content="2019-08-06T10:07:25.500Z">
+<meta property="og:updated_time" content="2019-08-12T02:16:46.349Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unicode字符与颜文字表情">
 <meta name="twitter:description" content="前言编码，是每个程序员绕不开的话题。对于前端工程师而言，字符更是会直观地展示在界面上。提起文字，大部分人的脑中，都会定式为规整排列的字符。但是林子大了什么鸟都有，世界上可是存在着6800+种文字，难免会飞出来一些诡异的鸟…而号称『万国码』的Unicode，在实现编码与展示的时候，也会不会遇到一些奇葩的事情呢？事实上，可能你早已见识过了：  x̙͈̝͍͕̙̄͛̽̆͌́̕͟g̘̣̠̝̟̤̽͑͋̈̑̒͞">
@@ -165,6 +167,7 @@ top: initial;
 <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
+</nav>
 <div class="site-search">
 <div class="popup search-popup local-search-popup">
 <div class="local-search-header clearfix">
@@ -183,7 +186,6 @@ type="text" id="local-search-input">
 <div id="local-search-result"></div>
 </div>
 </div>
-</nav>
 </div>
 </header>
 <main id="main" class="main">
@@ -231,8 +233,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-07/Unicode字符与颜文字表情/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-07/Unicode字符与颜文字表情/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-07/Unicode字符与颜文字表情/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -249,9 +251,9 @@ type="text" id="local-search-input">
 <h2 id="文字可以戴帽子和穿鞋子"><a href="#文字可以戴帽子和穿鞋子" class="headerlink" title="文字可以戴帽子和穿鞋子"></a>文字可以戴帽子和穿鞋子</h2><p>提起泰文，很多朋友都会立即想到：<strong>萨瓦迪卡（你好）</strong>。<br>但这句话是怎么写的呢？<br>其实这句你好，男生和女生之间还有差异，男生写法是：<code>สวัสดีครับ</code>，女生则是：<code>สวัสดีค่ะ</code>。<br>不过这并不重要，重要的是，我们发现某些字的上面，还带了特殊的符号。就好像是戴上了帽子。<br>事实上，泰文字符不仅会『戴帽子』，偶尔还会『穿鞋子』，比如这三个字符：<code>ผ ผู ผู้</code>。<br>如果脑洞再大一点，有人就会想，那是不是还可以戴多顶帽子呢？<br>的确如此…泰文允许你穿一双鞋子，并且戴两顶帽子。完整的形式是这样的：</p>
 <p><img src="/images/2018-07/FqLq54KAJkoSVA-7_jdJpSRI3fcI.png" alt></p>
 <p>所以，平时看惯了中英文的我们，需要改变一下思路了。<br>世界上的文字，并不全是规规整整横向排列的格子，也存在像泰文这种变形金刚<strong>组合式</strong>的文字。<br>虽然标准的泰文里，『帽子』和『鞋子』的数量是有限制的，但由于国际码的迷之设计（先卖个关子），在计算机里显示的泰文字符，却可以拥有无数的帽子和鞋子。也就是说，它变成了一款可以在Y轴无限拓展的文字！<br>并且，咱不光可以往上喷，还可以有一定角度…<br><em>（由于一些系统会崩溃，这里使用截图）</em></p>
-<p><img src="/images/2018-07/Fr8cS9UX21MEgBtmOU_CDhreGqlO.jpeg" alt><br><img src="/images/2018-07/Fr-rlbbriydg4cUmoU_Zs6VQSbpU.jpeg" alt></p>
+<p><img src="/images/2018-07/Fr8cS9UX21MEgBtmOU_CDhreGqlO.jpg" alt><br><img src="/images/2018-07/Fr-rlbbriydg4cUmoU_Zs6VQSbpU.jpg" alt></p>
 <p>还可以</p>
-<p><img src="/images/2018-07/Fk0kXSTymPxute84rceAkzGd5PKA.jpeg" alt></p>
+<p><img src="/images/2018-07/Fk0kXSTymPxute84rceAkzGd5PKA.jpg" alt></p>
 <p>简直是不讲道理。</p>
 <h2 id="文字还能倒过来"><a href="#文字还能倒过来" class="headerlink" title="文字还能倒过来"></a>文字还能倒过来</h2><p>这里还介绍一个神奇的Unicode字符：<code>\u202e</code>，它的作用是让它之后的字符从右到左显示。博主最早是在微信中发现这个小技巧的，如果昵称中包含这个字符，可以产生奇妙的效果。例如用户：<br><code>米米‮</code><br>看上去没有什么问题，但实际上是<br><code>米米\u202e</code><br>发送一个表情，就会显示为<br><code>米米‮：[动画表情]</code><br>如果用在文件名中，还可以起到欺骗的效果，例如：<br><code>sample_\u202ecod.exe</code><br>就会显示为<br><code>sample_‮cod.exe</code></p>
 <a id="more"></a>
@@ -279,7 +281,6 @@ type="text" id="local-search-input">
 <p>参考文章：<a href="http://litten.me/2017/11/13/strange-characters1" target="_blank" rel="noopener">人人都是艺术家！谈谈那些奇怪的字符（上）</a></p>
 <p>拓展阅读：<br><a href="https://unicode-table.com/cn" target="_blank" rel="noopener">Unicode字符百科</a><br><a href="http://jkorpela.fi/fui.html8" target="_blank" rel="noopener">Full Unicode Input utility</a><br><a href="https://css-tricks.com/more-unicode-patterns" target="_blank" rel="noopener">More Unicode Patterns</a><br><a href="https://segmentfault.com/a/1190000007594620" target="_blank" rel="noopener">Emoji的编码以及常见问题处理</a><br><a href="https://moe.best/nodejs-memo/emoji.html" target="_blank" rel="noopener">Emoji 的处理 - 使用正则表达式匹配所有 Emoji</a><br><a href="https://sspai.com/post/45516" target="_blank" rel="noopener">别再用「六个点」当省略号了，这些标点都有更规范的输入方式</a></p>
 </div>
-<div>
 <div id="reward-container">
 <div>🍭支持一根棒棒糖！</div>
 <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
@@ -297,7 +298,6 @@ type="text" id="local-search-input">
 <div style="display: inline-block">
 <img src="/images/bitcoin.png" alt="张书樵 比特币">
 <p>比特币</p>
-</div>
 </div>
 </div>
 </div>
@@ -449,10 +449,7 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>

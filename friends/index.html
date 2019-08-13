@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next gemini" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.9.0">
@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
+<script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 <script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
+exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 save_scroll: true,
@@ -39,8 +42,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 },
 localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
 path: 'search.json',
-tabs: true,
-motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
 copy_button: '复制',
 copy_success: '复制成功',
@@ -48,18 +50,42 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<meta name="description" content="以下是本站的友情链接（排名不分先后）。支持https的网站：  骤雨 吐槽大王部落格 创新就是 Math.random() AI柠檬 一个科技爱好者的个人博客 知微的博客 见微知著 AoTxLand 翱天翔地，记录行走和折腾之路 FGHRSH的博客 冯小贤 彩虹海是我哒 Mashiro 樱花庄的白猫 SycBlog 一个小小的自留地，记录值得记录下的事情 欧尼酱 浑水摸鱼的咸鱼一条，伪Geek I">
+<meta name="description" content="以下是本站的友情链接（排名不分先后）。 支持https的网站  骤雨https://hardrain980.com    吐槽大王部落格创新就是 Math.random()    AI柠檬一个科技爱好者的个人博客    知微的博客见微知著    AoTxLand翱天翔地，记录行走和折腾之路    FGHRSH的博客https://www.fghrsh.net    冯小贤彩虹海是我哒    Mas">
 <meta name="keywords" content="个人博客,物理,技术,计算机">
 <meta property="og:type" content="website">
 <meta property="og:title" content="朋友们">
 <meta property="og:url" content="https://zhangshuqiao.org/friends/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="以下是本站的友情链接（排名不分先后）。支持https的网站：  骤雨 吐槽大王部落格 创新就是 Math.random() AI柠檬 一个科技爱好者的个人博客 知微的博客 见微知著 AoTxLand 翱天翔地，记录行走和折腾之路 FGHRSH的博客 冯小贤 彩虹海是我哒 Mashiro 樱花庄的白猫 SycBlog 一个小小的自留地，记录值得记录下的事情 欧尼酱 浑水摸鱼的咸鱼一条，伪Geek I">
+<meta property="og:description" content="以下是本站的友情链接（排名不分先后）。 支持https的网站  骤雨https://hardrain980.com    吐槽大王部落格创新就是 Math.random()    AI柠檬一个科技爱好者的个人博客    知微的博客见微知著    AoTxLand翱天翔地，记录行走和折腾之路    FGHRSH的博客https://www.fghrsh.net    冯小贤彩虹海是我哒    Mas">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-06T11:52:55.282Z">
+<meta property="og:image" content="https://gr.mirror.hardrain980.com/avatar/6d23afb47bc00c13e3d6be05766b6203?s=80&d=mm&r=g">
+<meta property="og:image" content="https://www.tcdw.net/static/tcdw.jpg">
+<meta property="og:image" content="https://blog-en.ailemon.me/wp-content/uploads/2018/10/iStock_000073998637_Medium_%E5%89%AF%E6%9C%AC.jpg">
+<meta property="og:image" content="https://images.unsplash.com/profile-1562311113043-e1da30d0ec31?w=80&h=80">
+<meta property="og:image" content="https://aotxland.com/wp-content/uploads/2017/01/p1.jpg">
+<meta property="og:image" content="https://fp1.fghrsh.net/2017/10/11/d383a9ad4318c5b4332fe02845f5323a.jpg">
+<meta property="og:image" content="https://blog.flxxyz.com/usr/uploads/avatarCache/d5650064ed342a43ac6775c7a8e0804b.jpg">
+<meta property="og:image" content="https://gravatar.loli.net/avatar/cd2b3a164c977539712929f66cad335c?s=80&d=mm&r=g">
+<meta property="og:image" content="https://img.mfeng.cc/links.png">
+<meta property="og:image" content="https://i.loli.net/2018/04/28/5ae46811094e6.jpg">
+<meta property="og:image" content="https://ibcl.us/images/avatar.jpg">
+<meta property="og:image" content="https://coolcode.org/img/avatar.jpg">
+<meta property="og:image" content="https://gravatar.loli.net/avatar/c835d8b120e06356f01ece7b98210119?s=80&r=R&d=">
+<meta property="og:image" content="https://gravatar.loli.net/avatar/1f851e33b53252df5f570f8b9d9218c1?d=mp&v=1.3.9">
+<meta property="og:image" content="https://avatar.dawnlab.me/qq/776194970?s=0">
+<meta property="og:image" content="https://pbs.twimg.com/profile_images/509526027333148672/MjyD4s6Y_400x400.jpeg">
+<meta property="og:image" content="https://i-m.dev/assets/avatar.png">
+<meta property="og:image" content="https://picture.yuzhouwan.com/yuzhouwan_logo_128x128.ico">
+<meta property="og:image" content="https://www.xiaomujin.club/images/author.jpg">
+<meta property="og:image" content="https://blog.skihome.xyz/uploads/avatar.jpg">
+<meta property="og:image" content="https://imcyc.cn/images/head.png">
+<meta property="og:image" content="http://image.markhoo.com/touxiang.jpg">
+<meta property="og:image" content="http://www.izhuyue.com/avatar/4cf16d92f370027a77c2167547a254a9.jpg">
+<meta property="og:updated_time" content="2019-08-10T18:09:41.565Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="朋友们">
-<meta name="twitter:description" content="以下是本站的友情链接（排名不分先后）。支持https的网站：  骤雨 吐槽大王部落格 创新就是 Math.random() AI柠檬 一个科技爱好者的个人博客 知微的博客 见微知著 AoTxLand 翱天翔地，记录行走和折腾之路 FGHRSH的博客 冯小贤 彩虹海是我哒 Mashiro 樱花庄的白猫 SycBlog 一个小小的自留地，记录值得记录下的事情 欧尼酱 浑水摸鱼的咸鱼一条，伪Geek I">
+<meta name="twitter:description" content="以下是本站的友情链接（排名不分先后）。 支持https的网站  骤雨https://hardrain980.com    吐槽大王部落格创新就是 Math.random()    AI柠檬一个科技爱好者的个人博客    知微的博客见微知著    AoTxLand翱天翔地，记录行走和折腾之路    FGHRSH的博客https://www.fghrsh.net    冯小贤彩虹海是我哒    Mas">
+<meta name="twitter:image" content="https://gr.mirror.hardrain980.com/avatar/6d23afb47bc00c13e3d6be05766b6203?s=80&d=mm&r=g">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <script id="page-configurations">
 // https://hexo.io/docs/variables.html
@@ -157,6 +183,7 @@ top: initial;
 <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
+</nav>
 <div class="site-search">
 <div class="popup search-popup local-search-popup">
 <div class="local-search-header clearfix">
@@ -175,7 +202,6 @@ type="text" id="local-search-input">
 <div id="local-search-result"></div>
 </div>
 </div>
-</nav>
 </div>
 </header>
 <main id="main" class="main">
@@ -191,36 +217,102 @@ type="text" id="local-search-input">
 </div>
 </header>
 <div class="post-body">
-<p>以下是本站的友情链接（排名不分先后）。<br>支持https的网站：</p>
-<ul>
-<li><a href="https://hardrain980.com" target="_blank" rel="noopener">骤雨</a></li>
-<li><a href="https://www.tcdw.net" target="_blank" rel="noopener">吐槽大王部落格</a> <span style="color: #bbb">创新就是 Math.random()</span></li>
-<li><a href="https://blog.ailemon.me" target="_blank" rel="noopener">AI柠檬</a> <span style="color: #bbb">一个科技爱好者的个人博客</span></li>
-<li><a href="https://www.zhiwei.me" target="_blank" rel="noopener">知微的博客</a> <span style="color: #bbb">见微知著</span></li>
-<li><a href="https://aotxland.com" target="_blank" rel="noopener">AoTxLand</a> <span style="color: #bbb">翱天翔地，记录行走和折腾之路</span></li>
-<li><a href="https://www.fghrsh.net" target="_blank" rel="noopener">FGHRSH的博客</a></li>
-<li><a href="https://blog.flxxyz.com" target="_blank" rel="noopener">冯小贤</a> <span style="color: #bbb">彩虹海是我哒</span></li>
-<li><a href="https://2heng.xin" target="_blank" rel="noopener">Mashiro</a> <span style="color: #bbb">樱花庄的白猫</span></li>
-<li><a href="https://www.mfeng.cc" target="_blank" rel="noopener">SycBlog</a> <span style="color: #bbb">一个小小的自留地，记录值得记录下的事情</span></li>
-<li><a href="https://www.nothamor.cn" target="_blank" rel="noopener">欧尼酱</a> <span style="color: #bbb">浑水摸鱼的咸鱼一条，伪Geek</span></li>
-<li><a href="https://ibcl.us" target="_blank" rel="noopener">I BCL.</a> <span style="color: #bbb">一位热爱无线电广播的高中学生的博客</span></li>
-<li><a href="https://coolcode.org" target="_blank" rel="noopener">CoolCode</a> <span style="color: #bbb">艺术需要千锤百炼，技术需要日积月累</span></li>
-<li><a href="https://www.odbook.com" target="_blank" rel="noopener">Just A Note</a> <span style="color: #bbb">只是一个笔记本</span></li>
-<li><a href="https://blog.bill.moe" target="_blank" rel="noopener">Bill Yang&#39;s Blog</a></li>
-<li><a href="https://nexmoe.com" target="_blank" rel="noopener">折影轻梦</a> <span style="color: #bbb">Entorevolution</span></li>
-<li><a href="https://www.sweeterthandespair.com" target="_blank" rel="noopener">阿尔法凡</a> <span style="color: #bbb">AlphaFanty</span></li>
-<li><a href="https://i-m.dev" target="_blank" rel="noopener">I&#39;m dev</a> <span style="color: #bbb">这样摸鱼下去真的不行鸭～</span></li>
-<li><a href="https://yuzhouwan.com" target="_blank" rel="noopener">宇宙湾</a> <span style="color: #bbb">厚积薄发</span></li>
-<li><a href="https://www.xiaomujin.club" target="_blank" rel="noopener">木槿</a> <span style="color: #bbb">记录生活，记录故事</span></li>
-<li><a href="https://blog.skihome.xyz" target="_blank" rel="noopener">Sakitami的集装箱</a> <span style="color: #bbb">我已经无敌了！</span></li>
-<li><a href="https://www.imcyc.cn" target="_blank" rel="noopener">Morty</a> <span style="color: #bbb">CS随笔</span></li>
-</ul>
-<p>暂不支持https的网站：</p>
-<ul>
-<li><a href="http://www.markhoo.com" target="_blank" rel="noopener">沉默是金</a> <span style="color: #bbb">Silence is gold</span></li>
-<li><a href="http://www.izhuyue.com" target="_blank" rel="noopener">FROYO&#39;s Blog</a> <span style="color: #bbb">将来的你，一定会感谢现在努力的自己</span></li>
-</ul>
-<p>如果您希望交换友情链接，敬请在评论区留言，或发送邮件至stevenjoezhang(at)gmail.com联系博主。<br><strong>感谢您的关注与支持！</strong></p>
+<p>以下是本站的友情链接（排名不分先后）。</p>
+<h2 id="支持https的网站"><a href="#支持https的网站" class="headerlink" title="支持https的网站"></a>支持https的网站</h2><div class="link-grid"><div>
+<img src="https://gr.mirror.hardrain980.com/avatar/6d23afb47bc00c13e3d6be05766b6203?s=80&d=mm&r=g" onerror="this.src='/images/avatar.gif';">
+<p>骤雨</p><p>https://hardrain980.com</p>
+<a href="https://hardrain980.com" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://www.tcdw.net/static/tcdw.jpg" onerror="this.src='/images/avatar.gif';">
+<p>吐槽大王部落格</p><p>创新就是 Math.random()</p>
+<a href="https://www.tcdw.net" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://blog-en.ailemon.me/wp-content/uploads/2018/10/iStock_000073998637_Medium_%E5%89%AF%E6%9C%AC.jpg" onerror="this.src='/images/avatar.gif';">
+<p>AI柠檬</p><p>一个科技爱好者的个人博客</p>
+<a href="https://blog.ailemon.me" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://images.unsplash.com/profile-1562311113043-e1da30d0ec31?w=80&h=80" onerror="this.src='/images/avatar.gif';">
+<p>知微的博客</p><p>见微知著</p>
+<a href="https://www.zhiwei.me" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://aotxland.com/wp-content/uploads/2017/01/p1.jpg" onerror="this.src='/images/avatar.gif';">
+<p>AoTxLand</p><p>翱天翔地，记录行走和折腾之路</p>
+<a href="https://aotxland.com" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://fp1.fghrsh.net/2017/10/11/d383a9ad4318c5b4332fe02845f5323a.jpg" onerror="this.src='/images/avatar.gif';">
+<p>FGHRSH的博客</p><p>https://www.fghrsh.net</p>
+<a href="https://www.fghrsh.net" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://blog.flxxyz.com/usr/uploads/avatarCache/d5650064ed342a43ac6775c7a8e0804b.jpg" onerror="this.src='/images/avatar.gif';">
+<p>冯小贤</p><p>彩虹海是我哒</p>
+<a href="https://blog.flxxyz.com" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://gravatar.loli.net/avatar/cd2b3a164c977539712929f66cad335c?s=80&d=mm&r=g" onerror="this.src='/images/avatar.gif';">
+<p>Mashiro</p><p>樱花庄的白猫</p>
+<a href="https://2heng.xin" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://img.mfeng.cc/links.png" onerror="this.src='/images/avatar.gif';">
+<p>SycBlog</p><p>一个小小的自留地，记录值得记录下的事情</p>
+<a href="https://www.mfeng.cc" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://i.loli.net/2018/04/28/5ae46811094e6.jpg" onerror="this.src='/images/avatar.gif';">
+<p>欧尼酱</p><p>浑水摸鱼的咸鱼一条，伪Geek</p>
+<a href="https://www.nothamor.cn" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://ibcl.us/images/avatar.jpg" onerror="this.src='/images/avatar.gif';">
+<p>I BCL.</p><p>一位热爱无线电广播的高中学生的博客</p>
+<a href="https://ibcl.us" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://coolcode.org/img/avatar.jpg" onerror="this.src='/images/avatar.gif';">
+<p>CoolCode</p><p>艺术需要千锤百炼，技术需要日积月累</p>
+<a href="https://coolcode.org" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://gravatar.loli.net/avatar/c835d8b120e06356f01ece7b98210119?s=80&r=R&d=" onerror="this.src='/images/avatar.gif';">
+<p>Just A Note</p><p>只是一个笔记本</p>
+<a href="https://www.odbook.com" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://gravatar.loli.net/avatar/1f851e33b53252df5f570f8b9d9218c1?d=mp&v=1.3.9" onerror="this.src='/images/avatar.gif';">
+<p>Bill Yang's Blog</p><p>路终会有尽头，但视野总能看到更远的地方</p>
+<a href="https://blog.bill.moe" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://avatar.dawnlab.me/qq/776194970?s=0" onerror="this.src='/images/avatar.gif';">
+<p>折影轻梦</p><p>Entorevolution</p>
+<a href="https://nexmoe.com" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://pbs.twimg.com/profile_images/509526027333148672/MjyD4s6Y_400x400.jpeg" onerror="this.src='/images/avatar.gif';">
+<p>阿尔法凡</p><p>AlphaFanty</p>
+<a href="https://www.sweeterthandespair.com" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://i-m.dev/assets/avatar.png" onerror="this.src='/images/avatar.gif';">
+<p>I'm dev</p><p>这样摸鱼下去真的不行鸭～</p>
+<a href="https://i-m.dev" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://picture.yuzhouwan.com/yuzhouwan_logo_128x128.ico" onerror="this.src='/images/avatar.gif';">
+<p>宇宙湾</p><p>厚积薄发</p>
+<a href="https://yuzhouwan.com" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://www.xiaomujin.club/images/author.jpg" onerror="this.src='/images/avatar.gif';">
+<p>木槿</p><p>记录生活，记录故事</p>
+<a href="https://www.xiaomujin.club" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://blog.skihome.xyz/uploads/avatar.jpg" onerror="this.src='/images/avatar.gif';">
+<p>Sakitami的集装箱</p><p>我已经无敌了！</p>
+<a href="https://blog.skihome.xyz" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="https://imcyc.cn/images/head.png" onerror="this.src='/images/avatar.gif';">
+<p>Morty</p><p>CS随笔</p>
+<a href="https://www.imcyc.cn" target="_blank" rel="noopener"></a>
+</div></div>
+<h2 id="暂不支持https的网站"><a href="#暂不支持https的网站" class="headerlink" title="暂不支持https的网站"></a>暂不支持https的网站</h2><div class="link-grid"><div>
+<img src="http://image.markhoo.com/touxiang.jpg" onerror="this.src='/images/avatar.gif';">
+<p>沉默是金</p><p>Silence is gold</p>
+<a href="http://www.markhoo.com" target="_blank" rel="noopener"></a>
+</div><div>
+<img src="http://www.izhuyue.com/avatar/4cf16d92f370027a77c2167547a254a9.jpg" onerror="this.src='/images/avatar.gif';">
+<p>FROYO's Blog</p><p>将来的你，一定会感谢现在努力的自己</p>
+<a href="http://www.izhuyue.com" target="_blank" rel="noopener"></a>
+</div></div>
+<h2 id="交个朋友吧！"><a href="#交个朋友吧！" class="headerlink" title="交个朋友吧！"></a>交个朋友吧！</h2><p>如果您希望交换友情链接，敬请在评论区留言，或发送邮件至stevenjoezhang(at)gmail.com联系博主。<br><strong>感谢您的关注与支持！</strong></p>
 <p>关于本站的更多信息：</p>
 <blockquote>
 <p>名称：米米的博客<br>简介：米米的博客!!<br>网址：<a href="https://zhangshuqiao.org">https://zhangshuqiao.org</a><br>头像：<a href="https://gravatar.loli.net/avatar/f56980e9dc026727282a04eea02b4f4d?s=512" target="_blank" rel="noopener">https://gravatar.loli.net/avatar/f56980e9dc026727282a04eea02b4f4d?s=512</a></p>
@@ -240,7 +332,15 @@ type="text" id="local-search-input">
 </div>
 <aside id="sidebar" class="sidebar">
 <div class="sidebar-inner">
-<div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+<ul class="sidebar-nav motion-element">
+<li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+文章目录
+</li>
+<li class="sidebar-nav-overview" data-target="site-overview-wrap">
+站点概览
+</li>
+</ul>
+<div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image"
@@ -290,6 +390,13 @@ alt="张书樵">
 </div>
 </div>
 </div>
+<!--noindex-->
+<div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+<div class="post-toc">
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#支持https的网站"><span class="nav-number">1.</span> <span class="nav-text">支持https的网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暂不支持https的网站"><span class="nav-number">2.</span> <span class="nav-text">暂不支持https的网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交个朋友吧！"><span class="nav-number">3.</span> <span class="nav-text">交个朋友吧！</span></a></li></ol></div>
+</div>
+</div>
+<!--/noindex-->
 </div>
 </aside>
 <div id="sidebar-dimmer"></div>
@@ -331,10 +438,7 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>

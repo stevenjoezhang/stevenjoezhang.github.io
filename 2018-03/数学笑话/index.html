@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next gemini" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.9.0">
@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
+<script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 <script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
+exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 save_scroll: true,
@@ -39,8 +42,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 },
 localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
 path: 'search.json',
-tabs: true,
-motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
 copy_button: '复制',
 copy_success: '复制成功',
@@ -48,19 +50,19 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<meta name="description" content="A point walks into A bar. $\bar{A}$ says, &amp;quot;We&amp;#39;re closed.&amp;quot;$e^{x}$ is walking down the street when it sees $\pi$ running towards him. &amp;quot;Help!&amp;quot;, $\pi$ shouts, There&amp;#39;s a differe">
+<meta name="description" content=".mjpage .MJX-monospace {                             font-family: monospace                             }                              .mjpage .MJX-sans-serif {">
 <meta name="keywords" content="数学">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数学笑话">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-03/数学笑话/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="A point walks into A bar. $\bar{A}$ says, &amp;quot;We&amp;#39;re closed.&amp;quot;$e^{x}$ is walking down the street when it sees $\pi$ running towards him. &amp;quot;Help!&amp;quot;, $\pi$ shouts, There&amp;#39;s a differe">
+<meta property="og:description" content=".mjpage .MJX-monospace {                             font-family: monospace                             }                              .mjpage .MJX-sans-serif {">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-03/calczilla.png">
 <meta property="og:updated_time" content="2019-03-13T16:00:44.267Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数学笑话">
-<meta name="twitter:description" content="A point walks into A bar. $\bar{A}$ says, &amp;quot;We&amp;#39;re closed.&amp;quot;$e^{x}$ is walking down the street when it sees $\pi$ running towards him. &amp;quot;Help!&amp;quot;, $\pi$ shouts, There&amp;#39;s a differe">
+<meta name="twitter:description" content=".mjpage .MJX-monospace {                             font-family: monospace                             }                              .mjpage .MJX-sans-serif {">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2018-03/calczilla.png">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <script id="page-configurations">
@@ -159,6 +161,7 @@ top: initial;
 <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
+</nav>
 <div class="site-search">
 <div class="popup search-popup local-search-popup">
 <div class="local-search-header clearfix">
@@ -177,7 +180,6 @@ type="text" id="local-search-input">
 <div id="local-search-result"></div>
 </div>
 </div>
-</nav>
 </div>
 </header>
 <main id="main" class="main">
@@ -225,29 +227,177 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-03/数学笑话/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-03/数学笑话/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-03/数学笑话/" itemprop="commentCount"></span>
 </a>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>A point walks into A bar. $\bar{A}$ says, &quot;We&#39;re closed.&quot;<br>$e^{x}$ is walking down the street when it sees $\pi$ running towards him. &quot;Help!&quot;, $\pi$ shouts, There&#39;s a differential operator coming my way, and if it catches me, I&#39;ll be reduced to nothing! $e^{x}$ confidently says &quot;Stand beside me, $\pi$! Together, we&#39;ll be safe from any differential operators we come across!&quot; Suddenly, the differential operator appears and asks &quot;Who are you?&quot; They respond &quot;We are $\pi e^{x}$. Who are you?&quot; It smiles and says &quot;$\frac{\partial}{\partial{y}}$&quot;.</p>
+<html><head><style type="text/css">
+.mjpage .MJX-monospace {
+font-family: monospace
+}
+.mjpage .MJX-sans-serif {
+font-family: sans-serif
+}
+.mjpage {
+display: inline;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 100%;
+font-size-adjust: none;
+text-indent: 0;
+text-align: left;
+text-transform: none;
+letter-spacing: normal;
+word-spacing: normal;
+word-wrap: normal;
+white-space: nowrap;
+float: none;
+direction: ltr;
+max-width: none;
+max-height: none;
+min-width: 0;
+min-height: 0;
+border: 0;
+padding: 0;
+margin: 0
+}
+.mjpage * {
+transition: none;
+-webkit-transition: none;
+-moz-transition: none;
+-ms-transition: none;
+-o-transition: none
+}
+.mjx-svg-href {
+fill: blue;
+stroke: blue
+}
+.MathJax_SVG_LineBox {
+display: table!important
+}
+.MathJax_SVG_LineBox span {
+display: table-cell!important;
+width: 10000em!important;
+min-width: 0;
+max-width: none;
+padding: 0;
+border: 0;
+margin: 0
+}
+.mjpage__block {
+text-align: center;
+margin: 1em 0em;
+position: relative;
+display: block!important;
+text-indent: 0;
+max-width: none;
+max-height: none;
+min-width: 0;
+min-height: 0;
+width: 100%
+}</style></head><body><p>A point walks into A bar. <span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.776ex" height="2.676ex" style="vertical-align: -0.338ex;" viewbox="0 -1006.6 764.5 1152.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">\bar{A}</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-MJMATHI-41" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"/>
+<path stroke-width="1" id="E1-MJMAIN-AF" d="M69 544V590H430V544H69Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+<use xlink:href="#E1-MJMATHI-41" x="0" y="0"/>
+<use xlink:href="#E1-MJMAIN-AF" x="264" y="281"/>
+</g>
+</svg></span> says, "We're closed."<br><span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.256ex" height="2.176ex" style="vertical-align: -0.338ex;" viewbox="0 -791.3 971.3 936.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-2-Title">
+<title id="MathJax-SVG-2-Title">e^{x}</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E2-MJMATHI-65" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"/>
+<path stroke-width="1" id="E2-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+<use xlink:href="#E2-MJMATHI-65" x="0" y="0"/>
+<use transform="scale(0.707)" xlink:href="#E2-MJMATHI-78" x="659" y="513"/>
+</g>
+</svg></span> is walking down the street when it sees <span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.332ex" height="1.676ex" style="vertical-align: -0.338ex;" viewbox="0 -576.1 573.5 721.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-3-Title">
+<title id="MathJax-SVG-3-Title">\pi</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E3-MJMATHI-3C0" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+<use xlink:href="#E3-MJMATHI-3C0" x="0" y="0"/>
+</g>
+</svg></span> running towards him. "Help!", <span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.332ex" height="1.676ex" style="vertical-align: -0.338ex;" viewbox="0 -576.1 573.5 721.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-4-Title">
+<title id="MathJax-SVG-4-Title">\pi</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E4-MJMATHI-3C0" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+<use xlink:href="#E4-MJMATHI-3C0" x="0" y="0"/>
+</g>
+</svg></span> shouts, There's a differential operator coming my way, and if it catches me, I'll be reduced to nothing! <span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.256ex" height="2.176ex" style="vertical-align: -0.338ex;" viewbox="0 -791.3 971.3 936.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-5-Title">
+<title id="MathJax-SVG-5-Title">e^{x}</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E5-MJMATHI-65" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"/>
+<path stroke-width="1" id="E5-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+<use xlink:href="#E5-MJMATHI-65" x="0" y="0"/>
+<use transform="scale(0.707)" xlink:href="#E5-MJMATHI-78" x="659" y="513"/>
+</g>
+</svg></span> confidently says "Stand beside me, <span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.332ex" height="1.676ex" style="vertical-align: -0.338ex;" viewbox="0 -576.1 573.5 721.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-6-Title">
+<title id="MathJax-SVG-6-Title">\pi</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E6-MJMATHI-3C0" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+<use xlink:href="#E6-MJMATHI-3C0" x="0" y="0"/>
+</g>
+</svg></span>! Together, we'll be safe from any differential operators we come across!" Suddenly, the differential operator appears and asks "Who are you?" They respond "We are <span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="3.588ex" height="2.176ex" style="vertical-align: -0.338ex;" viewbox="0 -791.3 1544.8 936.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-7-Title">
+<title id="MathJax-SVG-7-Title">\pi e^{x}</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E7-MJMATHI-3C0" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"/>
+<path stroke-width="1" id="E7-MJMATHI-65" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"/>
+<path stroke-width="1" id="E7-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+<use xlink:href="#E7-MJMATHI-3C0" x="0" y="0"/>
+<g transform="translate(573,0)">
+<use xlink:href="#E7-MJMATHI-65" x="0" y="0"/>
+<use transform="scale(0.707)" xlink:href="#E7-MJMATHI-78" x="659" y="513"/>
+</g>
+</g>
+</svg></span>. Who are you?" It smiles and says "<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.585ex" height="4.176ex" style="vertical-align: -1.671ex;" viewbox="0 -1078.4 1113.1 1798" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-8-Title">
+<title id="MathJax-SVG-8-Title">\frac{\partial}{\partial{y}}</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E8-MJMAIN-2202" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"/>
+<path stroke-width="1" id="E8-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+<g transform="translate(120,0)">
+<rect stroke="none" width="873" height="60" x="0" y="220"/>
+<use transform="scale(0.707)" xlink:href="#E8-MJMAIN-2202" x="333" y="651"/>
+<g transform="translate(60,-451)">
+<use transform="scale(0.707)" xlink:href="#E8-MJMAIN-2202" x="0" y="0"/>
+<use transform="scale(0.707)" xlink:href="#E8-MJMATHI-79" x="567" y="0"/>
+</g>
+</g>
+</g>
+</svg></span>".</p>
 <p><img src="/images/2018-03/calczilla.png" alt></p>
 <a id="more"></a>
-<p>Q: What Thanksgiving treat can you make by dividing the circumference of a pumpkin by its diameter?<br>A: Pumpkin Pi!<br>Q: What does the &quot;B&quot; in Benoit B. Mandelbrot stand for?<br>A: Benoit B. Mandelbrot<br>Q: What is an anagram of &quot;Banach-Tarski&quot;?<br>A: Banach-Tarski Banach-Tarski</p>
+<p>Q: What Thanksgiving treat can you make by dividing the circumference of a pumpkin by its diameter?<br>A: Pumpkin Pi!<br>Q: What does the "B" in Benoit B. Mandelbrot stand for?<br>A: Benoit B. Mandelbrot<br>Q: What is an anagram of "Banach-Tarski"?<br>A: Banach-Tarski Banach-Tarski</p>
 <p>Paul Erdos once said that mathematicians are machines that turn coffee into theorems. By duality, we have that comathematicians are comachines that turn cotheorems into ffee.</p>
-<p>A mathematician calls over a clerk in the produce aisle. &quot;Pardon me sir, but I think this mislabeled. A coconut is just a nut.&quot;</p>
+<p>A mathematician calls over a clerk in the produce aisle. "Pardon me sir, but I think this mislabeled. A coconut is just a nut."</p>
 <p>If Wedderburn says it’s obvious, everybody in the room has seen it ten minutes ago. If Bohnenblust says it’s obvious, it’s obvious. If Bochner says it’s obvious, you can figure it out in half an hour. If von Neumann says it’s obvious, you can prove it in three months if you are a genius. If Lefschetz says it’s obvious, it’s wrong.</p>
-<p>Our computer science professor was joking that our student cafeteria serves Fibonacci soup. The soup of today is the mix of yesterday&#39;s soup and the day before.</p>
+<p>Our computer science professor was joking that our student cafeteria serves Fibonacci soup. The soup of today is the mix of yesterday's soup and the day before.</p>
 <p>Computational results are believed by no one, except for the person who wrote the code. Experimental results are believed by everyone, except for the person who ran the experiment.</p>
 <p>Theory is when you know everything but nothing works. Practice is when everything works but no one knows why. In our lab, theory and practice are combined: nothing works and nobody knows why.</p>
 <p>西江月·证明<br>即得易见平凡，仿照上例显然。留作习题答案略，读者自证不难。<br>反之亦然同理，推论自然成立。略去过程Q.E.D.，由上可知证毕。</p>
 <hr>
-<p>参考文章：<br><a href="https://abstrusegoose.com/26" target="_blank" rel="noopener">Abstruse Goose - Calc-zilla</a><br><a href="https://www.zhihu.com/question/22212241" target="_blank" rel="noopener">数学领域有哪些经典的笑话？ - 知乎</a></p>
+<p>参考文章：<br><a href="https://abstrusegoose.com/26" target="_blank" rel="noopener">Abstruse Goose - Calc-zilla</a><br><a href="https://www.zhihu.com/question/22212241" target="_blank" rel="noopener">数学领域有哪些经典的笑话？ - 知乎</a></p></body></html>
 </div>
-<div>
 <div id="reward-container">
 <div>🍭支持一根棒棒糖！</div>
 <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
@@ -265,7 +415,6 @@ type="text" id="local-search-input">
 <div style="display: inline-block">
 <img src="/images/bitcoin.png" alt="张书樵 比特币">
 <p>比特币</p>
-</div>
 </div>
 </div>
 </div>
@@ -405,10 +554,7 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>
@@ -433,48 +579,6 @@ height: $(o).attr('height') || '1000px'
 }
 </script>
 <div id="pjax">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-processEscapes: true,
-skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-},
-TeX: {
-equationNumbers: {
-autoNumber: 'AMS'
-}
-}
-});
-MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-if (data.display) {
-var next = data.script.nextSibling;
-while (next && next.nodeName.toLowerCase() === '#text') {
-next = next.nextSibling;
-}
-if (next && next.nodeName.toLowerCase() === 'br') {
-next.parentNode.removeChild(next);
-}
-}
-});
-});
-MathJax.Hub.Queue(function() {
-var all = MathJax.Hub.getAllJax(), i;
-for (i = 0; i < all.length; i += 1) {
-element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-if (element.nodeName.toLowerCase() == 'li') {
-element = element.parentNode;
-}
-element.classList.add('has-jax');
-}
-});
-</script>
-<script>
-NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML', function() {
-MathJax.Hub.Typeset();
-}, window.MathJax);
-</script>
 <script src="/js/scrollspy.js?v=7.3.0"></script>
 <script src="/js/post-details.js?v=7.3.0"></script>
 <script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next gemini" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.9.0">
@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
+<script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 <script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
+exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 save_scroll: true,
@@ -39,8 +42,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 },
 localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
 path: 'search.json',
-tabs: true,
-motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
 copy_button: '复制',
 copy_success: '复制成功',
@@ -156,6 +158,7 @@ top: initial;
 <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
+</nav>
 <div class="site-search">
 <div class="popup search-popup local-search-popup">
 <div class="local-search-header clearfix">
@@ -174,7 +177,6 @@ type="text" id="local-search-input">
 <div id="local-search-result"></div>
 </div>
 </div>
-</nav>
 </div>
 </header>
 <main id="main" class="main">
@@ -182,6 +184,59 @@ type="text" id="local-search-input">
 <div class="content-wrap">
 <div id="content" class="content page-home">
 <section id="posts" class="posts-expand">
+<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/在网页中添加Live2D看板娘/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-07/在网页中添加Live2D看板娘/" class="post-title-link" itemprop="url">在网页中添加Live2D看板娘</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-07-21 20:05:32" itemprop="dateCreated datePublished" datetime="2018-07-21T20:05:32+08:00">2018-07-21</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-07/在网页中添加Live2D看板娘/#comments" itemprop="discussionUrl">
+<span class="post-comments-count valine-comment-count" data-xid="/2018-07/在网页中添加Live2D看板娘/" itemprop="commentCount"></span>
+</a>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p><img src="/images/2018-07/photo.jpg" alt></p>
+<p>项目地址：<a href="https://github.com/stevenjoezhang/live2d-widget" target="_blank" rel="noopener">live2d-widget</a></p>
+<p>克隆这个仓库到服务器上，并配置<code>autoload.js</code>，修改其中的链接为各文件的绝对地址，即可在网页中添加Live2D看板娘。<br>相对于市面上广为流传的版本，博主对触发动作和语言进行了魔改（针对Hexo NexT主题），调整了图标样式、元素定位，并解决了CSS的前缀等问题。<br>更多内容可以参考项目文档及下方链接。<br>快来把萌萌哒的看板娘抱回家吧！</p>
+<hr>
+<p>参考文章：<br><a href="https://www.fghrsh.net/post/123.html" target="_blank" rel="noopener">网页添加 Live2D 看板娘</a><br><a href="https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02" target="_blank" rel="noopener">给博客添加能动的看板娘(Live2D)-将其添加到网页上吧</a></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/改变世界的17个公式/">
@@ -216,16 +271,105 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-07/改变世界的17个公式/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-07/改变世界的17个公式/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-07/改变世界的17个公式/" itemprop="commentCount"></span>
 </a>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>In 2012, Mathematician Ian Stewart came out with an excellent and deeply researched book titled &quot;In Pursuit of the Unknown: 17 Equations That Changed the World.&quot;<br>在2012年，数学家斯图尔特（Ian Stewart）出版了一本精彩而深入研究的著作，名为《追寻未知：改变世界的17个公式》。<br>His book takes a look at the most pivotal equations of all time, and puts them in a human, rather than technical context.<br>他的书着眼于有史以来最关键的方程式，并将它们置于普通人而非专业的背景中。<br>&quot;Equations definitely can be dull, and they can seem complicated, but that&#39;s because they are often presented in a dull and complicated way,&quot; Stewart told Business Insider. &quot;I have an advantage over school math teachers: I&#39;m not trying to show you how to do the sums yourself.&quot;<br>『方程式肯定会显得沉闷，而且它们看起来很复杂，但那是因为它们经常以这样的方式呈现，』斯图尔特告诉Business Insider。 『我比学校的数学老师更有优势：我不会试图告诉你如何自己算出它们。』<br>He explained that anyone can &quot;appreciate the beauty and importance of equations without knowing how to solve them ... The intention is to locate them in their cultural and human context, and pull back the veil on their hidden effects on history.&quot;<br>他解释说，任何人都可以『欣赏方程式的美丽和重要性，而不去知道如何解它们……目的是将它们置于文化和人文环境中，并揭开它们对历史隐藏效应的面纱。』<br>Stewart continued that &quot;equations are a vital part of our culture. The stories behind them — the people who discovered or invented them and the periods in which they lived — are fascinating.&quot;<br>斯图尔特继续说道，『方程式是我们文化的重要组成部分。他们背后的故事——发现或发明它们的人以及他们生活的时期——都很吸引人。』<br>Here are 17 equations that have changed the world:<br>以下是改变世界的17个方程式：<br>Max Nisen contributed to an earlier version of this post.<br>Max Nisen为本文的早期版本做出了贡献。</p>
-<h2 id="The-Pythagorean-Theorem"><a href="#The-Pythagorean-Theorem" class="headerlink" title="The Pythagorean Theorem"></a>The Pythagorean Theorem</h2><p>$$a^{2}+b^{2}=c^{2}$$<br>Pythagoras, 530 BC<br>What does it mean? The square of the hypotenuse of a right triangle is equal to the sum of the squares of its legs.<br>作用：直角三角形的斜边的平方等于其直角边的平方和。<br>History: Though attributed to Pythagoras, it is not certain that he was the first person to prove it. The first clear proof came from Euclid, and it is possible the concept was known 1,000 years before Pythagoras by the Babylonians.<br>历史：虽然认为毕达哥拉斯（Pythagoras）发现了这个公式，但不确定他是否是第一个证明它的人。第一个明确的证明来自欧几里得，而这个概念可能是在毕达哥拉斯之前1000年就被巴比伦人知道了。<br>Importance: The equation is at the core of much of geometry, links it with algebra, and is the foundation of trigonometry. Without it, accurate surveying, mapmaking, and navigation would be impossible.<br>重要性：勾股定理是几何的核心，它与代数联系起来，是三角学的基础。没有它，准确的测量、地图制作和导航将是不可能的。<br>In terms of pure math, the Pythagorean Theorem defines normal, Euclidean plane geometry. For example, a right triangle drawn on the surface of a sphere like the Earth doesn&#39;t necessarily satisfy the theorem.<br>在纯数学方面，毕达哥拉斯定理定义了正常的欧几里德平面几何。例如，在像地球一样的球体表面上绘制的直角三角形不一定满足该定理。<br>Modern use: Triangulation is used to this day to pinpoint relative location for GPS navigation.<br>现代用途：今天使用三角测量来确定GPS导航的相对位置。</p>
+<html><head><style type="text/css">
+.mjpage .MJX-monospace {
+font-family: monospace
+}
+.mjpage .MJX-sans-serif {
+font-family: sans-serif
+}
+.mjpage {
+display: inline;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 100%;
+font-size-adjust: none;
+text-indent: 0;
+text-align: left;
+text-transform: none;
+letter-spacing: normal;
+word-spacing: normal;
+word-wrap: normal;
+white-space: nowrap;
+float: none;
+direction: ltr;
+max-width: none;
+max-height: none;
+min-width: 0;
+min-height: 0;
+border: 0;
+padding: 0;
+margin: 0
+}
+.mjpage * {
+transition: none;
+-webkit-transition: none;
+-moz-transition: none;
+-ms-transition: none;
+-o-transition: none
+}
+.mjx-svg-href {
+fill: blue;
+stroke: blue
+}
+.MathJax_SVG_LineBox {
+display: table!important
+}
+.MathJax_SVG_LineBox span {
+display: table-cell!important;
+width: 10000em!important;
+min-width: 0;
+max-width: none;
+padding: 0;
+border: 0;
+margin: 0
+}
+.mjpage__block {
+text-align: center;
+margin: 1em 0em;
+position: relative;
+display: block!important;
+text-indent: 0;
+max-width: none;
+max-height: none;
+min-width: 0;
+min-height: 0;
+width: 100%
+}</style></head><body><p>In 2012, Mathematician Ian Stewart came out with an excellent and deeply researched book titled "In Pursuit of the Unknown: 17 Equations That Changed the World."<br>在2012年，数学家斯图尔特（Ian Stewart）出版了一本精彩而深入研究的著作，名为《追寻未知：改变世界的17个公式》。<br>His book takes a look at the most pivotal equations of all time, and puts them in a human, rather than technical context.<br>他的书着眼于有史以来最关键的方程式，并将它们置于普通人而非专业的背景中。<br>"Equations definitely can be dull, and they can seem complicated, but that's because they are often presented in a dull and complicated way," Stewart told Business Insider. "I have an advantage over school math teachers: I'm not trying to show you how to do the sums yourself."<br>『方程式肯定会显得沉闷，而且它们看起来很复杂，但那是因为它们经常以这样的方式呈现，』斯图尔特告诉Business Insider。 『我比学校的数学老师更有优势：我不会试图告诉你如何自己算出它们。』<br>He explained that anyone can "appreciate the beauty and importance of equations without knowing how to solve them ... The intention is to locate them in their cultural and human context, and pull back the veil on their hidden effects on history."<br>他解释说，任何人都可以『欣赏方程式的美丽和重要性，而不去知道如何解它们……目的是将它们置于文化和人文环境中，并揭开它们对历史隐藏效应的面纱。』<br>Stewart continued that "equations are a vital part of our culture. The stories behind them — the people who discovered or invented them and the periods in which they lived — are fascinating."<br>斯图尔特继续说道，『方程式是我们文化的重要组成部分。他们背后的故事——发现或发明它们的人以及他们生活的时期——都很吸引人。』<br>Here are 17 equations that have changed the world:<br>以下是改变世界的17个方程式：<br>Max Nisen contributed to an earlier version of this post.<br>Max Nisen为本文的早期版本做出了贡献。</p>
+<h2 id="The-Pythagorean-Theorem"><a href="#The-Pythagorean-Theorem" class="headerlink" title="The Pythagorean Theorem"></a>The Pythagorean Theorem</h2><p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="12.336ex" height="2.843ex" style="vertical-align: -0.505ex;" viewbox="0 -1006.6 5311.2 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">a^{2}+b^{2}=c^{2}</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"/>
+<path stroke-width="1" id="E1-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+<path stroke-width="1" id="E1-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/>
+<path stroke-width="1" id="E1-MJMATHI-62" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"/>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E1-MJMATHI-63" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+<use xlink:href="#E1-MJMATHI-61" x="0" y="0"/>
+<use transform="scale(0.707)" xlink:href="#E1-MJMAIN-32" x="748" y="583"/>
+<use xlink:href="#E1-MJMAIN-2B" x="1205" y="0"/>
+<g transform="translate(2206,0)">
+<use xlink:href="#E1-MJMATHI-62" x="0" y="0"/>
+<use transform="scale(0.707)" xlink:href="#E1-MJMAIN-32" x="607" y="583"/>
+</g>
+<use xlink:href="#E1-MJMAIN-3D" x="3367" y="0"/>
+<g transform="translate(4423,0)">
+<use xlink:href="#E1-MJMATHI-63" x="0" y="0"/>
+<use transform="scale(0.707)" xlink:href="#E1-MJMAIN-32" x="613" y="583"/>
+</g>
+</g>
+</svg></span><br>Pythagoras, 530 BC<br>What does it mean? The square of the hypotenuse of a right triangle is equal to the sum of the squares of its legs.<br>作用：直角三角形的斜边的平方等于其直角边的平方和。<br>History: Though attributed to Pythagoras, it is not certain that he was the first person to prove it. The first clear proof came from Euclid, and it is possible the concept was known 1,000 years before Pythagoras by the Babylonians.<br>历史：虽然认为毕达哥拉斯（Pythagoras）发现了这个公式，但不确定他是否是第一个证明它的人。第一个明确的证明来自欧几里得，而这个概念可能是在毕达哥拉斯之前1000年就被巴比伦人知道了。<br>Importance: The equation is at the core of much of geometry, links it with algebra, and is the foundation of trigonometry. Without it, accurate surveying, mapmaking, and navigation would be impossible.<br>重要性：勾股定理是几何的核心，它与代数联系起来，是三角学的基础。没有它，准确的测量、地图制作和导航将是不可能的。<br>In terms of pure math, the Pythagorean Theorem defines normal, Euclidean plane geometry. For example, a right triangle drawn on the surface of a sphere like the Earth doesn't necessarily satisfy the theorem.<br>在纯数学方面，毕达哥拉斯定理定义了正常的欧几里德平面几何。例如，在像地球一样的球体表面上绘制的直角三角形不一定满足该定理。<br>Modern use: Triangulation is used to this day to pinpoint relative location for GPS navigation.<br>现代用途：今天使用三角测量来确定GPS导航的相对位置。</p>
 <!--noindex-->
 <div class="post-button text-center">
 <a class="btn" href="/2018-07/改变世界的17个公式/#more" rel="contents">
@@ -273,8 +417,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-07/详解CSRF与XSS攻击/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-07/详解CSRF与XSS攻击/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-07/详解CSRF与XSS攻击/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -336,8 +480,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-07/Hexo内容压缩/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-07/Hexo内容压缩/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-07/Hexo内容压缩/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -394,8 +538,8 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-07/WordPress中文验证码/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-07/WordPress中文验证码/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-07/WordPress中文验证码/" itemprop="commentCount"></span>
 </a>
 </span>
@@ -411,77 +555,6 @@ type="text" id="local-search-input">
 </a>
 </div>
 <!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/贝利乌鸦嘴历史/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-06/贝利乌鸦嘴历史/" class="post-title-link" itemprop="url">贝利乌鸦嘴历史</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-06-25 16:37:24" itemprop="dateCreated datePublished" datetime="2018-06-25T16:37:24+08:00">2018-06-25</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-comment-o"></i>
-</span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-06/贝利乌鸦嘴历史/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-06/贝利乌鸦嘴历史/" itemprop="commentCount"></span>
-</a>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>2018年俄罗斯世界杯激战正酣，对于谁将捧起大力神杯，大家是不是已经做出了自己的预测？贝利近日在接受采访时就表示，现阶段自己更看好德国和法国队，因为德国是卫冕冠军，而法国队也具有很强的球队实力，他认为这两支球队有更大的可能会捧起今年的大力神杯。</p>
-<p>众所周知，球王贝利不仅在绿茵场上令人害怕，更有一项技能让他在退役后依然使世界足坛胆寒——那就是贝利令人发指的足球预测。贝利被称为世界足坛第一乌鸦嘴，只要被球王的嘴开过光的球队，多半就会输球。以至于如今很多球迷都跪求球王别看好自己的主队。下面就来回顾一下贝利的乌鸦嘴历史：</p>
-<ul>
-<li>贝利1977年首次访问中国时曾表示：『中国队很快就能进入世界杯。』这句话之后，中国队苦苦挣扎了20年，才在2002年勉强挤入世界杯。接着，1991年女足世界杯上，贝利进一步表扬中国男足，认为中国男足十年内能迈入世界一流行列，结果，中国男足根本不入流。除了中国队之外，贝利自1990年世界杯开始每逢大赛前都会进行预测，但是他的预测着实不太靠谱。</li>
-<li>1990年世界杯贝利公开预测南斯拉夫队将成为当届世界杯最大的黑马，结果，在预选赛第一场比赛后，南斯拉夫1:4被德国击败。该场比赛，马特乌斯进了两球。最后，南斯拉夫小组第二侥幸出线，四分之一决赛的时候，南斯拉夫被阿根廷『点杀』。贝利在预测谁将是黑马之后，又预测巴西队是最伟大最强的队伍，肯定夺冠，结果，巴西被阿根廷不多不少就打了一球，饮恨8分之一决赛。<br>从这个时候开始，巴西以及南斯拉夫球迷开始怀疑贝利的嘴巴有毒，但尚未成燎原之势。最为有趣的是，成全他『乌鸦嘴』名号的，居然正是死敌——阿根廷队。</li>
-<li>在1991年世少赛上，加纳小将兰普提力压德尔·皮耶罗当选最佳球员。贝利预测兰普提将会是他的接班人。结果：兰普提并没能发挥他的足球潜质，职业生涯辗转于埃因霍温、阿斯顿维拉、考文垂和威尼斯等球队，后来甚至效力过甲A山东鲁能。而他的生活也是悲剧不断，他的两个孩子先后去世。</li>
-<li>1992年欧洲杯『一意孤行』的贝利又开『新手上路』般的乌鸦嘴，预测南斯拉夫能取得不俗战绩。结果大家也都知道了，南斯拉夫被禁赛。</li>
-<li>1994年世界杯贝利乌鸦嘴天下扬名，然而，代价却是哥伦比亚球员被枪杀。该届世界杯，贝利认定哥伦比亚队会一鸣惊人。结果，哥队1胜2负，小组都没冲出去，积分仅为3分。极端的哥伦比亚球迷枪杀了打进乌龙球的后卫埃斯科巴。这次悲剧之后，贝利乌鸦嘴天下闻名，南美媒体首次公开撰文让『贝利闭上他的鸟嘴！』</li>
-<li>1996年欧洲杯贝利别出心裁地公开赞美第一次打进欧洲杯决赛圈的土耳其队，并看好意大利夺冠，小组赛后，两个球队无一例外卷铺盖回家了。只是当时人们都惊诧于捷克的表现，贝利的这两次预言并没有得到舆论过多重视。</li>
-<li>1998年世界杯贝利认为西班牙小组出线不成问题，结果，西班牙先被尼日利亚戏耍，然后又被巴拉圭逼平，小组都没出线。鉴于尼日利亚的好表现，贝利对其大加赞美，结果2天之后，尼日利亚被丹麦打成筛子，1:4屈辱地打道回府。自觉没有颜面的贝利在接受法国媒体采访时表示，巴西队将战胜法国队夺冠，结果，0:3，堂堂的巴西队就这样毙命。</li>
-<li>2002年世界杯小组赛前，吸取教训的贝利改道了，无论媒体怎么引诱，他就是不说巴西队夺冠之类的话语，而是很巧妙地说看好阿根廷和法国队这两个巴西队的仇人。这招果然恶毒，阿根廷、法国这两大热门都在小组赛中折戟沉沙，法国甚至连一个进球都没捞到，而阿根廷令人印象最深的则是巴蒂的眼泪。英格兰3:0战胜丹麦晋级4强，将对阵巴西，贝利一口咬定『英格兰夺冠』，结果可想而知，委屈的英格兰人即便欧文先洞穿巴西大门，随着里瓦、小罗的先后进球，不得不止步决赛的大墙外。最终，巴西夺冠，贝利『赢了』。</li>
-<li>2004年欧洲杯贝利在小组赛前看好意大利，托蒂吐向波尔森的口水被电视画面清晰地记录下来，结果停赛三场，意大利深受影响，2平1胜，必须得看别人脸色，结果，即便最后一场2:1战胜保加利亚，但瑞典2:2丹麦，意大利人不得不哭别赛场。接下来，贝利又开始表演，表示看好英格兰，称赞鲁尼前途无限。结果鲁尼在与葡萄牙的比赛里受伤下场，英格兰点球5:6落败。随后，他又看好法国队，预言葡萄牙与荷兰的胜者会夺冠，亚军是捷克……最终结果却是希腊人在雷哈戈尔的率领下，一鸣惊人。<br>如今，地球人都晓得贝利乌鸦嘴的厉害了，只要他一开口，天下大惊。</li>
-<li>2006年世界杯期间，他也闲不住，『魔嘴』伸向了巴德英意4个球队，随后甚至细化到『巴西夺冠』。贝利不知怀着何种心态，声称『英格兰队没有鲁尼照样是争夺世界杯群雄中最强大的球队』，吓出英格兰球迷一身冷汗。又说『就我个人而言，希望世界杯决赛能够在沙特和巴西之间进行。』结果沙特小组未出线、巴西队败于法国，相继被淘汰；英格兰队同样出局；德国、意大利在4强相遇，又有一个要挂。（最终意大利夺冠，贝利的预测对了四分之一）<br>这年亦是国际足联设立最佳新人奖的第一年，贝利认为：『如果阿根廷打入决赛，我认为梅西最有可能获此殊荣。另外C·罗纳尔多也是一个出色的球员。如果英格兰队主帅适当地给沃尔科特一些上场表现的机会，这也许会是一段传奇。我打进自己的首粒世界杯进球时，也只有17岁。』结果阿根廷，英格兰队被淘汰，C·罗纳尔多在对阵荷兰的比赛中又受伤下场。</li>
-<li>2008年，当时还效力于AC米兰的罗纳尔多遭遇严重伤病，贝利说外星人玩完了，他即将挂靴。结果：2009年3月罗纳尔多在科林蒂安复出，前14场比赛打进了10球！</li>
-<li>2010年南非世界杯，贝利再次做出了预测，称有一支非洲球队将和巴西进行决赛。令人瞠目结舌的是，贝利再次预言『准确』，代表非洲的六支球队仅加纳凭借一粒点球获胜，阿尔及利亚、尼日利亚和喀麦隆全部告负。第一轮小组赛战罢，最大滑铁卢就属非洲球队，6战仅取得1胜2平3负，还不及亚洲球队4战2胜2负。而所谓『巴西队非洲队会师决赛』的愿望，也在巴西队出局后成为了泡影。</li>
-<li>『尼基·巴姆比将成为比肩齐达内、罗纳尔多的超级巨星。』结果：巴姆比只是一个普通的球员，只有23次代表英格兰出场，甚至没有在世界杯出现过。09-10赛季效力的赫尔城也在英超惨遭降级。</li>
-<li>2014年巴西世界杯，深知自己功力深厚的贝利，没有预测巴西队的前景，甚至拒绝了为32强抽签。不过在巴西高歌猛杀进四强之后，贝利忍不住开口了，看好没有内马尔的巴西也能夺冠。他的『乌鸦嘴』也再度显灵，送给东道主一场1:7的耻辱惨败。</li>
-<li>不仅是足球，连排球比赛也能成为贝利的毒奶目标。对于2016年里约奥运会，贝利表示塞尔维亚女排将会夺冠：『这是一只成熟的队伍，拥有两位优秀的攻手，一位经验丰富的二传，一位出色的副攻以及一位老谋深算的教练。相信她们在决赛会给中国队带来足够的麻烦，她们将会3:0横扫中国队拿到金牌。』结果塞尔维亚1:3不敌中国女排。</li>
-<li>在贝利和史泰龙以及迈克尔·凯恩等著名影星联袂主演的经典影片《胜利大逃亡》中（1981年上映），上半场贝利被纳粹对手铲伤，他示意自己不能继续比赛了，并被担架抬下场。协约国联队以0比4落后。结果：贝利下半场还是回来了，并攻入一球帮助球队取得胜利。看，即使在电影中，贝利的预测还是错误的。</li>
-<li>贝利还曾接受采访说：2012世界末日根本是无稽之谈，我还要看巴西世界杯呢……（幸好这一次，他的预测没有出现问题）</li>
-</ul>
-<hr>
-<p>参考文章：<a href="https://zhidao。baidu。com/question/164350742。html" target="_blank" rel="noopener">贝利乌鸦嘴历史</a></p>
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -594,10 +667,7 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>
@@ -622,48 +692,6 @@ height: $(o).attr('height') || '1000px'
 }
 </script>
 <div id="pjax">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-processEscapes: true,
-skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-},
-TeX: {
-equationNumbers: {
-autoNumber: 'AMS'
-}
-}
-});
-MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-if (data.display) {
-var next = data.script.nextSibling;
-while (next && next.nodeName.toLowerCase() === '#text') {
-next = next.nextSibling;
-}
-if (next && next.nodeName.toLowerCase() === 'br') {
-next.parentNode.removeChild(next);
-}
-}
-});
-});
-MathJax.Hub.Queue(function() {
-var all = MathJax.Hub.getAllJax(), i;
-for (i = 0; i < all.length; i += 1) {
-element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-if (element.nodeName.toLowerCase() == 'li') {
-element = element.parentNode;
-}
-element.classList.add('has-jax');
-}
-});
-</script>
-<script>
-NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML', function() {
-MathJax.Hub.Typeset();
-}, window.MathJax);
-</script>
 <script>
 NexT.utils.getScript('/lib/Valine.min.js', function() {
 var GUEST = ['nick', 'mail', 'link'];

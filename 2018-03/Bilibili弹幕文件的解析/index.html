@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next gemini" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.9.0">
@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
+<script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 <script id="hexo-configurations">
 var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
+exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
 back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
 save_scroll: true,
@@ -39,8 +42,7 @@ labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any
 },
 localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
 path: 'search.json',
-tabs: true,
-motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
 translation: {
 copy_button: '复制',
 copy_success: '复制成功',
@@ -48,18 +50,18 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<meta name="description" content="B站的每个视频都有aid和cid两个参数，在已知视频aid（即AV号）的情况下，可以通过链接https://www.bilibili.com/widget/getPageList?aid=10492获取cid（将10492替换为你要查询的视频的aid）。视频的更多信息则可以通过https://api.bilibili.com/view?type=jsonp&amp;amp;appkey=8e9fc618f">
+<meta name="description" content=".mjpage .MJX-monospace {                             font-family: monospace                             }                              .mjpage .MJX-sans-serif {">
 <meta name="keywords" content="个人博客,物理,技术,计算机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Bilibili弹幕文件的解析">
 <meta property="og:url" content="https://zhangshuqiao.org/2018-03/Bilibili弹幕文件的解析/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="B站的每个视频都有aid和cid两个参数，在已知视频aid（即AV号）的情况下，可以通过链接https://www.bilibili.com/widget/getPageList?aid=10492获取cid（将10492替换为你要查询的视频的aid）。视频的更多信息则可以通过https://api.bilibili.com/view?type=jsonp&amp;amp;appkey=8e9fc618f">
+<meta property="og:description" content=".mjpage .MJX-monospace {                             font-family: monospace                             }                              .mjpage .MJX-sans-serif {">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-06-24T15:34:22.128Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bilibili弹幕文件的解析">
-<meta name="twitter:description" content="B站的每个视频都有aid和cid两个参数，在已知视频aid（即AV号）的情况下，可以通过链接https://www.bilibili.com/widget/getPageList?aid=10492获取cid（将10492替换为你要查询的视频的aid）。视频的更多信息则可以通过https://api.bilibili.com/view?type=jsonp&amp;amp;appkey=8e9fc618f">
+<meta name="twitter:description" content=".mjpage .MJX-monospace {                             font-family: monospace                             }                              .mjpage .MJX-sans-serif {">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <script id="page-configurations">
 // https://hexo.io/docs/variables.html
@@ -157,6 +159,7 @@ top: initial;
 <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
 </li>
 </ul>
+</nav>
 <div class="site-search">
 <div class="popup search-popup local-search-popup">
 <div class="local-search-header clearfix">
@@ -175,7 +178,6 @@ type="text" id="local-search-input">
 <div id="local-search-result"></div>
 </div>
 </div>
-</nav>
 </div>
 </header>
 <main id="main" class="main">
@@ -223,22 +225,136 @@ type="text" id="local-search-input">
 <span class="post-meta-item-icon">
 <i class="fa fa-comment-o"></i>
 </span>
-<span class="post-meta-item-text">评论数：</span>
-<a href="/2018-03/Bilibili弹幕文件的解析/#comments" itemprop="discussionUrl">
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-03/Bilibili弹幕文件的解析/#comments" itemprop="discussionUrl">
 <span class="post-comments-count valine-comment-count" data-xid="/2018-03/Bilibili弹幕文件的解析/" itemprop="commentCount"></span>
 </a>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p>B站的每个视频都有<code>aid</code>和<code>cid</code>两个参数，在已知视频<code>aid</code>（即AV号）的情况下，可以通过链接<code>https://www.bilibili.com/widget/getPageList?aid=10492</code>获取<code>cid</code>（将10492替换为你要查询的视频的aid）。<br>视频的更多信息则可以通过<code>https://api.bilibili.com/view?type=jsonp&amp;appkey=8e9fc618fbd41e28&amp;id=10492</code>获取。<br>视频的弹幕文件采用xml格式存储，地址与其<code>cid</code>有关，为<code>https://comment.bilibili.com/$cid.xml</code>（将<code>$cid</code>替换为视频的<code>cid</code>）。<br>对于有许多分P的视频，它们的aid（AV号）相同，每个分P则对应一个不同的<code>cid</code>。而在同一个页面下的番剧、影视等内容，每一分集的<code>cid</code>也是唯一的。<br>弹幕内容的存储方式为：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">d</span> <span class="attr">p</span>=<span class="string">"0,1,25,16777215,1312863760,0,eff85771,42759017"</span>&gt;</span>前排占位置<span class="tag">&lt;/<span class="name">d</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<html><head><style type="text/css">
+.mjpage .MJX-monospace {
+font-family: monospace
+}
+.mjpage .MJX-sans-serif {
+font-family: sans-serif
+}
+.mjpage {
+display: inline;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 100%;
+font-size-adjust: none;
+text-indent: 0;
+text-align: left;
+text-transform: none;
+letter-spacing: normal;
+word-spacing: normal;
+word-wrap: normal;
+white-space: nowrap;
+float: none;
+direction: ltr;
+max-width: none;
+max-height: none;
+min-width: 0;
+min-height: 0;
+border: 0;
+padding: 0;
+margin: 0
+}
+.mjpage * {
+transition: none;
+-webkit-transition: none;
+-moz-transition: none;
+-ms-transition: none;
+-o-transition: none
+}
+.mjx-svg-href {
+fill: blue;
+stroke: blue
+}
+.MathJax_SVG_LineBox {
+display: table!important
+}
+.MathJax_SVG_LineBox span {
+display: table-cell!important;
+width: 10000em!important;
+min-width: 0;
+max-width: none;
+padding: 0;
+border: 0;
+margin: 0
+}
+.mjpage__block {
+text-align: center;
+margin: 1em 0em;
+position: relative;
+display: block!important;
+text-indent: 0;
+max-width: none;
+max-height: none;
+min-width: 0;
+min-height: 0;
+width: 100%
+}</style></head><body><p>B站的每个视频都有<code>aid</code>和<code>cid</code>两个参数，在已知视频<code>aid</code>（即AV号）的情况下，可以通过链接<code>https://www.bilibili.com/widget/getPageList?aid=10492</code>获取<code>cid</code>（将10492替换为你要查询的视频的aid）。<br>视频的更多信息则可以通过<code>https://api.bilibili.com/view?type=jsonp&amp;appkey=8e9fc618fbd41e28&amp;id=10492</code>获取。<br>视频的弹幕文件采用xml格式存储，地址与其<code>cid</code>有关，为<code>https://comment.bilibili.com/$cid.xml</code>（将<code>$cid</code>替换为视频的<code>cid</code>）。<br>对于有许多分P的视频，它们的aid（AV号）相同，每个分P则对应一个不同的<code>cid</code>。而在同一个页面下的番剧、影视等内容，每一分集的<code>cid</code>也是唯一的。<br>弹幕内容的存储方式为：</p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">d</span> <span class="attr">p</span>=<span class="string">"0,1,25,16777215,1312863760,0,eff85771,42759017"</span>&gt;</span>前排占位置<span class="tag">&lt;/<span class="name">d</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
 <p>这个元素中的各个参数由逗号分割，其意义分别为：</p>
 <ul>
 <li>弹幕出现的时间，以秒为单位</li>
 <li>弹幕的模式：1～3滚动弹幕 4底端弹幕 5顶端弹幕 6逆向弹幕 7精准定位 8高级弹幕</li>
 <li>字号：12非常小 16特小 18小 25中 36大 45很大 64特别大</li>
-<li>字体的颜色：将HTML六位十六进制颜色转为十进制表示，例如#FFFFFF会被存储为16777215，因为$(FFFFFF)_{16}=(16777215)_{10}$</li>
+<li>字体的颜色：将HTML六位十六进制颜色转为十进制表示，例如#FFFFFF会被存储为16777215，因为<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="30.214ex" height="2.843ex" style="vertical-align: -0.838ex;" viewbox="0 -863.1 13008.7 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">(FFFFFF)_{16}=(16777215)_{10}</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/>
+<path stroke-width="1" id="E1-MJMATHI-46" d="M48 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H742Q749 676 749 669Q749 664 736 557T722 447Q720 440 702 440H690Q683 445 683 453Q683 454 686 477T689 530Q689 560 682 579T663 610T626 626T575 633T503 634H480Q398 633 393 631Q388 629 386 623Q385 622 352 492L320 363H375Q378 363 398 363T426 364T448 367T472 374T489 386Q502 398 511 419T524 457T529 475Q532 480 548 480H560Q567 475 567 470Q567 467 536 339T502 207Q500 200 482 200H470Q463 206 463 212Q463 215 468 234T473 274Q473 303 453 310T364 317H309L277 190Q245 66 245 60Q245 46 334 46H359Q365 40 365 39T363 19Q359 6 353 0H336Q295 2 185 2Q120 2 86 2T48 1Z"/>
+<path stroke-width="1" id="E1-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/>
+<path stroke-width="1" id="E1-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
+<path stroke-width="1" id="E1-MJMAIN-36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"/>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E1-MJMAIN-37" d="M55 458Q56 460 72 567L88 674Q88 676 108 676H128V672Q128 662 143 655T195 646T364 644H485V605L417 512Q408 500 387 472T360 435T339 403T319 367T305 330T292 284T284 230T278 162T275 80Q275 66 275 52T274 28V19Q270 2 255 -10T221 -22Q210 -22 200 -19T179 0T168 40Q168 198 265 368Q285 400 349 489L395 552H302Q128 552 119 546Q113 543 108 522T98 479L95 458V455H55V458Z"/>
+<path stroke-width="1" id="E1-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+<path stroke-width="1" id="E1-MJMAIN-35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"/>
+<path stroke-width="1" id="E1-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+<use xlink:href="#E1-MJMAIN-28" x="0" y="0"/>
+<use xlink:href="#E1-MJMATHI-46" x="389" y="0"/>
+<use xlink:href="#E1-MJMATHI-46" x="1139" y="0"/>
+<use xlink:href="#E1-MJMATHI-46" x="1888" y="0"/>
+<use xlink:href="#E1-MJMATHI-46" x="2638" y="0"/>
+<use xlink:href="#E1-MJMATHI-46" x="3387" y="0"/>
+<use xlink:href="#E1-MJMATHI-46" x="4137" y="0"/>
+<g transform="translate(4886,0)">
+<use xlink:href="#E1-MJMAIN-29" x="0" y="0"/>
+<g transform="translate(389,-150)">
+<use transform="scale(0.707)" xlink:href="#E1-MJMAIN-31"/>
+<use transform="scale(0.707)" xlink:href="#E1-MJMAIN-36" x="500" y="0"/>
+</g>
+</g>
+<use xlink:href="#E1-MJMAIN-3D" x="6361" y="0"/>
+<use xlink:href="#E1-MJMAIN-28" x="7417" y="0"/>
+<g transform="translate(7807,0)">
+<use xlink:href="#E1-MJMAIN-31"/>
+<use xlink:href="#E1-MJMAIN-36" x="500" y="0"/>
+<use xlink:href="#E1-MJMAIN-37" x="1001" y="0"/>
+<use xlink:href="#E1-MJMAIN-37" x="1501" y="0"/>
+<use xlink:href="#E1-MJMAIN-37" x="2002" y="0"/>
+<use xlink:href="#E1-MJMAIN-32" x="2502" y="0"/>
+<use xlink:href="#E1-MJMAIN-31" x="3003" y="0"/>
+<use xlink:href="#E1-MJMAIN-35" x="3503" y="0"/>
+</g>
+<g transform="translate(11811,0)">
+<use xlink:href="#E1-MJMAIN-29" x="0" y="0"/>
+<g transform="translate(389,-150)">
+<use transform="scale(0.707)" xlink:href="#E1-MJMAIN-31"/>
+<use transform="scale(0.707)" xlink:href="#E1-MJMAIN-30" x="500" y="0"/>
+</g>
+</g>
+</g>
+</svg></span></li>
 <li>Unix时间戳，以毫秒为单位，基准时间为1970-1-1 08:00:00</li>
 <li>弹幕池：0普通池 1字幕池 2特殊池（注：目前特殊池为高级弹幕专用）</li>
 <li>发送者的ID，用于『屏蔽此弹幕的发送者』功能</li>
@@ -247,9 +363,8 @@ type="text" id="local-search-input">
 <hr>
 <p>将Bilibili弹幕的xml文件转为ass字幕，可以使用以下脚本：<br><a href="http://tiansh.github.io/us-danmaku/bilibili" target="_blank" rel="noopener">bilibili ASS 弹幕在线转换</a><br><a href="https://github.com/tiansh/us-danmaku" target="_blank" rel="noopener">us-danmaku</a></p>
 <p>关于ass字幕格式可以参考以下文章：<a href="https://www.douban.com/note/658520175" target="_blank" rel="noopener">ASS字幕格式规范</a></p>
-<p>拓展阅读：<br><a href="https://zhuanlan.zhihu.com/p/24599052" target="_blank" rel="noopener">Bilibili视频播放页面接口整理（不定期更新） - 知乎</a><br><a href="https://www.jianshu.com/p/f628679883e3" target="_blank" rel="noopener">Bilibili爬取视频信息进行数据分析</a></p>
+<p>拓展阅读：<br><a href="https://zhuanlan.zhihu.com/p/24599052" target="_blank" rel="noopener">Bilibili视频播放页面接口整理（不定期更新） - 知乎</a><br><a href="https://www.jianshu.com/p/f628679883e3" target="_blank" rel="noopener">Bilibili爬取视频信息进行数据分析</a></p></body></html>
 </div>
-<div>
 <div id="reward-container">
 <div>🍭支持一根棒棒糖！</div>
 <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
@@ -267,7 +382,6 @@ type="text" id="local-search-input">
 <div style="display: inline-block">
 <img src="/images/bitcoin.png" alt="张书樵 比特币">
 <p>比特币</p>
-</div>
 </div>
 </div>
 </div>
@@ -404,10 +518,7 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/velocity-animate/velocity.ui.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>
@@ -432,48 +543,6 @@ height: $(o).attr('height') || '1000px'
 }
 </script>
 <div id="pjax">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-processEscapes: true,
-skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-},
-TeX: {
-equationNumbers: {
-autoNumber: 'AMS'
-}
-}
-});
-MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-if (data.display) {
-var next = data.script.nextSibling;
-while (next && next.nodeName.toLowerCase() === '#text') {
-next = next.nextSibling;
-}
-if (next && next.nodeName.toLowerCase() === 'br') {
-next.parentNode.removeChild(next);
-}
-}
-});
-});
-MathJax.Hub.Queue(function() {
-var all = MathJax.Hub.getAllJax(), i;
-for (i = 0; i < all.length; i += 1) {
-element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-if (element.nodeName.toLowerCase() == 'li') {
-element = element.parentNode;
-}
-element.classList.add('has-jax');
-}
-});
-</script>
-<script>
-NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML', function() {
-MathJax.Hub.Typeset();
-}, window.MathJax);
-</script>
 <script src="/js/scrollspy.js?v=7.3.0"></script>
 <script src="/js/post-details.js?v=7.3.0"></script>
 <script>

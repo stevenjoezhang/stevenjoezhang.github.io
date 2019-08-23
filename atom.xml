@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangshuqiao.org/"/>
-  <updated>2019-08-11T18:33:07.879Z</updated>
+  <updated>2019-08-23T00:42:58.397Z</updated>
   <id>https://zhangshuqiao.org/</id>
   
   <author>
@@ -17,13 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Gettysburg Address</title>
+    <link href="https://zhangshuqiao.org/2019-08/%E8%91%9B%E5%BA%95%E6%96%AF%E5%A0%A1%E6%BC%94%E8%AF%B4/"/>
+    <id>https://zhangshuqiao.org/2019-08/葛底斯堡演说/</id>
+    <published>2019-08-17T00:42:59.000Z</published>
+    <updated>2019-08-23T00:42:58.397Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.</p></blockquote><blockquote><p>Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.</p></blockquote><blockquote><p>But, in a larger sense, we can not dedicate—we can not consecrate—we can not hallow—this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us—that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion—that we here highly resolve that these dead shall not have died in vain—that this nation, under God, shall have a new birth of freedom—and that government of the people, by the people, for the people, shall not perish from the earth.</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicate
+      
+    
+    </summary>
+    
+      <category term="其他" scheme="https://zhangshuqiao.org/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>失去同步</title>
     <link href="https://zhangshuqiao.org/2019-08/%E5%A4%B1%E5%8E%BB%E5%90%8C%E6%AD%A5/"/>
     <id>https://zhangshuqiao.org/2019-08/失去同步/</id>
     <published>2019-08-11T10:03:14.000Z</published>
-    <updated>2019-08-11T18:33:07.879Z</updated>
+    <updated>2019-08-22T07:38:49.980Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/images/2019-08/005.jpg" alt></p><p>图片来源：<a href="http://www.europecomics.com/album/1-justice-fresh-vegetables/" target="_blank" rel="noopener">1. Justice and Fresh Vegetables - Europe Comics</a></p><p>这样巧妙的设计，不禁让人联想起《哆啦A梦》中的类似剧情：大雄为了破案乘坐时光机回到过去，结果发现罪犯正是自己……</p><p>这本漫画书中还有很多像这样脑洞大开的漫画，可以通过多个渠道购买、下载。</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="/images/2019-08/005.jpg" alt></p><p>图片来源：<a href="http://www.europecomics.com/album/1-justice-fresh-vegetables/" target="_blank" rel="noopener">1. Justice and Fresh Vegetables - Europe Comics</a></p><p>这样巧妙的设计，不禁让人联想起《哆啦A梦》中的类似剧情：大雄为了追回失窃的藏品，乘坐时光机回到案发现场，结果发现小偷正是自己……</p><p>这本漫画书中还有很多像这样脑洞大开的漫画，可以通过多个渠道购买、下载。</p>]]></content>
     
     <summary type="html">
     
@@ -45,16 +69,16 @@
     <link href="https://zhangshuqiao.org/2019-08/%E5%9C%A8Ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85TeamViewer/"/>
     <id>https://zhangshuqiao.org/2019-08/在Ubuntu上安装TeamViewer/</id>
     <published>2019-08-06T04:33:49.000Z</published>
-    <updated>2019-08-08T04:39:56.119Z</updated>
+    <updated>2019-08-20T10:29:56.495Z</updated>
     
-    <content type="html"><![CDATA[<p>首先，安装Xfce桌面环境</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install xfce4 xfce4-goodies</span><br></pre></td></tr></table></figure><p>然后安装LightDM，这是一个显示管理器，可以渲染登陆页面</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install lightdm</span><br></pre></td></tr></table></figure><p>还需要安装一个配套的greeter</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install lightdm-gtk-greeter</span><br></pre></td></tr></table></figure><p>可选项还有很多，例如：</p><ul><li>Unity Greeter (unity-greeter)</li><li>GTK+ Greeter (lightdm-gtk-greeter)</li><li>KDE Greeter (lightdm-kde-greeter)</li><li>WebKit Greeter (lightdm-webkit-greeter)</li><li>RazorQt Greeter (razorqt-lightdm-greeter)</li></ul><p>下一步，是配置LightDM</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo "[Seat:*]</span><br><span class="line">allow-guest=false</span><br><span class="line">user-session=xfce" &gt;&gt; /etc/lightdm/lightdm.conf</span><br></pre></td></tr></table></figure><p>完成后，就可以下载TeamViewer了</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.teamviewer.com/download/linux/teamviewer-host_amd64.deb</span><br></pre></td></tr></table></figure><p>TeamViewer通过deb安装包进行安装</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install ./teamviewer-host_amd64.deb</span><br></pre></td></tr></table></figure><p>安装完成就可以进行初始化设置，需要先到<a href="https://login.teamviewer.com/LogOn" target="_blank" rel="noopener">TeamViewer官网</a>注册账号</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">teamviewer setup</span><br></pre></td></tr></table></figure><p>设置成功后，重启系统即可</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure><p>此外，还需要检查防火墙设置。TeamViewer会使用5938端口，确保它没有被拦截。一切正常的话，就可以登录了。</p><p><img src="/images/2019-08/teamviewer.png" alt></p><p>如果需要卸载，执行以下命令即可</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt purge teamviewer-host</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>首先，安装Xfce桌面环境</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install xfce4 xfce4-goodies</span><br></pre></td></tr></table></figure><p>然后安装LightDM，这是一个显示管理器，可以渲染登陆页面</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install lightdm</span><br></pre></td></tr></table></figure><p>还需要安装一个配套的greeter</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install lightdm-gtk-greeter</span><br></pre></td></tr></table></figure><p>可选项还有很多，例如：</p><ul><li>Unity Greeter (unity-greeter)</li><li>GTK+ Greeter (lightdm-gtk-greeter)</li><li>KDE Greeter (lightdm-kde-greeter)</li><li>WebKit Greeter (lightdm-webkit-greeter)</li><li>RazorQt Greeter (razorqt-lightdm-greeter)</li></ul><p>下一步，是配置LightDM</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"[Seat:*]</span></span><br><span class="line"><span class="string">allow-guest=false</span></span><br><span class="line"><span class="string">user-session=xfce"</span> &gt;&gt; /etc/lightdm/lightdm.conf</span><br></pre></td></tr></table></figure><p>完成后，就可以下载TeamViewer了</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.teamviewer.com/download/linux/teamviewer-host_amd64.deb</span><br></pre></td></tr></table></figure><p>TeamViewer通过deb安装包进行安装</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install ./teamviewer-host_amd64.deb</span><br></pre></td></tr></table></figure><p>安装完成就可以进行初始化设置，需要先到<a href="https://login.teamviewer.com/LogOn" target="_blank" rel="noopener">TeamViewer官网</a>注册账号</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">teamviewer setup</span><br></pre></td></tr></table></figure><p>设置成功后，重启系统即可</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure><p>此外，还需要检查防火墙设置。TeamViewer会使用5938端口，确保它没有被拦截。一切正常的话，就可以登录了。</p><p><img src="/images/2019-08/teamviewer.png" alt></p><p>如果需要卸载，执行以下命令即可</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt purge teamviewer-host</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;首先，安装Xfce桌面环境&lt;/p&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;
       
     
     </summary>
@@ -100,16 +124,15 @@
     <link href="https://zhangshuqiao.org/2019-07/%E5%9C%A8Win%2095%E4%B8%AD%E6%99%83%E5%8A%A8%E9%BC%A0%E6%A0%87%E7%AB%9F%E8%83%BD%E5%8A%A0%E9%80%9F%E7%B3%BB%E7%BB%9F/"/>
     <id>https://zhangshuqiao.org/2019-07/在Win 95中晃动鼠标竟能加速系统/</id>
     <published>2019-07-18T09:33:25.000Z</published>
-    <updated>2019-08-05T13:11:32.961Z</updated>
+    <updated>2019-08-14T09:02:29.535Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/images/2019-07/2019-07-15-image-24.jpg" alt></p><p><strong>Through the looking glass:</strong> Adding new hardware or overclocking what you&#39;ve already got are among the leading ways to squeeze more performance out of your PC but in the earlier days of computing, all one had to do to give their PC a jolt was wiggle the mouse cursor around during an install.<br>添加新硬件或超频现有硬件是使PC获得更佳性能的主要方法。但在个人计算机的早期阶段，用户竟然还可以通过一个巧妙的办法来提升性能——不停地晃动鼠标的光标。</p><p>I&#39;m a self-professed fidgeter, especially at the computer. It&#39;s not uncommon to catch me moving the mouse all around with zero intent, even if I&#39;m busy reading a story or watching a video.<br>我自认为是一个手抖的人，尤其是在电脑前。即使我在忙着用电脑读故事或看视频，你也会发现我在毫无目的地移动鼠标。</p><p>I chalk it up to the earlier days of computing when keeping the mouse active seemed to have a tangible benefit on system performance. Turns out, it wasn&#39;t just in our imagination.<br>我把它归结为在上古时期，保持鼠标活动似乎对系统性能有明显的好处。事实证明，这并不只是我们的想象。</p><p>According to a running thread over on <a href="https://retrocomputing.stackexchange.com/questions/11533/why-did-moving-the-mouse-cursor-cause-windows-95-to-run-more-quickly" target="_blank" rel="noopener">Stack Exchange</a>, moving the mouse cursor in Windows 95 did indeed speed up performance due to a flaw in the way the OS generates events and the fact that many applications are event driven.<br>根据<a href="https://retrocomputing.stackexchange.com/questions/11533/why-did-moving-the-mouse-cursor-cause-windows-95-to-run-more-quickly" target="_blank" rel="noopener">Stack Exchange</a>上一个正在热烈讨论的主题，在Windows 95中移动鼠标光标确实提升了性能，因为操作系统的事件生成方法存在缺陷，并且许多应用程序都是基于事件来驱动的。</p><p>As one user explains:<br>正如一位用户解释到：</p><blockquote><p>Windows 95 applications often use asynchronous I/O, that is they ask for some file operation like a copy to be performed and then tell the OS that they can be put to sleep until that operation finishes. By sleeping they allow other applications to run, rather than wasting CPU time endlessly asking if the file operation has completed yet.<br>Windows 95应用程序通常采用了异步I/O，也就是说，在它们要求执行某些文件操作的时候（例如要执行的副本），会向操作系统表示其能够在操作完成之前转入休眠状态。通过这项休眠机制，其它应用程序将可以穿插空档来运行，而不是无休止地询问文件操作是否已经完成，从而浪费CPU时间。</p></blockquote><blockquote><p>For reasons that are not entirely clear, but probably due to performance problems on low end machines, Windows 95 tends to bundle up the messages about I/O completion and doesn&#39;t immediately wake up the application to service them. However, it does wake the application for user input, presumably to keep it feeling responsive, and when the application is awake it will handle any pending I/O messages too.<br>目前原因尚不完全清楚，但一个猜测是，这可能是为了解决低端计算机上的性能问题——Windows 95倾向于捆绑关于I/O完成的消息，并且不会立即唤醒应用程序来为它们提供服务。不过，在用户输入时，操作系统会唤醒应用程序，这可能是为了让应用程序保持响应；而当应用程序处于唤醒状态时，它就能够处理任何挂起的I/O消息。</p></blockquote><blockquote><p>Thus wiggling the mouse causes the application to process I/O messages faster, and install quicker. The effect was quite pronounced; large applications that could take an hour to install could be reduced to 15 minutes with suitable mouse input.<br>换言之，晃动鼠标可以使应用程序更快地处理I/O消息，并加快安装速度。效果相当明显：配合合适的鼠标输入，原先可能需要一个小时安装的大型应用程序，耗时可以减少到15分钟。</p></blockquote><p>As a youth, I&#39;d keep my mouse cursor active as much as possible -- and especially during installs -- simply because I didn&#39;t want the screensaver to trigger and bog down system resources. Sure, I could have just set the timeout to longer on the screensaver, but that&#39;s beside the point. As it turns out, my actions were actually helpful, and not for the reason I thought.<br>在我年轻的时候，我尽可能地让鼠标光标处于活动状态——尤其是在安装期间——只是因为我不想让屏幕保护程序触发并阻塞系统资源。当然，我可以把屏保上的超时设置得更长一些，但这不是重点。事实证明，我的行为实际上是有帮助的——即使这并不是我的初衷。</p><hr><p>本文翻译自：<a href="https://www.techspot.com/news/80956-wiggling-mouse-windows-95-made-operating-system-faster.html" target="_blank" rel="noopener">Wiggling the mouse in Windows 95 made the operating system faster</a></p>]]></content>
+    <content type="html"><![CDATA[<p><strong>Through the looking glass:</strong> Adding new hardware or overclocking what you&#39;ve already got are among the leading ways to squeeze more performance out of your PC but in the earlier days of computing, all one had to do to give their PC a jolt was wiggle the mouse cursor around during an install.<br>添加新硬件或超频现有硬件是使PC获得更佳性能的主要方法。但在个人计算机的早期阶段，用户竟然还可以通过一个巧妙的办法来提升性能——不停地晃动鼠标的光标。</p><p><img src="/images/2019-07/2019-07-15-image-24.jpg" alt></p><p>I&#39;m a self-professed fidgeter, especially at the computer. It&#39;s not uncommon to catch me moving the mouse all around with zero intent, even if I&#39;m busy reading a story or watching a video.<br>我自认为是一个手抖的人，尤其是在电脑前。即使我在忙着用电脑读故事或看视频，你也会发现我在毫无目的地移动鼠标。</p><p>I chalk it up to the earlier days of computing when keeping the mouse active seemed to have a tangible benefit on system performance. Turns out, it wasn&#39;t just in our imagination.<br>我把它归结为在上古时期，保持鼠标活动似乎对系统性能有明显的好处。事实证明，这并不只是我们的想象。</p><p>According to a running thread over on <a href="https://retrocomputing.stackexchange.com/questions/11533/why-did-moving-the-mouse-cursor-cause-windows-95-to-run-more-quickly" target="_blank" rel="noopener">Stack Exchange</a>, moving the mouse cursor in Windows 95 did indeed speed up performance due to a flaw in the way the OS generates events and the fact that many applications are event driven.<br>根据<a href="https://retrocomputing.stackexchange.com/questions/11533/why-did-moving-the-mouse-cursor-cause-windows-95-to-run-more-quickly" target="_blank" rel="noopener">Stack Exchange</a>上一个正在热烈讨论的主题，在Windows 95中移动鼠标光标确实提升了性能，因为操作系统的事件生成方法存在缺陷，并且许多应用程序都是基于事件来驱动的。</p><p>As one user explains:<br>正如一位用户解释到：</p><blockquote><p>Windows 95 applications often use asynchronous I/O, that is they ask for some file operation like a copy to be performed and then tell the OS that they can be put to sleep until that operation finishes. By sleeping they allow other applications to run, rather than wasting CPU time endlessly asking if the file operation has completed yet.<br>Windows 95应用程序通常采用了异步I/O，也就是说，在它们要求执行某些文件操作的时候（例如要执行的副本），会向操作系统表示其能够在操作完成之前转入休眠状态。通过这项休眠机制，其它应用程序将可以穿插空档来运行，而不是无休止地询问文件操作是否已经完成，从而浪费CPU时间。</p></blockquote><blockquote><p>For reasons that are not entirely clear, but probably due to performance problems on low end machines, Windows 95 tends to bundle up the messages about I/O completion and doesn&#39;t immediately wake up the application to service them. However, it does wake the application for user input, presumably to keep it feeling responsive, and when the application is awake it will handle any pending I/O messages too.<br>目前原因尚不完全清楚，但一个猜测是，这可能是为了解决低端计算机上的性能问题——Windows 95倾向于捆绑关于I/O完成的消息，并且不会立即唤醒应用程序来为它们提供服务。不过，在用户输入时，操作系统会唤醒应用程序，这可能是为了让应用程序保持响应；而当应用程序处于唤醒状态时，它就能够处理任何挂起的I/O消息。</p></blockquote><blockquote><p>Thus wiggling the mouse causes the application to process I/O messages faster, and install quicker. The effect was quite pronounced; large applications that could take an hour to install could be reduced to 15 minutes with suitable mouse input.<br>换言之，晃动鼠标可以使应用程序更快地处理I/O消息，并加快安装速度。效果相当明显：配合合适的鼠标输入，原先可能需要一个小时安装的大型应用程序，耗时可以减少到15分钟。</p></blockquote><p>As a youth, I&#39;d keep my mouse cursor active as much as possible -- and especially during installs -- simply because I didn&#39;t want the screensaver to trigger and bog down system resources. Sure, I could have just set the timeout to longer on the screensaver, but that&#39;s beside the point. As it turns out, my actions were actually helpful, and not for the reason I thought.<br>在我年轻的时候，我尽可能地让鼠标光标处于活动状态——尤其是在安装期间——只是因为我不想让屏幕保护程序触发并阻塞系统资源。当然，我可以把屏保上的超时设置得更长一些，但这不是重点。事实证明，我的行为实际上是有帮助的——即使这并不是我的初衷。</p><hr><p>本文翻译自：<a href="https://www.techspot.com/news/80956-wiggling-mouse-windows-95-made-operating-system-faster.html" target="_blank" rel="noopener">Wiggling the mouse in Windows 95 made the operating system faster</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;img src=&quot;/images/2019-07/2019-07-15-image-24.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Through the looking glass:&lt;/strong&gt; Adding new hardware or overclo
+        &lt;p&gt;&lt;strong&gt;Through the looking glass:&lt;/strong&gt; Adding new hardware or overclocking what you&amp;#39;ve already got are among the leading ways to
       
     
     </summary>
@@ -165,9 +188,9 @@
       <category term="Web开发" scheme="https://zhangshuqiao.org/categories/Web%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="HTML" scheme="https://zhangshuqiao.org/tags/HTML/"/>
-    
       <category term="JavaScript" scheme="https://zhangshuqiao.org/tags/JavaScript/"/>
+    
+      <category term="HTML" scheme="https://zhangshuqiao.org/tags/HTML/"/>
     
   </entry>
   
@@ -338,15 +361,15 @@
     <link href="https://zhangshuqiao.org/2019-04/Minecraft%E9%85%8D%E7%BD%AESeus%E5%85%89%E5%BD%B1/"/>
     <id>https://zhangshuqiao.org/2019-04/Minecraft配置Seus光影/</id>
     <published>2019-04-28T04:35:24.000Z</published>
-    <updated>2019-05-04T03:23:34.055Z</updated>
+    <updated>2019-08-13T08:51:59.483Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>下面列出了博主测试成功的环境，使用其它的版本可能出现不可预料的情况。</p><h3 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h3><ul><li><p>图形卡<br>由于Seus光影对计算机的图形性能有较高的要求，博主使用了一块NVIDIA GeForce RTX 2070显卡进行测试。根据作者的描述，20系和10系显卡对Seus光影的支持没有本质区别。因此，你也可以选择其它型号的N卡，运行起来不会有大问题。不过，根据一些Minecraft论坛的反馈，A卡和I卡可能无法支持。</p></li><li><p>其它<br>其它硬件达到主流配置即可，Minecraft对性能没有什么苛求。如果上卡吧标配的话，流畅玩耍一定没有什么问题。</p></li></ul><h3 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h3><ul><li><p>Windows系统<br>由于macOS Mojave的N卡驱动迟迟没有更新（据说是苹果已经抛弃了N卡，未来很有可能不会再更新驱动），因而需要在其它系统上运行。博主使用的是Windows 10。Linux原理上也是可以的，不过博主并没有尝试。</p></li><li><p>JAVA环境<br>Minecraft JAVA版自然需要JAVA的支持。由于后面用到的启动器对JAVA9及以上版本的支持不佳，博主推荐安装JAVA SE 8。可以到<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">Oracle官网</a>下载。测试使用的是JDK1.8.0_211。</p></li><li><p>HMCL启动器<br>你可以从GitHub上<a href="https://github.com/huanghongxun/HMCL/releases" target="_blank" rel="noopener">获取HMCL启动器</a>，下载<code>exe</code>版本即可。博主使用的是发稿前的最新版本3.2.129，后面的步骤也以该版本为例。</p></li><li><p>光影<br>在<a href="https://sonicether.com/seus/#Downloads" target="_blank" rel="noopener">Seus官方网站</a>可以下载免费的光影包。推荐使用<code>SEUS Renewed v1.0.0</code>和<code>SEUS V11</code>。除此之外，可以向作者本人<a href="https://www.patreon.com/sonicether" target="_blank" rel="noopener">付费购买</a>制作中的<code>SEUS PTGI</code>（目前的版本收费10美元，未来发布的正式版将免费）。截至发稿前，最新版本为<code>SEUS PTGI E6</code>。博主这里提供了一个免费镜像：<br><a href="/files/SEUS_PTGI_E6.zip">SEUS_PTGI_E6.zip</a></p></li><li><p>材质<br>一个好的材质包同样是不可或缺的。博主推荐使用<a href="https://matteorizzo.com/realistico/" target="_blank" rel="noopener">Realistico</a>，不过，这个材质包的官方<code>512x</code>版本是付费的，可以自行到国内或国外的玩家论坛上寻找资源。<br>此外还有一个<a href="https://continuum.graphics/stratum-rp" target="_blank" rel="noopener">Stratum</a>材质也很不错，Reddit上的讨论地址是<a href="https://www.reddit.com/r/modpiracy/comments/9vmmj9/request_tier_3_of_the_stratum_resource_pack/" target="_blank" rel="noopener">[Request] Tier 3 of the stratum resource pack</a>，不过下载链接被删帖了。后来博主发现可以通过把<code>www.reddit.com</code>替换为<code>www.removeddit.com</code>查看所有被删除的内容，然后就找到了这个Mediafire上的存储库：<a href="https://www.mediafire.com/folder/6lxv0w9517j6l/Stratum" target="_blank" rel="noopener">Stratum</a>。</p></li></ul><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装Minecraft"><a href="#安装Minecraft" class="headerlink" title="安装Minecraft"></a>安装Minecraft</h3><p>安装过程并不复杂。运行<code>HMCL-3.2.129.exe</code>，在『游戏列表』中选择『安装新游戏版本』。<br><img src="/images/2019-04/seus1.png" alt></p><p>然后选择1.12.2版本，其它版本可能无法正确适配光影。</p><p><img src="/images/2019-04/seus2.png" alt></p><p>随后安装OptiFine，点击这里的箭头：</p><p><img src="/images/2019-04/seus3.png" alt></p><p>选择最新版本，例如HD_U_E3。如果在游戏过程中发现存在渲染问题（例如黑屏等），可以换其它版本试试。</p><p><img src="/images/2019-04/seus4.png" alt></p><p>最后点击『安装』，HMCL启动器会自动下载并配置相关组件。</p><a id="more"></a><h3 id="安装光影和材质"><a href="#安装光影和材质" class="headerlink" title="安装光影和材质"></a>安装光影和材质</h3><p>初始化完成后，在<code>HMCL-3.2.129.exe</code>的同级目录下，会创建一个名为<code>.minecraft</code>的文件夹。打开这个目录，将光影放入<code>shaderpacks</code>子目录，将材质包放入<code>resourcepacks</code>子目录（都是直接将<code>zip</code>格式的文件放进去即可，无需解压）。然后启动游戏，就可以检查光影和材质是否正确运作了。</p><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>如果一切正常（启动游戏后可以进入主界面），下一步就是进行设置了。如果启动器弹出了报错信息，请检查JAVA版本、游戏版本和插件版本是否正确，必要时可以通过提交Issue与开发者交流。</p><h3 id="设置光影"><a href="#设置光影" class="headerlink" title="设置光影"></a>设置光影</h3><p>依次点击『选项…』『视频设置…』『光影…』，所有<code>shaderpacks</code>目录下的光影都会显示在这里。点击一个启用即可。</p><p><img src="/images/2019-04/seus5.png" alt></p><h3 id="设置材质"><a href="#设置材质" class="headerlink" title="设置材质"></a>设置材质</h3><p>依次点击『选项…』『资源包…』，所有<code>resourcepacks</code>目录下的材质都会显示在这里。点击一个启用即可。</p><p><img src="/images/2019-04/seus6.png" alt></p><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>最后再上几张游戏截图。</p><p><img src="/images/2019-04/screenshot1.png" alt></p><p><img src="/images/2019-04/screenshot2.png" alt></p><p><img src="/images/2019-04/screenshot3.png" alt></p><p><img src="/images/2019-04/screenshot4.png" alt></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>下面列出了博主测试成功的环境，使用其它的版本可能出现不可预料的情况。</p><h3 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h3><ul><li><p>图形卡<br>由于Seus光影对计算机的图形性能有较高的要求，博主使用了一块NVIDIA GeForce RTX 2070显卡进行测试。根据作者的描述，20系和10系显卡对Seus光影的支持没有本质区别（除了RTX加持）；因此，你也可以选择其它型号的N卡，运行起来不会有影响。不过，根据一些Minecraft论坛的反馈，A卡和I卡可能无法正常渲染此光影。</p></li><li><p>其它<br>其它硬件达到主流配置即可，Minecraft对性能没有什么苛求。如果上卡吧标配的话，流畅玩耍一定没有什么问题。</p></li></ul><h3 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h3><ul><li><p>Windows系统<br>由于macOS Mojave的N卡驱动迟迟没有更新（据说是苹果已经抛弃了N卡，未来很有可能不会再更新驱动），因而需要在其它系统上运行。博主使用的是Windows 10。Linux原理上也是可以的，不过博主并没有尝试。</p></li><li><p>JAVA环境<br>Minecraft JAVA版自然需要JAVA的环境。由于后面用到的启动器对JAVA9及以上版本的支持不佳，博主推荐安装JAVA SE 8。可以到<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">Oracle官网</a>下载。测试使用的是JDK1.8.0_211。</p></li><li><p>HMCL启动器<br>你可以从GitHub上<a href="https://github.com/huanghongxun/HMCL/releases" target="_blank" rel="noopener">获取HMCL启动器</a>，下载<code>exe</code>版本即可。博主使用的是发稿前的最新版本3.2.129，后面的步骤也以该版本为例。</p></li><li><p>光影<br>在<a href="https://sonicether.com/seus/#Downloads" target="_blank" rel="noopener">Seus官方网站</a>可以下载免费的光影包。推荐使用<code>SEUS Renewed v1.0.0</code>和<code>SEUS V11</code>。除此之外，可以向作者本人<a href="https://www.patreon.com/sonicether" target="_blank" rel="noopener">付费购买</a>制作中的<code>SEUS PTGI</code>（目前的版本收费10美元，未来发布的正式版将免费）。截至发稿前，最新版本为<code>SEUS PTGI E6</code>。博主这里提供了一个免费镜像：<br><a href="/files/SEUS_PTGI_E6.zip">SEUS_PTGI_E6.zip</a></p></li><li><p>材质<br>一个好的材质包同样是不可或缺的。博主推荐使用<a href="https://matteorizzo.com/realistico/" target="_blank" rel="noopener">Realistico</a>，不过，这个材质包的官方<code>512x</code>版本是付费的，可以自行到国内或国外的玩家论坛上寻找资源。<br>此外还有一个<a href="https://continuum.graphics/stratum-rp" target="_blank" rel="noopener">Stratum</a>材质也很不错，Reddit上的讨论地址是<a href="https://www.reddit.com/r/modpiracy/comments/9vmmj9/request_tier_3_of_the_stratum_resource_pack/" target="_blank" rel="noopener">[Request] Tier 3 of the stratum resource pack</a>，不过下载链接被删帖了。后来博主发现可以通过把<code>www.reddit.com</code>替换为<code>www.removeddit.com</code>查看所有被删除的内容，然后就找到了这个Mediafire上的存储库：<a href="https://www.mediafire.com/folder/6lxv0w9517j6l/Stratum" target="_blank" rel="noopener">Stratum</a>。</p></li></ul><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装Minecraft"><a href="#安装Minecraft" class="headerlink" title="安装Minecraft"></a>安装Minecraft</h3><p>安装过程并不复杂。运行<code>HMCL-3.2.129.exe</code>，在『游戏列表』中选择『安装新游戏版本』。<br><img src="/images/2019-04/seus1.png" alt></p><p>然后选择1.12.2版本，其它版本可能无法正确适配光影。</p><p><img src="/images/2019-04/seus2.png" alt></p><p>随后安装OptiFine，点击这里的箭头：</p><p><img src="/images/2019-04/seus3.png" alt></p><p>选择最新版本，例如HD_U_E3。如果在游戏过程中发现存在渲染问题（例如黑屏等），可以换其它版本试试。</p><p><img src="/images/2019-04/seus4.png" alt></p><p>最后点击『安装』，HMCL启动器会自动下载并配置相关组件。</p><a id="more"></a><h3 id="安装光影和材质"><a href="#安装光影和材质" class="headerlink" title="安装光影和材质"></a>安装光影和材质</h3><p>初始化完成后，在<code>HMCL-3.2.129.exe</code>的同级目录下，会创建一个名为<code>.minecraft</code>的文件夹。打开这个目录，将光影放入<code>shaderpacks</code>子目录，将材质包放入<code>resourcepacks</code>子目录（都是直接将<code>zip</code>格式的文件放进去即可，无需解压）。然后启动游戏，就可以检查光影和材质是否正确运作了。</p><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>如果一切正常（启动游戏后可以进入主界面），下一步就是进行设置了。如果启动器弹出了报错信息，请检查JAVA版本、游戏版本和插件版本是否正确，必要时可以通过提交Issue与开发者交流。</p><h3 id="设置光影"><a href="#设置光影" class="headerlink" title="设置光影"></a>设置光影</h3><p>依次点击『选项…』『视频设置…』『光影…』，所有<code>shaderpacks</code>目录下的光影都会显示在这里。点击一个启用即可。</p><p><img src="/images/2019-04/seus5.png" alt></p><h3 id="设置材质"><a href="#设置材质" class="headerlink" title="设置材质"></a>设置材质</h3><p>依次点击『选项…』『资源包…』，所有<code>resourcepacks</code>目录下的材质都会显示在这里。点击一个启用即可。</p><p><img src="/images/2019-04/seus6.png" alt></p><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>最后再上几张游戏截图。</p><p><img src="/images/2019-04/screenshot1.png" alt></p><p><img src="/images/2019-04/screenshot2.png" alt></p><p><img src="/images/2019-04/screenshot3.png" alt></p><p><img src="/images/2019-04/screenshot4.png" alt></p>]]></content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h2&gt;&lt;p&gt;下面列出了博主测试成功的环境，使用其它的版本可能出现不可预料的情况。&lt;/p&gt;
 &lt;h3 id=&quot;硬件&quot;&gt;&lt;a href=&quot;#硬件&quot; class=&quot;headerlink&quot; title=&quot;硬件&quot;&gt;&lt;/a&gt;硬件&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;图形卡&lt;br&gt;由于Seus光影对计算机的图形性能有较高的要求，博主使用了一块NVIDIA GeForce RTX 2070显卡进行测试。根据作者的描述，20系和10系显卡对Seus光影的支持没有本质区别。因此，你也可以选择其它型号的N卡，运行起来不会有大问题。不过，根据一些Minecraft论坛的反馈，A卡和I卡可能无法支持。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;图形卡&lt;br&gt;由于Seus光影对计算机的图形性能有较高的要求，博主使用了一块NVIDIA GeForce RTX 2070显卡进行测试。根据作者的描述，20系和10系显卡对Seus光影的支持没有本质区别（除了RTX加持）；因此，你也可以选择其它型号的N卡，运行起来不会有影响。不过，根据一些Minecraft论坛的反馈，A卡和I卡可能无法正常渲染此光影。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;其它&lt;br&gt;其它硬件达到主流配置即可，Minecraft对性能没有什么苛求。如果上卡吧标配的话，流畅玩耍一定没有什么问题。&lt;/p&gt;
 &lt;/li&gt;
@@ -354,7 +377,7 @@
 &lt;h3 id=&quot;软件&quot;&gt;&lt;a href=&quot;#软件&quot; class=&quot;headerlink&quot; title=&quot;软件&quot;&gt;&lt;/a&gt;软件&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Windows系统&lt;br&gt;由于macOS Mojave的N卡驱动迟迟没有更新（据说是苹果已经抛弃了N卡，未来很有可能不会再更新驱动），因而需要在其它系统上运行。博主使用的是Windows 10。Linux原理上也是可以的，不过博主并没有尝试。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;JAVA环境&lt;br&gt;Minecraft JAVA版自然需要JAVA的支持。由于后面用到的启动器对JAVA9及以上版本的支持不佳，博主推荐安装JAVA SE 8。可以到&lt;a href=&quot;https://www.oracle.com/index.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Oracle官网&lt;/a&gt;下载。测试使用的是JDK1.8.0_211。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;JAVA环境&lt;br&gt;Minecraft JAVA版自然需要JAVA的环境。由于后面用到的启动器对JAVA9及以上版本的支持不佳，博主推荐安装JAVA SE 8。可以到&lt;a href=&quot;https://www.oracle.com/index.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Oracle官网&lt;/a&gt;下载。测试使用的是JDK1.8.0_211。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;HMCL启动器&lt;br&gt;你可以从GitHub上&lt;a href=&quot;https://github.com/huanghongxun/HMCL/releases&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;获取HMCL启动器&lt;/a&gt;，下载&lt;code&gt;exe&lt;/code&gt;版本即可。博主使用的是发稿前的最新版本3.2.129，后面的步骤也以该版本为例。&lt;/p&gt;
 &lt;/li&gt;
@@ -554,9 +577,9 @@
       <category term="程序设计" scheme="https://zhangshuqiao.org/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="C" scheme="https://zhangshuqiao.org/tags/C/"/>
-    
       <category term="数学" scheme="https://zhangshuqiao.org/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="C" scheme="https://zhangshuqiao.org/tags/C/"/>
     
   </entry>
   
@@ -613,34 +636,6 @@
     
     
       <category term="Mac" scheme="https://zhangshuqiao.org/tags/Mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>十五的月亮十五圆</title>
-    <link href="https://zhangshuqiao.org/2019-02/%E5%8D%81%E4%BA%94%E7%9A%84%E6%9C%88%E4%BA%AE%E5%8D%81%E4%BA%94%E5%9C%86/"/>
-    <id>https://zhangshuqiao.org/2019-02/十五的月亮十五圆/</id>
-    <published>2019-02-20T12:53:14.000Z</published>
-    <updated>2019-07-23T08:40:50.168Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/images/2019-02/IMG_4634.jpg" alt></p><blockquote><p>摄于己亥年正月十六</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;/images/2019-02/IMG_4634.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;摄于己亥年正月十六&lt;/p&gt;
-&lt;/blockquote&gt;
-      
-    
-    </summary>
-    
-      <category term="其他" scheme="https://zhangshuqiao.org/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="摄影" scheme="https://zhangshuqiao.org/tags/%E6%91%84%E5%BD%B1/"/>
     
   </entry>
   

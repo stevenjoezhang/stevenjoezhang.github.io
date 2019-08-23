@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html class="theme-next gemini" lang="zh-CN">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,18 +24,18 @@ root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
 exturl: false,
-sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-save_scroll: true,
+sidebar: {"position":"left","display":"post","offset":12,"onmobile":true},
 copycode: {"enable":true,"show_result":true,"style":"mac"},
+back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+bookmark: {"enable":false,"color":"#A00","save":"auto"},
 fancybox: false,
 mediumzoom: true,
 lazyload: false,
 pangu: true,
 algolia: {
-applicationID: '',
-apiKey: '',
-indexName: '',
+appID: 'FQJ3L26IH7',
+apiKey: '624be1c1b69d1777c2e70ab857f48ba1',
+indexName: 'Mimi',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
@@ -76,14 +75,8 @@ isArchive: false
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({
-google_ad_client: "ca-pub-8784231462763562",
-enable_page_level_ads: true
-});
-</script>
 <title>米米的博客</title>
+<meta name="generator" content="Hexo 3.9.0">
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -95,7 +88,7 @@ enable_page_level_ads: true
 .use-motion .comments,
 .use-motion .post-header,
 .use-motion .post-body,
-.use-motion .collection-title { opacity: initial; }
+.use-motion .collection-header { opacity: initial; }
 .use-motion .logo,
 .use-motion .site-title,
 .use-motion .site-subtitle {
@@ -108,12 +101,12 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left">
+<div class="container">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
-<div class="custom-logo-site-title">
+<div>
 <a href="/" class="brand" rel="start">
 <span class="logo-line-before"><i></i></span>
 <span class="site-title">米米的博客</span>
@@ -160,22 +153,23 @@ top: initial;
 </ul>
 </nav>
 <div class="site-search">
-<div class="popup search-popup local-search-popup">
-<div class="local-search-header clearfix">
+<div class="popup search-popup">
+<div class="search-header">
 <span class="search-icon">
 <i class="fa fa-search"></i>
 </span>
+<div class="search-input-wrapper">
+<input autocomplete="off" autocorrect="off" autocapitalize="none"
+placeholder="搜索..." spellcheck="false"
+type="text" id="search-input">
+</div>
 <span class="popup-btn-close">
 <i class="fa fa-times-circle"></i>
 </span>
-<div class="local-search-input-wrapper">
-<input autocomplete="off"
-placeholder="搜索..." spellcheck="false"
-type="text" id="local-search-input">
 </div>
+<div id="search-result"></div>
 </div>
-<div id="local-search-result"></div>
-</div>
+<div class="search-pop-overlay"></div>
 </div>
 </div>
 </header>
@@ -184,7 +178,322 @@ type="text" id="local-search-input">
 <div class="content-wrap">
 <div id="content" class="content page-home">
 <section id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-12/Base64编码的原理与实现/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-12/Base64编码的原理与实现/" class="post-title-link" itemprop="url">Base64编码的原理与实现</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-12-12 13:21:01" itemprop="dateCreated datePublished" datetime="2018-12-12T13:21:01+08:00">2018-12-12</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-12/Base64编码的原理与实现/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-12/Base64编码的原理与实现/" itemprop="commentCount"></span></a>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<html><head><style type="text/css">
+.mjpage .MJX-monospace {
+font-family: monospace
+}
+.mjpage .MJX-sans-serif {
+font-family: sans-serif
+}
+.mjpage {
+display: inline;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 100%;
+font-size-adjust: none;
+text-indent: 0;
+text-align: left;
+text-transform: none;
+letter-spacing: normal;
+word-spacing: normal;
+word-wrap: normal;
+white-space: nowrap;
+float: none;
+direction: ltr;
+max-width: none;
+max-height: none;
+min-width: 0;
+min-height: 0;
+border: 0;
+padding: 0;
+margin: 0
+}
+.mjpage * {
+transition: none;
+-webkit-transition: none;
+-moz-transition: none;
+-ms-transition: none;
+-o-transition: none
+}
+.mjx-svg-href {
+fill: blue;
+stroke: blue
+}
+.MathJax_SVG_LineBox {
+display: table!important
+}
+.MathJax_SVG_LineBox span {
+display: table-cell!important;
+width: 10000em!important;
+min-width: 0;
+max-width: none;
+padding: 0;
+border: 0;
+margin: 0
+}
+.mjpage__block {
+text-align: center;
+margin: 1em 0em;
+position: relative;
+display: block!important;
+text-indent: 0;
+max-width: none;
+max-height: none;
+min-width: 0;
+min-height: 0;
+width: 100%
+}</style></head><body><p>在数据传输的时候，并不是所有的字符都可以受到支持，很多时候只能传输可见字符，对于不可见字符的传输需要经过特殊处理，这就是Base64产生的原因。Base64编码是一种基于64个可打印字符来表示二进制数据的表示方法。由于<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="7.64ex" height="2.676ex" style="vertical-align: -0.338ex;" viewbox="0 -1006.6 3289.5 1152.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">2^6=64</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+<path stroke-width="1" id="E1-MJMAIN-36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"/>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E1-MJMAIN-34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+<use xlink:href="#E1-MJMAIN-32" x="0" y="0"/>
+<use transform="scale(0.707)" xlink:href="#E1-MJMAIN-36" x="707" y="557"/>
+<use xlink:href="#E1-MJMAIN-3D" x="1232" y="0"/>
+<g transform="translate(2288,0)">
+<use xlink:href="#E1-MJMAIN-36"/>
+<use xlink:href="#E1-MJMAIN-34" x="500" y="0"/>
+</g>
+</g>
+</svg></span>，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。在Base64中的可打印字符包括字母A-Z、a-z、数字0-9，这样共有62个字符，此外两个可打印符号在不同的系统中而不同。一些如uuencode的其他编码方法，和之后BinHex的版本使用不同的64字符集来代表6个二进制数字，但是不被称为Base64。<br>Base64常用于在通常处理文本数据的场合，表示、传输、存储一些二进制数据，包括MIME的电子邮件及XML的一些复杂数据。用Base64编码图片也是互联网上常见的做法。</p>
+<p>Base64的字符索引如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>数值</th>
+<th>字符</th>
+<th>数值</th>
+<th>字符</th>
+<th>数值</th>
+<th>字符</th>
+<th>数值</th>
+<th>字符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>A</td>
+<td>16</td>
+<td>Q</td>
+<td>32</td>
+<td>g</td>
+<td>48</td>
+<td>w</td>
+</tr>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>17</td>
+<td>R</td>
+<td>33</td>
+<td>h</td>
+<td>49</td>
+<td>x</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C</td>
+<td>18</td>
+<td>S</td>
+<td>34</td>
+<td>i</td>
+<td>50</td>
+<td>y</td>
+</tr>
+<tr>
+<td>3</td>
+<td>D</td>
+<td>19</td>
+<td>T</td>
+<td>35</td>
+<td>j</td>
+<td>51</td>
+<td>z</td>
+</tr>
+<tr>
+<td>4</td>
+<td>E</td>
+<td>20</td>
+<td>U</td>
+<td>36</td>
+<td>k</td>
+<td>52</td>
+<td>0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>F</td>
+<td>21</td>
+<td>V</td>
+<td>37</td>
+<td>l</td>
+<td>53</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>G</td>
+<td>22</td>
+<td>W</td>
+<td>38</td>
+<td>m</td>
+<td>54</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>H</td>
+<td>23</td>
+<td>X</td>
+<td>39</td>
+<td>n</td>
+<td>55</td>
+<td>3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>I</td>
+<td>24</td>
+<td>Y</td>
+<td>40</td>
+<td>o</td>
+<td>56</td>
+<td>4</td>
+</tr>
+<tr>
+<td>9</td>
+<td>J</td>
+<td>25</td>
+<td>Z</td>
+<td>41</td>
+<td>p</td>
+<td>57</td>
+<td>5</td>
+</tr>
+<tr>
+<td>10</td>
+<td>K</td>
+<td>26</td>
+<td>a</td>
+<td>42</td>
+<td>q</td>
+<td>58</td>
+<td>6</td>
+</tr>
+<tr>
+<td>11</td>
+<td>L</td>
+<td>27</td>
+<td>b</td>
+<td>43</td>
+<td>r</td>
+<td>59</td>
+<td>7</td>
+</tr>
+<tr>
+<td>12</td>
+<td>M</td>
+<td>28</td>
+<td>c</td>
+<td>44</td>
+<td>s</td>
+<td>60</td>
+<td>8</td>
+</tr>
+<tr>
+<td>13</td>
+<td>N</td>
+<td>29</td>
+<td>d</td>
+<td>45</td>
+<td>t</td>
+<td>61</td>
+<td>9</td>
+</tr>
+<tr>
+<td>14</td>
+<td>O</td>
+<td>30</td>
+<td>e</td>
+<td>46</td>
+<td>u</td>
+<td>62</td>
+<td>+</td>
+</tr>
+<tr>
+<td>15</td>
+<td>P</td>
+<td>31</td>
+<td>f</td>
+<td>47</td>
+<td>v</td>
+<td>63</td>
+<td>/</td>
+</tr>
+</tbody></table>
+<p>这是一个根据上表进行编码的例子：</p>
+<p><img src="/images/2018-12/1.png" alt></p>
+<p>如果要编码的字节数不能被3整除，最后会多出1个或2个字节，那么可以使用下面的方法进行处理：先使用0字节值在末尾补足，使其能够被3整除，然后再进行Base64的编码。在编码后的Base64文本后加上一个或两个=号，代表补足的字节数。也就是说，当最后剩余两个八位字节（2个byte）时，最后一个6位的Base64字节块有四位是0值，最后附加上两个等号；如果最后剩余一个八位字节（1个byte）时，最后一个6位的Base字节块有两位是0值，最后附加一个等号。可以参考下面的例子：</p>
+<p><img src="/images/2018-12/2.png" alt></p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-12/Base64编码的原理与实现/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-12/十二月天象/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -219,9 +528,7 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-12/十二月天象/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-12/十二月天象/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2018-12/十二月天象/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-12/十二月天象/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -249,7 +556,7 @@ type="text" id="local-search-input">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/Safari顶栏彩虹效果/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -284,9 +591,7 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-11/Safari顶栏彩虹效果/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-11/Safari顶栏彩虹效果/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2018-11/Safari顶栏彩虹效果/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-11/Safari顶栏彩虹效果/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -300,7 +605,7 @@ type="text" id="local-search-input">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/国际单位制基本单位的重新定义/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -335,9 +640,7 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-11/国际单位制基本单位的重新定义/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-11/国际单位制基本单位的重新定义/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2018-11/国际单位制基本单位的重新定义/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-11/国际单位制基本单位的重新定义/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -1315,7 +1618,7 @@ width: 100%
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/在网页上实现3D Touch效果/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1350,9 +1653,7 @@ width: 100%
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-11/在网页上实现3D Touch效果/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-11/在网页上实现3D Touch效果/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2018-11/在网页上实现3D Touch效果/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-11/在网页上实现3D Touch效果/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -1398,56 +1699,6 @@ width: 100%
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/使用示波器播放Bad Apple!!/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-11/使用示波器播放Bad Apple!!/" class="post-title-link" itemprop="url">使用示波器播放Bad Apple!!</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-11-14 10:09:01" itemprop="dateCreated datePublished" datetime="2018-11-14T10:09:01+08:00">2018-11-14</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-comment-o"></i>
-</span>
-<span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-11/使用示波器播放Bad Apple!!/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-11/使用示波器播放Bad Apple!!/" itemprop="commentCount"></span>
-</a>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>本视频于某次物理竞赛集训时拍摄于华中科技大学，音频为后期加上。<br>为了对上音轨，前后各有一段黑屏，这是feature而非bug。敬请欣赏。</p>
-<video src="/files/badapple.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -1463,7 +1714,19 @@ width: 100%
 </div>
 <aside id="sidebar" class="sidebar">
 <div class="sidebar-inner">
-<div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+<ul class="sidebar-nav motion-element">
+<li class="sidebar-nav-toc" data-target="post-toc-wrap">
+文章目录
+</li>
+<li class="sidebar-nav-overview" data-target="site-overview-wrap">
+站点概览
+</li>
+</ul>
+<!--noindex-->
+<div class="post-toc-wrap sidebar-panel">
+</div>
+<!--/noindex-->
+<div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image"
@@ -1475,7 +1738,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">107</span>
+<span class="site-state-item-count">108</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -1497,9 +1760,9 @@ alt="张书樵">
 <i class="fa fa-rss"></i>RSS
 </a>
 </div>
-<div class="links-of-blogroll motion-element links-of-blogroll-inline">
+<div class="links-of-blogroll motion-element">
 <div class="links-of-blogroll-title">
-<i class="fa  fa-fw fa-university"></i>
+<i class="fa fa-fw fa-university"></i>
 链接
 </div>
 <ul class="links-of-blogroll-list">
@@ -1546,7 +1809,7 @@ alt="张书樵">
 </footer>
 <div class="back-to-top">
 <i class="fa fa-arrow-up"></i>
-<span id="scrollpercent"><span>0</span>%</span>
+<span>0%</span>
 </div>
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
@@ -1555,15 +1818,14 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>
 <script src="/js/local-search.js?v=7.3.0"></script>
 <script pjax>
-if ($('body').find('div.pdf').length) {
-NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
-$('body').find('div.pdf').each(function(i, o) {
-PDFObject.embed($(o).attr('target'), $(o), {
+if (document.querySelectorAll('div.pdf').length) {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+document.querySelectorAll('div.pdf').forEach(element => {
+PDFObject.embed(element.getAttribute('target'), element, {
 pdfOpenParams: {
 navpanes: 0,
 toolbar: 0,
@@ -1572,7 +1834,7 @@ pagemode: 'thumbs',
 view: 'FitH'
 },
 PDFJS_URL: '/lib/pdf/web/viewer.html',
-height: $(o).attr('height') || '1000px'
+height: element.getAttribute('height') || '1000px'
 });
 });
 }, window.PDFObject);
@@ -1580,10 +1842,10 @@ height: $(o).attr('height') || '1000px'
 </script>
 <div id="pjax">
 <script>
-NexT.utils.getScript('/lib/Valine.min.js', function() {
+NexT.utils.getScript('/lib/Valine.min.js', () => {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function(item) {
+guest = guest.split(',').filter(item => {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({
@@ -1606,26 +1868,22 @@ path: location.pathname
 <script>
 var pjax = new Pjax({
 selectors: [
-'title',
+'head title',
 '#page-configurations',
 '.content-wrap',
-'.sidebar-inner',
+'.post-toc-wrap',
 '#pjax'
 ],
 switches: {
-'.sidebar-inner': Pjax.switches.innerHTML
+'.post-toc-wrap': Pjax.switches.innerHTML
 },
 analytics: false,
 cacheBust: false,
-scrollTo: !CONFIG.save_scroll
+scrollTo: !CONFIG.bookmark.enable
 });
-$(document).on('pjax:send', function() {
-$('.sidebar-inner').stop().fadeTo('fast', 0);
-CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
-});
-$(document).on('pjax:success', function() {
-$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
-$(o).parent().append($(o).remove());
+window.addEventListener('pjax:success', () => {
+document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+$(element).parent().append($(element).remove());
 });
 // Define Motion Sequence & Bootstrap Motion.
 if (CONFIG.motion.enable) {
@@ -1634,8 +1892,6 @@ NexT.motion.integrator
 .add(NexT.motion.middleWares.postList)
 .bootstrap();
 }
-$('.sidebar-inner .motion-element').css('opacity', 1);
-$('.sidebar-inner').fadeTo('fast', 1);
 NexT.utils.updateSidebarPosition();
 });
 </script>

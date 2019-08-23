@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html class="theme-next gemini" lang="zh-CN">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,18 +24,18 @@ root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
 exturl: false,
-sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-save_scroll: true,
+sidebar: {"position":"left","display":"post","offset":12,"onmobile":true},
 copycode: {"enable":true,"show_result":true,"style":"mac"},
+back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+bookmark: {"enable":false,"color":"#A00","save":"auto"},
 fancybox: false,
 mediumzoom: true,
 lazyload: false,
 pangu: true,
 algolia: {
-applicationID: '',
-apiKey: '',
-indexName: '',
+appID: 'FQJ3L26IH7',
+apiKey: '624be1c1b69d1777c2e70ab857f48ba1',
+indexName: 'Mimi',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
@@ -76,14 +75,8 @@ isArchive: false
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({
-google_ad_client: "ca-pub-8784231462763562",
-enable_page_level_ads: true
-});
-</script>
 <title>米米的博客</title>
+<meta name="generator" content="Hexo 3.9.0">
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -95,7 +88,7 @@ enable_page_level_ads: true
 .use-motion .comments,
 .use-motion .post-header,
 .use-motion .post-body,
-.use-motion .collection-title { opacity: initial; }
+.use-motion .collection-header { opacity: initial; }
 .use-motion .logo,
 .use-motion .site-title,
 .use-motion .site-subtitle {
@@ -108,12 +101,12 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left">
+<div class="container">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
-<div class="custom-logo-site-title">
+<div>
 <a href="/" class="brand" rel="start">
 <span class="logo-line-before"><i></i></span>
 <span class="site-title">米米的博客</span>
@@ -160,22 +153,23 @@ top: initial;
 </ul>
 </nav>
 <div class="site-search">
-<div class="popup search-popup local-search-popup">
-<div class="local-search-header clearfix">
+<div class="popup search-popup">
+<div class="search-header">
 <span class="search-icon">
 <i class="fa fa-search"></i>
 </span>
+<div class="search-input-wrapper">
+<input autocomplete="off" autocorrect="off" autocapitalize="none"
+placeholder="搜索..." spellcheck="false"
+type="text" id="search-input">
+</div>
 <span class="popup-btn-close">
 <i class="fa fa-times-circle"></i>
 </span>
-<div class="local-search-input-wrapper">
-<input autocomplete="off"
-placeholder="搜索..." spellcheck="false"
-type="text" id="local-search-input">
 </div>
+<div id="search-result"></div>
 </div>
-<div id="local-search-result"></div>
-</div>
+<div class="search-pop-overlay"></div>
 </div>
 </div>
 </header>
@@ -184,7 +178,62 @@ type="text" id="local-search-input">
 <div class="content-wrap">
 <div id="content" class="content page-home">
 <section id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/PS制作科幻电路板/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-06/PS制作科幻电路板/" class="post-title-link" itemprop="url">PS制作科幻电路板</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-06-13 19:46:22" itemprop="dateCreated datePublished" datetime="2018-06-13T19:46:22+08:00">2018-06-13</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-06/PS制作科幻电路板/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-06/PS制作科幻电路板/" itemprop="commentCount"></span></a>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>科幻大片里的电路背景看上去是非常复杂的也是非常炫酷的，不过用滤镜来制作却不是很复杂。先把一些纹理处理成网格效果，然后用查找边缘等滤镜加强网络的边缘线条，后期细化一下线条，调整一下颜色即可。</p>
+<p><img src="/images/2018-06/circuit.jpg" alt></p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-06/PS制作科幻电路板/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/Python开发表情包网站/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -219,9 +268,7 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-06/Python开发表情包网站/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-06/Python开发表情包网站/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2018-06/Python开发表情包网站/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-06/Python开发表情包网站/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -247,7 +294,7 @@ type="text" id="local-search-input">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/Crontab定时写法整理/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -282,9 +329,7 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-05/Crontab定时写法整理/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-05/Crontab定时写法整理/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2018-05/Crontab定时写法整理/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-05/Crontab定时写法整理/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -333,7 +378,7 @@ type="text" id="local-search-input">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/博客迁移至Hexo/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -368,9 +413,7 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-05/博客迁移至Hexo/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-05/博客迁移至Hexo/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2018-05/博客迁移至Hexo/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-05/博客迁移至Hexo/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -399,7 +442,7 @@ type="text" id="local-search-input">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/Nginx配置SSL/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -434,9 +477,7 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-05/Nginx配置SSL/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-05/Nginx配置SSL/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2018-05/Nginx配置SSL/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-05/Nginx配置SSL/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -474,75 +515,6 @@ type="text" id="local-search-input">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/有趣的Linux命令行工具/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-05/有趣的Linux命令行工具/" class="post-title-link" itemprop="url">有趣的Linux命令行工具</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-05-13 12:57:19" itemprop="dateCreated datePublished" datetime="2018-05-13T12:57:19+08:00">2018-05-13</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-comment-o"></i>
-</span>
-<span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-05/有趣的Linux命令行工具/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-05/有趣的Linux命令行工具/" itemprop="commentCount"></span>
-</a>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>Linux is fun! Huhhh. OK so you don&#39;t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.<br>Linux是非常有趣的，别不相信——看完这篇文章，你一定会发现Linux系统神奇的用法。<br>请注意，下面部分命令给出了两种包管理软件的安装方式，如果是Debian系的系统，请使用<code>apt</code>，如果是Red Hat系的系统，请使用<code>yum</code>。如果你使用了其他Linux发行版，或使用了其他包管理工具（例如macOS上的brew），可能无法找到所有这些命令。<br><strong>注：为了在代码块中区别输入输出，以<code>$</code>开头的行代表输入，其它行代表输出。</strong></p>
-<h2 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h2><p>命令：curl<br>curl用于互联网传输数据，支持多种协议。通过以下命令可以查看天气：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -4 http://wttr.in</span><br></pre></td></tr></table></figure>
-<h2 id="sl-Steam-Locomotive"><a href="#sl-Steam-Locomotive" class="headerlink" title="sl (Steam Locomotive)"></a>sl (Steam Locomotive)</h2><p>命令：sl（蒸汽机车的缩写）<br>You might be aware of command &#39;ls&#39; the list command and use it frequently to view the contents of a folder but because of miss-typing sometimes you would result in &#39;sl&#39;, how about getting a little fun in terminal and not <code>command not found</code>.<br>你一定知道ls是用来显示文件夹内容的常见命令，但如果不小心打成sl呢？通过包管理工具安装它，你就能看见一辆跑过屏幕的火车，而不是『找不到命令』：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ apt install sl <span class="comment">#In Debian like OS, or aptitude based system</span></span><br><span class="line">$ yum install sl <span class="comment">#In Red Hat like OS, or yum based system</span></span><br><span class="line">$ sl</span><br></pre></td></tr></table></figure>
-<p>This command works even when you type &#39;LS&#39; and not &#39;ls&#39;.</p>
-<video src="/files/ezgif-4-7bb965bfb6.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
-<h2 id="telnet"><a href="#telnet" class="headerlink" title="telnet"></a>telnet</h2><p>命令：telnet<br>No! No!! it is not as much complex as it seems. You would be familiar with telnet. Telnet is a text-oriented bidirectional network protocol over network. Here is nothing to be installed. What you should have is a Linux box and a working Internet.<br>不！它并不像看上去那样复杂。你会熟悉它的。Telnet是一个基于文本的双向网络协议。你无需安装它，只需要一台能够联网的linux机器就行。<br>输入以下命令即可观看ASCII版星球大战：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ telnet towel.blinkenlights.nl</span><br></pre></td></tr></table></figure>
-<p>而以下命令将会在你的命令行中生成一个ASCII世界地图：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ telnet mapscii.me</span><br></pre></td></tr></table></figure>
-<p>是不是很有趣？</p>
-<h2 id="fortune"><a href="#fortune" class="headerlink" title="fortune"></a>fortune</h2><p>命令：fortune What about getting your random fortune, sometimes funny in<br>terminal.<br>在终端获取随机的人生经验，听上去不错吧？</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ apt install fortune</span><br><span class="line">$ yum install fortune</span><br><span class="line">$ fortune</span><br><span class="line"></span><br><span class="line">You<span class="string">'re not my type.  For that matter, you'</span>re not even my species!!!</span><br><span class="line">Future looks spotty.  You will spill soup <span class="keyword">in</span> late evening.</span><br><span class="line">You worry too much about your job.  Stop it.  You are not paid enough to worry.</span><br><span class="line">Your love life will be... interesting.</span><br></pre></td></tr></table></figure>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-05/有趣的Linux命令行工具/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -558,7 +530,19 @@ type="text" id="local-search-input">
 </div>
 <aside id="sidebar" class="sidebar">
 <div class="sidebar-inner">
-<div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+<ul class="sidebar-nav motion-element">
+<li class="sidebar-nav-toc" data-target="post-toc-wrap">
+文章目录
+</li>
+<li class="sidebar-nav-overview" data-target="site-overview-wrap">
+站点概览
+</li>
+</ul>
+<!--noindex-->
+<div class="post-toc-wrap sidebar-panel">
+</div>
+<!--/noindex-->
+<div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image"
@@ -570,7 +554,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">107</span>
+<span class="site-state-item-count">108</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -592,9 +576,9 @@ alt="张书樵">
 <i class="fa fa-rss"></i>RSS
 </a>
 </div>
-<div class="links-of-blogroll motion-element links-of-blogroll-inline">
+<div class="links-of-blogroll motion-element">
 <div class="links-of-blogroll-title">
-<i class="fa  fa-fw fa-university"></i>
+<i class="fa fa-fw fa-university"></i>
 链接
 </div>
 <ul class="links-of-blogroll-list">
@@ -641,7 +625,7 @@ alt="张书樵">
 </footer>
 <div class="back-to-top">
 <i class="fa fa-arrow-up"></i>
-<span id="scrollpercent"><span>0</span>%</span>
+<span>0%</span>
 </div>
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
@@ -650,15 +634,14 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>
 <script src="/js/local-search.js?v=7.3.0"></script>
 <script pjax>
-if ($('body').find('div.pdf').length) {
-NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
-$('body').find('div.pdf').each(function(i, o) {
-PDFObject.embed($(o).attr('target'), $(o), {
+if (document.querySelectorAll('div.pdf').length) {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+document.querySelectorAll('div.pdf').forEach(element => {
+PDFObject.embed(element.getAttribute('target'), element, {
 pdfOpenParams: {
 navpanes: 0,
 toolbar: 0,
@@ -667,7 +650,7 @@ pagemode: 'thumbs',
 view: 'FitH'
 },
 PDFJS_URL: '/lib/pdf/web/viewer.html',
-height: $(o).attr('height') || '1000px'
+height: element.getAttribute('height') || '1000px'
 });
 });
 }, window.PDFObject);
@@ -675,10 +658,10 @@ height: $(o).attr('height') || '1000px'
 </script>
 <div id="pjax">
 <script>
-NexT.utils.getScript('/lib/Valine.min.js', function() {
+NexT.utils.getScript('/lib/Valine.min.js', () => {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function(item) {
+guest = guest.split(',').filter(item => {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({
@@ -701,26 +684,22 @@ path: location.pathname
 <script>
 var pjax = new Pjax({
 selectors: [
-'title',
+'head title',
 '#page-configurations',
 '.content-wrap',
-'.sidebar-inner',
+'.post-toc-wrap',
 '#pjax'
 ],
 switches: {
-'.sidebar-inner': Pjax.switches.innerHTML
+'.post-toc-wrap': Pjax.switches.innerHTML
 },
 analytics: false,
 cacheBust: false,
-scrollTo: !CONFIG.save_scroll
+scrollTo: !CONFIG.bookmark.enable
 });
-$(document).on('pjax:send', function() {
-$('.sidebar-inner').stop().fadeTo('fast', 0);
-CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
-});
-$(document).on('pjax:success', function() {
-$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
-$(o).parent().append($(o).remove());
+window.addEventListener('pjax:success', () => {
+document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+$(element).parent().append($(element).remove());
 });
 // Define Motion Sequence & Bootstrap Motion.
 if (CONFIG.motion.enable) {
@@ -729,8 +708,6 @@ NexT.motion.integrator
 .add(NexT.motion.middleWares.postList)
 .bootstrap();
 }
-$('.sidebar-inner .motion-element').css('opacity', 1);
-$('.sidebar-inner').fadeTo('fast', 1);
 NexT.utils.updateSidebarPosition();
 });
 </script>

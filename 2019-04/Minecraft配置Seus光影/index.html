@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html class="theme-next gemini" lang="zh-CN">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,18 +24,18 @@ root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
 exturl: false,
-sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-save_scroll: true,
+sidebar: {"position":"left","display":"post","offset":12,"onmobile":true},
 copycode: {"enable":true,"show_result":true,"style":"mac"},
+back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+bookmark: {"enable":false,"color":"#A00","save":"auto"},
 fancybox: false,
 mediumzoom: true,
 lazyload: false,
 pangu: true,
 algolia: {
-applicationID: '',
-apiKey: '',
-indexName: '',
+appID: 'FQJ3L26IH7',
+apiKey: '624be1c1b69d1777c2e70ab857f48ba1',
+indexName: 'Mimi',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
@@ -50,13 +49,13 @@ copy_failure: '复制失败'
 }
 };
 </script>
-<meta name="description" content="准备工作下面列出了博主测试成功的环境，使用其它的版本可能出现不可预料的情况。 硬件 图形卡由于Seus光影对计算机的图形性能有较高的要求，博主使用了一块NVIDIA GeForce RTX 2070显卡进行测试。根据作者的描述，20系和10系显卡对Seus光影的支持没有本质区别。因此，你也可以选择其它型号的N卡，运行起来不会有大问题。不过，根据一些Minecraft论坛的反馈，A卡和I卡可能无法支">
+<meta name="description" content="准备工作下面列出了博主测试成功的环境，使用其它的版本可能出现不可预料的情况。 硬件 图形卡由于Seus光影对计算机的图形性能有较高的要求，博主使用了一块NVIDIA GeForce RTX 2070显卡进行测试。根据作者的描述，20系和10系显卡对Seus光影的支持没有本质区别（除了RTX加持）；因此，你也可以选择其它型号的N卡，运行起来不会有影响。不过，根据一些Minecraft论坛的反馈，A卡">
 <meta name="keywords" content="我的世界">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Minecraft配置Seus光影">
 <meta property="og:url" content="https://zhangshuqiao.org/2019-04/Minecraft配置Seus光影/index.html">
 <meta property="og:site_name" content="米米的博客">
-<meta property="og:description" content="准备工作下面列出了博主测试成功的环境，使用其它的版本可能出现不可预料的情况。 硬件 图形卡由于Seus光影对计算机的图形性能有较高的要求，博主使用了一块NVIDIA GeForce RTX 2070显卡进行测试。根据作者的描述，20系和10系显卡对Seus光影的支持没有本质区别。因此，你也可以选择其它型号的N卡，运行起来不会有大问题。不过，根据一些Minecraft论坛的反馈，A卡和I卡可能无法支">
+<meta property="og:description" content="准备工作下面列出了博主测试成功的环境，使用其它的版本可能出现不可预料的情况。 硬件 图形卡由于Seus光影对计算机的图形性能有较高的要求，博主使用了一块NVIDIA GeForce RTX 2070显卡进行测试。根据作者的描述，20系和10系显卡对Seus光影的支持没有本质区别（除了RTX加持）；因此，你也可以选择其它型号的N卡，运行起来不会有影响。不过，根据一些Minecraft论坛的反馈，A卡">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2019-04/seus1.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2019-04/seus2.png">
@@ -68,10 +67,10 @@ copy_failure: '复制失败'
 <meta property="og:image" content="https://zhangshuqiao.org/images/2019-04/screenshot2.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2019-04/screenshot3.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2019-04/screenshot4.png">
-<meta property="og:updated_time" content="2019-05-04T03:23:34.055Z">
+<meta property="og:updated_time" content="2019-08-13T08:51:59.483Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Minecraft配置Seus光影">
-<meta name="twitter:description" content="准备工作下面列出了博主测试成功的环境，使用其它的版本可能出现不可预料的情况。 硬件 图形卡由于Seus光影对计算机的图形性能有较高的要求，博主使用了一块NVIDIA GeForce RTX 2070显卡进行测试。根据作者的描述，20系和10系显卡对Seus光影的支持没有本质区别。因此，你也可以选择其它型号的N卡，运行起来不会有大问题。不过，根据一些Minecraft论坛的反馈，A卡和I卡可能无法支">
+<meta name="twitter:description" content="准备工作下面列出了博主测试成功的环境，使用其它的版本可能出现不可预料的情况。 硬件 图形卡由于Seus光影对计算机的图形性能有较高的要求，博主使用了一块NVIDIA GeForce RTX 2070显卡进行测试。根据作者的描述，20系和10系显卡对Seus光影的支持没有本质区别（除了RTX加持）；因此，你也可以选择其它型号的N卡，运行起来不会有影响。不过，根据一些Minecraft论坛的反馈，A卡">
 <meta name="twitter:image" content="https://zhangshuqiao.org/images/2019-04/seus1.png">
 <link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <script id="page-configurations">
@@ -88,14 +87,8 @@ isArchive: false
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({
-google_ad_client: "ca-pub-8784231462763562",
-enable_page_level_ads: true
-});
-</script>
 <title>Minecraft配置Seus光影 | 米米的博客</title>
+<meta name="generator" content="Hexo 3.9.0">
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -107,7 +100,7 @@ enable_page_level_ads: true
 .use-motion .comments,
 .use-motion .post-header,
 .use-motion .post-body,
-.use-motion .collection-title { opacity: initial; }
+.use-motion .collection-header { opacity: initial; }
 .use-motion .logo,
 .use-motion .site-title,
 .use-motion .site-subtitle {
@@ -120,12 +113,12 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left">
+<div class="container">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
-<div class="custom-logo-site-title">
+<div>
 <a href="/" class="brand" rel="start">
 <span class="logo-line-before"><i></i></span>
 <span class="site-title">米米的博客</span>
@@ -172,22 +165,23 @@ top: initial;
 </ul>
 </nav>
 <div class="site-search">
-<div class="popup search-popup local-search-popup">
-<div class="local-search-header clearfix">
+<div class="popup search-popup">
+<div class="search-header">
 <span class="search-icon">
 <i class="fa fa-search"></i>
 </span>
+<div class="search-input-wrapper">
+<input autocomplete="off" autocorrect="off" autocapitalize="none"
+placeholder="搜索..." spellcheck="false"
+type="text" id="search-input">
+</div>
 <span class="popup-btn-close">
 <i class="fa fa-times-circle"></i>
 </span>
-<div class="local-search-input-wrapper">
-<input autocomplete="off"
-placeholder="搜索..." spellcheck="false"
-type="text" id="local-search-input">
 </div>
+<div id="search-result"></div>
 </div>
-<div id="local-search-result"></div>
-</div>
+<div class="search-pop-overlay"></div>
 </div>
 </div>
 </header>
@@ -196,7 +190,7 @@ type="text" id="local-search-input">
 <div class="content-wrap">
 <div id="content" class="content page-post-detail">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-04/Minecraft配置Seus光影/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -237,16 +231,14 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2019-04/Minecraft配置Seus光影/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2019-04/Minecraft配置Seus光影/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2019-04/Minecraft配置Seus光影/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-04/Minecraft配置Seus光影/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>下面列出了博主测试成功的环境，使用其它的版本可能出现不可预料的情况。</p>
 <h3 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h3><ul>
-<li><p>图形卡<br>由于Seus光影对计算机的图形性能有较高的要求，博主使用了一块NVIDIA GeForce RTX 2070显卡进行测试。根据作者的描述，20系和10系显卡对Seus光影的支持没有本质区别。因此，你也可以选择其它型号的N卡，运行起来不会有大问题。不过，根据一些Minecraft论坛的反馈，A卡和I卡可能无法支持。</p>
+<li><p>图形卡<br>由于Seus光影对计算机的图形性能有较高的要求，博主使用了一块NVIDIA GeForce RTX 2070显卡进行测试。根据作者的描述，20系和10系显卡对Seus光影的支持没有本质区别（除了RTX加持）；因此，你也可以选择其它型号的N卡，运行起来不会有影响。不过，根据一些Minecraft论坛的反馈，A卡和I卡可能无法正常渲染此光影。</p>
 </li>
 <li><p>其它<br>其它硬件达到主流配置即可，Minecraft对性能没有什么苛求。如果上卡吧标配的话，流畅玩耍一定没有什么问题。</p>
 </li>
@@ -254,7 +246,7 @@ type="text" id="local-search-input">
 <h3 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h3><ul>
 <li><p>Windows系统<br>由于macOS Mojave的N卡驱动迟迟没有更新（据说是苹果已经抛弃了N卡，未来很有可能不会再更新驱动），因而需要在其它系统上运行。博主使用的是Windows 10。Linux原理上也是可以的，不过博主并没有尝试。</p>
 </li>
-<li><p>JAVA环境<br>Minecraft JAVA版自然需要JAVA的支持。由于后面用到的启动器对JAVA9及以上版本的支持不佳，博主推荐安装JAVA SE 8。可以到<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">Oracle官网</a>下载。测试使用的是JDK1.8.0_211。</p>
+<li><p>JAVA环境<br>Minecraft JAVA版自然需要JAVA的环境。由于后面用到的启动器对JAVA9及以上版本的支持不佳，博主推荐安装JAVA SE 8。可以到<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">Oracle官网</a>下载。测试使用的是JDK1.8.0_211。</p>
 </li>
 <li><p>HMCL启动器<br>你可以从GitHub上<a href="https://github.com/huanghongxun/HMCL/releases" target="_blank" rel="noopener">获取HMCL启动器</a>，下载<code>exe</code>版本即可。博主使用的是发稿前的最新版本3.2.129，后面的步骤也以该版本为例。</p>
 </li>
@@ -350,13 +342,20 @@ MySQL重置AUTO_INCREMENT <i class="fa fa-chevron-right"></i>
 <aside id="sidebar" class="sidebar">
 <div class="sidebar-inner">
 <ul class="sidebar-nav motion-element">
-<li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+<li class="sidebar-nav-toc" data-target="post-toc-wrap">
 文章目录
 </li>
 <li class="sidebar-nav-overview" data-target="site-overview-wrap">
 站点概览
 </li>
 </ul>
+<!--noindex-->
+<div class="post-toc-wrap sidebar-panel">
+<div class="post-toc">
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#硬件"><span class="nav-number">1.1.</span> <span class="nav-text">硬件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件"><span class="nav-number">1.2.</span> <span class="nav-text">软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Minecraft"><span class="nav-number">2.1.</span> <span class="nav-text">安装Minecraft</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装光影和材质"><span class="nav-number">2.2.</span> <span class="nav-text">安装光影和材质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">3.</span> <span class="nav-text">启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置光影"><span class="nav-number">3.1.</span> <span class="nav-text">设置光影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置材质"><span class="nav-number">3.2.</span> <span class="nav-text">设置材质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效果"><span class="nav-number">4.</span> <span class="nav-text">效果</span></a></li></ol></div>
+</div>
+</div>
+<!--/noindex-->
 <div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -369,7 +368,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">107</span>
+<span class="site-state-item-count">108</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -391,9 +390,9 @@ alt="张书樵">
 <i class="fa fa-rss"></i>RSS
 </a>
 </div>
-<div class="links-of-blogroll motion-element links-of-blogroll-inline">
+<div class="links-of-blogroll motion-element">
 <div class="links-of-blogroll-title">
-<i class="fa  fa-fw fa-university"></i>
+<i class="fa fa-fw fa-university"></i>
 链接
 </div>
 <ul class="links-of-blogroll-list">
@@ -407,13 +406,6 @@ alt="张书樵">
 </div>
 </div>
 </div>
-<!--noindex-->
-<div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-<div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#硬件"><span class="nav-number">1.1.</span> <span class="nav-text">硬件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件"><span class="nav-number">1.2.</span> <span class="nav-text">软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Minecraft"><span class="nav-number">2.1.</span> <span class="nav-text">安装Minecraft</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装光影和材质"><span class="nav-number">2.2.</span> <span class="nav-text">安装光影和材质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">3.</span> <span class="nav-text">启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置光影"><span class="nav-number">3.1.</span> <span class="nav-text">设置光影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置材质"><span class="nav-number">3.2.</span> <span class="nav-text">设置材质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效果"><span class="nav-number">4.</span> <span class="nav-text">效果</span></a></li></ol></div>
-</div>
-</div>
-<!--/noindex-->
 </div>
 </aside>
 <div id="sidebar-dimmer"></div>
@@ -447,7 +439,7 @@ alt="张书樵">
 </footer>
 <div class="back-to-top">
 <i class="fa fa-arrow-up"></i>
-<span id="scrollpercent"><span>0</span>%</span>
+<span>0%</span>
 </div>
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
@@ -456,15 +448,14 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>
 <script src="/js/local-search.js?v=7.3.0"></script>
 <script pjax>
-if ($('body').find('div.pdf').length) {
-NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
-$('body').find('div.pdf').each(function(i, o) {
-PDFObject.embed($(o).attr('target'), $(o), {
+if (document.querySelectorAll('div.pdf').length) {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+document.querySelectorAll('div.pdf').forEach(element => {
+PDFObject.embed(element.getAttribute('target'), element, {
 pdfOpenParams: {
 navpanes: 0,
 toolbar: 0,
@@ -473,20 +464,19 @@ pagemode: 'thumbs',
 view: 'FitH'
 },
 PDFJS_URL: '/lib/pdf/web/viewer.html',
-height: $(o).attr('height') || '1000px'
+height: element.getAttribute('height') || '1000px'
 });
 });
 }, window.PDFObject);
 }
 </script>
 <div id="pjax">
-<script src="/js/scrollspy.js?v=7.3.0"></script>
 <script src="/js/post-details.js?v=7.3.0"></script>
 <script>
-NexT.utils.getScript('/lib/Valine.min.js', function() {
+NexT.utils.getScript('/lib/Valine.min.js', () => {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function(item) {
+guest = guest.split(',').filter(item => {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({
@@ -509,26 +499,22 @@ path: location.pathname
 <script>
 var pjax = new Pjax({
 selectors: [
-'title',
+'head title',
 '#page-configurations',
 '.content-wrap',
-'.sidebar-inner',
+'.post-toc-wrap',
 '#pjax'
 ],
 switches: {
-'.sidebar-inner': Pjax.switches.innerHTML
+'.post-toc-wrap': Pjax.switches.innerHTML
 },
 analytics: false,
 cacheBust: false,
-scrollTo: !CONFIG.save_scroll
+scrollTo: !CONFIG.bookmark.enable
 });
-$(document).on('pjax:send', function() {
-$('.sidebar-inner').stop().fadeTo('fast', 0);
-CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
-});
-$(document).on('pjax:success', function() {
-$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
-$(o).parent().append($(o).remove());
+window.addEventListener('pjax:success', () => {
+document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+$(element).parent().append($(element).remove());
 });
 // Define Motion Sequence & Bootstrap Motion.
 if (CONFIG.motion.enable) {
@@ -537,8 +523,6 @@ NexT.motion.integrator
 .add(NexT.motion.middleWares.postList)
 .bootstrap();
 }
-$('.sidebar-inner .motion-element').css('opacity', 1);
-$('.sidebar-inner').fadeTo('fast', 1);
 NexT.utils.updateSidebarPosition();
 });
 </script>

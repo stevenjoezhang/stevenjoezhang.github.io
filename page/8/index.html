@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html class="theme-next gemini" lang="zh-CN">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,18 +24,18 @@ root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
 exturl: false,
-sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-save_scroll: true,
+sidebar: {"position":"left","display":"post","offset":12,"onmobile":true},
 copycode: {"enable":true,"show_result":true,"style":"mac"},
+back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+bookmark: {"enable":false,"color":"#A00","save":"auto"},
 fancybox: false,
 mediumzoom: true,
 lazyload: false,
 pangu: true,
 algolia: {
-applicationID: '',
-apiKey: '',
-indexName: '',
+appID: 'FQJ3L26IH7',
+apiKey: '624be1c1b69d1777c2e70ab857f48ba1',
+indexName: 'Mimi',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
@@ -76,14 +75,8 @@ isArchive: false
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({
-google_ad_client: "ca-pub-8784231462763562",
-enable_page_level_ads: true
-});
-</script>
 <title>米米的博客</title>
+<meta name="generator" content="Hexo 3.9.0">
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -95,7 +88,7 @@ enable_page_level_ads: true
 .use-motion .comments,
 .use-motion .post-header,
 .use-motion .post-body,
-.use-motion .collection-title { opacity: initial; }
+.use-motion .collection-header { opacity: initial; }
 .use-motion .logo,
 .use-motion .site-title,
 .use-motion .site-subtitle {
@@ -108,12 +101,12 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left">
+<div class="container">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
-<div class="custom-logo-site-title">
+<div>
 <a href="/" class="brand" rel="start">
 <span class="logo-line-before"><i></i></span>
 <span class="site-title">米米的博客</span>
@@ -160,22 +153,23 @@ top: initial;
 </ul>
 </nav>
 <div class="site-search">
-<div class="popup search-popup local-search-popup">
-<div class="local-search-header clearfix">
+<div class="popup search-popup">
+<div class="search-header">
 <span class="search-icon">
 <i class="fa fa-search"></i>
 </span>
+<div class="search-input-wrapper">
+<input autocomplete="off" autocorrect="off" autocapitalize="none"
+placeholder="搜索..." spellcheck="false"
+type="text" id="search-input">
+</div>
 <span class="popup-btn-close">
 <i class="fa fa-times-circle"></i>
 </span>
-<div class="local-search-input-wrapper">
-<input autocomplete="off"
-placeholder="搜索..." spellcheck="false"
-type="text" id="local-search-input">
 </div>
+<div id="search-result"></div>
 </div>
-<div id="local-search-result"></div>
-</div>
+<div class="search-pop-overlay"></div>
 </div>
 </div>
 </header>
@@ -184,7 +178,55 @@ type="text" id="local-search-input">
 <div class="content-wrap">
 <div id="content" class="content page-home">
 <section id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/使用示波器播放Bad Apple!!/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-11/使用示波器播放Bad Apple!!/" class="post-title-link" itemprop="url">使用示波器播放Bad Apple!!</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-11-14 10:09:01" itemprop="dateCreated datePublished" datetime="2018-11-14T10:09:01+08:00">2018-11-14</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-11/使用示波器播放Bad Apple!!/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-11/使用示波器播放Bad Apple!!/" itemprop="commentCount"></span></a>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>本视频于某次物理竞赛集训时拍摄于华中科技大学，音频为后期加上。<br>为了对上音轨，前后各有一段黑屏，这是feature而非bug。敬请欣赏。</p>
+<video src="/files/badapple.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-11/用Telnet观看Nyancat动画/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -219,9 +261,7 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-11/用Telnet观看Nyancat动画/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-11/用Telnet观看Nyancat动画/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2018-11/用Telnet观看Nyancat动画/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-11/用Telnet观看Nyancat动画/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -248,7 +288,7 @@ type="text" id="local-search-input">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-10/Heavens Above爬虫的实现/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -283,9 +323,7 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-10/Heavens Above爬虫的实现/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-10/Heavens Above爬虫的实现/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2018-10/Heavens Above爬虫的实现/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-10/Heavens Above爬虫的实现/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -300,7 +338,7 @@ type="text" id="local-search-input">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-10/Thanks for inventing Javascript/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -335,9 +373,7 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-10/Thanks for inventing Javascript/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-10/Thanks for inventing Javascript/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2018-10/Thanks for inventing Javascript/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-10/Thanks for inventing Javascript/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -349,7 +385,7 @@ type="text" id="local-search-input">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-10/使用OpenCV进行星轨的后期处理/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -384,9 +420,7 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-10/使用OpenCV进行星轨的后期处理/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-10/使用OpenCV进行星轨的后期处理/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2018-10/使用OpenCV进行星轨的后期处理/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-10/使用OpenCV进行星轨的后期处理/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -396,67 +430,6 @@ type="text" id="local-search-input">
 <hr>
 <p>参考文章：<br><a href="https://blog.csdn.net/zh_jessica/article/details/77992578" target="_blank" rel="noopener">Python-OpenCV 图像叠加or图像混合加权</a><br><a href="https://blog.csdn.net/aa846555831/article/details/53070314" target="_blank" rel="noopener">python + opencv 将图片保存为视频</a></p>
 <p>拓展阅读：<a href="http://www.imgzone.cn/article-377-1.html" target="_blank" rel="noopener">叠加法星轨的拍摄及后期方法</a></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-10/古惑狼游戏牵扯出的硬件bug/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-10/古惑狼游戏牵扯出的硬件bug/" class="post-title-link" itemprop="url">古惑狼游戏牵扯出的硬件bug</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-10-04 08:41:46" itemprop="dateCreated datePublished" datetime="2018-10-04T08:41:46+08:00">2018-10-04</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-comment-o"></i>
-</span>
-<span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-10/古惑狼游戏牵扯出的硬件bug/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-10/古惑狼游戏牵扯出的硬件bug/" itemprop="commentCount"></span>
-</a>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>It&#39;s kind of painful to re-live this one. As a programmer, you learn to blame your code first, second, and third... and somewhere around 10,000th you blame the compiler. Well down the list after that, you blame the hardware.<br>回想起这个bug，仍然让我感觉有些痛苦。作为一个程序员，在发现bug时，你学会了首先在自己代码中找问题，一次、两次、三次……或许在测试一万次之后，你会把问题归咎于编译器。只有在这所有的都不起作用之后，你才会把问题归咎于硬件。</p>
-<p>This is my hardware bug story.<br>这是我遭遇硬件bug的故事。</p>
-<p>Among other things, I wrote the memory card (load/save) code for Crash Bandicoot. For a swaggering game coder, this is like a walk in the park; I expected it would take a few days. I ended up debugging that code for six weeks. I did other stuff during that time, but I kept coming back to this bug -- a few hours every few days. It was agonizing.<br>抛开别的不说，我曾为古惑狼（Crash Bandicoot，PS1游戏）写存储卡（读写）代码。对于一个自大的游戏程序员，这就像是在公园里散步一样轻松愉快；我预计只要几天就可以写完。我最终用了六个礼拜把那些代码调试完毕。在此期间我也做过一些其他的事情，但却一直绕不开这个bug——每几天内就要花上好几个小时来处理。这个bug实在烦人。</p>
-<p>The symptom was that you&#39;d go to save your progress and it would access the memory card, and almost all the time, it worked normally... But every once in a while the write or read would time out... for no obvious reason. A short write would often corrupt the memory card. The player would go to save, and not only would we not save, we&#39;d wipe their memory card. D&#39;Oh.<br>这个bug的症状是，当你需要保存你的进度时，代码会访问存储卡，而大部分情况下没有什么问题…但是偶尔读写会超时…没有任何明显的原因。一个简短的写入经常毁掉存储卡。玩家要保存进度，我们不仅不保存，还擦除他们存储卡上的全部东西。天哪。</p>
-<p>After a while, our producer at Sony, Connie Booth, began to panic. We obviously couldn&#39;t ship the game with that bug, and after six weeks I still had no clue what the problem was. Via Connie we put the word out to other PlayStation 1 developers -- had anybody seen anything like this? Nope. Absolutely nobody had any problems with the memory card system.<br>过了一段时间，我们在Sony的制作人Connie Booth慌了。我们显然不能发布带有这个bug游戏，而六个星期之后我对于问题出在哪一点线索都没有。通过Connie我们向其他PS1开发者求助：有没有人出现过像我们这样的情况？没有。绝对没有任何人在存储卡系统上出现任何问题。</p>
-<p>About the only thing you can do when you run out of ideas debugging is divide and conquer: keep removing more and more of the errant program&#39;s code until you&#39;re left with something relatively small that still exhibits the problem. You keep carving parts away until the only stuff left is where the bug is.<br>在你绞尽脑汁之后，你能做的唯一一个调试方法就是分而治之：一点点去除错误程序中的代码，直到留下的代码相对很少，但仍然表现出问题。像雕刻一样去除没有问题的代码，留下的就是你的bug所在。</p>
-<!--noindex-->
-<div class="post-button text-center">
-<a class="btn" href="/2018-10/古惑狼游戏牵扯出的硬件bug/#more" rel="contents">
-阅读全文 &raquo;
-</a>
-</div>
-<!--/noindex-->
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
@@ -478,7 +451,19 @@ type="text" id="local-search-input">
 </div>
 <aside id="sidebar" class="sidebar">
 <div class="sidebar-inner">
-<div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+<ul class="sidebar-nav motion-element">
+<li class="sidebar-nav-toc" data-target="post-toc-wrap">
+文章目录
+</li>
+<li class="sidebar-nav-overview" data-target="site-overview-wrap">
+站点概览
+</li>
+</ul>
+<!--noindex-->
+<div class="post-toc-wrap sidebar-panel">
+</div>
+<!--/noindex-->
+<div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image"
@@ -490,7 +475,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">107</span>
+<span class="site-state-item-count">108</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -512,9 +497,9 @@ alt="张书樵">
 <i class="fa fa-rss"></i>RSS
 </a>
 </div>
-<div class="links-of-blogroll motion-element links-of-blogroll-inline">
+<div class="links-of-blogroll motion-element">
 <div class="links-of-blogroll-title">
-<i class="fa  fa-fw fa-university"></i>
+<i class="fa fa-fw fa-university"></i>
 链接
 </div>
 <ul class="links-of-blogroll-list">
@@ -561,7 +546,7 @@ alt="张书樵">
 </footer>
 <div class="back-to-top">
 <i class="fa fa-arrow-up"></i>
-<span id="scrollpercent"><span>0</span>%</span>
+<span>0%</span>
 </div>
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
@@ -570,15 +555,14 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>
 <script src="/js/local-search.js?v=7.3.0"></script>
 <script pjax>
-if ($('body').find('div.pdf').length) {
-NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
-$('body').find('div.pdf').each(function(i, o) {
-PDFObject.embed($(o).attr('target'), $(o), {
+if (document.querySelectorAll('div.pdf').length) {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+document.querySelectorAll('div.pdf').forEach(element => {
+PDFObject.embed(element.getAttribute('target'), element, {
 pdfOpenParams: {
 navpanes: 0,
 toolbar: 0,
@@ -587,7 +571,7 @@ pagemode: 'thumbs',
 view: 'FitH'
 },
 PDFJS_URL: '/lib/pdf/web/viewer.html',
-height: $(o).attr('height') || '1000px'
+height: element.getAttribute('height') || '1000px'
 });
 });
 }, window.PDFObject);
@@ -595,10 +579,10 @@ height: $(o).attr('height') || '1000px'
 </script>
 <div id="pjax">
 <script>
-NexT.utils.getScript('/lib/Valine.min.js', function() {
+NexT.utils.getScript('/lib/Valine.min.js', () => {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function(item) {
+guest = guest.split(',').filter(item => {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({
@@ -621,26 +605,22 @@ path: location.pathname
 <script>
 var pjax = new Pjax({
 selectors: [
-'title',
+'head title',
 '#page-configurations',
 '.content-wrap',
-'.sidebar-inner',
+'.post-toc-wrap',
 '#pjax'
 ],
 switches: {
-'.sidebar-inner': Pjax.switches.innerHTML
+'.post-toc-wrap': Pjax.switches.innerHTML
 },
 analytics: false,
 cacheBust: false,
-scrollTo: !CONFIG.save_scroll
+scrollTo: !CONFIG.bookmark.enable
 });
-$(document).on('pjax:send', function() {
-$('.sidebar-inner').stop().fadeTo('fast', 0);
-CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
-});
-$(document).on('pjax:success', function() {
-$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
-$(o).parent().append($(o).remove());
+window.addEventListener('pjax:success', () => {
+document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+$(element).parent().append($(element).remove());
 });
 // Define Motion Sequence & Bootstrap Motion.
 if (CONFIG.motion.enable) {
@@ -649,8 +629,6 @@ NexT.motion.integrator
 .add(NexT.motion.middleWares.postList)
 .bootstrap();
 }
-$('.sidebar-inner .motion-element').css('opacity', 1);
-$('.sidebar-inner').fadeTo('fast', 1);
 NexT.utils.updateSidebarPosition();
 });
 </script>

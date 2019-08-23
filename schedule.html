@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
+<script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+<script id="hexo-configurations">
+var NexT = window.NexT || {};
+var CONFIG = {
+root: '/',
+scheme: 'Gemini',
+version: '7.3.0',
+exturl: false,
+sidebar: {"position":"left","display":"post","offset":12,"onmobile":true},
+copycode: {"enable":true,"show_result":true,"style":"mac"},
+back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+bookmark: {"enable":false,"color":"#A00","save":"auto"},
+fancybox: false,
+mediumzoom: true,
+lazyload: false,
+pangu: true,
+algolia: {
+appID: 'FQJ3L26IH7',
+apiKey: '624be1c1b69d1777c2e70ab857f48ba1',
+indexName: 'Mimi',
+hits: {"per_page":10},
+labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+},
+localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
+path: 'search.json',
+motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+translation: {
+copy_button: '复制',
+copy_success: '复制成功',
+copy_failure: '复制失败'
+}
+};
+</script>
+<meta name="description" content="力电声光热，涵尽学海无涯">
+<meta name="keywords" content="个人博客,物理,技术,计算机">
+<meta property="og:type" content="website">
+<meta property="og:title" content="标签">
+<meta property="og:url" content="https://zhangshuqiao.org/schedule.html">
+<meta property="og:site_name" content="米米的博客">
+<meta property="og:description" content="力电声光热，涵尽学海无涯">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-22T23:28:45.833Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="标签">
+<meta name="twitter:description" content="力电声光热，涵尽学海无涯">
+<link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
+<script id="page-configurations">
+// https://hexo.io/docs/variables.html
+CONFIG.page = {
+sidebar: "",
+isHome: false,
+isPost: false,
+isPage: true,
+isArchive: false
+};
+</script>
+<link rel="stylesheet" href="/lib/waifu/waifu.css">
+<script src="/lib/waifu/live2d.min.js"></script>
+<script src="/lib/waifu/waifu-tips.js"></script>
+<script src="/lib/custom.js"></script>
+<title>标签 | 米米的博客</title>
+<meta name="generator" content="Hexo 3.9.0">
+<noscript>
+<style>
+.use-motion .motion-element,
+.use-motion .brand,
+.use-motion .menu-item,
+.sidebar-inner,
+.use-motion .post-block,
+.use-motion .pagination,
+.use-motion .comments,
+.use-motion .post-header,
+.use-motion .post-body,
+.use-motion .collection-header { opacity: initial; }
+.use-motion .logo,
+.use-motion .site-title,
+.use-motion .site-subtitle {
+opacity: initial;
+top: initial;
+}
+.use-motion .logo-line-before i { left: initial; }
+.use-motion .logo-line-after i { right: initial; }
+</style>
+</noscript>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<div class="container">
+<div class="headband"></div>
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+<div class="header-inner"><div class="site-brand-wrapper">
+<div class="site-meta">
+<div>
+<a href="/" class="brand" rel="start">
+<span class="logo-line-before"><i></i></span>
+<span class="site-title">米米的博客</span>
+<span class="logo-line-after"><i></i></span>
+</a>
+</div>
+<p class="site-subtitle">做了一点微小的工作</p>
+</div>
+<div class="site-nav-toggle">
+<button aria-label="切换导航栏">
+<span class="btn-bar"></span>
+<span class="btn-bar"></span>
+<span class="btn-bar"></span>
+</button>
+</div>
+</div>
+<nav class="site-nav">
+<ul id="menu" class="menu">
+<li class="menu-item menu-item-home">
+<a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+</li>
+<li class="menu-item menu-item-archives">
+<a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+</li>
+<li class="menu-item menu-item-about">
+<a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>关于</a>
+</li>
+<li class="menu-item menu-item-categories">
+<a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+</li>
+<li class="menu-item menu-item-tags">
+<a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+</li>
+<li class="menu-item menu-item-朋友们">
+<a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-globe"></i> <br>朋友们</a>
+</li>
+<li class="menu-item menu-item-实验室">
+<a href="/lab/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>实验室</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href="javascript:;" class="popup-trigger">
+<i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+</li>
+</ul>
+</nav>
+<div class="site-search">
+<div class="popup search-popup">
+<div class="search-header">
+<span class="search-icon">
+<i class="fa fa-search"></i>
+</span>
+<div class="search-input-wrapper">
+<input autocomplete="off" autocorrect="off" autocapitalize="none"
+placeholder="搜索..." spellcheck="false"
+type="text" id="search-input">
+</div>
+<span class="popup-btn-close">
+<i class="fa fa-times-circle"></i>
+</span>
+</div>
+<div id="search-result"></div>
+</div>
+<div class="search-pop-overlay"></div>
+</div>
+</div>
+</header>
+<main id="main" class="main">
+<div class="main-inner">
+<div class="content-wrap">
+<div id="content" class="content page-post-detail">
+<div id="posts" class="posts-expand">
+<div class="post-block page">
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">标签
+</h1>
+<div class="post-meta">
+</div>
+</header>
+<div class="post-body">
+<ul id="event-list">
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="comments" id="comments"></div>
+</div>
+<div class="sidebar-toggle">
+<div class="sidebar-toggle-line-wrap">
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id="sidebar" class="sidebar">
+<div class="sidebar-inner">
+<ul class="sidebar-nav motion-element">
+<li class="sidebar-nav-toc" data-target="post-toc-wrap">
+文章目录
+</li>
+<li class="sidebar-nav-overview" data-target="site-overview-wrap">
+站点概览
+</li>
+</ul>
+<!--noindex-->
+<div class="post-toc-wrap sidebar-panel">
+</div>
+<!--/noindex-->
+<div class="site-overview-wrap sidebar-panel">
+<div class="site-overview">
+<div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+<img class="site-author-image" itemprop="image"
+src="/images/icon.gif"
+alt="张书樵">
+<p class="site-author-name" itemprop="name">张书樵</p>
+<div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href="/archives/">
+<span class="site-state-item-count">108</span>
+<span class="site-state-item-name">日志</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href="/categories/">
+<span class="site-state-item-count">7</span>
+<span class="site-state-item-name">分类</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href="/tags/">
+<span class="site-state-item-count">24</span>
+<span class="site-state-item-name">标签</span>
+</a>
+</div>
+</nav>
+<div class="feed-link motion-element">
+<a href="/atom.xml" rel="alternate">
+<i class="fa fa-rss"></i>RSS
+</a>
+</div>
+<div class="links-of-blogroll motion-element">
+<div class="links-of-blogroll-title">
+<i class="fa fa-fw fa-university"></i>
+链接
+</div>
+<ul class="links-of-blogroll-list">
+<li class="links-of-blogroll-item">
+<a href="https://zsq.im" title="https://zsq.im" rel="noopener" target="_blank">ZSQ.IM</a>
+</li>
+<li class="links-of-blogroll-item">
+<a href="https://three-body.org" title="https://three-body.org" rel="noopener" target="_blank">Three Body</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<div id="sidebar-dimmer"></div>
+</div>
+</main>
+<footer id="footer" class="footer">
+<div class="footer-inner">
+<div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+<span class="with-love" id="animate">
+<i class="fa fa-heart"></i>
+</span>
+<span class="author" itemprop="copyrightHolder">张书樵</span>
+</div>
+<div class="busuanzi-count">
+<script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span class="post-meta-item-icon">
+<i class="fa fa-user"></i>
+</span>
+<span class="site-uv" title="总访客量">
+<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+</span>
+<span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+<i class="fa fa-eye"></i>
+</span>
+<span class="site-pv" title="总访问量">
+<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+</div>
+</footer>
+<div class="back-to-top">
+<i class="fa fa-arrow-up"></i>
+<span>0%</span>
+</div>
+</div>
+<script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+<script src="/js/local-search.js?v=7.3.0"></script>
+<script pjax>
+if (document.querySelectorAll('div.pdf').length) {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+document.querySelectorAll('div.pdf').forEach(element => {
+PDFObject.embed(element.getAttribute('target'), element, {
+pdfOpenParams: {
+navpanes: 0,
+toolbar: 0,
+statusbar: 0,
+pagemode: 'thumbs',
+view: 'FitH'
+},
+PDFJS_URL: '/lib/pdf/web/viewer.html',
+height: element.getAttribute('height') || '1000px'
+});
+});
+}, window.PDFObject);
+}
+</script>
+<div id="pjax">
+<script>
+(function() {
+// Initialization
+var calendar = {
+orderBy     : 'startTime',
+showLocation: 'false',
+offsetMax   : 72,
+offsetMin   : 4,
+showDeleted : 'false',
+singleEvents: 'true',
+maxResults  : '250'
+}
+// Read config form theme config file
+Object.assign(calendar, {"calendar_id":"stevenjoezhang@gmail.com","api_key":"AIzaSyDMistREiZ8Arlk2ok-Z0zeynUIpaUsN4M","orderBy":"startTime","offsetMax":24,"offsetMin":4,"showDeleted":false,"singleEvents":true,"maxResults":250});
+var now = new Date();
+var timeMax = new Date();
+var timeMin = new Date();
+timeMax.setHours(now.getHours() + calendar.offsetMax);
+timeMin.setHours(now.getHours() - calendar.offsetMin);
+calendar.timeMaxISO      = timeMax.toISOString();
+calendar.timeMinISO      = timeMin.toISOString();
+// Build URL
+const BASE_URL           = 'https://www.googleapis.com/calendar/v3/calendars/';
+const FIELD_KEY          = 'key';
+const FIELD_ORDERBY      = 'orderBy';
+const FIELD_TIMEMAX      = 'timeMax';
+const FIELD_TIMEMIN      = 'timeMin';
+const FIELD_SHOWDELETED  = 'showDeleted';
+const FIELD_SINGLEEVENTS = 'singleEvents';
+const FIELD_MAXRESULTS   = 'maxResults';
+var request_url = BASE_URL + calendar.calendar_id  + '/events?' +
+FIELD_KEY          + '=' + calendar.api_key      + '&' +
+FIELD_ORDERBY      + '=' + calendar.orderBy      + '&' +
+FIELD_TIMEMAX      + '=' + calendar.timeMaxISO   + '&' +
+FIELD_TIMEMIN      + '=' + calendar.timeMinISO   + '&' +
+FIELD_SHOWDELETED  + '=' + calendar.showDeleted  + '&' +
+FIELD_SINGLEEVENTS + '=' + calendar.singleEvents + '&' +
+FIELD_MAXRESULTS   + '=' + calendar.maxResults;
+fetchData();
+var queryLoop = setInterval(fetchData, 60000);
+function fetchData() {
+fetch(request_url).then(response => {
+return response.json();
+}).then(data => {
+$eventList = document.getElementById('event-list');
+// Clean the event list
+$eventList.innerHTML = '';
+var prevEnd = 0; // used to decide where to insert an <hr>
+data.items.forEach(event => {
+// Parse data
+var utc   = new Date().getTimezoneOffset() * 60000;
+var start = event.start.dateTime = new Date(event.start.dateTime || (new Date(event.start.date).getTime() + utc));
+var end   = event.end.dateTime = new Date(event.end.dateTime || (new Date(event.end.date).getTime() + utc));
+tense = judgeTense(now, start, end); // 0:now 1:future -1:past
+if (tense == 1 && prevEnd < now) {
+$eventList.innerHTML += '<hr>';
+}
+eventDOM = buildEventDOM(tense, event);
+$eventList.innerHTML += eventDOM;
+prevEnd = end;
+});
+});
+}
+function getRelativeTime(current, previous) {
+var msPerMinute = 60 * 1000;
+var msPerHour = msPerMinute * 60;
+var msPerDay = msPerHour * 24;
+var msPerMonth = msPerDay * 30;
+var msPerYear = msPerDay * 365;
+var elapsed = current - previous;
+var tense = elapsed > 0 ? 'ago' : 'later';
+elapsed = Math.abs(elapsed);
+if      ( elapsed < msPerHour  ) {
+return Math.round(elapsed/msPerMinute) + ' minutes ' + tense;
+}
+else if ( elapsed < msPerDay   ) {
+return Math.round(elapsed/msPerHour) + ' hours ' + tense;
+}
+else if ( elapsed < msPerMonth ) {
+return 'about ' + Math.round(elapsed/msPerDay) + ' days ' + tense;
+}
+else if ( elapsed < msPerYear  ) {
+return 'about ' + Math.round(elapsed/msPerMonth) + ' months ' + tense;
+}
+else {
+return 'about' + Math.round(elapsed/msPerYear) + ' years' + tense;
+}
+}
+function judgeTense(now, eventStart, eventEnd) {
+if      (eventEnd   < now) { return -1; }
+else if (eventStart > now) { return  1; }
+else                       { return  0; }
+}
+function buildEventDOM(tense, event) {
+var tenseClass = '';
+var start      = event.start.dateTime;
+var end        = event.end.dateTime;
+switch(tense) {
+case 0 : // now
+tenseClass = 'event-now';
+break;
+case 1 : // future
+tenseClass = 'event-future';
+break;
+case -1: // past
+tenseClass = 'event-past';
+break;
+default:
+throw 'Time data error';
+}
+durationFormat = {
+weekday: 'short',
+hour   : '2-digit',
+minute : '2-digit'
+};
+relativeTimeStr = (tense == 0) ? 'NOW' : getRelativeTime(now, start);
+durationStr = start.toLocaleTimeString([], durationFormat) + ' - ' +
+end.toLocaleTimeString([], durationFormat);
+liOpen  = '<li class="event ' + tenseClass + '">';
+liClose = '</li>';
+h2Open  = '<h2 class="event-summary">';
+h2Close = '</h2>';
+locationDOM     = '';
+if (calendar.showLocation && event.location) {
+locationDOM   = '<span class="event-location event-details">' + event.location + '</span>';
+}
+relativeTimeDOM = '<span class="event-relative-time">' + relativeTimeStr + '</span>';
+durationDOM     = '<span class="event-duration event-details">' + durationStr + '</span>';
+eventContent =
+liOpen +
+h2Open +
+event.summary +
+relativeTimeDOM+
+h2Close +
+locationDOM +
+durationDOM +
+liClose;
+return eventContent;
+}
+})();
+</script>
+<script>
+NexT.utils.getScript('/lib/Valine.min.js', () => {
+var GUEST = ['nick', 'mail', 'link'];
+var guest = 'nick,mail,link';
+guest = guest.split(',').filter(item => {
+return GUEST.indexOf(item) > -1;
+});
+new Valine({
+el: '#comments',
+verify: true,
+notify: false,
+appId: 'piu0NMpHzJexJQxetynyuaxD-MdYXbMMI',
+appKey: 'faKsbM25WUuhAu2kB8hhjKtr',
+placeholder: '您可以在这里输入评论哟～',
+avatar: 'mm',
+meta: guest,
+pageSize: '12' || 10,
+visitor: false,
+lang: '' || 'zh-cn',
+path: location.pathname
+});
+}, window.Valine);
+</script>
+</div>
+<script>
+var pjax = new Pjax({
+selectors: [
+'head title',
+'#page-configurations',
+'.content-wrap',
+'.post-toc-wrap',
+'#pjax'
+],
+switches: {
+'.post-toc-wrap': Pjax.switches.innerHTML
+},
+analytics: false,
+cacheBust: false,
+scrollTo: !CONFIG.bookmark.enable
+});
+window.addEventListener('pjax:success', () => {
+document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+$(element).parent().append($(element).remove());
+});
+// Define Motion Sequence & Bootstrap Motion.
+if (CONFIG.motion.enable) {
+NexT.motion.integrator
+.init()
+.add(NexT.motion.middleWares.postList)
+.bootstrap();
+}
+NexT.utils.updateSidebarPosition();
+});
+</script>
+</body>
+</html>

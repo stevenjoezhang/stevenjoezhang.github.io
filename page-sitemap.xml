@@ -8,6 +8,13 @@
     </url>
     
     <url>
+        <loc>https://zhangshuqiao.org/schedule.html</loc>
+        <lastmod>2019-08-22T23:28:45.833Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://zhangshuqiao.org/about/</loc>
         <lastmod>2019-08-11T18:02:45.544Z</lastmod>
         <changefreq>weekly</changefreq>

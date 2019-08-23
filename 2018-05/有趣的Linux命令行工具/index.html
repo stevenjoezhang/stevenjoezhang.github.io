@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html class="theme-next gemini" lang="zh-CN">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,18 +24,18 @@ root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
 exturl: false,
-sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-save_scroll: true,
+sidebar: {"position":"left","display":"post","offset":12,"onmobile":true},
 copycode: {"enable":true,"show_result":true,"style":"mac"},
+back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+bookmark: {"enable":false,"color":"#A00","save":"auto"},
 fancybox: false,
 mediumzoom: true,
 lazyload: false,
 pangu: true,
 algolia: {
-applicationID: '',
-apiKey: '',
-indexName: '',
+appID: 'FQJ3L26IH7',
+apiKey: '624be1c1b69d1777c2e70ab857f48ba1',
+indexName: 'Mimi',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
@@ -60,7 +59,8 @@ copy_failure: '复制失败'
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-05/cmatrix.png">
 <meta property="og:image" content="https://zhangshuqiao.org/images/2018-05/asciiquarium.png">
-<meta property="og:updated_time" content="2019-04-07T12:32:23.872Z">
+<meta property="og:image" content="https://zhangshuqiao.org/images/2018-05/depressed-developer-51.png">
+<meta property="og:updated_time" content="2019-08-20T10:36:58.392Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有趣的Linux命令行工具">
 <meta name="twitter:description" content="Linux is fun! Huhhh. OK so you don&amp;#39;t believe me. Mind me at the end of this article you will have to believe that Linux is actually a fun box.Linux是非常有趣的，别不相信——看完这篇文章，你一定会发现Linux系统神奇的用法。请注意，下面部分命令">
@@ -80,14 +80,8 @@ isArchive: false
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({
-google_ad_client: "ca-pub-8784231462763562",
-enable_page_level_ads: true
-});
-</script>
 <title>有趣的Linux命令行工具 | 米米的博客</title>
+<meta name="generator" content="Hexo 3.9.0">
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -99,7 +93,7 @@ enable_page_level_ads: true
 .use-motion .comments,
 .use-motion .post-header,
 .use-motion .post-body,
-.use-motion .collection-title { opacity: initial; }
+.use-motion .collection-header { opacity: initial; }
 .use-motion .logo,
 .use-motion .site-title,
 .use-motion .site-subtitle {
@@ -112,12 +106,12 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left">
+<div class="container">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
-<div class="custom-logo-site-title">
+<div>
 <a href="/" class="brand" rel="start">
 <span class="logo-line-before"><i></i></span>
 <span class="site-title">米米的博客</span>
@@ -164,22 +158,23 @@ top: initial;
 </ul>
 </nav>
 <div class="site-search">
-<div class="popup search-popup local-search-popup">
-<div class="local-search-header clearfix">
+<div class="popup search-popup">
+<div class="search-header">
 <span class="search-icon">
 <i class="fa fa-search"></i>
 </span>
+<div class="search-input-wrapper">
+<input autocomplete="off" autocorrect="off" autocapitalize="none"
+placeholder="搜索..." spellcheck="false"
+type="text" id="search-input">
+</div>
 <span class="popup-btn-close">
 <i class="fa fa-times-circle"></i>
 </span>
-<div class="local-search-input-wrapper">
-<input autocomplete="off"
-placeholder="搜索..." spellcheck="false"
-type="text" id="local-search-input">
 </div>
+<div id="search-result"></div>
 </div>
-<div id="local-search-result"></div>
-</div>
+<div class="search-pop-overlay"></div>
 </div>
 </div>
 </header>
@@ -188,7 +183,7 @@ type="text" id="local-search-input">
 <div class="content-wrap">
 <div id="content" class="content page-post-detail">
 <div id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-05/有趣的Linux命令行工具/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -229,9 +224,7 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-05/有趣的Linux命令行工具/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2018-05/有趣的Linux命令行工具/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2018-05/有趣的Linux命令行工具/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-05/有趣的Linux命令行工具/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -304,7 +297,9 @@ type="text" id="local-search-input">
 <h2 id="Fork-Bomb"><a href="#Fork-Bomb" class="headerlink" title="Fork Bomb"></a>Fork Bomb</h2><p>Fork炸弹<br>This is a very nasty piece of code. Run this at your own risk. This actually is a fork bomb which exponentially multiplies itself till all the system resource is utilized and the system hangs. (To check the power of above code you should try it once, but all at your own risk, close and save all other programs and file before running fork bomb).<br>这是一段非常讨厌的代码。运行这个需要自担风险。这实际上是一个Fork炸弹，它以指数方式自我增殖，直到所有系统资源被利用并且系统挂起。（要体会上述代码的威力，你可以尝试一次，但所有风险自负：谨记，在运行Fork炸弹之前关闭并保存所有其他程序和文件）。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ :()&#123; :|:&amp; &#125;:</span><br></pre></td></tr></table></figure>
 <h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>Have fun, you can say me thanks later :) yup your comment is highly appreciated which encourages us write more. Tell us which command you liked the most. Stay tuned i will be back soon with another article worth reading.</p>
+<p><img src="/images/2018-05/depressed-developer-51.png" alt></p>
 <hr>
+<p>图片来源：<a href="http://turnoff.us/geek/the-depressed-developer-51/" target="_blank" rel="noopener">The Depressed Developer 51</a></p>
 <p>本文翻译自：<a href="https://www.tecmint.com/20-funny-commands-of-linux-or-linux-is-fun-in-terminal" target="_blank" rel="noopener">20 Funny Commands of Linux or Linux is Fun in Terminal</a></p>
 <p>拓展阅读：<br><a href="https://www.zhihu.com/question/20034686/answer/52858899" target="_blank" rel="noopener">计算机领域有哪些经典的典故或笑话？</a><br><a href="https://www.zhihu.com/question/285586045/answer/475593167" target="_blank" rel="noopener">一行代码可以做什么？</a><br><a href="https://github.com/jlevy/the-art-of-command-line" target="_blank" rel="noopener">the-art-of-command-line</a></p>
 </div>
@@ -374,13 +369,20 @@ Nginx配置SSL <i class="fa fa-chevron-right"></i>
 <aside id="sidebar" class="sidebar">
 <div class="sidebar-inner">
 <ul class="sidebar-nav motion-element">
-<li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+<li class="sidebar-nav-toc" data-target="post-toc-wrap">
 文章目录
 </li>
 <li class="sidebar-nav-overview" data-target="site-overview-wrap">
 站点概览
 </li>
 </ul>
+<!--noindex-->
+<div class="post-toc-wrap sidebar-panel">
+<div class="post-toc">
+<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#curl"><span class="nav-number">1.</span> <span class="nav-text">curl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sl-Steam-Locomotive"><span class="nav-number">2.</span> <span class="nav-text">sl (Steam Locomotive)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#telnet"><span class="nav-number">3.</span> <span class="nav-text">telnet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fortune"><span class="nav-number">4.</span> <span class="nav-text">fortune</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rev-Reverse"><span class="nav-number">5.</span> <span class="nav-text">rev (Reverse)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#factor"><span class="nav-number">6.</span> <span class="nav-text">factor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#script"><span class="nav-number">7.</span> <span class="nav-text">script</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cowsay"><span class="nav-number">8.</span> <span class="nav-text">cowsay</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yes"><span class="nav-number">9.</span> <span class="nav-text">yes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toilet"><span class="nav-number">10.</span> <span class="nav-text">toilet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cmatrix"><span class="nav-number">11.</span> <span class="nav-text">cmatrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oneko"><span class="nav-number">12.</span> <span class="nav-text">oneko</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while"><span class="nav-number">13.</span> <span class="nav-text">while</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#espeak"><span class="nav-number">14.</span> <span class="nav-text">espeak</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aafire"><span class="nav-number">15.</span> <span class="nav-text">aafire</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bb"><span class="nav-number">16.</span> <span class="nav-text">bb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#url"><span class="nav-number">17.</span> <span class="nav-text">url</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ASCIIquarium"><span class="nav-number">18.</span> <span class="nav-text">ASCIIquarium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fork-Bomb"><span class="nav-number">19.</span> <span class="nav-text">Fork Bomb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多"><span class="nav-number">20.</span> <span class="nav-text">更多</span></a></li></ol></div>
+</div>
+</div>
+<!--/noindex-->
 <div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -393,7 +395,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">107</span>
+<span class="site-state-item-count">108</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -415,9 +417,9 @@ alt="张书樵">
 <i class="fa fa-rss"></i>RSS
 </a>
 </div>
-<div class="links-of-blogroll motion-element links-of-blogroll-inline">
+<div class="links-of-blogroll motion-element">
 <div class="links-of-blogroll-title">
-<i class="fa  fa-fw fa-university"></i>
+<i class="fa fa-fw fa-university"></i>
 链接
 </div>
 <ul class="links-of-blogroll-list">
@@ -431,13 +433,6 @@ alt="张书樵">
 </div>
 </div>
 </div>
-<!--noindex-->
-<div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-<div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#curl"><span class="nav-number">1.</span> <span class="nav-text">curl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sl-Steam-Locomotive"><span class="nav-number">2.</span> <span class="nav-text">sl (Steam Locomotive)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#telnet"><span class="nav-number">3.</span> <span class="nav-text">telnet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fortune"><span class="nav-number">4.</span> <span class="nav-text">fortune</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rev-Reverse"><span class="nav-number">5.</span> <span class="nav-text">rev (Reverse)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#factor"><span class="nav-number">6.</span> <span class="nav-text">factor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#script"><span class="nav-number">7.</span> <span class="nav-text">script</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cowsay"><span class="nav-number">8.</span> <span class="nav-text">cowsay</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yes"><span class="nav-number">9.</span> <span class="nav-text">yes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toilet"><span class="nav-number">10.</span> <span class="nav-text">toilet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cmatrix"><span class="nav-number">11.</span> <span class="nav-text">cmatrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oneko"><span class="nav-number">12.</span> <span class="nav-text">oneko</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while"><span class="nav-number">13.</span> <span class="nav-text">while</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#espeak"><span class="nav-number">14.</span> <span class="nav-text">espeak</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aafire"><span class="nav-number">15.</span> <span class="nav-text">aafire</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bb"><span class="nav-number">16.</span> <span class="nav-text">bb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#url"><span class="nav-number">17.</span> <span class="nav-text">url</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ASCIIquarium"><span class="nav-number">18.</span> <span class="nav-text">ASCIIquarium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fork-Bomb"><span class="nav-number">19.</span> <span class="nav-text">Fork Bomb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多"><span class="nav-number">20.</span> <span class="nav-text">更多</span></a></li></ol></div>
-</div>
-</div>
-<!--/noindex-->
 </div>
 </aside>
 <div id="sidebar-dimmer"></div>
@@ -471,7 +466,7 @@ alt="张书樵">
 </footer>
 <div class="back-to-top">
 <i class="fa fa-arrow-up"></i>
-<span id="scrollpercent"><span>0</span>%</span>
+<span>0%</span>
 </div>
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
@@ -480,15 +475,14 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>
 <script src="/js/local-search.js?v=7.3.0"></script>
 <script pjax>
-if ($('body').find('div.pdf').length) {
-NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
-$('body').find('div.pdf').each(function(i, o) {
-PDFObject.embed($(o).attr('target'), $(o), {
+if (document.querySelectorAll('div.pdf').length) {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+document.querySelectorAll('div.pdf').forEach(element => {
+PDFObject.embed(element.getAttribute('target'), element, {
 pdfOpenParams: {
 navpanes: 0,
 toolbar: 0,
@@ -497,20 +491,19 @@ pagemode: 'thumbs',
 view: 'FitH'
 },
 PDFJS_URL: '/lib/pdf/web/viewer.html',
-height: $(o).attr('height') || '1000px'
+height: element.getAttribute('height') || '1000px'
 });
 });
 }, window.PDFObject);
 }
 </script>
 <div id="pjax">
-<script src="/js/scrollspy.js?v=7.3.0"></script>
 <script src="/js/post-details.js?v=7.3.0"></script>
 <script>
-NexT.utils.getScript('/lib/Valine.min.js', function() {
+NexT.utils.getScript('/lib/Valine.min.js', () => {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function(item) {
+guest = guest.split(',').filter(item => {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({
@@ -533,26 +526,22 @@ path: location.pathname
 <script>
 var pjax = new Pjax({
 selectors: [
-'title',
+'head title',
 '#page-configurations',
 '.content-wrap',
-'.sidebar-inner',
+'.post-toc-wrap',
 '#pjax'
 ],
 switches: {
-'.sidebar-inner': Pjax.switches.innerHTML
+'.post-toc-wrap': Pjax.switches.innerHTML
 },
 analytics: false,
 cacheBust: false,
-scrollTo: !CONFIG.save_scroll
+scrollTo: !CONFIG.bookmark.enable
 });
-$(document).on('pjax:send', function() {
-$('.sidebar-inner').stop().fadeTo('fast', 0);
-CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
-});
-$(document).on('pjax:success', function() {
-$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
-$(o).parent().append($(o).remove());
+window.addEventListener('pjax:success', () => {
+document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+$(element).parent().append($(element).remove());
 });
 // Define Motion Sequence & Bootstrap Motion.
 if (CONFIG.motion.enable) {
@@ -561,8 +550,6 @@ NexT.motion.integrator
 .add(NexT.motion.middleWares.postList)
 .bootstrap();
 }
-$('.sidebar-inner .motion-element').css('opacity', 1);
-$('.sidebar-inner').fadeTo('fast', 1);
 NexT.utils.updateSidebarPosition();
 });
 </script>

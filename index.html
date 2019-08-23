@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html class="theme-next gemini" lang="zh-CN">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,18 +24,18 @@ root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
 exturl: false,
-sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-save_scroll: true,
+sidebar: {"position":"left","display":"post","offset":12,"onmobile":true},
 copycode: {"enable":true,"show_result":true,"style":"mac"},
+back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+bookmark: {"enable":false,"color":"#A00","save":"auto"},
 fancybox: false,
 mediumzoom: true,
 lazyload: false,
 pangu: true,
 algolia: {
-applicationID: '',
-apiKey: '',
-indexName: '',
+appID: 'FQJ3L26IH7',
+apiKey: '624be1c1b69d1777c2e70ab857f48ba1',
+indexName: 'Mimi',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
@@ -76,14 +75,8 @@ isArchive: false
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({
-google_ad_client: "ca-pub-8784231462763562",
-enable_page_level_ads: true
-});
-</script>
 <title>米米的博客</title>
+<meta name="generator" content="Hexo 3.9.0">
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -95,7 +88,7 @@ enable_page_level_ads: true
 .use-motion .comments,
 .use-motion .post-header,
 .use-motion .post-body,
-.use-motion .collection-title { opacity: initial; }
+.use-motion .collection-header { opacity: initial; }
 .use-motion .logo,
 .use-motion .site-title,
 .use-motion .site-subtitle {
@@ -108,12 +101,12 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left">
+<div class="container">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
-<div class="custom-logo-site-title">
+<div>
 <a href="/" class="brand" rel="start">
 <span class="logo-line-before"><i></i></span>
 <span class="site-title">米米的博客</span>
@@ -160,22 +153,23 @@ top: initial;
 </ul>
 </nav>
 <div class="site-search">
-<div class="popup search-popup local-search-popup">
-<div class="local-search-header clearfix">
+<div class="popup search-popup">
+<div class="search-header">
 <span class="search-icon">
 <i class="fa fa-search"></i>
 </span>
+<div class="search-input-wrapper">
+<input autocomplete="off" autocorrect="off" autocapitalize="none"
+placeholder="搜索..." spellcheck="false"
+type="text" id="search-input">
+</div>
 <span class="popup-btn-close">
 <i class="fa fa-times-circle"></i>
 </span>
-<div class="local-search-input-wrapper">
-<input autocomplete="off"
-placeholder="搜索..." spellcheck="false"
-type="text" id="local-search-input">
 </div>
+<div id="search-result"></div>
 </div>
-<div id="local-search-result"></div>
-</div>
+<div class="search-pop-overlay"></div>
 </div>
 </div>
 </header>
@@ -184,7 +178,62 @@ type="text" id="local-search-input">
 <div class="content-wrap">
 <div id="content" class="content page-home">
 <section id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-08/葛底斯堡演说/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2019-08/葛底斯堡演说/" class="post-title-link" itemprop="url">Gettysburg Address</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2019-08-17 08:42:59" itemprop="dateCreated datePublished" datetime="2019-08-17T08:42:59+08:00">2019-08-17</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2019-08/葛底斯堡演说/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-08/葛底斯堡演说/" itemprop="commentCount"></span></a>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<blockquote>
+<p>Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.</p>
+</blockquote>
+<blockquote>
+<p>Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.</p>
+</blockquote>
+<blockquote>
+<p>But, in a larger sense, we can not dedicate—we can not consecrate—we can not hallow—this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us—that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion—that we here highly resolve that these dead shall not have died in vain—that this nation, under God, shall have a new birth of freedom—and that government of the people, by the people, for the people, shall not perish from the earth.</p>
+</blockquote>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-08/失去同步/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -219,16 +268,14 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2019-08/失去同步/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2019-08/失去同步/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2019-08/失去同步/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-08/失去同步/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p><img src="/images/2019-08/005.jpg" alt></p>
 <p>图片来源：<a href="http://www.europecomics.com/album/1-justice-fresh-vegetables/" target="_blank" rel="noopener">1. Justice and Fresh Vegetables - Europe Comics</a></p>
-<p>这样巧妙的设计，不禁让人联想起《哆啦A梦》中的类似剧情：大雄为了破案乘坐时光机回到过去，结果发现罪犯正是自己……</p>
+<p>这样巧妙的设计，不禁让人联想起《哆啦A梦》中的类似剧情：大雄为了追回失窃的藏品，乘坐时光机回到案发现场，结果发现小偷正是自己……</p>
 <p>这本漫画书中还有很多像这样脑洞大开的漫画，可以通过多个渠道购买、下载。</p>
 </div>
 <footer class="post-footer">
@@ -236,7 +283,7 @@ type="text" id="local-search-input">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-08/在Ubuntu上安装TeamViewer/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -271,19 +318,17 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2019-08/在Ubuntu上安装TeamViewer/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2019-08/在Ubuntu上安装TeamViewer/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2019-08/在Ubuntu上安装TeamViewer/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-08/在Ubuntu上安装TeamViewer/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
 <p>首先，安装Xfce桌面环境</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install xfce4 xfce4-goodies</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install xfce4 xfce4-goodies</span><br></pre></td></tr></table></figure>
 <p>然后安装LightDM，这是一个显示管理器，可以渲染登陆页面</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install lightdm</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install lightdm</span><br></pre></td></tr></table></figure>
 <p>还需要安装一个配套的greeter</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install lightdm-gtk-greeter</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install lightdm-gtk-greeter</span><br></pre></td></tr></table></figure>
 <p>可选项还有很多，例如：</p>
 <ul>
 <li>Unity Greeter (unity-greeter)</li>
@@ -293,26 +338,26 @@ type="text" id="local-search-input">
 <li>RazorQt Greeter (razorqt-lightdm-greeter)</li>
 </ul>
 <p>下一步，是配置LightDM</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo "[Seat:*]</span><br><span class="line">allow-guest=false</span><br><span class="line">user-session=xfce" &gt;&gt; /etc/lightdm/lightdm.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"[Seat:*]</span></span><br><span class="line"><span class="string">allow-guest=false</span></span><br><span class="line"><span class="string">user-session=xfce"</span> &gt;&gt; /etc/lightdm/lightdm.conf</span><br></pre></td></tr></table></figure>
 <p>完成后，就可以下载TeamViewer了</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.teamviewer.com/download/linux/teamviewer-host_amd64.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.teamviewer.com/download/linux/teamviewer-host_amd64.deb</span><br></pre></td></tr></table></figure>
 <p>TeamViewer通过deb安装包进行安装</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install ./teamviewer-host_amd64.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install ./teamviewer-host_amd64.deb</span><br></pre></td></tr></table></figure>
 <p>安装完成就可以进行初始化设置，需要先到<a href="https://login.teamviewer.com/LogOn" target="_blank" rel="noopener">TeamViewer官网</a>注册账号</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">teamviewer setup</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">teamviewer setup</span><br></pre></td></tr></table></figure>
 <p>设置成功后，重启系统即可</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
 <p>此外，还需要检查防火墙设置。TeamViewer会使用5938端口，确保它没有被拦截。一切正常的话，就可以登录了。</p>
 <p><img src="/images/2019-08/teamviewer.png" alt></p>
 <p>如果需要卸载，执行以下命令即可</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt purge teamviewer-host</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt purge teamviewer-host</span><br></pre></td></tr></table></figure>
 </div>
 <footer class="post-footer">
 <div class="post-eof"></div>
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-07/青海湖之行/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -347,9 +392,7 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2019-07/青海湖之行/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2019-07/青海湖之行/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2019-07/青海湖之行/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-07/青海湖之行/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -388,7 +431,7 @@ type="text" id="local-search-input">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-07/在Win 95中晃动鼠标竟能加速系统/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -423,15 +466,13 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2019-07/在Win 95中晃动鼠标竟能加速系统/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2019-07/在Win 95中晃动鼠标竟能加速系统/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2019-07/在Win 95中晃动鼠标竟能加速系统/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-07/在Win 95中晃动鼠标竟能加速系统/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
 <div class="post-body" itemprop="articleBody">
-<p><img src="/images/2019-07/2019-07-15-image-24.jpg" alt></p>
 <p><strong>Through the looking glass:</strong> Adding new hardware or overclocking what you&#39;ve already got are among the leading ways to squeeze more performance out of your PC but in the earlier days of computing, all one had to do to give their PC a jolt was wiggle the mouse cursor around during an install.<br>添加新硬件或超频现有硬件是使PC获得更佳性能的主要方法。但在个人计算机的早期阶段，用户竟然还可以通过一个巧妙的办法来提升性能——不停地晃动鼠标的光标。</p>
+<p><img src="/images/2019-07/2019-07-15-image-24.jpg" alt></p>
 <p>I&#39;m a self-professed fidgeter, especially at the computer. It&#39;s not uncommon to catch me moving the mouse all around with zero intent, even if I&#39;m busy reading a story or watching a video.<br>我自认为是一个手抖的人，尤其是在电脑前。即使我在忙着用电脑读故事或看视频，你也会发现我在毫无目的地移动鼠标。</p>
 <p>I chalk it up to the earlier days of computing when keeping the mouse active seemed to have a tangible benefit on system performance. Turns out, it wasn&#39;t just in our imagination.<br>我把它归结为在上古时期，保持鼠标活动似乎对系统性能有明显的好处。事实证明，这并不只是我们的想象。</p>
 <p>According to a running thread over on <a href="https://retrocomputing.stackexchange.com/questions/11533/why-did-moving-the-mouse-cursor-cause-windows-95-to-run-more-quickly" target="_blank" rel="noopener">Stack Exchange</a>, moving the mouse cursor in Windows 95 did indeed speed up performance due to a flaw in the way the OS generates events and the fact that many applications are event driven.<br>根据<a href="https://retrocomputing.stackexchange.com/questions/11533/why-did-moving-the-mouse-cursor-cause-windows-95-to-run-more-quickly" target="_blank" rel="noopener">Stack Exchange</a>上一个正在热烈讨论的主题，在Windows 95中移动鼠标光标确实提升了性能，因为操作系统的事件生成方法存在缺陷，并且许多应用程序都是基于事件来驱动的。</p>
@@ -454,56 +495,6 @@ type="text" id="local-search-input">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-07/怎样修好任何电脑/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2019-07/怎样修好任何电脑/" class="post-title-link" itemprop="url">怎样修好任何电脑</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2019-07-10 08:53:13" itemprop="dateCreated datePublished" datetime="2019-07-10T08:53:13+08:00">2019-07-10</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-comment-o"></i>
-</span>
-<span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2019-07/怎样修好任何电脑/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2019-07/怎样修好任何电脑/" itemprop="commentCount"></span>
-</a>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p><img src="/images/2019-07/header.png" alt><br><img src="/images/2019-07/windows.png" alt><br><img src="/images/2019-07/apple.png" alt><br><img src="/images/2019-07/linux.png" alt></p>
-<p>图片来源：<a href="https://theoatmeal.com/blog/fix_computer" target="_blank" rel="noopener">How to fix any computer - The Oatmeal</a></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -519,7 +510,19 @@ type="text" id="local-search-input">
 </div>
 <aside id="sidebar" class="sidebar">
 <div class="sidebar-inner">
-<div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+<ul class="sidebar-nav motion-element">
+<li class="sidebar-nav-toc" data-target="post-toc-wrap">
+文章目录
+</li>
+<li class="sidebar-nav-overview" data-target="site-overview-wrap">
+站点概览
+</li>
+</ul>
+<!--noindex-->
+<div class="post-toc-wrap sidebar-panel">
+</div>
+<!--/noindex-->
+<div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image"
@@ -531,7 +534,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">107</span>
+<span class="site-state-item-count">108</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -553,9 +556,9 @@ alt="张书樵">
 <i class="fa fa-rss"></i>RSS
 </a>
 </div>
-<div class="links-of-blogroll motion-element links-of-blogroll-inline">
+<div class="links-of-blogroll motion-element">
 <div class="links-of-blogroll-title">
-<i class="fa  fa-fw fa-university"></i>
+<i class="fa fa-fw fa-university"></i>
 链接
 </div>
 <ul class="links-of-blogroll-list">
@@ -602,7 +605,7 @@ alt="张书樵">
 </footer>
 <div class="back-to-top">
 <i class="fa fa-arrow-up"></i>
-<span id="scrollpercent"><span>0</span>%</span>
+<span>0%</span>
 </div>
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
@@ -611,15 +614,14 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>
 <script src="/js/local-search.js?v=7.3.0"></script>
 <script pjax>
-if ($('body').find('div.pdf').length) {
-NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
-$('body').find('div.pdf').each(function(i, o) {
-PDFObject.embed($(o).attr('target'), $(o), {
+if (document.querySelectorAll('div.pdf').length) {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+document.querySelectorAll('div.pdf').forEach(element => {
+PDFObject.embed(element.getAttribute('target'), element, {
 pdfOpenParams: {
 navpanes: 0,
 toolbar: 0,
@@ -628,7 +630,7 @@ pagemode: 'thumbs',
 view: 'FitH'
 },
 PDFJS_URL: '/lib/pdf/web/viewer.html',
-height: $(o).attr('height') || '1000px'
+height: element.getAttribute('height') || '1000px'
 });
 });
 }, window.PDFObject);
@@ -636,10 +638,10 @@ height: $(o).attr('height') || '1000px'
 </script>
 <div id="pjax">
 <script>
-NexT.utils.getScript('/lib/Valine.min.js', function() {
+NexT.utils.getScript('/lib/Valine.min.js', () => {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function(item) {
+guest = guest.split(',').filter(item => {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({
@@ -662,26 +664,22 @@ path: location.pathname
 <script>
 var pjax = new Pjax({
 selectors: [
-'title',
+'head title',
 '#page-configurations',
 '.content-wrap',
-'.sidebar-inner',
+'.post-toc-wrap',
 '#pjax'
 ],
 switches: {
-'.sidebar-inner': Pjax.switches.innerHTML
+'.post-toc-wrap': Pjax.switches.innerHTML
 },
 analytics: false,
 cacheBust: false,
-scrollTo: !CONFIG.save_scroll
+scrollTo: !CONFIG.bookmark.enable
 });
-$(document).on('pjax:send', function() {
-$('.sidebar-inner').stop().fadeTo('fast', 0);
-CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
-});
-$(document).on('pjax:success', function() {
-$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
-$(o).parent().append($(o).remove());
+window.addEventListener('pjax:success', () => {
+document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+$(element).parent().append($(element).remove());
 });
 // Define Motion Sequence & Bootstrap Motion.
 if (CONFIG.motion.enable) {
@@ -690,8 +688,6 @@ NexT.motion.integrator
 .add(NexT.motion.middleWares.postList)
 .bootstrap();
 }
-$('.sidebar-inner .motion-element').css('opacity', 1);
-$('.sidebar-inner').fadeTo('fast', 1);
 NexT.utils.updateSidebarPosition();
 });
 </script>

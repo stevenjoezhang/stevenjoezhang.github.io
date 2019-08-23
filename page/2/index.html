@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html class="theme-next gemini" lang="zh-CN">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,18 +24,18 @@ root: '/',
 scheme: 'Gemini',
 version: '7.3.0',
 exturl: false,
-sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-save_scroll: true,
+sidebar: {"position":"left","display":"post","offset":12,"onmobile":true},
 copycode: {"enable":true,"show_result":true,"style":"mac"},
+back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+bookmark: {"enable":false,"color":"#A00","save":"auto"},
 fancybox: false,
 mediumzoom: true,
 lazyload: false,
 pangu: true,
 algolia: {
-applicationID: '',
-apiKey: '',
-indexName: '',
+appID: 'FQJ3L26IH7',
+apiKey: '624be1c1b69d1777c2e70ab857f48ba1',
+indexName: 'Mimi',
 hits: {"per_page":10},
 labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
 },
@@ -76,14 +75,8 @@ isArchive: false
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({
-google_ad_client: "ca-pub-8784231462763562",
-enable_page_level_ads: true
-});
-</script>
 <title>米米的博客</title>
+<meta name="generator" content="Hexo 3.9.0">
 <noscript>
 <style>
 .use-motion .motion-element,
@@ -95,7 +88,7 @@ enable_page_level_ads: true
 .use-motion .comments,
 .use-motion .post-header,
 .use-motion .post-body,
-.use-motion .collection-title { opacity: initial; }
+.use-motion .collection-header { opacity: initial; }
 .use-motion .logo,
 .use-motion .site-title,
 .use-motion .site-subtitle {
@@ -108,12 +101,12 @@ top: initial;
 </noscript>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-<div class="container sidebar-position-left">
+<div class="container">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
 <div class="header-inner"><div class="site-brand-wrapper">
 <div class="site-meta">
-<div class="custom-logo-site-title">
+<div>
 <a href="/" class="brand" rel="start">
 <span class="logo-line-before"><i></i></span>
 <span class="site-title">米米的博客</span>
@@ -160,22 +153,23 @@ top: initial;
 </ul>
 </nav>
 <div class="site-search">
-<div class="popup search-popup local-search-popup">
-<div class="local-search-header clearfix">
+<div class="popup search-popup">
+<div class="search-header">
 <span class="search-icon">
 <i class="fa fa-search"></i>
 </span>
+<div class="search-input-wrapper">
+<input autocomplete="off" autocorrect="off" autocapitalize="none"
+placeholder="搜索..." spellcheck="false"
+type="text" id="search-input">
+</div>
 <span class="popup-btn-close">
 <i class="fa fa-times-circle"></i>
 </span>
-<div class="local-search-input-wrapper">
-<input autocomplete="off"
-placeholder="搜索..." spellcheck="false"
-type="text" id="local-search-input">
 </div>
+<div id="search-result"></div>
 </div>
-<div id="local-search-result"></div>
-</div>
+<div class="search-pop-overlay"></div>
 </div>
 </div>
 </header>
@@ -184,7 +178,55 @@ type="text" id="local-search-input">
 <div class="content-wrap">
 <div id="content" class="content page-home">
 <section id="posts" class="posts-expand">
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
+<div class="post-block">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-07/怎样修好任何电脑/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2019-07/怎样修好任何电脑/" class="post-title-link" itemprop="url">怎样修好任何电脑</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2019-07-10 08:53:13" itemprop="dateCreated datePublished" datetime="2019-07-10T08:53:13+08:00">2019-07-10</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2019-07/怎样修好任何电脑/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-07/怎样修好任何电脑/" itemprop="commentCount"></span></a>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p><img src="/images/2019-07/header.png" alt><br><img src="/images/2019-07/windows.png" alt><br><img src="/images/2019-07/apple.png" alt><br><img src="/images/2019-07/linux.png" alt></p>
+<p>图片来源：<a href="https://theoatmeal.com/blog/fix_computer" target="_blank" rel="noopener">How to fix any computer - The Oatmeal</a></p>
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-06/Range对象的使用/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -219,9 +261,7 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2019-06/Range对象的使用/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2019-06/Range对象的使用/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2019-06/Range对象的使用/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-06/Range对象的使用/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -272,7 +312,7 @@ type="text" id="local-search-input">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-06/在PC上使用Pro Controller/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -307,9 +347,7 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2019-06/在PC上使用Pro Controller/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2019-06/在PC上使用Pro Controller/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2019-06/在PC上使用Pro Controller/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-06/在PC上使用Pro Controller/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -333,7 +371,7 @@ type="text" id="local-search-input">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-06/PS用文字拼出照片/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -368,9 +406,7 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2019-06/PS用文字拼出照片/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2019-06/PS用文字拼出照片/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2019-06/PS用文字拼出照片/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-06/PS用文字拼出照片/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -393,7 +429,7 @@ type="text" id="local-search-input">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+<article class="post" itemscope itemtype="http://schema.org/Article">
 <div class="post-block">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-06/历史上的今天/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -428,9 +464,7 @@ type="text" id="local-search-input">
 <i class="fa fa-comment-o"></i>
 </span>
 <span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2019-06/历史上的今天/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2019-06/历史上的今天/" itemprop="commentCount"></span>
-</a>
+<a title="valine" href="/2019-06/历史上的今天/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-06/历史上的今天/" itemprop="commentCount"></span></a>
 </span>
 </div>
 </header>
@@ -457,65 +491,6 @@ type="text" id="local-search-input">
 </footer>
 </div>
 </article>
-<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-05/在macOS上读写NTFS磁盘/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2019-05/在macOS上读写NTFS磁盘/" class="post-title-link" itemprop="url">在macOS上读写NTFS磁盘</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2019-05-30 11:55:22" itemprop="dateCreated datePublished" datetime="2019-05-30T11:55:22+08:00">2019-05-30</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-comment-o"></i>
-</span>
-<span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2019-05/在macOS上读写NTFS磁盘/#comments" itemprop="discussionUrl">
-<span class="post-comments-count valine-comment-count" data-xid="/2019-05/在macOS上读写NTFS磁盘/" itemprop="commentCount"></span>
-</a>
-</span>
-</div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>本文将介绍一种在macOS上读写NTFS磁盘的方法，通过它可以方便的在不同系统中传输文件。默认情况下，macOS是无法向NTFS磁盘写入的——这个功能由于种种原因被禁用了。我们使用一种Hack的方法将其启用即可。<br>macOS在挂载NTFS磁盘时加载的脚本为<code>/sbin/mount_ntfs</code>，参数为：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount_ntfs -o nodev -o noowners -o nosuid /dev/disk2s1 /Volumes/DATA</span><br></pre></td></tr></table></figure>
-<p>这时，只要加上额外的参数，就可以启用对NTFS磁盘的写入。具体方法是：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo -s <span class="comment">#输入密码，获取root权限</span></span><br><span class="line"><span class="built_in">cd</span> /sbin</span><br><span class="line">mv mount_ntfs mount_ntfs_orig</span><br><span class="line">vim mount_ntfs</span><br></pre></td></tr></table></figure>
-<p>将<code>mount_ntfs</code>重命名为<code>mount_ntfs_orig</code>，然后再新建一个<code>mount_ntfs</code>，输入以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">/sbin/mount_ntfs_orig -o rw,nobrowse <span class="string">"<span class="variable">$@</span>"</span></span><br></pre></td></tr></table></figure>
-<p>这样就可以欺骗系统，运行带有额外参数的指令。这里的<code>nobrowse</code>是为了避免挂载上来的还是只读模式，但是它同时会导致磁盘不可见，也就是挂在后不会在桌面和Finder中显示，需要手动到<code>/Volumes</code>下打开。如果这样不爽的话，你可以尝试</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">/sbin/mount_ntfs_orig -o rw <span class="string">"<span class="variable">$@</span>"</span></span><br></pre></td></tr></table></figure>
-<p>将磁盘推出再挂载，如果一切正常的话，就可以愉快的使用了。</p>
-<hr>
-<p>参考文章：<a href="https://www.jianshu.com/p/d4073acbb218" target="_blank" rel="noopener">OS X 原生可读写挂载NTFS分区</a></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
 </section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
@@ -531,7 +506,19 @@ type="text" id="local-search-input">
 </div>
 <aside id="sidebar" class="sidebar">
 <div class="sidebar-inner">
-<div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+<ul class="sidebar-nav motion-element">
+<li class="sidebar-nav-toc" data-target="post-toc-wrap">
+文章目录
+</li>
+<li class="sidebar-nav-overview" data-target="site-overview-wrap">
+站点概览
+</li>
+</ul>
+<!--noindex-->
+<div class="post-toc-wrap sidebar-panel">
+</div>
+<!--/noindex-->
+<div class="site-overview-wrap sidebar-panel">
 <div class="site-overview">
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image"
@@ -543,7 +530,7 @@ alt="张书樵">
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">107</span>
+<span class="site-state-item-count">108</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -565,9 +552,9 @@ alt="张书樵">
 <i class="fa fa-rss"></i>RSS
 </a>
 </div>
-<div class="links-of-blogroll motion-element links-of-blogroll-inline">
+<div class="links-of-blogroll motion-element">
 <div class="links-of-blogroll-title">
-<i class="fa  fa-fw fa-university"></i>
+<i class="fa fa-fw fa-university"></i>
 链接
 </div>
 <ul class="links-of-blogroll-list">
@@ -614,7 +601,7 @@ alt="张书樵">
 </footer>
 <div class="back-to-top">
 <i class="fa fa-arrow-up"></i>
-<span id="scrollpercent"><span>0</span>%</span>
+<span>0%</span>
 </div>
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
@@ -623,15 +610,14 @@ alt="张书樵">
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
 <script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/affix.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>
 <script src="/js/local-search.js?v=7.3.0"></script>
 <script pjax>
-if ($('body').find('div.pdf').length) {
-NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', function() {
-$('body').find('div.pdf').each(function(i, o) {
-PDFObject.embed($(o).attr('target'), $(o), {
+if (document.querySelectorAll('div.pdf').length) {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+document.querySelectorAll('div.pdf').forEach(element => {
+PDFObject.embed(element.getAttribute('target'), element, {
 pdfOpenParams: {
 navpanes: 0,
 toolbar: 0,
@@ -640,7 +626,7 @@ pagemode: 'thumbs',
 view: 'FitH'
 },
 PDFJS_URL: '/lib/pdf/web/viewer.html',
-height: $(o).attr('height') || '1000px'
+height: element.getAttribute('height') || '1000px'
 });
 });
 }, window.PDFObject);
@@ -648,10 +634,10 @@ height: $(o).attr('height') || '1000px'
 </script>
 <div id="pjax">
 <script>
-NexT.utils.getScript('/lib/Valine.min.js', function() {
+NexT.utils.getScript('/lib/Valine.min.js', () => {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
-guest = guest.split(',').filter(function(item) {
+guest = guest.split(',').filter(item => {
 return GUEST.indexOf(item) > -1;
 });
 new Valine({
@@ -674,26 +660,22 @@ path: location.pathname
 <script>
 var pjax = new Pjax({
 selectors: [
-'title',
+'head title',
 '#page-configurations',
 '.content-wrap',
-'.sidebar-inner',
+'.post-toc-wrap',
 '#pjax'
 ],
 switches: {
-'.sidebar-inner': Pjax.switches.innerHTML
+'.post-toc-wrap': Pjax.switches.innerHTML
 },
 analytics: false,
 cacheBust: false,
-scrollTo: !CONFIG.save_scroll
+scrollTo: !CONFIG.bookmark.enable
 });
-$(document).on('pjax:send', function() {
-$('.sidebar-inner').stop().fadeTo('fast', 0);
-CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
-});
-$(document).on('pjax:success', function() {
-$('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
-$(o).parent().append($(o).remove());
+window.addEventListener('pjax:success', () => {
+document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+$(element).parent().append($(element).remove());
 });
 // Define Motion Sequence & Bootstrap Motion.
 if (CONFIG.motion.enable) {
@@ -702,8 +684,6 @@ NexT.motion.integrator
 .add(NexT.motion.middleWares.postList)
 .bootstrap();
 }
-$('.sidebar-inner .motion-element').css('opacity', 1);
-$('.sidebar-inner').fadeTo('fast', 1);
 NexT.utils.updateSidebarPosition();
 });
 </script>

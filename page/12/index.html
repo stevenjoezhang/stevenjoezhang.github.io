@@ -4,15 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+<link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
@@ -22,7 +23,7 @@ var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.3.0',
+version: '7.4.0',
 exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":true},
 copycode: {"enable":true,"show_result":true,"style":"mac"},
@@ -46,7 +47,8 @@ translation: {
 copy_button: '复制',
 copy_success: '复制成功',
 copy_failure: '复制失败'
-}
+},
+sidebarPadding: 40
 };
 </script>
 <meta name="description" content="力电声光热，涵尽学海无涯">
@@ -60,7 +62,6 @@ copy_failure: '复制失败'
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="米米的博客">
 <meta name="twitter:description" content="力电声光热，涵尽学海无涯">
-<link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <script id="page-configurations">
 // https://hexo.io/docs/variables.html
 CONFIG.page = {
@@ -72,14 +73,13 @@ isArchive: false
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
+<script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
 <title>米米的博客</title>
-<meta name="generator" content="Hexo 3.9.0">
 <noscript>
 <style>
-.use-motion .motion-element,
 .use-motion .brand,
 .use-motion .menu-item,
 .sidebar-inner,
@@ -104,7 +104,7 @@ top: initial;
 <div class="container">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-<div class="header-inner"><div class="site-brand-wrapper">
+<div class="header-inner"><div class="site-brand-container">
 <div class="site-meta">
 <div>
 <a href="/" class="brand" rel="start">
@@ -158,7 +158,7 @@ top: initial;
 <span class="search-icon">
 <i class="fa fa-search"></i>
 </span>
-<div class="search-input-wrapper">
+<div class="search-input-container">
 <input autocomplete="off" autocorrect="off" autocapitalize="none"
 placeholder="搜索..." spellcheck="false"
 type="text" id="search-input">
@@ -173,13 +173,73 @@ type="text" id="search-input">
 </div>
 </div>
 </header>
+<div class="back-to-top">
+<i class="fa fa-arrow-up"></i>
+<span>0%</span>
+</div>
 <main id="main" class="main">
 <div class="main-inner">
 <div class="content-wrap">
-<div id="content" class="content page-home">
-<section id="posts" class="posts-expand">
-<article class="post" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
+<div id="content" class="content">
+<div id="posts" class="posts-expand">
+<article itemscope itemtype="http://schema.org/Article">
+<div class="post-block home">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/Hexo内容压缩/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2018-07/Hexo内容压缩/" class="post-title-link" itemprop="url">Hexo内容压缩</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2018-07-10 07:16:41" itemprop="dateCreated datePublished" datetime="2018-07-10T07:16:41+08:00">2018-07-10</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2018-07/Hexo内容压缩/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-07/Hexo内容压缩/" itemprop="commentCount"></span></a>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>Hexo生成的博客静态页面可能存在一个问题：由于主题模版的关系，生成的页面中会有大量空白行。虽然这对浏览器的渲染影响微乎其微，但是让强迫症极为难受。一种解决方法是使用Python对页面进行处理。可以在博客的根目录下（与<code>public</code>文件夹同级）新建以下Python脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minify_html</span><span class="params">(srcPath)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(srcPath, topdown = <span class="literal">True</span>):</span><br><span class="line">        <span class="keyword">for</span> name <span class="keyword">in</span> files:</span><br><span class="line">            <span class="keyword">if</span> name.find(<span class="string">".html"</span>) == <span class="number">-1</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            filename = os.path.join(root, name)</span><br><span class="line">            <span class="keyword">with</span> open(filename, <span class="string">"r"</span>) <span class="keyword">as</span> p:</span><br><span class="line">                <span class="keyword">with</span> open(filename + <span class="string">".tmp"</span>, <span class="string">"w"</span>) <span class="keyword">as</span> t:</span><br><span class="line">                    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">                        l = p.readline()</span><br><span class="line">                        <span class="keyword">if</span> <span class="keyword">not</span> l:</span><br><span class="line">                            <span class="keyword">break</span></span><br><span class="line">                        l = l.strip()</span><br><span class="line">                        <span class="keyword">if</span> l:</span><br><span class="line">                            t.write(l + <span class="string">"\n"</span>)</span><br><span class="line">            os.remove(filename)</span><br><span class="line">            os.rename(filename + <span class="string">".tmp"</span>, filename)</span><br><span class="line">            print(<span class="string">"\033[32mINFO\033[0m  Minified: \033[35m%s\033[0m"</span> % filename)</span><br><span class="line"></span><br><span class="line">minify_html(<span class="string">"public"</span>)</span><br></pre></td></tr></table></figure>
+<p>这样，在每次执行<code>hexo d</code>之前，执行该脚本，就可以上传压缩后的页面了。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2018-07/Hexo内容压缩/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article itemscope itemtype="http://schema.org/Article">
+<div class="post-block home">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-07/WordPress中文验证码/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -233,8 +293,8 @@ type="text" id="search-input">
 </footer>
 </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
+<article itemscope itemtype="http://schema.org/Article">
+<div class="post-block home">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/贝利乌鸦嘴历史/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -302,8 +362,8 @@ type="text" id="search-input">
 </footer>
 </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
+<article itemscope itemtype="http://schema.org/Article">
+<div class="post-block home">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/Python标签云拟合图片/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -367,8 +427,8 @@ type="text" id="search-input">
 </footer>
 </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
+<article itemscope itemtype="http://schema.org/Article">
+<div class="post-block home">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/Linux下增加、删除Swap文件/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -435,57 +495,7 @@ type="text" id="search-input">
 </footer>
 </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-06/震惊！黄金卡包竟能出橙/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-06/震惊！黄金卡包竟能出橙/" class="post-title-link" itemprop="url">震惊！黄金卡包竟能出橙</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-06-15 15:55:32" itemprop="dateCreated datePublished" datetime="2018-06-15T15:55:32+08:00">2018-06-15</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/电子游戏/" itemprop="url" rel="index"><span itemprop="name">电子游戏</span></a></span>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-comment-o"></i>
-</span>
-<span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-06/震惊！黄金卡包竟能出橙/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-06/震惊！黄金卡包竟能出橙/" itemprop="commentCount"></span></a>
-</span>
 </div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p><img src="/images/2018-06/al-akir.png" alt></p>
-<blockquote>
-<p>暴雪或将濒临破产。</p>
-</blockquote>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-</section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
 </nav>
@@ -498,13 +508,13 @@ type="text" id="search-input">
 <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
 </div>
 </div>
-<aside id="sidebar" class="sidebar">
+<aside class="sidebar">
 <div class="sidebar-inner">
 <ul class="sidebar-nav motion-element">
-<li class="sidebar-nav-toc" data-target="post-toc-wrap">
+<li class="sidebar-nav-toc">
 文章目录
 </li>
-<li class="sidebar-nav-overview" data-target="site-overview-wrap">
+<li class="sidebar-nav-overview">
 站点概览
 </li>
 </ul>
@@ -513,18 +523,17 @@ type="text" id="search-input">
 </div>
 <!--/noindex-->
 <div class="site-overview-wrap sidebar-panel">
-<div class="site-overview">
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image"
 src="/images/icon.gif"
 alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
-<div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
+<div class="site-description" itemprop="description">力电声光热，涵尽学海无涯</div>
 </div>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">108</span>
+<span class="site-state-item-count">109</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -562,7 +571,6 @@ alt="张书樵">
 </div>
 </div>
 </div>
-</div>
 </aside>
 <div id="sidebar-dimmer"></div>
 </div>
@@ -593,20 +601,64 @@ alt="张书樵">
 </div>
 </div>
 </footer>
-<div class="back-to-top">
-<i class="fa fa-arrow-up"></i>
-<span>0%</span>
-</div>
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="/lib/anime.min.js?v=3.1.0"></script>
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/schemes/pisces.js?v=7.3.0"></script>
-<script src="/js/next-boot.js?v=7.3.0"></script>
-<script src="/js/local-search.js?v=7.3.0"></script>
+<script src="/js/utils.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+<script>
+var pjax = new Pjax({
+selectors: [
+'head title',
+'#page-configurations',
+'.content-wrap',
+'.post-toc-wrap',
+'#pjax'
+],
+switches: {
+'.post-toc-wrap': Pjax.switches.innerHTML
+},
+analytics: false,
+cacheBust: false,
+scrollTo : !CONFIG.bookmark.enable
+});
+window.addEventListener('pjax:success', () => {
+document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+var id = element.id || '';
+var src = element.src || '';
+var code = element.text || element.textContent || element.innerHTML || '';
+var parent = element.parentNode;
+parent.removeChild(element);
+var script = document.createElement('script');
+if (id !=='') {
+script.id = element.id;
+}
+if (src !== '') {
+script.src = src;
+// Force synchronous loading of peripheral JS.
+script.async = false;
+}
+if (code !== '') {
+script.appendChild(document.createTextNode(code));
+}
+parent.appendChild(script);
+});
+NexT.boot.refresh();
+// Define Motion Sequence & Bootstrap Motion.
+if (CONFIG.motion.enable) {
+NexT.motion.integrator
+.init()
+.add(NexT.motion.middleWares.postList)
+.bootstrap();
+}
+NexT.utils.updateSidebarPosition();
+});
+</script>
+<script src="/js/local-search.js?v=7.4.0"></script>
 <script pjax>
 if (document.querySelectorAll('div.pdf').length) {
 NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
@@ -632,7 +684,7 @@ NexT.utils.getScript('/lib/Valine.min.js', () => {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
 guest = guest.split(',').filter(item => {
-return GUEST.indexOf(item) > -1;
+return GUEST.includes(item);
 });
 new Valine({
 el: '#comments',
@@ -651,35 +703,5 @@ path: location.pathname
 }, window.Valine);
 </script>
 </div>
-<script>
-var pjax = new Pjax({
-selectors: [
-'head title',
-'#page-configurations',
-'.content-wrap',
-'.post-toc-wrap',
-'#pjax'
-],
-switches: {
-'.post-toc-wrap': Pjax.switches.innerHTML
-},
-analytics: false,
-cacheBust: false,
-scrollTo: !CONFIG.bookmark.enable
-});
-window.addEventListener('pjax:success', () => {
-document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-$(element).parent().append($(element).remove());
-});
-// Define Motion Sequence & Bootstrap Motion.
-if (CONFIG.motion.enable) {
-NexT.motion.integrator
-.init()
-.add(NexT.motion.middleWares.postList)
-.bootstrap();
-}
-NexT.utils.updateSidebarPosition();
-});
-</script>
 </body>
 </html>

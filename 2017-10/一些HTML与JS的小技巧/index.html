@@ -4,15 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+<link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
@@ -22,7 +23,7 @@ var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.3.0',
+version: '7.4.0',
 exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":true},
 copycode: {"enable":true,"show_result":true,"style":"mac"},
@@ -46,11 +47,12 @@ translation: {
 copy_button: '复制',
 copy_success: '复制成功',
 copy_failure: '复制失败'
-}
+},
+sidebarPadding: 40
 };
 </script>
 <meta name="description" content="最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。 use strict在一些脚本中，你或许会在最前面看到单独的一行&amp;quot;use strict&amp;quot;，这是严格模式的声明。严格模式对正常的JavaScript语义做了一些更改：  严格模式通过抛出错误来消除了一些原有静默错误。 严格模式修复了一些导致JavaScript引擎难以执行优化的缺陷：有时候，相同的">
-<meta name="keywords" content="JavaScript,HTML">
+<meta name="keywords" content="HTML,JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一些HTML与JS的小技巧">
 <meta property="og:url" content="https://zhangshuqiao.org/2017-10/一些HTML与JS的小技巧/index.html">
@@ -61,7 +63,6 @@ copy_failure: '复制失败'
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些HTML与JS的小技巧">
 <meta name="twitter:description" content="最近博主在学习前端设计的时候，知道了很多实用的小技巧，于是决定写一篇文章总结一下。 use strict在一些脚本中，你或许会在最前面看到单独的一行&amp;quot;use strict&amp;quot;，这是严格模式的声明。严格模式对正常的JavaScript语义做了一些更改：  严格模式通过抛出错误来消除了一些原有静默错误。 严格模式修复了一些导致JavaScript引擎难以执行优化的缺陷：有时候，相同的">
-<link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <script id="page-configurations">
 // https://hexo.io/docs/variables.html
 CONFIG.page = {
@@ -73,14 +74,13 @@ isArchive: false
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
+<script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
 <title>一些HTML与JS的小技巧 | 米米的博客</title>
-<meta name="generator" content="Hexo 3.9.0">
 <noscript>
 <style>
-.use-motion .motion-element,
 .use-motion .brand,
 .use-motion .menu-item,
 .sidebar-inner,
@@ -105,7 +105,7 @@ top: initial;
 <div class="container">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-<div class="header-inner"><div class="site-brand-wrapper">
+<div class="header-inner"><div class="site-brand-container">
 <div class="site-meta">
 <div>
 <a href="/" class="brand" rel="start">
@@ -159,7 +159,7 @@ top: initial;
 <span class="search-icon">
 <i class="fa fa-search"></i>
 </span>
-<div class="search-input-wrapper">
+<div class="search-input-container">
 <input autocomplete="off" autocorrect="off" autocapitalize="none"
 placeholder="搜索..." spellcheck="false"
 type="text" id="search-input">
@@ -174,13 +174,17 @@ type="text" id="search-input">
 </div>
 </div>
 </header>
+<div class="back-to-top">
+<i class="fa fa-arrow-up"></i>
+<span>0%</span>
+</div>
 <main id="main" class="main">
 <div class="main-inner">
 <div class="content-wrap">
-<div id="content" class="content page-post-detail">
+<div id="content" class="content">
 <div id="posts" class="posts-expand">
-<article class="post" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
+<article itemscope itemtype="http://schema.org/Article">
+<div class="post-block post">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2017-10/一些HTML与JS的小技巧/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -298,8 +302,8 @@ type="text" id="search-input">
 </div>
 <footer class="post-footer">
 <div class="post-tags">
-<a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
 <a href="/tags/HTML/" rel="tag"># HTML</a>
+<a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
 </div>
 <div class="post-nav">
 <div class="post-nav-next post-nav-item">
@@ -328,36 +332,33 @@ type="text" id="search-input">
 <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
 </div>
 </div>
-<aside id="sidebar" class="sidebar">
+<aside class="sidebar">
 <div class="sidebar-inner">
 <ul class="sidebar-nav motion-element">
-<li class="sidebar-nav-toc" data-target="post-toc-wrap">
+<li class="sidebar-nav-toc">
 文章目录
 </li>
-<li class="sidebar-nav-overview" data-target="site-overview-wrap">
+<li class="sidebar-nav-overview">
 站点概览
 </li>
 </ul>
 <!--noindex-->
 <div class="post-toc-wrap sidebar-panel">
-<div class="post-toc">
-<div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#use-strict"><span class="nav-number">1.</span> <span class="nav-text">use strict</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript传递参数"><span class="nav-number">2.</span> <span class="nav-text">JavaScript传递参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#document-write"><span class="nav-number">3.</span> <span class="nav-text">document.write</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-noscript-gt-标签"><span class="nav-number">4.</span> <span class="nav-text">&lt;noscript&gt;标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-a-gt-标签的download属性"><span class="nav-number">5.</span> <span class="nav-text">&lt;a&gt;标签的download属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE条件注释"><span class="nav-number">6.</span> <span class="nav-text">IE条件注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阻止非法操作"><span class="nav-number">7.</span> <span class="nav-text">阻止非法操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#屏蔽IE浏览器"><span class="nav-number">7.1.</span> <span class="nav-text">屏蔽IE浏览器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏蔽百度搜索"><span class="nav-number">7.2.</span> <span class="nav-text">屏蔽百度搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防盗链"><span class="nav-number">7.3.</span> <span class="nav-text">防盗链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁止选中复制"><span class="nav-number">7.4.</span> <span class="nav-text">禁止选中复制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它的一些技巧"><span class="nav-number">8.</span> <span class="nav-text">其它的一些技巧</span></a></li></ol></div>
-</div>
+<div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#use-strict"><span class="nav-number">1.</span> <span class="nav-text">use strict</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript传递参数"><span class="nav-number">2.</span> <span class="nav-text">JavaScript传递参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#document-write"><span class="nav-number">3.</span> <span class="nav-text">document.write</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-noscript-gt-标签"><span class="nav-number">4.</span> <span class="nav-text">&lt;noscript&gt;标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-a-gt-标签的download属性"><span class="nav-number">5.</span> <span class="nav-text">&lt;a&gt;标签的download属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE条件注释"><span class="nav-number">6.</span> <span class="nav-text">IE条件注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阻止非法操作"><span class="nav-number">7.</span> <span class="nav-text">阻止非法操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#屏蔽IE浏览器"><span class="nav-number">7.1.</span> <span class="nav-text">屏蔽IE浏览器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏蔽百度搜索"><span class="nav-number">7.2.</span> <span class="nav-text">屏蔽百度搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防盗链"><span class="nav-number">7.3.</span> <span class="nav-text">防盗链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁止选中复制"><span class="nav-number">7.4.</span> <span class="nav-text">禁止选中复制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它的一些技巧"><span class="nav-number">8.</span> <span class="nav-text">其它的一些技巧</span></a></li></ol></div>
 </div>
 <!--/noindex-->
 <div class="site-overview-wrap sidebar-panel">
-<div class="site-overview">
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image"
 src="/images/icon.gif"
 alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
-<div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
+<div class="site-description" itemprop="description">力电声光热，涵尽学海无涯</div>
 </div>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">108</span>
+<span class="site-state-item-count">109</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -395,7 +396,6 @@ alt="张书樵">
 </div>
 </div>
 </div>
-</div>
 </aside>
 <div id="sidebar-dimmer"></div>
 </div>
@@ -426,20 +426,64 @@ alt="张书樵">
 </div>
 </div>
 </footer>
-<div class="back-to-top">
-<i class="fa fa-arrow-up"></i>
-<span>0%</span>
-</div>
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="/lib/anime.min.js?v=3.1.0"></script>
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/schemes/pisces.js?v=7.3.0"></script>
-<script src="/js/next-boot.js?v=7.3.0"></script>
-<script src="/js/local-search.js?v=7.3.0"></script>
+<script src="/js/utils.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+<script>
+var pjax = new Pjax({
+selectors: [
+'head title',
+'#page-configurations',
+'.content-wrap',
+'.post-toc-wrap',
+'#pjax'
+],
+switches: {
+'.post-toc-wrap': Pjax.switches.innerHTML
+},
+analytics: false,
+cacheBust: false,
+scrollTo : !CONFIG.bookmark.enable
+});
+window.addEventListener('pjax:success', () => {
+document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+var id = element.id || '';
+var src = element.src || '';
+var code = element.text || element.textContent || element.innerHTML || '';
+var parent = element.parentNode;
+parent.removeChild(element);
+var script = document.createElement('script');
+if (id !=='') {
+script.id = element.id;
+}
+if (src !== '') {
+script.src = src;
+// Force synchronous loading of peripheral JS.
+script.async = false;
+}
+if (code !== '') {
+script.appendChild(document.createTextNode(code));
+}
+parent.appendChild(script);
+});
+NexT.boot.refresh();
+// Define Motion Sequence & Bootstrap Motion.
+if (CONFIG.motion.enable) {
+NexT.motion.integrator
+.init()
+.add(NexT.motion.middleWares.postList)
+.bootstrap();
+}
+NexT.utils.updateSidebarPosition();
+});
+</script>
+<script src="/js/local-search.js?v=7.4.0"></script>
 <script pjax>
 if (document.querySelectorAll('div.pdf').length) {
 NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
@@ -460,13 +504,12 @@ height: element.getAttribute('height') || '1000px'
 }
 </script>
 <div id="pjax">
-<script src="/js/post-details.js?v=7.3.0"></script>
 <script>
 NexT.utils.getScript('/lib/Valine.min.js', () => {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
 guest = guest.split(',').filter(item => {
-return GUEST.indexOf(item) > -1;
+return GUEST.includes(item);
 });
 new Valine({
 el: '#comments',
@@ -485,35 +528,5 @@ path: location.pathname
 }, window.Valine);
 </script>
 </div>
-<script>
-var pjax = new Pjax({
-selectors: [
-'head title',
-'#page-configurations',
-'.content-wrap',
-'.post-toc-wrap',
-'#pjax'
-],
-switches: {
-'.post-toc-wrap': Pjax.switches.innerHTML
-},
-analytics: false,
-cacheBust: false,
-scrollTo: !CONFIG.bookmark.enable
-});
-window.addEventListener('pjax:success', () => {
-document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-$(element).parent().append($(element).remove());
-});
-// Define Motion Sequence & Bootstrap Motion.
-if (CONFIG.motion.enable) {
-NexT.motion.integrator
-.init()
-.add(NexT.motion.middleWares.postList)
-.bootstrap();
-}
-NexT.utils.updateSidebarPosition();
-});
-</script>
 </body>
 </html>

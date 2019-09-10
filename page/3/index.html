@@ -4,15 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+<link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
@@ -22,7 +23,7 @@ var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.3.0',
+version: '7.4.0',
 exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":true},
 copycode: {"enable":true,"show_result":true,"style":"mac"},
@@ -46,7 +47,8 @@ translation: {
 copy_button: '复制',
 copy_success: '复制成功',
 copy_failure: '复制失败'
-}
+},
+sidebarPadding: 40
 };
 </script>
 <meta name="description" content="力电声光热，涵尽学海无涯">
@@ -60,7 +62,6 @@ copy_failure: '复制失败'
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="米米的博客">
 <meta name="twitter:description" content="力电声光热，涵尽学海无涯">
-<link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <script id="page-configurations">
 // https://hexo.io/docs/variables.html
 CONFIG.page = {
@@ -72,14 +73,13 @@ isArchive: false
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
+<script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
 <title>米米的博客</title>
-<meta name="generator" content="Hexo 3.9.0">
 <noscript>
 <style>
-.use-motion .motion-element,
 .use-motion .brand,
 .use-motion .menu-item,
 .sidebar-inner,
@@ -104,7 +104,7 @@ top: initial;
 <div class="container">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-<div class="header-inner"><div class="site-brand-wrapper">
+<div class="header-inner"><div class="site-brand-container">
 <div class="site-meta">
 <div>
 <a href="/" class="brand" rel="start">
@@ -158,7 +158,7 @@ top: initial;
 <span class="search-icon">
 <i class="fa fa-search"></i>
 </span>
-<div class="search-input-wrapper">
+<div class="search-input-container">
 <input autocomplete="off" autocorrect="off" autocapitalize="none"
 placeholder="搜索..." spellcheck="false"
 type="text" id="search-input">
@@ -173,13 +173,79 @@ type="text" id="search-input">
 </div>
 </div>
 </header>
+<div class="back-to-top">
+<i class="fa fa-arrow-up"></i>
+<span>0%</span>
+</div>
 <main id="main" class="main">
 <div class="main-inner">
 <div class="content-wrap">
-<div id="content" class="content page-home">
-<section id="posts" class="posts-expand">
-<article class="post" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
+<div id="content" class="content">
+<div id="posts" class="posts-expand">
+<article itemscope itemtype="http://schema.org/Article">
+<div class="post-block home">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-06/历史上的今天/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2019-06/历史上的今天/" class="post-title-link" itemprop="url">历史上的今天</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2019-06-04 18:38:36" itemprop="dateCreated datePublished" datetime="2019-06-04T18:38:36+08:00">2019-06-04</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2019-06/历史上的今天/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-06/历史上的今天/" itemprop="commentCount"></span></a>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>如果要在网页上显示一些随机的语句，获得一些人生的经验，你会选择什么？<br>也许，<a href="https://hitokoto.cn" target="_blank" rel="noopener">一言</a>是一个很好的选择，它可以提供一些动漫中的台词，或是网络上的各种小段子。<br>在前面的文章<a href="/2018-05/有趣的Linux命令行工具">有趣的Linux命令行工具</a>中提到的<code>fortune</code>命令或许也可以满足需求，<code>pure-ftpd</code>就可以设置在连接成功时显示随机的来自<code>fortune</code>的语句。<br>那除此之外呢？历史上的今天是一个不错的方案。当你访问一些门户网站的首页，有时会看到这样的栏目。它也是一些百科全书网站，比如维基百科的传统。事实上，在Mac上就自带了一个小型的『历史上的今天』数据库，执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /usr/share/calendar/calendar.history</span><br></pre></td></tr></table></figure>
+<p>就可以看到。<br>这篇文章将介绍如何搭建一个提供『历史上的今天』信息的API。</p>
+<h2 id="建立数据库"><a href="#建立数据库" class="headerlink" title="建立数据库"></a>建立数据库</h2><p>首先，建立MySQL数据库，用于存储爬取的信息。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> dbname;</span><br><span class="line"><span class="comment">#建立数据库，dbname保持一致即可</span></span><br><span class="line"><span class="keyword">USE</span> dbname;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">event</span> (</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">UNSIGNED</span> PRIMARY <span class="keyword">KEY</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="keyword">type</span> <span class="built_in">int</span>(<span class="number">1</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="keyword">year</span> <span class="built_in">varchar</span>(<span class="number">6</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="built_in">date</span> <span class="built_in">varchar</span>(<span class="number">6</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  info <span class="built_in">varchar</span>(<span class="number">300</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span></span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8mb4;</span><br><span class="line">QUIT;</span><br></pre></td></tr></table></figure>
+<h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><p>数据来源是维基百科，使用Python爬取数据，并存入数据库中。代码中的<code>username</code>、<code>password</code>和<code>dbname</code>分别是你的登录用户名、密码和数据库名。数据表名默认是event，也可以自行修改。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line">username = <span class="string">"username"</span></span><br><span class="line">password = <span class="string">"password"</span></span><br><span class="line">dbname = <span class="string">"dbname"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"></span><br><span class="line">conn = pymysql.connect(host = <span class="string">"127.0.0.1"</span>, user = username, password = password, db = dbname, charset = <span class="string">"utf8"</span>)</span><br><span class="line">print(conn)</span><br><span class="line">cur = conn.cursor()</span><br><span class="line">cur.execute(<span class="string">"SET NAMES utf8mb4"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">savedb</span><span class="params">(data)</span>:</span></span><br><span class="line">    print(data)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        cur.execute(<span class="string">"insert into event values(null,%s,%s,%s,%s)"</span>, data)</span><br><span class="line">    <span class="keyword">except</span> pymysql.err.InternalError:</span><br><span class="line">        print(<span class="string">"\033[31mERROR: Incorrect string value.\033[0m"</span>, data)</span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">"failed.txt"</span>, <span class="string">"a"</span>) <span class="keyword">as</span> myfile:</span><br><span class="line">            myfile.write(str(data) + <span class="string">"\n"</span>)</span><br><span class="line">    <span class="keyword">except</span> pymysql.err.DataError:</span><br><span class="line">        print(<span class="string">"\033[31mERROR: Data too long.\033[0m"</span>, data)</span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">"failed.txt"</span>, <span class="string">"a"</span>) <span class="keyword">as</span> myfile:</span><br><span class="line">            myfile.write(str(data) + <span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getDateList</span><span class="params">()</span>:</span></span><br><span class="line">    list = []</span><br><span class="line">    date = datetime.date(<span class="number">2016</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">366</span>):</span><br><span class="line">        date_str = str(date.month) + <span class="string">"月"</span> + str(date.day) + <span class="string">"日"</span></span><br><span class="line">        list.append(date_str)</span><br><span class="line">        date += datetime.timedelta(days = <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> list</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getInfo</span><span class="params">(html, type, date)</span>:</span></span><br><span class="line">    typeList = [<span class="string">"大事记"</span>, <span class="string">"出生"</span>, <span class="string">"逝世"</span>]</span><br><span class="line">    flag = re.compile(<span class="string">"(&lt;h2&gt;&lt;span id=.*&lt;span class=\"mw-headline\" id=.*?"</span> + typeList[type] + <span class="string">"[\s\S]*?&lt;/ul&gt;\s*?)&lt;h2&gt;"</span>).search(html)</span><br><span class="line">    <span class="keyword">if</span> flag:</span><br><span class="line">        bsObj = BeautifulSoup(flag.group(<span class="number">1</span>), <span class="string">"html.parser"</span>).findAll(<span class="string">"li"</span>)</span><br><span class="line">        <span class="keyword">for</span> li <span class="keyword">in</span> bsObj:</span><br><span class="line">            match = re.compile(<span class="string">"((^前|^)\d&#123;1,4&#125;年)：([\s\S]*$)"</span>).match(li.get_text())</span><br><span class="line">            <span class="keyword">if</span> match:</span><br><span class="line">                year = match.group(<span class="number">1</span>)</span><br><span class="line">                info = re.sub(<span class="string">"\[\d&#123;1,&#125;\]"</span>, <span class="string">""</span>, match.group(<span class="number">3</span>).strip())</span><br><span class="line">                data = (type, year, date, info)</span><br><span class="line">                savedb(data)</span><br><span class="line"></span><br><span class="line">list = getDateList()</span><br><span class="line"><span class="keyword">for</span> date <span class="keyword">in</span> list:</span><br><span class="line">    print(date)</span><br><span class="line">    url = <span class="string">"https://zh.wikipedia.org/zh-cn/%s"</span> % date</span><br><span class="line">    r = requests.get(url)</span><br><span class="line">    getInfo(r.text, <span class="number">0</span>, date) <span class="comment"># 大事记</span></span><br><span class="line">    getInfo(r.text, <span class="number">1</span>, date) <span class="comment"># 出生</span></span><br><span class="line">    getInfo(r.text, <span class="number">2</span>, date) <span class="comment"># 逝世</span></span><br><span class="line"></span><br><span class="line">cur.connection.commit()</span><br><span class="line">cur.close()</span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
+<p>这里的两个<code>except</code>分别处理的是特殊字符（非UTF-8范围）和内容长度超出的问题。</p>
+<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><p>比较简单的方式是按照json格式进行输出，这里给出一种使用Python的方案。</p>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2019-06/历史上的今天/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article itemscope itemtype="http://schema.org/Article">
+<div class="post-block home">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-05/在macOS上读写NTFS磁盘/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -235,8 +301,8 @@ type="text" id="search-input">
 </footer>
 </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
+<article itemscope itemtype="http://schema.org/Article">
+<div class="post-block home">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-05/Windows安装tensorflow-gpu/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -312,8 +378,8 @@ type="text" id="search-input">
 </footer>
 </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
+<article itemscope itemtype="http://schema.org/Article">
+<div class="post-block home">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-05/MySQL重置AUTO_INCREMENT/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -364,8 +430,8 @@ type="text" id="search-input">
 </footer>
 </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
+<article itemscope itemtype="http://schema.org/Article">
+<div class="post-block home">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-04/Minecraft配置Seus光影/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -406,21 +472,21 @@ type="text" id="search-input">
 <div class="post-body" itemprop="articleBody">
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>下面列出了博主测试成功的环境，使用其它的版本可能出现不可预料的情况。</p>
 <h3 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h3><ul>
-<li><p>图形卡<br>由于Seus光影对计算机的图形性能有较高的要求，博主使用了一块NVIDIA GeForce RTX 2070显卡进行测试。根据作者的描述，20系和10系显卡对Seus光影的支持没有本质区别（除了RTX加持）；因此，你也可以选择其它型号的N卡，运行起来不会有影响。不过，根据一些Minecraft论坛的反馈，A卡和I卡可能无法正常渲染此光影。</p>
+<li><p>图形卡<br>由于Seus光影对计算机的图形性能有较高的要求，博主使用了一块NVIDIA GeForce RTX 2070显卡进行测试。根据作者的描述，20系和10系显卡对Seus光影的渲染没有本质区别——RTX加持暂时还没有体现出作用。因此，你也可以放心地选择其它型号的N卡，即使是上古核弹，运行起来也不会有影响。不过，根据一些Minecraft论坛的反馈，A卡和I卡可能无法支持此光影效果。</p>
 </li>
 <li><p>其它<br>其它硬件达到主流配置即可，Minecraft对性能没有什么苛求。如果上卡吧标配的话，流畅玩耍一定没有什么问题。</p>
 </li>
 </ul>
 <h3 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h3><ul>
-<li><p>Windows系统<br>由于macOS Mojave的N卡驱动迟迟没有更新（据说是苹果已经抛弃了N卡，未来很有可能不会再更新驱动），因而需要在其它系统上运行。博主使用的是Windows 10。Linux原理上也是可以的，不过博主并没有尝试。</p>
+<li><p>Windows系统<br>由于macOS Mojave的N卡驱动迟迟没有更新（据说是苹果已经抛弃了N卡，未来很有可能不会再更新驱动），因而需要在其它系统上运行。博主使用的是Windows 10。Linux原理上也是可以的，不过博主并没有进行尝试。</p>
 </li>
-<li><p>JAVA环境<br>Minecraft JAVA版自然需要JAVA的环境。由于后面用到的启动器对JAVA9及以上版本的支持不佳，博主推荐安装JAVA SE 8。可以到<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">Oracle官网</a>下载。测试使用的是JDK1.8.0_211。</p>
+<li><p>Java环境<br>Minecraft Java版自然需要Java的环境。由于Minecraft对Java9及以上版本的支持不佳，博主推荐安装Java SE 8。可以到<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">Oracle官网</a>下载。测试使用的是JDK1.8.0_211。</p>
 </li>
-<li><p>HMCL启动器<br>你可以从GitHub上<a href="https://github.com/huanghongxun/HMCL/releases" target="_blank" rel="noopener">获取HMCL启动器</a>，下载<code>exe</code>版本即可。博主使用的是发稿前的最新版本3.2.129，后面的步骤也以该版本为例。</p>
+<li><p>HMCL启动器<br>你可以从GitHub上<a href="https://github.com/huanghongxun/HMCL/releases" target="_blank" rel="noopener">获取HMCL启动器</a>，下载<code>exe</code>版本即可。博主使用的是目前的最新版本3.2.129，后面的安装步骤也以该版本为例。</p>
 </li>
 <li><p>光影<br>在<a href="https://sonicether.com/seus/#Downloads" target="_blank" rel="noopener">Seus官方网站</a>可以下载免费的光影包。推荐使用<code>SEUS Renewed v1.0.0</code>和<code>SEUS V11</code>。除此之外，可以向作者本人<a href="https://www.patreon.com/sonicether" target="_blank" rel="noopener">付费购买</a>制作中的<code>SEUS PTGI</code>（目前的版本收费10美元，未来发布的正式版将免费）。截至发稿前，最新版本为<code>SEUS PTGI E6</code>。博主这里提供了一个免费镜像：<br><a href="/files/SEUS_PTGI_E6.zip">SEUS_PTGI_E6.zip</a></p>
 </li>
-<li><p>材质<br>一个好的材质包同样是不可或缺的。博主推荐使用<a href="https://matteorizzo.com/realistico/" target="_blank" rel="noopener">Realistico</a>，不过，这个材质包的官方<code>512x</code>版本是付费的，可以自行到国内或国外的玩家论坛上寻找资源。<br>此外还有一个<a href="https://continuum.graphics/stratum-rp" target="_blank" rel="noopener">Stratum</a>材质也很不错，Reddit上的讨论地址是<a href="https://www.reddit.com/r/modpiracy/comments/9vmmj9/request_tier_3_of_the_stratum_resource_pack/" target="_blank" rel="noopener">[Request] Tier 3 of the stratum resource pack</a>，不过下载链接被删帖了。后来博主发现可以通过把<code>www.reddit.com</code>替换为<code>www.removeddit.com</code>查看所有被删除的内容，然后就找到了这个Mediafire上的存储库：<a href="https://www.mediafire.com/folder/6lxv0w9517j6l/Stratum" target="_blank" rel="noopener">Stratum</a>。</p>
+<li><p>材质<br>一个好的材质包同样是不可或缺的。博主推荐使用<a href="https://matteorizzo.com/realistico/" target="_blank" rel="noopener">Realistico</a>，不过，这个材质包的官方<code>512x</code>版本是付费的，可以自行到国内或国外的玩家论坛上寻找资源。</p>
 </li>
 </ul>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装Minecraft"><a href="#安装Minecraft" class="headerlink" title="安装Minecraft"></a>安装Minecraft</h3><p>安装过程并不复杂。运行<code>HMCL-3.2.129.exe</code>，在『游戏列表』中选择『安装新游戏版本』。<br><img src="/images/2019-04/seus1.png" alt></p>
@@ -444,96 +510,7 @@ type="text" id="search-input">
 </footer>
 </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-04/为JavaScript控制台添加样式/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2019-04/为JavaScript控制台添加样式/" class="post-title-link" itemprop="url">为JavaScript控制台添加样式</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2019-04-18 19:59:58" itemprop="dateCreated datePublished" datetime="2019-04-18T19:59:58+08:00">2019-04-18</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web开发/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a></span>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-comment-o"></i>
-</span>
-<span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2019-04/为JavaScript控制台添加样式/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-04/为JavaScript控制台添加样式/" itemprop="commentCount"></span></a>
-</span>
 </div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p>在常见的JavaScript代码中，一般会通过<code>console</code>向控制台输出简单的文字信息。为了把信息输出得更优雅更便于阅读，除了<code>cosole.log()</code>方法外，还可以调用<code>cosole.warn()</code>来输出警告信息，在输出信息前面会有一个带感叹号的黄色三角警告符号。<br>另外经常用到的是输出错误信息，可以通过调用<code>console.error()</code>来实现，信息前面会出现一个带叉的红色圆形图标。<br>在某些浏览器下，还可以按以下格式，为输出到控制台的文字进行CSS控制，添加样式：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%c需要输出的信息"</span>, <span class="string">"css代码"</span>);</span><br></pre></td></tr></table></figure>
-<p>这样可以显示缤纷的颜色，甚至图片，简直爽翻了。<br>下面是Chrome中<code>console.log()</code>的官方文档摘要，也适用于大部分主流浏览器：</p>
-<table>
-<thead>
-<tr>
-<th>Format Specifier</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>%s</td>
-<td>Formats the value as a string.</td>
-</tr>
-<tr>
-<td>%d or %i</td>
-<td>Formats the value as an integer.</td>
-</tr>
-<tr>
-<td>%f</td>
-<td>Formats the value as a floating point value.</td>
-</tr>
-<tr>
-<td>%o</td>
-<td>Formats the value as an expandable DOM element (as in the Elements panel).</td>
-</tr>
-<tr>
-<td>%O</td>
-<td>Formats the value as an expandable JavaScript object.</td>
-</tr>
-<tr>
-<td>%c</td>
-<td>Formats the output string according to CSS styles you provide.</td>
-</tr>
-</tbody></table>
-<p>下面是一些例子：</p>
-<p><img src="/images/2019-04/2018-07-17.png" alt></p>
-<h2 id="3D-Text"><a href="#3D-Text" class="headerlink" title="3D Text"></a>3D Text</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%c3D Text"</span>, <span class="string">"text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);\</span></span><br><span class="line"><span class="string">font-size: 5em;"</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="Colorful-CSS"><a href="#Colorful-CSS" class="headerlink" title="Colorful CSS"></a>Colorful CSS</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%cColorful CSS"</span>, <span class="string">"background: rgba(252, 234, 187, 1);\</span></span><br><span class="line"><span class="string">background: -moz-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: -webkit-gradient(left top, right top, color-stop(0%, rgba(252, 234, 187, 1)), color-stop(12%, rgba(175, 250, 77, 1)), color-stop(28%, rgba(0, 247, 49, 1)), color-stop(39%, rgba(0, 210, 247, 1)), color-stop(51%, rgba(0, 189, 247, 1)), color-stop(64%, rgba(133, 108, 217, 1)), color-stop(78%, rgba(177, 0, 247, 1)), color-stop(87%, rgba(247, 0, 189, 1)), color-stop(100%, rgba(245, 22, 52, 1)));\</span></span><br><span class="line"><span class="string">background: -webkit-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: -o-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: -ms-linear-gradient(left, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">background: linear-gradient(to right, rgba(252, 234, 187, 1) 0%, rgba(175, 250, 77, 1) 12%, rgba(0, 247, 49, 1) 28%, rgba(0, 210, 247, 1) 39%, rgba(0, 189, 247, 1) 51%, rgba(133, 108, 217, 1) 64%, rgba(177, 0, 247, 1) 78%, rgba(247, 0, 189, 1) 87%, rgba(245, 22, 52, 1) 100%);\</span></span><br><span class="line"><span class="string">filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#f51634', GradientType=1);\</span></span><br><span class="line"><span class="string">font-size: 5em;"</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="Rainbow-Text"><a href="#Rainbow-Text" class="headerlink" title="Rainbow Text"></a>Rainbow Text</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%cRainbow Text"</span>, <span class="string">"background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));\</span></span><br><span class="line"><span class="string">color: transparent;\</span></span><br><span class="line"><span class="string">-webkit-background-clip: text;\</span></span><br><span class="line"><span class="string">font-size: 5em;"</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h2><p><img src="/images/2019-04/072156353445447.gif" alt></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%c"</span>, <span class="string">"padding: 50px 300px; line-height: 120px; background: url('/images/icon.gif') no-repeat;"</span>);</span><br></pre></td></tr></table></figure>
-<p>更多内容可以参考<a href="https://www.cnblogs.com/Wayou/p/chrome_dev_tool_style_console.html" target="_blank" rel="noopener">Chrome控制台新玩法-console显示图片以及为文字加样式</a>。</p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-</section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
 </nav>
@@ -546,13 +523,13 @@ type="text" id="search-input">
 <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
 </div>
 </div>
-<aside id="sidebar" class="sidebar">
+<aside class="sidebar">
 <div class="sidebar-inner">
 <ul class="sidebar-nav motion-element">
-<li class="sidebar-nav-toc" data-target="post-toc-wrap">
+<li class="sidebar-nav-toc">
 文章目录
 </li>
-<li class="sidebar-nav-overview" data-target="site-overview-wrap">
+<li class="sidebar-nav-overview">
 站点概览
 </li>
 </ul>
@@ -561,18 +538,17 @@ type="text" id="search-input">
 </div>
 <!--/noindex-->
 <div class="site-overview-wrap sidebar-panel">
-<div class="site-overview">
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image"
 src="/images/icon.gif"
 alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
-<div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
+<div class="site-description" itemprop="description">力电声光热，涵尽学海无涯</div>
 </div>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">108</span>
+<span class="site-state-item-count">109</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -610,7 +586,6 @@ alt="张书樵">
 </div>
 </div>
 </div>
-</div>
 </aside>
 <div id="sidebar-dimmer"></div>
 </div>
@@ -641,20 +616,64 @@ alt="张书樵">
 </div>
 </div>
 </footer>
-<div class="back-to-top">
-<i class="fa fa-arrow-up"></i>
-<span>0%</span>
-</div>
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="/lib/anime.min.js?v=3.1.0"></script>
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/schemes/pisces.js?v=7.3.0"></script>
-<script src="/js/next-boot.js?v=7.3.0"></script>
-<script src="/js/local-search.js?v=7.3.0"></script>
+<script src="/js/utils.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+<script>
+var pjax = new Pjax({
+selectors: [
+'head title',
+'#page-configurations',
+'.content-wrap',
+'.post-toc-wrap',
+'#pjax'
+],
+switches: {
+'.post-toc-wrap': Pjax.switches.innerHTML
+},
+analytics: false,
+cacheBust: false,
+scrollTo : !CONFIG.bookmark.enable
+});
+window.addEventListener('pjax:success', () => {
+document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+var id = element.id || '';
+var src = element.src || '';
+var code = element.text || element.textContent || element.innerHTML || '';
+var parent = element.parentNode;
+parent.removeChild(element);
+var script = document.createElement('script');
+if (id !=='') {
+script.id = element.id;
+}
+if (src !== '') {
+script.src = src;
+// Force synchronous loading of peripheral JS.
+script.async = false;
+}
+if (code !== '') {
+script.appendChild(document.createTextNode(code));
+}
+parent.appendChild(script);
+});
+NexT.boot.refresh();
+// Define Motion Sequence & Bootstrap Motion.
+if (CONFIG.motion.enable) {
+NexT.motion.integrator
+.init()
+.add(NexT.motion.middleWares.postList)
+.bootstrap();
+}
+NexT.utils.updateSidebarPosition();
+});
+</script>
+<script src="/js/local-search.js?v=7.4.0"></script>
 <script pjax>
 if (document.querySelectorAll('div.pdf').length) {
 NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
@@ -680,7 +699,7 @@ NexT.utils.getScript('/lib/Valine.min.js', () => {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
 guest = guest.split(',').filter(item => {
-return GUEST.indexOf(item) > -1;
+return GUEST.includes(item);
 });
 new Valine({
 el: '#comments',
@@ -699,35 +718,5 @@ path: location.pathname
 }, window.Valine);
 </script>
 </div>
-<script>
-var pjax = new Pjax({
-selectors: [
-'head title',
-'#page-configurations',
-'.content-wrap',
-'.post-toc-wrap',
-'#pjax'
-],
-switches: {
-'.post-toc-wrap': Pjax.switches.innerHTML
-},
-analytics: false,
-cacheBust: false,
-scrollTo: !CONFIG.bookmark.enable
-});
-window.addEventListener('pjax:success', () => {
-document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-$(element).parent().append($(element).remove());
-});
-// Define Motion Sequence & Bootstrap Motion.
-if (CONFIG.motion.enable) {
-NexT.motion.integrator
-.init()
-.add(NexT.motion.middleWares.postList)
-.bootstrap();
-}
-NexT.utils.updateSidebarPosition();
-});
-</script>
 </body>
 </html>

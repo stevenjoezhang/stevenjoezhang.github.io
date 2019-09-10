@@ -8,6 +8,20 @@
     </url>
     
     <url>
+        <loc>https://zhangshuqiao.org/friends/</loc>
+        <lastmod>2019-09-10T16:54:50.009Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://zhangshuqiao.org/lab/</loc>
+        <lastmod>2019-09-01T07:34:59.086Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://zhangshuqiao.org/schedule.html</loc>
         <lastmod>2019-08-22T23:28:45.833Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,20 +31,6 @@
     <url>
         <loc>https://zhangshuqiao.org/about/</loc>
         <lastmod>2019-08-11T18:02:45.544Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://zhangshuqiao.org/friends/</loc>
-        <lastmod>2019-08-10T18:09:41.565Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://zhangshuqiao.org/lab/</loc>
-        <lastmod>2019-08-10T02:52:17.109Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>

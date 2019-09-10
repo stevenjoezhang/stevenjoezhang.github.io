@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>https://zhangshuqiao.org/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/</loc>
+        <lastmod>2019-09-10T16:56:25.786Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://zhangshuqiao.org/tags/%E6%95%B0%E5%AD%A6/</loc>
         <lastmod>2019-08-21T17:14:01.438Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -10,14 +17,14 @@
     </url>
 
     <url>
-        <loc>https://zhangshuqiao.org/tags/LaTeX/</loc>
+        <loc>https://zhangshuqiao.org/tags/WordPress/</loc>
         <lastmod>2019-08-21T17:12:55.704Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://zhangshuqiao.org/tags/WordPress/</loc>
+        <loc>https://zhangshuqiao.org/tags/LaTeX/</loc>
         <lastmod>2019-08-21T17:12:55.704Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -40,13 +47,6 @@
     <url>
         <loc>https://zhangshuqiao.org/tags/Mac/</loc>
         <lastmod>2019-08-14T08:48:07.915Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://zhangshuqiao.org/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/</loc>
-        <lastmod>2019-08-13T08:51:59.483Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

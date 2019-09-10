@@ -8,8 +8,24 @@
     </url>
 
     <url>
-        <loc>https://zhangshuqiao.org/2019-08/%E8%91%9B%E5%BA%95%E6%96%AF%E5%A0%A1%E6%BC%94%E8%AF%B4/</loc>
-        <lastmod>2019-08-23T00:42:58.397Z</lastmod>
+        <loc>https://zhangshuqiao.org/2019-09/%E8%BD%AC%E6%8D%A2Minecraft%E5%AD%98%E6%A1%A3%E6%A0%BC%E5%BC%8F/</loc>
+        <lastmod>2019-09-10T16:56:25.786Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zhangshuqiao.org/2019-04/Minecraft%E9%85%8D%E7%BD%AESeus%E5%85%89%E5%BD%B1/</loc>
+        <lastmod>2019-09-10T16:40:27.607Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zhangshuqiao.org/2019-08/Gettysburg%20Address/</loc>
+        <lastmod>2019-08-29T03:30:13.355Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -74,14 +90,6 @@
     <url>
         <loc>https://zhangshuqiao.org/2017-11/%E5%9C%A8Mac%E4%B8%8A%E9%80%9A%E8%BF%87Sublime%E5%92%8CSkim%E7%BC%96%E8%BE%91LaTeX/</loc>
         <lastmod>2019-08-14T08:48:07.915Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://zhangshuqiao.org/2019-04/Minecraft%E9%85%8D%E7%BD%AESeus%E5%85%89%E5%BD%B1/</loc>
-        <lastmod>2019-08-13T08:51:59.483Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

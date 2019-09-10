@@ -4,15 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
-<link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+<link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+<link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta name="google-site-verification" content="drUiN1FHdS_E7EWM7TtT28Sro8_hzEGAFj5tOjwcYJw">
-<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
 <link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-bounce.css">
@@ -22,7 +23,7 @@ var NexT = window.NexT || {};
 var CONFIG = {
 root: '/',
 scheme: 'Gemini',
-version: '7.3.0',
+version: '7.4.0',
 exturl: false,
 sidebar: {"position":"left","display":"post","offset":12,"onmobile":true},
 copycode: {"enable":true,"show_result":true,"style":"mac"},
@@ -46,7 +47,8 @@ translation: {
 copy_button: '复制',
 copy_success: '复制成功',
 copy_failure: '复制失败'
-}
+},
+sidebarPadding: 40
 };
 </script>
 <meta name="description" content="力电声光热，涵尽学海无涯">
@@ -60,7 +62,6 @@ copy_failure: '复制失败'
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="米米的博客">
 <meta name="twitter:description" content="力电声光热，涵尽学海无涯">
-<link rel="alternate" href="/atom.xml" title="米米的博客" type="application/atom+xml">
 <script id="page-configurations">
 // https://hexo.io/docs/variables.html
 CONFIG.page = {
@@ -72,14 +73,13 @@ isArchive: false
 };
 </script>
 <link rel="stylesheet" href="/lib/waifu/waifu.css">
+<script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 <script src="/lib/waifu/live2d.min.js"></script>
 <script src="/lib/waifu/waifu-tips.js"></script>
 <script src="/lib/custom.js"></script>
 <title>米米的博客</title>
-<meta name="generator" content="Hexo 3.9.0">
 <noscript>
 <style>
-.use-motion .motion-element,
 .use-motion .brand,
 .use-motion .menu-item,
 .sidebar-inner,
@@ -104,7 +104,7 @@ top: initial;
 <div class="container">
 <div class="headband"></div>
 <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-<div class="header-inner"><div class="site-brand-wrapper">
+<div class="header-inner"><div class="site-brand-container">
 <div class="site-meta">
 <div>
 <a href="/" class="brand" rel="start">
@@ -158,7 +158,7 @@ top: initial;
 <span class="search-icon">
 <i class="fa fa-search"></i>
 </span>
-<div class="search-input-wrapper">
+<div class="search-input-container">
 <input autocomplete="off" autocorrect="off" autocapitalize="none"
 placeholder="搜索..." spellcheck="false"
 type="text" id="search-input">
@@ -173,13 +173,100 @@ type="text" id="search-input">
 </div>
 </div>
 </header>
+<div class="back-to-top">
+<i class="fa fa-arrow-up"></i>
+<span>0%</span>
+</div>
 <main id="main" class="main">
 <div class="main-inner">
 <div class="content-wrap">
-<div id="content" class="content page-home">
-<section id="posts" class="posts-expand">
-<article class="post" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
+<div id="content" class="content">
+<div id="posts" class="posts-expand">
+<article itemscope itemtype="http://schema.org/Article">
+<div class="post-block home">
+<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-01/树莓派使用RFID RC522芯片/">
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="张书樵">
+<meta itemprop="description" content="力电声光热，涵尽学海无涯">
+<meta itemprop="image" content="/images/icon.gif">
+</span>
+<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="米米的博客">
+</span>
+<header class="post-header">
+<h1 class="post-title" itemprop="name headline">
+<a href="/2019-01/树莓派使用RFID RC522芯片/" class="post-title-link" itemprop="url">树莓派使用RFID RC522芯片</a>
+</h1>
+<div class="post-meta">
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">发表于</span>
+<time title="创建时间：2019-01-21 12:06:22" itemprop="dateCreated datePublished" datetime="2019-01-21T12:06:22+08:00">2019-01-21</time>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-folder-o"></i>
+</span>
+<span class="post-meta-item-text">分类于</span>
+<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序设计/" itemprop="url" rel="index"><span itemprop="name">程序设计</span></a></span>
+</span>
+<span class="post-meta-item">
+<span class="post-meta-item-icon">
+<i class="fa fa-comment-o"></i>
+</span>
+<span class="post-meta-item-text">Valine：</span>
+<a title="valine" href="/2019-01/树莓派使用RFID RC522芯片/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-01/树莓派使用RFID RC522芯片/" itemprop="commentCount"></span></a>
+</span>
+</div>
+</header>
+<div class="post-body" itemprop="articleBody">
+<p>实用教程：树莓派使用RFID RC522芯片进行数据的读写</p>
+<p><img src="/images/2019-01/raspberry-pi-RFID-Reader.jpg" alt></p>
+<p>In this Raspberry Pi RFID RC522 tutorial, I will be walking you through the steps on how to set up and wire the RFID RC522 chip with your Raspberry Pi. This project is a cool circuit to play around with and opens you up to quite a wide variety of different projects from using it as an attendance system to using it to open a lock.<br>在这个Raspberry Pi RFID RC522教程中，我将介绍如何设置和连接Raspberry Pi和RFID RC522芯片。这是一个很实用的教程，以便于你之后各种不同的项目，例如使用它作为考勤系统、使用它来打开一个锁。</p>
+<p>The RFID RC522 is a very low-cost RFID (Radio-frequency identification) reader and writer that is based on the MFRC522 microcontroller. This microcontroller provides its data through the SPI protocol and works by creating a 13.56MHz electromagnetic field that it uses to communicate with the RFID tags.<br>RFID RC522是基于MFRC522微控制器的非常低成本的RFID（射频识别）读写器。该微控制器通过SPI协议提供数据，并通过创建一个13.56MHz的电磁场来工作，该电磁场用于与RFID卡片进行通信。</p>
+<p>Make sure that the tags you purchase for your RFID RC522 operate on the 13.56MHz frequency otherwise we will fail to read them.<br>确保你的RFID RC522购买的卡片在13.56MHz的频率上运行，否则将无法读取。</p>
+<p>We will be showing you how to wire up the RC522 as well as showing you how to write Python scripts to interact with the chip so you can both read and write your RFID Tags. You can extend this tutorial to use something like a <a href="https://pimylifeup.com/raspberry-pi-lcd-16x2" target="_blank" rel="noopener">16×2 LCD for the Raspberry Pi</a>, handy if you want to show some information.<br>本教程将示范如何连接RC522以及编写Python脚本以与芯片进行交互，以便读取和写入RFID卡片。如果你想展示一些数据信息，你可以使用像<a href="https://pimylifeup.com/raspberry-pi-lcd-16x2" target="_blank" rel="noopener">16×2液晶显示器</a>扩展这个教程。</p>
+<h2 id="Equipment-List"><a href="#Equipment-List" class="headerlink" title="Equipment List"></a>Equipment List</h2><p>设备清单</p>
+<p>Below are all the bits and pieces that I used for this Raspberry Pi RFID RC522 tutorial.<br>下面列出的是我在这个教程中使用的东西。</p>
+<p>Recommended:<br>推荐：</p>
+<ul>
+<li><p>Raspberry Pi 2 or 3<br>树莓派2或3</p>
+</li>
+<li><p>Micro SD Card<br>Micro SD卡</p>
+</li>
+<li><p>Power Supply<br>电源供应</p>
+</li>
+<li><p>RC522 RFID Reader<br>RC522 RFID读卡器</p>
+</li>
+<li><p>Breadboard<br>面包板</p>
+</li>
+<li><p>Breadboard Wire<br>面包板接线</p>
+</li>
+</ul>
+<p>Optional:<br>可选：</p>
+<ul>
+<li><p>Raspberry Pi Case<br>树莓派外壳</p>
+</li>
+<li><p>Ethernet Network Connection or Wifi dongle (The Pi 3 has WiFi inbuilt)<br>以太网或Wifi适配（树莓派3自带了）</p>
+</li>
+</ul>
+<!--noindex-->
+<div class="post-button text-center">
+<a class="btn" href="/2019-01/树莓派使用RFID RC522芯片/#more" rel="contents">
+阅读全文 &raquo;
+</a>
+</div>
+<!--/noindex-->
+</div>
+<footer class="post-footer">
+<div class="post-eof"></div>
+</footer>
+</div>
+</article>
+<article itemscope itemtype="http://schema.org/Article">
+<div class="post-block home">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-01/如何进行曲线拟合/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -227,8 +314,8 @@ type="text" id="search-input">
 </footer>
 </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
+<article itemscope itemtype="http://schema.org/Article">
+<div class="post-block home">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-01/什么是CAT等级？/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -318,8 +405,8 @@ type="text" id="search-input">
 </footer>
 </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
+<article itemscope itemtype="http://schema.org/Article">
+<div class="post-block home">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2019-01/成功召唤独角兽/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -368,8 +455,8 @@ type="text" id="search-input">
 </footer>
 </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
+<article itemscope itemtype="http://schema.org/Article">
+<div class="post-block home">
 <link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-12/炉石卡组代码解析/">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 <meta itemprop="name" content="张书樵">
@@ -434,55 +521,7 @@ type="text" id="search-input">
 </footer>
 </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/Article">
-<div class="post-block">
-<link itemprop="mainEntityOfPage" href="https://zhangshuqiao.org/2018-12/Command Line Russian Roulette/">
-<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="name" content="张书樵">
-<meta itemprop="description" content="力电声光热，涵尽学海无涯">
-<meta itemprop="image" content="/images/icon.gif">
-</span>
-<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<meta itemprop="name" content="米米的博客">
-</span>
-<header class="post-header">
-<h1 class="post-title" itemprop="name headline">
-<a href="/2018-12/Command Line Russian Roulette/" class="post-title-link" itemprop="url">Command Line Russian Roulette</a>
-</h1>
-<div class="post-meta">
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">发表于</span>
-<time title="创建时间：2018-12-16 16:58:38" itemprop="dateCreated datePublished" datetime="2018-12-16T16:58:38+08:00">2018-12-16</time>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-folder-o"></i>
-</span>
-<span class="post-meta-item-text">分类于</span>
-<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/幽默/" itemprop="url" rel="index"><span itemprop="name">幽默</span></a></span>
-</span>
-<span class="post-meta-item">
-<span class="post-meta-item-icon">
-<i class="fa fa-comment-o"></i>
-</span>
-<span class="post-meta-item-text">Valine：</span>
-<a title="valine" href="/2018-12/Command Line Russian Roulette/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018-12/Command Line Russian Roulette/" itemprop="commentCount"></span></a>
-</span>
 </div>
-</header>
-<div class="post-body" itemprop="articleBody">
-<p><img src="/images/2018-12/Strip-Roulette-russe-650-finalenglish.jpg" alt></p>
-<p>图片来源：<a href="http://www.commitstrip.com/en/2014/05/16/russian-roulette" target="_blank" rel="noopener">Russian roulette</a></p>
-</div>
-<footer class="post-footer">
-<div class="post-eof"></div>
-</footer>
-</div>
-</article>
-</section>
 <nav class="pagination">
 <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
 </nav>
@@ -495,13 +534,13 @@ type="text" id="search-input">
 <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
 </div>
 </div>
-<aside id="sidebar" class="sidebar">
+<aside class="sidebar">
 <div class="sidebar-inner">
 <ul class="sidebar-nav motion-element">
-<li class="sidebar-nav-toc" data-target="post-toc-wrap">
+<li class="sidebar-nav-toc">
 文章目录
 </li>
-<li class="sidebar-nav-overview" data-target="site-overview-wrap">
+<li class="sidebar-nav-overview">
 站点概览
 </li>
 </ul>
@@ -510,18 +549,17 @@ type="text" id="search-input">
 </div>
 <!--/noindex-->
 <div class="site-overview-wrap sidebar-panel">
-<div class="site-overview">
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <img class="site-author-image" itemprop="image"
 src="/images/icon.gif"
 alt="张书樵">
 <p class="site-author-name" itemprop="name">张书樵</p>
-<div class="site-description motion-element" itemprop="description">力电声光热，涵尽学海无涯</div>
+<div class="site-description" itemprop="description">力电声光热，涵尽学海无涯</div>
 </div>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href="/archives/">
-<span class="site-state-item-count">108</span>
+<span class="site-state-item-count">109</span>
 <span class="site-state-item-name">日志</span>
 </a>
 </div>
@@ -559,7 +597,6 @@ alt="张书樵">
 </div>
 </div>
 </div>
-</div>
 </aside>
 <div id="sidebar-dimmer"></div>
 </div>
@@ -590,20 +627,64 @@ alt="张书樵">
 </div>
 </div>
 </footer>
-<div class="back-to-top">
-<i class="fa fa-arrow-up"></i>
-<span>0%</span>
-</div>
 </div>
 <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="/lib/anime.min.js?v=3.1.0"></script>
 <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script>
-<script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/schemes/pisces.js?v=7.3.0"></script>
-<script src="/js/next-boot.js?v=7.3.0"></script>
-<script src="/js/local-search.js?v=7.3.0"></script>
+<script src="/js/utils.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+<script>
+var pjax = new Pjax({
+selectors: [
+'head title',
+'#page-configurations',
+'.content-wrap',
+'.post-toc-wrap',
+'#pjax'
+],
+switches: {
+'.post-toc-wrap': Pjax.switches.innerHTML
+},
+analytics: false,
+cacheBust: false,
+scrollTo : !CONFIG.bookmark.enable
+});
+window.addEventListener('pjax:success', () => {
+document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+var id = element.id || '';
+var src = element.src || '';
+var code = element.text || element.textContent || element.innerHTML || '';
+var parent = element.parentNode;
+parent.removeChild(element);
+var script = document.createElement('script');
+if (id !=='') {
+script.id = element.id;
+}
+if (src !== '') {
+script.src = src;
+// Force synchronous loading of peripheral JS.
+script.async = false;
+}
+if (code !== '') {
+script.appendChild(document.createTextNode(code));
+}
+parent.appendChild(script);
+});
+NexT.boot.refresh();
+// Define Motion Sequence & Bootstrap Motion.
+if (CONFIG.motion.enable) {
+NexT.motion.integrator
+.init()
+.add(NexT.motion.middleWares.postList)
+.bootstrap();
+}
+NexT.utils.updateSidebarPosition();
+});
+</script>
+<script src="/js/local-search.js?v=7.4.0"></script>
 <script pjax>
 if (document.querySelectorAll('div.pdf').length) {
 NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
@@ -629,7 +710,7 @@ NexT.utils.getScript('/lib/Valine.min.js', () => {
 var GUEST = ['nick', 'mail', 'link'];
 var guest = 'nick,mail,link';
 guest = guest.split(',').filter(item => {
-return GUEST.indexOf(item) > -1;
+return GUEST.includes(item);
 });
 new Valine({
 el: '#comments',
@@ -648,35 +729,5 @@ path: location.pathname
 }, window.Valine);
 </script>
 </div>
-<script>
-var pjax = new Pjax({
-selectors: [
-'head title',
-'#page-configurations',
-'.content-wrap',
-'.post-toc-wrap',
-'#pjax'
-],
-switches: {
-'.post-toc-wrap': Pjax.switches.innerHTML
-},
-analytics: false,
-cacheBust: false,
-scrollTo: !CONFIG.bookmark.enable
-});
-window.addEventListener('pjax:success', () => {
-document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-$(element).parent().append($(element).remove());
-});
-// Define Motion Sequence & Bootstrap Motion.
-if (CONFIG.motion.enable) {
-NexT.motion.integrator
-.init()
-.add(NexT.motion.middleWares.postList)
-.bootstrap();
-}
-NexT.utils.updateSidebarPosition();
-});
-</script>
 </body>
 </html>
